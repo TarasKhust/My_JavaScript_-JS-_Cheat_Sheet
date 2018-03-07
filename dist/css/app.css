@@ -1,8 +1,6 @@
 body {
-  background: #f0f8ff;
+  background: #fff;
   font-size: 16px;
-}
-
-h1 {
-  font-size: 18px;
+  width: 1200px;
+  padding: 0 129px 0;
 }

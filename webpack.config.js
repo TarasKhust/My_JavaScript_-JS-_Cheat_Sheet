@@ -82,7 +82,7 @@ module .exports = {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader','postcss-loader','css-loader'],
+            use: ['css-loader','postcss-loader','stylus-loader'],
             publicPath: '../'
         })
     },
@@ -130,8 +130,9 @@ plugins: [
     new PurifyCSSPlugin({
         // paths: glob.sync(path.join(__dirname, 'src/*.pug')),
         paths: glob.sync([
-            path.join(__dirname, 'src/*.pug'),
-            path.join(__dirname, 'src/modules/*.pug'),
+            path.join(__dirname, 'src/pug/*.pug'),
+            path.join(__dirname, 'src/pug/modules/*.pug'),
+            path.join(__dirname, 'src/pug/pages/*.pug'),
             path.join(__dirname, 'src/js/*.js')
         ]),
         purifyOptions: { info: true, minify: false }
