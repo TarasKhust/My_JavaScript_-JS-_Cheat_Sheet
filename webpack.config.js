@@ -44,21 +44,30 @@ module .exports = {
         }
     },
     {
-        test: /\.(jpg|png|gif|jpeg)$/,
+        test: /\.(jpg|png|gif|jpeg|svg)$/,
         use: [
         'file-loader?name=img/[name].[ext]',
         // 'file-loader?name=[name].[ext]&outputPath=../img/&publicPath=.img/',
         'image-webpack-loader'
         ]
     },
-    {
-        test: /\.svg$/,
-        use: [
-        'file-loader?name=img/icons/[name].[ext]',
-        // папка с которой брать и в какую ставить 'file-loader?name=[name].[ext]&outputPath=img/icons/&publicPath=img/icons/',
-            'image-webpack-loader'
-        ]
-    },
+        // {
+        //     test: /\.svg$/,
+        //     loader: 'svg-sprite-loader',
+        //     options: {
+        //         runtimeCompat: true
+        //     }
+        // },
+        // {
+        // loader: 'svgo-loader',
+        //     options: {
+        //         plugins: [
+        //             {removeTitle: true},
+        //             {convertColors: {shorthex: false}},
+        //             {convertPathData: false}
+        //         ]
+        //     }
+        // },
 
     // {   test: /\.(woff2?)$/, loader: 'url-loader?limit=10000' },
     {   test: /\.(woff2?|ttf|eot|otf|svg)$/, loader: 'file-loader?name=fonts/[name].[ext]' },

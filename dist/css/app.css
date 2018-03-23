@@ -1,6 +1,13 @@
 body {
-  background: #fff;
   font-size: 16px;
-  width: 1200px;
-  padding: 0 129px 0;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 129px;
+}
+
+footer {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
 }
