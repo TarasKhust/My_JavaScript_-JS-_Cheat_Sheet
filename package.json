@@ -67,6 +67,7 @@
     "purifycss-webpack": "^0.7.0",
     "resolve-url-loader": "^2.3.0",
     "rimraf": "^2.6.2",
+    "run-sequence": "^2.2.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "stylint": "^1.5.9",
@@ -83,6 +84,7 @@
   "dependencies": {
     "bootstrap": "^4.0.0",
     "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
     "ejs": "^2.5.8",
     "glob-all": "^3.1.0",
     "gulp": "^3.9.1",

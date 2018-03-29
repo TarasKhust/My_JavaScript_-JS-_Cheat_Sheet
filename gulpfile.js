@@ -14,8 +14,26 @@ var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
+var run = require('run-sequence');
+var del = require('del');
 var server = require('browser-sync').create();
 
+gulp.task('clean', function () {
+    return del('dist');
+});
+gulp.task('copy', function () {
+    return gulp.src([
+        'src/fonts/**/*.{woff,woff2}',
+        'src/img/**',
+        'src/js/**'
+    ],  {
+         base: '.'
+    })
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('build', function (done) {
+    run('clean', 'copy', 'stylus', 'sprite', 'pug', done);
+});
 gulp.task('pages', function () {
     return gulp.src('src/pug/**/*.pug')
         .pipe(pug({
@@ -78,9 +96,9 @@ gulp.task('html', function () {
         .pipe(gulp.dest('.'));
 
 });
-gulp.task('serve', ['stylus'], function () {
+gulp.task('serve', function () {
     server.init({
-        server:'dist',
+        server:'dist/',
         notify: false,
         open: true,
         cors: true,
@@ -88,5 +106,5 @@ gulp.task('serve', ['stylus'], function () {
     });
 
     gulp.watch('src/**/*.styl', ['stylus']);
-    gulp.watch('src/**/*.pug').on('change', server.reload);
+    gulp.watch('src/**/*.pug', ['pug']);
 });
