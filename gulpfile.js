@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var stylus = require('gulp-stylus');
 var plumber = require('gulp-plumber');
@@ -5,10 +7,22 @@ var postcss = require('gulp-postcss');
 var minify = require('gulp-csso');
 var autoprefixer = require('autoprefixer');
 var pug = require('gulp-pug');
+var pugbem = require('gulp-pugbem');
 var rename = require('gulp-rename');
 var imagemin = require('gulp-imagemin');
+var webp = require('gulp-webp');
+var svgstore = require('gulp-svgstore');
+var posthtml = require('gulp-posthtml');
+var include = require('posthtml-include');
 var server = require('browser-sync').create();
 
+gulp.task('pages', function () {
+    return gulp.src('src/pug/**/*.pug')
+        .pipe(pug({
+            plugins: [pugbem]
+        }))
+        .pipe(gulp.dest('dist'));
+});
 gulp.task('stylus', function () {
     gulp.src('src/css/style.styl')
         .pipe(plumber())
@@ -22,7 +36,6 @@ gulp.task('stylus', function () {
         .pipe(gulp.dest('dist/css'))
         .pipe(server.stream());
 });
-
 gulp.task('images', function () {
     return gulp.src('src/**/*.{png,jpg,svg}')
         .pipe(imagemin([
@@ -33,16 +46,38 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/img'))
 
 });
-
 gulp.task('pug', function buildHTML() {
     return gulp.src('src/pug/pages/index.pug')
+        .pipe(plumber())
         .pipe(pug({
 
             // Your options in here.
         }))
         .pipe(gulp.dest('dist'));
 });
+gulp.task('webp', function () {
+    return gulp.src('src/**/*.{png,jpg}')
+        .pipe(webp({quality: 90}))
+        .pipe(gulp.dest('dist/img'));
 
+});
+gulp.task('sprite', function () {
+    return gulp.src('src/icons/*.svg')
+        .pipe(svgstore({
+            inlineSvg: true
+        }))
+        .pipe(rename('sprite.svg'))
+        .pipe(gulp.dest('dist/img'));
+
+});
+gulp.task('html', function () {
+    return gulp.src('src/pug/index.html')
+        .pipe(posthtml([
+            include()
+        ]))
+        .pipe(gulp.dest('.'));
+
+});
 gulp.task('serve', ['stylus'], function () {
     server.init({
         server:'dist',
