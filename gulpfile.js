@@ -16,8 +16,19 @@ var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
 var run = require('run-sequence');
 var del = require('del');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
 var server = require('browser-sync').create();
 
+gulp.task('compress', function (cb) {
+    pump([
+            gulp.src('js/*.js'),
+            uglify(),
+            gulp.dest('dist/js')
+        ],
+        cb
+    );
+});
 gulp.task('clean', function () {
     return del('dist');
 });
