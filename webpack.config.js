@@ -18,7 +18,7 @@ const PATHS = {
 }
 module .exports = {
     entry: {
-        app: './src/app.js',
+        app: './src/assets/app.js',
         // contact: './src/contact.js',
  },
     output: {
@@ -46,8 +46,8 @@ module .exports = {
     {
         test: /\.(jpg|png|gif|jpeg|svg)$/,
         use: [
-        'file-loader?name=img/[name].[ext]',
-        // 'file-loader?name=[name].[ext]&outputPath=../img/&publicPath=.img/',
+        'file-loader?name=images/[name].[ext]',
+        // 'file-loader?name=[name].[ext]&outputPath=../images/&publicPath=.images/',
         'image-webpack-loader'
         ]
     },
@@ -91,7 +91,7 @@ module .exports = {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader','postcss-loader','stylus-loader'],
+            use: ['css-loader','postcss-loader','css-loader'],
             publicPath: '../'
         })
     },
@@ -103,7 +103,7 @@ module .exports = {
 plugins: [
     new HtmlWebpackPlugin({
     title: 'Index',
-    template: './src/pug/pages/index.pug',
+    template: './src/assets/pug/pages/index.pug',
     hash: true,
     // excludeChunks: ['contact'],
     // minify: {
@@ -112,7 +112,7 @@ plugins: [
 }),
     new HtmlWebpackPlugin({
     title: 'Photo',
-    template: './src/pug/pages/photo.pug',
+    template: './src/assets/pug/pages/photo.pug',
     hash: true,
     // chunks: ['contact'],
     filename: 'photo.html',
@@ -120,7 +120,7 @@ plugins: [
 
     new HtmlWebpackPlugin({
         title: 'Form',
-        template: './src/pug/pages/form.pug',
+        template: './src/assets/pug/pages/form.pug',
         hash: true,
         // chunks: ['contact'],
         filename: 'form.html',
@@ -139,10 +139,10 @@ plugins: [
     new PurifyCSSPlugin({
         // paths: glob.sync(path.join(__dirname, 'src/*.pug')),
         paths: glob.sync([
-            path.join(__dirname, 'src/pug/*.pug'),
-            path.join(__dirname, 'src/pug/modules/*.pug'),
-            path.join(__dirname, 'src/pug/pages/*.pug'),
-            path.join(__dirname, 'src/js/*.js')
+            path.join(__dirname, 'src/assets/pug/*.pug'),
+            path.join(__dirname, 'src/assets/pug/blocks/*.pug'),
+            path.join(__dirname, 'src/assets/pug/pages/*.pug'),
+            path.join(__dirname, 'src/assets/js/*.js')
         ]),
         purifyOptions: { info: true, minify: false }
     }),

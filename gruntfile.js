@@ -20,7 +20,7 @@ module.exports = function (grunt) {
                     expand: true,
                     src: [
                         'src/fonts/**/*.{woff,woff2}',
-                        'src/img/**',
+                        'src/images/**',
                         'src/js/**'
                     ],
                     dest: 'dist'
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                 },
             sprite: {
                 files: {
-                    'dist/img/sprite.svg': ['src/img/icons/*.svg']
+                    'dist/img/sprite.svg': ['src/images/icons/*.svg']
                 }
             }}
         },
@@ -76,9 +76,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'src/img',
+                    cwd: 'src/images',
                     src: ['**/*.{png,jpg,svg}'],
-                    dest: 'dist/img'
+                    dest: 'dist/images'
                 }]
             }
         },
@@ -89,9 +89,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'src/img',
+                    cwd: 'src/images',
                     src: ['**/*.{png,jpg}'],
-                    dest:'dist/img'
+                    dest:'dist/images'
                 }]
             }
         }
