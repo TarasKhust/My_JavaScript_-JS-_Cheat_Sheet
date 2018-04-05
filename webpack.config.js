@@ -1,21 +1,10 @@
 const path = require('path');
-// const glob = require('glob');
 const glob = require('glob-all');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const PurifyCSSPlugin = require('purifycss-webpack');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const merge = require('webpack-merge');
-// const files = glob.sync([
-//     'files/**',      //include all     files/
-//     '!files/x/**',   //then, exclude   files/x/
-//     'files/x/z.txt'  //then, reinclude files/x/z.txt
-// ]);
-const PATHS = {
-    src: path.join(__dirname, 'src'),
-    dist: path.join(__dirname, 'dist')
-}
+
 module .exports = {
     entry: {
         app: './src/assets/app.js',
@@ -91,7 +80,7 @@ module .exports = {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
-            use: ['css-loader','postcss-loader','css-loader'],
+            use: ['css-loader','postcss-loader','stylus-loader'],
             publicPath: '../'
         })
     },
