@@ -129,7 +129,7 @@ plugins: [
         // paths: glob.sync(path.join(__dirname, 'src/*.pug')),
         paths: glob.sync([
             path.join(__dirname, 'src/assets/pug/*.pug'),
-            path.join(__dirname, 'src/assets/pug/blocks/*.pug'),
+            path.join(__dirname, 'src/assets/pug/modules/*.pug'),
             path.join(__dirname, 'src/assets/pug/pages/*.pug'),
             path.join(__dirname, 'src/assets/js/*.js')
         ]),

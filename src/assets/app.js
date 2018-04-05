@@ -2,7 +2,7 @@
 // require('./css/utils/vars.styl')
 // require('./css/utils/mixins.styl')
 require('../assets/css/style.styl');
-// require(`./css/blocks/blocks.styl`)
+// require(`./css/modules/modules.styl`)
 // require(`./css/pages/index.styl`)
 // require(`./node_modules/normalize.css/normalize.css`)
 // require('./css/uikit-rtl.css')

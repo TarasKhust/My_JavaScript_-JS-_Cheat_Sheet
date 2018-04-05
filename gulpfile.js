@@ -23,6 +23,7 @@ var gulp = require("gulp"),
     imgRetina = require('gulp-img-retina'),
     responsive = require('gulp-responsive'),
     imacss = require('gulp-imacss'),
+    pugGlobbing  = require('gulp-pug-globbing'),
     webserver = require("browser-sync");
 
 
@@ -94,12 +95,18 @@ gulp.task("html:build", function () {
 });
 
 
-gulp.task('pug:build', function () {
+gulp.task('pug:build', function(){
     return gulp.src(path.src.pug)
         .pipe(plumber())
+        .pipe(pugGlobbing({
+            placeholder: {
+                'modules': 'src/assets/pug/pages/*.pug',
+            },
+            ignore: ['src/pug/layout/templates']
+        }))
         .pipe(pug({
             pretty: true
-}))
+        }))
         .pipe(gulp.dest(path.build.html))
         .pipe(webserver.reload({stream: true}));
 });
