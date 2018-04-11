@@ -246,7 +246,7 @@ adjust-sourcemap-loader@^1.1.0:
   dependencies:
     assert "^1.3.0"
     camelcase "^1.2.1"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     lodash.assign "^4.0.1"
     lodash.defaults "^3.1.2"
     object-path "^0.9.2"
@@ -808,7 +808,7 @@ babel-loader@^7.1.4:
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.1.4.tgz#e3463938bd4e6d55d1c174c5485d406a188ed015"
   dependencies:
     find-cache-dir "^1.0.0"
-    loader-utils "^1.0.2"
+    loader-utilitis "^1.0.2"
     mkdirp "^0.5.1"
 
 babel-messages@^6.23.0:
@@ -1308,7 +1308,7 @@ base@^0.11.1:
   resolved "https://registry.yarnpkg.com/base/-/base-0.11.2.tgz#7bde5ced145b6d551a90db87f83c558b4eb48a8f"
   dependencies:
     cache-base "^1.0.1"
-    class-utils "^0.3.5"
+    class-utilitis "^0.3.5"
     component-emitter "^1.2.1"
     define-property "^1.0.0"
     isobject "^3.0.1"
@@ -1521,7 +1521,7 @@ bootstrap-loader@^2.2.0:
     escape-regexp "0.0.1"
     exports-loader "^0.6.3"
     js-yaml "^3.7.0"
-    loader-utils "^1.0.2"
+    loader-utilitis "^1.0.2"
     resolve "^1.1.7"
     semver "^5.3.0"
     strip-json-comments "^2.0.1"
@@ -2067,7 +2067,7 @@ clap@^1.0.9:
 
 class-utils@^0.3.5:
   version "0.3.6"
-  resolved "https://registry.yarnpkg.com/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
+  resolved "https://registry.yarnpkg.com/class-utilitis/-/class-utilitis-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
   dependencies:
     arr-union "^3.1.0"
     define-property "^0.2.5"
@@ -2388,7 +2388,7 @@ connect@3.5.0:
     debug "~2.2.0"
     finalhandler "0.5.0"
     parseurl "~1.3.1"
-    utils-merge "1.0.0"
+    utilitis-merge "1.0.0"
 
 connect@^3.0.1:
   version "3.6.6"
@@ -2397,7 +2397,7 @@ connect@^3.0.1:
     debug "2.6.9"
     finalhandler "1.1.0"
     parseurl "~1.3.2"
-    utils-merge "1.0.1"
+    utilitis-merge "1.0.1"
 
 console-browserify@^1.1.0:
   version "1.1.0"
@@ -2598,8 +2598,8 @@ css-loader@^0.28.11:
     babel-code-frame "^6.26.0"
     css-selector-tokenizer "^0.7.0"
     cssnano "^3.10.0"
-    icss-utils "^2.1.0"
-    loader-utils "^1.0.2"
+    icss-utilitis "^2.1.0"
+    loader-utilitis "^1.0.2"
     lodash.camelcase "^4.3.0"
     object-assign "^4.1.1"
     postcss "^5.0.6"
@@ -3331,7 +3331,7 @@ ejs-loader@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/ejs-loader/-/ejs-loader-0.3.1.tgz#280c8e030bd32428c29826f6bbf6b6d0c14f7ca4"
   dependencies:
-    loader-utils "^0.2.7"
+    loader-utilitis "^0.2.7"
     lodash "^3.6.0"
 
 ejs@^2.3.1, ejs@^2.5.8:
@@ -3360,7 +3360,7 @@ elliptic@^6.0.0:
     hmac-drbg "^1.0.0"
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
-    minimalistic-crypto-utils "^1.0.0"
+    minimalistic-crypto-utilitis "^1.0.0"
 
 emitter-steward@^1.0.0:
   version "1.0.0"
@@ -3690,7 +3690,7 @@ exports-loader@^0.6.3:
   version "0.6.4"
   resolved "https://registry.yarnpkg.com/exports-loader/-/exports-loader-0.6.4.tgz#d70fc6121975b35fc12830cf52754be2740fc886"
   dependencies:
-    loader-utils "^1.0.2"
+    loader-utilitis "^1.0.2"
     source-map "0.5.x"
 
 express@^4.16.2:
@@ -3725,7 +3725,7 @@ express@^4.16.2:
     setprototypeof "1.1.0"
     statuses "~1.4.0"
     type-is "~1.6.16"
-    utils-merge "1.0.1"
+    utilitis-merge "1.0.1"
     vary "~1.1.2"
 
 ext-list@^2.0.0:
@@ -3796,8 +3796,8 @@ extract-text-webpack-plugin@^4.0.0-beta.0:
   resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-4.0.0-beta.0.tgz#f7361d7ff430b42961f8d1321ba8c1757b5d4c42"
   dependencies:
     async "^2.4.1"
-    loader-utils "^1.1.0"
-    schema-utils "^0.4.5"
+    loader-utilitis "^1.1.0"
+    schema-utilitis "^0.4.5"
     webpack-sources "^1.1.0"
 
 extsprintf@1.3.0:
@@ -3890,8 +3890,8 @@ file-loader@^1.1.11:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-1.1.11.tgz#6fe886449b0f2a936e43cabaac0cdbfb369506f8"
   dependencies:
-    loader-utils "^1.0.2"
-    schema-utils "^0.4.5"
+    loader-utilitis "^1.0.2"
+    schema-utilitis "^0.4.5"
 
 file-sync-cmp@^0.1.0:
   version "0.1.1"
@@ -4768,7 +4768,7 @@ grunt-known-options@~1.1.0:
 
 grunt-legacy-log-utils@~1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-legacy-log-utils/-/grunt-legacy-log-utils-1.0.0.tgz#a7b8e2d0fb35b5a50f4af986fc112749ebc96f3d"
+  resolved "https://registry.yarnpkg.com/grunt-legacy-log-utilitis/-/grunt-legacy-log-utilitis-1.0.0.tgz#a7b8e2d0fb35b5a50f4af986fc112749ebc96f3d"
   dependencies:
     chalk "~1.1.1"
     lodash "~4.3.0"
@@ -4778,7 +4778,7 @@ grunt-legacy-log@~1.0.0:
   resolved "https://registry.yarnpkg.com/grunt-legacy-log/-/grunt-legacy-log-1.0.1.tgz#c7731b2745f4732aa9950ee4d7ae63c553f68469"
   dependencies:
     colors "~1.1.2"
-    grunt-legacy-log-utils "~1.0.0"
+    grunt-legacy-log-utilitis "~1.0.0"
     hooker "~0.2.3"
     lodash "~4.17.5"
     underscore.string "~3.3.4"
@@ -5365,7 +5365,7 @@ hmac-drbg@^1.0.0:
   dependencies:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
-    minimalistic-crypto-utils "^1.0.1"
+    minimalistic-crypto-utilitis "^1.0.1"
 
 hoek@2.x.x:
   version "2.16.3"
@@ -5434,7 +5434,7 @@ html-webpack-plugin@^3.2.0:
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-3.2.0.tgz#b01abbd723acaaa7b37b6af4492ebda03d9dd37b"
   dependencies:
     html-minifier "^3.2.3"
-    loader-utils "^0.2.16"
+    loader-utilitis "^0.2.16"
     lodash "^4.17.3"
     pretty-error "^2.0.2"
     tapable "^1.0.0"
@@ -5579,7 +5579,7 @@ icss-replace-symbols@^1.1.0:
 
 icss-utils@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/icss-utils/-/icss-utils-2.1.0.tgz#83f0a0ec378bf3246178b6c2ad9136f135b1c962"
+  resolved "https://registry.yarnpkg.com/icss-utilitis/-/icss-utilitis-2.1.0.tgz#83f0a0ec378bf3246178b6c2ad9136f135b1c962"
   dependencies:
     postcss "^6.0.1"
 
@@ -5622,7 +5622,7 @@ image-webpack-loader@^4.2.0:
     imagemin-pngquant "^5.0.0"
     imagemin-svgo "^6.0.0"
     imagemin-webp "^4.0.0"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     object-assign "^4.1.1"
 
 imagemin-gifsicle@^5.0.0, imagemin-gifsicle@^5.1.0, imagemin-gifsicle@^5.2.0:
@@ -6717,7 +6717,7 @@ loader-runner@^2.3.0:
 
 loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.2.17, loader-utils@^0.2.7:
   version "0.2.17"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
+  resolved "https://registry.yarnpkg.com/loader-utilitis/-/loader-utilitis-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   dependencies:
     big.js "^3.1.3"
     emojis-list "^2.0.0"
@@ -6726,7 +6726,7 @@ loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@^0.2.17, loader-utils@^
 
 loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.0.3, loader-utils@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
+  resolved "https://registry.yarnpkg.com/loader-utilitis/-/loader-utilitis-1.1.0.tgz#c98aef488bcceda2ffb5e2de646d6a754429f5cd"
   dependencies:
     big.js "^3.1.3"
     emojis-list "^2.0.0"
@@ -7481,7 +7481,7 @@ minimalistic-assert@^1.0.0:
 
 minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
+  resolved "https://registry.yarnpkg.com/minimalistic-crypto-utilitis/-/minimalistic-crypto-utilitis-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
 "minimatch@2 || 3", minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4, minimatch@~3.0.2:
   version "3.0.4"
@@ -8689,10 +8689,10 @@ postcss-loader@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-2.1.3.tgz#eb210da734e475a244f76ccd61f9860f5bb3ee09"
   dependencies:
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     postcss "^6.0.0"
     postcss-load-config "^1.2.0"
-    schema-utils "^0.4.0"
+    schema-utilitis "^0.4.0"
 
 postcss-media-query-parser@^0.2.3:
   version "0.2.3"
@@ -9184,7 +9184,7 @@ pug-html-loader@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/pug-html-loader/-/pug-html-loader-1.1.5.tgz#b46855a7790a306e43ec5db297dbdbb7995f4b5a"
   dependencies:
-    loader-utils "^0.2.17"
+    loader-utilitis "^0.2.17"
     pug "^2.0.0-rc.2"
 
 pug-lexer@^2.0.1:
@@ -9239,7 +9239,7 @@ pug-loader@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/pug-loader/-/pug-loader-2.4.0.tgz#18eebdda045d9c31c2856f1cc3ceb8d3df7ca49a"
   dependencies:
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     pug-walk "^1.0.0"
     resolve "^1.1.7"
 
@@ -9906,7 +9906,7 @@ resolve-url-loader@^2.3.0:
     adjust-sourcemap-loader "^1.1.0"
     camelcase "^4.1.0"
     convert-source-map "^1.5.1"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     lodash.defaults "^4.0.0"
     rework "^1.0.1"
     rework-visit "^1.0.0"
@@ -10070,7 +10070,7 @@ sass-loader@^6.0.7:
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-6.0.7.tgz#dd2fdb3e7eeff4a53f35ba6ac408715488353d00"
   dependencies:
     clone-deep "^2.0.1"
-    loader-utils "^1.0.1"
+    loader-utilitis "^1.0.1"
     lodash.tail "^4.1.1"
     neo-async "^2.5.0"
     pify "^3.0.0"
@@ -10085,7 +10085,7 @@ sax@^1.1.4, sax@~1.2.1, sax@~1.2.4:
 
 schema-utils@^0.4.0, schema-utils@^0.4.2, schema-utils@^0.4.3, schema-utils@^0.4.5:
   version "0.4.5"
-  resolved "https://registry.yarnpkg.com/schema-utils/-/schema-utils-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
+  resolved "https://registry.yarnpkg.com/schema-utilitis/-/schema-utilitis-0.4.5.tgz#21836f0608aac17b78f9e3e24daff14a5ca13a3e"
   dependencies:
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
@@ -10910,8 +10910,8 @@ style-loader@^0.20.3:
   version "0.20.3"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.3.tgz#ebef06b89dec491bcb1fdb3452e913a6fd1c10c4"
   dependencies:
-    loader-utils "^1.1.0"
-    schema-utils "^0.4.5"
+    loader-utilitis "^1.1.0"
+    schema-utilitis "^0.4.5"
 
 style-search@^0.1.0:
   version "0.1.0"
@@ -10983,7 +10983,7 @@ stylus-loader@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-3.0.2.tgz#27a706420b05a38e038e7cacb153578d450513c6"
   dependencies:
-    loader-utils "^1.0.2"
+    loader-utilitis "^1.0.2"
     lodash.clonedeep "^4.5.0"
     when "~3.6.x"
 
@@ -11046,7 +11046,7 @@ svg-baker@^1.2.0, svg-baker@^1.2.17:
     clone "^2.1.1"
     he "^1.1.1"
     image-size "^0.5.1"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     merge-options "0.0.64"
     micromatch "3.1.0"
     postcss "^5.2.17"
@@ -11063,7 +11063,7 @@ svg-sprite-loader@^0.3.0:
     cheerio "^0.22.0"
     extend "^3.0.0"
     image-size "^0.3.5"
-    loader-utils "^0.2.11"
+    loader-utilitis "^0.2.11"
     postcss "^5.2.10"
     sniffr "1.1.4"
 
@@ -11075,7 +11075,7 @@ svg-sprite-loader@^3.7.3:
     deepmerge "1.3.2"
     domready "1.0.8"
     escape-string-regexp "1.0.5"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     svg-baker "^1.2.17"
     svg-baker-runtime "^1.3.3"
     url-slug "2.0.0"
@@ -11100,7 +11100,7 @@ svgo-loader@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/svgo-loader/-/svgo-loader-2.1.0.tgz#e86c0ca08c1149bb1fb4b3a469dabac847f5e24a"
   dependencies:
-    loader-utils "^1.0.3"
+    loader-utilitis "^1.0.3"
 
 svgo@^0.7.0:
   version "0.7.2"
@@ -11549,7 +11549,7 @@ uglifyjs-webpack-plugin@^1.2.4:
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
-    schema-utils "^0.4.5"
+    schema-utilitis "^0.4.5"
     serialize-javascript "^1.4.0"
     source-map "^0.6.1"
     uglify-es "^3.3.4"
@@ -11752,9 +11752,9 @@ url-loader@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-1.0.1.tgz#61bc53f1f184d7343da2728a1289ef8722ea45ee"
   dependencies:
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     mime "^2.0.3"
-    schema-utils "^0.4.3"
+    schema-utilitis "^0.4.3"
 
 url-parse-lax@^1.0.0:
   version "1.0.0"
@@ -11856,11 +11856,11 @@ utila@~0.4:
 
 utils-merge@1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
+  resolved "https://registry.yarnpkg.com/utilitis-merge/-/utilitis-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
 utils-merge@1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
+  resolved "https://registry.yarnpkg.com/utilitis-merge/-/utilitis-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
 
 uuid@^2.0.1:
   version "2.0.3"
@@ -12111,7 +12111,7 @@ webpack-cli@^2.0.14:
     interpret "^1.0.4"
     jscodeshift "^0.5.0"
     listr "^0.13.0"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     lodash "^4.17.5"
     log-symbols "^2.2.0"
     mkdirp "^0.5.1"
@@ -12211,13 +12211,13 @@ webpack@^4.5.0:
     enhanced-resolve "^4.0.0"
     eslint-scope "^3.7.1"
     loader-runner "^2.3.0"
-    loader-utils "^1.1.0"
+    loader-utilitis "^1.1.0"
     memory-fs "~0.4.1"
     micromatch "^3.1.8"
     mkdirp "~0.5.0"
     neo-async "^2.5.0"
     node-libs-browser "^2.0.0"
-    schema-utils "^0.4.2"
+    schema-utilitis "^0.4.2"
     tapable "^1.0.0"
     uglifyjs-webpack-plugin "^1.2.4"
     watchpack "^1.5.0"

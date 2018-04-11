@@ -1,7 +1,7 @@
-// require(`./css/utils/fonts.styl`)
-// require('./css/utils/vars.styl')
-// require('./css/utils/mixins.styl')
-require('../assets/css/style.styl');
+// require(`./css/utilitis/fonts.styl`)
+// require('./css/utilitis/vars.styl')
+// require('./css/utilitis/mixins.styl')
+require('./assets/css/style.styl');
 // require(`./css/modules/modules.styl`)
 // require(`./css/pages/index.styl`)
 // require(`./node_modules/normalize.css/normalize.css`)
