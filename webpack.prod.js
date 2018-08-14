@@ -1,12 +1,18 @@
+// let merge = require('webpack-merge');
+// let config = require('./webpack.config.js');
+// let CopyWebpackPlugin = require('copy-webpack-plugin');
 let path = require('path');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 let glob = require('glob-all');
 let PurifyCSSPlugin = require('purifycss-webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let webpack = require('webpack');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+let ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 let SRC_DIR = path.resolve(__dirname,'src');
-let DIST_DIR = path.resolve(__dirname, 'dist');
+let DIST_DIR = path.resolve(__dirname, './');
 let ASSET_PATH = process.env.ASSET_PATH || '';
 
 let conf = {
@@ -23,13 +29,6 @@ let conf = {
         modules: [SRC_DIR, "node_modules"],
         extensions: ['.js', '.css', '.scss']
     },
-    devServer: {
-        overlay: {
-            warning: true,
-            errors: true
-        }
-        // contentBase: 'dist'
-    },
     module: {
         rules: [
             {
@@ -44,7 +43,7 @@ let conf = {
                 test: /\.pug$/,
                 loader: 'pug-loader',
                 options: {
-                    pretty: true
+                    pretty: false
                 }
             },
             {
@@ -67,6 +66,15 @@ let conf = {
                     // publicPath: '../'
                 })
             },
+            // {
+            //     test: /\.styl$/,
+            //     use: [
+            //         { loader: 'style-loader', options: { sourceMap: true } },
+            //         { loader: 'css-loader', options: { sourceMap: true } },
+            //         { loader: 'postcss-loader', options: { sourceMap: true } },
+            //         { loader: 'stylus-loader', options: { sourceMap: true } },
+            //     ]
+            // },
             {
                 test: /\.styl$/,
                 use: ExtractTextPlugin.extract({
@@ -78,7 +86,7 @@ let conf = {
             {
                 test: /\.(jpg|png|gif|jpeg)$/,
                 use: [
-                    'file-loader?name=images/[name].[ext]',
+                    'file-loader?name=[path][name].[ext]',
                     // 'file-loader?name=[name].[ext]&outputPath=../images/&publicPath=.images/',
                     'image-webpack-loader'
                 ]
@@ -88,11 +96,45 @@ let conf = {
                 loader: 'svg-inline-loader'
             },
             {
+                test: /\.svg$/,
+                loader: 'svg-url-loader'
+            },
+            {
                 test: /\.(svg)$/,
                 use: 'file-loader?name=images/icons/[name].[ext]'
             },
+            // {
+            //     test: /\.(gif|png|jpe?g|svg)$/i,
+            //     use: [
+            //         'file-loader?name=images/[name].[ext]',
+            //         {
+            //             loader: 'image-webpack-loader',
+            //             options: {
+            //                 mozjpeg: {
+            //                     progressive: true,
+            //                     quality: 85
+            //                 },
+            //                 // optipng.enabled: false will disable optipng
+            //                 optipng: {
+            //                     enabled: false,
+            //                 },
+            //                 pngquant: {
+            //                     quality: '90',
+            //                     speed: 4
+            //                 },
+            //                 gifsicle: {
+            //                     interlaced: false,
+            //                 },
+            //                 // the webp option will enable WEBP
+            //                 webp: {
+            //                     quality: 75
+            //                 }
+            //             }
+            //         },
+            //     ],
+            // },
             {
-                test: /\.(woff2?|ttf|eot|otf)$/,
+                test: /\.(woff|woff2?|ttf|eot|otf)$/,
                 use: 'file-loader?name=fonts/[name].[ext]'
             },
         ]
@@ -139,18 +181,29 @@ let conf = {
             // minify: {
             //     collapseWhitespace: true },
         }),
-        //
-        // new HtmlWebpackPlugin({
-        //     title: 'Form',
-        //     template: './src/pug/pages/form.pug',
-        //     hash: true,
-        //     // chunks: ['contact'],
-        //     filename: 'form.html',
-        // }),
+        new CopyWebpackPlugin(
+            [
+                { from: 'src/assets/images', to: 'images' }
+            ],
+            {
+                ignore: [
+                    {glob: 'svg/*'},
+                ]
+            }
+        ),
+        new UglifyJSPlugin ({
+           sourceMap: true
+        }),
+
+        new ImageminPlugin ({
+            test: /\.(png|gif|jpe?g|svg)$/i
+        }),
 
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
+            jQuery: 'jquery',
+            jquery: 'jquery',
+            popper: ['popper.js','default']
         }),
 
         new ExtractTextPlugin({
@@ -163,21 +216,21 @@ let conf = {
             // paths: glob.sync(path.join(__dirname, 'src/*.pug')),
             paths: glob.sync([
                 path.join(__dirname, 'src/pug/**/*.pug'),
-                // path.join(__dirname, 'src/assets/pug/modules/*.pug'),
-                // path.join(__dirname, 'src/assets/pug/pages/*.pug'),
+                // path.join(__dirname, 'src/pug/modules/*.pug'),
+                // path.join(__dirname, 'src/pug/pages/*.pug'),
                 path.join(__dirname, 'src/assets/js/*.js')
             ]),
-            purifyOptions: { info: true, minify: false }
+            purifyOptions: { info: true, minify: true }
         }),
-        ],
+    ],
 };
 
-    module.exports = (env, options) => {
-        let production = options.mode === 'production';
+module.exports = (env, options) => {
+    let production = options.mode === 'production';
 
-        conf.devtool = production
-                        ? 'source-map'
-                        : 'evel-sourcemap';
+    conf.devtool = production
+        ? 'false'
+        : 'evel-sourcemap';
 
-        return conf;
-    };
+    return conf;
+};

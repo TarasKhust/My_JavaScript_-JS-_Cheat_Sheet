@@ -1,2 +1,0 @@
-# Stek
-My steck
