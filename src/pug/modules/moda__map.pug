@@ -1,0 +1,13 @@
+section.modal__map.modal
+	h2.visually-hidden Как до нас добраться
+	iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10642.886810041064!2d23.292743!3d48' +
+	'.1734447!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473829457d9f122f%3A0xf4d0946a26879b8b!2sVopak!5e0!3m2!1sen!2sua' +
+	'!4v1533125278621', width='766', height='561', frameborder='0', style='border:0', allowfullscreen='')
+	p
+		img.map__img.visually-hidden(src=require('../../assets/images/map.jpg') width="780" height="560" alt=" офис " +
+		"компании по " +
+		"адресу ул" +
+		"." +
+		" " +
+		"Большая Конюшная 19/8, Санкт-Петербург")
+		button.modal__close(type='button') Закрыть

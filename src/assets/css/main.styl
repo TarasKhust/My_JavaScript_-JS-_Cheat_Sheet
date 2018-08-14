@@ -1,0 +1,632 @@
+body
+	font-size baseFontSize
+	font-family basefont
+	font-weight bold
+	margin 0
+	padding 0
+	vertical-align: baseline
+	color #f7f4f1
+	line-height 24px
+	text-transform: uppercase;
+	background-image url("../images/background.jpg")
+	background-color black
+	background-repeat no-repeat
+	background-position top center
+	min-width 960px
+a
+	text-decoration none
+h1 h2
+  &.visually-hidden
+	hidden()
+h2
+	color #000000
+	font-size 30px
+	line-height 42px
+img
+	max-width 100%
+	height auto
+.button
+	font inherit
+	vertical-align middle
+	color #ffffff
+	text-align center
+	text-transform uppercase
+	background-color #000000
+	border none
+	display inline-block
+	width 140px
+	height 43px
+	&:hover,
+	&:focus,
+	&:active
+		background-color #663d15
+	&:disabled
+		color #ffffff
+		opacity 0.3
+.main-nav
+	color #ffffff
+	font-size 16px
+	line-height 20px
+	a
+		display block
+		color #ffffff
+		padding 25px 25px 25px 20px
+		&:hover,
+		&:focus,
+		&:active
+			background-color  #242424
+	ul
+		list-style none
+.offers__list
+	list-style none
+	h3
+		position relative
+		color #f7f4f1
+		font-size 30px
+		line-height 42px
+		margin-bottom 60px
+		&:after
+			content ""
+			width 20px
+			height 20px
+			background-color #f7f4f1
+			position absolute
+			transform rotate(45deg)
+			 margin-left -10px
+			bottom -30px
+			left 50%
+.news
+	&__wrapper
+		background-image url("../images/icons/layer-17-copy.png"), url("../images/layer-10-copy.jpg")
+		background-position center
+		background-repeat no-repeat
+		background-color #f7f4f1
+		color #000000
+	&__date
+		text-transform none
+.gallery__content
+	border 7px solid white
+.contacts
+	&__wrapper
+		background-image url("../images/icons/layer-17-copy.png"), url("../images/layer-10-copy.jpg")
+		background-position center
+		background-repeat no-repeat
+		background-color #f7f4f1
+		color #000000
+	&__phone
+		text-decoration none
+		color: #000000
+.appointment__item input
+	border 2px solid #000101
+	font inherit
+	&:focus
+		border-color #663d15
+.page-footer
+	margin-top 65px
+	padding 40px 0
+	background-image url("../images/layer-23.jpg")
+	background-position 0 0
+	background-repeat repeat
+	background-color #242424
+	color #ffffff
+.footer
+	color white
+	&__find
+		text-decoration underline
+		color #ffffff
+		&:hover
+			text-decoration none
+	&__phone
+		text-decoration none
+		color #ffffff
+	&__social
+		text-align center
+		ul
+			list-style none
+			margin 0 auto
+			padding 0
+			display flex
+			width 141px
+			flex-wrap wrap
+			justify-content space-between
+		a
+			color  #ffffff
+	&__copyright
+		text-align center
+	&__link
+		a
+		&:hover,
+		&:focus
+			background-color #ffffff
+			path
+				fill #000000
+
+	&__button
+		&:hover,
+		&:focus
+			color #000000
+			background-color  #ffffff
+	&__title
+		margin-bottom 20px
+		display block
+.modal.modal__login
+	background-image url("../images/layer-10-copy.jpg")
+	background-position 0 0
+	background-repeat repeat
+	background-color #242424
+	color #000000
+	top 118px
+	position fixed
+	box-shadow 0 30px 50px rgba(0, 0, 0, 0.7)
+	left 34%
+	h2
+		color #000000
+		font-size 30px
+.login__form input[type='text'],
+.login__form input[type='password']
+	font inherit
+	color #000000
+	text-transform uppercase
+	background-color #f9f6f3
+	border 2px solid #000000
+	padding-right 40px
+	&:focus
+		border-color #663d15
+.forget
+	text-decoration underline
+	color #000000
+	&:hover,
+	&:focus
+		text-decoration none
+.login__checkbox
+	&:hover,
+	&:focus
+		color #663d15
+.product
+	color #000000
+	line-height 24px
+	&__page
+		background-image url("../images/layer-10-copy.jpg")
+		background-position top center
+		background-repeat no-repeat
+		background-color #f7f4f1
+		background-size 1200px auto
+		color #000000
+	&__title
+		font-size 30px
+		line-height 42px
+	&__article
+		color #aeaeae
+	&__price b
+		background-color #e5e5e5
+.breadcrumbs__list
+	list-style none
+	li:last-child
+		color #aba9a7
+	a
+		color #000000
+.product-image__list
+	list-style none
+.button__price
+	font-weight regular
+.equipment__list
+	list-style none
+.page-catalog
+	background-image url("../images/layer-10-copy.jpg")
+	background-position center
+	background-repeat no-repeat
+	background-color #f7f4f1
+	color #000000
+	li
+		list-style none
+	a
+		color #000000
+.catalog__item--price
+	b
+		background-color #e5e5e5
+.paginathion__item
+	a
+		color #ffffff
+		background-color #000000
+		&:hover,
+		&:focus,
+		&:active
+			background-color #663d15
+	&--curent
+		a
+			background-color #ffffff
+			color #000000
+.filter fieldset
+	border none
+.filter	legend
+	font-size 24px
+	line-height 30px
+.filter__input--chekbox + label
+	&:hover,
+	&:focus
+		color #663d15
+	&:disabled
+		color #000000
+.main-header
+	margin-bottom 36px
+.main-nav__wrapper
+	width 100%
+	background-color black
+	display flex
+	justify-content space-between
+	margin-bottom 60px
+.main-nav
+	display flex
+	flex-direction column
+	align-items center
+	margin 0
+	padding 0
+.main-header__logo
+	order 2
+	width 371
+	height 165
+.container
+	display flex
+	justify-content space-between
+	width 940px
+	margin 0 auto
+	padding 0 20px
+.main-nav__list
+	width 620px
+	margin 0
+	padding 0
+	display flex
+	flex-wrap wrap
+.main-nav__entrance
+	max-width 140px
+	margin 0
+	display flex
+	justify-content space-between
+	padding 0
+	position relative
+.main-nav__entrance .login__link
+	padding-left 50px
+.login__link::before
+	content ""
+	background url("../images/icons/login.png") no-repeat 50% 50%
+	position absolute
+	top 27px
+	left 23px
+	width 16px
+	height 18px
+	opacity 0.3
+.login__link:hover::before,
+.login__link:focus::before,
+.login__link:active::before
+	opacity 1
+
+.page
+	width 940px
+	margin 0 auto
+	padding 0 20px
+.offers
+	margin-bottom 68px
+.offers__list
+	display flex
+	justify-content space-around
+	margin 0
+	padding 0
+	text-align center
+.offers__list li
+	width 270px
+	padding 0
+.news__wrapper
+	display: flex
+	margin 0
+	padding 45px 80px 50px 71px
+	justify-content space-between
+	margin-bottom 36px
+	h2
+		margin 0
+		padding 0
+.news__list
+	list-style none
+	margin 0
+	padding 0
+.news
+	width 349px
+	margin 0
+	padding 0
+.gallery
+	margin 0
+	padding 0
+	h2
+		margin-bottom 31px
+.gallery__content
+	margin 0
+	padding 0
+	width 286px
+	height 164px
+	margin-bottom 45px
+.news__button
+	padding 10px 34px
+	width auto
+	height auto
+.news h2
+	margin-bottom 5px
+.news__description
+	margin-bottom 0
+.news ul li:nth-child(2)
+	margin-bottom 40px
+.news ul li:nth-child(1)
+	margin-bottom 30px
+.gallery__img
+	padding 0
+	margin 0
+.gallery_container
+	display flex
+	justify-content space-between
+	width 300px
+.contacts__wrapper
+	display flex
+	justify-content space-between
+	margin 0
+	padding 45px 80px 50px 71px
+	h2
+		margin 0
+		padding 0
+.contacts
+	width 325px
+.appointment
+	width 300px
+.contacts__time,
+.contacts__addresses
+	margin-bottom 0
+.contacts__button
+	padding 10px 34px
+	width auto
+	height auto
+.contacts__container
+	display flex
+	justify-content space-between
+	width 320px
+.contacts span:nth-of-type(2)
+		margin-bottom 28px
+		display inline-block
+.contacts__phone
+	display inline-block
+.footer__addresses
+	width 307px
+.footer__social
+	width 141px
+.footer__copyright
+	width 140px
+	margin 0
+	margin-left auto
+	b
+		margin-bottom 22px
+		display block
+.footer__button
+	padding 10px 28px
+	width auto
+	height auto
+.modal
+	width 460px
+	display none
+.modal-container
+	padding 43px 80px 53px
+	margin 0
+	width 300px
+	h2
+		margin 0
+.button-exit
+	width 300px
+.page-footer__wrapper
+	width 940px
+	margin 0 auto
+	padding 0 20px
+	display flex
+.footer__addresses
+	margin-right 93px
+.nav-catalog
+	flex-direction row
+	justify-content center
+	padding 23px 0
+	background-color black
+.catalog
+	margin 0
+.logo__catalog
+	order 0
+.inner
+	background none
+.product__container
+	width 1200px
+	margin 0 auto
+.product-page__wrapper
+	width 484px
+.product-description__wrapper
+	width 379px
+.product__wrapper-container
+	display flex
+	justify-content space-between
+figure.product
+	margin 0
+	padding 0
+.product-page__title
+	margin 0
+	padding 0
+.breadcrumbs__list
+	display flex
+	margin 0
+	padding 0
+.product-image__list
+	display flex
+	flex-direction row
+	padding 0
+.appointment__item
+	margin 0
+	margin-bottom 10px
+	width 140px
+	label
+		display block
+		margin 0 0 3px 17px
+	input
+		padding 8px 15px 7px 15px
+		width 140px
+		font inherit
+		border 2px solid #000101
+		background-color #f9f6f3
+		box-sizing border-box
+.appointment__form input[type='text']:focus, input[type='tel']:focus
+	border 2px solid #663d15
+.appointment p
+	margin 0
+	margin-bottom 15px
+.appointment h2
+	margin 0
+	margin-bottom 13px
+.appointment__form
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+.appointment__form input[class='button']
+	width 100%
+	margin 0
+	margin-top 4px
+	padding 0
+.footer__link
+	display flex
+	align-items center
+	justify-content center
+	width 43px
+	height 43px
+	background-color #000000
+.modal__login__item input
+	width: 300px;
+	border: 2px solid #000101;
+	background-color: #f9f6f3;
+	padding 8px 0 8px 16px
+	box-sizing border-box
+	&::placeholder
+		color black
+.forget
+	display inline-flex
+	vertical-align middle
+	text-decoration underline
+	text-transform uppercase
+.login__form label [type='checkbox']
+	position absolute
+	top 0
+	left 0
+	height 0
+	width 0
+.login__form label:nth-child(1)
+	position relative
+	padding-left 30px
+	cursor pointer
+.login-password__item
+	display: flex;
+	justify-content: space-between;
+.login__form label [type='checkbox']:before
+	content ''
+	width 20px
+	height 20px
+	border 2px solid #000101
+	position absolute
+	display inline
+	box-sizing border-box
+.login__form label [type='checkbox']:checked:before
+	content ''
+	width 20px
+	height 20px
+	border 2px solid #000101
+	position absolute
+	background #f9f6f3 url("../images/icons/cross.png") no-repeat 50% 50%
+	display inline
+	box-sizing border-box
+.modal__close
+	position absolute
+	top 0
+	right -34px
+	width 22px
+	height 22px
+	font-size 0
+	border 0
+	cursor pointer
+	background-color transparent
+	&:before
+		transform rotate(45deg)
+		content ""
+		position absolute
+		width 19px
+		height 3px
+		background-color #d0d0d0
+		top 10px
+		left 2px
+	&:after
+		content ""
+		position absolute
+		transform rotate(-45deg)
+		width 19px
+		height 3px
+		background-color #d0d0d0
+		top 10px
+		left 2px
+.modal__map
+	position fixed
+	width 768px
+	height 561px
+	margin-top -1635px
+	margin-left 235px
+	border 7px solid white
+	p
+		margin 0
+.modal-show
+	display block
+	animation-name bounce
+	animation-duration 0.6s
+
+.modal-error
+	animation-name shake
+	aimation-duration 0.6s
+
+@keyframes shake {
+	0%, 100% {transform: translateX(0);}
+	10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+	20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+
+@keyframes vibrate {
+	50% {
+		transform: rotate(360deg) scale(1.2);
+	}
+}
+
+@keyframes bounce {
+	0% { transform: translateY(-2000px);}
+	70% { transform: translateY(30px);}
+	90% { transform: translateY(-10px);}
+	100% { transform: translateY(0);}
+
+}
+
+@keyframes power {
+	0% {
+		color: #01ff70;
+	}
+	50% {
+		bcolor: #ffdc00;
+	}
+	100% {
+		color: #ff4136;
+	}
+}
+.main-nav__item a {
+	animation-name: power;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-iteration-count: infinite;
+}
+.main-nav__item a {
+	animation-name: vibrate, power, bounce;
+	animation-fill-mode: backwards;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+	animation-delay: 2s;
+}

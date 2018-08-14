@@ -1,0 +1,51 @@
+extends ../modules/head
+block title
+	| Товар
+block main
+	header.main-header
+		nav.main-nav
+			a.main-header__logo(href='index.html')
+				img.logo(src=require('../../assets/images/catalog-logo.png'), width="111" alt="logo")
+			ul.main-nav__list
+				li.main-nav__item
+					a(href='#contacts') Информация
+				li.main-nav__item
+					a(href='#') новости
+				li.main-nav__item
+					a(href='#') прайс-лсит
+				li.main-nav__item--current
+					a(href='/catalog.html') магазин
+				li.main-nav__item
+					a(href='#') контакты
+			ul.main-nav__entrance
+				li.login__link(href='#') Вход
+	main.price
+		h1 Прайс Лист
+		ul.breadcrumbs__list
+			li.breadcrumbs__item
+				a.breadcrumbs__link(href='index.html') Главная
+			li.breadcrumbs__item--current Прайс-лист
+		section.better-means
+			h2.better-means__title ИСТИННО МУЖСКАЯ КЛАССИКА
+			h3 МЫ ИСПОЛЬЗУЕМ ТОЛЬКО ЛУЧШИЕ СРЕДСТВА:
+			ul.better-means__list
+				li.better-means__item Baxter of California
+				li.better-means__item Mr Natty
+				li.better-means__item Suavecito
+				li.better-means__item Malin+Goetz
+		section.about-us
+			h3.about-us__title НЕСКОЛЬКО СЛОВ О НАС:
+			p.about-us__descripthion Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.
+		section.price__list
+			h3 ЦЕНЫ НА УСЛУГИ НАШИХ МАСТЕРОВ:
+			table.price__table
+				tr
+					td СТРИЖКА
+					td СТРИЖКА БОРОДЫ
+					td НАКРУТКА УСОВ
+				tr
+					td 1500 ₽
+					td 500 ₽
+					td 350 ₽
+			p.price__descripthion Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и свободно!
+	include ../modules/footer

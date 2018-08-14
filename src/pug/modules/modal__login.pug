@@ -1,0 +1,19 @@
+section.modal.modal__login
+	.modal-container
+		h2 Личный Кабинет
+		p.login__title ВВедите пожалуйста свой логин и пароль
+		form.login__form(action='/echo' method='post')
+			p.modal__login__item
+				label.visually-hidden(for='user-login')
+				input#user-login(type='text' name='login' required='' placeholder='ЛОГИН', src=require('../../assets/images/icons/user.png'))
+			p.modal__login__item
+				label.visually-hidden(for='user-password')
+				input.login-icon-password#user-password(type='password' name='password' required='' placeholder='ПАРОЛЬ' src=require('../../assets/images/icons/lock.png'))
+			p.login-password__item
+				label(for='remember')
+					input#remember(type='checkbox' name='remember' checked='')
+					| ЗАПОМНИТЕ МЕНЯ
+				a.forget(href='#') Я ЗАБЫЛ ПАРОЛЬ!
+			button.button.button-exit(type='submit') ВОЙТИ
+			button.modal__close(type='button') Закрыть
+
