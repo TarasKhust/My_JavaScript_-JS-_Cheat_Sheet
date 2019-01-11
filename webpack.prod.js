@@ -12,13 +12,13 @@ let UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 let ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 let SRC_DIR = path.resolve(__dirname,'src');
-let DIST_DIR = path.resolve(__dirname, './');
+let DIST_DIR = path.resolve(__dirname, './dist');
 let ASSET_PATH = process.env.ASSET_PATH || '';
 
 let conf = {
     entry: {
         app: SRC_DIR + '/app.js',
-        // contact: './src/contact.js',
+
     },
     output: {
         path: DIST_DIR,
@@ -50,6 +50,9 @@ let conf = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 // exclude: '/node_modules/'
+                query: {
+                    presets: ['es2015']
+                }
             },
             {   test: /\.css$/,
                 use: ExtractTextPlugin.extract({
@@ -62,7 +65,7 @@ let conf = {
                 test: /\.(scss|sass)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader','sass-loader'],
+                    use: ['css-loader','postcss-loader','sass-loader'],
                     // publicPath: '../'
                 })
             },
@@ -146,7 +149,7 @@ let conf = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Index',
-            template: './src/pug/pages/index.pug',
+            template: './src/index.html',
             hash: true,
             // excludeChunks: ['contact'],
             // minify: {
@@ -156,14 +159,14 @@ let conf = {
 
         new HtmlWebpackPlugin({
             title: 'Catalog',
-            template: './src/pug/pages/catalog.pug',
+            template: './src/ajax.html',
             hash: true,
-            filename: 'catalog.html',
+            filename: 'ajax.html',
             // chunks: ['contact'],
             // minify: {
             //     collapseWhitespace: true },
         }),
-        new HtmlWebpackPlugin({
+ /*       new HtmlWebpackPlugin({
             title: 'Catalog',
             template: './src/pug/pages/catalog-item.pug',
             hash: true,
@@ -180,17 +183,17 @@ let conf = {
             // chunks: ['contact'],
             // minify: {
             //     collapseWhitespace: true },
-        }),
-        new CopyWebpackPlugin(
+        }),*/
+        /*new CopyWebpackPlugin(
             [
                 { from: 'src/assets/images', to: 'images' }
             ],
             {
                 ignore: [
-                    {glob: 'svg/*'},
+                    {glob: 'svg/!*'},
                 ]
             }
-        ),
+        ),*/
         new UglifyJSPlugin ({
            sourceMap: true
         }),
@@ -212,16 +215,16 @@ let conf = {
             allChunks: true
         }),
 
-        new PurifyCSSPlugin({
-            // paths: glob.sync(path.join(__dirname, 'src/*.pug')),
+       /* new PurifyCSSPlugin({
+            // paths: glob.sync(path.join(__dirname, 'src/!*.pug')),
             paths: glob.sync([
-                path.join(__dirname, 'src/pug/**/*.pug'),
-                // path.join(__dirname, 'src/pug/modules/*.pug'),
-                // path.join(__dirname, 'src/pug/pages/*.pug'),
-                path.join(__dirname, 'src/assets/js/*.js')
+                path.join(__dirname, 'src/pug/!**!/!*.pug'),
+                // path.join(__dirname, 'src/pug/modules/!*.pug'),
+                // path.join(__dirname, 'src/pug/pages/!*.pug'),
+                path.join(__dirname, 'src/assets/js/!*.js')
             ]),
             purifyOptions: { info: true, minify: true }
-        }),
+        }),*/
     ],
 };
 

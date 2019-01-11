@@ -23,6 +23,7 @@ let conf = {
         modules: [SRC_DIR, "node_modules"],
         extensions: ['.js', '.css', '.scss']
     },
+    devtool: 'eval-source-map',
     devServer: {
         overlay: {
             warning: true,
@@ -51,11 +52,14 @@ let conf = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 // exclude: '/node_modules/'
+                query: {
+                    presets: ['es2015']
+                }
             },
             {   test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader'],
+                    use: ['css-loader?sourceMap'],
                     // publicPath: '../'
                 })
             },
@@ -63,7 +67,7 @@ let conf = {
                 test: /\.(scss|sass)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader','sass-loader'],
+                    use: ['css-loader','postcss-loader','sass-loader'],
                     // publicPath: '../'
                 })
             },
@@ -104,7 +108,7 @@ let conf = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Index',
-            template: './src/pug/pages/index.pug',
+            template: './src/index.html',
             hash: true,
             // excludeChunks: ['contact'],
             // minify: {
@@ -113,62 +117,27 @@ let conf = {
         }),
 
         new HtmlWebpackPlugin({
-            title: 'Catalog',
-            template: './src/pug/pages/catalog.pug',
+            title: 'Ajax',
+            template: './src/ajax.html',
             hash: true,
-            filename: 'catalog.html',
+            filename: 'ajax.html',
             // chunks: ['contact'],
             // minify: {
             //     collapseWhitespace: true },
         }),
-        new HtmlWebpackPlugin({
-            title: 'Catalog',
-            template: './src/pug/pages/catalog-item.pug',
-            hash: true,
-            filename: 'catalog-item.html',
-            // chunks: ['contact'],
-            // minify: {
-            //     collapseWhitespace: true },
+
+        new ExtractTextPlugin({
+            filename: 'css/style.css',
+            disable: false,
+            allChunks: true
         }),
-        new HtmlWebpackPlugin({
-            title: 'Catalog',
-            template: './src/pug/pages/price.pug',
-            hash: true,
-            filename: 'price.html',
-            // chunks: ['contact'],
-            // minify: {
-            //     collapseWhitespace: true },
-        }),
-        //
-        // new HtmlWebpackPlugin({
-        //     title: 'Form',
-        //     template: './src/pug/pages/form.pug',
-        //     hash: true,
-        //     // chunks: ['contact'],
-        //     filename: 'form.html',
-        // }),
+
 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery'
         }),
 
-        new ExtractTextPlugin({
-            filename: 'css/styles.css',
-            disable: false,
-            allChunks: true
-        }),
-
-        new PurifyCSSPlugin({
-            // paths: glob.sync(path.join(__dirname, 'src/*.pug')),
-            paths: glob.sync([
-                path.join(__dirname, 'src/pug/**/*.pug'),
-                // path.join(__dirname, 'src/assets/pug/modules/*.pug'),
-                // path.join(__dirname, 'src/assets/pug/pages/*.pug'),
-                path.join(__dirname, 'src/assets/js/*.js')
-            ]),
-            purifyOptions: { info: true, minify: false }
-        }),
         ],
 };
 

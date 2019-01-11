@@ -1,0 +1,17 @@
+{
+    "design" :[
+        {"name": "Photoshop", "price":5},
+        {"name": "Corel Draw", "price": 15},
+        {"name": "Sketch", "price": 10}
+    ],
+    "language":[
+        {"name": "Ielts", "price":5},
+        {"name": "English", "price": 15},
+        {"name": "ToEFL", "price": 10}
+    ],
+    "music":[
+        {"name": "Fl studio", "price":55},
+        {"name": "Adobe audition", "price": 15},
+        {"name": "Become a DJ", "price": 20}
+    ]
+}
