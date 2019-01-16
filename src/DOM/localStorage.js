@@ -34,6 +34,9 @@ window.addEventListener('DOMContentLoaded', () => {
         age: 25,
         tech: ['mobile', 'notebook']
     }
+    for (let key of person) {
+        console.log(key)
+    }
 
     let serializedPerson = JSON.stringify(person);
     localStorage.setItem('Alex', serializedPerson);
