@@ -23,6 +23,7 @@
   "author": "Taras Rushchak",
   "license": "MIT",
   "devDependencies": {
+    "alias-quokka-plugin": "^0.1.0",
     "autoprefixer": "^8.6.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -95,6 +96,7 @@
   "keywords": [],
   "dependencies": {
     "@glidejs/glide": "^3.2.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.1.3",

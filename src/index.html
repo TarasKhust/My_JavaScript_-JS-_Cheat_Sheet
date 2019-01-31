@@ -4,8 +4,35 @@
 <head>
 	<meta charset="utf-8">
 </head>
+<style>
+	#field {
+		width: 200px;
+		height: 150px;
+		border: 10px groove black;
+		background-color: #00FF00;
+		position: relative;
+		overflow: hidden;
+	}
+
+	#ball {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -20px;
+		margin-top: -20px;
+	}
+</style>
 
 <body>
+
+Кликните на любое место поля, чтобы мяч перелетел туда.
+<br> Мяч никогда не вылетит за границы поля.
+
+
+<div id="field">
+	<img src="https://js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+	. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+</div>
 
 <h1>Todos</h1>
 <input id="new-todo-text" type="text" placeholder="Enter something to do">
@@ -33,11 +60,18 @@
 		<button class="glide__bullet" data-glide-dir="=1"></button>
 		<button class="glide__bullet" data-glide-dir="=2"></button>
 	</div>
+	<ul class="ul">
+		<li>1</li>
+		<li>2</li>
+	</ul>
 	<template id="element-template">
 		<div class="el el-1">
 			<span></span>
 		</div>
 	</template>
+</div>
+<div id="elem" data-about="Elephant" data-user-location="street">
+	По улице прошёлся слон. Весьма красив и толст был он.
 </div>
 <div class="login-page">
 	<div class="form">
@@ -55,6 +89,7 @@
 			<button class="fa1">login</button>
 			<button class="fa">login</button>
 			<button class="modal__close" type='button'>Закрыть</button>
+			<button class="fa22">click</button>
 			<p class="message">Not registered? <a href="#">Create an account</a></p>
 		</form>
 	</div>

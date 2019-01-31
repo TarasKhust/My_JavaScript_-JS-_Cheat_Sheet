@@ -17,5 +17,5 @@ let ivan = new cardPlayer('Ivan', 'Subzero'),
 
 console.log(ivan);
 console.log(slava);
-ivan.game();
-slava.exit();
+ivan.game(); /*?*/
+slava.exit(); /*?*/
