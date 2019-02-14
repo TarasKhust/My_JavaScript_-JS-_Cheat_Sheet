@@ -1,0 +1,520 @@
+1
+00:00:00,180 --> 00:00:05,040
+All right welcome back a brand new section here and a new data structure to go along with it called
+
+2
+00:00:05,070 --> 00:00:05,950
+the heap.
+
+3
+00:00:05,970 --> 00:00:09,300
+So personally I really like heaps and hopefully you will too.
+
+4
+00:00:09,300 --> 00:00:11,320
+You'll see why I like them in just a little bit.
+
+5
+00:00:11,610 --> 00:00:16,460
+But first back to Wikipedia I showed this article a couple videos ago.
+
+6
+00:00:16,520 --> 00:00:20,700
+It's somewhere in the trees section where I was explaining that there are many groups of trees and many
+
+7
+00:00:20,700 --> 00:00:22,560
+types of trees within those groups.
+
+8
+00:00:22,650 --> 00:00:27,960
+We talked about binary trees mainly in the tree section and most specific.
+
+9
+00:00:27,960 --> 00:00:33,120
+More specifically we talked about binary search trees but there are many other types and at one point
+
+10
+00:00:33,150 --> 00:00:36,980
+I mentioned heaps so heaps are another category of trees.
+
+11
+00:00:37,110 --> 00:00:42,170
+So in this video in this section we're learning about heaps but they are trees.
+
+12
+00:00:42,240 --> 00:00:47,160
+So everything that applies to trees in general applies to heaps but there are some additional special
+
+13
+00:00:47,160 --> 00:00:48,890
+considerations or rules.
+
+14
+00:00:48,900 --> 00:00:55,980
+There are many types within heaps Fibonacci heaps Leonardo heaps a soft heap a leftist heap.
+
+15
+00:00:56,010 --> 00:01:01,620
+Sounds like something I might have to step over the morning after a San Francisco party or maybe like
+
+16
+00:01:01,720 --> 00:01:03,820
+at an event at Burning Man.
+
+17
+00:01:03,900 --> 00:01:05,490
+Anyway there are many types of heaps.
+
+18
+00:01:05,490 --> 00:01:11,070
+The one that we're really going to focus on is a binary heap and actually within binary heaps there
+
+19
+00:01:11,070 --> 00:01:15,660
+are two different types that we're going to talk about but first our objectives.
+
+20
+00:01:15,660 --> 00:01:21,780
+So we want to define what the heck a binary heap is going to compare and contrast men and Max heaps.
+
+21
+00:01:21,780 --> 00:01:26,220
+So those are the two types that I mentioned we're going to focus on then we're going to implement one
+
+22
+00:01:26,220 --> 00:01:27,840
+of them at least a max heap.
+
+23
+00:01:27,840 --> 00:01:31,360
+They're very similar and if you can implement one you can implement the other.
+
+24
+00:01:31,410 --> 00:01:36,270
+We're going to focus on writing code for a max heap and add some basic methods and then we're going
+
+25
+00:01:36,270 --> 00:01:39,670
+to understand where heaps are used in the real world.
+
+26
+00:01:39,720 --> 00:01:44,910
+And also the data structures they help us implement or different things that we can use them for in
+
+27
+00:01:44,970 --> 00:01:47,010
+other data structures that we'll learn later on.
+
+28
+00:01:47,010 --> 00:01:50,950
+So that's where we're going let's start with what is a binary heap.
+
+29
+00:01:51,060 --> 00:01:53,140
+OK so a heap is a tree structure.
+
+30
+00:01:53,160 --> 00:01:57,600
+It's very similar to a binary search tree but it has different rules.
+
+31
+00:01:57,600 --> 00:02:01,990
+So in a max binary heap the parent nodes are always larger than the children.
+
+32
+00:02:02,130 --> 00:02:05,850
+It doesn't matter if we're talking about the right child or the left child.
+
+33
+00:02:05,970 --> 00:02:08,720
+It's just that the parent is larger than the children.
+
+34
+00:02:08,760 --> 00:02:14,620
+Every level down the tree or another way of saying that all children are smaller than a parent in a
+
+35
+00:02:14,620 --> 00:02:16,290
+max binary heap.
+
+36
+00:02:16,290 --> 00:02:22,000
+The opposite is true in a binary heap where the parent note is always smaller than both children.
+
+37
+00:02:22,020 --> 00:02:27,780
+So just like a binary search tree each node can have at most two children.
+
+38
+00:02:27,780 --> 00:02:30,000
+So that's where the binary part comes from.
+
+39
+00:02:30,000 --> 00:02:34,940
+But unlike a binary search tree there is no order to the left versus the right.
+
+40
+00:02:35,070 --> 00:02:36,870
+So this is a max binary heap.
+
+41
+00:02:36,900 --> 00:02:43,620
+The Roots is the largest node with the largest number in the tree and to the left and to the right again
+
+42
+00:02:43,620 --> 00:02:44,670
+there's no order.
+
+43
+00:02:44,700 --> 00:02:48,410
+It's just that they are smaller than their parent.
+
+44
+00:02:48,480 --> 00:02:54,570
+So both of these are smaller than the parent and the same is true for both of these 18 and 27 are smaller
+
+45
+00:02:54,570 --> 00:02:57,770
+than 39 or 12 is smaller than 33.
+
+46
+00:02:58,020 --> 00:03:01,760
+But there is no relationship like we had in a binary search tree.
+
+47
+00:03:01,790 --> 00:03:05,970
+This is the exact same numbers actually just represented it in a different way.
+
+48
+00:03:05,970 --> 00:03:11,090
+41 39 33 18:27 12 same numbers but in a different order.
+
+49
+00:03:11,130 --> 00:03:13,700
+This here is a binary search tree.
+
+50
+00:03:13,830 --> 00:03:16,160
+So we have 33 to the right.
+
+51
+00:03:16,170 --> 00:03:18,740
+We have larger numbers 41 to the left.
+
+52
+00:03:18,780 --> 00:03:21,900
+We have smaller numbers like 18 to the right of 18.
+
+53
+00:03:21,900 --> 00:03:24,070
+We have a larger number to the left of 18.
+
+54
+00:03:24,090 --> 00:03:25,180
+We have a smaller number.
+
+55
+00:03:25,350 --> 00:03:27,080
+So this is a binary search tree.
+
+56
+00:03:27,090 --> 00:03:30,580
+This is not a heap because the rules have a heap.
+
+57
+00:03:30,810 --> 00:03:38,730
+If we're talking about a max binary heap every number below this number every child below 33 should
+
+58
+00:03:38,730 --> 00:03:40,300
+be smaller than 33.
+
+59
+00:03:40,470 --> 00:03:42,890
+If we're talking about men it's the opposite.
+
+60
+00:03:42,900 --> 00:03:46,630
+So this is a correct structure for a max binary heap using those numbers.
+
+61
+00:03:46,740 --> 00:03:52,410
+We have the largest number and then to the left and to the right are two smaller numbers and then each
+
+62
+00:03:52,410 --> 00:03:56,730
+one of those has a left and a right that must be smaller than the parent.
+
+63
+00:03:57,050 --> 00:03:57,510
+OK.
+
+64
+00:03:58,370 --> 00:04:00,640
+So here's a couple of rules written out.
+
+65
+00:04:00,650 --> 00:04:02,420
+Each parent has at most two nodes.
+
+66
+00:04:02,420 --> 00:04:08,030
+That's where the binary part comes from the value of each parent node is always greater in a max binary
+
+67
+00:04:08,030 --> 00:04:08,420
+heap.
+
+68
+00:04:08,420 --> 00:04:09,970
+That's what we're really focusing on here.
+
+69
+00:04:10,130 --> 00:04:15,570
+But the opposite is true in a min binary heap in a max heap the parent is always greater than the children.
+
+70
+00:04:15,590 --> 00:04:22,690
+But there are no guarantees between the siblings and also a binary heap is as compact as possible.
+
+71
+00:04:22,760 --> 00:04:26,620
+So unlike a binary search tree where you can just keep adding on.
+
+72
+00:04:26,690 --> 00:04:31,250
+I showed you some depressing binary search trees that were basically it looks like a length list.
+
+73
+00:04:31,250 --> 00:04:33,810
+They were very one sided in a binary heap.
+
+74
+00:04:33,830 --> 00:04:36,710
+It always takes up the least amount of space possible.
+
+75
+00:04:36,860 --> 00:04:40,040
+So every left and right is filled before we move down.
+
+76
+00:04:40,130 --> 00:04:42,360
+And also along those lines left.
+
+77
+00:04:42,410 --> 00:04:43,900
+Children are always filled out first.
+
+78
+00:04:43,910 --> 00:04:45,510
+So we'll come back to this.
+
+79
+00:04:45,680 --> 00:04:47,120
+Let's just quickly recap.
+
+80
+00:04:47,120 --> 00:04:49,280
+So this is a max binary heap.
+
+81
+00:04:49,380 --> 00:04:53,730
+Largest number up top to the left and to the right are smaller numbers.
+
+82
+00:04:53,810 --> 00:04:59,490
+But it's important to note these aren't necessarily the second largest numbers in the entire heap.
+
+83
+00:04:59,570 --> 00:05:07,570
+For example 25 and 36 are the two next largest numbers but they are not on the same tier.
+
+84
+00:05:07,910 --> 00:05:10,310
+It's just any number smaller on the left.
+
+85
+00:05:10,310 --> 00:05:14,350
+Any number smaller on the right and then the same applies all the way down.
+
+86
+00:05:14,510 --> 00:05:18,490
+So it happens that we have 36 here and 25 in one.
+
+87
+00:05:18,800 --> 00:05:23,370
+Both of those are smaller than the parent even if 25 is larger than 19.
+
+88
+00:05:23,390 --> 00:05:27,300
+It doesn't make its way over here and we'll talk about how this all works.
+
+89
+00:05:27,380 --> 00:05:29,430
+But just remember the only rule.
+
+90
+00:05:29,690 --> 00:05:35,720
+Well aside from the fact that each node can have two children at most the only real rule is a max binary
+
+91
+00:05:35,720 --> 00:05:36,230
+heap.
+
+92
+00:05:36,350 --> 00:05:39,700
+A child must be smaller than the parent.
+
+93
+00:05:39,710 --> 00:05:42,840
+So again no implied ordering between siblings.
+
+94
+00:05:42,860 --> 00:05:48,230
+We can't figure out if you know this by default is smaller than this or that this is larger than that
+
+95
+00:05:48,440 --> 00:05:50,870
+like we could in a binary search tree.
+
+96
+00:05:50,930 --> 00:05:55,070
+There is no real relationship here other than two siblings.
+
+97
+00:05:55,220 --> 00:05:57,050
+We know they're smaller than the parent.
+
+98
+00:05:57,560 --> 00:05:59,920
+And then also here's a binary heap.
+
+99
+00:06:00,050 --> 00:06:03,250
+Same idea except we're working the opposite direction.
+
+100
+00:06:03,320 --> 00:06:06,450
+The smallest node up top and then both children.
+
+101
+00:06:06,530 --> 00:06:09,730
+The only rule is that they are larger than the parent.
+
+102
+00:06:09,740 --> 00:06:10,560
+Same thing here.
+
+103
+00:06:10,610 --> 00:06:15,290
+But again there is no relationship between siblings other than the fact that they are larger than their
+
+104
+00:06:15,290 --> 00:06:15,820
+parent.
+
+105
+00:06:15,950 --> 00:06:16,250
+All right.
+
+106
+00:06:16,250 --> 00:06:18,370
+So lastly why should you care about hips.
+
+107
+00:06:18,380 --> 00:06:19,420
+Why do you need to know this.
+
+108
+00:06:19,580 --> 00:06:23,960
+Well we'll come back to this once we actually learn how to implement them because we're going to learn
+
+109
+00:06:23,960 --> 00:06:29,590
+to implement something called a priority queue using a heap heaps really commonly used to do this.
+
+110
+00:06:29,600 --> 00:06:31,010
+That's all I'm going to say for now.
+
+111
+00:06:31,070 --> 00:06:35,030
+If you want to research what a priority queue is you can but we will be implementing one using a heap
+
+112
+00:06:35,030 --> 00:06:38,180
+in just a bit but they are very commonly used data structure.
+
+113
+00:06:38,180 --> 00:06:42,530
+Basically think of a cue where we can add things in and take them out and keep track of things to do
+
+114
+00:06:42,530 --> 00:06:47,990
+in an order where we can also assign a priority and importance level to each item.
+
+115
+00:06:48,260 --> 00:06:52,930
+And it will move to the correct spot in the queue depending on its importance level importance level.
+
+116
+00:06:53,120 --> 00:06:54,400
+So we'll come back to that.
+
+117
+00:06:54,410 --> 00:06:58,960
+They are commonly used and they're also used quite a bit with something called graph traversal.
+
+118
+00:06:59,120 --> 00:07:00,940
+So we saw how to traverse a tree.
+
+119
+00:07:01,040 --> 00:07:03,890
+We're going to learn how to traverse a graph which is a little more complicated.
+
+120
+00:07:03,980 --> 00:07:05,980
+And hips are often used to assist with that.
+
+121
+00:07:06,170 --> 00:07:08,150
+But really this is just a high level overview.
+
+122
+00:07:08,270 --> 00:07:11,590
+We're going to first learn to implement heaps and then we'll come back to priority queues.
+
+123
+00:07:11,600 --> 00:07:14,310
+But just no that's really the main motivation.
+
+124
+00:07:14,420 --> 00:07:16,790
+They're used all the time for priority queues.
+
+125
+00:07:16,790 --> 00:07:17,890
+That's why I added this.
+
+126
+00:07:17,910 --> 00:07:18,720
+Come back to this.
+
+127
+00:07:18,830 --> 00:07:22,870
+OK so next we're going to learn why I like heaps why I think they're kind of fun.
+
+128
+00:07:22,880 --> 00:07:28,160
+There's sort of a cute little way that we can store them or represent them using a data structure that
+
+129
+00:07:28,220 --> 00:07:29,360
+already exists.
+
+130
+00:07:29,620 --> 00:07:30,590
+So that's coming up next.
+

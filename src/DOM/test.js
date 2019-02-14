@@ -1,11 +1,11 @@
-let user = {
-    name: 'John'
+'use strict';
+let goods = ['foods', 'fruits', 'technics', 'phones', 'computers'];
+
+const deletedValue = () => {
+	goods = goods.filter(value => value !== 'technics')
 };
 
-function sayName(surname, ola) {
-    console.log(this); //Call
-    console.log(` ${this.name} ${surname} ${ola}`); //Apply
-}
+deletedValue();
+/*?*/
 
-console.log(sayName.call(user, 'Olaha'));
-console.log(sayName.apply(user, ['Snow', 'Alll']));
+goods

@@ -1,0 +1,696 @@
+1
+00:00:00,190 --> 00:00:03,090
+OK so let's try writing our own selection sort.
+
+2
+00:00:03,480 --> 00:00:08,670
+So I have another snippet called sorting selection and I'm going to start by just defining a function
+
+3
+00:00:08,670 --> 00:00:11,010
+I'll call it a selection sort.
+
+4
+00:00:11,550 --> 00:00:13,090
+And it takes an array.
+
+5
+00:00:13,800 --> 00:00:17,230
+And at the end we're going to return that array.
+
+6
+00:00:17,280 --> 00:00:20,580
+So let's say we're going to call it on the array.
+
+7
+00:00:20,600 --> 00:00:28,020
+Mean to do even numbers this time 10 and I'll add a single odd number at the end there and 17.
+
+8
+00:00:28,220 --> 00:00:28,880
+OK.
+
+9
+00:00:29,460 --> 00:00:31,820
+So this is what we're going to test it out with.
+
+10
+00:00:32,580 --> 00:00:37,740
+So what we want to do to start is we can just start by looping over every item.
+
+11
+00:00:37,830 --> 00:00:39,720
+That's a pretty standard place to start.
+
+12
+00:00:39,720 --> 00:00:42,660
+So for far i equals zero.
+
+13
+00:00:42,660 --> 00:00:48,100
+I less than a radar link plus plus.
+
+14
+00:00:48,550 --> 00:00:49,180
+OK.
+
+15
+00:00:49,410 --> 00:00:54,990
+And if we look at our pseudo code store the first element as the smallest value we've seen so far.
+
+16
+00:00:54,990 --> 00:01:02,860
+So let's make a variable and we'll just call it lowest or men and we're going to set it equal to I.
+
+17
+00:01:02,970 --> 00:01:06,800
+So that's the position of the smallest element at least at the beginning.
+
+18
+00:01:06,800 --> 00:01:07,540
+We don't know any better.
+
+19
+00:01:07,540 --> 00:01:09,980
+So this is the smallest thing we've seen it's the only thing.
+
+20
+00:01:10,080 --> 00:01:15,390
+And what we want to do is compare that to the next item after it and then next item after that and after
+
+21
+00:01:15,390 --> 00:01:22,870
+that and after that and if at any point we find of value that smaller then we are going to change lowest.
+
+22
+00:01:22,890 --> 00:01:26,200
+So let's do another loop to make that work.
+
+23
+00:01:26,310 --> 00:01:28,150
+Let's go with the J.
+
+24
+00:01:28,620 --> 00:01:33,980
+And we're going to set J rather than 0 because remember we don't want to base.
+
+25
+00:01:34,020 --> 00:01:35,710
+We don't need to loop over every part.
+
+26
+00:01:35,790 --> 00:01:41,910
+So if let me put this in a better way if we're starting here with our first outer loop I is referencing
+
+27
+00:01:41,910 --> 00:01:42,470
+here.
+
+28
+00:01:42,660 --> 00:01:44,210
+We don't want to compare it to i.
+
+29
+00:01:44,250 --> 00:01:47,710
+Again what we want to compare it to is I plus 1.
+
+30
+00:01:47,730 --> 00:01:52,360
+We want to compare it to this or if we're at this point in the array.
+
+31
+00:01:52,410 --> 00:01:56,850
+So if I it's now two these two are already sorted.
+
+32
+00:01:56,850 --> 00:02:01,580
+We don't want to start comparing i of 2 to J of 0.
+
+33
+00:02:01,590 --> 00:02:06,890
+We want to compare to 19 which means that we need to go one higher than whatever is.
+
+34
+00:02:07,110 --> 00:02:12,910
+So we can just do J equals I plus 1 like that and then we'll do.
+
+35
+00:02:12,910 --> 00:02:18,660
+While J is less than a great length J plus plus
+
+36
+00:02:22,610 --> 00:02:29,060
+perfect and if we just add a simple constant log just to show what we're looking at let's just do i
+
+37
+00:02:29,060 --> 00:02:29,640
+and j.
+
+38
+00:02:29,750 --> 00:02:33,930
+So you can see the comparisons that happen and we execute this.
+
+39
+00:02:33,980 --> 00:02:41,110
+So no sorting happens but we start by comparing 0 to 1 0 2 2 0 2 3 0 to 4.
+
+40
+00:02:41,390 --> 00:02:48,980
+Then the next time through we're going to compare one to two one to three in one to four and then two
+
+41
+00:02:48,980 --> 00:02:49,370
+to three.
+
+42
+00:02:49,370 --> 00:02:50,370
+Two to four.
+
+43
+00:02:50,600 --> 00:02:52,680
+And then finally three to four.
+
+44
+00:02:52,700 --> 00:02:53,850
+So this is working.
+
+45
+00:02:53,870 --> 00:02:57,190
+I mean we're not doing any sorting but these are the comparisons we want.
+
+46
+00:02:57,320 --> 00:02:59,530
+We don't want to we don't want to.
+
+47
+00:02:59,540 --> 00:03:06,110
+For example after our first pass compared 0 to 1 to 2 to 3 to 4 and then start over and compare zero
+
+48
+00:03:06,110 --> 00:03:06,560
+again.
+
+49
+00:03:06,650 --> 00:03:11,180
+We don't want to ever look at this element because whatever is here at the end will be sorted.
+
+50
+00:03:11,180 --> 00:03:13,240
+It will be the smallest value that self-selection.
+
+51
+00:03:13,250 --> 00:03:14,260
+So it works.
+
+52
+00:03:14,270 --> 00:03:19,410
+So now we just need a simple condition on here to check with the value of the array is at the lowest
+
+53
+00:03:20,360 --> 00:03:24,260
+and then compare that to the value of the array at J.
+
+54
+00:03:24,530 --> 00:03:33,830
+So we're going to have a array of lowest and then array of Jay like that and we want to know if we could
+
+55
+00:03:34,040 --> 00:03:40,430
+we could do this either way we can say if array of J is less than half lowest or if our current lowest
+
+56
+00:03:40,430 --> 00:03:42,740
+is greater than the array of J.
+
+57
+00:03:42,980 --> 00:03:45,260
+I actually prefer.
+
+58
+00:03:46,280 --> 00:03:51,530
+Logically I think it makes that sense this way because we're looking.
+
+59
+00:03:51,730 --> 00:03:52,030
+OK.
+
+60
+00:03:52,080 --> 00:03:53,550
+And we're looking for the lowest items.
+
+61
+00:03:53,570 --> 00:03:54,690
+I like to do it this way.
+
+62
+00:03:54,830 --> 00:04:00,900
+If the array of J is less than our current lowest remember the lowest it's just a number like 0.
+
+63
+00:04:01,130 --> 00:04:07,100
+So our first time through if we walk through this eye is zero which means lowest to zero.
+
+64
+00:04:07,280 --> 00:04:09,420
+And then J is going to start at 1.
+
+65
+00:04:09,470 --> 00:04:16,560
+So we compare if array of J is less than array of lowest is a range of one less than array of 0.
+
+66
+00:04:16,760 --> 00:04:17,890
+Yes it is.
+
+67
+00:04:17,900 --> 00:04:22,770
+So if that's the case we're going to lowest now to be equal to J.
+
+68
+00:04:23,120 --> 00:04:25,300
+So we've now updated the value of lowest.
+
+69
+00:04:25,520 --> 00:04:29,390
+So if we walked through we started the beginning with I set to 0.
+
+70
+00:04:29,480 --> 00:04:35,680
+J is 1 and lowest is now going to be 1 because we just updated it.
+
+71
+00:04:35,750 --> 00:04:37,220
+So it's referring to this item.
+
+72
+00:04:37,460 --> 00:04:41,460
+But next time through we have I it's still zero.
+
+73
+00:04:41,720 --> 00:04:43,050
+What is J now.
+
+74
+00:04:43,310 --> 00:04:45,990
+Well J is going up by 1 so j is 2.
+
+75
+00:04:46,310 --> 00:04:54,180
+So if we compare array of two to array of lowest which is one that's comparing these two now 10 is smaller.
+
+76
+00:04:54,260 --> 00:05:01,070
+So we're going to set lowest equal to J which means lowest is now to right index of 2.
+
+77
+00:05:01,070 --> 00:05:07,430
+Now we could repeat this and if we did we would go is 0 still J is now going to be 3 but the lowest
+
+78
+00:05:07,670 --> 00:05:13,730
+is still 2 because 19 is not great or 10 is not less than 19.
+
+79
+00:05:13,730 --> 00:05:15,950
+One more time is zero.
+
+80
+00:05:16,250 --> 00:05:23,420
+Jay is going to be for looking at the last item and the check is array of J which is 17 is that less
+
+81
+00:05:23,420 --> 00:05:25,760
+than array of lowest array of lowest.
+
+82
+00:05:25,880 --> 00:05:27,070
+Going to give us 10.
+
+83
+00:05:27,260 --> 00:05:28,400
+Nope that's not true.
+
+84
+00:05:28,400 --> 00:05:29,950
+So we don't updated.
+
+85
+00:05:30,020 --> 00:05:31,290
+Lowest is still too.
+
+86
+00:05:31,520 --> 00:05:37,700
+So what we've done now is we figured out the index at the end of this loop here we know that the lowest
+
+87
+00:05:37,700 --> 00:05:43,310
+index of the item that has the lowest value index is equal to 2.
+
+88
+00:05:43,310 --> 00:05:47,270
+In this case now what we need to do is swap.
+
+89
+00:05:47,300 --> 00:05:53,270
+So if you look at the pseudo code what we do is take the value we initially started with where we first
+
+90
+00:05:53,270 --> 00:05:54,980
+began which was the first item.
+
+91
+00:05:54,980 --> 00:06:00,150
+Right now we swapped that with the position of the lowest item.
+
+92
+00:06:00,620 --> 00:06:09,330
+So that means we're going to swap zero into this and this and to do the swap we can do it many many
+
+93
+00:06:09,330 --> 00:06:16,980
+ways we could do it with our tempo so we could make tempo equal to let's do array of eye and then reset
+
+94
+00:06:17,370 --> 00:06:25,240
+array of I is now equal to array of lowest and then we do a array of lowest.
+
+95
+00:06:25,680 --> 00:06:31,500
+If I could spell equal to 10 and that are semi-colons.
+
+96
+00:06:31,560 --> 00:06:34,310
+So hopefully the swapping itself for logic makes sense.
+
+97
+00:06:34,470 --> 00:06:37,050
+You can of course use the fancier syntax as well.
+
+98
+00:06:37,110 --> 00:06:40,160
+Also the same solution written in East 2015 at the end.
+
+99
+00:06:40,530 --> 00:06:44,810
+OK so this should give us a swap and see what happens.
+
+100
+00:06:44,820 --> 00:06:47,180
+Let's just take a look at what we get printed out.
+
+101
+00:06:47,190 --> 00:06:48,530
+Let's go through.
+
+102
+00:06:48,540 --> 00:06:54,810
+At the end of each time to do constitute a log array just like that.
+
+103
+00:06:55,080 --> 00:07:03,270
+And actually rather than just doing this with a free print I mean to do a concert log array and then
+
+104
+00:07:03,620 --> 00:07:05,170
+it's going to be kind of annoying.
+
+105
+00:07:05,440 --> 00:07:13,730
+Out log swapping to and then constant like the array afterwards.
+
+106
+00:07:13,880 --> 00:07:14,570
+OK.
+
+107
+00:07:14,760 --> 00:07:19,770
+And then to make it easier to see what's happening each time there's a lot of work just to show you
+
+108
+00:07:19,770 --> 00:07:23,430
+what's happening and you probably already know what's happening.
+
+109
+00:07:23,460 --> 00:07:26,520
+But I'm just going to put these dividers in there so we can see.
+
+110
+00:07:26,930 --> 00:07:33,620
+OK so now if we run this and I'm going to make my cancel larger.
+
+111
+00:07:34,030 --> 00:07:35,960
+Where do we start.
+
+112
+00:07:36,090 --> 00:07:36,900
+Here we go.
+
+113
+00:07:37,320 --> 00:07:37,620
+All right.
+
+114
+00:07:37,620 --> 00:07:38,830
+So what happens.
+
+115
+00:07:38,970 --> 00:07:43,420
+We start with this state and we make a swap Here's our first swap we moved 10 to the beginning.
+
+116
+00:07:43,620 --> 00:07:49,960
+So then we start with that state and we're looking at these and we move what we move 17 to the beginning
+
+117
+00:07:50,400 --> 00:07:51,400
+as you can see there.
+
+118
+00:07:51,420 --> 00:07:54,870
+Now we're looking at these three at the end and 19 is the smallest.
+
+119
+00:07:54,870 --> 00:07:58,860
+So we move 19 to the beginning as you can see now we have these two.
+
+120
+00:07:59,280 --> 00:08:00,190
+And what do we do.
+
+121
+00:08:00,360 --> 00:08:03,550
+We swap 22 to the beginning.
+
+122
+00:08:03,550 --> 00:08:06,070
+All right now we have one element left.
+
+123
+00:08:06,390 --> 00:08:07,470
+And what are we doing.
+
+124
+00:08:07,740 --> 00:08:10,420
+Well we're still swapping 34 as the men.
+
+125
+00:08:10,580 --> 00:08:12,440
+And you can see our code is still running.
+
+126
+00:08:12,480 --> 00:08:15,090
+We're swapping 34 and 34.
+
+127
+00:08:15,330 --> 00:08:17,490
+And then this is the return value at the end.
+
+128
+00:08:17,490 --> 00:08:22,220
+So the code works which is good at the end we get the sorted array and it is selection sort but there's
+
+129
+00:08:22,320 --> 00:08:27,650
+a change we can make which actually I think will be better illustrated if for example if I did this
+
+130
+00:08:27,650 --> 00:08:28,370
+is zero.
+
+131
+00:08:28,440 --> 00:08:35,700
+And then two at the beginning of this list and I guess we can keep this actually I'm going to get rid
+
+132
+00:08:35,700 --> 00:08:37,680
+of this because it takes up so much space.
+
+133
+00:08:37,750 --> 00:08:39,000
+I'm going to cancel that log.
+
+134
+00:08:39,000 --> 00:08:46,590
+The items that were swapping sconces the log I and the lowest end we'll see what happens when we clear
+
+135
+00:08:46,590 --> 00:08:51,020
+my counsel rerun it make this bigger.
+
+136
+00:08:51,510 --> 00:08:56,990
+So the first time through if we look at what that list looks like the men is zero.
+
+137
+00:08:57,000 --> 00:08:59,310
+But we go all the way through the list because we don't know that.
+
+138
+00:08:59,310 --> 00:09:05,760
+And we find out that 0 is the men who we still swap index of zero with index of 0 and that results in
+
+139
+00:09:05,760 --> 00:09:06,090
+nothing.
+
+140
+00:09:06,090 --> 00:09:06,820
+We're doing this.
+
+141
+00:09:06,840 --> 00:09:14,010
+This is unnecessary because we found that I was actually the same as the lowest and the same thing happens
+
+142
+00:09:14,010 --> 00:09:14,690
+again.
+
+143
+00:09:14,730 --> 00:09:21,250
+Next item index of one is our eye and we set the men to be are the lowest to be one as well.
+
+144
+00:09:21,270 --> 00:09:23,550
+We go all the way through and there's nothing smaller.
+
+145
+00:09:23,550 --> 00:09:30,110
+So at the end I and lowest are the same and we still do a swap and actually you can see that happens
+
+146
+00:09:30,110 --> 00:09:30,760
+at the end.
+
+147
+00:09:30,800 --> 00:09:36,510
+Well we have one thing left 17 where we still swaps 17 with 17.
+
+148
+00:09:36,540 --> 00:09:41,780
+So a slight change that we can make to fix that is just do a check.
+
+149
+00:09:42,020 --> 00:09:43,960
+I actually think it put this in the pseudo codea.
+
+150
+00:09:44,100 --> 00:09:47,780
+If the minimum is not the value you initially begin and then swap them.
+
+151
+00:09:47,790 --> 00:09:49,900
+Right now we're just swapping no matter what.
+
+152
+00:09:49,950 --> 00:09:56,400
+So we just add a conditional if and we'll just do if I is not equal to lowest.
+
+153
+00:09:57,000 --> 00:10:02,100
+If that's the case we're going to do or swap.
+
+154
+00:10:02,100 --> 00:10:08,330
+So if I rerun this piece clear down here we run here.
+
+155
+00:10:08,340 --> 00:10:08,970
+There we go.
+
+156
+00:10:08,970 --> 00:10:11,370
+Now you can see we're only making four swaps.
+
+157
+00:10:11,370 --> 00:10:12,630
+We didn't make a swap here.
+
+158
+00:10:12,630 --> 00:10:16,960
+We didn't make a swap here but then we made one and we made two.
+
+159
+00:10:17,040 --> 00:10:19,000
+They made three and we made four.
+
+160
+00:10:19,170 --> 00:10:20,030
+And then that was it.
+
+161
+00:10:20,100 --> 00:10:20,740
+We're done.
+
+162
+00:10:21,060 --> 00:10:21,330
+OK.
+
+163
+00:10:21,330 --> 00:10:22,760
+So I have the same code.
+
+164
+00:10:22,890 --> 00:10:28,350
+Get rid of the consulate log but written with yes 20:15 syntax.
+
+165
+00:10:28,800 --> 00:10:33,450
+So if you prefer that I brought swap out into its own little function appear.
+
+166
+00:10:33,690 --> 00:10:37,100
+And now if you look at our logic on here it's pretty short.
+
+167
+00:10:37,100 --> 00:10:41,370
+You can do it on a single line which I could've done the same thing I could've moved all of this into
+
+168
+00:10:41,370 --> 00:10:43,270
+its own function called swap as well.
+
+169
+00:10:43,500 --> 00:10:49,220
+But here are two versions and pick whatever you like I'm using the newer way of swapping data.
+
+170
+00:10:49,710 --> 00:10:54,490
+So same thing the loop over each item set Lois to be I.
+
+171
+00:10:54,820 --> 00:10:59,610
+Then we start J at I plus 1 and then we just check.
+
+172
+00:10:59,610 --> 00:11:04,260
+I actually did the reverse logic or the reverse comparison I checked if lowest was greater an array
+
+173
+00:11:04,260 --> 00:11:08,760
+of day appear I did it for Ray-J is less than I means the same thing.
+
+174
+00:11:08,880 --> 00:11:14,070
+And then we just reset lowest and then at the end if I is not equal to lowest swap them.
+

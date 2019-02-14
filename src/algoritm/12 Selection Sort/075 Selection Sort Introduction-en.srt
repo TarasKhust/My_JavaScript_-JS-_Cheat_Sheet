@@ -1,0 +1,508 @@
+1
+00:00:00,240 --> 00:00:01,370
+Hey welcome back.
+
+2
+00:00:01,470 --> 00:00:03,930
+In this video I'm going to introduce a selection sort.
+
+3
+00:00:03,930 --> 00:00:05,660
+Our next sorting algorithm.
+
+4
+00:00:05,880 --> 00:00:11,640
+So I wrote down that it's similar to bubble sort but instead of first placing the large values into
+
+5
+00:00:11,640 --> 00:00:17,320
+a sorted position at the end of the array we place small values into a sort of position one at a time.
+
+6
+00:00:17,340 --> 00:00:18,900
+So we're building the array.
+
+7
+00:00:19,050 --> 00:00:25,800
+We're still moving from the beginning to the end but the actual sorted data is accumulating at the beginning.
+
+8
+00:00:25,800 --> 00:00:28,260
+So let me give you an example of how it works.
+
+9
+00:00:28,320 --> 00:00:31,570
+We go through Here's a single pass so we have this array.
+
+10
+00:00:31,710 --> 00:00:36,210
+We start at the beginning and what we're going to do is go all the way through looking for the minimum
+
+11
+00:00:36,210 --> 00:00:39,000
+value and then we're going to put that at the front.
+
+12
+00:00:39,660 --> 00:00:43,460
+So for example we start with five and three which one is the smallest while three.
+
+13
+00:00:43,530 --> 00:00:48,330
+So three is going to be our minimum for now which is what the Green means.
+
+14
+00:00:48,330 --> 00:00:52,310
+But then we now compared to four which is a minimum.
+
+15
+00:00:52,410 --> 00:00:54,300
+It's still three.
+
+16
+00:00:54,360 --> 00:00:57,900
+So now we compare it to 1 which is a minimum.
+
+17
+00:00:57,900 --> 00:00:59,360
+Well now it's 1.
+
+18
+00:00:59,500 --> 00:01:00,890
+So you can see one is great now.
+
+19
+00:01:00,900 --> 00:01:02,080
+So that's our new men.
+
+20
+00:01:02,130 --> 00:01:05,730
+Now we compare one in two which one is the minimum one is.
+
+21
+00:01:05,730 --> 00:01:12,600
+So what we do now that we've hit the end is we swap we take whatever the minimum element was with whatever
+
+22
+00:01:12,600 --> 00:01:14,290
+we started with.
+
+23
+00:01:14,370 --> 00:01:19,260
+And so now we've put the smallest item in the array at the beginning compared to bubble sort.
+
+24
+00:01:19,260 --> 00:01:24,600
+Where we go through and we swap swap potentially to push the largest element the greatest value to the
+
+25
+00:01:24,600 --> 00:01:27,400
+very end selection sort builds it the other way.
+
+26
+00:01:27,540 --> 00:01:31,560
+We find the minimum swap at the end and put it at the beginning.
+
+27
+00:01:31,560 --> 00:01:36,550
+So let's walk through on vidual go visual go.
+
+28
+00:01:36,970 --> 00:01:42,390
+However you say this visual algorithms and I have a small data set here.
+
+29
+00:01:42,500 --> 00:01:45,540
+If we step through we start at the very beginning.
+
+30
+00:01:45,600 --> 00:01:51,170
+This is our first position and we set a minimum value to be 19.
+
+31
+00:01:51,240 --> 00:01:53,610
+So that's the smallest value we've seen so far.
+
+32
+00:01:53,610 --> 00:01:57,540
+Next we compare it to the value next to it 44.
+
+33
+00:01:57,560 --> 00:01:58,670
+Is there a new minimum.
+
+34
+00:01:58,770 --> 00:02:01,260
+Nope 19 is still our minimum.
+
+35
+00:02:01,260 --> 00:02:03,870
+Now we move on and compare it to 38.
+
+36
+00:02:03,870 --> 00:02:04,930
+Is there a new minimum.
+
+37
+00:02:04,950 --> 00:02:05,620
+No.
+
+38
+00:02:05,640 --> 00:02:07,410
+19 is still the smallest.
+
+39
+00:02:07,410 --> 00:02:08,660
+Now he gets a 5.
+
+40
+00:02:08,790 --> 00:02:12,000
+And we compare them five is now the new minimum.
+
+41
+00:02:12,210 --> 00:02:13,800
+So that's our new men.
+
+42
+00:02:13,860 --> 00:02:14,550
+We move on.
+
+43
+00:02:14,580 --> 00:02:16,260
+We compare it to 47.
+
+44
+00:02:16,260 --> 00:02:16,910
+No.
+
+45
+00:02:16,920 --> 00:02:18,030
+5 is still smaller.
+
+46
+00:02:18,030 --> 00:02:19,140
+Same thing with 15.
+
+47
+00:02:19,170 --> 00:02:20,250
+We've now hit the end.
+
+48
+00:02:20,250 --> 00:02:22,890
+We know that the smallest element in there is five.
+
+49
+00:02:22,920 --> 00:02:24,910
+So what we do we started here.
+
+50
+00:02:25,020 --> 00:02:30,330
+So we now swap the smallest element as you can see we have two things selected the beginning where we
+
+51
+00:02:30,330 --> 00:02:35,470
+started and the smallest element and we swapped them and now we start over.
+
+52
+00:02:35,770 --> 00:02:37,680
+But this time we start from 44.
+
+53
+00:02:37,690 --> 00:02:41,650
+So I think that's just showing us that this part is now sorted.
+
+54
+00:02:41,710 --> 00:02:42,740
+We don't have to care about it.
+
+55
+00:02:42,880 --> 00:02:44,570
+So we move on 44.
+
+56
+00:02:44,610 --> 00:02:45,270
+We compare.
+
+57
+00:02:45,280 --> 00:02:47,070
+OK the minimum now is 38.
+
+58
+00:02:47,080 --> 00:02:49,090
+Now the minimum is going to be 19.
+
+59
+00:02:49,120 --> 00:02:50,250
+Now it's still 19.
+
+60
+00:02:50,260 --> 00:02:51,270
+Now it's 15.
+
+61
+00:02:51,430 --> 00:02:53,100
+So the new man is 15.
+
+62
+00:02:53,380 --> 00:02:56,070
+So we swap it with 44.
+
+63
+00:02:56,080 --> 00:02:56,880
+There we go.
+
+64
+00:02:57,130 --> 00:02:57,560
+OK.
+
+65
+00:02:57,640 --> 00:02:59,260
+So now the first two things are sorted.
+
+66
+00:02:59,260 --> 00:03:01,150
+Now we move on 38.
+
+67
+00:03:01,170 --> 00:03:07,150
+19 19 is the men 19 and 47 19 still smallest and 19 is still smallest.
+
+68
+00:03:07,150 --> 00:03:09,830
+We swap 19 and 38.
+
+69
+00:03:10,360 --> 00:03:10,750
+All right.
+
+70
+00:03:10,750 --> 00:03:12,880
+Troy hopefully you get the idea from here.
+
+71
+00:03:12,880 --> 00:03:13,510
+Keep going.
+
+72
+00:03:13,510 --> 00:03:19,010
+Find a man in that place in that example the men was what we started with 38.
+
+73
+00:03:19,120 --> 00:03:23,550
+Now we just have to swap the last two and we're done.
+
+74
+00:03:23,950 --> 00:03:25,760
+So that's selection sort.
+
+75
+00:03:25,840 --> 00:03:30,790
+We are going through and selecting the smallest element the minimum and then putting it at the beginning.
+
+76
+00:03:30,940 --> 00:03:32,800
+Oh and actually this hasn't finished officially.
+
+77
+00:03:32,800 --> 00:03:33,280
+There you go.
+
+78
+00:03:33,280 --> 00:03:35,360
+Now instead we have a sorted array.
+
+79
+00:03:35,500 --> 00:03:37,840
+So as far as the code for selection sort.
+
+80
+00:03:37,840 --> 00:03:39,750
+It's actually not that bad.
+
+81
+00:03:39,790 --> 00:03:40,250
+We have.
+
+82
+00:03:40,270 --> 00:03:42,240
+So we reuse the swap code.
+
+83
+00:03:42,310 --> 00:03:46,780
+So if you made a function for swapping in the last video and bubble sort where you want to use the one
+
+84
+00:03:46,780 --> 00:03:50,290
+that I made then we don't have to worry about the swap logic.
+
+85
+00:03:50,290 --> 00:03:52,240
+So let's walk through some of the pseudo code.
+
+86
+00:03:52,610 --> 00:03:52,930
+OK.
+
+87
+00:03:52,960 --> 00:03:58,180
+So the first thing you want to do is make a variable to store the minimum value and at the beginning
+
+88
+00:03:58,330 --> 00:04:01,720
+you can set that equal to just the first item you have to start somewhere.
+
+89
+00:04:01,840 --> 00:04:07,000
+So the first thing in the array is our smallest value of this only thing we've seen then what we do
+
+90
+00:04:07,030 --> 00:04:09,760
+is we go through and we compare it to the next item.
+
+91
+00:04:09,760 --> 00:04:11,620
+If that next item is smaller.
+
+92
+00:04:11,770 --> 00:04:16,330
+Now we update the value of the minimum variable to be that next item.
+
+93
+00:04:16,510 --> 00:04:23,140
+And if it's not smaller we keep going and if we at any point find a new smaller value we save that to
+
+94
+00:04:23,140 --> 00:04:24,100
+the minimum.
+
+95
+00:04:24,100 --> 00:04:25,730
+Now what are we actually saving.
+
+96
+00:04:26,020 --> 00:04:29,680
+Well we're not actually saving the value itself.
+
+97
+00:04:29,680 --> 00:04:32,730
+What we're going to save is the index of where that value is found.
+
+98
+00:04:32,890 --> 00:04:34,630
+So then we can swap.
+
+99
+00:04:34,720 --> 00:04:37,180
+So we don't care if the value is 20.
+
+100
+00:04:37,210 --> 00:04:38,700
+We want to know where it is.
+
+101
+00:04:38,860 --> 00:04:40,020
+Index of three.
+
+102
+00:04:40,030 --> 00:04:44,380
+So then we can swap index of zero in index of three after our first pass.
+
+103
+00:04:45,400 --> 00:04:46,540
+So that's what we have here.
+
+104
+00:04:46,560 --> 00:04:50,800
+If a small number is found to designate that smaller number to be the new minimum and continue until
+
+105
+00:04:50,800 --> 00:04:56,620
+the end of the array if the minimum is not the value the index just right put that there you initially
+
+106
+00:04:56,620 --> 00:04:58,860
+began with then swap the two.
+
+107
+00:04:59,050 --> 00:05:05,170
+Otherwise if they are the same it means that we happened to have an array where the first element was
+
+108
+00:05:05,380 --> 00:05:10,810
+the smallest element we just got lucky or maybe it's already sorted which that's not going to be good
+
+109
+00:05:10,810 --> 00:05:12,070
+for selection sort.
+
+110
+00:05:12,070 --> 00:05:14,650
+And then we just repeat this process of course.
+
+111
+00:05:14,650 --> 00:05:20,630
+Next time we know that the first item is already sorted so we don't need to loop over every single item.
+
+112
+00:05:20,740 --> 00:05:25,500
+What we want to do actually is start from the next item afterwards and find the new minimum.
+
+113
+00:05:25,780 --> 00:05:32,110
+Otherwise if we kept looking at the whole array every time we would always find the same minimum right
+
+114
+00:05:32,110 --> 00:05:38,020
+if we just started from here again this is our men and we compare it compare compare our minutes still
+
+115
+00:05:38,020 --> 00:05:38,880
+going to be one.
+
+116
+00:05:39,010 --> 00:05:41,960
+And if we started again it's always going to be one.
+
+117
+00:05:41,980 --> 00:05:47,050
+So what we need to do is then look at this area and find the men and then look at this and this and
+
+118
+00:05:47,050 --> 00:05:47,790
+so on.
+
+119
+00:05:47,800 --> 00:05:53,940
+So we want to shrink the scope or window of what we're comparing as we loop through.
+
+120
+00:05:54,230 --> 00:05:54,540
+OK.
+
+121
+00:05:54,550 --> 00:05:56,860
+So give this a shot if you'd like to.
+
+122
+00:05:56,860 --> 00:06:00,420
+It's a relatively short one to implement as well.
+
+123
+00:06:00,640 --> 00:06:07,000
+Really it's just a loop plus another loop and a single conditional and then at the end a swap.
+
+124
+00:06:07,000 --> 00:06:09,580
+So give it a shot but also don't feel bad.
+
+125
+00:06:09,700 --> 00:06:11,560
+I don't want to make it sound so easy.
+
+126
+00:06:11,560 --> 00:06:14,320
+It's so conceptually can be tricky to get these to work.
+
+127
+00:06:14,320 --> 00:06:18,320
+So in the next video I will implement it and we'll see how it goes.
+

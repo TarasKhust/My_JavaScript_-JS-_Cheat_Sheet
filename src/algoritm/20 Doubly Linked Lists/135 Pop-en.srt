@@ -1,0 +1,236 @@
+1
+00:00:00,120 --> 00:00:00,660
+All right.
+
+2
+00:00:00,660 --> 00:00:03,690
+Next up we'll implement Pop on a double length list.
+
+3
+00:00:03,810 --> 00:00:09,210
+So pop should work the same way as before on a singly linked list or any array or list for for that
+
+4
+00:00:09,210 --> 00:00:09,760
+matter.
+
+5
+00:00:09,870 --> 00:00:12,930
+It should just remove the last item and return it.
+
+6
+00:00:12,960 --> 00:00:14,870
+The difference on a doubly linked list.
+
+7
+00:00:15,060 --> 00:00:19,290
+I'm actually looking at a singly linked list here well which was more complicated.
+
+8
+00:00:19,290 --> 00:00:24,390
+It's annoying honestly to pop something from the end because it's not a matter of just finding the tail
+
+9
+00:00:24,390 --> 00:00:25,850
+and removing it.
+
+10
+00:00:25,860 --> 00:00:31,320
+Well that actually is the problem because to actually remove the tail we have to find the item before
+
+11
+00:00:31,320 --> 00:00:37,870
+the tail and set the next property to nil in order to chop that to sever the bond.
+
+12
+00:00:38,190 --> 00:00:43,020
+But we can't work backwards so we have to go at the beginning and you know I'll fast forward through
+
+13
+00:00:43,020 --> 00:00:43,260
+this.
+
+14
+00:00:43,260 --> 00:00:45,200
+Actually it's going to be very short.
+
+15
+00:00:45,210 --> 00:00:45,850
+There we go.
+
+16
+00:00:45,890 --> 00:00:46,770
+Just keep going.
+
+17
+00:00:46,770 --> 00:00:49,950
+We have to go all the way until we find the second to last item.
+
+18
+00:00:49,950 --> 00:00:50,660
+Here we go.
+
+19
+00:00:50,900 --> 00:00:54,360
+And for that tie a W link first is much easier.
+
+20
+00:00:54,360 --> 00:00:58,620
+We just start at the tail and we can just access daat previous.
+
+21
+00:00:58,620 --> 00:01:02,880
+So if I want to remove the last item we just start there and work backwards.
+
+22
+00:01:02,880 --> 00:01:04,770
+So the pseudocode looks like this.
+
+23
+00:01:04,830 --> 00:01:07,180
+If there is no tail so we need to first check.
+
+24
+00:01:07,220 --> 00:01:09,310
+You know we're trying to pop off something that's empty.
+
+25
+00:01:09,450 --> 00:01:12,030
+If there's no head or No-Tail or if the length is zero.
+
+26
+00:01:12,030 --> 00:01:13,090
+Just pick one.
+
+27
+00:01:13,170 --> 00:01:14,730
+Return undefined.
+
+28
+00:01:14,730 --> 00:01:18,830
+So if it's an invalid pop if there's nothing to pop off return undefined.
+
+29
+00:01:18,870 --> 00:01:23,790
+Otherwise take the current tail stored in a variable so that we can return it later.
+
+30
+00:01:23,850 --> 00:01:28,410
+So we're going to chop off the connections the lifeline between the second the last item in the tail
+
+31
+00:01:28,500 --> 00:01:31,520
+but we need to first store the tail so we can return it.
+
+32
+00:01:31,530 --> 00:01:34,440
+There is a special case if the length is one set.
+
+33
+00:01:34,440 --> 00:01:36,340
+The head and the tail both to be null.
+
+34
+00:01:36,360 --> 00:01:42,250
+Because the list is now empty update the tail to be the previous node.
+
+35
+00:01:42,260 --> 00:01:45,670
+So this means we had the old tail at the end.
+
+36
+00:01:45,710 --> 00:01:51,050
+We want to now say the tail is actually the old tail that previous.
+
+37
+00:01:51,280 --> 00:01:54,810
+Then we want to now take the current the new tail that we just updated.
+
+38
+00:01:54,800 --> 00:01:59,450
+We moved it back when item we want to take it next and make it null.
+
+39
+00:01:59,800 --> 00:02:02,700
+So that's what was happening here.
+
+40
+00:02:02,720 --> 00:02:03,770
+I stepped back.
+
+41
+00:02:04,060 --> 00:02:04,510
+All right.
+
+42
+00:02:04,510 --> 00:02:08,850
+So we find the tail we move the tail to this item.
+
+43
+00:02:08,920 --> 00:02:15,640
+Now we want to say this next is null so that should sever the bond and actually be extra precise we
+
+44
+00:02:15,640 --> 00:02:22,870
+want to take the last thing that we're returning and said it's previous to be no as well just to clean
+
+45
+00:02:22,870 --> 00:02:26,090
+up any extra ends any extra references.
+
+46
+00:02:26,320 --> 00:02:31,540
+Then we subtract one from the length because we pop something off and then we return the value that
+
+47
+00:02:31,540 --> 00:02:33,100
+we removed and that's it.
+
+48
+00:02:33,100 --> 00:02:35,010
+So the sides don't make this very clear.
+
+49
+00:02:35,020 --> 00:02:37,210
+Actually they don't say it at all.
+
+50
+00:02:37,320 --> 00:02:41,470
+It's not even that it's not clear when you sever this bond.
+
+51
+00:02:41,530 --> 00:02:48,940
+You need to remove both connections so it's not enough just to say this next is NO TO GET RID OF ONE
+
+52
+00:02:48,940 --> 00:02:49,870
+DIRECTION.
+
+53
+00:02:49,870 --> 00:02:52,630
+We should also remove the other reference.
+
+54
+00:02:52,630 --> 00:02:58,450
+Technically it may not be a problem because if we're moving this to be the tail and we set the next
+
+55
+00:02:58,450 --> 00:03:06,410
+to be No it's not yes an issue in must somebody somehow starts from this node and they go down previous.
+
+56
+00:03:06,670 --> 00:03:09,060
+And then that gives them the entire list.
+
+57
+00:03:09,070 --> 00:03:13,250
+So would you want to chop that off so that it's on its own it's just the node that were returning were
+
+58
+00:03:13,270 --> 00:03:15,940
+not returning any linkages to the list.
+
+59
+00:03:16,190 --> 00:03:19,980
+OK so give it a shot and the next video will have an implementation.
+

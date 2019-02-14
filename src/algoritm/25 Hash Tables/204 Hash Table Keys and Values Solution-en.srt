@@ -1,0 +1,552 @@
+1
+00:00:00,180 --> 00:00:00,660
+All right.
+
+2
+00:00:00,660 --> 00:00:03,880
+So let's implement our methods keys and values.
+
+3
+00:00:04,050 --> 00:00:09,870
+I'm going to start with values actually because that's the one where we really have to worry about duplicate
+
+4
+00:00:09,870 --> 00:00:10,390
+data.
+
+5
+00:00:10,590 --> 00:00:16,920
+So let's start there and all we need to do really is make an array to store all of our data.
+
+6
+00:00:16,920 --> 00:00:21,680
+So I'll call it values r r r like that.
+
+7
+00:00:21,900 --> 00:00:26,270
+And then we need to loop over the entire key map this key map.
+
+8
+00:00:26,610 --> 00:00:31,940
+So let's just write a for loop for equals zero.
+
+9
+00:00:31,950 --> 00:00:38,070
+Oh I hate typing these when I'm not using my usual editor this key map.
+
+10
+00:00:38,070 --> 00:00:41,840
+And we want to go Lanc and then I.
+
+11
+00:00:41,850 --> 00:00:42,630
+Plus plus.
+
+12
+00:00:42,630 --> 00:00:47,140
+So this is just going to loop over the entire key map like executer this.
+
+13
+00:00:47,220 --> 00:00:48,330
+I haven't run it yet.
+
+14
+00:00:48,360 --> 00:00:52,390
+If we look at H.T. here we're going to loop over all 17 items here.
+
+15
+00:00:52,670 --> 00:00:55,030
+And the first thing we'll check is there anything there.
+
+16
+00:00:55,080 --> 00:01:06,070
+So if this key map of I if that's the case then let's just start by constantly logging this key map.
+
+17
+00:01:06,720 --> 00:01:10,000
+And if I run this and then I do H.T. values.
+
+18
+00:01:10,500 --> 00:01:15,690
+It's printing out all the arrays that have stuff it's skipping over all of the empty ones because we're
+
+19
+00:01:15,690 --> 00:01:21,990
+working with something that has 17 slots and we're only using what five six of them six different slots.
+
+20
+00:01:22,020 --> 00:01:25,020
+So there are 11 empty things we're not printing out.
+
+21
+00:01:25,140 --> 00:01:26,560
+So that's good.
+
+22
+00:01:26,580 --> 00:01:33,480
+So what we want to do instead is loop over this key map of I because we now need to loop through that
+
+23
+00:01:33,510 --> 00:01:36,840
+and collect all the values and push them into our values array.
+
+24
+00:01:36,840 --> 00:01:40,770
+So we need to go over each one of these and find this item.
+
+25
+00:01:40,770 --> 00:01:42,060
+The second piece.
+
+26
+00:01:42,060 --> 00:01:43,020
+So this is index 0.
+
+27
+00:01:43,020 --> 00:01:45,460
+This is Index index of 1.
+
+28
+00:01:45,540 --> 00:01:46,090
+OK.
+
+29
+00:01:46,470 --> 00:01:48,190
+So let's do another for loop.
+
+30
+00:01:48,330 --> 00:01:54,640
+This time will do let's call it J 4 let J equal 0.
+
+31
+00:01:54,750 --> 00:02:01,260
+J is less than this key map of I got length.
+
+32
+00:02:01,480 --> 00:02:06,610
+So this key map of I is referring to each cell array at that index.
+
+33
+00:02:07,460 --> 00:02:08,710
+J plus plus.
+
+34
+00:02:08,900 --> 00:02:09,200
+OK.
+
+35
+00:02:09,210 --> 00:02:12,790
+So for each item in there now what.
+
+36
+00:02:12,930 --> 00:02:16,020
+All we need to do is values array up push.
+
+37
+00:02:16,080 --> 00:02:17,730
+And we only want to push the value.
+
+38
+00:02:17,880 --> 00:02:25,600
+So that is this key map of I of J that gives just the entire thing.
+
+39
+00:02:25,590 --> 00:02:33,260
+So if I did this and I run this values over not returning anything so that's useless.
+
+40
+00:02:33,420 --> 00:02:35,490
+That was a very dumb example.
+
+41
+00:02:35,490 --> 00:02:37,340
+Let me add the return to the very end.
+
+42
+00:02:37,460 --> 00:02:38,450
+Let's come down.
+
+43
+00:02:38,520 --> 00:02:39,220
+Words are correct.
+
+44
+00:02:39,220 --> 00:02:42,120
+Bracket let's do return values array.
+
+45
+00:02:42,390 --> 00:02:45,990
+OK rerun the code age values.
+
+46
+00:02:46,700 --> 00:02:51,620
+If we look at it we are still returning an array that contains both the key and the value.
+
+47
+00:02:51,750 --> 00:02:56,010
+So we only want index of 1 for each one of those items.
+
+48
+00:02:56,070 --> 00:02:59,960
+And if I run it again would you H.T. the values.
+
+49
+00:03:00,210 --> 00:03:02,280
+We're now getting all of the values.
+
+50
+00:03:02,490 --> 00:03:03,870
+So if you call it a day here.
+
+51
+00:03:03,990 --> 00:03:06,910
+But then there's also this problem of duplicate data.
+
+52
+00:03:06,960 --> 00:03:12,030
+And like I said the way a lot of languages handle it is when you do dot values or whatever the equivalent
+
+53
+00:03:12,030 --> 00:03:14,790
+is you only get the unique values.
+
+54
+00:03:15,120 --> 00:03:16,120
+You often don't.
+
+55
+00:03:16,260 --> 00:03:20,500
+You don't get all the duplicates because there's usually no order that's guaranteed.
+
+56
+00:03:20,550 --> 00:03:22,910
+And it can be confusing if you have duplicate data.
+
+57
+00:03:22,920 --> 00:03:24,660
+Usually it's just the uniques.
+
+58
+00:03:24,690 --> 00:03:26,420
+So how would we implement that.
+
+59
+00:03:26,700 --> 00:03:32,380
+Well the simplest way is before we push it into the values array we just check.
+
+60
+00:03:32,430 --> 00:03:37,660
+Does this key map already or does the values array already include this item.
+
+61
+00:03:37,860 --> 00:03:40,350
+First let's get some duplicate data in there.
+
+62
+00:03:40,590 --> 00:03:46,730
+So I'm going to add a purple with this DD a 0 0 DD.
+
+63
+00:03:46,950 --> 00:03:52,060
+And let's also add in something else called Violet like this.
+
+64
+00:03:52,060 --> 00:03:59,380
+And so if I rerun this and we look at our values you can see that we have what was that DDA 0.
+
+65
+00:03:59,400 --> 00:04:02,590
+DD is in there one time two times three times.
+
+66
+00:04:02,730 --> 00:04:09,450
+So to prevent that we'll come over here and before we push let's add a conditional we'll say if the
+
+67
+00:04:09,450 --> 00:04:13,900
+values array that includes And we'll use the built in includes method.
+
+68
+00:04:14,110 --> 00:04:22,110
+This key map I J 1 this mean this is the value itself.
+
+69
+00:04:22,110 --> 00:04:23,250
+So each time through.
+
+70
+00:04:23,340 --> 00:04:26,400
+Well check does it include DDA 0.
+
+71
+00:04:26,410 --> 00:04:30,690
+DD these color codes are not the most intuitive thing for me to be talking about but if it includes
+
+72
+00:04:30,690 --> 00:04:38,250
+this we don't want to push so let's do the opposite say if not if it does not include then we'll push
+
+73
+00:04:38,250 --> 00:04:41,460
+this in like that.
+
+74
+00:04:41,760 --> 00:04:43,530
+And let's just test it out now.
+
+75
+00:04:43,560 --> 00:04:45,490
+So I'm using the built in includes method.
+
+76
+00:04:45,600 --> 00:04:48,170
+So if we try H.T. dot values.
+
+77
+00:04:48,180 --> 00:04:54,110
+Now we only get one of these Deedy a zero d d.
+
+78
+00:04:54,320 --> 00:04:59,460
+All right so that's one way of hand handling duplicate values so that we only end up with unique values
+
+79
+00:04:59,520 --> 00:05:01,490
+in our dataset that we're returning.
+
+80
+00:05:01,800 --> 00:05:03,160
+Then we return it at the end.
+
+81
+00:05:03,240 --> 00:05:05,540
+We just check each time through for each value.
+
+82
+00:05:05,550 --> 00:05:09,180
+Does that already include that value if it doesn't push it in.
+
+83
+00:05:09,180 --> 00:05:13,060
+So we could just duplicate the exact same thing and do these.
+
+84
+00:05:13,570 --> 00:05:19,290
+So change the name of this to be kids and we'll will call this kid's array even though it doesn't actually
+
+85
+00:05:19,290 --> 00:05:20,250
+make a difference.
+
+86
+00:05:20,340 --> 00:05:23,490
+Functionally this will be the same.
+
+87
+00:05:23,610 --> 00:05:28,150
+This is the same this here it's also the same.
+
+88
+00:05:28,220 --> 00:05:35,300
+But then this changes so this is going to be kids value are kids Auray includes that key map I J of
+
+89
+00:05:35,300 --> 00:05:40,810
+zero because our key each key is stored at index 0 rather than 1.
+
+90
+00:05:41,300 --> 00:05:41,820
+OK.
+
+91
+00:05:41,840 --> 00:05:43,390
+And then this also needs to be zero.
+
+92
+00:05:43,400 --> 00:05:46,820
+And this needs to be KIIS array up push.
+
+93
+00:05:46,820 --> 00:05:49,400
+And then we return keys array.
+
+94
+00:05:49,400 --> 00:05:50,420
+So if we test it out.
+
+95
+00:05:50,430 --> 00:05:58,800
+Now let's do H.T. duckies we get however many values there how many kids that is.
+
+96
+00:05:58,970 --> 00:06:03,620
+And if we do the same thing for values there we go.
+
+97
+00:06:03,830 --> 00:06:06,920
+We get fewer of course because we had duplicate values.
+
+98
+00:06:06,950 --> 00:06:09,470
+Now we didn't address what to do with duplicate keys.
+
+99
+00:06:09,470 --> 00:06:15,680
+If somebody inserts something right now if I actually go and insert plumbe again which is already in
+
+100
+00:06:15,680 --> 00:06:22,990
+there so H.T. set plumbe which is going to be double like that.
+
+101
+00:06:23,240 --> 00:06:29,960
+If we look at our hash table you can see that they're both stored nested next to each other inside of
+
+102
+00:06:30,170 --> 00:06:30,940
+index 0.
+
+103
+00:06:30,980 --> 00:06:35,550
+So they plumpest hash to the exact same thing zero each time that's how it should work.
+
+104
+00:06:35,630 --> 00:06:38,060
+But we end up with two children there.
+
+105
+00:06:38,090 --> 00:06:45,230
+And so when I do an h t get plumb our logic right now is just going to give me whatever was inserted
+
+106
+00:06:45,230 --> 00:06:47,870
+first and it should always stay that way.
+
+107
+00:06:47,990 --> 00:06:50,360
+Based off of how it's set up right now.
+
+108
+00:06:50,360 --> 00:06:57,260
+Now it's probably a better solution to alert your user to that so here you know we could add some logic
+
+109
+00:06:57,260 --> 00:06:59,460
+to check if it's already in there.
+
+110
+00:07:00,200 --> 00:07:03,320
+You know when we're setting something we would check if it's empty.
+
+111
+00:07:03,400 --> 00:07:03,660
+OK.
+
+112
+00:07:03,680 --> 00:07:04,640
+It's not empty.
+
+113
+00:07:04,640 --> 00:07:09,930
+Then you could iterate over the entire thing and check to see if it already contains that key.
+
+114
+00:07:10,130 --> 00:07:12,590
+We're just going to go with this simple implementation for now.
+
+115
+00:07:12,590 --> 00:07:19,070
+Right now it allows you to insert many things at the same key and you're only going to get the first
+
+116
+00:07:19,070 --> 00:07:21,230
+one that was inserted and that's fine for now.
+
+117
+00:07:21,260 --> 00:07:26,480
+It's not supposed to be very useable anyway but just keep that in mind that most languages if you tried
+
+118
+00:07:26,480 --> 00:07:31,010
+to you know insert something multiple times it would overwrite what you already had.
+
+119
+00:07:31,010 --> 00:07:36,090
+So if we did not set plumbe to be double That's what plumbe would be from now on.
+
+120
+00:07:36,350 --> 00:07:39,810
+But either way we've implemented keys and values.
+
+121
+00:07:39,830 --> 00:07:44,930
+There really aren't supposed to be duplicate keys but this code here ensures that we're not getting
+
+122
+00:07:44,930 --> 00:07:45,810
+duplicates.
+
+123
+00:07:45,980 --> 00:07:47,490
+Same thing down here with values.
+
+124
+00:07:47,510 --> 00:07:48,850
+So that's keys and values.
+
+125
+00:07:48,860 --> 00:07:54,440
+Now we could call you know dot keys or down values and iterate over the entire hash table if that's
+
+126
+00:07:54,440 --> 00:07:57,920
+what we wanted to sort of print out every single color that we have.
+
+127
+00:07:58,010 --> 00:08:04,360
+We could do something like T Dot keys and do a dot.
+
+128
+00:08:04,460 --> 00:08:09,120
+I don't know a dot for each maybe and call each phone.
+
+129
+00:08:09,170 --> 00:08:16,920
+Let's go with key and then just to cancel the log H.T. don't get key.
+
+130
+00:08:17,120 --> 00:08:22,940
+And if we tried running it we get every single value printed out and we do have two there because we're
+
+131
+00:08:22,940 --> 00:08:26,430
+using the keys and just getting the value based off of that.
+
+132
+00:08:26,750 --> 00:08:27,990
+And it looks good.
+
+133
+00:08:28,040 --> 00:08:32,660
+So we're officially getting the keys and the values with our separate methods and we can iterate over
+
+134
+00:08:32,660 --> 00:08:33,780
+them now.
+
+135
+00:08:33,830 --> 00:08:34,460
+All right.
+
+136
+00:08:34,460 --> 00:08:37,280
+So that is the basics of hash tables.
+
+137
+00:08:37,280 --> 00:08:39,050
+Again not sophisticated.
+
+138
+00:08:39,140 --> 00:08:43,690
+Not something you should really use in this implementation but hopefully it makes sense how it works.
+

@@ -1,0 +1,344 @@
+1
+00:00:00,240 --> 00:00:01,310
+Hey welcome back.
+
+2
+00:00:01,320 --> 00:00:03,030
+We have a brand new section here.
+
+3
+00:00:03,150 --> 00:00:06,150
+We're still working with trees but we're doing something a little different.
+
+4
+00:00:06,480 --> 00:00:08,700
+So tree traversal is what we're going to focus on.
+
+5
+00:00:08,910 --> 00:00:16,410
+And this is the idea of basically given any tree whether it's a binary search tree or just a plain binary
+
+6
+00:00:16,410 --> 00:00:21,450
+tree that's unsorted or a ternary tree or some other tree that has any number of nodes.
+
+7
+00:00:21,480 --> 00:00:23,700
+There's no special order just any tree.
+
+8
+00:00:23,700 --> 00:00:27,880
+All right generic tree how do we visit every node one time.
+
+9
+00:00:27,930 --> 00:00:30,530
+So this is a classic computer science problem.
+
+10
+00:00:30,570 --> 00:00:32,340
+There are many many ways of doing it.
+
+11
+00:00:32,340 --> 00:00:37,220
+Contrast it with a linked list to traverse this tree to visit every node one time.
+
+12
+00:00:37,320 --> 00:00:38,430
+It's very easy right.
+
+13
+00:00:38,430 --> 00:00:41,220
+There's one linear pathway from here to there.
+
+14
+00:00:41,250 --> 00:00:47,260
+There is no order that you have to decide there's no decision it's just go from here to here.
+
+15
+00:00:47,490 --> 00:00:48,930
+So this is unsorted.
+
+16
+00:00:48,930 --> 00:00:50,880
+Imagine you know we're searching for value.
+
+17
+00:00:51,060 --> 00:00:54,090
+We want to know if 43 is in this list.
+
+18
+00:00:54,090 --> 00:00:56,670
+Well we start here and we go here here here.
+
+19
+00:00:56,670 --> 00:00:56,890
+OK.
+
+20
+00:00:56,910 --> 00:00:57,730
+We found it.
+
+21
+00:00:57,730 --> 00:01:00,630
+Or if you're looking for ninety nine we would traverse every node.
+
+22
+00:01:00,690 --> 00:01:01,410
+We hit the end.
+
+23
+00:01:01,500 --> 00:01:03,090
+Ninety nine is not in here.
+
+24
+00:01:03,090 --> 00:01:06,010
+Now when we talk about a tree it's very different.
+
+25
+00:01:06,210 --> 00:01:08,300
+So this is not a binary search tree.
+
+26
+00:01:08,340 --> 00:01:10,140
+It is a binary tree.
+
+27
+00:01:10,140 --> 00:01:15,570
+Each node has at most two children but it's not ordered in any way these values on the right are not
+
+28
+00:01:15,570 --> 00:01:20,370
+less than are or they're not necessarily less or greater than excuse me 10 and the values on the left
+
+29
+00:01:20,370 --> 00:01:26,470
+are not necessarily less than so no order we can't use our little shortcuts if we wanted to find a node
+
+30
+00:01:26,640 --> 00:01:29,220
+if I wanted to know if 29 was in this tree.
+
+31
+00:01:29,430 --> 00:01:34,030
+We would need to visit every single node in order to figure out that it's not there.
+
+32
+00:01:34,350 --> 00:01:35,400
+So do we start here.
+
+33
+00:01:35,400 --> 00:01:42,810
+Well it's probably a good place do we go left and then sort of work our way horizontally and go horizontal
+
+34
+00:01:42,810 --> 00:01:44,100
+again and keep going down.
+
+35
+00:01:44,220 --> 00:01:49,470
+Do we go all the way down to the end and then come up and then go down and then go back up go all the
+
+36
+00:01:49,470 --> 00:01:53,430
+way down to the right and then you know keep going down any further branches.
+
+37
+00:01:53,550 --> 00:01:55,200
+It's really difficult to know.
+
+38
+00:01:55,200 --> 00:01:56,600
+There's so many ways of doing it.
+
+39
+00:01:56,640 --> 00:01:59,670
+It's not like a linked list where there's one linear approach.
+
+40
+00:01:59,670 --> 00:02:01,470
+So that's why we have a section on this.
+
+41
+00:02:01,620 --> 00:02:04,600
+We wouldn't do it for a length list because there's only one way.
+
+42
+00:02:04,710 --> 00:02:09,930
+But with trees there are many many ways and we're going to focus on four very commonly known approaches.
+
+43
+00:02:09,960 --> 00:02:10,750
+They have names.
+
+44
+00:02:10,770 --> 00:02:11,940
+These orders.
+
+45
+00:02:11,940 --> 00:02:16,530
+One thing I'll say this section will take advantage of recursion more than any of the other sections
+
+46
+00:02:16,530 --> 00:02:17,300
+so far.
+
+47
+00:02:17,310 --> 00:02:22,170
+So if you skip the recursion section I highly recommend you go back and watch that because this will
+
+48
+00:02:22,170 --> 00:02:24,640
+be a little bit mine.
+
+49
+00:02:24,820 --> 00:02:27,060
+Mind blowing might be putting it nicely.
+
+50
+00:02:27,060 --> 00:02:30,150
+It also might just be really confusing and not fun.
+
+51
+00:02:30,150 --> 00:02:34,980
+So I would really make sure you understand recursion you don't have to be an expert but just know the
+
+52
+00:02:34,980 --> 00:02:40,230
+basics so that when I talk about it to make sense hopefully if I did a good job in the recursion section
+
+53
+00:02:40,710 --> 00:02:47,130
+there are two main approaches to traversing a tree something called breadth first and another called
+
+54
+00:02:47,190 --> 00:02:48,610
+depth first.
+
+55
+00:02:48,660 --> 00:02:51,990
+So these refer to the general directions.
+
+56
+00:02:52,020 --> 00:02:58,170
+So when we talk about breadth first search if this is our tree imagine just starting at the beginning
+
+57
+00:02:58,740 --> 00:03:02,580
+and then basically working across the tree first.
+
+58
+00:03:02,580 --> 00:03:10,280
+So 10 6 15 then continue across breath refers to the breadth of the tree.
+
+59
+00:03:10,290 --> 00:03:11,650
+So the worst sentence ever.
+
+60
+00:03:11,670 --> 00:03:17,940
+Then there's also depth first search and there's actually three main orders for DFS depth first search
+
+61
+00:03:17,970 --> 00:03:19,600
+that we're going to talk about.
+
+62
+00:03:19,620 --> 00:03:24,510
+So the idea of depth first is that you're just going down like your primary direction is going to the
+
+63
+00:03:24,600 --> 00:03:29,640
+end of the tree vertically and then coming back up versus breath versus going across.
+
+64
+00:03:29,640 --> 00:03:36,500
+So one version is something called in order and that would mean basically starting down here and then.
+
+65
+00:03:36,820 --> 00:03:39,830
+Well we can spend more time I don't want to just explain how every single one works.
+
+66
+00:03:39,840 --> 00:03:41,740
+Just want to show you there are different ways.
+
+67
+00:03:41,760 --> 00:03:42,890
+So this is in order.
+
+68
+00:03:43,110 --> 00:03:50,430
+There's also a depth first search called preorder where we work from 10 6 down to three to eight.
+
+69
+00:03:50,490 --> 00:03:53,780
+And then we go down the other side and go down 15 to 20.
+
+70
+00:03:53,790 --> 00:03:56,700
+Then there's also post order that looks like this.
+
+71
+00:03:56,700 --> 00:04:02,580
+So we go down to the bottom and we work our way back up like that.
+
+72
+00:04:02,580 --> 00:04:07,980
+So these are all different approaches different ways of searching or at the very least not even searching
+
+73
+00:04:08,130 --> 00:04:10,320
+just visiting every single node.
+
+74
+00:04:10,320 --> 00:04:13,360
+If I just asked you to print out entire tree.
+
+75
+00:04:13,690 --> 00:04:16,320
+There's not one easy way or one given solution right.
+
+76
+00:04:16,320 --> 00:04:20,430
+These are these values that we're seeing here are the order that we're visiting them.
+
+77
+00:04:20,460 --> 00:04:22,650
+So this would be the order they would be printed out in.
+
+78
+00:04:22,800 --> 00:04:26,600
+And it really depends on what you're trying to do and I'll have a video where I address that.
+
+79
+00:04:26,640 --> 00:04:30,330
+There are certain situations where you might want to use one versus the other.
+
+80
+00:04:30,540 --> 00:04:35,760
+But for now let's just leave it at the fact that there are many ways of visiting every single node in
+
+81
+00:04:35,760 --> 00:04:36,380
+a tree.
+
+82
+00:04:36,390 --> 00:04:39,350
+In fact there are so many ways that we have a whole section on it.
+
+83
+00:04:39,540 --> 00:04:42,340
+And this is really independent of binary search trees.
+
+84
+00:04:42,360 --> 00:04:43,790
+It's really just trees in general.
+
+85
+00:04:43,890 --> 00:04:48,840
+But we will be working with our best class just so that we don't have to duplicate code and create a
+
+86
+00:04:48,840 --> 00:04:49,650
+new tree class.
+

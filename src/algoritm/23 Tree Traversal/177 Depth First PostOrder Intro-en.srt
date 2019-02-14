@@ -1,0 +1,292 @@
+1
+00:00:00,210 --> 00:00:00,760
+All right.
+
+2
+00:00:00,780 --> 00:00:01,530
+Welcome back.
+
+3
+00:00:01,530 --> 00:00:04,230
+Next up we're going to take a look at post order.
+
+4
+00:00:04,230 --> 00:00:10,020
+So just a slight tweak or a variation on what we wrote in the last video where we're basically going
+
+5
+00:00:10,020 --> 00:00:14,910
+to change the order of one line that we're going to move which will make a significant difference to
+
+6
+00:00:14,910 --> 00:00:16,830
+the actual output order.
+
+7
+00:00:16,830 --> 00:00:22,080
+So if you watch the two videos ago when I introduced the depth first search I talked about there's three
+
+8
+00:00:22,080 --> 00:00:29,250
+main operations or things that we do for any node we need to at some point visit the node itself like
+
+9
+00:00:29,280 --> 00:00:30,230
+10.
+
+10
+00:00:30,270 --> 00:00:33,960
+Then we also need to traverse the entire left half and the entire right side.
+
+11
+00:00:33,960 --> 00:00:38,770
+I shouldn't say half because it's not necessarily half but the entire left side and the right branch.
+
+12
+00:00:39,030 --> 00:00:40,740
+And then do the same thing on this node.
+
+13
+00:00:40,770 --> 00:00:44,490
+So do we visit it first then look at the left then the right.
+
+14
+00:00:44,490 --> 00:00:46,060
+That's what we did in pre order.
+
+15
+00:00:46,110 --> 00:00:53,670
+If we go back here we start off by visiting 10 adding it to our list then looking at the left side then
+
+16
+00:00:53,670 --> 00:00:56,500
+once the entire Left is done then we go to the right.
+
+17
+00:00:56,610 --> 00:00:57,560
+So then we get to six.
+
+18
+00:00:57,570 --> 00:00:58,400
+We visit six.
+
+19
+00:00:58,410 --> 00:01:00,180
+We look at the left then the right.
+
+20
+00:01:00,250 --> 00:01:04,890
+There's nothing after she would just visit three and eight and then we finish out the right side of
+
+21
+00:01:04,890 --> 00:01:05,390
+10.
+
+22
+00:01:05,490 --> 00:01:06,480
+So that's pretty order.
+
+23
+00:01:06,480 --> 00:01:08,990
+We visit the node first then left then right.
+
+24
+00:01:09,150 --> 00:01:10,610
+Post order works differently.
+
+25
+00:01:10,860 --> 00:01:17,700
+You might be able to tell by the name post after we visit a node after we have looked at the left and
+
+26
+00:01:17,700 --> 00:01:18,050
+the right.
+
+27
+00:01:18,060 --> 00:01:23,550
+So we explore everything first we traversed the entire tree or the entire branch from a given node the
+
+28
+00:01:23,550 --> 00:01:24,820
+left and the right.
+
+29
+00:01:24,870 --> 00:01:26,170
+Then we visit the node.
+
+30
+00:01:26,210 --> 00:01:30,210
+So in post order we started 10 but we're not going to visit it.
+
+31
+00:01:30,300 --> 00:01:35,640
+We're going to look at the left and go all the way down to the left then all the way down to the right
+
+32
+00:01:36,210 --> 00:01:37,720
+and then we visit a node.
+
+33
+00:01:37,920 --> 00:01:39,150
+So we start at 10.
+
+34
+00:01:39,180 --> 00:01:41,700
+We go all the way to the left traverse.
+
+35
+00:01:41,910 --> 00:01:43,320
+So then we get to six.
+
+36
+00:01:43,410 --> 00:01:47,580
+We're going to go all the way to the left than the right and then add six in.
+
+37
+00:01:47,970 --> 00:01:51,780
+So that means adding three in first then we add the right.
+
+38
+00:01:51,780 --> 00:01:53,110
+We visit eight.
+
+39
+00:01:53,400 --> 00:02:00,660
+Now we visit six because we explored the left and the right of six then we don't visit 10 yet.
+
+40
+00:02:00,660 --> 00:02:02,670
+We've only done the left side of 10.
+
+41
+00:02:02,700 --> 00:02:04,130
+Now we do the right side.
+
+42
+00:02:04,200 --> 00:02:09,850
+So we go to the right of 15 which is 15 and from there there's no left.
+
+43
+00:02:09,870 --> 00:02:11,320
+So we explore the right.
+
+44
+00:02:11,430 --> 00:02:12,290
+We get to 20.
+
+45
+00:02:12,330 --> 00:02:18,840
+There's nothing after that so we add 20 and we explore and revisit 20 and we work our way back to 15
+
+46
+00:02:19,170 --> 00:02:20,660
+then finally 10.
+
+47
+00:02:21,150 --> 00:02:27,800
+So in this example in post order the route is the last thing that's visited for any node.
+
+48
+00:02:27,960 --> 00:02:32,470
+We explore all children before we we actually visit the node.
+
+49
+00:02:32,520 --> 00:02:37,860
+Now practically what this means is you just need to change the order of your code.
+
+50
+00:02:38,010 --> 00:02:43,670
+So if you wrote the solution or you're looking at my solution from the last video for preorder everything's
+
+51
+00:02:43,710 --> 00:02:45,170
+pretty much the same.
+
+52
+00:02:45,210 --> 00:02:46,590
+We're going to write a function.
+
+53
+00:02:46,590 --> 00:02:48,200
+It doesn't take any arguments.
+
+54
+00:02:48,330 --> 00:02:53,100
+We're going to make an array or a list to store the values of the things we visited so that we can return
+
+55
+00:02:53,100 --> 00:02:54,360
+it at the end.
+
+56
+00:02:54,360 --> 00:02:58,990
+We are then going to write a helper function that accepts a node and recursively.
+
+57
+00:02:59,340 --> 00:03:01,760
+We're going to do these three steps.
+
+58
+00:03:02,010 --> 00:03:06,660
+If there's a left property call the helper function on the left property if there's a right property
+
+59
+00:03:06,960 --> 00:03:13,170
+traverse the right property and then push the value of the node to our variable that stores our visited
+
+60
+00:03:13,170 --> 00:03:17,220
+values and then invoke the helper function with the current variable.
+
+61
+00:03:17,490 --> 00:03:19,930
+And then finally return the array of values.
+
+62
+00:03:19,950 --> 00:03:25,920
+So this is copy and pasted from the last two videos that go the same pseudo code except the order is
+
+63
+00:03:25,920 --> 00:03:26,630
+different.
+
+64
+00:03:26,790 --> 00:03:32,100
+Rather than pushing first and then doing the left and right we're going to explore the left explore
+
+65
+00:03:32,100 --> 00:03:34,640
+the right and then push the value in.
+
+66
+00:03:34,860 --> 00:03:36,370
+So that's Post order.
+
+67
+00:03:36,540 --> 00:03:37,470
+Give it a shot.
+
+68
+00:03:37,710 --> 00:03:40,000
+Just you know alter the code if you'd like.
+
+69
+00:03:40,110 --> 00:03:45,540
+It's good practice to write from scratch but if you're short for time or you're bored then just copy
+
+70
+00:03:45,540 --> 00:03:50,190
+and paste the line change the order and make sure that you get the expected output.
+
+71
+00:03:50,190 --> 00:03:57,750
+So if you use the exact same tree this is the output you should get for post order compared to do this
+
+72
+00:03:57,750 --> 00:04:00,080
+order here for preorder.
+
+73
+00:04:00,270 --> 00:04:02,320
+So give it a shot and see if you can get it to work.
+

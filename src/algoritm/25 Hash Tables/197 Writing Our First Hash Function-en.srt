@@ -1,0 +1,552 @@
+1
+00:00:00,180 --> 00:00:05,430
+All right let's try and write our own basic hash function for now just with strings.
+
+2
+00:00:05,580 --> 00:00:07,210
+So the goal is to write a function.
+
+3
+00:00:07,290 --> 00:00:12,420
+Let's just say it's called hash and we pass in a string like I don't know pink.
+
+4
+00:00:13,080 --> 00:00:16,540
+But on top of that we also pass in a length of an array.
+
+5
+00:00:16,650 --> 00:00:23,330
+So if we're trying to store our hash table in an array that is 100 items long we would pass in 100.
+
+6
+00:00:23,460 --> 00:00:30,180
+So this will map pink to be a number between 0 and 99 for a valid index in that array.
+
+7
+00:00:30,360 --> 00:00:37,050
+If we did Pink come nine this hopefully should give us a number between 0 and 8 so that we can store
+
+8
+00:00:37,050 --> 00:00:39,550
+it in the array and in a valid position.
+
+9
+00:00:39,900 --> 00:00:43,800
+So to write this let's ignore this last thing to start.
+
+10
+00:00:43,800 --> 00:00:46,580
+How would we just convert pink to a number.
+
+11
+00:00:46,590 --> 00:00:48,080
+There's many many ways.
+
+12
+00:00:48,330 --> 00:00:53,120
+But remember it needs to be reliable deterministic meaning that it you know is reproducible.
+
+13
+00:00:53,130 --> 00:00:59,340
+Every time we get the same output so we could just take the length of pink and just call it a day and
+
+14
+00:00:59,340 --> 00:01:00,670
+just used for.
+
+15
+00:01:00,870 --> 00:01:05,070
+The problem with that is that a lot of strings have the exact same length.
+
+16
+00:01:05,070 --> 00:01:09,300
+So if we're working with you know the English dictionary and we're trying to store words I don't know
+
+17
+00:01:09,300 --> 00:01:15,210
+what the most common length is but they're definitely small strings that you know traditional words
+
+18
+00:01:15,390 --> 00:01:16,690
+they're not very long.
+
+19
+00:01:16,860 --> 00:01:19,830
+So we're going to have very very clustered data.
+
+20
+00:01:19,830 --> 00:01:25,450
+If we had an array that was a 1000 character or a thousand positions long they'd all be less than.
+
+21
+00:01:25,530 --> 00:01:30,480
+I don't know what the longest word in English is but it's are all less than 50 characters probably and
+
+22
+00:01:30,560 --> 00:01:35,130
+most of them are less than 10 characters so that's not really great but there's another thing we can
+
+23
+00:01:35,130 --> 00:01:41,090
+do which is to use the underlying UTF 16 character codes for each character.
+
+24
+00:01:41,100 --> 00:01:46,450
+So every character has a numeric value associated with it and you can actually access that.
+
+25
+00:01:46,530 --> 00:01:54,270
+If we do a there's a method called Char code at or a car character code at and we have to pass in an
+
+26
+00:01:54,270 --> 00:02:01,170
+index like zero and that corresponds to the zero index of this string there's only one character and
+
+27
+00:02:01,170 --> 00:02:02,690
+it gives us a number.
+
+28
+00:02:02,970 --> 00:02:10,120
+Or if I had high and I did zero it's going to give me the number for H if I did it for one.
+
+29
+00:02:10,120 --> 00:02:12,180
+It gives me the number for I.
+
+30
+00:02:12,360 --> 00:02:17,990
+So these numbers we could use we could basically add them together for a given string.
+
+31
+00:02:18,240 --> 00:02:22,830
+Also to make it a little simpler if you subtract 96.
+
+32
+00:02:22,830 --> 00:02:27,360
+This will give us the alphabetic ranking or position.
+
+33
+00:02:27,360 --> 00:02:29,890
+So for example a is now 1.
+
+34
+00:02:30,300 --> 00:02:33,980
+If we did d it should be four.
+
+35
+00:02:34,440 --> 00:02:38,720
+And if we did Z that should be 26 perfect.
+
+36
+00:02:38,730 --> 00:02:39,770
+So that works.
+
+37
+00:02:39,870 --> 00:02:45,410
+It gives us you know the position in the alphabet starting from 1 up to 26.
+
+38
+00:02:45,510 --> 00:02:46,810
+So we can use this.
+
+39
+00:02:46,890 --> 00:02:49,530
+And on top of that we'll add them together.
+
+40
+00:02:49,560 --> 00:02:53,070
+So we'll continue to do this for every character in a string.
+
+41
+00:02:53,100 --> 00:02:56,630
+So let's say I have a variable called total to store everything in.
+
+42
+00:02:56,730 --> 00:02:59,410
+And then we're working with the string Hello.
+
+43
+00:02:59,940 --> 00:03:05,120
+So we would do total plus equals the character at position zero.
+
+44
+00:03:05,130 --> 00:03:12,150
+So car code at zero and then subtract 96 so that we just this is just to make it easier for us.
+
+45
+00:03:12,150 --> 00:03:14,770
+You don't have to subtract 96 it's still valid.
+
+46
+00:03:15,270 --> 00:03:19,760
+So that adds eight then we're going to do character code 1.
+
+47
+00:03:19,920 --> 00:03:21,500
+So that's for E.
+
+48
+00:03:21,990 --> 00:03:23,340
+We do this in a loop of course.
+
+49
+00:03:23,340 --> 00:03:30,740
+This is for oh this is for the other L then we get to 0.
+
+50
+00:03:30,840 --> 00:03:31,040
+Right.
+
+51
+00:03:31,040 --> 00:03:32,090
+Is that it.
+
+52
+00:03:32,100 --> 00:03:33,400
+One two three four five.
+
+53
+00:03:33,420 --> 00:03:33,800
+Yes.
+
+54
+00:03:33,810 --> 00:03:37,110
+So that's our total value in there.
+
+55
+00:03:37,110 --> 00:03:42,780
+So we get 52 but then we also need to consider that we talked about calling our hash function like this
+
+56
+00:03:42,780 --> 00:03:49,200
+or you'd pass in a string and then a length let's say 11 is our length of our array we need an index
+
+57
+00:03:49,200 --> 00:03:51,810
+that is going to be valid and 52 is not.
+
+58
+00:03:51,810 --> 00:03:52,890
+It's too large.
+
+59
+00:03:52,890 --> 00:03:55,260
+So how do we keep it within these bounds.
+
+60
+00:03:55,260 --> 00:04:01,140
+The simplest way is to use modulo if you don't know or don't remember modulo it's the percent sign operator
+
+61
+00:04:01,320 --> 00:04:07,590
+in javascript and in pretty much every language programming language at least think of it as you know
+
+62
+00:04:07,710 --> 00:04:10,720
+you divide something by a certain number and then you take the remainder.
+
+63
+00:04:10,740 --> 00:04:13,500
+That's what we store that's what we return.
+
+64
+00:04:13,500 --> 00:04:20,600
+So 13 mod 3 for example 3 goes into 13 how many times evenly four times.
+
+65
+00:04:20,600 --> 00:04:20,860
+Right.
+
+66
+00:04:20,870 --> 00:04:22,200
+Four times three is 12.
+
+67
+00:04:22,260 --> 00:04:23,760
+The remainder is 1.
+
+68
+00:04:23,790 --> 00:04:25,620
+We have one left over.
+
+69
+00:04:25,620 --> 00:04:32,040
+So if we take the length of the array that we're trying to store if I say 11 we take total which is
+
+70
+00:04:32,040 --> 00:04:36,230
+52 and I modulo Ahmad 11.
+
+71
+00:04:36,360 --> 00:04:40,980
+We end up with a number that is valid to store our data in which is 8.
+
+72
+00:04:41,010 --> 00:04:46,550
+So whatever the number was I mean we could take a giant number like this.
+
+73
+00:04:46,650 --> 00:04:53,590
+If I made by 11 we're going to get a valid array index now between zero and 10.
+
+74
+00:04:53,610 --> 00:04:55,390
+Just to prove that one more time.
+
+75
+00:04:55,650 --> 00:05:01,860
+Keep adding something you can see we're getting these numbers that are valid array indices.
+
+76
+00:05:02,150 --> 00:05:08,630
+So I have the function already written in the slide every go it looks like this function hash takes
+
+77
+00:05:08,630 --> 00:05:14,880
+a key like Pink an array length like 10 and then we make a total variable.
+
+78
+00:05:14,960 --> 00:05:21,620
+We loop through the characters in the key P and then I then and then K and then we add the character
+
+79
+00:05:21,620 --> 00:05:25,480
+code for each character to that total.
+
+80
+00:05:25,640 --> 00:05:32,180
+And actually the way that I decided to do it here is to use the maade array length as we build the string
+
+81
+00:05:32,210 --> 00:05:34,420
+as we are as we total up the string.
+
+82
+00:05:34,580 --> 00:05:41,000
+So instead of doing a mod at the very end we add each thing in we modulus by the array length and then
+
+83
+00:05:41,000 --> 00:05:42,420
+we start over again.
+
+84
+00:05:42,440 --> 00:05:46,970
+The way the hash function works is not the focus here but I just wanted to show you this is a basic
+
+85
+00:05:46,970 --> 00:05:47,570
+hash function.
+
+86
+00:05:47,570 --> 00:05:55,280
+It's not perfect but if we called hash with pink and we want to index less than 10 this one gives us
+
+87
+00:05:55,280 --> 00:05:55,950
+zero.
+
+88
+00:05:56,120 --> 00:05:57,430
+We do it with orange red.
+
+89
+00:05:57,470 --> 00:05:58,200
+We get 7.
+
+90
+00:05:58,220 --> 00:06:00,630
+We do it Ixion we get three.
+
+91
+00:06:00,740 --> 00:06:02,580
+So it appears to work.
+
+92
+00:06:02,630 --> 00:06:04,150
+I do have it over here as well.
+
+93
+00:06:04,160 --> 00:06:11,570
+We run it let's call a hash on pink just to make sure and we call 10 so that we get an index between
+
+94
+00:06:11,570 --> 00:06:12,630
+0 and 9.
+
+95
+00:06:12,650 --> 00:06:15,150
+I always get zero no matter what.
+
+96
+00:06:15,150 --> 00:06:17,370
+If I quit my browser I restarted.
+
+97
+00:06:17,630 --> 00:06:22,130
+I'm always going to get zero when I call pink with 10.
+
+98
+00:06:22,130 --> 00:06:27,710
+Now if I did instead of do let's do I don't know orange.
+
+99
+00:06:28,070 --> 00:06:33,110
+I also get zero so that's something we have to consider what we'll evaluate whether this is a good or
+
+100
+00:06:33,110 --> 00:06:34,180
+bad one in just a moment.
+
+101
+00:06:34,190 --> 00:06:34,550
+Let's try.
+
+102
+00:06:34,550 --> 00:06:36,470
+Blue zero also.
+
+103
+00:06:36,500 --> 00:06:37,270
+No.
+
+104
+00:06:37,490 --> 00:06:38,580
+How about saying.
+
+105
+00:06:38,920 --> 00:06:39,440
+OK.
+
+106
+00:06:39,680 --> 00:06:40,810
+So if you get three.
+
+107
+00:06:40,840 --> 00:06:42,200
+How about purple.
+
+108
+00:06:42,230 --> 00:06:43,170
+We get a.
+
+109
+00:06:43,640 --> 00:06:46,490
+And maroon.
+
+110
+00:06:46,490 --> 00:06:46,910
+All right.
+
+111
+00:06:46,910 --> 00:06:50,550
+So you see we do get these numbers and they're all less than 10.
+
+112
+00:06:50,810 --> 00:06:55,520
+So that works and every time I call it I get the exact same output according to the rules that I laid
+
+113
+00:06:55,520 --> 00:06:59,510
+out in the last video if there are a couple of problems with this current hash function.
+
+114
+00:06:59,690 --> 00:07:03,510
+First we're going to ignore this one but it only hashes strings right.
+
+115
+00:07:03,590 --> 00:07:08,510
+If you tried to give it a number or a boolean value or something like an array it's not going to work
+
+116
+00:07:08,900 --> 00:07:10,440
+because we're using a string method.
+
+117
+00:07:10,550 --> 00:07:15,620
+So that's a problem in general if we're trying to actually implement something legitimate but we're
+
+118
+00:07:15,620 --> 00:07:18,720
+not going to worry about that because that's not that's beyond the scope of this.
+
+119
+00:07:18,800 --> 00:07:24,440
+We're only carrying about strings but a bigger problem is that it's not constant time the time that
+
+120
+00:07:24,440 --> 00:07:30,350
+it takes the number of operations that we do depends on the length of the string or the size of the
+
+121
+00:07:30,350 --> 00:07:30,840
+data.
+
+122
+00:07:31,010 --> 00:07:34,380
+So if we pass in a larger string it takes longer to hash it.
+
+123
+00:07:34,390 --> 00:07:37,090
+It scales along with the size of the input.
+
+124
+00:07:37,280 --> 00:07:39,350
+So that's not good if we want to fix that.
+
+125
+00:07:39,350 --> 00:07:41,570
+And also this one is important.
+
+126
+00:07:41,570 --> 00:07:42,500
+It's not very random.
+
+127
+00:07:42,500 --> 00:07:45,620
+Our data can be clustered relatively easily.
+
+128
+00:07:45,950 --> 00:07:50,970
+And so we're going to talk about in the next video ways of improving number two and three here.
+
+129
+00:07:51,290 --> 00:07:55,430
+We of course we're going to end up with cluster data when we're working with numbers you know between
+
+130
+00:07:55,430 --> 00:07:56,490
+0 and 10.
+
+131
+00:07:56,540 --> 00:08:01,630
+There's only what 10 options for our values so of course we're going to have some duplicates.
+
+132
+00:08:01,640 --> 00:08:03,810
+But still this is not perfect.
+
+133
+00:08:03,820 --> 00:08:06,100
+We have ways of making it slightly more scattered.
+
+134
+00:08:06,320 --> 00:08:12,520
+And I'll give you a hint it involves using our friend the prime numbers our friends the prime numbers.
+
+135
+00:08:12,650 --> 00:08:12,890
+OK.
+
+136
+00:08:12,890 --> 00:08:18,410
+So in the next video will improve this so that we don't end up with this loop so that we can have a
+
+137
+00:08:18,440 --> 00:08:24,290
+constant time for our time complexity and then also add some prime numbers in to make this a little
+
+138
+00:08:24,290 --> 00:08:27,050
+more random or distributed evenly.
+

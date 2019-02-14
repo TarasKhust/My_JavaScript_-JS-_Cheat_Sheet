@@ -1,0 +1,512 @@
+1
+00:00:00,180 --> 00:00:04,950
+All right welcome back so I hope everyone made it through the important stuff in the last video.
+
+2
+00:00:04,980 --> 00:00:05,430
+I get it.
+
+3
+00:00:05,430 --> 00:00:08,690
+If you skip the introduction the objectives all that stuff.
+
+4
+00:00:08,880 --> 00:00:13,220
+But it's really important to understand the difference between a binary heap and a binary search tree.
+
+5
+00:00:13,230 --> 00:00:15,120
+They look similar but they are different.
+
+6
+00:00:15,390 --> 00:00:19,260
+So here we have a max binary heap 41 is the root.
+
+7
+00:00:19,260 --> 00:00:21,180
+The two children need to be smaller.
+
+8
+00:00:21,180 --> 00:00:22,670
+That's really the only rule.
+
+9
+00:00:22,720 --> 00:00:25,690
+Also notice that we fill in the left first.
+
+10
+00:00:25,710 --> 00:00:30,060
+So I mentioned that in the last video the left child was added and then a right child.
+
+11
+00:00:30,090 --> 00:00:34,700
+And then if we were to add a right one here the next child would be added to the left down here.
+
+12
+00:00:34,890 --> 00:00:37,330
+So we'll come back to that when we actually implement this.
+
+13
+00:00:37,560 --> 00:00:42,300
+So suppose we wanted to represent this wanting to basically write code to model this just like we've
+
+14
+00:00:42,300 --> 00:00:49,290
+done with every other data structure we could implement a tree class and a node class and each node
+
+15
+00:00:49,290 --> 00:00:54,330
+has a left and a right and we could do the same thing we did for a binary search tree but there's actually
+
+16
+00:00:54,480 --> 00:00:55,580
+an easier way.
+
+17
+00:00:55,620 --> 00:00:59,290
+So we can actually use a built in data structure an array or a list.
+
+18
+00:00:59,340 --> 00:01:02,210
+Same thing just different names and different programming languages.
+
+19
+00:01:02,400 --> 00:01:06,490
+We can use that to store a binary heap and I'll show you how.
+
+20
+00:01:06,870 --> 00:01:10,170
+OK so there's a little tiny bit of math involved here.
+
+21
+00:01:10,230 --> 00:01:13,620
+Not much just a little multiplication and addition.
+
+22
+00:01:13,980 --> 00:01:15,810
+But if we look at this binary heap.
+
+23
+00:01:15,840 --> 00:01:18,050
+So this is a max binary heap again.
+
+24
+00:01:18,210 --> 00:01:23,820
+We have 100 up top the largest value and then below it we just have two values that are smaller than
+
+25
+00:01:23,820 --> 00:01:24,910
+100.
+
+26
+00:01:24,930 --> 00:01:28,270
+So again we don't have the two next largest numbers.
+
+27
+00:01:28,290 --> 00:01:33,930
+It just two numbers that are smaller 19 and 36 and then they both have two children.
+
+28
+00:01:33,930 --> 00:01:38,820
+So it's kind of hard to see in this diagram but if we were to actually expand it vertically we wouldn't
+
+29
+00:01:38,820 --> 00:01:40,850
+have any space left to show this.
+
+30
+00:01:40,890 --> 00:01:44,220
+So this down here is our array or list.
+
+31
+00:01:44,400 --> 00:01:45,710
+We're restoring values.
+
+32
+00:01:45,720 --> 00:01:47,040
+It's indexed.
+
+33
+00:01:47,040 --> 00:01:50,020
+So we would have 0 1 2 3 and so on.
+
+34
+00:01:50,310 --> 00:01:54,830
+So we put 100 we put the root at the first Index index of 0.
+
+35
+00:01:54,840 --> 00:01:55,280
+Here we go.
+
+36
+00:01:55,320 --> 00:01:59,000
+I added in the indices down here and then what we can see.
+
+37
+00:01:59,130 --> 00:02:02,150
+Let's say we want to find the children of 100.
+
+38
+00:02:02,520 --> 00:02:03,910
+Well we know where they are.
+
+39
+00:02:03,940 --> 00:02:05,160
+It's the next two values.
+
+40
+00:02:05,220 --> 00:02:06,760
+The left child is 19.
+
+41
+00:02:06,840 --> 00:02:09,360
+The right child is 36.
+
+42
+00:02:09,360 --> 00:02:10,890
+So we have index of zero.
+
+43
+00:02:11,100 --> 00:02:14,450
+It's children our index of one and index of two.
+
+44
+00:02:14,880 --> 00:02:15,150
+All right.
+
+45
+00:02:15,150 --> 00:02:18,450
+Well that part's easy because it's sort of a special case at the beginning.
+
+46
+00:02:18,630 --> 00:02:26,040
+But now if you wanted to look at the children for let's say 19 Well we have to skip over 36 right.
+
+47
+00:02:26,260 --> 00:02:30,670
+And if we look at this diagram 19 has two children 17 and 12.
+
+48
+00:02:31,270 --> 00:02:34,800
+So the 17 is a love child and 12 is the right child.
+
+49
+00:02:34,870 --> 00:02:37,080
+So we have a parent at index 1.
+
+50
+00:02:37,240 --> 00:02:41,050
+It's left child is index 3 it's right child does index 4.
+
+51
+00:02:41,580 --> 00:02:44,630
+OK next let's go to 36.
+
+52
+00:02:45,190 --> 00:02:54,490
+So we had 36 we have to hop hop frog leap frog over to get to 25 which is its left child and five which
+
+53
+00:02:54,490 --> 00:02:55,450
+is its right child.
+
+54
+00:02:55,450 --> 00:03:01,240
+So index of two corresponds to two children at index five and six.
+
+55
+00:03:01,720 --> 00:03:02,200
+OK.
+
+56
+00:03:02,250 --> 00:03:05,340
+Where I didn't do this for every single value I promise we're about to skip ahead.
+
+57
+00:03:05,410 --> 00:03:09,920
+Seventeen though it's children start at index of seven for nine.
+
+58
+00:03:09,970 --> 00:03:12,100
+An index of eight for 15.
+
+59
+00:03:12,550 --> 00:03:15,910
+So can you figure out the little mathematical relationship here.
+
+60
+00:03:16,240 --> 00:03:18,970
+What if you have an index for a parent.
+
+61
+00:03:18,970 --> 00:03:21,160
+Where are two children located.
+
+62
+00:03:21,160 --> 00:03:22,360
+Here's one more.
+
+63
+00:03:22,360 --> 00:03:24,690
+Five is the parent.
+
+64
+00:03:24,730 --> 00:03:28,390
+Its children are located at index of 13 and 14.
+
+65
+00:03:28,390 --> 00:03:35,710
+So index of six was was the parent indices index not indices and its left child was 13 its child was
+
+66
+00:03:35,710 --> 00:03:36,620
+14.
+
+67
+00:03:37,090 --> 00:03:38,990
+So what's the relationship here.
+
+68
+00:03:39,010 --> 00:03:46,330
+So for any index an inside of an array the left child is stored at two and plus one and the right child
+
+69
+00:03:46,450 --> 00:03:48,290
+is at two and plus two.
+
+70
+00:03:48,620 --> 00:03:49,220
+OK.
+
+71
+00:03:49,480 --> 00:03:56,350
+So if we take index six for example we find it's children by multiplying that by two and adding one.
+
+72
+00:03:56,530 --> 00:03:58,520
+So six times to give first 12.
+
+73
+00:03:58,540 --> 00:04:06,000
+We add one we get 13 so that to the left child we add two or we add one more really we get 14.
+
+74
+00:04:06,310 --> 00:04:13,960
+So they're side by side or let's take this index 12 sorry this index for the value of 12.
+
+75
+00:04:14,220 --> 00:04:15,580
+It's children.
+
+76
+00:04:15,580 --> 00:04:17,680
+We multiply 4 by 2.
+
+77
+00:04:17,740 --> 00:04:19,220
+8 we add 1.
+
+78
+00:04:19,270 --> 00:04:21,910
+So that's going to give us 9 in 10.
+
+79
+00:04:22,210 --> 00:04:24,480
+We had one we had 2 6 and 11.
+
+80
+00:04:24,480 --> 00:04:25,520
+Is that correct.
+
+81
+00:04:25,720 --> 00:04:26,430
+Yes.
+
+82
+00:04:26,590 --> 00:04:28,910
+If you follow this line it's hard 12.
+
+83
+00:04:28,930 --> 00:04:31,480
+Children are 6 and 11.
+
+84
+00:04:31,480 --> 00:04:36,340
+So that's the formula to actually find a child based off of a parent.
+
+85
+00:04:36,400 --> 00:04:40,990
+We take the number to the index and we multiply by two and we add one to get the left.
+
+86
+00:04:40,990 --> 00:04:44,110
+We had two to get the right and we'll be doing that in our code.
+
+87
+00:04:44,110 --> 00:04:46,230
+Hopefully the relationship there makes sense.
+
+88
+00:04:46,420 --> 00:04:48,880
+And you can see how that works and why it works.
+
+89
+00:04:49,120 --> 00:04:53,830
+If not just we're going to come back to this and you can just add this into your code and just assume
+
+90
+00:04:53,830 --> 00:04:54,300
+that it works.
+
+91
+00:04:54,310 --> 00:04:59,740
+But I think if you kind of if you think about it you know there's you know two children per each node
+
+92
+00:05:00,370 --> 00:05:03,240
+and we need a way to flatten that and store that I can.
+
+93
+00:05:03,250 --> 00:05:07,960
+Yeah I like this diagram just shrinks it all and smashes into this list and you can see how it works
+
+94
+00:05:07,990 --> 00:05:09,400
+as you move further and further down.
+
+95
+00:05:09,400 --> 00:05:11,270
+You have a lot more children anyway.
+
+96
+00:05:11,440 --> 00:05:17,200
+So the other thing is we can work backwards if we have a child node and we want to know it's parent.
+
+97
+00:05:17,350 --> 00:05:19,450
+So it's the same exact math relationship.
+
+98
+00:05:19,450 --> 00:05:21,050
+You just go the other direction.
+
+99
+00:05:21,070 --> 00:05:29,860
+So if we have a child of six at index of nine its parent is an index of four or if we have index 12
+
+100
+00:05:29,860 --> 00:05:33,240
+for the child we can figure out that its parent is an index of 5.
+
+101
+00:05:33,430 --> 00:05:35,030
+And the math for that.
+
+102
+00:05:35,050 --> 00:05:41,890
+So if we have a child index and we subtract one divide by two and then also we floor it meaning we just
+
+103
+00:05:41,890 --> 00:05:48,790
+chop off the decimal because we can't have you know point five decimals in as far as an index of whole
+
+104
+00:05:48,790 --> 00:05:49,570
+integers.
+
+105
+00:05:49,570 --> 00:05:57,490
+So if we go back and say we're working with 13 right here index 13 the value is 1 to find its parent.
+
+106
+00:05:57,520 --> 00:05:59,860
+We subtract 1 which gives us 12.
+
+107
+00:06:00,170 --> 00:06:01,240
+We divide by 2.
+
+108
+00:06:01,360 --> 00:06:04,470
+Gives us 6 so it indexed 6 we have the value 5.
+
+109
+00:06:04,540 --> 00:06:08,730
+And that indeed is the parent of 1.
+
+110
+00:06:08,740 --> 00:06:10,000
+Let's try one more.
+
+111
+00:06:10,030 --> 00:06:12,680
+How about index of 10.
+
+112
+00:06:12,730 --> 00:06:16,440
+So at 10 we have this value 11 to find its parent.
+
+113
+00:06:16,570 --> 00:06:19,220
+We subtract 1 which gives us 9.
+
+114
+00:06:19,360 --> 00:06:20,790
+Then we divide by 2.
+
+115
+00:06:20,800 --> 00:06:23,380
+Remember it's one divided by two floored.
+
+116
+00:06:23,650 --> 00:06:25,750
+So we take ten minus one that's nine.
+
+117
+00:06:25,780 --> 00:06:28,140
+Divide by 2 4.5.
+
+118
+00:06:28,270 --> 00:06:29,920
+Well there's no index four point five.
+
+119
+00:06:30,010 --> 00:06:32,940
+But if we floor it we just chop off the decimal.
+
+120
+00:06:32,980 --> 00:06:35,320
+We get four right here.
+
+121
+00:06:35,320 --> 00:06:40,580
+So the value of 12 is that indeed the parents of 11 yes it is.
+
+122
+00:06:40,690 --> 00:06:41,500
+There it is.
+
+123
+00:06:41,830 --> 00:06:46,160
+So that's the math that floor part is important because we can't have.
+
+124
+00:06:46,210 --> 00:06:49,340
+Like I said we can't have four point five as an index.
+
+125
+00:06:49,660 --> 00:06:50,120
+OK.
+
+126
+00:06:50,200 --> 00:06:54,550
+So those two things we will return back to you because there will be situations where we have a parents
+
+127
+00:06:54,760 --> 00:07:00,820
+and we need to find it's children in which case we do two in plus one two and plus two or if we need
+
+128
+00:07:00,820 --> 00:07:05,440
+to find a parent based off a child and minus one divide by two floored.
+

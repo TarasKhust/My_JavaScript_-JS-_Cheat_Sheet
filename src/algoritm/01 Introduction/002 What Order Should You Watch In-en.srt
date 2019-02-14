@@ -1,0 +1,184 @@
+1
+00:00:00,240 --> 00:00:04,610
+Everyone in this video to talk about the order of the content is arranged in.
+
+2
+00:00:04,680 --> 00:00:09,420
+So we've established that there is a lot of stuff here and it's pretty varied.
+
+3
+00:00:09,420 --> 00:00:14,460
+You don't have to go through every single video one after the other like you might with the intro to
+
+4
+00:00:14,550 --> 00:00:16,340
+C S S course or intro to J.
+
+5
+00:00:16,330 --> 00:00:22,350
+Yes some of you might be here only for the sorting algorithm stuff or only the data structures and that's
+
+6
+00:00:22,350 --> 00:00:23,880
+totally fine.
+
+7
+00:00:23,910 --> 00:00:26,360
+You do not need to go through everything in order.
+
+8
+00:00:26,460 --> 00:00:29,410
+But however you do it please take your time.
+
+9
+00:00:29,430 --> 00:00:31,330
+This content can be a little dense.
+
+10
+00:00:31,350 --> 00:00:32,770
+There's a lot of it here.
+
+11
+00:00:32,790 --> 00:00:39,270
+Remember that this is the condensed version of what I teach over two and a half three weeks of in-person
+
+12
+00:00:39,270 --> 00:00:43,600
+courses in a boot camp where it's five days a week eight to 10 hours a day.
+
+13
+00:00:43,620 --> 00:00:46,820
+It's very intense content and this is three weeks of that.
+
+14
+00:00:46,830 --> 00:00:51,910
+So even though it might it's only 20 something hours remember that that's just the amount of lecture.
+
+15
+00:00:51,930 --> 00:00:56,580
+There's a lot of time to digest that and understand it do the quizzes build stuff etc..
+
+16
+00:00:57,000 --> 00:01:03,340
+So onto the important piece which is please notice the prerequisite lectures in every section.
+
+17
+00:01:03,360 --> 00:01:10,590
+After the first section and the next section every other section contains at the very beginning a lecture
+
+18
+00:01:10,740 --> 00:01:19,830
+may just show you here called prerequisites in all caps and all that it contains is information about
+
+19
+00:01:20,070 --> 00:01:22,050
+which other sections you need to complete.
+
+20
+00:01:22,050 --> 00:01:24,040
+First before you can tackle this one.
+
+21
+00:01:24,120 --> 00:01:30,080
+So if you do want to jump to sorting algorithms for example I'd say you want to go to a bubble sort.
+
+22
+00:01:30,390 --> 00:01:32,230
+Well all that you really need to know.
+
+23
+00:01:32,430 --> 00:01:34,500
+According to this is Big O notation.
+
+24
+00:01:34,500 --> 00:01:39,780
+Section 1 if you want to jump to a more complex sorting algorithm like merge sort.
+
+25
+00:01:40,110 --> 00:01:45,720
+You definitely need to know Big-O notation and Section 6 which covers recursion because merge sort the
+
+26
+00:01:45,720 --> 00:01:48,890
+way we implement it is with a recursive implementation.
+
+27
+00:01:49,200 --> 00:01:51,750
+And then there are some secondary considerations.
+
+28
+00:01:51,750 --> 00:01:55,930
+These are the sections I recommend you check out but you don't have to.
+
+29
+00:01:55,980 --> 00:01:59,830
+So the first to hear Section 1 in section 6.
+
+30
+00:01:59,850 --> 00:02:05,160
+You definitely need to understand these are just helpful and you can see as we go later in the course
+
+31
+00:02:05,160 --> 00:02:08,410
+like we look at binary search trees.
+
+32
+00:02:08,550 --> 00:02:09,280
+Same thing.
+
+33
+00:02:09,490 --> 00:02:14,220
+The prerequisites that you definitely need to understand and then things that could be helpful while
+
+34
+00:02:14,220 --> 00:02:17,550
+not could be things that will be helpful but they're not mandatory.
+
+35
+00:02:17,550 --> 00:02:19,040
+So please pay attention to that.
+
+36
+00:02:19,050 --> 00:02:21,070
+Every section has prerequisites.
+
+37
+00:02:21,120 --> 00:02:22,440
+A text lecture at the beginning.
+
+38
+00:02:22,440 --> 00:02:23,710
+It's there for a reason.
+
+39
+00:02:23,730 --> 00:02:28,410
+If you do hop around if you don't want to go through every single section in order make sure you're
+
+40
+00:02:28,410 --> 00:02:33,810
+paying attention to that so that you don't get confused when I talk about binary heaps and priority
+
+41
+00:02:33,810 --> 00:02:39,990
+queues in the dextrous shortest path section which if we go to that section you can see here we are.
+
+42
+00:02:39,990 --> 00:02:43,320
+You can see you need to have binary heaps and priority queues.
+
+43
+00:02:43,470 --> 00:02:45,060
+Anyway I'll leave it at that.
+
+44
+00:02:45,090 --> 00:02:48,110
+Just please notice those prerequisites lectures are very helpful.
+
+45
+00:02:48,120 --> 00:02:52,040
+If you do want to hop around Otherwise you can just go to the content in order.
+
+46
+00:02:52,140 --> 00:02:52,340
+Get.
+

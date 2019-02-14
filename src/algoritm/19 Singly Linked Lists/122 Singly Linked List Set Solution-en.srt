@@ -1,0 +1,144 @@
+1
+00:00:00,300 --> 00:00:04,140
+All right we are all set to implement that.
+
+2
+00:00:04,440 --> 00:00:04,830
+Yeah.
+
+3
+00:00:04,920 --> 00:00:05,550
+All right.
+
+4
+00:00:05,550 --> 00:00:11,790
+So I'm going to hop over here and I'm going to add my method set which takes two things the index and
+
+5
+00:00:11,790 --> 00:00:14,550
+then a new value to set it to.
+
+6
+00:00:14,560 --> 00:00:18,900
+And all we need to do is call our GET method with that index.
+
+7
+00:00:18,910 --> 00:00:24,630
+This does get with the index that was provided set it equal to a variable civil which we'll call it
+
+8
+00:00:24,900 --> 00:00:26,570
+found node.
+
+9
+00:00:27,540 --> 00:00:31,060
+And we're just going to check if that returns something valid or not.
+
+10
+00:00:31,080 --> 00:00:32,690
+I don't know what I'm doing that for.
+
+11
+00:00:32,700 --> 00:00:35,440
+It was already indented properly just fidgeting.
+
+12
+00:00:35,550 --> 00:00:37,540
+So get we'll take care of it.
+
+13
+00:00:37,650 --> 00:00:41,650
+And it's either going to return to us no or the actual node.
+
+14
+00:00:41,730 --> 00:00:49,830
+So if it's found in just you if found node all that we need to do is update found node vowel equals
+
+15
+00:00:49,830 --> 00:00:57,270
+the value that was passed in here and then returned true otherwise return false.
+
+16
+00:00:57,270 --> 00:00:58,940
+We don't need to do the return.
+
+17
+00:00:58,940 --> 00:01:04,440
+Else we don't need to do else return false because it's only one or the other either or.
+
+18
+00:01:04,840 --> 00:01:05,360
+OK.
+
+19
+00:01:05,520 --> 00:01:06,770
+And that's actually it.
+
+20
+00:01:06,780 --> 00:01:10,600
+So it's nice and easy because we have this method already defined.
+
+21
+00:01:10,740 --> 00:01:12,120
+But let's test it out.
+
+22
+00:01:12,180 --> 00:01:19,010
+So we've got all this here let's do well let's run the code and I'll do list doesn't get.
+
+23
+00:01:19,110 --> 00:01:21,250
+What's the item at index 2.
+
+24
+00:01:21,250 --> 00:01:21,560
+All right.
+
+25
+00:01:21,570 --> 00:01:22,830
+It's an exclamation point.
+
+26
+00:01:23,010 --> 00:01:24,770
+Let's now set it list.
+
+27
+00:01:24,930 --> 00:01:30,440
+Set at index to to be triple bang triple exclamation point.
+
+28
+00:01:30,630 --> 00:01:38,400
+And if we look at the list and we look at list doesn't get indexed to now it's triple exclamation points.
+
+29
+00:01:38,400 --> 00:01:45,600
+However if I try and do list data set something in index I don't know six doesn't exist.
+
+30
+00:01:45,720 --> 00:01:46,770
+So it's false.
+
+31
+00:01:46,830 --> 00:01:50,970
+And if we look at our list and we do let's just look at the tail.
+
+32
+00:01:51,090 --> 00:01:53,880
+The last thing is still the smiley face.
+
+33
+00:01:53,880 --> 00:02:00,670
+What else could we do here let's do list set negative 1 and set that to be Hellawell.
+
+34
+00:02:00,750 --> 00:02:05,640
+It's not going to work because our method is rejecting it returns no.
+
+35
+00:02:05,790 --> 00:02:09,050
+So we return false and that's all there is to set.
+
+36
+00:02:09,140 --> 00:02:10,330
+Nice and easy hopefully.
+

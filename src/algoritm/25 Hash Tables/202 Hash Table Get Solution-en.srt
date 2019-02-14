@@ -1,0 +1,440 @@
+1
+00:00:00,150 --> 00:00:02,580
+All right in the last video we implemented set.
+
+2
+00:00:02,580 --> 00:00:09,450
+Now let's work on get so get needs to accept a key like pink and then go and look in our hash table
+
+3
+00:00:09,610 --> 00:00:11,010
+and use the hash that key.
+
+4
+00:00:11,130 --> 00:00:11,620
+Right.
+
+5
+00:00:11,730 --> 00:00:12,880
+And we need to get an index.
+
+6
+00:00:12,900 --> 00:00:16,980
+Then we look to see if it's if there's something in the hash table at that index.
+
+7
+00:00:17,130 --> 00:00:20,550
+And if not then we return undefined or false or something.
+
+8
+00:00:20,580 --> 00:00:26,620
+Otherwise we need to return the value itself which depending on how many things are in there.
+
+9
+00:00:26,790 --> 00:00:32,040
+Because with the way we're doing this with separate chaining there could be five or ten values or more
+
+10
+00:00:32,070 --> 00:00:34,690
+doesn't really matter inside of this one index.
+
+11
+00:00:34,710 --> 00:00:40,170
+So we need to find the correct key and value inside of that index in a nested list.
+
+12
+00:00:40,170 --> 00:00:45,230
+So retrieve the key value pair and then return it and return undefined if you can't find it.
+
+13
+00:00:45,420 --> 00:00:51,420
+OK so I've updated my example stuff example stuff that's not a good way of putting it.
+
+14
+00:00:51,480 --> 00:00:56,390
+I've updated our demo hash table here with some real colors and color codes.
+
+15
+00:00:56,390 --> 00:01:01,840
+These are all Chimo or CSSA built in named colors medium Violet red.
+
+16
+00:01:01,950 --> 00:01:04,330
+And this is the hexadecimal color code.
+
+17
+00:01:04,350 --> 00:01:04,810
+OK.
+
+18
+00:01:05,010 --> 00:01:10,190
+I've also updated the sides appear to be 17 although honestly I probably should have just specified
+
+19
+00:01:10,260 --> 00:01:16,980
+here and then put this back at what was it that 53 was it doesn't matter that much.
+
+20
+00:01:17,210 --> 00:01:17,530
+OK.
+
+21
+00:01:17,580 --> 00:01:24,390
+So we have get written here the skeleton takes the key and the first thing we need to do is hash that
+
+22
+00:01:24,390 --> 00:01:24,630
+key.
+
+23
+00:01:24,630 --> 00:01:26,990
+So I'm just going to copy this here.
+
+24
+00:01:27,840 --> 00:01:28,740
+Get an index.
+
+25
+00:01:28,740 --> 00:01:32,160
+Let index equals this underscore a hash of our key.
+
+26
+00:01:32,460 --> 00:01:37,040
+So whatever is passed in OK then we need to first check.
+
+27
+00:01:37,110 --> 00:01:39,210
+Is there something at that index.
+
+28
+00:01:39,450 --> 00:01:41,590
+So let's just do a.
+
+29
+00:01:41,700 --> 00:01:48,990
+If this dunky map of that index index like that.
+
+30
+00:01:49,230 --> 00:01:54,980
+So if there's not if there's nothing there at that index then we know for sure we can return undefined.
+
+31
+00:01:55,020 --> 00:01:55,600
+Right.
+
+32
+00:01:55,950 --> 00:02:03,400
+So if we do find an index or if we find something at the index let's say that we get index of 8.
+
+33
+00:02:03,540 --> 00:02:06,200
+Well there is something there but what do we need to do.
+
+34
+00:02:06,510 --> 00:02:08,760
+Well we can't just return to the first thing.
+
+35
+00:02:08,760 --> 00:02:12,020
+We can't return the entire context of that index.
+
+36
+00:02:12,180 --> 00:02:21,870
+If we did that let's just to turn this key map of index first of all let's run our code again.
+
+37
+00:02:22,080 --> 00:02:24,600
+Let's do h t get.
+
+38
+00:02:25,050 --> 00:02:26,340
+What color do I have in there.
+
+39
+00:02:26,370 --> 00:02:28,890
+Yellow.
+
+40
+00:02:28,890 --> 00:02:29,830
+What does he give me.
+
+41
+00:02:29,940 --> 00:02:35,790
+Well it gives me the entire element in our hash table at that index which happens to contain two items.
+
+42
+00:02:35,820 --> 00:02:39,190
+What we want is to return this sub array the child.
+
+43
+00:02:39,210 --> 00:02:46,830
+So we need to loop over potentially any values in there and then find what we're looking for and return
+
+44
+00:02:46,830 --> 00:02:48,430
+that entire suburb.
+
+45
+00:02:48,780 --> 00:02:55,200
+So rather than that we're going to do a for loop start at zero.
+
+46
+00:02:55,200 --> 00:02:56,820
+Just loop over an array.
+
+47
+00:02:56,820 --> 00:03:06,850
+So while it is less than this key map index length plus plus.
+
+48
+00:03:06,900 --> 00:03:10,810
+So this occurs once we've found the correct spot.
+
+49
+00:03:11,190 --> 00:03:18,030
+Like if I look at the hash table I suppose you know we hash the key yellow it comes back as the index
+
+50
+00:03:18,090 --> 00:03:18,310
+8.
+
+51
+00:03:18,330 --> 00:03:20,090
+So we found the data at 8.
+
+52
+00:03:20,100 --> 00:03:25,110
+So now we need to loop over this which is an array of two items but we could have 10 things here and
+
+53
+00:03:25,110 --> 00:03:28,020
+we might be looking for the last thing or the middle thing or the first thing.
+
+54
+00:03:28,260 --> 00:03:32,120
+But we're going to start a variable at zero just a standard loop.
+
+55
+00:03:32,490 --> 00:03:39,540
+While it's less than the length of the item at this index which in our case is a subgroup of two items
+
+56
+00:03:39,990 --> 00:03:41,690
+we are going to add one to I.
+
+57
+00:03:41,700 --> 00:03:47,670
+And then we're just going to check if this dot key map and what we're actually looking for is to see
+
+58
+00:03:47,670 --> 00:03:54,000
+if the key that was passed in equals the first item in this array and the first item in this array until
+
+59
+00:03:54,000 --> 00:03:55,590
+we find what we were looking for.
+
+60
+00:03:55,590 --> 00:04:07,380
+So if this key math index of I that's going to give us this summary here or this subquery here.
+
+61
+00:04:07,380 --> 00:04:12,720
+Then we want the 0 item where restoring the key because we're storing our key first and then the value
+
+62
+00:04:13,140 --> 00:04:19,590
+if that equals the key that we're looking for then we're going to I'm going to do it on a separate line
+
+63
+00:04:19,830 --> 00:04:27,750
+because it's kind of a long statement but returned this key map and we want to return index of the entire
+
+64
+00:04:27,750 --> 00:04:28,590
+subarray.
+
+65
+00:04:28,800 --> 00:04:30,230
+So let's test it out.
+
+66
+00:04:30,400 --> 00:04:31,720
+Can it run this.
+
+67
+00:04:31,720 --> 00:04:33,220
+We've got our hash table.
+
+68
+00:04:33,450 --> 00:04:38,380
+And let's do a get first of something that is in there like yellow.
+
+69
+00:04:38,610 --> 00:04:38,990
+OK.
+
+70
+00:04:39,000 --> 00:04:40,970
+So we get the correct array.
+
+71
+00:04:41,040 --> 00:04:44,440
+Yellow is our key and our value is that color code.
+
+72
+00:04:44,550 --> 00:04:47,600
+If we try and do something that's not in there we get undefined.
+
+73
+00:04:48,090 --> 00:04:52,070
+Let's just double check let's try doing plumbe.
+
+74
+00:04:52,500 --> 00:04:58,340
+What else was stored alongside the index 8 we had maroon.
+
+75
+00:04:58,340 --> 00:05:03,490
+So let's just check it works and we try and get maroon because that's really the harder case.
+
+76
+00:05:03,770 --> 00:05:08,380
+It looks like it's working to try and get plum I already did pull them didn't I.
+
+77
+00:05:08,420 --> 00:05:10,290
+About salmon.
+
+78
+00:05:10,350 --> 00:05:12,360
+All right well it looks good to me.
+
+79
+00:05:12,360 --> 00:05:18,600
+Except for the fact that when we do get like if I do all of we get the entire array we just want the
+
+80
+00:05:18,600 --> 00:05:19,290
+value.
+
+81
+00:05:19,440 --> 00:05:25,770
+So if we come back to get right here don't return the entire array return the value which is the second
+
+82
+00:05:25,770 --> 00:05:29,150
+item index of 1 0 1.
+
+83
+00:05:29,160 --> 00:05:29,370
+All right.
+
+84
+00:05:29,380 --> 00:05:30,570
+Try it again.
+
+85
+00:05:30,630 --> 00:05:32,870
+Let's do H.T. don't get all of.
+
+86
+00:05:32,880 --> 00:05:33,080
+All right.
+
+87
+00:05:33,090 --> 00:05:34,610
+It's working right.
+
+88
+00:05:34,620 --> 00:05:38,500
+We get the corresponding value not the entire thing.
+
+89
+00:05:38,730 --> 00:05:41,740
+And if we try and add something new that's set.
+
+90
+00:05:41,760 --> 00:05:43,810
+Are we done to be.
+
+91
+00:05:43,890 --> 00:05:45,570
+Yes.
+
+92
+00:05:46,170 --> 00:05:52,240
+If we do get are we done we get.
+
+93
+00:05:52,320 --> 00:05:53,140
+Yes.
+
+94
+00:05:53,160 --> 00:05:53,740
+All right.
+
+95
+00:05:53,790 --> 00:05:54,470
+So that's working.
+
+96
+00:05:54,470 --> 00:05:56,240
+And that is the basics of get.
+
+97
+00:05:56,280 --> 00:06:00,400
+So we hash the key that's provided to get an index.
+
+98
+00:06:00,450 --> 00:06:04,290
+Then we check if the key map even contains anything at that index.
+
+99
+00:06:04,290 --> 00:06:06,690
+If not we just return undefined.
+
+100
+00:06:06,810 --> 00:06:07,060
+Right.
+
+101
+00:06:07,060 --> 00:06:11,190
+If I try and do this we get undefined.
+
+102
+00:06:11,850 --> 00:06:17,280
+Otherwise we're going to check over every single item that is contained at that index.
+
+103
+00:06:17,280 --> 00:06:19,830
+There might be one there might be 50.
+
+104
+00:06:19,890 --> 00:06:22,140
+We loop over and we check for each one.
+
+105
+00:06:22,140 --> 00:06:27,530
+Are you the thing we're looking for is your key index of 0 equal to my key that I'm looking for.
+
+106
+00:06:27,660 --> 00:06:30,530
+If it is return the value.
+
+107
+00:06:30,750 --> 00:06:38,880
+So this Taqi Mac key map index I of one not the most intuitive looking code that beautiful but the shortest
+
+108
+00:06:38,880 --> 00:06:41,780
+way of doing it or at least one of the shorter ways.
+
+109
+00:06:42,030 --> 00:06:42,260
+All right.
+
+110
+00:06:42,270 --> 00:06:43,110
+So let's get.
+

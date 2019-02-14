@@ -1,0 +1,432 @@
+1
+00:00:00,090 --> 00:00:00,470
+All right.
+
+2
+00:00:00,470 --> 00:00:01,200
+Come back.
+
+3
+00:00:01,200 --> 00:00:03,310
+Now let's write the code to make this work.
+
+4
+00:00:03,330 --> 00:00:05,350
+To merge two sorted arrays.
+
+5
+00:00:05,400 --> 00:00:11,070
+So if you jumped to this video because you saw implementation in the title I recommend you just go back
+
+6
+00:00:11,070 --> 00:00:14,400
+and take a look at the rough pseudo code how it's supposed to work.
+
+7
+00:00:14,400 --> 00:00:16,700
+Just so you understand what we're doing here.
+
+8
+00:00:16,740 --> 00:00:19,470
+So here I'll start by defining a snippet.
+
+9
+00:00:19,470 --> 00:00:24,140
+As always I'll call it merge my function and it takes into arrays.
+
+10
+00:00:24,180 --> 00:00:27,470
+Let's just do a r r one and r r to.
+
+11
+00:00:27,930 --> 00:00:33,340
+And then here the very first thing we should make is just make a variable called result's
+
+12
+00:00:36,480 --> 00:00:41,500
+empty array and then at the very end we return results like that.
+
+13
+00:00:41,790 --> 00:00:43,490
+And then we need to do all of our logic.
+
+14
+00:00:43,590 --> 00:00:48,660
+So the first thing we'll do is make our two little pointers are going to start with a variable zero
+
+15
+00:00:48,750 --> 00:00:49,820
+and another one at zero.
+
+16
+00:00:49,830 --> 00:00:57,000
+Each for each one for a huge array and then they'll move through individually so we'll do let i equal
+
+17
+00:00:57,000 --> 00:01:03,530
+zero but J equals zero or whatever you could call it a r r 1 index or something.
+
+18
+00:01:03,540 --> 00:01:05,110
+I'm just going to go with I.
+
+19
+00:01:05,640 --> 00:01:05,950
+OK.
+
+20
+00:01:05,970 --> 00:01:12,930
+Now the ball CoreLogic when you have a while loop that that runs while I is less than the length of
+
+21
+00:01:12,930 --> 00:01:18,150
+the array and J is less than the length basically meaning while there is still data for us to look at
+
+22
+00:01:18,390 --> 00:01:21,060
+in both if we hit the end of one of them.
+
+23
+00:01:21,090 --> 00:01:26,080
+Remember in the last video that I showed when we started here than we hit the end of 50 and there were
+
+24
+00:01:26,080 --> 00:01:27,520
+still data here.
+
+25
+00:01:27,570 --> 00:01:32,850
+We're going to do something else to this first loop only applies when we're looping through both at
+
+26
+00:01:32,850 --> 00:01:33,780
+the same time.
+
+27
+00:01:33,780 --> 00:01:45,750
+So while I is less than 1 length and J is less than $2 like perfect now we just do a simple comparison
+
+28
+00:01:45,780 --> 00:01:51,620
+of two of J and array one of I.
+
+29
+00:01:51,780 --> 00:01:53,750
+So it's up to us which one we got to do first.
+
+30
+00:01:53,760 --> 00:01:58,020
+I'm going to say if a two of J is greater than array I gave one of.
+
+31
+00:01:58,200 --> 00:02:02,400
+It's so confusing to try to talk about if this is our results we're basically checking if this one is
+
+32
+00:02:02,400 --> 00:02:03,540
+greater than this one.
+
+33
+00:02:03,540 --> 00:02:04,290
+What do we do.
+
+34
+00:02:04,350 --> 00:02:06,930
+We take this and we put it in results.
+
+35
+00:02:07,080 --> 00:02:13,770
+So if that's the case we're going to say results don't push array.
+
+36
+00:02:14,490 --> 00:02:15,540
+Oh and I said that backwards.
+
+37
+00:02:15,540 --> 00:02:19,560
+I'm sorry if this one is greater than this.
+
+38
+00:02:19,650 --> 00:02:22,140
+Then we take the smaller one and we put it in there.
+
+39
+00:02:22,140 --> 00:02:25,490
+I don't why we're not trying to do descending order.
+
+40
+00:02:25,500 --> 00:02:27,560
+We want the smallest items first.
+
+41
+00:02:27,570 --> 00:02:28,230
+All right.
+
+42
+00:02:28,230 --> 00:02:34,650
+So we're going to push array one of I if if it is smaller if array one is the smallest thing.
+
+43
+00:02:34,650 --> 00:02:41,790
+And if that's the case if we actually push array 1 in we then need to move I it's no longer going to
+
+44
+00:02:41,790 --> 00:02:42,260
+be zero.
+
+45
+00:02:42,270 --> 00:02:47,770
+We need to move up by 1 and that's super easy for us.
+
+46
+00:02:48,500 --> 00:02:49,080
+OK.
+
+47
+00:02:49,110 --> 00:02:54,200
+Now we have an else which is a lot of a lot of times.
+
+48
+00:02:54,350 --> 00:02:55,640
+I guess we haven't covered the edge case.
+
+49
+00:02:55,650 --> 00:02:57,110
+If that is the same value.
+
+50
+00:02:57,510 --> 00:03:03,840
+So instead of doing an else if array 2 is less than 1 because if we just add greater than and less than
+
+51
+00:03:03,850 --> 00:03:06,840
+we we'd be missing the case of equality.
+
+52
+00:03:06,840 --> 00:03:11,640
+But we can just pick one we can do greater than or equal two with an else or do greater then and then
+
+53
+00:03:11,640 --> 00:03:18,120
+have an else which will move which will catch the case when they're equal and when array one is greater.
+
+54
+00:03:18,460 --> 00:03:20,160
+OK so if that's if that's the case.
+
+55
+00:03:20,160 --> 00:03:24,940
+Otherwise we do results up push a re two of J.
+
+56
+00:03:25,200 --> 00:03:28,360
+And then we increment J by 1 because now we're moving up.
+
+57
+00:03:28,380 --> 00:03:31,700
+So that would be the Do we have that snow in the first time through.
+
+58
+00:03:31,800 --> 00:03:34,560
+We put one in here and then we're looking at ten in two.
+
+59
+00:03:34,560 --> 00:03:34,920
+Yes.
+
+60
+00:03:34,920 --> 00:03:37,140
+Now two is smaller.
+
+61
+00:03:37,140 --> 00:03:40,640
+So in that case we add two in which is from array of J.
+
+62
+00:03:40,810 --> 00:03:44,740
+But then we increment J by 1 and we go here.
+
+63
+00:03:44,980 --> 00:03:46,440
+Array of two I mean.
+
+64
+00:03:46,440 --> 00:03:47,160
+All right.
+
+65
+00:03:47,430 --> 00:03:53,120
+So if we look at what actually happens at the end of this loop let's print this out.
+
+66
+00:03:53,340 --> 00:03:54,600
+Well we're going to return results.
+
+67
+00:03:54,600 --> 00:03:56,240
+We don't actually need to print it.
+
+68
+00:03:56,250 --> 00:03:58,580
+It's not complete but it's getting there.
+
+69
+00:03:58,590 --> 00:04:07,470
+So we end up with one to 10 14 and 50 because what happened is we did this and this we did 10 14 did
+
+70
+00:04:07,470 --> 00:04:11,280
+50 and then we hit the end because we did 50 and then we added 1 to i.
+
+71
+00:04:11,640 --> 00:04:14,670
+And we hit the end of the array so this loop broke out.
+
+72
+00:04:14,670 --> 00:04:16,050
+We finished.
+
+73
+00:04:16,050 --> 00:04:20,820
+So what needs to happen afterwards once we exhaust one of them because remember our condition while
+
+74
+00:04:20,820 --> 00:04:25,810
+I is less than a re 1.0 length NJ is less than a shootout length.
+
+75
+00:04:26,250 --> 00:04:31,680
+Once we hit the end we then just take everything that's left in J an added in or if J.
+
+76
+00:04:31,710 --> 00:04:37,630
+If this was shorter like here if we hit the end we then take whatever's left in the first array and
+
+77
+00:04:37,630 --> 00:04:38,450
+added.
+
+78
+00:04:38,850 --> 00:04:40,330
+So that's easy as well.
+
+79
+00:04:40,410 --> 00:04:48,150
+I'm just going to do two well loops and I'll just have a while while I is less than one length.
+
+80
+00:04:48,810 --> 00:04:49,710
+What are we going to do.
+
+81
+00:04:49,710 --> 00:04:56,150
+Results up push array one of I and then just add 1 to i.
+
+82
+00:04:56,310 --> 00:04:58,910
+So basically the same logic in here.
+
+83
+00:04:59,370 --> 00:05:04,230
+It's just that we're not doing a conditional check anymore and I'm going to just duplicate this but
+
+84
+00:05:04,230 --> 00:05:12,090
+then replace I with J an array one with a right to that make sense.
+
+85
+00:05:12,130 --> 00:05:18,450
+So whatever happens at the end we merge them as far as we can until we hit the end of one of the arrays.
+
+86
+00:05:18,610 --> 00:05:23,920
+So let's say we hit the end of array one that means set rates who still has stuff in it.
+
+87
+00:05:23,920 --> 00:05:27,880
+So Jay hasn't hit the end so Jay will be less than a two dollar length.
+
+88
+00:05:27,880 --> 00:05:34,340
+In our case if we at the end of year 1 2 3 we get one to 10 14 50.
+
+89
+00:05:34,480 --> 00:05:39,820
+That means that Jay is currently an index of what is at 0 1 2.
+
+90
+00:05:40,300 --> 00:05:43,380
+So we have to add this in and we have to add this in.
+
+91
+00:05:43,540 --> 00:05:45,300
+And then Jay will have hit the end.
+
+92
+00:05:45,550 --> 00:05:51,670
+Jay will be equal to a rate of length at that point and then we finish and we return results.
+
+93
+00:05:51,820 --> 00:05:57,190
+Let's see if it works it looks good if we tried something sneakier like an empty array and then the
+
+94
+00:05:57,190 --> 00:06:02,920
+array one column with three still works because this loop never runs right.
+
+95
+00:06:02,920 --> 00:06:05,440
+All that happens is that we have a array of two.
+
+96
+00:06:05,470 --> 00:06:10,960
+So Jay is less than or safe to say we just push in all the results or all of the items in the array
+
+97
+00:06:10,960 --> 00:06:20,410
+of 2 into results and then return that if we tried doing something like 100 and then over here I don't
+
+98
+00:06:20,410 --> 00:06:25,230
+know I don't really even have anything worth showing at this point that won't work needs to be sorted.
+
+99
+00:06:25,240 --> 00:06:28,900
+All I want to show is that it works and it does OK.
+
+100
+00:06:28,930 --> 00:06:31,790
+So this is the first part of merge sort.
+
+101
+00:06:31,840 --> 00:06:32,830
+This is the longest part.
+
+102
+00:06:32,830 --> 00:06:37,330
+Actually if you came up with something better definitely share it in the comments post on the discussion
+
+103
+00:06:37,330 --> 00:06:39,940
+board but this is a pretty simple way of doing it.
+
+104
+00:06:40,240 --> 00:06:44,030
+And I think its pretty legible pretty easy to understand and walk through.
+
+105
+00:06:44,230 --> 00:06:49,810
+So we're going to use this code in the next video where we add on and actually implement merge sort.
+
+106
+00:06:49,810 --> 00:06:53,080
+Right now this only works with two sorted arrays.
+
+107
+00:06:53,530 --> 00:06:54,090
+OK.
+
+108
+00:06:54,340 --> 00:06:54,800
+See then.
+

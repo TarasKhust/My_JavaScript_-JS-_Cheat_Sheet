@@ -1,0 +1,228 @@
+1
+00:00:00,310 --> 00:00:03,310
+OK let's get going with get.
+
+2
+00:00:03,330 --> 00:00:10,440
+So we're going to define it down here and it takes an index and the first thing we need to do is check
+
+3
+00:00:10,440 --> 00:00:11,790
+if the index is valid.
+
+4
+00:00:11,790 --> 00:00:17,580
+So if it's not valid meaning it's negative or greater than or equal to the length of the list return.
+
+5
+00:00:17,610 --> 00:00:18,250
+No.
+
+6
+00:00:18,480 --> 00:00:31,870
+So if index is less than zero or index is greater than or equal to this dot like return and no undefined
+
+7
+00:00:31,870 --> 00:00:33,200
+it doesn't really matter to me.
+
+8
+00:00:33,280 --> 00:00:34,130
+We'll do no.
+
+9
+00:00:34,330 --> 00:00:35,790
+So we have that out of the way.
+
+10
+00:00:36,130 --> 00:00:41,350
+Otherwise what we need to do let's say somebody's past is in the index of three I added in a couple
+
+11
+00:00:41,350 --> 00:00:42,520
+of items here.
+
+12
+00:00:42,610 --> 00:00:45,080
+So we now have five index of three.
+
+13
+00:00:45,100 --> 00:00:47,040
+That means 0 1 2 3.
+
+14
+00:00:47,050 --> 00:00:49,170
+We want the heart pack is what we should get.
+
+15
+00:00:49,510 --> 00:00:56,890
+So to do that we need to start here and basically count with a counter starting at zero and continue
+
+16
+00:00:56,890 --> 00:01:03,550
+to traverse one at a time while adding one to our counter so we go 0 to 1 and then we would add one
+
+17
+00:01:03,550 --> 00:01:08,560
+again when we traverse to this to give us 2 and then add 1 to our counter which is 3 at which point
+
+18
+00:01:08,560 --> 00:01:12,070
+we would stop it because our counter was equal to the index 3.
+
+19
+00:01:12,310 --> 00:01:17,740
+So I'll make a variable called counter started at zero or count it doesn't matter.
+
+20
+00:01:17,740 --> 00:01:20,750
+Then I'll make a variable called current to start at the head.
+
+21
+00:01:20,770 --> 00:01:25,570
+This is what will keep track of our current position as we traverse and then current is what we will
+
+22
+00:01:25,570 --> 00:01:26,460
+return.
+
+23
+00:01:26,890 --> 00:01:35,970
+So I'm going to start with a WHILE loop while and we'll just do while counter is not equal to index.
+
+24
+00:01:36,040 --> 00:01:41,530
+So at the beginning if we called Get three counters start to zero they're not equal.
+
+25
+00:01:41,530 --> 00:01:49,990
+So what are we do we just add one to counter and we change current to now equal current next and then
+
+26
+00:01:49,990 --> 00:01:51,680
+add 1 to counter.
+
+27
+00:01:52,340 --> 00:01:52,860
+Okay.
+
+28
+00:01:53,050 --> 00:01:56,200
+So we go through this and this is actually all we need to traverse it.
+
+29
+00:01:56,260 --> 00:02:01,290
+There's only one thing we're missing at the very end which is return current.
+
+30
+00:02:01,420 --> 00:02:09,340
+So if we step through this we're going to have at the very beginning current equals this and then I'll
+
+31
+00:02:09,340 --> 00:02:11,660
+just visualize it here's our counter.
+
+32
+00:02:11,680 --> 00:02:12,220
+All right.
+
+33
+00:02:12,280 --> 00:02:18,760
+So very first time through current is equal to the head counter is zero and our index that we're looking
+
+34
+00:02:18,760 --> 00:02:19,640
+for is 3.
+
+35
+00:02:19,900 --> 00:02:25,570
+So we need the loop runs we change current to now be this and we add one to counter.
+
+36
+00:02:25,570 --> 00:02:26,610
+So it's one.
+
+37
+00:02:26,930 --> 00:02:27,420
+OK.
+
+38
+00:02:27,490 --> 00:02:30,300
+We keep going through because counting is not equal to 3.
+
+39
+00:02:30,340 --> 00:02:36,910
+So we move current down to the exclamation point node and that means that we add 1 to counter which
+
+40
+00:02:36,910 --> 00:02:37,680
+is now 2.
+
+41
+00:02:37,780 --> 00:02:39,150
+Still this is true.
+
+42
+00:02:39,220 --> 00:02:40,270
+So we run it again.
+
+43
+00:02:40,360 --> 00:02:43,970
+So we move current down one more time and we add one to counter.
+
+44
+00:02:44,020 --> 00:02:51,550
+At which point counter is now equal to the index if we're looking for 3 then all we do is return current
+
+45
+00:02:52,180 --> 00:02:53,500
+which is this node.
+
+46
+00:02:53,770 --> 00:02:54,070
+All right.
+
+47
+00:02:54,070 --> 00:02:55,130
+Let's test it out.
+
+48
+00:02:55,390 --> 00:03:01,360
+So we have our list which has five things let's do list does get index zero which should give me hello.
+
+49
+00:03:01,360 --> 00:03:07,390
+The first thing let's try negative one shouldn't work let's try 100 doesn't work.
+
+50
+00:03:07,390 --> 00:03:09,320
+How about three.
+
+51
+00:03:09,520 --> 00:03:15,120
+So that gives me the heart and the did for that should give me a smiley face if we do five.
+
+52
+00:03:15,130 --> 00:03:20,800
+There should be nothing there but if we push something on let's do a dollar sign Friday list does get
+
+53
+00:03:20,800 --> 00:03:21,260
+five.
+
+54
+00:03:21,260 --> 00:03:25,130
+Now it works but six won't work.
+
+55
+00:03:25,300 --> 00:03:25,660
+OK.
+
+56
+00:03:25,660 --> 00:03:29,020
+So that's a solution or a solution to get.
+
+57
+00:03:29,110 --> 00:03:31,930
+Next we're going to work with its counterpart which is set.
+

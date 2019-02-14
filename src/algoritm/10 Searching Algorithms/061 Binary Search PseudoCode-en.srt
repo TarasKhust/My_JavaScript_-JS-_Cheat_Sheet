@@ -1,0 +1,176 @@
+1
+00:00:00,190 --> 00:00:00,740
+All right.
+
+2
+00:00:00,750 --> 00:00:05,960
+So let's get on with the details of the implementation like I did in the last video or two videos that
+
+3
+00:00:05,960 --> 00:00:07,490
+go for a linear search.
+
+4
+00:00:07,530 --> 00:00:12,030
+I'm going to give you some rough pseudo code some some kind of bullet points that you can follow and
+
+5
+00:00:12,030 --> 00:00:13,310
+you can fill in the blanks.
+
+6
+00:00:13,320 --> 00:00:17,160
+It's not going to be a line by line guide to what you need to do but it should set you on the right
+
+7
+00:00:17,160 --> 00:00:17,600
+track.
+
+8
+00:00:17,610 --> 00:00:22,440
+And if you have the time the energy the willpower to do it to actually write it out yourself I highly
+
+9
+00:00:22,440 --> 00:00:23,470
+recommend it.
+
+10
+00:00:23,520 --> 00:00:27,140
+It's not terribly long it's a maybe eight lines.
+
+11
+00:00:27,270 --> 00:00:28,530
+Definitely less than 10.
+
+12
+00:00:28,620 --> 00:00:33,330
+And two of those are just the function definition anyway so it's pretty short and definitely worth your
+
+13
+00:00:33,330 --> 00:00:33,900
+time.
+
+14
+00:00:34,200 --> 00:00:38,490
+So write a function call it binary search and accepts a sorted array.
+
+15
+00:00:38,490 --> 00:00:42,490
+Remember we have to assume that it's sorted and a value that you're looking for.
+
+16
+00:00:42,510 --> 00:00:45,780
+And let's also assume we're only working with numbers for now.
+
+17
+00:00:45,780 --> 00:00:52,530
+Then you need to create two variables one that's going to point to the index that the left were starting
+
+18
+00:00:52,530 --> 00:00:59,720
+at so 0 for our left arrow or left pointer and then a right pointer at the far other end of the array.
+
+19
+00:00:59,880 --> 00:01:00,660
+The end.
+
+20
+00:01:00,660 --> 00:01:03,870
+So that's going to be whatever the length is minus 1.
+
+21
+00:01:04,080 --> 00:01:12,300
+So we'll have left is 0 and then right is 10 or 1000 or whatever the end of the array is then roughly
+
+22
+00:01:12,300 --> 00:01:13,060
+what you're going to do.
+
+23
+00:01:13,140 --> 00:01:16,780
+You're going to loop over and over and there's two things that you're checking for.
+
+24
+00:01:16,780 --> 00:01:19,080
+One is have you found the element.
+
+25
+00:01:19,080 --> 00:01:23,820
+So while you haven't found the element keep looping But along with that there's a second condition which
+
+26
+00:01:23,820 --> 00:01:29,730
+is you want to make sure that you're only looping while the left comes before the right pointer and
+
+27
+00:01:29,730 --> 00:01:34,500
+then you're also going to pick the middle and you can just take an average of the left and the right
+
+28
+00:01:34,710 --> 00:01:37,320
+not the values you should remember but the position.
+
+29
+00:01:37,470 --> 00:01:43,440
+So if left starts at 0 and right starts at 10 then you could take the middle to be five and then you're
+
+30
+00:01:43,440 --> 00:01:50,200
+basically going to loop and you're going to check first of all is the element equal to the middle is
+
+31
+00:01:50,210 --> 00:01:50,970
+the middle.
+
+32
+00:01:50,970 --> 00:01:53,650
+What we're looking for if it is then just return we're done.
+
+33
+00:01:53,760 --> 00:01:59,370
+So if you find that value return the index if the value is too small then you're going to move the left
+
+34
+00:01:59,400 --> 00:02:04,460
+pointer up and if the value is too large you move the right pointer down.
+
+35
+00:02:04,740 --> 00:02:09,460
+And then finally at the end if you never find the value just return negative 1.
+
+36
+00:02:10,020 --> 00:02:10,470
+OK.
+
+37
+00:02:10,530 --> 00:02:13,500
+So there is some flexibility in your implementation.
+
+38
+00:02:13,500 --> 00:02:17,340
+There's a couple of things I didn't mention here that we'll talk about in the next video like small
+
+39
+00:02:17,340 --> 00:02:20,480
+changes we could make but this is a rough outline.
+
+40
+00:02:20,490 --> 00:02:26,610
+You pick a left pick a right you pick a middle and then you loop and you basically keep looping while
+
+41
+00:02:26,610 --> 00:02:31,740
+you haven't found while the middle is not the answer then you're going to check if your value is less
+
+42
+00:02:31,740 --> 00:02:33,150
+than or greater than the middle.
+
+43
+00:02:33,270 --> 00:02:37,410
+And then depending on that you reassign the left or the right and you pick a new middle.
+
+44
+00:02:37,410 --> 00:02:39,980
+So in the next video I'll have a solution walkthrough.
+

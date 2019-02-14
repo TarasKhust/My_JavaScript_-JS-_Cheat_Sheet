@@ -1,0 +1,144 @@
+1
+00:00:00,400 --> 00:00:01,240
+Welcome back.
+
+2
+00:00:01,320 --> 00:00:04,530
+I've decided to make a separate video on big-O for linear search.
+
+3
+00:00:04,530 --> 00:00:10,230
+I've actually already covered this content but I realized some people were skipping through videos and
+
+4
+00:00:10,230 --> 00:00:11,400
+not watching everything.
+
+5
+00:00:11,400 --> 00:00:14,320
+So if I have a video titled linear search Big O.
+
+6
+00:00:14,520 --> 00:00:18,300
+I found more people will actually watch that because it's really important stuff.
+
+7
+00:00:18,300 --> 00:00:20,270
+Same thing for binary search after this.
+
+8
+00:00:20,280 --> 00:00:25,470
+All right so here's a quick video on how linear search performs at least as far as time complexity is
+
+9
+00:00:25,470 --> 00:00:26,680
+concerned.
+
+10
+00:00:26,700 --> 00:00:31,620
+So best case we have an array of a million integers or 50 integers.
+
+11
+00:00:31,620 --> 00:00:35,530
+The very best case is that we find the thing we're looking for right away.
+
+12
+00:00:36,560 --> 00:00:39,480
+So that's the best possible scenario right.
+
+13
+00:00:39,480 --> 00:00:40,650
+That's pretty rare.
+
+14
+00:00:40,650 --> 00:00:45,360
+Depending on the size of your data the worst case is 0 of an.
+
+15
+00:00:45,660 --> 00:00:50,220
+So if we have a million integers in an array and we're searching for the last one or we're searching
+
+16
+00:00:50,220 --> 00:00:54,050
+for something that's not in there we're going to have to look a million times.
+
+17
+00:00:54,060 --> 00:00:57,900
+We have 50 things in there and it's the very last element that we're looking for.
+
+18
+00:00:57,900 --> 00:01:05,190
+We're going to have to look 50 times and average is also 0 7 and you might think well isn't it actually
+
+19
+00:01:05,190 --> 00:01:08,180
+less than an on average because sometimes will find it.
+
+20
+00:01:08,370 --> 00:01:12,120
+You know right away sometimes you'll find it in the middle of the array.
+
+21
+00:01:12,120 --> 00:01:13,100
+Two thirds of the way.
+
+22
+00:01:13,110 --> 00:01:14,240
+Three quarters of the way.
+
+23
+00:01:14,400 --> 00:01:16,250
+Should that average out somewhere.
+
+24
+00:01:16,320 --> 00:01:21,500
+And the answer is No not as far as Bingo is concerned we care about just the general trend.
+
+25
+00:01:21,630 --> 00:01:26,880
+So as an grows the length of the array grows or the length the string or whatever we're working with
+
+26
+00:01:27,090 --> 00:01:29,520
+so does the average amount of time it takes.
+
+27
+00:01:29,520 --> 00:01:31,860
+Remember we throw away all constants.
+
+28
+00:01:31,920 --> 00:01:35,130
+So two and a half and point to five.
+
+29
+00:01:35,130 --> 00:01:36,420
+And those are constants.
+
+30
+00:01:36,420 --> 00:01:39,130
+We ignore those and we just simplify it to 11.
+
+31
+00:01:39,420 --> 00:01:41,080
+OK so that's linear search.
+
+32
+00:01:41,130 --> 00:01:43,810
+It's the best we can do with an unsorted piece of data.
+
+33
+00:01:44,070 --> 00:01:48,450
+But next we're going to talk about binary search which is much better and I'll have a separate video
+
+34
+00:01:48,450 --> 00:01:49,330
+afterwards.
+
+35
+00:01:49,410 --> 00:01:54,280
+Once we learn how to implement it on the big O of binary search and how we derive it.
+
+36
+00:01:54,480 --> 00:01:55,160
+That's coming up.
+

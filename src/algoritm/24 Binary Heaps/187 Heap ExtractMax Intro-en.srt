@@ -1,0 +1,604 @@
+1
+00:00:00,170 --> 00:00:01,270
+Hey welcome back.
+
+2
+00:00:01,290 --> 00:00:04,230
+So we've seen how to insert nodes or elements into a heap.
+
+3
+00:00:04,230 --> 00:00:05,600
+Now let's talk about the opposite.
+
+4
+00:00:05,640 --> 00:00:11,940
+Removing things the standard place the the one area we usually remove from is the root.
+
+5
+00:00:11,940 --> 00:00:16,530
+So in emacs binary heap that means removing what it means with root in either case.
+
+6
+00:00:16,530 --> 00:00:22,260
+But it means removing the maximum element the highest value and in a binary heap it means removing the
+
+7
+00:00:22,260 --> 00:00:23,460
+lowest value the minimum.
+
+8
+00:00:23,460 --> 00:00:25,920
+So the method we define We could call it remove.
+
+9
+00:00:25,920 --> 00:00:30,990
+We can also call it extract maximum or extract Max and that's pretty common to see that.
+
+10
+00:00:30,990 --> 00:00:36,870
+So when we go on to implement a priority queue for example where each element is assigned a priority
+
+11
+00:00:36,870 --> 00:00:40,750
+level and we want to remove things based off of their priority level.
+
+12
+00:00:41,040 --> 00:00:46,360
+Well the highest priority in emacs binary keep at least will always move up to the top and so that's
+
+13
+00:00:46,610 --> 00:00:49,170
+where we'll remove from in our priority queue.
+
+14
+00:00:49,170 --> 00:00:51,360
+I can't speak well always take that route out.
+
+15
+00:00:51,360 --> 00:00:54,110
+It will be the highest priority item anyway.
+
+16
+00:00:54,270 --> 00:01:00,120
+The way it works is similar to insert where we can't just remove this and do what we can't just leave
+
+17
+00:01:00,120 --> 00:01:00,210
+it.
+
+18
+00:01:00,210 --> 00:01:05,160
+Of course we have to have a new route but then we can't just put some we could swap with any element
+
+19
+00:01:05,160 --> 00:01:06,140
+and just put it there.
+
+20
+00:01:06,390 --> 00:01:08,250
+But it's most likely going to be wrong.
+
+21
+00:01:08,340 --> 00:01:11,850
+It's not going to be you know that the correct compact heap.
+
+22
+00:01:11,850 --> 00:01:18,540
+So what we do is we remove this element and we swap it or we put the the current last value.
+
+23
+00:01:18,540 --> 00:01:19,970
+This is a standard way of doing it.
+
+24
+00:01:19,980 --> 00:01:23,980
+The last value 12 in our case would go here and then we adjust.
+
+25
+00:01:24,150 --> 00:01:27,320
+Which I've always heard as sink or sinking down.
+
+26
+00:01:27,480 --> 00:01:29,320
+But I was looking at Wikipedia.
+
+27
+00:01:29,340 --> 00:01:31,050
+There are many terms for it.
+
+28
+00:01:31,050 --> 00:01:35,790
+The procedure for deleting the root from the heap effectively extracting the max element in a max heap
+
+29
+00:01:36,030 --> 00:01:40,890
+or the minimum element in a min heap and restoring the properties so making sure everything is all kosher
+
+30
+00:01:40,890 --> 00:01:49,890
+again is called down heap aka bubbled down percolate down sifted down trickle down down cascade down
+
+31
+00:01:49,890 --> 00:01:51,690
+and extracts min and max.
+
+32
+00:01:51,900 --> 00:01:54,090
+Nowhere did it actually say sink down.
+
+33
+00:01:54,150 --> 00:01:57,930
+Which is what I've always heard so I was a little bit offended by that.
+
+34
+00:01:57,960 --> 00:02:00,360
+They have so many options but my life is a lie.
+
+35
+00:02:00,360 --> 00:02:01,840
+There is no sink down.
+
+36
+00:02:01,890 --> 00:02:03,260
+It's the same idea though right.
+
+37
+00:02:03,270 --> 00:02:06,600
+So we had bubble up which was when we had an element at the end.
+
+38
+00:02:06,610 --> 00:02:09,180
+There is an end in the incorrect spot.
+
+39
+00:02:09,210 --> 00:02:11,770
+It's the last item and we bubble it up to the correct spot.
+
+40
+00:02:11,970 --> 00:02:17,220
+Well in this case what we're going to do is put an element at the root that is most likely wrong and
+
+41
+00:02:17,220 --> 00:02:23,040
+have it bubble down sink down sifts down trickle down whatever to the correct location.
+
+42
+00:02:23,490 --> 00:02:27,330
+So for example if this is what we start with Nothing's been removed yet.
+
+43
+00:02:27,330 --> 00:02:33,550
+But if I want to remove the root I call extract Max is what what are element or what are methods.
+
+44
+00:02:33,630 --> 00:02:35,680
+It's going to take 41.
+
+45
+00:02:35,700 --> 00:02:41,570
+Remove it from this array or this list and then take 12 and put it in place.
+
+46
+00:02:41,700 --> 00:02:43,140
+So we end up with this.
+
+47
+00:02:43,170 --> 00:02:49,830
+We removed 41 and 12 goes to the beginning and so we end up with this structure which is not correct
+
+48
+00:02:50,340 --> 00:02:51,180
+at all.
+
+49
+00:02:51,600 --> 00:02:59,860
+So the next step is to then call whatever you sink down or sit down and we compare it to its children.
+
+50
+00:02:59,910 --> 00:03:02,950
+We take 12 and we look at its two children.
+
+51
+00:03:02,970 --> 00:03:08,190
+We take whichever one is larger which 39 is and then we're going to swap.
+
+52
+00:03:08,190 --> 00:03:11,240
+Assuming that 12 is indeed less than 39.
+
+53
+00:03:11,400 --> 00:03:15,250
+Meaning that 39 deserves or should be the new route.
+
+54
+00:03:15,360 --> 00:03:16,560
+More than 12.
+
+55
+00:03:16,620 --> 00:03:18,670
+So if that's the case which it is.
+
+56
+00:03:18,750 --> 00:03:19,440
+We swap.
+
+57
+00:03:19,560 --> 00:03:26,130
+OK so now that 39 is in the correct spot we go back to 12 and we compare it to a new child or both new
+
+58
+00:03:26,130 --> 00:03:27,340
+children actually.
+
+59
+00:03:27,540 --> 00:03:30,030
+And we're going to swap it with the larger one.
+
+60
+00:03:30,030 --> 00:03:31,650
+If one of them is larger.
+
+61
+00:03:31,830 --> 00:03:36,480
+If both of them are smaller than more in the correct spot and we don't need to swap.
+
+62
+00:03:36,480 --> 00:03:38,790
+But in this case both are larger.
+
+63
+00:03:38,910 --> 00:03:45,480
+So we're going to swap 12 and 27 and would do just that and we're done.
+
+64
+00:03:45,510 --> 00:03:51,080
+12 has now sunk down to its correct location which is basically at the very end again.
+
+65
+00:03:51,360 --> 00:03:57,000
+It's just that it used to be over here on the left because we had an extra node but we removed that
+
+66
+00:03:57,000 --> 00:04:00,300
+node and so it had to swing its way down to the correct spot.
+
+67
+00:04:00,690 --> 00:04:03,540
+But now everything is happy again in our binary heap.
+
+68
+00:04:03,600 --> 00:04:10,920
+So let me show you one more slightly better animated example on visual algo visual go they call it extract
+
+69
+00:04:10,920 --> 00:04:11,250
+Max.
+
+70
+00:04:11,280 --> 00:04:18,720
+It's not called remove but if I call it step backwards it removes that root which is 70 and it's going
+
+71
+00:04:18,720 --> 00:04:19,530
+to swap.
+
+72
+00:04:19,560 --> 00:04:26,540
+It's not actually a swap it's going to replace it with the last element 31 so 31 gets up there.
+
+73
+00:04:26,720 --> 00:04:28,530
+And obviously that's that's wrong.
+
+74
+00:04:28,700 --> 00:04:30,920
+It's not the largest elements not the max.
+
+75
+00:04:30,920 --> 00:04:33,270
+So we compare it to the left and the right.
+
+76
+00:04:33,440 --> 00:04:40,370
+And both of them are larger but 67 is larger than 65 so we're going to swap there.
+
+77
+00:04:40,790 --> 00:04:44,590
+Now 67 is the new route it's the new maximum a maximum element.
+
+78
+00:04:44,600 --> 00:04:46,140
+It's in its correct spot.
+
+79
+00:04:46,160 --> 00:04:47,450
+It's cemented in.
+
+80
+00:04:47,450 --> 00:04:48,530
+Now we do the same thing.
+
+81
+00:04:48,680 --> 00:04:51,860
+We compare it 31 to 45 and to 58.
+
+82
+00:04:51,860 --> 00:04:53,360
+Both of those are larger.
+
+83
+00:04:53,360 --> 00:04:57,260
+We're going to swap it with a larger one which is 58.
+
+84
+00:04:57,260 --> 00:04:58,220
+There we go.
+
+85
+00:04:58,330 --> 00:05:00,310
+Now there are no children left.
+
+86
+00:05:00,320 --> 00:05:01,960
+We have nothing to swap it with.
+
+87
+00:05:02,000 --> 00:05:04,090
+And so it's in the correct spot.
+
+88
+00:05:04,160 --> 00:05:08,470
+And then we would presumably return 70 which was what we removed.
+
+89
+00:05:08,650 --> 00:05:08,870
+Right.
+
+90
+00:05:08,870 --> 00:05:09,580
+That's the whole point.
+
+91
+00:05:09,580 --> 00:05:13,550
+We're removing the Macs and we probably want to return it one more time just for good measure will go
+
+92
+00:05:13,610 --> 00:05:15,560
+faster this time.
+
+93
+00:05:15,560 --> 00:05:17,080
+What was the Hellmann up top.
+
+94
+00:05:17,190 --> 00:05:18,320
+Sixty seven.
+
+95
+00:05:18,320 --> 00:05:19,180
+All right we remove it.
+
+96
+00:05:19,190 --> 00:05:22,120
+We replace it with 15 and now we compare.
+
+97
+00:05:22,220 --> 00:05:22,680
+All right.
+
+98
+00:05:22,680 --> 00:05:23,990
+Sixty five is largest.
+
+99
+00:05:24,020 --> 00:05:25,180
+So now we swap there.
+
+100
+00:05:25,220 --> 00:05:27,620
+Now we have 15 and 40 and 53.
+
+101
+00:05:27,710 --> 00:05:30,470
+We swap a 53 because that's the larger one.
+
+102
+00:05:30,470 --> 00:05:33,130
+And now it's at the that its final resting place.
+
+103
+00:05:33,140 --> 00:05:34,360
+It doesn't go anywhere else.
+
+104
+00:05:34,370 --> 00:05:34,860
+All right.
+
+105
+00:05:34,910 --> 00:05:35,950
+So here's the pseudo code.
+
+106
+00:05:35,960 --> 00:05:41,300
+If you want to try and implement it right a method on our class or Max binary heap called you could
+
+107
+00:05:41,300 --> 00:05:45,740
+call it remove or I'm going to call it extract Max or extract the maximum.
+
+108
+00:05:45,740 --> 00:05:48,130
+It doesn't take any arguments you call it.
+
+109
+00:05:48,260 --> 00:05:52,220
+And what it is going to do is just return the root the old root.
+
+110
+00:05:52,280 --> 00:05:56,690
+But also it's going to delete that root and update the tree or technically the heap.
+
+111
+00:05:56,780 --> 00:05:58,580
+So you can follow the pseudo code if you want.
+
+112
+00:05:58,600 --> 00:06:04,160
+You don't have to do this line for line but basically take the first value and swap it with a last one
+
+113
+00:06:05,150 --> 00:06:07,880
+then remove that last one.
+
+114
+00:06:07,910 --> 00:06:10,920
+Use pop so that we get the old root.
+
+115
+00:06:11,060 --> 00:06:14,800
+So we're going to have the root swap it with the last item and then pop the last item.
+
+116
+00:06:14,900 --> 00:06:20,000
+But effectively take the first item out and then replace it with the last item.
+
+117
+00:06:20,180 --> 00:06:23,180
+Then you have to get to the sink down portion.
+
+118
+00:06:23,180 --> 00:06:25,840
+This sifts down percolate down.
+
+119
+00:06:26,090 --> 00:06:29,890
+Basically start at the root index start at zero.
+
+120
+00:06:29,960 --> 00:06:35,720
+Start with a little counter or an index variable and find the index of the left child and the right
+
+121
+00:06:35,720 --> 00:06:37,600
+child for that index.
+
+122
+00:06:37,610 --> 00:06:39,010
+So for zero it's easy.
+
+123
+00:06:39,150 --> 00:06:45,440
+Right we know that if an element is at location 0 it's first child it's just location 1 and index 2
+
+124
+00:06:45,440 --> 00:06:46,510
+is the right child.
+
+125
+00:06:46,790 --> 00:06:53,870
+But basically do this math two times index for us one two times and X plus two and take those two values
+
+126
+00:06:53,870 --> 00:06:59,510
+that you find the two children then take those children and compare them to the element at the parent.
+
+127
+00:06:59,510 --> 00:07:01,250
+The first element the new route.
+
+128
+00:07:01,490 --> 00:07:05,090
+And if one of them is larger you're going to swap.
+
+129
+00:07:05,150 --> 00:07:12,050
+However I'd take note that if both the left and the right children are larger than the parent then swap
+
+130
+00:07:12,050 --> 00:07:13,100
+with a largest child.
+
+131
+00:07:13,100 --> 00:07:15,330
+This we we saw over here.
+
+132
+00:07:15,650 --> 00:07:23,440
+If I step backwards when we swapped 15 up top we compare it to 58 and 65.
+
+133
+00:07:23,450 --> 00:07:24,490
+Both are larger.
+
+134
+00:07:24,680 --> 00:07:26,500
+But you're going to swap with 65.
+
+135
+00:07:26,810 --> 00:07:32,870
+And then after you swap if you do swap the child that you just swapped with that index becomes the new
+
+136
+00:07:32,870 --> 00:07:38,990
+parent index and then you look for its new children and you repeat the process you loop and keep swapping
+
+137
+00:07:38,990 --> 00:07:45,770
+loop and swap until neither child is larger than the element which means that you've successfully sunk
+
+138
+00:07:45,770 --> 00:07:50,660
+down that element that you put at the root and needs to sift its way down to the correct spot and then
+
+139
+00:07:50,660 --> 00:07:53,110
+at the very end returned the old root.
+
+140
+00:07:53,120 --> 00:07:55,850
+That's the whole the whole point that should be the maximum.
+
+141
+00:07:55,910 --> 00:08:01,400
+So give this one a shot again remember the math here it's two times index plus one two times index plus
+
+142
+00:08:01,400 --> 00:08:05,780
+two to find the left and right children given a parent index.
+
+143
+00:08:05,780 --> 00:08:06,650
+Take that.
+
+144
+00:08:06,680 --> 00:08:12,860
+Find those children compare both children to the element that is now at the root and then swap if you
+
+145
+00:08:12,860 --> 00:08:13,440
+need two.
+
+146
+00:08:13,550 --> 00:08:19,070
+And then you kind of shift your window over so that instead of looking at the root You're you're looking
+
+147
+00:08:19,070 --> 00:08:24,500
+at you know the new index and looking at its children and you keep going until there's nothing to swap.
+
+148
+00:08:24,500 --> 00:08:24,940
+All right.
+
+149
+00:08:25,040 --> 00:08:27,020
+So give it a shot extract Max.
+
+150
+00:08:27,060 --> 00:08:27,740
+I'll have a solution.
+
+151
+00:08:27,740 --> 00:08:28,130
+Up next.
+

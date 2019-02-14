@@ -1,0 +1,280 @@
+1
+00:00:00,150 --> 00:00:03,400
+Welcome back let's get writing our solution to push.
+
+2
+00:00:03,720 --> 00:00:04,180
+OK.
+
+3
+00:00:04,320 --> 00:00:09,900
+So the very first thing we'll do after actually writing the method is create the new node with the value
+
+4
+00:00:09,900 --> 00:00:11,270
+passed in.
+
+5
+00:00:11,280 --> 00:00:12,690
+So let's start there.
+
+6
+00:00:12,690 --> 00:00:18,990
+So are doubly linked to this class going to add push which accepts a value because I want to be able
+
+7
+00:00:18,990 --> 00:00:23,020
+to say list push 50 or push hello or whatever.
+
+8
+00:00:23,340 --> 00:00:30,330
+So let's make that new node new node equals new node with that value that's passed in.
+
+9
+00:00:30,660 --> 00:00:36,310
+So we have that new node next we want to check if the list has anything in it.
+
+10
+00:00:36,330 --> 00:00:41,960
+So if the head is empty if the head is empty empty head I have the empty head right now.
+
+11
+00:00:42,090 --> 00:00:47,120
+If the head property is no or if the list is empty meaning that the length is zero.
+
+12
+00:00:47,130 --> 00:00:47,830
+We could do this.
+
+13
+00:00:47,850 --> 00:00:49,070
+However we want.
+
+14
+00:00:49,300 --> 00:00:51,380
+Actually just to show that it doesn't matter.
+
+15
+00:00:51,540 --> 00:00:57,960
+I'm going to do something that I didn't specify when I say if this length equals zero which is another
+
+16
+00:00:57,960 --> 00:01:00,190
+way of just checking if the list is empty.
+
+17
+00:01:00,210 --> 00:01:02,450
+We can also do if this starred head is no.
+
+18
+00:01:02,460 --> 00:01:05,590
+Or if this tale is nil it doesn't really matter.
+
+19
+00:01:06,000 --> 00:01:07,300
+OK so I'm going to do this.
+
+20
+00:01:07,350 --> 00:01:09,770
+If that's the case what did we need to do.
+
+21
+00:01:09,870 --> 00:01:13,240
+We need to make the head and tail be the newly created node.
+
+22
+00:01:13,800 --> 00:01:16,850
+This dot head equals new node.
+
+23
+00:01:17,180 --> 00:01:20,230
+This tail equals new node.
+
+24
+00:01:20,230 --> 00:01:24,620
+Otherwise set the next property on the tail to be the new node.
+
+25
+00:01:24,820 --> 00:01:25,100
+OK.
+
+26
+00:01:25,110 --> 00:01:27,360
+So let's do else.
+
+27
+00:01:27,480 --> 00:01:29,640
+So this means that there's something in there already.
+
+28
+00:01:29,640 --> 00:01:32,810
+So let's say that the list already has the number 99.
+
+29
+00:01:33,210 --> 00:01:37,480
+And what we need to do is add in 100 at the end.
+
+30
+00:01:37,590 --> 00:01:46,470
+So if this is the current tail I'm going to say this tail which would give me 99 dot next equals the
+
+31
+00:01:46,470 --> 00:01:47,090
+new node.
+
+32
+00:01:47,190 --> 00:01:49,810
+So that gives me the arrow going this way.
+
+33
+00:01:50,680 --> 00:01:58,910
+But then I need to also set this the new tail or it's not the tail yet but it will be previous to be
+
+34
+00:01:58,910 --> 00:01:59,600
+the old tail.
+
+35
+00:01:59,690 --> 00:02:06,910
+So to do that all I need to do is say new node datt previous equals this tail.
+
+36
+00:02:07,370 --> 00:02:11,150
+So that's giving me I'm going to basically say 100 previous.
+
+37
+00:02:11,210 --> 00:02:12,680
+See if I can do this arrow backwards.
+
+38
+00:02:12,680 --> 00:02:13,640
+There we go.
+
+39
+00:02:14,060 --> 00:02:16,330
+Is the old tail this tail.
+
+40
+00:02:16,330 --> 00:02:17,880
+Still the current tail actually.
+
+41
+00:02:17,970 --> 00:02:22,570
+And then finally we need to update the tail to be the newly created node.
+
+42
+00:02:22,610 --> 00:02:27,470
+So I'd just say this tail is now new node which is now moving.
+
+43
+00:02:27,470 --> 00:02:32,720
+If this was the tail before this if I can tab over it now.
+
+44
+00:02:33,380 --> 00:02:35,760
+Finally we need to add one to the length.
+
+45
+00:02:36,020 --> 00:02:36,540
+OK.
+
+46
+00:02:36,740 --> 00:02:44,450
+So that's going to be this length plus plus or plus equals 1 and then return the entire list return
+
+47
+00:02:44,500 --> 00:02:45,070
+this.
+
+48
+00:02:45,460 --> 00:02:46,390
+Let's test it out.
+
+49
+00:02:46,400 --> 00:02:47,930
+I just executed my code.
+
+50
+00:02:47,960 --> 00:02:49,060
+Let's make a new list.
+
+51
+00:02:49,130 --> 00:02:57,320
+So I'll just call it a list equals new length list and then I'll say list dot push let's push in a number
+
+52
+00:02:57,320 --> 00:02:58,630
+like ninety nine.
+
+53
+00:02:58,680 --> 00:03:01,160
+Let's look at the list expand this.
+
+54
+00:03:01,160 --> 00:03:05,920
+It should have head ninety nine and tells 99 and like this one.
+
+55
+00:03:05,960 --> 00:03:07,760
+All right let's stop push for more time.
+
+56
+00:03:07,770 --> 00:03:13,840
+Stu one hundred This time we should have had just 99 and tail 100.
+
+57
+00:03:13,850 --> 00:03:15,360
+This has a next.
+
+58
+00:03:15,410 --> 00:03:17,920
+The head is pointing to one hundred that's good.
+
+59
+00:03:18,140 --> 00:03:23,520
+And the tail 100 should be pointing back to 99 in the previous perfect.
+
+60
+00:03:23,660 --> 00:03:34,160
+Last check lets you push out your last list push last item and if we look at our list length 3 that's
+
+61
+00:03:34,160 --> 00:03:35,420
+all correct.
+
+62
+00:03:35,420 --> 00:03:36,320
+Everything looks good.
+
+63
+00:03:36,320 --> 00:03:39,320
+Our tail has lost item points.
+
+64
+00:03:39,320 --> 00:03:46,370
+Previous to this node and this node with 100 has both a next and a previous.
+
+65
+00:03:46,400 --> 00:03:46,700
+All right.
+
+66
+00:03:46,700 --> 00:03:47,600
+So that works.
+
+67
+00:03:47,870 --> 00:03:51,310
+It's pretty similar to what we did with a singly linked list.
+
+68
+00:03:51,320 --> 00:03:54,350
+The main difference is that we have to do a double connection.
+
+69
+00:03:54,380 --> 00:03:59,390
+We have to do a little more work connect to the next and the previous.
+
+70
+00:03:59,390 --> 00:04:04,490
+Next up is pop which is a little bit different much simpler in a doubly linked list.
+

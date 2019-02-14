@@ -1,0 +1,312 @@
+1
+00:00:00,150 --> 00:00:02,100
+Hey this video will be super quick.
+
+2
+00:00:02,100 --> 00:00:04,860
+We're just going to talk about the built in our radar sort.
+
+3
+00:00:05,070 --> 00:00:08,620
+So in javascript every array has a built in way to sort it.
+
+4
+00:00:08,880 --> 00:00:09,770
+Yes it does.
+
+5
+00:00:09,820 --> 00:00:14,010
+Thank you slides but it doesn't always work how you would expect it should.
+
+6
+00:00:14,010 --> 00:00:16,530
+For example take this array of strings.
+
+7
+00:00:16,770 --> 00:00:21,920
+We sort it and I think this makes sense if we get the result that you would probably expect there's
+
+8
+00:00:21,990 --> 00:00:23,290
+sorted alphabetically.
+
+9
+00:00:23,340 --> 00:00:28,150
+So a for algorithms and C and D for data structures and then steal.
+
+10
+00:00:28,290 --> 00:00:34,360
+That makes sense I think to go from a down to Z or up to whatever we're going from A-Z.
+
+11
+00:00:34,830 --> 00:00:42,840
+Then if we do the same thing with numbers 6 for 15 and 10 and you sort it what we get doesn't really
+
+12
+00:00:42,840 --> 00:00:44,250
+make sense.
+
+13
+00:00:44,280 --> 00:00:47,860
+So it starts with 10 and then 15 then for then six.
+
+14
+00:00:47,910 --> 00:00:53,550
+So it would be one thing if it was just the opposite order like if it was descending instead of ascending
+
+15
+00:00:53,910 --> 00:00:55,800
+greatest to lowest instead of lowest to highest.
+
+16
+00:00:55,890 --> 00:01:01,470
+But it's not even ordered in any discernible way that we that we can make sense of no numeric order.
+
+17
+00:01:01,470 --> 00:01:07,880
+What's actually happening as if we read the arrays sort documentation on MT-NW is that here we go to
+
+18
+00:01:07,890 --> 00:01:12,760
+default sort order is according to string Unicode code points.
+
+19
+00:01:12,930 --> 00:01:15,620
+So there's this thing called Unicode use to represent strings.
+
+20
+00:01:15,630 --> 00:01:20,370
+And what happens is that every item that array is converted to a string.
+
+21
+00:01:20,520 --> 00:01:24,930
+And then the Unicode value of that is taken and then they're sorted.
+
+22
+00:01:24,930 --> 00:01:29,940
+So it's very bizarre and it's almost never what you want unless you're working with strings to start.
+
+23
+00:01:29,940 --> 00:01:32,090
+But even then it's not always what you want.
+
+24
+00:01:32,160 --> 00:01:33,960
+So how does it actually work.
+
+25
+00:01:33,960 --> 00:01:35,970
+How do we use it in the real world.
+
+26
+00:01:36,030 --> 00:01:37,220
+That's only what happens.
+
+27
+00:01:37,230 --> 00:01:40,320
+That's the behavior when you don't pass anything and you just do dot sort.
+
+28
+00:01:40,320 --> 00:01:41,690
+With empty parents.
+
+29
+00:01:41,910 --> 00:01:46,730
+But there's this whole other thing we can do where we can actually specify how it should sort.
+
+30
+00:01:46,730 --> 00:01:49,600
+What property it should sort by what to compare.
+
+31
+00:01:49,650 --> 00:01:56,520
+So it accepts an optional compared or compare store function and we can use this to tell javascript
+
+32
+00:01:56,520 --> 00:01:57,670
+how we want it to sort.
+
+33
+00:01:57,930 --> 00:02:03,780
+So basically the structure that we write this function is it takes two items which will call a and b.
+
+34
+00:02:03,930 --> 00:02:08,640
+And we tell Javascript the sort order to make based off of what we return.
+
+35
+00:02:08,670 --> 00:02:10,770
+So if we return a negative number.
+
+36
+00:02:10,770 --> 00:02:15,990
+So if we have two elements again a and b Javascript can call this function every time it's comparing
+
+37
+00:02:15,990 --> 00:02:16,890
+two elements.
+
+38
+00:02:16,920 --> 00:02:22,680
+If this function returns a negative number then javascript will decide that a comes before B if it returns
+
+39
+00:02:22,680 --> 00:02:24,640
+a positive number then it's the other way around.
+
+40
+00:02:24,840 --> 00:02:26,490
+A comes after B.
+
+41
+00:02:26,850 --> 00:02:32,820
+And if we return 0 javascript treats and B is the same and just sorts them basically together it doesn't
+
+42
+00:02:32,820 --> 00:02:33,590
+matter.
+
+43
+00:02:34,020 --> 00:02:39,570
+So here's an example number compair is what we called our competitor function.
+
+44
+00:02:39,690 --> 00:02:43,290
+And all we're doing is returning one minus two.
+
+45
+00:02:43,680 --> 00:02:45,490
+So javascript gets this.
+
+46
+00:02:45,510 --> 00:02:47,160
+Remember this is what comes first.
+
+47
+00:02:47,160 --> 00:02:48,830
+This is what comes second.
+
+48
+00:02:48,880 --> 00:02:54,990
+If this returns a negative value then number one comes first before number two if it returns a positive
+
+49
+00:02:54,990 --> 00:02:59,030
+value then number two comes first and then 1.
+
+50
+00:02:59,040 --> 00:03:05,600
+So when we do this you can see that it's now sorting things appropriately in ascending numeric order.
+
+51
+00:03:05,610 --> 00:03:11,340
+So if we get four and then 6 and then 10 and then 15 and have it over in a snippet here.
+
+52
+00:03:11,340 --> 00:03:12,930
+So if I run a little big.
+
+53
+00:03:12,930 --> 00:03:13,620
+There we go.
+
+54
+00:03:13,620 --> 00:03:18,070
+So if I run this now you'll see that we get 4 6 10 15.
+
+55
+00:03:18,070 --> 00:03:27,100
+But if I just change this order so numb to minus 1 for example we get 15 10 6 and 4.
+
+56
+00:03:27,240 --> 00:03:32,070
+So that's sorting just by numbers which that's what you would do if you're trying to serve something
+
+57
+00:03:32,070 --> 00:03:34,350
+numerically rather than working.
+
+58
+00:03:34,500 --> 00:03:40,140
+You know the Unicode characters and worrying about all that we can also do something like this to sort
+
+59
+00:03:40,140 --> 00:03:43,910
+by the length of a string rather than alphabetically.
+
+60
+00:03:44,040 --> 00:03:49,320
+We want to sort from whatever the shortest string is so cold up and hold the longest string which would
+
+61
+00:03:49,320 --> 00:03:50,530
+be data structures.
+
+62
+00:03:50,880 --> 00:03:56,130
+So it would do the same thing string one of length minus string to downlink and we call this compared
+
+63
+00:03:56,130 --> 00:03:59,560
+by line but remember it doesn't matter what we call this it's just a random function.
+
+64
+00:03:59,670 --> 00:04:01,380
+But it needs to except these two arguments.
+
+65
+00:04:01,380 --> 00:04:06,130
+And then we use them in here and we return a negative number a positive number or zero.
+
+66
+00:04:06,570 --> 00:04:07,830
+So what do we get.
+
+67
+00:04:07,830 --> 00:04:08,530
+There we go.
+
+68
+00:04:08,850 --> 00:04:13,140
+And if we started around change the order of string to adult length might a string one length.
+
+69
+00:04:13,140 --> 00:04:14,730
+Now we have the other order.
+
+70
+00:04:15,090 --> 00:04:20,520
+So this is how we can define our own basic sorts using the built javascript's sort method.
+
+71
+00:04:20,520 --> 00:04:24,380
+Now I just showed that to you so that you know that it exists and it's an option.
+
+72
+00:04:24,390 --> 00:04:28,860
+Now what we'll focus on in the rest of this section is writing our own sorting algorithms that actually
+
+73
+00:04:28,860 --> 00:04:30,510
+do the comparisons.
+
+74
+00:04:30,510 --> 00:04:31,470
+That's the hard part.
+
+75
+00:04:31,710 --> 00:04:32,820
+And so that's coming up next.
+
+76
+00:04:32,820 --> 00:04:35,660
+We're going to kick it off with a fan favorite.
+
+77
+00:04:35,670 --> 00:04:38,880
+It's not a fan favorite but it has a fun name bubble sort.
+
+78
+00:04:38,910 --> 00:04:40,440
+See you in the next video.
+

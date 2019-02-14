@@ -1,0 +1,564 @@
+1
+00:00:00,180 --> 00:00:00,440
+All right.
+
+2
+00:00:00,450 --> 00:00:01,110
+Welcome back.
+
+3
+00:00:01,110 --> 00:00:01,910
+So in this video.
+
+4
+00:00:01,940 --> 00:00:04,620
+I mean to quickly run through the pseudo code for quick sort.
+
+5
+00:00:04,830 --> 00:00:07,820
+But it's pretty short so I'm actually going to just implement it too.
+
+6
+00:00:07,830 --> 00:00:12,960
+Rather than doing a separate video to show the pseudo code and then implement it just to keep things
+
+7
+00:00:12,960 --> 00:00:14,010
+a little briefer.
+
+8
+00:00:14,100 --> 00:00:19,680
+So we have our pivot helper finished we pass in a full array or any array and it's going to take the
+
+9
+00:00:19,680 --> 00:00:24,690
+first item and figure out where it should go and then put all the smaller items to left all the bigger
+
+10
+00:00:24,690 --> 00:00:27,150
+items to the right and then return the index.
+
+11
+00:00:27,450 --> 00:00:31,800
+So that's important that it returns the index because what we're going to do in our quicksort function
+
+12
+00:00:32,220 --> 00:00:37,710
+is that it's going to call that pivot helper at the beginning with a full array and we'll find out you
+
+13
+00:00:37,710 --> 00:00:41,270
+know index of four for example is the first pivot point.
+
+14
+00:00:41,550 --> 00:00:48,000
+And then what we're going to do is recursively call the same thing call quicksort again on the left
+
+15
+00:00:48,000 --> 00:00:50,480
+side and on the right side of that pivot point.
+
+16
+00:00:50,490 --> 00:00:53,150
+So imagine we call quicksort with this array.
+
+17
+00:00:53,490 --> 00:00:59,490
+Well the very first thing that happens is that we find the pivot which is 4 and that is moved to this
+
+18
+00:00:59,550 --> 00:01:00,880
+index right here.
+
+19
+00:01:01,320 --> 00:01:08,310
+And then what we're going to do is we're going to then call quicksort on this side from 3 the beginning
+
+20
+00:01:08,580 --> 00:01:14,460
+up until but not including the pivot because we already figured out this is this is in place we don't
+
+21
+00:01:14,460 --> 00:01:16,130
+want to read we don't want to move this.
+
+22
+00:01:16,320 --> 00:01:20,320
+So we're going to sort the array here and here with quicksort.
+
+23
+00:01:20,340 --> 00:01:26,550
+So the rough logic when the helper returns the updated pivot index we recursively call the pivot helper
+
+24
+00:01:26,820 --> 00:01:31,320
+on the left side and then on the right side as well.
+
+25
+00:01:31,320 --> 00:01:34,900
+Now it's important to notice or to point out we're not making new arrays.
+
+26
+00:01:34,950 --> 00:01:36,760
+This is all happening in place.
+
+27
+00:01:36,810 --> 00:01:38,490
+We're not making new arrays.
+
+28
+00:01:38,550 --> 00:01:39,950
+It's happening in the same array.
+
+29
+00:01:40,080 --> 00:01:46,590
+So our base case it's not quite just to check if the array is item of length or if the array has one
+
+30
+00:01:46,590 --> 00:01:47,330
+item in it.
+
+31
+00:01:47,450 --> 00:01:53,130
+It's to check if the sub array has one item in it and what that means is we're always going to be working
+
+32
+00:01:53,130 --> 00:01:55,470
+with this array for example.
+
+33
+00:01:55,470 --> 00:02:02,150
+But we're only going to be looking at this portion or this portion where eventually this portion.
+
+34
+00:02:02,430 --> 00:02:08,820
+And so what we're going to check is not to see if the length of the array is 0 or 1 because this length
+
+35
+00:02:08,820 --> 00:02:09,720
+will always be the same.
+
+36
+00:02:09,720 --> 00:02:11,460
+We're not adding and removing elements.
+
+37
+00:02:11,580 --> 00:02:16,530
+We're going to check if the start point that we're looking at and let's call it left and right if the
+
+38
+00:02:16,530 --> 00:02:22,050
+left and the right are equal to one another or if the right is less than the left.
+
+39
+00:02:22,050 --> 00:02:26,480
+So that happens when a suburb has less than two elements.
+
+40
+00:02:26,850 --> 00:02:28,130
+So I'm just going to implement it.
+
+41
+00:02:28,120 --> 00:02:28,940
+This is a tough one.
+
+42
+00:02:28,950 --> 00:02:32,060
+Honestly to just take that pseudo code and try and write it yourself.
+
+43
+00:02:32,100 --> 00:02:35,500
+I applaud anybody who wants to do it and who tries it out.
+
+44
+00:02:35,520 --> 00:02:41,280
+But again no expectation on my part that it when I teach this in person it's very rare that anybody
+
+45
+00:02:41,280 --> 00:02:43,170
+can can implement it right away.
+
+46
+00:02:43,170 --> 00:02:47,050
+And even once I show the code it can be hard to come up with it again.
+
+47
+00:02:47,130 --> 00:02:51,140
+And I've already mentioned my struggles with it and how it's just unintuitive for me.
+
+48
+00:02:51,330 --> 00:02:56,370
+So I'm going to define my function quicksort and I've already done that actually and it's going to take
+
+49
+00:02:57,060 --> 00:02:58,100
+an array.
+
+50
+00:02:58,920 --> 00:03:02,410
+And the first thing that we'll do is call.
+
+51
+00:03:02,420 --> 00:03:08,940
+So let's make a variable called Pivot index and it's just going to be equal to calling pivot with that
+
+52
+00:03:09,180 --> 00:03:09,990
+array.
+
+53
+00:03:10,380 --> 00:03:12,970
+But the thing is our pivot.
+
+54
+00:03:13,080 --> 00:03:17,510
+First of all if we go back it accepts an array a start and an end.
+
+55
+00:03:17,700 --> 00:03:20,580
+And this is important because the very first time through.
+
+56
+00:03:20,580 --> 00:03:25,020
+Yeah we want to call it on the whole array but then this recursive function eventually is going to call
+
+57
+00:03:25,020 --> 00:03:31,380
+it again on this array or this one where we have a different start an endpoint is not just the default
+
+58
+00:03:31,710 --> 00:03:34,320
+0 up until the end of the array.
+
+59
+00:03:34,320 --> 00:03:39,390
+So what I'm going to do is in here I'm going to make very an argument called left and set it equal to
+
+60
+00:03:39,390 --> 00:03:44,510
+zero and another one called rights which is arrayed up like minus one.
+
+61
+00:03:44,730 --> 00:03:49,380
+And then we're going to pass in a left and right when we call pivot.
+
+62
+00:03:49,380 --> 00:03:54,240
+So the first time we call this right here the default value for left is zero.
+
+63
+00:03:54,270 --> 00:03:58,010
+And for right is going to be 0 1 2 3 4 5 6.
+
+64
+00:03:58,050 --> 00:04:03,100
+So we're calling pivot on this array with 0 6 right.
+
+65
+00:04:03,120 --> 00:04:04,490
+So then that goes.
+
+66
+00:04:04,560 --> 00:04:10,650
+Deleted a bracket takes the first item inside of that pivot function and it figures out that this needs
+
+67
+00:04:10,650 --> 00:04:13,000
+to actually be at index 3.
+
+68
+00:04:13,050 --> 00:04:18,010
+So it changes the array to look like this and it returns the index of three to us.
+
+69
+00:04:18,020 --> 00:04:21,040
+So pivot and x is equal to three at this point.
+
+70
+00:04:21,150 --> 00:04:27,480
+Then we want to repeat the same thing but we want to do it on the left side which basically means from
+
+71
+00:04:27,960 --> 00:04:31,740
+the left the start point which right now is zero.
+
+72
+00:04:31,740 --> 00:04:35,990
+So from the left up until the pivot index minus 1.
+
+73
+00:04:36,510 --> 00:04:38,660
+So we already have this cemented in place.
+
+74
+00:04:38,670 --> 00:04:41,510
+We want to now sort from here to here.
+
+75
+00:04:41,700 --> 00:04:43,190
+And then the same thing on the right side.
+
+76
+00:04:43,380 --> 00:04:47,990
+But we want to go from pivot and X plus one up until the end the.
+
+77
+00:04:48,000 --> 00:04:49,050
+Right.
+
+78
+00:04:49,050 --> 00:04:50,420
+So let's do the left first.
+
+79
+00:04:50,460 --> 00:04:55,530
+So the left side is just a quick sort of the array.
+
+80
+00:04:55,620 --> 00:05:00,430
+This time we're going to pass in a left and a right on mike down here when we call it the first time
+
+81
+00:05:00,670 --> 00:05:03,980
+they defaulted to zero and then great length minus one.
+
+82
+00:05:04,150 --> 00:05:09,820
+This time the left that we're looking at is still going to be the same left that we looked at before
+
+83
+00:05:09,900 --> 00:05:10,810
+zero.
+
+84
+00:05:11,020 --> 00:05:16,930
+But next the right where we're going to stop is going to be what we've already discussed the pivot index
+
+85
+00:05:18,490 --> 00:05:19,900
+minus 1.
+
+86
+00:05:20,740 --> 00:05:23,480
+So that way we don't include that pivot indexing.
+
+87
+00:05:23,650 --> 00:05:24,520
+So this is cemented.
+
+88
+00:05:24,520 --> 00:05:27,830
+We just want to look at that and the same thing on the right side.
+
+89
+00:05:28,060 --> 00:05:32,390
+Well not quite exactly the same same idea but it's going to be quick sort of the array.
+
+90
+00:05:32,590 --> 00:05:35,970
+But we're going to start at pivot index plus one.
+
+91
+00:05:36,130 --> 00:05:38,120
+So that means this is our index.
+
+92
+00:05:38,290 --> 00:05:40,390
+We want to go from here until the end.
+
+93
+00:05:40,590 --> 00:05:42,800
+So pivot index plus one Intel.
+
+94
+00:05:42,880 --> 00:05:44,770
+Right.
+
+95
+00:05:44,800 --> 00:05:47,300
+So those are the recursive calls.
+
+96
+00:05:47,320 --> 00:05:51,190
+However if I just run this as it is right now there is a big problem.
+
+97
+00:05:51,490 --> 00:05:53,080
+It's going to run forever.
+
+98
+00:05:53,320 --> 00:05:59,650
+So actually if I do this we get our stack overflow maximum call stack size exceeded because there was
+
+99
+00:05:59,650 --> 00:06:04,140
+never a base case nothing was ever returned something ever stopped this recursive call.
+
+100
+00:06:04,210 --> 00:06:06,690
+It just keeps going and going and going and going and going.
+
+101
+00:06:06,910 --> 00:06:09,220
+So where do we want to stop.
+
+102
+00:06:09,460 --> 00:06:16,090
+We want to stop in this situation or the situation where we've hit a subway that is one element long
+
+103
+00:06:16,840 --> 00:06:22,090
+and how do we how do we know that and remember that at any point if we looked at array.
+
+104
+00:06:22,540 --> 00:06:25,140
+It's always the entire array.
+
+105
+00:06:25,330 --> 00:06:26,900
+We're sorting it in place.
+
+106
+00:06:26,920 --> 00:06:32,380
+So even this step right here for example array is still the entire array.
+
+107
+00:06:32,680 --> 00:06:39,840
+But what has changed are left and right because left and right are constantly changing as we're calling
+
+108
+00:06:39,850 --> 00:06:44,950
+quicksort and recursively because left and right are based off of the pivot index and so we're getting
+
+109
+00:06:44,950 --> 00:06:47,900
+a new pivot index each time left and right are changing.
+
+110
+00:06:47,950 --> 00:06:53,150
+And so as these suburbs become smaller left and right get closer together.
+
+111
+00:06:53,170 --> 00:07:00,250
+So for example here left with zero and right with six then here for example left to zero and right was
+
+112
+00:07:00,250 --> 00:07:05,410
+to hear left zero right as one now here.
+
+113
+00:07:05,560 --> 00:07:09,620
+Left and Right are the same so are conditional.
+
+114
+00:07:09,740 --> 00:07:12,060
+We want to keep doing this code keep running.
+
+115
+00:07:12,150 --> 00:07:20,860
+If left is less then right and so as soon as they are equal as soon as life is now equal to right that
+
+116
+00:07:20,860 --> 00:07:25,420
+means that we're looking at one element that makes sense.
+
+117
+00:07:25,420 --> 00:07:29,560
+Remember that left and right are just pointers inside of this full array.
+
+118
+00:07:29,740 --> 00:07:31,070
+So it started like this.
+
+119
+00:07:31,390 --> 00:07:38,620
+And then on one of them the recursive call moved to this and then to this and then it became the same
+
+120
+00:07:38,620 --> 00:07:39,190
+thing.
+
+121
+00:07:39,340 --> 00:07:45,380
+And that's when we stop because that means that we've hit the end at least of one of the branches.
+
+122
+00:07:45,580 --> 00:07:47,460
+So I need my bracket there.
+
+123
+00:07:47,490 --> 00:07:49,170
+There we go.
+
+124
+00:07:49,960 --> 00:07:50,520
+OK.
+
+125
+00:07:50,620 --> 00:07:52,090
+So we're still not quite done.
+
+126
+00:07:52,090 --> 00:07:55,090
+We have one missing piece which is really important.
+
+127
+00:07:55,090 --> 00:07:56,420
+We're not returning anything.
+
+128
+00:07:56,530 --> 00:08:02,710
+We need to return Irais at the very end because remember how these recursive calls work.
+
+129
+00:08:02,710 --> 00:08:09,940
+This quick sort here is waiting on the results of quick sorting this and quick sorting that.
+
+130
+00:08:10,030 --> 00:08:14,100
+And then those in turn are waiting on the result of quick sorting this and that.
+
+131
+00:08:14,110 --> 00:08:19,090
+So we have to return the array here so that we can get it back here and keep going up and then the same
+
+132
+00:08:19,090 --> 00:08:20,530
+thing on the right side.
+
+133
+00:08:21,190 --> 00:08:26,060
+So let's save and clear my console Let's see if it works.
+
+134
+00:08:26,070 --> 00:08:29,510
+No it's not clear zero area.
+
+135
+00:08:29,550 --> 00:08:30,850
+Let's see if it works now.
+
+136
+00:08:31,510 --> 00:08:33,000
+And it looks good.
+
+137
+00:08:33,130 --> 00:08:35,570
+We're getting 1 2 3 4 5 6 9.
+
+138
+00:08:35,600 --> 00:08:41,740
+Not sure why I chose that and let's just verify Let's mix it up again a little bit put the negative
+
+139
+00:08:41,740 --> 00:08:43,110
+number in here.
+
+140
+00:08:43,150 --> 00:08:43,670
+All right.
+
+141
+00:08:43,690 --> 00:08:45,220
+And it looks like it's working.
+

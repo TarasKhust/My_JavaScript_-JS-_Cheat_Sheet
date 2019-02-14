@@ -1,0 +1,372 @@
+1
+00:00:00,270 --> 00:00:03,690
+All right let's implement remove on our doubly linked list.
+
+2
+00:00:03,690 --> 00:00:04,860
+We're almost there.
+
+3
+00:00:05,160 --> 00:00:08,530
+So we need to specify the index that we're removing at.
+
+4
+00:00:08,820 --> 00:00:11,340
+And we first check if that index is invalid.
+
+5
+00:00:11,340 --> 00:00:15,270
+I'm actually just going to copy this from insert.
+
+6
+00:00:15,800 --> 00:00:21,930
+So if index is less than zero or if it's greater then except this time or equal to the length because
+
+7
+00:00:21,990 --> 00:00:27,870
+we unlike insert where we could insert right at the very very end if there's eight items we can insert
+
+8
+00:00:27,870 --> 00:00:29,000
+it index 8.
+
+9
+00:00:29,190 --> 00:00:33,410
+If we're removing the length is 8 items there's nothing at index 8.
+
+10
+00:00:33,540 --> 00:00:39,310
+So we need to check if it's greater than or equal to return false or undefined.
+
+11
+00:00:39,510 --> 00:00:43,140
+Otherwise our next thing is to check if it's at the very beginning.
+
+12
+00:00:43,140 --> 00:00:50,640
+So for trying to remove from the very very beginning let's just do a return this dot shift which should
+
+13
+00:00:50,640 --> 00:00:52,380
+remove the thing at the very beginning.
+
+14
+00:00:52,710 --> 00:00:58,380
+If we're trying to remove at the end which we could check if the index is equal to the length minus
+
+15
+00:00:58,380 --> 00:01:05,970
+one we're going to turn this pop and let's just make sure that that works in our code.
+
+16
+00:01:06,480 --> 00:01:14,310
+Let's do this list dot remove zero and they give me the first node if we look at the list.
+
+17
+00:01:14,310 --> 00:01:15,530
+It's only 2 things.
+
+18
+00:01:15,570 --> 00:01:21,260
+So I could do a remove at index of one which now is the last index and we get her my any.
+
+19
+00:01:21,480 --> 00:01:22,310
+And we look at the list.
+
+20
+00:01:22,320 --> 00:01:23,320
+It's only one thing.
+
+21
+00:01:23,430 --> 00:01:26,990
+So if I try and do it let's remove one it's invalid.
+
+22
+00:01:26,990 --> 00:01:29,220
+If I do zero it works.
+
+23
+00:01:29,580 --> 00:01:31,570
+And our list is empty now.
+
+24
+00:01:31,940 --> 00:01:32,780
+Looks good.
+
+25
+00:01:32,850 --> 00:01:38,230
+Now the rest of our logic we're going to use the get method to retrieve the item to be removed.
+
+26
+00:01:38,280 --> 00:01:39,590
+So let's do that now.
+
+27
+00:01:39,810 --> 00:01:43,850
+We'll make a variable called removed node equals.
+
+28
+00:01:44,100 --> 00:01:48,370
+This gets and just pass in the index.
+
+29
+00:01:48,510 --> 00:01:50,770
+So that gives us the thing that we're removing.
+
+30
+00:01:50,940 --> 00:01:56,810
+Now we just need to remove it by setting the next and previous properties to the correct things.
+
+31
+00:01:57,060 --> 00:02:00,060
+So I'm going to set the the note before it.
+
+32
+00:02:00,060 --> 00:02:08,340
+So here let's go do a b c d e f again if we're trying to remove this node This is removed node.
+
+33
+00:02:08,490 --> 00:02:14,190
+We need to set this nodes next to be this nodes dot next.
+
+34
+00:02:14,190 --> 00:02:19,700
+So we leapfrog over it which now sets B's next to B D.
+
+35
+00:02:19,710 --> 00:02:33,460
+So that removed node previous gives us the next the next of B should be equal to removed node next.
+
+36
+00:02:33,480 --> 00:02:37,770
+Now I don't really like doing this but previous doesn't act so we could also do what we did earlier
+
+37
+00:02:37,860 --> 00:02:40,700
+and make a before node in an afternoon.
+
+38
+00:02:41,080 --> 00:02:42,420
+But I'm going to start with this.
+
+39
+00:02:42,570 --> 00:02:45,930
+So that gets 1 connection from B to D.
+
+40
+00:02:45,960 --> 00:02:59,700
+Now we need to go from D to be so removed node dot next dot previous equals removed node previous so
+
+41
+00:02:59,700 --> 00:03:08,460
+removed node next the DOB previous is now going to point to remove node previous which is B.
+
+42
+00:03:08,760 --> 00:03:10,880
+I know it's kind of crazy.
+
+43
+00:03:11,100 --> 00:03:17,110
+Otherwise all that may have left is to set next and previous to no on the found node.
+
+44
+00:03:17,160 --> 00:03:25,620
+So that's just cleaning up some loose ends so removed node out next equals no removed node previous
+
+45
+00:03:25,980 --> 00:03:27,010
+equals no.
+
+46
+00:03:27,450 --> 00:03:33,670
+Then we subtract 1 from the length and then we just return removed node.
+
+47
+00:03:34,650 --> 00:03:36,870
+Let's see if it works.
+
+48
+00:03:37,140 --> 00:03:38,640
+I'm going to test it out.
+
+49
+00:03:38,640 --> 00:03:40,950
+We have our list let's do list.
+
+50
+00:03:41,070 --> 00:03:46,700
+Remove index of 1 which is wrong.
+
+51
+00:03:46,830 --> 00:03:50,690
+So our list should now have hairy connected to my any.
+
+52
+00:03:50,820 --> 00:03:54,670
+So the head is hairy and it's next is her mind.
+
+53
+00:03:55,110 --> 00:04:00,470
+And if we look at her my previous is hairy and there is no next because it's the tail.
+
+54
+00:04:01,080 --> 00:04:08,590
+If we try to do this don't remove an invalid index negative for one we get undefined or 100 or 10 undefined.
+
+55
+00:04:09,060 --> 00:04:12,030
+Let's do a couple of pushes.
+
+56
+00:04:12,690 --> 00:04:16,000
+OK I pushed in a couple of values LLNL by and ha ha ha.
+
+57
+00:04:16,140 --> 00:04:19,030
+So if we look at our list now it's five items.
+
+58
+00:04:19,030 --> 00:04:22,200
+If I try and remove from the very end I do list out remove five.
+
+59
+00:04:22,200 --> 00:04:28,830
+It doesn't work but if I do start four it works and notice that what we get back has no next and no
+
+60
+00:04:28,830 --> 00:04:29,510
+no.
+
+61
+00:04:29,790 --> 00:04:30,690
+That's correct.
+
+62
+00:04:30,690 --> 00:04:36,220
+We don't want it to have the lingering references so we get list.
+
+63
+00:04:36,300 --> 00:04:37,530
+Let's look at the tail now.
+
+64
+00:04:38,790 --> 00:04:44,850
+Which is by next is correct it should be known at the end and previous is pointing to some other node
+
+65
+00:04:45,690 --> 00:04:48,180
+which is what I'm saying by.
+
+66
+00:04:48,180 --> 00:04:48,640
+OK.
+
+67
+00:04:48,810 --> 00:04:49,540
+This all looks good.
+
+68
+00:04:49,550 --> 00:04:51,830
+Let's just remove from the beginning.
+
+69
+00:04:52,190 --> 00:04:55,170
+Let's do just remove a couple of times.
+
+70
+00:04:55,170 --> 00:04:57,360
+How many things are last left.
+
+71
+00:04:57,360 --> 00:04:57,990
+OK.
+
+72
+00:04:58,160 --> 00:04:59,620
+What should be done now right.
+
+73
+00:04:59,920 --> 00:05:01,100
+Totally empty.
+
+74
+00:05:01,110 --> 00:05:02,610
+Everything looked good.
+
+75
+00:05:02,640 --> 00:05:08,610
+You could clean this up a bit and it's up to you if you think this is cleaner but you could do var before
+
+76
+00:05:08,610 --> 00:05:15,070
+node equals removed Snoad previous.
+
+77
+00:05:16,780 --> 00:05:21,470
+The bar after node equals removed no debt next.
+
+78
+00:05:21,550 --> 00:05:28,210
+And then we could do the same thing that we had before so we just said before Noad next equals after
+
+79
+00:05:28,220 --> 00:05:35,400
+Noad and then say after Noad previous equals before Noad.
+
+80
+00:05:35,710 --> 00:05:40,440
+If you don't like this syntax here and if we refresh it I run the code again.
+
+81
+00:05:40,450 --> 00:05:42,980
+It should still work just fine.
+
+82
+00:05:42,980 --> 00:05:46,240
+We have our list Nope list but the t.
+
+83
+00:05:46,250 --> 00:05:53,210
+If we do list out remove an index of 1 and we look at the list should be correctly patched.
+
+84
+00:05:53,410 --> 00:06:00,840
+So we have Hary which is pointing next to her mind and her mind he is pointing previous to Harry.
+
+85
+00:06:01,180 --> 00:06:03,000
+So up to you which you prefer.
+
+86
+00:06:03,010 --> 00:06:09,370
+This is a little more verbose but then you have this nice clean easy to understand syntax here what
+
+87
+00:06:09,370 --> 00:06:13,900
+you're actually doing versus before is a little longer and you have this removed.
+
+88
+00:06:13,900 --> 00:06:16,550
+No everything is in reference to removed node.
+
+89
+00:06:16,930 --> 00:06:19,270
+Honestly I don't know which one I prefer for insert.
+
+90
+00:06:19,270 --> 00:06:21,850
+When we had to change more properties I like doing this.
+
+91
+00:06:21,850 --> 00:06:24,100
+Removed either one.
+
+92
+00:06:24,100 --> 00:06:26,600
+I think I'll leave both in here and just leave it commented out.
+
+93
+00:06:26,870 --> 00:06:28,060
+OK so let's remove.
+

@@ -1,0 +1,160 @@
+1
+00:00:00,240 --> 00:00:00,570
+All right.
+
+2
+00:00:00,570 --> 00:00:03,380
+So that's it for cue's really quick.
+
+3
+00:00:03,420 --> 00:00:07,890
+The Big O notation should be constant time insertion and removal.
+
+4
+00:00:07,950 --> 00:00:09,750
+That's the only thing that matters.
+
+5
+00:00:09,810 --> 00:00:14,990
+Searching and accessing something that you really do with a cue Otherwise you may not want to use a
+
+6
+00:00:14,990 --> 00:00:18,210
+Q data structure if you need to prioritize searching.
+
+7
+00:00:18,210 --> 00:00:23,640
+Generally all you care about is adding things in with Q removing things with dequeue you want that to
+
+8
+00:00:23,640 --> 00:00:24,850
+be super fast.
+
+9
+00:00:24,870 --> 00:00:27,810
+So with our implementation it is constant time.
+
+10
+00:00:27,810 --> 00:00:34,380
+Note that when we use an array it was not constant time because in both iterations are both solutions
+
+11
+00:00:34,380 --> 00:00:36,200
+that we used or that we came up with.
+
+12
+00:00:36,270 --> 00:00:40,440
+Using the built in Array methods there was a cascade of re-indexing.
+
+13
+00:00:40,500 --> 00:00:45,930
+So that does not lead to constant time and linear time is not what we want.
+
+14
+00:00:46,110 --> 00:00:52,410
+We want constant time and this is the same for stacks stacks and queues to structures add things in
+
+15
+00:00:52,500 --> 00:00:55,590
+remove them different orders and how they actually work.
+
+16
+00:00:55,710 --> 00:01:00,140
+But both adding and removing should be constant time 0 of 1.
+
+17
+00:01:00,690 --> 00:01:05,660
+So to recap on queues they are first in first out just like at an airport.
+
+18
+00:01:05,760 --> 00:01:08,380
+First person in is the first person out.
+
+19
+00:01:08,490 --> 00:01:12,020
+Unless you are selected for additional screening in which case you won't be the last one out.
+
+20
+00:01:12,180 --> 00:01:15,120
+But usually the first person in line gets out first.
+
+21
+00:01:15,120 --> 00:01:19,690
+Contrast that with a stack first thing in is the last thing out.
+
+22
+00:01:19,710 --> 00:01:21,680
+So queues are used often.
+
+23
+00:01:21,690 --> 00:01:27,090
+Any time you need to keep track of an order and maintain that order so that the first thing in a print
+
+24
+00:01:27,090 --> 00:01:28,620
+queue that's a classic example.
+
+25
+00:01:28,620 --> 00:01:33,150
+The first thing that someone tries to print is the first thing actually printed and then anything else
+
+26
+00:01:33,150 --> 00:01:37,670
+that piles up is kept in the order that it was added in and then we remove it.
+
+27
+00:01:37,830 --> 00:01:41,130
+We print the things that have been waiting the longest.
+
+28
+00:01:41,150 --> 00:01:47,640
+OK so useful for processing tasks and also are foundational for other more complex algorithms and data
+
+29
+00:01:47,640 --> 00:01:49,660
+structures that we'll see later on.
+
+30
+00:01:49,860 --> 00:01:55,440
+As I mentioned we will be using stacks and Qs later in the course to help us implement more complicated
+
+31
+00:01:55,650 --> 00:02:02,760
+data structures and algorithms so they are not just a novelty to show you they will be resurfacing.
+
+32
+00:02:02,760 --> 00:02:05,750
+And like I said insertion and removal needs to be.
+
+33
+00:02:05,790 --> 00:02:09,840
+So I said it can be done in constant time in a good stack and a good queue.
+
+34
+00:02:09,840 --> 00:02:12,900
+It has to be otherwise it's just a waste.
+
+35
+00:02:12,900 --> 00:02:16,140
+Why even use a stack or queue anyway.
+
+36
+00:02:16,470 --> 00:02:18,270
+That's it for stacks and queues.
+
+37
+00:02:18,360 --> 00:02:20,160
+Very similar in a lot of ways.
+
+38
+00:02:20,160 --> 00:02:25,980
+Adding and removing things constant time very different in the order first in and first out for a queue.
+
+39
+00:02:25,980 --> 00:02:28,420
+Last In First Out for a stack.
+
+40
+00:02:28,480 --> 00:02:30,540
+Ok see in the next section.
+

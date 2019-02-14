@@ -1,0 +1,580 @@
+1
+00:00:00,210 --> 00:00:03,980
+So second attempt at this video I recorded the whole thing or I thought I did.
+
+2
+00:00:04,110 --> 00:00:07,710
+But Mike was muted so giving it a second chance.
+
+3
+00:00:07,710 --> 00:00:10,680
+We're going to write pop the very first thing we need to do is define the method.
+
+4
+00:00:10,680 --> 00:00:13,890
+Pop takes two arguments and then we'll start with the edge case.
+
+5
+00:00:13,890 --> 00:00:16,790
+If there are no notes in the list return undefined.
+
+6
+00:00:17,130 --> 00:00:22,060
+OK so let's define pop and check if there are no nodes.
+
+7
+00:00:22,160 --> 00:00:23,550
+We have a couple of ways of doing this.
+
+8
+00:00:23,580 --> 00:00:24,910
+May clear down here.
+
+9
+00:00:25,140 --> 00:00:30,110
+We could check if the length is zero or I'm going to check if there is no head.
+
+10
+00:00:30,120 --> 00:00:32,110
+So if no this head if.
+
+11
+00:00:32,280 --> 00:00:36,570
+If not the stud head or the start tail just return undefined.
+
+12
+00:00:36,570 --> 00:00:38,550
+We can do it on one line.
+
+13
+00:00:38,730 --> 00:00:39,630
+Nice and easy.
+
+14
+00:00:39,840 --> 00:00:44,400
+So the next piece is loop through the list until you reach the tail.
+
+15
+00:00:44,400 --> 00:00:46,550
+Except really we're trying to find the tail.
+
+16
+00:00:46,590 --> 00:00:49,640
+And the second to last thing that comes right before the tail.
+
+17
+00:00:49,800 --> 00:00:54,290
+So when we loop we're going to have two variables one that's going to be called I don't know current.
+
+18
+00:00:54,300 --> 00:00:55,410
+It doesn't really matter.
+
+19
+00:00:55,410 --> 00:01:01,770
+Just the thing that is going to hit the end and then two which will call previous or I like to call
+
+20
+00:01:01,770 --> 00:01:05,870
+it new tail because it's what is going to become the tail.
+
+21
+00:01:06,000 --> 00:01:06,270
+Right.
+
+22
+00:01:06,270 --> 00:01:07,660
+If our list looks like this.
+
+23
+00:01:07,830 --> 00:01:11,160
+Hello goodbye.
+
+24
+00:01:12,740 --> 00:01:14,110
+Exclamation point.
+
+25
+00:01:14,240 --> 00:01:15,660
+We're going to start at the beginning.
+
+26
+00:01:15,680 --> 00:01:19,570
+They're both going to point here current and new tail and T.
+
+27
+00:01:19,670 --> 00:01:20,240
+Right.
+
+28
+00:01:20,270 --> 00:01:23,560
+And we're going to loop through and I'm going to move current appear and check.
+
+29
+00:01:23,570 --> 00:01:24,940
+Is this the end of the list.
+
+30
+00:01:25,160 --> 00:01:25,510
+Nope.
+
+31
+00:01:25,520 --> 00:01:26,300
+It's not.
+
+32
+00:01:26,300 --> 00:01:27,910
+So we move Nutella.
+
+33
+00:01:28,130 --> 00:01:30,160
+Then I'm going to move current up again and check.
+
+34
+00:01:30,290 --> 00:01:30,960
+All right.
+
+35
+00:01:31,010 --> 00:01:32,380
+Is this the end of the list.
+
+36
+00:01:32,420 --> 00:01:33,390
+And it is.
+
+37
+00:01:33,500 --> 00:01:36,020
+So I don't move new tail.
+
+38
+00:01:36,230 --> 00:01:44,300
+And this tells me that this is my new tail so I'm going to pop this off by severing this hero and then
+
+39
+00:01:44,330 --> 00:01:46,800
+I'm going to make this the tail.
+
+40
+00:01:46,820 --> 00:01:50,870
+So that's kind of our workflow here to reset them back to the starting gate.
+
+41
+00:01:50,870 --> 00:01:53,080
+I think it deleted a bracket over here.
+
+42
+00:01:53,390 --> 00:01:53,960
+OK.
+
+43
+00:01:54,140 --> 00:01:58,890
+So to do that loop McCalmont that out not valid javascript is it.
+
+44
+00:01:59,030 --> 00:02:02,350
+What I'm going to do is start by making those two variables.
+
+45
+00:02:02,360 --> 00:02:08,570
+So var current and I'm going to start at the top of this head and then I'm going to make my other variable
+
+46
+00:02:08,570 --> 00:02:11,330
+called new tail and I'll set it to be current.
+
+47
+00:02:11,350 --> 00:02:12,730
+The same thing at the beginning.
+
+48
+00:02:12,770 --> 00:02:15,380
+They both started at the very beginning.
+
+49
+00:02:15,380 --> 00:02:17,120
+Now we loop over.
+
+50
+00:02:17,120 --> 00:02:20,030
+So from the last video I showed you one way of doing this.
+
+51
+00:02:20,150 --> 00:02:20,780
+I'm going to do.
+
+52
+00:02:20,810 --> 00:02:28,820
+While current dot next that means while there is something so if current is goodbye is there a next
+
+53
+00:02:28,820 --> 00:02:32,120
+yes but when current is exclamation point there is no next.
+
+54
+00:02:32,120 --> 00:02:33,850
+And that's when we're going to stop.
+
+55
+00:02:33,930 --> 00:02:35,390
+There's a couple of ways of writing this code.
+
+56
+00:02:35,390 --> 00:02:37,820
+If you didn't do current Up next you made it work.
+
+57
+00:02:37,900 --> 00:02:39,970
+If it's if it works it's totally valid.
+
+58
+00:02:40,360 --> 00:02:40,720
+OK.
+
+59
+00:02:40,730 --> 00:02:48,490
+And although we're going to do is set new tale to equal current and then move current forward one
+
+60
+00:02:51,150 --> 00:02:56,700
+so new tale is always lagging behind new tail set to whatever current was and then to move current one
+
+61
+00:02:56,700 --> 00:03:01,240
+forward and we keep going until there is nowhere for current to move forward to.
+
+62
+00:03:01,380 --> 00:03:09,270
+So with the end of this if I just did a comparable log current Vau and then counsel that log new tail
+
+63
+00:03:09,580 --> 00:03:18,780
+Vau you'll see if i do list up pop we end up with current exclamation point Noad and goodbye new tail
+
+64
+00:03:18,780 --> 00:03:20,300
+as the previous one goodbye.
+
+65
+00:03:20,310 --> 00:03:21,650
+It's the one right before it.
+
+66
+00:03:21,880 --> 00:03:22,430
+Okay.
+
+67
+00:03:22,620 --> 00:03:24,870
+So that get to what we want at the end of this list.
+
+68
+00:03:24,930 --> 00:03:27,330
+Current new tail are the correct values.
+
+69
+00:03:27,360 --> 00:03:31,220
+So now all we need to do is move the tail.
+
+70
+00:03:31,250 --> 00:03:34,800
+This tail is now pointing to new tail.
+
+71
+00:03:34,830 --> 00:03:41,460
+So at the end of our little simulation current is referencing this right here and new tail references
+
+72
+00:03:41,460 --> 00:03:42,640
+goodbye.
+
+73
+00:03:42,660 --> 00:03:45,730
+So all we do is say all right this thing right here is the tail.
+
+74
+00:03:45,810 --> 00:03:47,190
+That's what this does.
+
+75
+00:03:47,310 --> 00:03:51,720
+Then if we reference this we need to set the new tails next node to be no.
+
+76
+00:03:52,170 --> 00:03:55,900
+So we'll just do this tale next equals no.
+
+77
+00:03:56,070 --> 00:04:02,000
+So there's nothing that comes after that severs the connection with exclamation point.
+
+78
+00:04:02,030 --> 00:04:07,040
+So it's not enough just to say this is our new tail because if it keeps pointing at something then that
+
+79
+00:04:07,040 --> 00:04:08,230
+doesn't mean it's the end of the list.
+
+80
+00:04:08,240 --> 00:04:11,330
+So we need to sever the arrow which is what we've done now.
+
+81
+00:04:11,330 --> 00:04:12,640
+So we have current.
+
+82
+00:04:12,650 --> 00:04:15,600
+So we know at the very end of this we want to return current.
+
+83
+00:04:15,890 --> 00:04:16,490
+Okay.
+
+84
+00:04:16,730 --> 00:04:23,960
+And the other thing we need to do is decrement length length minus minus and this will get us ninety
+
+85
+00:04:23,960 --> 00:04:28,190
+nine point ninety nine percent of the way there this meets all the requirements and if we test this
+
+86
+00:04:28,250 --> 00:04:32,530
+out get rid of this for now let's push on this.
+
+87
+00:04:32,640 --> 00:04:33,670
+OK that should work.
+
+88
+00:04:33,830 --> 00:04:34,510
+Let's give it a test.
+
+89
+00:04:34,500 --> 00:04:38,550
+I'm going to refresh my code executed list.
+
+90
+00:04:38,630 --> 00:04:40,280
+Right now it has three things in there.
+
+91
+00:04:40,340 --> 00:04:41,090
+It returns to me.
+
+92
+00:04:41,090 --> 00:04:42,260
+Exclamation point.
+
+93
+00:04:42,410 --> 00:04:47,980
+And if we look at the list it's now two items long and the tail is goodbye.
+
+94
+00:04:47,990 --> 00:04:49,610
+All right let's pop one more time.
+
+95
+00:04:49,610 --> 00:04:50,960
+It returns to me goodbye.
+
+96
+00:04:50,960 --> 00:04:51,860
+That's correct.
+
+97
+00:04:51,860 --> 00:04:54,740
+And if you look at list it is now one item line.
+
+98
+00:04:55,120 --> 00:04:55,400
+OK.
+
+99
+00:04:55,400 --> 00:04:59,840
+So it seems like it's working let's try pushing something on push.
+
+100
+00:04:59,840 --> 00:05:04,340
+Ninety nine point nine on the lookout list it's two items long.
+
+101
+00:05:04,340 --> 00:05:08,960
+The head is hollow the tail is 9 9 9 9.
+
+102
+00:05:10,160 --> 00:05:11,620
+It gives me that number back.
+
+103
+00:05:11,900 --> 00:05:12,650
+OK.
+
+104
+00:05:13,010 --> 00:05:21,650
+So that's all good but if we do list up pop one more time it does pop off the value of hello give me
+
+105
+00:05:21,650 --> 00:05:22,930
+what I expect.
+
+106
+00:05:23,750 --> 00:05:29,970
+But if we look at it list it still has a head and a tail but the length has gone down.
+
+107
+00:05:30,170 --> 00:05:35,210
+So there's a special case when there's one item left in the list and I didn't specify this in the instructions
+
+108
+00:05:35,210 --> 00:05:41,270
+so most I would expect nobody to catch this unless you actually went through and tested this.
+
+109
+00:05:41,270 --> 00:05:46,730
+If there's one item there's a problem because we're never setting the tail the head and the tail to
+
+110
+00:05:46,730 --> 00:05:47,590
+be No.
+
+111
+00:05:47,670 --> 00:05:52,740
+It should be empty if there is no if there's only one item left and we remove it.
+
+112
+00:05:53,030 --> 00:05:54,130
+Well we've done that.
+
+113
+00:05:54,140 --> 00:05:58,950
+But because the way our code works new tail and current are set to be the exact same thing.
+
+114
+00:05:59,870 --> 00:06:03,480
+So I'm going to show a refactored version of all of this at the end of the section.
+
+115
+00:06:03,650 --> 00:06:08,290
+But one really simple work around that is it's kind of clunky.
+
+116
+00:06:08,360 --> 00:06:12,050
+But if we just check if the length of the list is now zero.
+
+117
+00:06:12,080 --> 00:06:15,500
+So down here if we subtract one from the length we just check.
+
+118
+00:06:15,500 --> 00:06:15,730
+All right.
+
+119
+00:06:15,750 --> 00:06:17,720
+Is the list empty now.
+
+120
+00:06:17,720 --> 00:06:21,560
+So if this length equals equals zero.
+
+121
+00:06:21,560 --> 00:06:25,820
+Or we could also check if the head is equal to the tail Madieu three equals.
+
+122
+00:06:26,150 --> 00:06:33,140
+If that's the case we're now just going to say this dot head equals no tail equals nil.
+
+123
+00:06:33,320 --> 00:06:35,780
+That means that there was one item.
+
+124
+00:06:35,840 --> 00:06:38,980
+We popped it off and we subtracted one from the length.
+
+125
+00:06:39,050 --> 00:06:40,920
+So now there is zero items in there.
+
+126
+00:06:41,000 --> 00:06:43,170
+So we just reset head and tail to be No.
+
+127
+00:06:43,340 --> 00:06:44,540
+Let's verify that it works.
+
+128
+00:06:44,540 --> 00:06:45,970
+So we have our list.
+
+129
+00:06:46,340 --> 00:06:50,890
+If we do list pop first thing gone.
+
+130
+00:06:50,890 --> 00:06:53,890
+Second thing going right now it is one item long.
+
+131
+00:06:53,890 --> 00:06:56,890
+So if we pop this time it gives us the correct value.
+
+132
+00:06:56,920 --> 00:07:00,110
+And if we look at it list it now has the length of zero.
+
+133
+00:07:00,280 --> 00:07:05,330
+The head is no the tail is small and if we try and pop again we should get undefined.
+
+134
+00:07:05,470 --> 00:07:07,710
+And the lists should still be zero items.
+
+135
+00:07:07,710 --> 00:07:10,890
+Often times I have seen this where you know it keeps going into negative numbers.
+
+136
+00:07:10,900 --> 00:07:11,770
+That's not correct.
+
+137
+00:07:11,760 --> 00:07:13,510
+We want to be zero.
+
+138
+00:07:13,510 --> 00:07:13,750
+All right.
+
+139
+00:07:13,750 --> 00:07:15,100
+So that's my solution to pop.
+
+140
+00:07:15,160 --> 00:07:17,960
+If he came up with something better more elegant please share it.
+
+141
+00:07:17,980 --> 00:07:23,890
+I'm going to show you a nice refactor later on that will slim this down significantly to one line by
+
+142
+00:07:24,190 --> 00:07:28,660
+calling another function another method we're going to define so it can be one line on it's own right
+
+143
+00:07:28,660 --> 00:07:29,030
+now.
+
+144
+00:07:29,110 --> 00:07:34,400
+But once we do find this auxiliary auxiliary function it will be shorter anyway.
+
+145
+00:07:34,720 --> 00:07:35,230
+That's pop.
+

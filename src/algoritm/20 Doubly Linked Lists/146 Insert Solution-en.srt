@@ -1,0 +1,392 @@
+1
+00:00:00,360 --> 00:00:03,960
+All right so let's write our Insearch solution for a doubly linked list.
+
+2
+00:00:04,290 --> 00:00:10,890
+So I'll define insert which takes an index and a value and the first thing we'll do is check if the
+
+3
+00:00:10,890 --> 00:00:12,250
+index is negative.
+
+4
+00:00:12,600 --> 00:00:20,820
+So if it's less than zero or if the index is greater than the length then will return false or whatever
+
+5
+00:00:20,820 --> 00:00:23,710
+value you want to return to indicate that it doesn't work.
+
+6
+00:00:24,120 --> 00:00:28,350
+Then we had our special case if index exactly zero.
+
+7
+00:00:29,070 --> 00:00:30,090
+What we want to do.
+
+8
+00:00:30,090 --> 00:00:36,480
+We're going to return this dot not push this and shift to the beginning.
+
+9
+00:00:38,500 --> 00:00:45,960
+And if index is exactly equal to the stop length that means we're adding to the very end.
+
+10
+00:00:46,120 --> 00:00:49,600
+We're going to do ever turn this dot push though.
+
+11
+00:00:52,200 --> 00:00:52,990
+OK.
+
+12
+00:00:53,510 --> 00:00:55,590
+And let's just test that part out for now.
+
+13
+00:00:55,580 --> 00:00:57,530
+Just make sure we didn't miss anything up.
+
+14
+00:00:57,710 --> 00:00:58,780
+So we have our list.
+
+15
+00:00:58,910 --> 00:01:02,050
+If i do list that inserts index of.
+
+16
+00:01:02,300 --> 00:01:10,640
+First so because the list is our new Head correct it looks like it's correct and it's pointing to.
+
+17
+00:01:10,760 --> 00:01:11,350
+Yep.
+
+18
+00:01:11,640 --> 00:01:20,090
+Let's try the same thing our length this force for try and do list at insert at 4 and but say I do last
+
+19
+00:01:20,090 --> 00:01:24,160
+is what I try and insert it looks like it works.
+
+20
+00:01:24,160 --> 00:01:26,420
+If you look at our table it's set to last.
+
+21
+00:01:26,530 --> 00:01:27,170
+OK.
+
+22
+00:01:27,550 --> 00:01:33,460
+And also if we tried to do something invalid like 40 shouldn't work we should get false.
+
+23
+00:01:33,460 --> 00:01:34,460
+And we do.
+
+24
+00:01:34,780 --> 00:01:35,200
+OK.
+
+25
+00:01:35,200 --> 00:01:41,970
+So otherwise the rest of our logic was use the get method to access the index minus one.
+
+26
+00:01:42,160 --> 00:01:48,730
+So we can do which we call this new found note again equals this don't get in we're going to do index
+
+27
+00:01:48,730 --> 00:01:54,340
+minus 1 because from trying to insert right here I need to first find the item before it.
+
+28
+00:01:54,340 --> 00:01:55,950
+So that's what we're doing right now.
+
+29
+00:01:56,440 --> 00:02:01,990
+So we're finding that one before we also need to make the new node so we can call new node or inserted
+
+30
+00:02:01,990 --> 00:02:09,220
+node equals new node and pass in the value just like that.
+
+31
+00:02:09,220 --> 00:02:13,660
+Now all we have to do is patch everything correctly and to make it a little easier.
+
+32
+00:02:13,660 --> 00:02:15,430
+I'm going to make another variable.
+
+33
+00:02:15,640 --> 00:02:18,210
+So this is called Found node.
+
+34
+00:02:18,310 --> 00:02:23,620
+I think I might actually relabel this to previous node and then I'm going to have let's do those called
+
+35
+00:02:23,620 --> 00:02:30,270
+Before I like that more and then I'm going to have after node equals before node next.
+
+36
+00:02:30,280 --> 00:02:34,660
+So I just have two references now so far a list looks like I don't know.
+
+37
+00:02:34,660 --> 00:02:36,980
+A B C D E F.
+
+38
+00:02:37,120 --> 00:02:45,160
+And if we're trying to insert an index of 3 0 1 to 3 what we did is we found before node is right here
+
+39
+00:02:45,610 --> 00:02:49,930
+and then I said after Node 2 before node next which is right here.
+
+40
+00:02:49,930 --> 00:02:54,340
+So I now have a reference to here in reference to here and it's just going to make it a little cleaner
+
+41
+00:02:54,810 --> 00:02:56,640
+or easier to understand what's happening.
+
+42
+00:02:56,800 --> 00:03:02,430
+So we want to set the before node dot next to be our new node.
+
+43
+00:03:02,430 --> 00:03:10,480
+So before node next equals new node then we want to set new node previous.
+
+44
+00:03:10,690 --> 00:03:16,530
+So we just inserted something right here and say we're inserting hello we did this connection.
+
+45
+00:03:16,630 --> 00:03:23,440
+Now we need to go from hello back to before node so new no previous equals before node.
+
+46
+00:03:23,890 --> 00:03:25,070
+Now it needs to go.
+
+47
+00:03:25,090 --> 00:03:28,280
+Connect this to the after node.
+
+48
+00:03:28,600 --> 00:03:40,360
+So we'll do new node dot next equals after node after node previous equals new node.
+
+49
+00:03:40,720 --> 00:03:44,510
+It's kind of a pain but I prefer to make a separate variable to do this.
+
+50
+00:03:44,560 --> 00:03:45,790
+You don't have to.
+
+51
+00:03:46,030 --> 00:03:49,620
+You could just right before node next instead of after node.
+
+52
+00:03:49,630 --> 00:03:54,970
+It's just I don't like chaining that together and having your next stop previous.
+
+53
+00:03:55,480 --> 00:04:02,020
+And other than that what else do you need to do this at length goes up by 1 and will return TRUE AT
+
+54
+00:04:02,020 --> 00:04:02,740
+THE END.
+
+55
+00:04:04,230 --> 00:04:07,630
+Let's test it out see if it works.
+
+56
+00:04:07,650 --> 00:04:10,370
+So we have our list right now has three things.
+
+57
+00:04:10,420 --> 00:04:19,260
+If I try and insert this insert at index of 1 we're going with Harry Potter's let's do Tunks under-rated
+
+58
+00:04:19,260 --> 00:04:21,950
+character and let's look at the list.
+
+59
+00:04:21,990 --> 00:04:23,100
+So it's now four things.
+
+60
+00:04:23,100 --> 00:04:23,970
+That's correct.
+
+61
+00:04:23,970 --> 00:04:31,500
+The head should still be hairy but the head now points to Tunks and Tunks has a next reference and a
+
+62
+00:04:31,500 --> 00:04:32,130
+previous.
+
+63
+00:04:32,130 --> 00:04:35,760
+If we look at the previous It said to Harry so that's correct.
+
+64
+00:04:36,030 --> 00:04:42,990
+And if we look at the next set to run and if we look at Ron and we look at its previous set to Tunks.
+
+65
+00:04:43,000 --> 00:04:47,790
+So everything is connected correctly which is probably the most annoying part of verifying or making
+
+66
+00:04:47,790 --> 00:04:52,800
+sure something works in a doubly linked list is making sure that you have all the connections because
+
+67
+00:04:52,800 --> 00:04:54,990
+you need to make sure you have the next and the previous.
+
+68
+00:04:54,990 --> 00:04:59,120
+For every single thing that you're changing a couple of small changes.
+
+69
+00:04:59,310 --> 00:05:06,750
+First of all if we might want everything to return true or false right now everything does unless we
+
+70
+00:05:06,750 --> 00:05:10,130
+are on shifting or pushing these two scenarios.
+
+71
+00:05:10,140 --> 00:05:14,530
+This is the same thing in our singly linked list example just to refresh your memory.
+
+72
+00:05:14,580 --> 00:05:24,520
+If i do list this dot insert anywhere in the middle it returns True.
+
+73
+00:05:24,600 --> 00:05:28,500
+But if I do it at the beginning it returns to the node or at the end.
+
+74
+00:05:28,500 --> 00:05:32,060
+For that matter at least it returns true.
+
+75
+00:05:32,570 --> 00:05:33,770
+What is the last index.
+
+76
+00:05:33,780 --> 00:05:34,160
+6.
+
+77
+00:05:34,170 --> 00:05:34,980
+Now there we go.
+
+78
+00:05:35,010 --> 00:05:36,430
+It's giving me the node.
+
+79
+00:05:36,510 --> 00:05:42,660
+So if I want to coerce it to a boolean we can do the same thing we did the double bang bang bang which
+
+80
+00:05:42,660 --> 00:05:45,240
+is now going to turn it into a billion.
+
+81
+00:05:45,240 --> 00:05:53,230
+Another thing I'll do a little return here just to separate out these edge cases in our conditionals.
+
+82
+00:05:53,340 --> 00:06:00,210
+I'll also add in I would say opinion I guess but I kind of like separating out a variable declarations
+
+83
+00:06:00,870 --> 00:06:05,740
+and then I'm actually going to put these on the same line because they're paired together.
+
+84
+00:06:05,890 --> 00:06:11,250
+We're swopped we're adding the before no next equal to a new node and new no previous equals 4 node.
+
+85
+00:06:11,340 --> 00:06:18,210
+So I like to group those together to show that they are sort of doing you know one set a pair of connections
+
+86
+00:06:18,210 --> 00:06:19,170
+at a time.
+
+87
+00:06:19,170 --> 00:06:20,350
+Same thing here.
+
+88
+00:06:20,400 --> 00:06:22,680
+Definitely not necessary to do that at all.
+
+89
+00:06:22,770 --> 00:06:24,630
+But I like that change.
+
+90
+00:06:24,720 --> 00:06:31,420
+And now just double check everything still works in sort of the beginning that works.
+
+91
+00:06:31,440 --> 00:06:35,400
+Insert in the middle that works and insert at the end.
+
+92
+00:06:35,400 --> 00:06:37,370
+Now it was at the end.
+
+93
+00:06:37,370 --> 00:06:38,580
+What is the last thing.
+
+94
+00:06:38,850 --> 00:06:40,500
+No that was not the end.
+
+95
+00:06:40,550 --> 00:06:42,710
+If I answered at six it should work.
+
+96
+00:06:42,900 --> 00:06:46,530
+Now that the length is seven so if answered at 8 it shouldn't work.
+
+97
+00:06:46,530 --> 00:06:47,010
+OK.
+
+98
+00:06:47,190 --> 00:06:47,950
+So that's answer.
+

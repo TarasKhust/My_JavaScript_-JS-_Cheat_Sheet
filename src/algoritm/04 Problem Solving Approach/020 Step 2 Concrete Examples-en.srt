@@ -1,0 +1,460 @@
+1
+00:00:00,180 --> 00:00:01,190
+Hey welcome back.
+
+2
+00:00:01,200 --> 00:00:07,400
+This is part two of the simple five step program to changing your life and realizing your dreams.
+
+3
+00:00:07,500 --> 00:00:12,300
+As long as your dreams have to do with solving problems that doesn't include family problems medical
+
+4
+00:00:12,300 --> 00:00:16,560
+problems personal problems problems with their pets peeing on your brand new furniture.
+
+5
+00:00:16,590 --> 00:00:19,520
+It only applies to code programming challenges.
+
+6
+00:00:19,530 --> 00:00:24,660
+Unfortunately and I've been viewing this through the lens of interviews but it really does apply to
+
+7
+00:00:24,690 --> 00:00:27,520
+any sort of code challenge that you're trying to solve on your own.
+
+8
+00:00:27,780 --> 00:00:29,850
+OK so step one was understand the problem.
+
+9
+00:00:29,850 --> 00:00:33,540
+Step two after you've done that explore concrete examples.
+
+10
+00:00:33,540 --> 00:00:35,310
+So we're back in our cinder block cell.
+
+11
+00:00:35,310 --> 00:00:37,360
+Our interviewer has asked us a question.
+
+12
+00:00:37,500 --> 00:00:38,820
+We have a moment of panic.
+
+13
+00:00:38,820 --> 00:00:43,380
+We start by understanding the question trying to figure out make sure we understand the inputs the outputs
+
+14
+00:00:43,380 --> 00:00:44,820
+all that stuff we talked about.
+
+15
+00:00:44,820 --> 00:00:49,800
+The very next thing that I do and I recommend all students all my students do and we talked about interview
+
+16
+00:00:49,800 --> 00:00:53,090
+prep is come up with concrete examples.
+
+17
+00:00:53,130 --> 00:00:56,620
+This is tied very closely to understanding the problem.
+
+18
+00:00:57,110 --> 00:00:58,890
+So coming up with examples can help you.
+
+19
+00:00:58,950 --> 00:01:02,950
+I just said this cheese can help you understand the problem better.
+
+20
+00:01:03,120 --> 00:01:08,760
+Examples also provide the checks so that your eventual solution if once you have a solution you can
+
+21
+00:01:08,760 --> 00:01:10,080
+tell if it works how it should.
+
+22
+00:01:10,200 --> 00:01:15,180
+Because you know at that point you already have the examples you know the inputs and outputs that you
+
+23
+00:01:15,180 --> 00:01:15,800
+should get.
+
+24
+00:01:15,930 --> 00:01:20,700
+So if you have those examples you can check your work but also you can learn more information by doing
+
+25
+00:01:20,700 --> 00:01:21,770
+these examples.
+
+26
+00:01:21,900 --> 00:01:25,650
+And this applies on a larger scale things like user stories.
+
+27
+00:01:25,710 --> 00:01:28,590
+These are examples that you're not familiar with user stories.
+
+28
+00:01:28,650 --> 00:01:32,880
+It doesn't matter that much but if you're working on a product like an Instagram when they're solving
+
+29
+00:01:32,880 --> 00:01:35,570
+a challenge they're building a new feature.
+
+30
+00:01:35,840 --> 00:01:41,340
+You bet that they start with user stories at some point they do which is basically given an input output
+
+31
+00:01:41,400 --> 00:01:43,730
+except the input is you know a user action.
+
+32
+00:01:43,800 --> 00:01:45,230
+What should happen after that.
+
+33
+00:01:45,540 --> 00:01:52,230
+Or unit tests on a smaller scale but still you know bigger context than an interview unit tests are
+
+34
+00:01:52,230 --> 00:01:57,390
+used all the time to help lay out you know how something should work for a smaller feature.
+
+35
+00:01:57,720 --> 00:01:58,010
+OK.
+
+36
+00:01:58,020 --> 00:02:02,080
+So here are the steps that I take around exploring concrete examples.
+
+37
+00:02:02,080 --> 00:02:03,860
+So you're faced with a problem.
+
+38
+00:02:03,930 --> 00:02:08,880
+The first thing that I do is start with simple examples and I literally if if I'm in an interview or
+
+39
+00:02:08,880 --> 00:02:11,340
+if my students are in a mock interview I tell them.
+
+40
+00:02:11,340 --> 00:02:11,580
+All right.
+
+41
+00:02:11,580 --> 00:02:14,850
+You've restated you've restated the problem already you understand it.
+
+42
+00:02:14,850 --> 00:02:20,020
+Now write down two or three simple examples with an input and then the output.
+
+43
+00:02:20,070 --> 00:02:24,180
+And I really actually like to write this down so I have it and I can look back at it.
+
+44
+00:02:24,240 --> 00:02:30,180
+So simple examples the ones that should make you know the easiest use cases then progress to more complex
+
+45
+00:02:30,180 --> 00:02:31,020
+examples.
+
+46
+00:02:31,020 --> 00:02:36,510
+And then what about edge cases explore examples with empty inputs that will often give you some insight
+
+47
+00:02:36,510 --> 00:02:39,510
+into how the problem should work especially in an interview setting.
+
+48
+00:02:39,660 --> 00:02:42,040
+Explore examples with invalid inputs.
+
+49
+00:02:42,060 --> 00:02:44,440
+So this is more useful I'd say in the real world.
+
+50
+00:02:44,460 --> 00:02:46,990
+What happens if a user enters something that is invalid.
+
+51
+00:02:47,040 --> 00:02:47,250
+Right.
+
+52
+00:02:47,250 --> 00:02:49,030
+We have to think about this all the time.
+
+53
+00:02:49,110 --> 00:02:52,280
+So let's explore this with a concrete problem.
+
+54
+00:02:52,560 --> 00:02:54,050
+So our interviewer asks.
+
+55
+00:02:54,090 --> 00:02:59,730
+Write a function which takes in a string and returns count of each character in the string.
+
+56
+00:02:59,730 --> 00:03:05,370
+It's a relatively straightforward problem but there are many questions many examples that we could try
+
+57
+00:03:05,370 --> 00:03:07,910
+out and use to learn about the problem.
+
+58
+00:03:08,040 --> 00:03:08,410
+OK.
+
+59
+00:03:08,430 --> 00:03:10,690
+So someone just asked me to solve this problem.
+
+60
+00:03:10,700 --> 00:03:14,030
+I'm in an interview I want to check that I understand it first.
+
+61
+00:03:14,070 --> 00:03:18,900
+So I try and restate the problem do all this stuff from the last video then I like to come up with a
+
+62
+00:03:18,900 --> 00:03:21,980
+couple simple examples to make sure I understand it.
+
+63
+00:03:21,990 --> 00:03:24,340
+So let's say our function is called Char count.
+
+64
+00:03:24,480 --> 00:03:25,870
+I would literally write this out.
+
+65
+00:03:25,890 --> 00:03:29,820
+So char count like AAA with four days.
+
+66
+00:03:30,000 --> 00:03:33,300
+Well that should return something that looks like this.
+
+67
+00:03:33,300 --> 00:03:39,420
+I would assume return's counts of each character in the string this is we've already gathered that it
+
+68
+00:03:39,420 --> 00:03:40,560
+needs to return an object.
+
+69
+00:03:40,560 --> 00:03:44,090
+Let's say instead of an array or some other data structure.
+
+70
+00:03:44,190 --> 00:03:50,400
+So I would try this you know and that's how it should work I guess chart count of Hello should return
+
+71
+00:03:50,400 --> 00:03:51,510
+something like this.
+
+72
+00:03:51,630 --> 00:03:57,900
+But already there's a question that I have which is should it just return the letters that are in there.
+
+73
+00:03:57,900 --> 00:03:59,490
+What about the letters that aren't there.
+
+74
+00:03:59,500 --> 00:04:04,460
+Do we want to include you know B zero and C is zero.
+
+75
+00:04:04,590 --> 00:04:09,840
+Because if we did that it might make our code a lot easier if every letter was already in there set
+
+76
+00:04:09,840 --> 00:04:10,630
+to 0.
+
+77
+00:04:10,800 --> 00:04:12,990
+Then it makes it simpler as we go.
+
+78
+00:04:12,990 --> 00:04:16,400
+We don't have to add in a or b if it's already in there.
+
+79
+00:04:16,500 --> 00:04:17,730
+We just have to increment it.
+
+80
+00:04:18,000 --> 00:04:20,180
+So that's a question that I would try and clarify.
+
+81
+00:04:20,670 --> 00:04:24,580
+So the next step was progress to more complex examples.
+
+82
+00:04:24,600 --> 00:04:31,980
+So what about something like this if somebody did something like my phone number is blah blah blah and
+
+83
+00:04:31,980 --> 00:04:34,570
+that's not a valid phone number as far as I know.
+
+84
+00:04:34,590 --> 00:04:38,410
+So if this was an input what would we expect to return.
+
+85
+00:04:38,490 --> 00:04:40,590
+Do we want to account for spaces.
+
+86
+00:04:40,620 --> 00:04:41,730
+That's an important one.
+
+87
+00:04:41,730 --> 00:04:45,810
+What about other characters dollar signs underscores numbers that's a big one.
+
+88
+00:04:45,810 --> 00:04:49,920
+Are we going to put numbers in there and an even more important one that definitely would come up.
+
+89
+00:04:49,920 --> 00:04:51,350
+What about this.
+
+90
+00:04:51,360 --> 00:04:52,250
+Hello.
+
+91
+00:04:52,560 --> 00:04:53,760
+Hi.
+
+92
+00:04:53,900 --> 00:04:58,160
+Are there you know how do we store an upper case and lower case H.
+
+93
+00:04:58,200 --> 00:05:04,410
+Do we ignore casing How should this work should or object have h uppercase one h lowercase one or just
+
+94
+00:05:04,500 --> 00:05:06,170
+h two.
+
+95
+00:05:06,180 --> 00:05:11,460
+So these are more complex inputs and examples that it would really help to understand and it would help
+
+96
+00:05:11,460 --> 00:05:16,190
+us to simplify the problem or understand it better by asking these sort of questions.
+
+97
+00:05:16,200 --> 00:05:21,210
+These examples are really just another form of understanding the problem better before we tackle it.
+
+98
+00:05:21,420 --> 00:05:23,690
+So it ties in to the previous video a lot.
+
+99
+00:05:23,700 --> 00:05:24,900
+Understanding the question.
+
+100
+00:05:24,900 --> 00:05:28,050
+Next up explore examples with empty inputs.
+
+101
+00:05:28,080 --> 00:05:37,270
+So what if you know somebody does char count and doesn't pass anything in like this or an empty string.
+
+102
+00:05:37,290 --> 00:05:41,050
+What do we want to return to we want to return an empty object at the end.
+
+103
+00:05:41,100 --> 00:05:42,070
+Do we want to return.
+
+104
+00:05:42,080 --> 00:05:42,540
+No.
+
+105
+00:05:42,540 --> 00:05:45,670
+Or false or undefined or maybe an error.
+
+106
+00:05:45,880 --> 00:05:49,940
+And that's tied to exploring examples with invalid inputs.
+
+107
+00:05:49,950 --> 00:05:54,570
+So what if somebody passes in something that isn't a string they pass in a number where they pass in
+
+108
+00:05:54,570 --> 00:05:56,500
+an object or they pass in no.
+
+109
+00:05:56,880 --> 00:05:59,170
+There's all sorts of these edge cases.
+
+110
+00:05:59,310 --> 00:06:01,350
+And understanding these edge cases.
+
+111
+00:06:01,350 --> 00:06:02,710
+In an interview setting.
+
+112
+00:06:02,790 --> 00:06:08,580
+Often it's not that important usually but it can be really important in the real world to help you build
+
+113
+00:06:08,580 --> 00:06:12,100
+a more robust solution something that is more foolproof.
+
+114
+00:06:12,150 --> 00:06:14,730
+So it's still important to keep that in mind.
+
+115
+00:06:14,940 --> 00:06:19,250
+And sometimes it can give you a bit of insight into how the problem works or how you should solve it.
+

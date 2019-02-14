@@ -1,0 +1,568 @@
+1
+00:00:00,240 --> 00:00:01,380
+All right welcome back.
+
+2
+00:00:01,380 --> 00:00:02,760
+So let's implement our priority.
+
+3
+00:00:02,760 --> 00:00:05,490
+Q By copying what we've already done.
+
+4
+00:00:05,490 --> 00:00:07,110
+So here's my max binary heap.
+
+5
+00:00:07,140 --> 00:00:14,580
+I just copied it into a new file and I'm going to first change the name priority queue and we're going
+
+6
+00:00:14,580 --> 00:00:16,680
+to leave it as values.
+
+7
+00:00:16,830 --> 00:00:24,600
+Then at the bottom or somewhere else I'm going to define our class Node and node and the constructor
+
+8
+00:00:24,990 --> 00:00:33,660
+takes in a value called vowel and we just set this dot Vau equals Val and then we also have.
+
+9
+00:00:33,830 --> 00:00:34,990
+It also takes a priority.
+
+10
+00:00:35,000 --> 00:00:37,370
+We did not add that and there we go.
+
+11
+00:00:41,000 --> 00:00:41,490
+OK.
+
+12
+00:00:41,790 --> 00:00:46,350
+So now we have each node has a value and an associated priority.
+
+13
+00:00:46,740 --> 00:00:48,270
+Now we have two things we really need to do.
+
+14
+00:00:48,270 --> 00:00:54,780
+The first is make sure we're comparing based off of priority everywhere rather than value or while not
+
+15
+00:00:54,780 --> 00:00:57,330
+even value rather than just the element itself.
+
+16
+00:00:57,510 --> 00:01:00,780
+Because we used to not be using this node class at all.
+
+17
+00:01:00,780 --> 00:01:06,300
+We used to just in certain things as is so when we insert something we're not just going to insert an
+
+18
+00:01:06,360 --> 00:01:08,690
+element we're going to insert something.
+
+19
+00:01:08,790 --> 00:01:15,290
+So we're going to take a value and a priority and then we're going to make a new node.
+
+20
+00:01:15,820 --> 00:01:23,440
+So let's do new node equals new node Vau and priority.
+
+21
+00:01:23,880 --> 00:01:30,410
+And then we're going to pass that in this value used up push instead of element it's new node.
+
+22
+00:01:30,840 --> 00:01:33,570
+So that's going to add it to the very end.
+
+23
+00:01:33,750 --> 00:01:36,120
+And then we need it to bubble up which is what we have here.
+
+24
+00:01:36,450 --> 00:01:37,460
+So that's all good.
+
+25
+00:01:37,800 --> 00:01:42,200
+But then when we look at bubble up we have a small prop Well it's more than a small problem.
+
+26
+00:01:42,210 --> 00:01:45,120
+Our code isn't going to work at all because we're not using priority.
+
+27
+00:01:45,180 --> 00:01:47,670
+We're just comparing values directly.
+
+28
+00:01:48,060 --> 00:01:53,610
+So index is going to be the same element is fine while the index is greater than zero parent index.
+
+29
+00:01:53,610 --> 00:02:02,160
+This is all fine but we want to compare if element dot priority is less than or equal to parent priority.
+
+30
+00:02:03,940 --> 00:02:06,750
+Well break otherwise the values.
+
+31
+00:02:06,870 --> 00:02:07,240
+OK.
+
+32
+00:02:07,270 --> 00:02:10,690
+And that's all the same if we are trying to make this a man.
+
+33
+00:02:10,690 --> 00:02:14,620
+So I'm actually going to leave this first as a max binary heap and we'll come back to that.
+
+34
+00:02:15,040 --> 00:02:18,160
+But just note this is going to need to change.
+
+35
+00:02:18,160 --> 00:02:23,780
+The other thing I forgot to do is change this to B and Q Which doesn't really matter.
+
+36
+00:02:23,800 --> 00:02:26,160
+That's not how you spell it isn't it.
+
+37
+00:02:26,340 --> 00:02:27,920
+I can never remember.
+
+38
+00:02:27,970 --> 00:02:28,510
+I think that's it.
+
+39
+00:02:28,540 --> 00:02:33,050
+Yes and no D'Errico.
+
+40
+00:02:33,430 --> 00:02:35,380
+So enqueue bubble up.
+
+41
+00:02:35,410 --> 00:02:35,680
+All right.
+
+42
+00:02:35,680 --> 00:02:44,810
+And then instead of extract Max are going to have the Q I think that's right I hope.
+
+43
+00:02:45,120 --> 00:02:51,380
+And we're going to see we're going to remove the zero element.
+
+44
+00:02:51,790 --> 00:02:52,710
+Where we're going to swap.
+
+45
+00:02:52,710 --> 00:02:54,120
+That's all fine.
+
+46
+00:02:54,120 --> 00:02:55,740
+Then we're going to sink down.
+
+47
+00:02:56,040 --> 00:03:02,910
+So in sink down we are taking the element that's all fine the indices everything is good here.
+
+48
+00:03:02,940 --> 00:03:12,060
+But now what we need to check is right here if left child dot priority is greater than element dot priority
+
+49
+00:03:12,960 --> 00:03:16,860
+if and then same thing over here right here right.
+
+50
+00:03:16,860 --> 00:03:22,190
+Child priority greater than element of priority.
+
+51
+00:03:22,250 --> 00:03:27,150
+Same thing one more time left Schild dot priority.
+
+52
+00:03:27,390 --> 00:03:27,620
+OK.
+
+53
+00:03:27,630 --> 00:03:33,000
+So remember right now this is a max binary heap still first I might have forgot something let's just
+
+54
+00:03:33,000 --> 00:03:34,190
+make sure it works.
+
+55
+00:03:34,200 --> 00:03:36,550
+So we're going to make a new We'll call it.
+
+56
+00:03:36,750 --> 00:03:44,720
+Let's say were in the hospital so we'll call it E.R. equals new priority queue.
+
+57
+00:03:45,480 --> 00:03:48,080
+And then we're going to do E.R. dot instead of insert.
+
+58
+00:03:48,090 --> 00:03:55,260
+It's now in Q and the first thing we'll have is I don't know how about just common cold.
+
+59
+00:03:55,380 --> 00:04:01,320
+The priority if we're doing a max binary heap how it is right now this will be a low number like let's
+
+60
+00:04:01,320 --> 00:04:07,530
+say 1 and then let's do a couple more.
+
+61
+00:04:07,760 --> 00:04:09,680
+Let's also do.
+
+62
+00:04:09,810 --> 00:04:11,500
+How about gunshot wound.
+
+63
+00:04:11,570 --> 00:04:13,940
+It's going to be a priority of like five.
+
+64
+00:04:13,940 --> 00:04:21,190
+And then we'll also have some high fever will be a priority of two.
+
+65
+00:04:21,590 --> 00:04:23,380
+OK so let's try running this.
+
+66
+00:04:23,600 --> 00:04:28,050
+And if we look at our E.R. first let's just check out the order.
+
+67
+00:04:28,310 --> 00:04:28,580
+OK.
+
+68
+00:04:28,580 --> 00:04:34,210
+So you can see gunshot wound than its first child is is common cold that second child has high fever.
+
+69
+00:04:34,310 --> 00:04:35,360
+That part doesn't matter.
+
+70
+00:04:35,390 --> 00:04:35,710
+Right.
+
+71
+00:04:35,720 --> 00:04:40,230
+And it's not going to be in order with only three elements most likely but it will rearrange.
+
+72
+00:04:40,250 --> 00:04:41,570
+Hopefully when we do.
+
+73
+00:04:41,600 --> 00:04:46,980
+So let's check our dequeue we would expect to get gunshot wound.
+
+74
+00:04:47,060 --> 00:04:47,880
+All right.
+
+75
+00:04:48,110 --> 00:04:54,890
+Next we expect to get high fever which you did and then common cold and then nothing.
+
+76
+00:04:55,220 --> 00:04:55,670
+OK.
+
+77
+00:04:55,820 --> 00:04:57,020
+So that's working.
+
+78
+00:04:57,020 --> 00:05:02,630
+We have a max binary heap where we're getting elements you know based off of the largest number the
+
+79
+00:05:02,630 --> 00:05:04,670
+priority if we wanted to switch it around.
+
+80
+00:05:04,700 --> 00:05:11,180
+It's just a matter of coming up here and changing these less than signs to a greater than sign.
+
+81
+00:05:11,390 --> 00:05:16,250
+Same thing where else is the other one here.
+
+82
+00:05:17,830 --> 00:05:21,810
+Change that to a less than sign or just reversing our logic.
+
+83
+00:05:21,880 --> 00:05:25,950
+And one other change we should make right here.
+
+84
+00:05:25,960 --> 00:05:31,520
+Instead of calling this variable Max that we're removing it now refers to the men.
+
+85
+00:05:31,600 --> 00:05:36,510
+It doesn't actually make a difference functionally but it's just nice to call it men instead.
+
+86
+00:05:36,940 --> 00:05:43,440
+OK so let's do our same thing except now I'm going to change these priority numbers because something
+
+87
+00:05:43,450 --> 00:05:48,820
+like a gunshot wound will have priority level one high priority a cold maybe you will have like five
+
+88
+00:05:49,210 --> 00:05:58,180
+high fever will get priority of for let's do a couple more let's do a common cold.
+
+89
+00:05:58,180 --> 00:06:00,910
+How about gunshot wound.
+
+90
+00:06:01,180 --> 00:06:01,750
+I don't know.
+
+91
+00:06:01,750 --> 00:06:02,950
+Broken arm.
+
+92
+00:06:03,310 --> 00:06:06,070
+So that will be pretty high priority but not the same as a gunshot.
+
+93
+00:06:06,070 --> 00:06:07,730
+So let's give that priority of two.
+
+94
+00:06:07,910 --> 00:06:12,350
+And then also let's do another priority of let's do three.
+
+95
+00:06:12,390 --> 00:06:18,100
+So middle priority not that bad let's say like glass in foot.
+
+96
+00:06:18,130 --> 00:06:19,200
+I don't know.
+
+97
+00:06:19,630 --> 00:06:20,290
+OK.
+
+98
+00:06:20,670 --> 00:06:25,120
+I don't know if this ordering actually makes sense because I'm going to run the code and we're going
+
+99
+00:06:25,120 --> 00:06:27,400
+to do our first dequeue And what would we expect.
+
+100
+00:06:27,400 --> 00:06:30,920
+Well we want the value that has the lowest priority gunshot wound.
+
+101
+00:06:30,940 --> 00:06:32,230
+All right that worked.
+
+102
+00:06:32,230 --> 00:06:40,480
+Next we expect the value with the next lowest which is broken arm then glass and foot then high fever
+
+103
+00:06:41,020 --> 00:06:42,940
+then common cold.
+
+104
+00:06:43,120 --> 00:06:46,150
+So you can see that it doesn't matter what order we inserted them in.
+
+105
+00:06:46,150 --> 00:06:51,970
+It's all about the priority and it's giving us the highest priority element or the lowest value priority
+
+106
+00:06:52,010 --> 00:06:56,050
+but the highest actual priority at any any moment and it's a binary heap.
+
+107
+00:06:56,050 --> 00:07:01,650
+Now it's logically the same thing we just change some comparisons and renamed variable from Max to min.
+
+108
+00:07:01,990 --> 00:07:03,910
+Otherwise it's the same idea.
+
+109
+00:07:03,910 --> 00:07:08,410
+Now one thing that we should consider is what if something has the same priority.
+
+110
+00:07:08,620 --> 00:07:11,000
+If there are two elements in here with the same priority.
+
+111
+00:07:11,440 --> 00:07:18,070
+Well right now our code doesn't guarantee that they actually would be returned based off of insertion
+
+112
+00:07:18,070 --> 00:07:19,600
+order so that you know.
+
+113
+00:07:19,630 --> 00:07:25,360
+Q So you would expect it for example of someone with a common cold got there first and then we have
+
+114
+00:07:25,360 --> 00:07:28,620
+another person who has you know another common cold.
+
+115
+00:07:28,620 --> 00:07:32,770
+Same priority level you would expect to serve or help this person first.
+
+116
+00:07:33,040 --> 00:07:34,590
+And you can add logic to make that work.
+
+117
+00:07:34,600 --> 00:07:39,970
+But by default with our help it's not going to work that way or there's no guaranteed order between
+
+118
+00:07:39,970 --> 00:07:43,340
+siblings between things that are on the same level of a tree.
+
+119
+00:07:43,480 --> 00:07:45,090
+All of a heap.
+
+120
+00:07:45,220 --> 00:07:50,730
+Technically a tree but in our heap It's just that a parent has a relationship with its two children.
+
+121
+00:07:50,740 --> 00:07:55,260
+But the two children aren't necessarily the siblings aren't in a particular order.
+
+122
+00:07:55,300 --> 00:08:01,380
+So what we could do is add logic basically to add in a time here so we could do like this diet.
+
+123
+00:08:01,510 --> 00:08:07,030
+I don't know insert time equals date now or something like that.
+
+124
+00:08:07,300 --> 00:08:13,930
+And then when we're comparing instead of just comparing the priority we would also say if the priority
+
+125
+00:08:13,930 --> 00:08:19,860
+is identical which one of these was inserted first and then we would swap based off of that.
+
+126
+00:08:20,050 --> 00:08:25,020
+But that's not really that important at this point because the actual algorithm for your prior to cue
+
+127
+00:08:25,060 --> 00:08:30,730
+the comparison itself will likely change if you're ever actually writing one in the real world.
+
+128
+00:08:30,730 --> 00:08:35,190
+It's usually not just you know a priority level it might be a priority level.
+
+129
+00:08:35,180 --> 00:08:41,800
+Plus like how many resources it takes up or how resource intensive it is Plus how long it spent waiting
+
+130
+00:08:42,190 --> 00:08:48,480
+these different things that might impact the comparison rather than just a direct priority versus priority.
+
+131
+00:08:48,810 --> 00:08:50,510
+Anyway here's our priority queue.
+
+132
+00:08:50,530 --> 00:08:52,750
+It's a binary heap that's powering it.
+
+133
+00:08:52,750 --> 00:08:58,060
+Or that we're actually implementing it with you inserted things using enqueue in whatever order they
+
+134
+00:08:58,060 --> 00:08:58,390
+go in.
+
+135
+00:08:58,390 --> 00:08:59,610
+It doesn't matter.
+
+136
+00:08:59,680 --> 00:09:01,790
+It's based off of their priority level.
+
+137
+00:09:01,810 --> 00:09:03,250
+Pretty nifty I think.
+
+138
+00:09:03,250 --> 00:09:09,400
+Much much better than trying to do this with an array or a list and just traversing the entire thing
+
+139
+00:09:09,400 --> 00:09:12,460
+to find the next item with the lowest or highest number.
+
+140
+00:09:12,460 --> 00:09:13,980
+This is much faster.
+
+141
+00:09:14,020 --> 00:09:19,470
+We're going to talk about big-O but it is log and for time complexity for insertion and removal.
+
+142
+00:09:19,480 --> 00:09:21,220
+All right prior to Q done.
+

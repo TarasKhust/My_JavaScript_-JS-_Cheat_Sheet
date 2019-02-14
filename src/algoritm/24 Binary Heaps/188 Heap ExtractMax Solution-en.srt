@@ -1,0 +1,1152 @@
+1
+00:00:00,300 --> 00:00:00,730
+All right.
+
+2
+00:00:00,730 --> 00:00:01,550
+Welcome back.
+
+3
+00:00:01,560 --> 00:00:07,380
+So let's go ahead and implement extract Max or remove whatever you want to call it to remove the maximum
+
+4
+00:00:07,380 --> 00:00:09,890
+element in our maxed binary heap.
+
+5
+00:00:09,960 --> 00:00:12,670
+So I'll define our method extract.
+
+6
+00:00:12,700 --> 00:00:19,630
+Max no arguments and we basically have going back to her pseudocode a couple of basic steps.
+
+7
+00:00:19,830 --> 00:00:25,590
+We want to take the first element and remove it and replace it with the last element.
+
+8
+00:00:25,740 --> 00:00:30,840
+So there's a you know there's a couple orders you could do that and I think what I'm going to do is
+
+9
+00:00:30,870 --> 00:00:33,930
+first store the value of the max.
+
+10
+00:00:33,930 --> 00:00:40,540
+So I'm going to call it Max just equal to the first value this values zero.
+
+11
+00:00:40,620 --> 00:00:42,100
+So that gives you the first element.
+
+12
+00:00:42,100 --> 00:00:45,180
+Like suppose we had I don't know 55.
+
+13
+00:00:45,340 --> 00:00:46,030
+Yeah sure.
+
+14
+00:00:46,080 --> 00:00:47,500
+Just coffee this one.
+
+15
+00:00:47,520 --> 00:00:52,260
+If this is what we have I'm going to take Max instead of equal to 55 but it's still in there.
+
+16
+00:00:52,500 --> 00:00:55,230
+Then I'm going to pop the last item off.
+
+17
+00:00:55,230 --> 00:00:56,640
+So I'll call it.
+
+18
+00:00:56,880 --> 00:01:02,400
+And this values pop.
+
+19
+00:01:02,530 --> 00:01:08,110
+So that gives me and then I'm going to take and which is now not there to a variable and I'm going to
+
+20
+00:01:08,110 --> 00:01:09,840
+put it here.
+
+21
+00:01:09,940 --> 00:01:15,350
+So I just set this values zero equals and.
+
+22
+00:01:15,600 --> 00:01:15,930
+OK.
+
+23
+00:01:15,940 --> 00:01:17,450
+So that puts 12.
+
+24
+00:01:17,500 --> 00:01:19,000
+Here what was it 12.
+
+25
+00:01:19,270 --> 00:01:19,920
+Yes.
+
+26
+00:01:20,090 --> 00:01:24,970
+That puts 12 right there and removes it from here and now 55 is in max.
+
+27
+00:01:24,970 --> 00:01:28,710
+So at the end we do want to return Max returned Max.
+
+28
+00:01:28,790 --> 00:01:31,680
+But of course 12 is not at the correct spot.
+
+29
+00:01:31,690 --> 00:01:38,070
+We now need to start that bubbling down process or whatever simmering percolating down.
+
+30
+00:01:38,070 --> 00:01:38,600
+Yeah.
+
+31
+00:01:39,010 --> 00:01:39,690
+OK.
+
+32
+00:01:39,790 --> 00:01:44,560
+So there is one edge case here that will come back to me make a note of that.
+
+33
+00:01:44,590 --> 00:01:45,670
+So don't forget.
+
+34
+00:01:45,820 --> 00:01:46,260
+OK.
+
+35
+00:01:46,510 --> 00:01:49,140
+So once we swap after this point.
+
+36
+00:01:49,140 --> 00:01:55,030
+So this is putting the removing the first element the max replacing it with the last element which is
+
+37
+00:01:55,210 --> 00:01:57,280
+almost definitely not the max.
+
+38
+00:01:57,280 --> 00:02:01,830
+Now we need to do the whole bubble down thing whatever you want to call it.
+
+39
+00:02:01,860 --> 00:02:03,340
+Yeah trickle down.
+
+40
+00:02:03,900 --> 00:02:04,480
+OK.
+
+41
+00:02:04,780 --> 00:02:06,720
+So I'm going to define a method to do that.
+
+42
+00:02:06,970 --> 00:02:11,350
+I'm going to call it this doesn't sink down just like I did with over here.
+
+43
+00:02:11,350 --> 00:02:12,390
+Bubble up.
+
+44
+00:02:12,490 --> 00:02:14,210
+I'm going to just make a separate method.
+
+45
+00:02:14,590 --> 00:02:14,980
+OK.
+
+46
+00:02:15,070 --> 00:02:17,740
+So instead of trickle down I guess I'm going to sink down.
+
+47
+00:02:17,980 --> 00:02:22,980
+So over here I'm going to define sink dink down sink down.
+
+48
+00:02:23,470 --> 00:02:25,080
+Again no arguments.
+
+49
+00:02:25,300 --> 00:02:29,020
+You could write this too except actually an index.
+
+50
+00:02:29,020 --> 00:02:33,220
+It's possible that you would want to you know something in the middle you want you swapped it or you
+
+51
+00:02:33,220 --> 00:02:37,230
+want it to sink down or you didn't remove from the beginning although that's pretty rare.
+
+52
+00:02:37,540 --> 00:02:41,790
+But I'm just going to make it start at the top element always and sink down from there.
+
+53
+00:02:41,830 --> 00:02:44,590
+The first the index of 0.
+
+54
+00:02:44,770 --> 00:02:47,990
+So I'm going to start with an index variable.
+
+55
+00:02:48,370 --> 00:02:50,930
+So index is going to equal.
+
+56
+00:02:51,200 --> 00:02:53,360
+I don't even mean anything it's just an equal zero.
+
+57
+00:02:53,440 --> 00:02:55,430
+It starts as the very beginning.
+
+58
+00:02:55,450 --> 00:03:02,380
+So if this is what we're working with and let's say that we just put 33 here this is what we're working
+
+59
+00:03:02,380 --> 00:03:03,640
+with needs to sync down.
+
+60
+00:03:03,640 --> 00:03:07,800
+We're going to start an index of zero right there.
+
+61
+00:03:07,930 --> 00:03:11,110
+And now we're going to find it's children.
+
+62
+00:03:11,170 --> 00:03:14,280
+I'm also going to define a couple of other variables here.
+
+63
+00:03:14,290 --> 00:03:17,910
+Equal to the length of the array so I'm going to call it length.
+
+64
+00:03:18,020 --> 00:03:22,020
+Just said that to be just values tell it like this is going to help me shorten my code a little bit.
+
+65
+00:03:22,270 --> 00:03:27,570
+And also I'm going to do one more for the element itself so I can have the value
+
+66
+00:03:30,310 --> 00:03:33,170
+like this or I could actually just set that to be zero.
+
+67
+00:03:33,490 --> 00:03:40,820
+So rather than you know having to write this to check the element I'm going to do this value zero.
+
+68
+00:03:40,870 --> 00:03:45,170
+So it's just going to be equal to 33 at the beginning and I'm going to stay at 33.
+
+69
+00:03:45,190 --> 00:03:48,810
+We might be moving where 33 is but the element it's always 33.
+
+70
+00:03:48,820 --> 00:03:51,720
+That's what we're trying to position that number 33.
+
+71
+00:03:51,880 --> 00:03:52,410
+OK.
+
+72
+00:03:52,750 --> 00:03:59,890
+So I'm going to loop while true and at some point I'm going to break out but that's going to be a little
+
+73
+00:03:59,890 --> 00:04:04,110
+ways from now because we have to start with our main logic which is we found the parent index.
+
+74
+00:04:04,300 --> 00:04:09,430
+Let's find the two children on the left and the right children two times index plus one two times index
+
+75
+00:04:09,430 --> 00:04:10,690
+plus two.
+
+76
+00:04:10,690 --> 00:04:22,210
+So let's start by computing left child index left child index let's do id x equals two times Id X plus
+
+77
+00:04:22,210 --> 00:04:23,460
+1.
+
+78
+00:04:23,620 --> 00:04:29,720
+And then I'll duplicate that line for right child index but instead add two.
+
+79
+00:04:29,740 --> 00:04:33,630
+So the first time through We're talking about zero it's children are here and here.
+
+80
+00:04:33,830 --> 00:04:36,100
+But we're talking about 39 children.
+
+81
+00:04:36,190 --> 00:04:38,820
+We're going to multiply that index one by two.
+
+82
+00:04:39,130 --> 00:04:42,560
+So like you just to let me add one index of three.
+
+83
+00:04:42,580 --> 00:04:44,570
+So it's child here and here.
+
+84
+00:04:44,740 --> 00:04:47,560
+OK so this gives us the two child indices.
+
+85
+00:04:47,710 --> 00:04:55,890
+I'm also now going to make variables to store the value at those indices but I can't just right away
+
+86
+00:04:55,900 --> 00:04:59,020
+say that I couldn't do left.
+
+87
+00:04:59,080 --> 00:05:03,440
+Child equals this values.
+
+88
+00:05:04,270 --> 00:05:05,610
+Left child index.
+
+89
+00:05:05,650 --> 00:05:10,860
+And the reason for that is that there's no guarantee I could do the same thing for right.
+
+90
+00:05:10,870 --> 00:05:15,420
+There's no guarantee that I'm going to find an element there.
+
+91
+00:05:15,830 --> 00:05:18,830
+There's the potential that this is out of bounds.
+
+92
+00:05:18,910 --> 00:05:23,670
+For example 41 right here has one child at 12.
+
+93
+00:05:23,830 --> 00:05:29,950
+But if we calculated the index for it's right child it's out of bounds and if I tried to access it I
+
+94
+00:05:29,950 --> 00:05:30,930
+would get an error.
+
+95
+00:05:30,940 --> 00:05:32,600
+So we need to make sure it's valid.
+
+96
+00:05:32,620 --> 00:05:36,060
+And I did this right here make sure it's not out of bounds.
+
+97
+00:05:36,400 --> 00:05:40,090
+So I'm going to do that before we actually access the value.
+
+98
+00:05:40,090 --> 00:05:48,000
+I'm going to just for now just initialize or declare left and right but leave them or call them left
+
+99
+00:05:48,010 --> 00:05:52,580
+child and right child and just leave them empty.
+
+100
+00:05:52,600 --> 00:05:52,880
+OK.
+
+101
+00:05:52,900 --> 00:05:58,480
+One more variable I'm going to make and this variable is going to keep track of.
+
+102
+00:05:58,510 --> 00:06:05,050
+If we did any swaps in this loop and at the very end if there were no swaps so I'm just going to say
+
+103
+00:06:05,050 --> 00:06:10,720
+if swap is no we're going to break.
+
+104
+00:06:10,780 --> 00:06:14,900
+So this is our condition at the very end to get out of the loop if we never swapped.
+
+105
+00:06:14,920 --> 00:06:19,730
+So at some point we're going to set swap equal to true or just something else but not yet.
+
+106
+00:06:20,200 --> 00:06:20,490
+OK.
+
+107
+00:06:20,500 --> 00:06:22,020
+Now we have those variables out of the way.
+
+108
+00:06:22,030 --> 00:06:23,660
+Let's start with the left side.
+
+109
+00:06:23,680 --> 00:06:27,390
+The first thing I want to do is check is this index in-bounds.
+
+110
+00:06:27,400 --> 00:06:34,840
+So if left child index is in bounds and that's easy we can just say if it's less than the length if
+
+111
+00:06:34,840 --> 00:06:37,910
+it is greater than the length or equal to it then it's out of bounds.
+
+112
+00:06:37,930 --> 00:06:44,670
+So if it's a valid index we're then going to set left child this variable that has no value right now
+
+113
+00:06:45,280 --> 00:06:48,700
+to equal the value at that index.
+
+114
+00:06:52,030 --> 00:06:52,740
+OK.
+
+115
+00:06:53,170 --> 00:06:55,630
+So for this case we start with 33.
+
+116
+00:06:55,900 --> 00:06:59,090
+We calculate left and right child and debt indices.
+
+117
+00:06:59,140 --> 00:07:02,400
+So the left index is the number one.
+
+118
+00:07:02,710 --> 00:07:04,860
+So we check is one less than the like.
+
+119
+00:07:04,860 --> 00:07:05,130
+That's.
+
+120
+00:07:05,170 --> 00:07:06,250
+Yes that is.
+
+121
+00:07:06,280 --> 00:07:12,060
+So we're going to set the variable left child to be this set of values of 1 which is 39.
+
+122
+00:07:12,340 --> 00:07:19,330
+So now we have 39 in a variable and what we're going to do is compare it to 33 which is our element
+
+123
+00:07:20,320 --> 00:07:30,490
+and that's easy we just check if left child is greater than the element then we're going to set swap
+
+124
+00:07:31,030 --> 00:07:32,730
+equal to left child index.
+
+125
+00:07:32,740 --> 00:07:38,700
+This is this variable swap is going to keep track of the position that we're going to swap with.
+
+126
+00:07:38,710 --> 00:07:44,440
+So for example in this situation 33 in the incorrect spot.
+
+127
+00:07:44,440 --> 00:07:46,110
+We compare it to 39.
+
+128
+00:07:46,450 --> 00:07:50,010
+And at the beginning it looks like this is where we're going to swap it to.
+
+129
+00:07:50,080 --> 00:07:56,050
+But then we also compare it to 41 and it turns out oh wait 41 is actually the larger number we're going
+
+130
+00:07:56,050 --> 00:07:58,850
+to swap it with this with index too.
+
+131
+00:07:58,870 --> 00:08:04,150
+So we're going to keep track of that index with this variable swap and we're going to reset it to know
+
+132
+00:08:04,150 --> 00:08:05,310
+every time through.
+
+133
+00:08:05,500 --> 00:08:10,840
+So that if we don't find a number larger is the only time that we're swapping or setting it to anything
+
+134
+00:08:10,840 --> 00:08:12,870
+other than no is when we find a large number.
+
+135
+00:08:12,880 --> 00:08:19,370
+If there is no child left or right left nor right I guess that is larger than swap will stay no.
+
+136
+00:08:19,390 --> 00:08:20,770
+And then we'll break out.
+
+137
+00:08:21,150 --> 00:08:21,610
+OK.
+
+138
+00:08:21,760 --> 00:08:23,580
+So that's the left side.
+
+139
+00:08:23,800 --> 00:08:27,720
+Now we need to do the right side same sort of thing if.
+
+140
+00:08:27,910 --> 00:08:28,370
+Right.
+
+141
+00:08:28,390 --> 00:08:34,390
+Child index we got a check if it's if it's a valid index before we try to access it.
+
+142
+00:08:34,390 --> 00:08:40,250
+We're going to set right child equal to this values right.
+
+143
+00:08:40,280 --> 00:08:42,370
+Child's index.
+
+144
+00:08:43,020 --> 00:08:43,300
+OK.
+
+145
+00:08:43,300 --> 00:08:46,490
+So that gives us the value like 41.
+
+146
+00:08:46,510 --> 00:08:52,730
+Now we compare 33 and 41 is that right child greater than element.
+
+147
+00:08:53,140 --> 00:08:59,440
+But there's a little extra logic here because remember we only want to swap with the value that is largest
+
+148
+00:08:59,440 --> 00:09:00,360
+of the two.
+
+149
+00:09:00,640 --> 00:09:04,180
+So in our case between these two the right child is largest.
+
+150
+00:09:04,180 --> 00:09:07,730
+So this would work fine if right child is greater than the element.
+
+151
+00:09:07,750 --> 00:09:10,830
+It's the last thing we check the left first and then the right.
+
+152
+00:09:10,900 --> 00:09:18,290
+But imagine that it was the opposite which is ignoring the fact that this may not be a valid tree or
+
+153
+00:09:18,370 --> 00:09:24,510
+I mean let's say that this is what we had if we're trying to compare this to 41.
+
+154
+00:09:24,610 --> 00:09:24,910
+OK.
+
+155
+00:09:24,910 --> 00:09:28,330
+So we we decide this is larger We're going to swap to here.
+
+156
+00:09:28,420 --> 00:09:29,990
+But then we look at the right child.
+
+157
+00:09:30,130 --> 00:09:32,470
+All that we're doing is comparing 33 and 39.
+
+158
+00:09:32,590 --> 00:09:35,110
+Well this is larger than 33 swap here.
+
+159
+00:09:35,200 --> 00:09:38,190
+But remember we want to swap with the largest of the two.
+
+160
+00:09:38,380 --> 00:09:44,950
+So I'm going to change just a little bit to say if we haven't already swapped meaning if the left child
+
+161
+00:09:45,100 --> 00:09:46,940
+was not charged with an element.
+
+162
+00:09:47,070 --> 00:09:55,420
+So that would be if swap is equal to nor still and right child is greater than the element.
+
+163
+00:09:55,630 --> 00:10:00,520
+But there's also another scenario that this doesn't cover which is when the right child and the left
+
+164
+00:10:00,520 --> 00:10:02,640
+child are both larger than the element.
+
+165
+00:10:02,830 --> 00:10:05,680
+But the right child is largest.
+
+166
+00:10:05,770 --> 00:10:10,450
+So to cover that because that means that swap is set to the left already.
+
+167
+00:10:10,480 --> 00:10:14,370
+So that would be like in this scenario where thirty is larger than 33.
+
+168
+00:10:14,380 --> 00:10:20,510
+So we set swap to be this index of one but 41 is actually the largest the right child.
+
+169
+00:10:20,710 --> 00:10:27,430
+So I'm going to add a second condition in here where we're going to say or if swap is actually set to
+
+170
+00:10:27,430 --> 00:10:35,180
+something and at the same time the right child's is larger than the left child.
+
+171
+00:10:35,810 --> 00:10:41,410
+And this is kind of a gross little statement here so we also need parents around this entire thing.
+
+172
+00:10:41,740 --> 00:10:47,780
+I like parentally so I'm going to do it like this and indent so that we can read it a bit better.
+
+173
+00:10:47,780 --> 00:10:55,280
+So these are the two conditions where we end up setting swap equal to right child index because either
+
+174
+00:10:55,730 --> 00:10:57,880
+the left child never was set.
+
+175
+00:10:57,900 --> 00:10:59,890
+So swap was never set to the love child.
+
+176
+00:10:59,900 --> 00:11:01,130
+None of this was true.
+
+177
+00:11:01,550 --> 00:11:02,690
+So swap is no.
+
+178
+00:11:02,720 --> 00:11:09,170
+But the right child is larger than the element or swap is nominal meaning that the left side was set
+
+179
+00:11:09,170 --> 00:11:14,690
+to be swapped but the right child was left is larger than the left child oh boy it gets tough talking
+
+180
+00:11:14,690 --> 00:11:15,800
+about this stuff sometimes.
+
+181
+00:11:15,800 --> 00:11:24,710
+So if that's the case we're going to set swap equal to right child index this whole little conditional
+
+182
+00:11:24,710 --> 00:11:31,100
+here I shouldn't say little this long conditional is checking to make sure that the right child is the
+
+183
+00:11:31,100 --> 00:11:36,350
+one we're swapping with like we have in this case versus in this case we're going to swap with the left
+
+184
+00:11:36,350 --> 00:11:37,520
+child.
+
+185
+00:11:38,210 --> 00:11:38,720
+OK.
+
+186
+00:11:38,930 --> 00:11:44,690
+So at the end of the day at this point swapper should be set to the left or the right child index or
+
+187
+00:11:44,780 --> 00:11:45,530
+no.
+
+188
+00:11:45,830 --> 00:11:49,220
+And if it's still not the end that means we're done.
+
+189
+00:11:49,250 --> 00:11:53,420
+So we have this if swap equals no break otherwise.
+
+190
+00:11:53,450 --> 00:11:57,510
+If this doesn't run it means that swap is either left or right index.
+
+191
+00:11:57,680 --> 00:12:00,190
+Then we need to actually do the swap.
+
+192
+00:12:00,320 --> 00:12:07,070
+So the swap is going to be this stock values index which we haven't seen in a while.
+
+193
+00:12:07,070 --> 00:12:08,380
+Remember it started at zero.
+
+194
+00:12:08,420 --> 00:12:13,510
+So this is the current this is the index of the thing we're looking at 33 to start.
+
+195
+00:12:13,550 --> 00:12:20,600
+In our example OK so this stock values index equals the stock values of swap.
+
+196
+00:12:20,600 --> 00:12:23,220
+Now swap is going to be an index.
+
+197
+00:12:23,300 --> 00:12:26,280
+It's either the left child index or the right child index.
+
+198
+00:12:26,330 --> 00:12:28,130
+So it's either this or this.
+
+199
+00:12:28,620 --> 00:12:30,490
+OK so that's part of the swap.
+
+200
+00:12:30,650 --> 00:12:41,030
+Then we have to do the other part of values of swap equals elements which we already saved in a variable.
+
+201
+00:12:41,120 --> 00:12:45,730
+So we basically say all right the thing that was here is now equal to 41.
+
+202
+00:12:46,070 --> 00:12:48,970
+And now this index we're putting 33.
+
+203
+00:12:49,040 --> 00:12:50,510
+So we swapped the two.
+
+204
+00:12:51,230 --> 00:12:51,620
+OK.
+
+205
+00:12:51,620 --> 00:12:55,000
+And the final thing we have to do is update the index.
+
+206
+00:12:55,010 --> 00:13:00,340
+Keep looping and swapping out this part of the child index you swap to now becomes the new parent.
+
+207
+00:13:00,350 --> 00:13:06,800
+So here we just set index equals the thing we just swaps to so that if we started with this and we swapped
+
+208
+00:13:06,950 --> 00:13:14,030
+41 and 33 now our index that we're starting out is here and we're looking at the children that correspond
+
+209
+00:13:14,030 --> 00:13:16,940
+to index of two rather than zero where we started.
+
+210
+00:13:16,970 --> 00:13:18,690
+Now index is set to two.
+
+211
+00:13:18,710 --> 00:13:24,060
+So then we calculate the children which is going to be two times two plus one.
+
+212
+00:13:24,180 --> 00:13:29,660
+So index of 5 3 4 5 and then index of 6 which doesn't exist.
+
+213
+00:13:29,900 --> 00:13:34,960
+So that's why we have this check in here to see if those exist and we keep going.
+
+214
+00:13:35,270 --> 00:13:35,740
+OK.
+
+215
+00:13:35,900 --> 00:13:39,520
+Let's test this out if it works.
+
+216
+00:13:39,590 --> 00:13:43,260
+It's kind of a lot of code to move this down or get rid of that.
+
+217
+00:13:43,280 --> 00:13:45,780
+I'll come back to this edge case in just a moment.
+
+218
+00:13:46,220 --> 00:13:47,070
+So we insert.
+
+219
+00:13:47,090 --> 00:13:49,380
+This is what it looks like at the beginning.
+
+220
+00:13:49,520 --> 00:13:50,890
+I may run the code see if any.
+
+221
+00:13:50,930 --> 00:13:52,040
+No typo so far.
+
+222
+00:13:52,070 --> 00:13:52,810
+OK.
+
+223
+00:13:53,060 --> 00:13:57,470
+Now let's try and do a heap of extract max.
+
+224
+00:13:57,500 --> 00:13:59,910
+So we get 55 which is the max.
+
+225
+00:14:00,290 --> 00:14:03,420
+And what does he that values look like.
+
+226
+00:14:04,180 --> 00:14:04,570
+OK.
+
+227
+00:14:04,580 --> 00:14:10,470
+So if we look at it we took 33 and put it here.
+
+228
+00:14:10,490 --> 00:14:14,560
+Remove that from the end and we got rid of 55 and we compared it to it's two children.
+
+229
+00:14:14,560 --> 00:14:17,680
+We should have swapped 33 and 41.
+
+230
+00:14:17,690 --> 00:14:18,590
+That's correct.
+
+231
+00:14:18,590 --> 00:14:22,840
+And then we look at 33 children and there's only one child to compare it to.
+
+232
+00:14:23,000 --> 00:14:24,210
+Which is this child.
+
+233
+00:14:24,500 --> 00:14:25,430
+And we don't swap.
+
+234
+00:14:25,430 --> 00:14:26,420
+And so we're done.
+
+235
+00:14:26,510 --> 00:14:31,790
+And that's what we got 41 39 33 18 27 and 12.
+
+236
+00:14:31,790 --> 00:14:36,300
+Let's try one more let's look at values again.
+
+237
+00:14:36,310 --> 00:14:44,690
+So we took 41 out and we replaced it with 12 here and then we repeat the process which means that we
+
+238
+00:14:44,690 --> 00:14:53,250
+swapped 39 and 12 and then we look at 12 and compared to its children well it has two children which
+
+239
+00:14:53,250 --> 00:14:58,140
+are 18 and 27 and we swap it with 27 the larger of the two.
+
+240
+00:14:58,230 --> 00:15:02,400
+So 12 and up back here 27 ends up right there.
+
+241
+00:15:02,790 --> 00:15:03,840
+And there we go.
+
+242
+00:15:03,840 --> 00:15:08,130
+So this is now what we ended up with 39 Tony 7:33 18:12.
+
+243
+00:15:08,350 --> 00:15:08,720
+OK.
+
+244
+00:15:08,730 --> 00:15:14,340
+Now the edge case I was talking about if I keep extracting Max how many are left in there.
+
+245
+00:15:16,690 --> 00:15:17,650
+OK here we go.
+
+246
+00:15:17,650 --> 00:15:21,950
+If I try and do it on the last one it should be empty now.
+
+247
+00:15:21,970 --> 00:15:29,300
+But if we look at it it still has 12 and I extracted again I could do it many times and it's still a
+
+248
+00:15:29,300 --> 00:15:30,370
+set to 12.
+
+249
+00:15:30,610 --> 00:15:38,440
+What's happening is just a little bloop up here where if there's only one item left we are basically
+
+250
+00:15:38,680 --> 00:15:44,080
+popping it off and then reinserting it because if this is what our list looks like with the number 12
+
+251
+00:15:44,380 --> 00:15:49,930
+we're saying all right the max is equal to 12 then the end is also equal to 12.
+
+252
+00:15:49,930 --> 00:15:52,650
+So pop it off and save it in a variable called.
+
+253
+00:15:52,690 --> 00:15:56,970
+And then we're adding this up values of zero equals.
+
+254
+00:15:56,980 --> 00:16:00,490
+And so we're putting it back in there which we don't want to do.
+
+255
+00:16:00,550 --> 00:16:02,430
+So we only want to do this.
+
+256
+00:16:02,530 --> 00:16:08,290
+We only want to add it back in and sink down if there's anything in there we should leave it empty otherwise.
+
+257
+00:16:08,290 --> 00:16:17,470
+So let's just add an if and just say if this stock values that length is equal to or let's just say
+
+258
+00:16:17,470 --> 00:16:19,170
+is greater than zero.
+
+259
+00:16:22,670 --> 00:16:24,480
+Then we'll run this code.
+
+260
+00:16:24,810 --> 00:16:30,360
+Otherwise we're not going to because it's empty and we don't want to mess it up.
+
+261
+00:16:30,960 --> 00:16:31,470
+OK.
+
+262
+00:16:31,550 --> 00:16:33,540
+Let's see if it works now.
+
+263
+00:16:34,550 --> 00:16:42,130
+So we have our help and I'm going to do a extract Max and keep doing that.
+
+264
+00:16:44,230 --> 00:16:44,650
+OK.
+
+265
+00:16:44,730 --> 00:16:47,850
+And now we hit the values and it should be empty.
+
+266
+00:16:48,360 --> 00:16:49,320
+And it is.
+
+267
+00:16:49,320 --> 00:16:53,400
+And every time I try and call it we get undefined and that's good that's how it should work.
+
+268
+00:16:53,520 --> 00:16:58,930
+If I do an insert that get hyped up values again we have 10 in there.
+
+269
+00:16:58,950 --> 00:17:00,220
+Let's do one more here.
+
+270
+00:17:00,230 --> 00:17:02,410
+Insert ninety nine.
+
+271
+00:17:02,530 --> 00:17:03,830
+It should be in front.
+
+272
+00:17:03,840 --> 00:17:04,160
+OK.
+
+273
+00:17:04,230 --> 00:17:04,590
+Perfect.
+
+274
+00:17:04,590 --> 00:17:05,550
+It's working great.
+
+275
+00:17:05,640 --> 00:17:07,670
+That's the basic way of writing things down.
+
+276
+00:17:07,830 --> 00:17:13,860
+You can also do this recursively which I chose not to do here because I feel like just confuses a lot
+
+277
+00:17:13,860 --> 00:17:14,310
+of students.
+
+278
+00:17:14,310 --> 00:17:19,320
+But you can find some nice recursive solutions share some if you have something that's more succinct
+
+279
+00:17:19,320 --> 00:17:21,090
+which is not that hard to do.
+
+280
+00:17:21,090 --> 00:17:27,000
+This is pretty verbose but I wanted to make it sort of step by step easy to look at and understand rather
+
+281
+00:17:27,000 --> 00:17:33,210
+than focusing on just making it super brief Anyway that is the process to remove the root whether it
+
+282
+00:17:33,210 --> 00:17:34,550
+is a max or a man.
+
+283
+00:17:34,680 --> 00:17:39,670
+You know we would have to change a couple of things to make it a man binary heap as far as the comparisons
+
+284
+00:17:39,690 --> 00:17:44,530
+because we want to look to see if something is greater rather than smaller or the other way around.
+
+285
+00:17:44,730 --> 00:17:47,560
+But other than that it's the same general approach.
+
+286
+00:17:47,580 --> 00:17:53,010
+So you take the lot you take the first item you take it out you swap it with the last item and then
+
+287
+00:17:53,190 --> 00:17:54,310
+you sink it down.
+
+288
+00:17:54,610 --> 00:17:56,040
+OK I know it's a lot.
+

@@ -1,0 +1,344 @@
+1
+00:00:00,350 --> 00:00:00,780
+OK.
+
+2
+00:00:00,840 --> 00:00:02,280
+So let's start with set.
+
+3
+00:00:02,310 --> 00:00:03,590
+It's pretty short.
+
+4
+00:00:03,750 --> 00:00:09,030
+Basically we've already done this part except to key and a value we need to hash the key and then take
+
+5
+00:00:09,030 --> 00:00:10,520
+the result when we hash the key.
+
+6
+00:00:10,620 --> 00:00:15,430
+Store the key value pair in the hash table at that location via separate chaining.
+
+7
+00:00:15,430 --> 00:00:21,420
+So that's the only caveat that makes it a little harder is we need to store things potentially nested
+
+8
+00:00:21,420 --> 00:00:22,930
+within that index.
+
+9
+00:00:22,930 --> 00:00:24,820
+So let's start with the basic part.
+
+10
+00:00:24,900 --> 00:00:32,070
+So let's hash Arkie all we have to do is call this dot underscore hash and we pass in the key and save
+
+11
+00:00:32,070 --> 00:00:33,270
+that to a variable.
+
+12
+00:00:33,270 --> 00:00:36,510
+So let's just call that index.
+
+13
+00:00:36,510 --> 00:00:39,120
+So that's going to go give us the index.
+
+14
+00:00:39,120 --> 00:00:42,080
+For example let's just return index.
+
+15
+00:00:42,350 --> 00:00:42,650
+OK.
+
+16
+00:00:42,690 --> 00:00:49,600
+So let's come down here and let's make a variable called H.T. just so that we can test everything out.
+
+17
+00:00:49,860 --> 00:00:59,240
+And let's try to do H.T. DOT says let's do hello world and the value will be goodbye.
+
+18
+00:00:59,850 --> 00:01:00,140
+OK.
+
+19
+00:01:00,230 --> 00:01:01,110
+Doesn't matter.
+
+20
+00:01:01,110 --> 00:01:06,600
+Now if we run that all right we're getting index 40 and the default is 53 is our size.
+
+21
+00:01:06,630 --> 00:01:13,770
+If we change that to be and are 17 try again we now get 11 something within the bounds and every time
+
+22
+00:01:13,770 --> 00:01:15,500
+we run this code we should get 11.
+
+23
+00:01:15,680 --> 00:01:15,910
+OK.
+
+24
+00:01:15,930 --> 00:01:20,340
+So that's giving us the index but we don't want to just return the index.
+
+25
+00:01:20,340 --> 00:01:25,470
+What we want to do now is insert the value at that index the key and the value together.
+
+26
+00:01:25,800 --> 00:01:31,380
+But there's a problem which is that we need to do the whole separate chaining thing which if this is
+
+27
+00:01:31,380 --> 00:01:38,190
+our key map if it looks like this and it's empty everywhere let's just visualize that with the spaces.
+
+28
+00:01:38,220 --> 00:01:41,220
+If this is what it looks like we need to insert an index.
+
+29
+00:01:41,250 --> 00:01:44,290
+Let's say right here whatever this is indexed to.
+
+30
+00:01:44,520 --> 00:01:51,030
+If there's nothing there we're going to put an empty array and then add our list our key comma value
+
+31
+00:01:51,120 --> 00:01:52,600
+like this.
+
+32
+00:01:52,740 --> 00:01:56,220
+If there's already something there we're going to need to do a check either way.
+
+33
+00:01:56,220 --> 00:02:03,490
+Is there something here if there is then we just add in our next set of key and value and we nest them.
+
+34
+00:02:03,510 --> 00:02:06,480
+So I'm just going to do a little check after we have the index.
+
+35
+00:02:06,480 --> 00:02:16,730
+I'm going to do if there is not this dot key map of our index meaning take the index we got back like
+
+36
+00:02:16,800 --> 00:02:20,810
+11 and check this that key map at index of 11.
+
+37
+00:02:20,820 --> 00:02:23,040
+Is there anything there but not.
+
+38
+00:02:23,040 --> 00:02:24,180
+Is there nothing there.
+
+39
+00:02:24,180 --> 00:02:28,380
+If that's the case that means that we set it to an empty array.
+
+40
+00:02:28,710 --> 00:02:30,340
+So that's the first thing we need to do.
+
+41
+00:02:30,480 --> 00:02:41,600
+This key map of index equals empty array and then Either way we're going to do this key map of that
+
+42
+00:02:41,600 --> 00:02:49,970
+index push a new array with key and value and that's it.
+
+43
+00:02:50,270 --> 00:02:50,540
+OK.
+
+44
+00:02:50,540 --> 00:02:51,830
+So there's two scenarios.
+
+45
+00:02:52,010 --> 00:02:57,830
+If we insert something we do a set with a key and a value that gives us an index that is currently unused.
+
+46
+00:02:57,830 --> 00:03:03,020
+There's nothing there it's unoccupied We're first going to check if it's unoccupied and then set the
+
+47
+00:03:03,080 --> 00:03:09,500
+index of that array of our key map to be an empty array and then we add in we do a push with our key
+
+48
+00:03:09,500 --> 00:03:10,770
+and value pair.
+
+49
+00:03:11,360 --> 00:03:16,070
+However if there's already something in there like if we had already run this and then we ran something
+
+50
+00:03:16,070 --> 00:03:20,870
+else that gave us 11 again then this part is not true it doesn't run.
+
+51
+00:03:20,870 --> 00:03:25,820
+So we just push key and value a new array into the parent array of that index.
+
+52
+00:03:25,820 --> 00:03:27,800
+So let's just test that it works.
+
+53
+00:03:28,160 --> 00:03:30,400
+And how could I best test this.
+
+54
+00:03:30,410 --> 00:03:33,160
+Let's make our size pretty small like four.
+
+55
+00:03:33,410 --> 00:03:38,070
+And then I'm going to do a couple of sets of fastforward.
+
+56
+00:03:39,050 --> 00:03:45,710
+Ok I added a couple of things in just random strings and if I execute this now remember I changed the
+
+57
+00:03:45,710 --> 00:03:47,630
+size the default to be 4.
+
+58
+00:03:47,870 --> 00:03:49,250
+So it's going to be tiny.
+
+59
+00:03:49,460 --> 00:03:52,350
+And when I run it we look at our hash table.
+
+60
+00:03:52,460 --> 00:03:53,280
+What do we have.
+
+61
+00:03:53,540 --> 00:03:56,200
+OK so our key map has an array.
+
+62
+00:03:56,240 --> 00:04:03,250
+So there's something at index 0 1 and 3 there's nothing in index 2 and there's four things inserted
+
+63
+00:04:03,260 --> 00:04:09,470
+and we can see that they are sharing index of 1 to index if one contains an array with cats are fine.
+
+64
+00:04:09,470 --> 00:04:12,380
+And I love pizza more keys and values.
+
+65
+00:04:12,380 --> 00:04:19,300
+So there's a key value pair and another key value pair both which were hashed to index of one appear.
+
+66
+00:04:19,310 --> 00:04:21,120
+We have a single entry.
+
+67
+00:04:21,200 --> 00:04:24,050
+Same thing down here index of three is single entry.
+
+68
+00:04:24,050 --> 00:04:28,450
+So if I were to add something else in let's do each set.
+
+69
+00:04:28,670 --> 00:04:29,170
+I don't know.
+
+70
+00:04:29,210 --> 00:04:33,870
+I'm just going to do hi fi.
+
+71
+00:04:34,880 --> 00:04:35,720
+Where did it go.
+
+72
+00:04:35,720 --> 00:04:37,000
+Let's look.
+
+73
+00:04:37,120 --> 00:04:39,200
+Looks like it was also inserted there.
+
+74
+00:04:39,230 --> 00:04:46,100
+So we pushed it into this existing array inside of index of one tried again something else.
+
+75
+00:04:46,100 --> 00:04:47,240
+Where is it go this time.
+
+76
+00:04:47,240 --> 00:04:47,720
+OK.
+
+77
+00:04:47,870 --> 00:04:52,020
+So I did french fries and that was inserted at index too.
+
+78
+00:04:52,040 --> 00:04:53,050
+There was nothing there.
+
+79
+00:04:53,060 --> 00:04:56,960
+Before we go back up here we only had index 0 1 and 3.
+
+80
+00:04:56,960 --> 00:04:59,410
+There was nothing at index 2.
+
+81
+00:04:59,480 --> 00:05:05,840
+Now there is and our logic works we're adding the array the empty array first and then pushing in our
+
+82
+00:05:05,840 --> 00:05:06,330
+data.
+
+83
+00:05:06,480 --> 00:05:06,700
+OK.
+
+84
+00:05:06,710 --> 00:05:08,260
+So that is set.
+
+85
+00:05:08,480 --> 00:05:13,940
+And what we need to do next is get this video is getting a bit long so I'll do get in a separate video
+
+86
+00:05:13,940 --> 00:05:14,560
+after this one.
+

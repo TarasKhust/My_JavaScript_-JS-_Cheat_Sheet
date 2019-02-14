@@ -1,0 +1,548 @@
+1
+00:00:00,300 --> 00:00:01,560
+A welcome back.
+
+2
+00:00:01,560 --> 00:00:06,460
+So I said at the very beginning of the course we had a little math the whole sections pretty mathy.
+
+3
+00:00:06,480 --> 00:00:11,150
+But this last video in particular is condensed with some math we're talking about logarithms.
+
+4
+00:00:11,160 --> 00:00:16,500
+As you can see whether you learn about logarithms at one point or you learn about logarithms at one
+
+5
+00:00:16,500 --> 00:00:19,340
+point and forgot it all or you never learned about it.
+
+6
+00:00:19,440 --> 00:00:24,150
+I'm going to try and just make it pretty simple and also quick because it doesn't actually matter that
+
+7
+00:00:24,150 --> 00:00:26,460
+we're masters with logarithms.
+
+8
+00:00:26,460 --> 00:00:28,030
+The reason I'm even showing it to you.
+
+9
+00:00:28,040 --> 00:00:29,380
+Guess that's where I should start.
+
+10
+00:00:29,460 --> 00:00:32,750
+Is that some algorithms that we'll see have a big.
+
+11
+00:00:32,880 --> 00:00:37,800
+That isn't simple it isn't big of one or of and nerve and squared.
+
+12
+00:00:37,830 --> 00:00:42,620
+These are very common complexities and we've seen them and I think they're pretty easy to comprehend.
+
+13
+00:00:42,840 --> 00:00:49,860
+Hopefully but there are some big old expressions that involve some more difficult math or less common
+
+14
+00:00:49,920 --> 00:00:51,090
+expressions.
+
+15
+00:00:51,330 --> 00:00:55,560
+And something that comes up more than I personally would like our logarithms.
+
+16
+00:00:55,560 --> 00:00:57,230
+So that's why I'm showing it to you.
+
+17
+00:00:57,240 --> 00:00:59,080
+We will have and I'll show you in a bit.
+
+18
+00:00:59,130 --> 00:01:05,520
+Some algorithms in this course where their time complexity instead of being of end might be 0 of log
+
+19
+00:01:05,520 --> 00:01:06,090
+n..
+
+20
+00:01:06,520 --> 00:01:09,290
+So what's let's start with what's Lague what's logarithm.
+
+21
+00:01:09,450 --> 00:01:14,240
+So put simply a logarithm is the inverse of exponentiation.
+
+22
+00:01:14,250 --> 00:01:21,730
+So just like division and multiplication are a pair logarithms and exponent exponentiation are a pair.
+
+23
+00:01:22,170 --> 00:01:23,750
+So here's what you might see.
+
+24
+00:01:23,870 --> 00:01:29,200
+You would read this as log base two of eight equals three.
+
+25
+00:01:29,370 --> 00:01:36,860
+And what we're really asking or calculating here is two to what power equals eight.
+
+26
+00:01:36,870 --> 00:01:42,280
+So if we take two and we raise it to some power what power will give us eight.
+
+27
+00:01:42,300 --> 00:01:44,990
+Two times two times to give us eight.
+
+28
+00:01:44,990 --> 00:01:46,450
+So the answer is three.
+
+29
+00:01:47,010 --> 00:01:50,180
+So two cube equals eight.
+
+30
+00:01:50,240 --> 00:01:53,700
+Here's just that same thing written down again log.
+
+31
+00:01:53,740 --> 00:01:56,390
+Base 2 of a value equals the exponent.
+
+32
+00:01:56,390 --> 00:02:00,260
+You can switch it around and say two to the exponent equals value.
+
+33
+00:02:00,260 --> 00:02:08,390
+Just like if we had one divided by two equals 0.5 you could switch that around and say that two times
+
+34
+00:02:08,390 --> 00:02:09,940
+point five equals one.
+
+35
+00:02:10,010 --> 00:02:11,850
+It can move things around.
+
+36
+00:02:11,870 --> 00:02:15,120
+They are the inverse exponentiation and logarithms.
+
+37
+00:02:15,200 --> 00:02:18,410
+Now logarithms aren't always working with base 2.
+
+38
+00:02:18,470 --> 00:02:26,480
+You could have logged three of something three to what power gives us 8 or Lague 5 or 10.
+
+39
+00:02:26,480 --> 00:02:30,340
+The most common ones though are the binary logarithm which is log 2.
+
+40
+00:02:30,350 --> 00:02:32,510
+So two to what power.
+
+41
+00:02:32,510 --> 00:02:35,280
+Then there's also the base 10.
+
+42
+00:02:35,360 --> 00:02:38,060
+So 10 to what power gives us and some answer.
+
+43
+00:02:38,060 --> 00:02:43,800
+Then there's also log E which not going to go into but probably should have said that anyway.
+
+44
+00:02:44,030 --> 00:02:46,530
+There's there's a third very common out for them.
+
+45
+00:02:46,560 --> 00:02:52,170
+However for what we're concerned about we care about the big picture and we're going to get the two.
+
+46
+00:02:52,220 --> 00:02:57,120
+We're just going to say log because first of all it's annoying to write all this.
+
+47
+00:02:57,120 --> 00:03:02,420
+This is subscripted I think it's subscript not superscript to knowing to format this but also it doesn't
+
+48
+00:03:02,420 --> 00:03:09,050
+really matter at the end of the day because if we're comparing the graph of a constant time and a quadratic
+
+49
+00:03:09,050 --> 00:03:17,760
+time and log n time it doesn't really matter if it's log based to log base 3 log base 10 it's going
+
+50
+00:03:17,760 --> 00:03:20,130
+to be the general trend that we care about.
+
+51
+00:03:20,370 --> 00:03:25,320
+But just so that we're clear this isn't actually a mathematical operation on its own.
+
+52
+00:03:25,320 --> 00:03:29,040
+You can't just take the log of a number you need to have a base.
+
+53
+00:03:29,070 --> 00:03:32,300
+So we need to say log to log 10.
+
+54
+00:03:32,730 --> 00:03:39,840
+But in the slides and in literature that sounds stupid in literature in things that you'll see online
+
+55
+00:03:39,900 --> 00:03:46,440
+around Big-O notation the shorthand is just log if you want a rule of thumb just a calculated roughly
+
+56
+00:03:46,860 --> 00:03:51,750
+the binary logarithm of a number roughly measures the number of times you can divide that number by
+
+57
+00:03:51,750 --> 00:03:55,040
+two before you get a value that's less than or equal to 1.
+
+58
+00:03:55,350 --> 00:04:01,190
+So if we have 8 we're going to divide it by two and it's still greater than 1.
+
+59
+00:04:01,290 --> 00:04:04,710
+So we're going to divide by 2 again it's still greater than 1 2 but by 2 again.
+
+60
+00:04:04,710 --> 00:04:05,690
+Now we hit 1.
+
+61
+00:04:05,970 --> 00:04:07,470
+So that means 3.
+
+62
+00:04:07,550 --> 00:04:09,760
+We divided three times so the answer is three.
+
+63
+00:04:10,300 --> 00:04:13,020
+Twenty five however doesn't go cleanly.
+
+64
+00:04:13,020 --> 00:04:15,640
+There's no way of dividing it by two evenly.
+
+65
+00:04:15,750 --> 00:04:21,290
+So we divide by two and by two again and again and again and then we're finally below 1.
+
+66
+00:04:21,480 --> 00:04:23,920
+So this tells us that it's one two three four.
+
+67
+00:04:23,940 --> 00:04:26,280
+Somewhere between four and five.
+
+68
+00:04:26,580 --> 00:04:28,890
+And the answer is four point six four.
+
+69
+00:04:29,210 --> 00:04:31,650
+So the actual calculations are not that important.
+
+70
+00:04:31,650 --> 00:04:35,180
+What matters here is if we take a look at it on a chart.
+
+71
+00:04:35,340 --> 00:04:41,350
+So logarithmic time complexity is great if you have an algorithm with log n time complexity.
+
+72
+00:04:41,520 --> 00:04:43,190
+I'll show you which one it is here.
+
+73
+00:04:43,620 --> 00:04:49,680
+Here we have Consta time in red and then right above that an orange we have video of log and you can
+
+74
+00:04:49,680 --> 00:04:54,860
+see that up front it's a little steeper but then it really tails off and is very gradual.
+
+75
+00:04:55,050 --> 00:04:58,700
+And this is great if you have an algorithm log in time from Potsie.
+
+76
+00:04:58,710 --> 00:04:59,620
+Fantastic.
+
+77
+00:04:59,790 --> 00:05:06,050
+So that's why I'm showing it to you because it compares very favorably to things like event.
+
+78
+00:05:06,090 --> 00:05:07,620
+There's another common one we'll see.
+
+79
+00:05:07,630 --> 00:05:08,670
+And.
+
+80
+00:05:08,940 --> 00:05:13,620
+I'm not going to go into examples just yet but both of them involve logs so I figured I should show
+
+81
+00:05:13,620 --> 00:05:14,010
+you.
+
+82
+00:05:14,130 --> 00:05:20,750
+It's not as good but it's still better than something like and squared the quadratic time complexity.
+
+83
+00:05:20,760 --> 00:05:26,520
+So really the point at the end of the section even if you're stuck on some of the math what I hope we
+
+84
+00:05:26,520 --> 00:05:29,820
+have is that later in the course I'll show you two algorithms.
+
+85
+00:05:29,880 --> 00:05:34,030
+I want to be able to point to one and say this one has a log and time complexity.
+
+86
+00:05:34,050 --> 00:05:37,470
+This other one has 0 of and time complexity.
+
+87
+00:05:37,470 --> 00:05:41,110
+And I hope that you can look at this chart and understand that.
+
+88
+00:05:41,280 --> 00:05:41,920
+Cool.
+
+89
+00:05:41,940 --> 00:05:43,260
+The first one is better.
+
+90
+00:05:43,560 --> 00:05:48,850
+It's at least more efficient it's faster because Lagann is much better than 0 7.
+
+91
+00:05:49,050 --> 00:05:51,810
+The larger and gets doesn't grow that much.
+
+92
+00:05:51,840 --> 00:05:56,610
+The runtime with long end but it grows a lot in proportion with an 11.
+
+93
+00:05:56,880 --> 00:05:57,370
+OK.
+
+94
+00:05:57,570 --> 00:05:59,900
+So that's kind of that's why I'm introducing it here.
+
+95
+00:05:59,940 --> 00:06:04,350
+We have a bigger picture of these are the most common big-O expressions.
+
+96
+00:06:04,470 --> 00:06:10,260
+Like I said the math we don't have to worry about too much but I just want you to know what a log is.
+
+97
+00:06:10,680 --> 00:06:13,110
+Let's talk about where this will come up.
+
+98
+00:06:13,410 --> 00:06:18,510
+So certain searching algorithms do have logarithmic time complexity and we will see those as we go in
+
+99
+00:06:18,510 --> 00:06:23,300
+the progress of the Course also efficient sorting algorithms involve logs.
+
+100
+00:06:23,370 --> 00:06:27,400
+So not all soring algorithms but some of the more efficient ones do.
+
+101
+00:06:27,510 --> 00:06:29,190
+So we'll see that as well.
+
+102
+00:06:29,220 --> 00:06:31,830
+And then finally recursion another topic.
+
+103
+00:06:31,830 --> 00:06:35,550
+So basically there's three reasons here none of which we've actually discussed.
+
+104
+00:06:35,550 --> 00:06:39,810
+So this might not make a lot of sense I'm basically saying in the future we're going to see it at this
+
+105
+00:06:39,810 --> 00:06:45,960
+place this place and this place searching algorithms efficient sorting and recursion and that has to
+
+106
+00:06:45,960 --> 00:06:49,470
+do with space complexity with recursion not time.
+
+107
+00:06:49,470 --> 00:06:52,060
+So hopefully these will make more sense once we get there.
+
+108
+00:06:52,140 --> 00:06:57,060
+Really again it comes down to just having this nice picture here I want to see if I was teaching this
+
+109
+00:06:57,060 --> 00:07:02,430
+in a classroom and have this up on the wall at all times like laminated printed out and I'd have a long
+
+110
+00:07:02,430 --> 00:07:07,950
+stick and I'd whack it on the wall and point it for every algorithm point at one of those lines and
+
+111
+00:07:07,950 --> 00:07:11,850
+I'm going to try and kind of do the same virtual thing in this course on my.
+
+112
+00:07:12,160 --> 00:07:12,790
+OK.
+
+113
+00:07:12,990 --> 00:07:14,250
+So let's do a quick recap.
+
+114
+00:07:14,250 --> 00:07:17,540
+We covered a lot to analyze performance of an algorithm.
+
+115
+00:07:17,610 --> 00:07:19,030
+We use Big-O notation.
+
+116
+00:07:19,140 --> 00:07:24,170
+It has to do with big high level big picture trend as the size of an input.
+
+117
+00:07:24,170 --> 00:07:30,120
+Gross We want to know how the runtime changes or how the space complexity changes.
+
+118
+00:07:30,180 --> 00:07:33,990
+So Big O can give us a high level understanding of time or space complexity.
+
+119
+00:07:34,290 --> 00:07:38,020
+It doesn't care about precision just general trends.
+
+120
+00:07:38,410 --> 00:07:43,730
+Time-Space complexity as measured by big-O depends only on the algorithm not on the hardware.
+
+121
+00:07:44,620 --> 00:07:51,220
+So yes the actual time it might take to run one algorithm on my computer compared to some supercomputer
+
+122
+00:07:51,760 --> 00:07:53,140
+will definitely be different.
+
+123
+00:07:53,410 --> 00:08:00,430
+But the general trend won't be big O is basically measuring the number of operations that happen whether
+
+124
+00:08:00,430 --> 00:08:06,430
+an operation takes 10 milliseconds in my computer or one millisecond on another computer which is pretty
+
+125
+00:08:06,430 --> 00:08:07,050
+slow anyway.
+
+126
+00:08:07,060 --> 00:08:12,820
+But you that and Big-O notation is everywhere so we're going to get a lot of practice and that's why
+
+127
+00:08:12,820 --> 00:08:14,590
+it's coming first in this course.
+
+128
+00:08:14,590 --> 00:08:16,150
+I feel kind of bad about it.
+
+129
+00:08:16,150 --> 00:08:21,220
+Like I've said before because it's not the most welcoming topic and it's kind of a rude awakening but
+
+130
+00:08:21,430 --> 00:08:23,690
+it gives us a context to discuss things.
+
+131
+00:08:23,740 --> 00:08:27,300
+I mean to go back to that terrible analogy of the Richter scale with earthquakes.
+
+132
+00:08:27,400 --> 00:08:32,920
+It gives us a way of discussing how earthquakes compare their magnitudes to same idea we can compare
+
+133
+00:08:32,950 --> 00:08:35,000
+algorithms now and say oh this one is great.
+
+134
+00:08:35,020 --> 00:08:40,990
+This one is terrible because it's space complexity is X or it's time complexity is x.
+
+135
+00:08:40,990 --> 00:08:42,910
+Anyway let's let's call it a day here.
+
+136
+00:08:42,910 --> 00:08:44,110
+Let's stop now.
+
+137
+00:08:44,230 --> 00:08:46,040
+And we'll see you in the next section.
+

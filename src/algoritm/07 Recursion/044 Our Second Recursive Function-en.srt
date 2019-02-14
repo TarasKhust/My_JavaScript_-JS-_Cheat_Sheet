@@ -1,0 +1,540 @@
+1
+00:00:00,110 --> 00:00:00,560
+OK.
+
+2
+00:00:00,660 --> 00:00:04,230
+So hopefully you survive that first recursive function example.
+
+3
+00:00:04,230 --> 00:00:06,090
+Now we're moving on to our second example.
+
+4
+00:00:06,090 --> 00:00:07,270
+So this is what it looks like.
+
+5
+00:00:07,380 --> 00:00:15,430
+It's called Some range and first try and identify two pieces can you identify the base case.
+
+6
+00:00:15,470 --> 00:00:17,120
+So a key hint for that.
+
+7
+00:00:17,160 --> 00:00:22,310
+There's only two lines here but a base case almost always involves a conditional to check for something
+
+8
+00:00:22,460 --> 00:00:28,250
+and then it returns something that's the end it's the bottom of the well you hit the the water hit the
+
+9
+00:00:28,260 --> 00:00:29,210
+rock.
+
+10
+00:00:29,360 --> 00:00:31,290
+I don't know that's a terrible way of putting it.
+
+11
+00:00:31,310 --> 00:00:32,590
+There's an endpoint.
+
+12
+00:00:32,810 --> 00:00:38,540
+Then there's the different input which is still not happy with that term but there's the recursive call
+
+13
+00:00:38,600 --> 00:00:41,390
+which we're calling with a smaller piece each time.
+
+14
+00:00:41,390 --> 00:00:47,240
+So in the last video we were subtracting one from knowm and calling count down again NUMP keeps shrinking
+
+15
+00:00:47,330 --> 00:00:52,880
+towards eventually the base case here we're doing the same thing.
+
+16
+00:00:52,940 --> 00:00:55,930
+So the base case to start is this line.
+
+17
+00:00:56,090 --> 00:01:00,560
+If numbers equal to 1 return 1 and that makes sense.
+
+18
+00:01:00,560 --> 00:01:05,510
+I mean first of all if we tried to just do some range of 1 if we're going to add all the numbers between
+
+19
+00:01:05,510 --> 00:01:07,580
+1 and 1 we should just return 1.
+
+20
+00:01:07,940 --> 00:01:09,230
+So that's a base case.
+
+21
+00:01:09,230 --> 00:01:17,560
+And then here is our recursive call return income plus some range number minus one.
+
+22
+00:01:17,600 --> 00:01:19,070
+So this gets a little bit crazy.
+
+23
+00:01:19,070 --> 00:01:21,880
+I know because we have more than one return in here.
+
+24
+00:01:21,980 --> 00:01:24,440
+We're going to step through this one little piece at a time.
+
+25
+00:01:24,680 --> 00:01:28,350
+But think of it this way if I plug in three we're going to start.
+
+26
+00:01:28,370 --> 00:01:36,560
+This is not true so we skipped that and this is going to return three plus some range of two and some
+
+27
+00:01:36,560 --> 00:01:43,880
+range of two will return to plus some range of one and some range if one returns one and then all those
+
+28
+00:01:43,880 --> 00:01:48,370
+things are added back up waiting on the call stack and we end up with six.
+
+29
+00:01:48,710 --> 00:01:51,810
+So I have it over here let's just test it out quickly.
+
+30
+00:01:51,860 --> 00:01:57,010
+I do some range of let's do four.
+
+31
+00:01:57,620 --> 00:02:01,360
+That's going to give us 10 as you can see there.
+
+32
+00:02:01,580 --> 00:02:02,120
+OK.
+
+33
+00:02:02,300 --> 00:02:04,630
+And three should give us six and it does.
+
+34
+00:02:04,820 --> 00:02:09,030
+So let's actually walk through what happens if you feel good about this.
+
+35
+00:02:09,050 --> 00:02:14,930
+Just move on and skip this because I am going to do a detailed walkthrough just because it really helps
+
+36
+00:02:14,930 --> 00:02:18,650
+I think and my experience helps if anyone is struggling to understand what's happening.
+
+37
+00:02:18,830 --> 00:02:19,700
+This is a bit different.
+
+38
+00:02:19,700 --> 00:02:25,610
+We're not just printing we're returning and returning or returning and returning over and over and over.
+
+39
+00:02:25,610 --> 00:02:26,870
+So let's let's walk through this.
+
+40
+00:02:26,870 --> 00:02:28,950
+I call some range of three.
+
+41
+00:02:29,060 --> 00:02:30,480
+So that's the first thing I do.
+
+42
+00:02:30,620 --> 00:02:31,720
+This is not true.
+
+43
+00:02:31,760 --> 00:02:32,900
+So that doesn't matter right now.
+
+44
+00:02:32,920 --> 00:02:33,860
+Numbers 3.
+
+45
+00:02:33,990 --> 00:02:36,140
+But then that's going to return.
+
+46
+00:02:36,140 --> 00:02:37,090
+So if we just write that.
+
+47
+00:02:37,190 --> 00:02:38,300
+I don't know why I'm doing caps.
+
+48
+00:02:38,300 --> 00:02:38,990
+There we go.
+
+49
+00:02:39,270 --> 00:02:45,580
+Return numb which is three plus some range of two.
+
+50
+00:02:45,620 --> 00:02:46,540
+Right.
+
+51
+00:02:47,180 --> 00:02:47,520
+OK.
+
+52
+00:02:47,570 --> 00:02:49,370
+So some range of three.
+
+53
+00:02:49,490 --> 00:02:50,580
+Is this right here.
+
+54
+00:02:50,700 --> 00:02:56,220
+And it's waiting for some range of two some range of two if I tab over here.
+
+55
+00:02:56,240 --> 00:02:58,820
+It's going to be called is number one.
+
+56
+00:02:58,880 --> 00:03:05,310
+No it's not so we skip so that returns numb which is so I'll try and do this in the middle here.
+
+57
+00:03:05,340 --> 00:03:13,240
+Return to plus some range of minus 1 which is 1 like that.
+
+58
+00:03:13,760 --> 00:03:14,390
+OK.
+
+59
+00:03:14,870 --> 00:03:16,310
+So we have some range of three.
+
+60
+00:03:16,310 --> 00:03:18,430
+The first thing we called it's waiting.
+
+61
+00:03:18,470 --> 00:03:22,570
+It's basically trying to add three to some value but it doesn't know what yet.
+
+62
+00:03:22,610 --> 00:03:28,550
+Some range of 2 has to be computed but that's waiting because some range of two is going to return to
+
+63
+00:03:28,760 --> 00:03:31,500
+plus whatever some range of one is.
+
+64
+00:03:31,520 --> 00:03:35,660
+And then finally some range of one when Gnome is equal to 1.
+
+65
+00:03:35,660 --> 00:03:36,660
+This is true.
+
+66
+00:03:37,070 --> 00:03:39,530
+So we return 1.
+
+67
+00:03:39,950 --> 00:03:41,810
+That's our base case.
+
+68
+00:03:41,980 --> 00:03:46,570
+It stops us from Feel free falling forever to a rapid descent.
+
+69
+00:03:46,580 --> 00:03:48,590
+We're returning one that's the end.
+
+70
+00:03:48,590 --> 00:03:50,810
+There is no further recursive call.
+
+71
+00:03:51,080 --> 00:03:53,750
+So when we return 1 what happens.
+
+72
+00:03:54,020 --> 00:03:58,400
+Well this this was waiting to see what some range of one was.
+
+73
+00:03:58,700 --> 00:04:02,850
+So that gets simplified that turns into one.
+
+74
+00:04:02,880 --> 00:04:04,510
+Right so this returns 1.
+
+75
+00:04:05,030 --> 00:04:06,790
+So then this turns into one.
+
+76
+00:04:07,370 --> 00:04:11,470
+So then returns some range of two is going to return to plus one.
+
+77
+00:04:11,480 --> 00:04:14,100
+This now has a value which is three.
+
+78
+00:04:14,510 --> 00:04:21,230
+So then some range of two returns three which is to lead it and put it back up here which some range
+
+79
+00:04:21,230 --> 00:04:22,540
+of 3 was waiting.
+
+80
+00:04:22,700 --> 00:04:28,250
+Some range of three basically knew it was going to be three plus whatever came back from some range
+
+81
+00:04:28,250 --> 00:04:28,740
+of two.
+
+82
+00:04:28,880 --> 00:04:31,510
+Well finally there's a value that came back it's three.
+
+83
+00:04:31,610 --> 00:04:36,900
+So it returns three plus three which finally returned six.
+
+84
+00:04:37,490 --> 00:04:38,910
+And that's our answer.
+
+85
+00:04:39,440 --> 00:04:41,470
+So it's kind of complicated to draw out.
+
+86
+00:04:41,480 --> 00:04:42,900
+I picked a small number like three.
+
+87
+00:04:42,920 --> 00:04:50,090
+But as we go higher and higher there's many more function calls on the stack that we have to worry about.
+
+88
+00:04:50,510 --> 00:04:53,750
+So we can we can view this let's do the same thing.
+
+89
+00:04:53,750 --> 00:04:57,850
+Let's do for this time and I'll put my breakpoint in here.
+
+90
+00:04:57,980 --> 00:05:00,080
+If you grasp this already skip it.
+
+91
+00:05:00,350 --> 00:05:02,500
+But let's do it now.
+
+92
+00:05:02,600 --> 00:05:03,600
+So we step through.
+
+93
+00:05:03,680 --> 00:05:07,030
+First thing that happens will I have to execute it command enter.
+
+94
+00:05:07,250 --> 00:05:08,020
+OK.
+
+95
+00:05:08,450 --> 00:05:13,770
+So first off some range of four is called that added to the call stack.
+
+96
+00:05:13,850 --> 00:05:16,190
+This is waiting now for not waiting yet.
+
+97
+00:05:16,250 --> 00:05:17,870
+It's being executed right now.
+
+98
+00:05:17,870 --> 00:05:19,060
+This is not true.
+
+99
+00:05:19,190 --> 00:05:24,860
+Move to the next line and it's going to return four plus some range of three.
+
+100
+00:05:25,130 --> 00:05:30,230
+So it's going to wait because it has to have an answer from it from some range of three.
+
+101
+00:05:30,440 --> 00:05:35,630
+So you can see in this this some range right here is three down here.
+
+102
+00:05:35,630 --> 00:05:36,620
+Number four.
+
+103
+00:05:36,710 --> 00:05:42,280
+So it's going to do four plus whatever this answers are returns this can't return anything just yet
+
+104
+00:05:42,320 --> 00:05:48,770
+because it's return value is three plus some range of to none.
+
+105
+00:05:48,800 --> 00:05:49,830
+And this one is too.
+
+106
+00:05:49,910 --> 00:05:54,740
+So if you watch over here as I go to the next step we get another some range added to the call stack
+
+107
+00:05:55,120 --> 00:05:59,080
+and this and this one local variable numb is two.
+
+108
+00:05:59,570 --> 00:06:01,760
+So this first part's not true.
+
+109
+00:06:01,760 --> 00:06:02,490
+Move on.
+
+110
+00:06:02,490 --> 00:06:07,710
+It's going to return to plus some range of 1.
+
+111
+00:06:07,730 --> 00:06:10,970
+So finally our call or call gets added up here.
+
+112
+00:06:11,120 --> 00:06:17,230
+So now we have another function call added for some range this time though knowm is one.
+
+113
+00:06:17,330 --> 00:06:21,930
+In this context so numbers one means this which means this is true.
+
+114
+00:06:21,950 --> 00:06:23,960
+So we finally return one.
+
+115
+00:06:24,530 --> 00:06:26,540
+So remember this is waiting here.
+
+116
+00:06:26,610 --> 00:06:30,610
+This is waiting on the return value of this is waiting in the return value of that.
+
+117
+00:06:30,650 --> 00:06:33,840
+This one is waiting on the return value of this one.
+
+118
+00:06:33,860 --> 00:06:44,190
+This is going to return 1 so when that happens right here we go return value one and then watch as he
+
+119
+00:06:44,190 --> 00:06:45,730
+gets popped off.
+
+120
+00:06:45,780 --> 00:06:46,670
+There we go.
+
+121
+00:06:46,830 --> 00:06:52,130
+This function now which was waiting it was adding to plus the return value of some range one.
+
+122
+00:06:52,260 --> 00:06:54,500
+Well that has a value it's two plus one.
+
+123
+00:06:54,510 --> 00:07:01,950
+So it returns three and this one when it returns three fills in the blank for this second call which
+
+124
+00:07:01,950 --> 00:07:05,280
+was waiting to see what some range of three was.
+
+125
+00:07:05,280 --> 00:07:09,710
+So then we get that enter returns 6.
+
+126
+00:07:09,900 --> 00:07:16,170
+And then finally this sum range which was waiting the whole time patiently to add four plus the sum
+
+127
+00:07:16,170 --> 00:07:23,310
+range of three which came back at 6 so we get four plus six which is 10 and a returned 10 and we're
+
+128
+00:07:23,310 --> 00:07:23,970
+done.
+
+129
+00:07:24,390 --> 00:07:28,990
+So I know that there's a lot there but I hope that explanation helped out a little bit.
+
+130
+00:07:29,070 --> 00:07:34,530
+It's always nice to walk through the deck but this one is different than the last video where we just
+
+131
+00:07:34,530 --> 00:07:40,980
+were printing things out and this in this case whatever is returned from the base case matters it's
+
+132
+00:07:41,010 --> 00:07:44,730
+added on to what the previous function call was waiting for.
+
+133
+00:07:44,820 --> 00:07:50,200
+And then that added on and it has this reverse cascade going back up okay.
+
+134
+00:07:50,350 --> 00:07:52,390
+Hopefully that makes a little sense.
+
+135
+00:07:52,390 --> 00:07:53,840
+We have a couple of more examples.
+

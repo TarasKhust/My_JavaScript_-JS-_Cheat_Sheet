@@ -1,0 +1,300 @@
+1
+00:00:00,180 --> 00:00:01,110
+Hey welcome back.
+
+2
+00:00:01,110 --> 00:00:02,100
+Next we'll implement.
+
+3
+00:00:02,100 --> 00:00:04,590
+Get on a doubly linked list so get.
+
+4
+00:00:04,590 --> 00:00:09,490
+Takes an index number and it returns the node at that index at that position.
+
+5
+00:00:09,690 --> 00:00:13,390
+And we could implement it the same way that we did with our singly linked list.
+
+6
+00:00:13,560 --> 00:00:18,840
+But there's actually a nice optimization that's a pretty significant change if we can make that we can
+
+7
+00:00:18,840 --> 00:00:20,640
+only do with a doubly linked list.
+
+8
+00:00:20,850 --> 00:00:24,510
+But just to recap or recall how we did it with a singly linked list.
+
+9
+00:00:24,640 --> 00:00:29,070
+Let's say we're looking for a get and we pass in five years let's say six.
+
+10
+00:00:29,190 --> 00:00:31,540
+So we're looking for the item an index of 6.
+
+11
+00:00:31,560 --> 00:00:32,940
+We started at the head.
+
+12
+00:00:33,090 --> 00:00:34,220
+That's our only option.
+
+13
+00:00:34,350 --> 00:00:36,510
+And then we had a counter variable.
+
+14
+00:00:36,570 --> 00:00:37,950
+We set it equal to zero.
+
+15
+00:00:37,950 --> 00:00:39,010
+This is index zero.
+
+16
+00:00:39,270 --> 00:00:41,080
+And then we just did in a loop.
+
+17
+00:00:41,100 --> 00:00:42,760
+Next we add one to counter.
+
+18
+00:00:42,760 --> 00:00:46,040
+It's now one next counters to the next counters.
+
+19
+00:00:46,050 --> 00:00:47,970
+Three four five.
+
+20
+00:00:48,090 --> 00:00:49,830
+Next counter is now six.
+
+21
+00:00:49,830 --> 00:00:53,670
+So we return this node ninety five and that works.
+
+22
+00:00:53,670 --> 00:00:58,800
+And if we wanted to do I don't know index of eight for example we still have to start at the beginning
+
+23
+00:00:58,920 --> 00:01:00,290
+and just go all the way down.
+
+24
+00:01:00,300 --> 00:01:05,400
+Now if we have 1000 items in the list and we're looking for the second to last item in a singly linked
+
+25
+00:01:05,400 --> 00:01:11,240
+list we have to go through all the items before it in a totally lengthy list.
+
+26
+00:01:11,310 --> 00:01:12,610
+We could do the same thing.
+
+27
+00:01:12,630 --> 00:01:18,450
+We could start at the beginning and work down to the tail or the element but we could also start at
+
+28
+00:01:18,450 --> 00:01:22,790
+the end and do Dopp previous previous previous.
+
+29
+00:01:22,800 --> 00:01:27,980
+So you could just do working from the end if you wanted to or you could only work in the beginning.
+
+30
+00:01:28,050 --> 00:01:33,840
+But the optimal solution is to work from one or the other depending on the index that is provided.
+
+31
+00:01:34,200 --> 00:01:39,930
+So if I did let's make a new list that's a little larger I think tennis a larger size can do if this
+
+32
+00:01:39,930 --> 00:01:40,870
+is the list.
+
+33
+00:01:40,920 --> 00:01:42,550
+We know that there's 10 items in here.
+
+34
+00:01:42,600 --> 00:01:44,550
+The highest index is nine.
+
+35
+00:01:44,550 --> 00:01:49,210
+If somebody is looking for the index of 7 if someone did this list get seven.
+
+36
+00:01:49,530 --> 00:01:53,720
+We could just start with the beginning and just add add add until we get to index 7.
+
+37
+00:01:53,820 --> 00:01:57,190
+But 7 is closer to the end of the list.
+
+38
+00:01:57,420 --> 00:02:01,500
+So we could and we should start at the end and work backwards.
+
+39
+00:02:01,500 --> 00:02:03,440
+So we know this is index of nine.
+
+40
+00:02:03,660 --> 00:02:06,800
+It's one of the highest index is one less than the length.
+
+41
+00:02:06,900 --> 00:02:10,460
+So we can start at 9 and work back to 8 back to 7.
+
+42
+00:02:10,470 --> 00:02:11,580
+So that's what we're going to do.
+
+43
+00:02:11,580 --> 00:02:18,210
+We're going to write code that checks is the index that's provided closer to 0 or closer to the last
+
+44
+00:02:18,210 --> 00:02:23,030
+index the length minus 1 and that would make a very significant difference if we're talking about I
+
+45
+00:02:23,030 --> 00:02:27,210
+don't know a million items in the list and we're looking for the $900 thousand.
+
+46
+00:02:27,240 --> 00:02:28,500
+Item for example.
+
+47
+00:02:28,650 --> 00:02:30,320
+No need to start at the very beginning.
+
+48
+00:02:30,540 --> 00:02:31,970
+So here's the pseudo code.
+
+49
+00:02:31,980 --> 00:02:34,800
+First thing we need to do is just check if it's a valid index.
+
+50
+00:02:34,800 --> 00:02:39,010
+So if it's negative or greater or equal to the length return.
+
+51
+00:02:39,050 --> 00:02:39,750
+No.
+
+52
+00:02:39,900 --> 00:02:42,150
+Remember it can't be equal to the length.
+
+53
+00:02:42,150 --> 00:02:47,400
+If there's 10 items there's nothing in index 10 the highest is nine.
+
+54
+00:02:47,400 --> 00:02:53,110
+Otherwise we're now going to check if the index is less than or equal to half the length of the list.
+
+55
+00:02:53,190 --> 00:02:57,990
+If that's the case we're going to start from the beginning and move to the right.
+
+56
+00:02:57,990 --> 00:03:00,640
+Next up next until we find the correct note.
+
+57
+00:03:01,260 --> 00:03:07,670
+Otherwise that means that the index is greater than the half of the length of the length of the list
+
+58
+00:03:07,680 --> 00:03:10,750
+meaning that it's closer to the right side or closer to the tail.
+
+59
+00:03:11,100 --> 00:03:12,350
+So we'll start here.
+
+60
+00:03:12,600 --> 00:03:18,630
+And instead of adding one each time we do it next we will subtract one from a counter every time we
+
+61
+00:03:18,630 --> 00:03:20,010
+do a previous.
+
+62
+00:03:20,010 --> 00:03:22,960
+So our counter is going to start as the last index.
+
+63
+00:03:22,970 --> 00:03:29,910
+Our position will be in this case 9 because there's 10 items 10 months one gives us 9 or if we had five
+
+64
+00:03:29,910 --> 00:03:33,940
+items in the list we would start at index 4 and subtract one each time we did.
+
+65
+00:03:33,960 --> 00:03:35,360
+Previous.
+
+66
+00:03:35,370 --> 00:03:38,780
+So hopefully this makes sense this idea.
+
+67
+00:03:38,790 --> 00:03:44,160
+All you have to do take the length divide by two and compare the index to that result and it's up to
+
+68
+00:03:44,160 --> 00:03:48,810
+you if you're looking for the exact middle of the list the middle index if you would rather group that
+
+69
+00:03:48,810 --> 00:03:52,250
+in with the head or with the two doesn't matter.
+
+70
+00:03:52,570 --> 00:03:54,210
+OK so give that a shot.
+
+71
+00:03:54,210 --> 00:03:54,660
+One more time.
+
+72
+00:03:54,660 --> 00:03:55,810
+Here is the pseudo code.
+
+73
+00:03:55,860 --> 00:03:58,330
+Return the node once it's founded and specify that.
+
+74
+00:03:58,470 --> 00:03:59,700
+And that's pretty much it.
+
+75
+00:03:59,700 --> 00:04:02,090
+So try tried out in the next video I'll have a solution.
+

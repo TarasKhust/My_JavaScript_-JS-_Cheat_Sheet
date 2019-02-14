@@ -1,0 +1,476 @@
+1
+00:00:00,170 --> 00:00:03,240
+So now I want to talk about some real world applications.
+
+2
+00:00:03,330 --> 00:00:06,900
+Where does this stuff come up a bunch of nodes connected by lions.
+
+3
+00:00:07,290 --> 00:00:08,910
+Well all over the place.
+
+4
+00:00:08,940 --> 00:00:14,350
+Social networking I'll talk about we'll also talk about things like mapping Google maps directions location
+
+5
+00:00:14,370 --> 00:00:18,450
+pathfinding routing when you request a web page.
+
+6
+00:00:18,450 --> 00:00:24,030
+The actual response itself comes back in a bunch of different little packets all over the place across
+
+7
+00:00:24,030 --> 00:00:25,710
+this massive network.
+
+8
+00:00:25,710 --> 00:00:27,670
+Really they're just used all over the place.
+
+9
+00:00:27,780 --> 00:00:32,880
+But let's start by talking about social networking or just the internet in general.
+
+10
+00:00:32,880 --> 00:00:36,150
+So this is a visualization I found on Flickr.
+
+11
+00:00:36,230 --> 00:00:40,620
+There's many of these out there but this was one of the only ones they found that had a license that
+
+12
+00:00:40,620 --> 00:00:41,940
+allowed me to use it.
+
+13
+00:00:42,120 --> 00:00:48,390
+And I think this is somebody who can see I think with their name models I don't know if you use Facebook
+
+14
+00:00:48,390 --> 00:00:51,300
+or what social network their connections between their friends.
+
+15
+00:00:51,300 --> 00:00:59,520
+I think it was Facebook and so each dot on here each node is a person like Kim the L and then you can
+
+16
+00:00:59,520 --> 00:01:03,540
+see all the connections that you know Kimmer has two other friends.
+
+17
+00:01:03,810 --> 00:01:07,310
+And what's interesting here is that we can see there are these clusters.
+
+18
+00:01:07,450 --> 00:01:13,110
+There are some people that this person knows who maybe don't know any of his other friends or her other
+
+19
+00:01:13,110 --> 00:01:16,730
+friends like this Susan maybe they met on a cruise somewhere.
+
+20
+00:01:16,890 --> 00:01:17,890
+He was traveling.
+
+21
+00:01:18,090 --> 00:01:22,320
+But then there's this giant cluster maybe they went to school together all these people or maybe they
+
+22
+00:01:22,320 --> 00:01:25,960
+live in the same city and they went to college years you know different groups here.
+
+23
+00:01:26,130 --> 00:01:29,790
+But this is a way of representing a social network.
+
+24
+00:01:29,790 --> 00:01:36,000
+So Facebook Instagram Twitter all of these they're storing your friendships your relationships and much
+
+25
+00:01:36,000 --> 00:01:38,760
+much more than just a name like we have here.
+
+26
+00:01:38,760 --> 00:01:44,190
+But that's the bare minimum really to represent the structure of a friend network of an actual real
+
+27
+00:01:44,190 --> 00:01:49,180
+world social network or think of storing actors and their relationships in movies.
+
+28
+00:01:49,320 --> 00:01:53,640
+And you know the different actors that have been in each movie you could store it this way.
+
+29
+00:01:54,000 --> 00:01:57,450
+Here is a visualization of part of Wikipedia.
+
+30
+00:01:57,450 --> 00:01:59,390
+These are pages that link to one another.
+
+31
+00:01:59,490 --> 00:02:04,620
+And this is just a small subset of it there are way more Wikipedia pages than the nodes that you see
+
+32
+00:02:04,620 --> 00:02:05,140
+here.
+
+33
+00:02:05,230 --> 00:02:11,190
+But we can see there are certain clusters and like this one here or whatever this is it links to a ton
+
+34
+00:02:11,190 --> 00:02:15,930
+of different pages that themselves don't really link to other pages.
+
+35
+00:02:15,930 --> 00:02:22,260
+And this is just Wikipedia but the web itself the Internet in its entirety we could model as a graph
+
+36
+00:02:22,410 --> 00:02:25,530
+where we have web pages that link to another page.
+
+37
+00:02:25,530 --> 00:02:32,970
+So anytime that one web page links to another that would be a connection from one node to another Here's
+
+38
+00:02:32,970 --> 00:02:34,100
+another application.
+
+39
+00:02:34,140 --> 00:02:37,520
+When we talk about mapping this is a really really common one.
+
+40
+00:02:37,800 --> 00:02:43,740
+When we think of how Google Maps for example or Mapquest if you were back in you remember that printing
+
+41
+00:02:43,740 --> 00:02:46,630
+out directions I used to have to do that from my parents.
+
+42
+00:02:46,920 --> 00:02:52,110
+When you think about how you would store that map itself in roads it's just only talk about roads not
+
+43
+00:02:52,110 --> 00:02:54,130
+hiking trails not bike lanes.
+
+44
+00:02:54,180 --> 00:03:00,060
+There's a bunch of nodes different cities different locations waypoints restaurant whatever we're talking
+
+45
+00:03:00,060 --> 00:03:00,500
+about.
+
+46
+00:03:00,690 --> 00:03:05,850
+And then roads that connect them and those roads are basically the connections that we talked about
+
+47
+00:03:05,850 --> 00:03:07,300
+between the nodes.
+
+48
+00:03:07,500 --> 00:03:13,920
+And in this example this is in Guatemala to go from this one city beautiful city Antigua to get to Lake
+
+49
+00:03:13,920 --> 00:03:16,110
+added land which is a beautiful lake.
+
+50
+00:03:16,110 --> 00:03:17,280
+There are many many options.
+
+51
+00:03:17,280 --> 00:03:22,680
+This is only showing kind of the two fastest but of course we could go some ridiculous route like go
+
+52
+00:03:22,680 --> 00:03:27,730
+through here and then go over here then go up the ice and there's a bunch of ways to get there.
+
+53
+00:03:27,780 --> 00:03:31,920
+And Google Maps is basically calculating the fastest way to get there.
+
+54
+00:03:32,070 --> 00:03:37,680
+Along this graph there are many different options and there's many algorithms that talk about finding
+
+55
+00:03:37,680 --> 00:03:40,060
+that shortest path and what's the easiest way to do that.
+
+56
+00:03:40,210 --> 00:03:43,580
+And it's much more complicated than just the length of the road.
+
+57
+00:03:43,590 --> 00:03:47,760
+There's things like the speed limit of the road for example you might have a much shorter road but it's
+
+58
+00:03:48,030 --> 00:03:50,520
+windier or it's a dirt road.
+
+59
+00:03:50,520 --> 00:03:54,740
+You might have traffic that Google obviously takes that into account.
+
+60
+00:03:54,870 --> 00:03:55,960
+Things might be close.
+
+61
+00:03:55,980 --> 00:03:59,370
+It's a lot more complicated than just calculating the shortest path.
+
+62
+00:03:59,400 --> 00:04:03,050
+But my point is more that we can store this data using a graph.
+
+63
+00:04:03,060 --> 00:04:06,150
+It's a bunch of nodes connected by roads.
+
+64
+00:04:06,480 --> 00:04:08,700
+So recommendation engines that's another one.
+
+65
+00:04:08,700 --> 00:04:13,440
+When we talk about any time you see something on a Web site people also watch like on Netflix or who
+
+66
+00:04:13,710 --> 00:04:19,230
+you might also like X when you're listening to something on Spotify for example people you might know
+
+67
+00:04:19,260 --> 00:04:22,230
+Facebook or Instagram or Twitter they all suggest those.
+
+68
+00:04:22,440 --> 00:04:26,860
+This thing was frequently bought with on Amazon for example and many other web pages.
+
+69
+00:04:26,970 --> 00:04:31,380
+Those are all recommendations that are made to you and often the way that they're made the way these
+
+70
+00:04:31,800 --> 00:04:35,730
+all this data is stored is in some sort of graph relationship.
+
+71
+00:04:35,730 --> 00:04:39,180
+So here's a super simple example I made with two video games.
+
+72
+00:04:39,300 --> 00:04:43,310
+Imagine that we had this for every single video game ever made.
+
+73
+00:04:43,560 --> 00:04:49,040
+And I didn't actually write out all the data points but here's a graphic for the game Halo and for Borderlands.
+
+74
+00:04:49,260 --> 00:04:51,260
+If you're not familiar with the games it doesn't matter.
+
+75
+00:04:51,370 --> 00:04:56,910
+But what you can see here the ones in green I didn't actually write Tex for all of them but the things
+
+76
+00:04:56,910 --> 00:05:01,970
+in green they are nodes that both these games have in common.
+
+77
+00:05:02,160 --> 00:05:06,620
+So these are like genre elements maybe space future sci fi guns.
+
+78
+00:05:06,750 --> 00:05:07,940
+First person shooters.
+
+79
+00:05:08,070 --> 00:05:14,790
+But now imagine that you have this expanded not only to include every game in Amazon for example or
+
+80
+00:05:14,790 --> 00:05:20,040
+in steam or whatever app you use to buy a game but also other things besides just genres.
+
+81
+00:05:20,040 --> 00:05:26,460
+How about user reviews and clicks people who clicked on Borderlands also looked and browsed what else
+
+82
+00:05:26,640 --> 00:05:28,100
+or trailer reviews.
+
+83
+00:05:28,170 --> 00:05:32,530
+There's so many different things that you would take into account and then to suggest something let's
+
+84
+00:05:32,540 --> 00:05:38,580
+say about Borderlands and I finished it to have a little box pop up and say People also looked at X
+
+85
+00:05:38,880 --> 00:05:42,850
+you might just look you write code to figure out what games have the most in common.
+
+86
+00:05:42,900 --> 00:05:44,930
+Which ones share the most nodes.
+
+87
+00:05:45,090 --> 00:05:45,490
+OK.
+
+88
+00:05:45,510 --> 00:05:48,300
+Well in our graphics only halo will suggest Halo.
+
+89
+00:05:48,510 --> 00:05:54,770
+So the datasets get way more complicated but anytime we're talking about this sort of X also did this
+
+90
+00:05:54,780 --> 00:05:57,350
+or you might like this or you should buy this.
+
+91
+00:05:57,420 --> 00:05:58,670
+I guess that's a little more forceful.
+
+92
+00:05:58,680 --> 00:06:01,000
+You should buy but you might want this.
+
+93
+00:06:01,020 --> 00:06:05,510
+Those are recommendations pretty much always stored with some sort of graph structure.
+
+94
+00:06:05,820 --> 00:06:07,820
+I forgot I had a little diagram there.
+
+95
+00:06:07,830 --> 00:06:14,110
+The thing things in common in that box here's a cool graph structure that models all the different genres.
+
+96
+00:06:14,220 --> 00:06:17,640
+Most of the genres in music around the world.
+
+97
+00:06:17,670 --> 00:06:22,920
+So if we zoom in you actually see all of these connections appear it's pretty crazy.
+
+98
+00:06:22,920 --> 00:06:25,330
+So this purple Let's see.
+
+99
+00:06:25,380 --> 00:06:26,970
+Which one are you.
+
+100
+00:06:26,970 --> 00:06:30,320
+Purple is Jamaican slash and reggae.
+
+101
+00:06:30,360 --> 00:06:36,720
+And if we go and unfortunately the zoom is kind of annoying but if I had zoom in you can see.
+
+102
+00:06:36,870 --> 00:06:37,140
+All right.
+
+103
+00:06:37,140 --> 00:06:43,600
+So there's dub and then we hover over dub and you can see all of its connections to other nodes.
+
+104
+00:06:43,800 --> 00:06:52,020
+For example it connects to old school rap pioneers or if we look at deep funk and new funk it has some
+
+105
+00:06:52,020 --> 00:06:56,300
+connections over to freestyle and break dance on the right in red.
+
+106
+00:06:56,550 --> 00:06:59,430
+Or too early funk and funk.
+
+107
+00:06:59,620 --> 00:07:05,700
+Anyway this is a fun Web site to check out but this is a graph structure at its core storing modeling
+
+108
+00:07:05,700 --> 00:07:08,090
+the relationships between genres.
+
+109
+00:07:08,100 --> 00:07:13,880
+This one also has an added dimension though of time I believe as things developed.
+
+110
+00:07:14,250 --> 00:07:21,570
+You can see that down here are the more recent trend up top are the older types of music so you can
+
+111
+00:07:21,570 --> 00:07:27,730
+see like classical it's over here and what is this folk music is here anyway.
+
+112
+00:07:27,820 --> 00:07:29,560
+So graphs are really commonly used.
+
+113
+00:07:29,570 --> 00:07:35,230
+They're sort of exciting I think to know about and the next thing we need to do now that we have established
+
+114
+00:07:35,290 --> 00:07:40,090
+the base definition it's a bunch of nodes with connections between them and there's not a pattern like
+
+115
+00:07:40,090 --> 00:07:42,700
+there is for a tree or for a linked list.
+
+116
+00:07:42,750 --> 00:07:46,740
+There's sort of freeform and just nodes with connections.
+
+117
+00:07:46,860 --> 00:07:52,330
+What we need to do next is talk about different types of graphs and also a little terminology so that
+
+118
+00:07:52,330 --> 00:07:56,630
+we understand the type that we're going to implement which we're going to get to very shortly.
+
+119
+00:07:56,650 --> 00:07:57,340
+That's coming up.
+

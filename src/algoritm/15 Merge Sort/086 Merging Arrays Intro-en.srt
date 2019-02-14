@@ -1,0 +1,376 @@
+1
+00:00:00,210 --> 00:00:01,440
+Hey again welcome back.
+
+2
+00:00:01,440 --> 00:00:07,920
+So this is the first part of writing merge sort which is writing a function to merge two sorted arrays.
+
+3
+00:00:07,980 --> 00:00:14,130
+So again we have we assume the arrays are sorted and all you have to do is return the combination of
+
+4
+00:00:14,130 --> 00:00:16,010
+those two sorted arrays.
+
+5
+00:00:16,290 --> 00:00:18,380
+So for example I already have it written here.
+
+6
+00:00:18,510 --> 00:00:24,520
+Well I'm not showing you the code but I have the function call here two sorted arrays one 10:52 that
+
+7
+00:00:24,550 --> 00:00:26,850
+sorted two 14:19 in one hundred.
+
+8
+00:00:26,850 --> 00:00:29,420
+That's sorted when I run this I merge them together.
+
+9
+00:00:29,460 --> 00:00:33,590
+We get one to 10 14:15 ninety nine one hundred.
+
+10
+00:00:33,630 --> 00:00:35,490
+So one array that is returned.
+
+11
+00:00:35,700 --> 00:00:38,910
+So that's basically your job if you want to try and do this on your own.
+
+12
+00:00:38,940 --> 00:00:40,840
+I'll have a solution in the next video.
+
+13
+00:00:40,920 --> 00:00:42,470
+This part as well.
+
+14
+00:00:42,630 --> 00:00:47,130
+Personally I always hate saying if something's hard or easy but I think the logic for this one makes
+
+15
+00:00:47,130 --> 00:00:47,650
+sense.
+
+16
+00:00:47,670 --> 00:00:51,320
+We'll walk through it though I have pseudo code so I jumped the gun on my slides.
+
+17
+00:00:51,750 --> 00:00:52,060
+Yes.
+
+18
+00:00:52,080 --> 00:00:56,690
+It's useful to first implement a function responsible for merging two sorted a race given to sort of
+
+19
+00:00:56,700 --> 00:01:00,570
+arrays the helper function could create a new one which is also sorted.
+
+20
+00:01:00,570 --> 00:01:04,760
+And yeah it's important need to consist of all the elements in the two input arrays.
+
+21
+00:01:04,800 --> 00:01:07,540
+So what do we do if they're not the same size.
+
+22
+00:01:07,620 --> 00:01:08,430
+We'll cover that.
+
+23
+00:01:08,730 --> 00:01:14,070
+And as far as how it should work this is something we haven't seen but it should run an O of and plus
+
+24
+00:01:14,130 --> 00:01:16,380
+M time and and plus M space.
+
+25
+00:01:16,380 --> 00:01:22,380
+So N and M We have two inputs now to our function one array and then the second array.
+
+26
+00:01:22,380 --> 00:01:24,230
+So N is the size of the first one.
+
+27
+00:01:24,250 --> 00:01:25,850
+Amice the size of the second one.
+
+28
+00:01:25,890 --> 00:01:31,350
+Of course those are two that sound very similar and you probably can't tell what I'm saying and am but
+
+29
+00:01:31,380 --> 00:01:32,890
+that's the standard way of saying it.
+
+30
+00:01:33,030 --> 00:01:39,660
+Of writing it down so that just means that if n grows super large but M doesn't grow very large it should
+
+31
+00:01:39,660 --> 00:01:43,790
+just be 0 of and plus M often and usually and merge sort.
+
+32
+00:01:43,790 --> 00:01:48,450
+They are the exact same size or one element different in real life.
+
+33
+00:01:48,450 --> 00:01:52,650
+But if we are working with something and for some reason we're merging an array of a thousand items
+
+34
+00:01:52,650 --> 00:01:56,200
+with an array of a million items it should be and plus.
+
+35
+00:01:56,250 --> 00:01:58,070
+So as that one grows anyway.
+
+36
+00:01:58,230 --> 00:02:02,070
+All I'm saying is that you should visit each item in the array one time.
+
+37
+00:02:02,220 --> 00:02:06,810
+Right if it was just 0 of N that means that you're going to it's linear time you visit each item once
+
+38
+00:02:06,810 --> 00:02:07,920
+you iterate over it.
+
+39
+00:02:08,280 --> 00:02:13,990
+But if it's 0 of any place and that means that we're iterating over each item and each array once.
+
+40
+00:02:14,040 --> 00:02:15,520
+So here's the pseudo code.
+
+41
+00:02:15,600 --> 00:02:16,650
+Create an empty array.
+
+42
+00:02:16,650 --> 00:02:18,620
+So defined a function takes two inputs.
+
+43
+00:02:18,720 --> 00:02:23,820
+Create an empty array that you'll return at the end and then you start with the smallest values in each
+
+44
+00:02:23,820 --> 00:02:25,350
+input array started the beginning.
+
+45
+00:02:25,500 --> 00:02:29,300
+So have two counters one called I one called J.
+
+46
+00:02:29,310 --> 00:02:31,190
+I recommend using while loops for this.
+
+47
+00:02:31,200 --> 00:02:35,610
+Personally that's what I'd like to do and you need to have one that starts out they both need to start
+
+48
+00:02:35,610 --> 00:02:36,000
+at zero.
+
+49
+00:02:36,000 --> 00:02:41,860
+J and I are two numbers started to Europe while there are still values we haven't looked at.
+
+50
+00:02:41,860 --> 00:02:48,340
+Meaning while I and J both haven't hit the end of their respective arrays we're going to take the value
+
+51
+00:02:48,340 --> 00:02:53,920
+of the first array of the first item and then compare that to the value of the first item in the second
+
+52
+00:02:53,920 --> 00:02:55,030
+array.
+
+53
+00:02:55,030 --> 00:03:01,390
+Now if the first item is smaller we put that in our result array and then we move on to the next item
+
+54
+00:03:01,450 --> 00:03:02,460
+in the first row.
+
+55
+00:03:02,800 --> 00:03:03,870
+If it's the other way around.
+
+56
+00:03:03,970 --> 00:03:08,660
+If the first array is larger the item in the first array than the value in our second array.
+
+57
+00:03:08,740 --> 00:03:13,630
+We take the value from the second array and put that in the results and move on to the next value in
+
+58
+00:03:13,630 --> 00:03:14,380
+the second array.
+
+59
+00:03:14,540 --> 00:03:19,790
+And then once we finish one array we just push all the remaining values from the other array in.
+
+60
+00:03:19,840 --> 00:03:25,180
+So for example if we took these two we just write them down here.
+
+61
+00:03:25,180 --> 00:03:29,680
+These are two arrays and then this is my result that I'm going to return.
+
+62
+00:03:29,680 --> 00:03:31,790
+We start with two counters.
+
+63
+00:03:31,810 --> 00:03:32,730
+I and J.
+
+64
+00:03:32,850 --> 00:03:35,100
+And they start at zero and zero.
+
+65
+00:03:35,650 --> 00:03:37,380
+So we compare one and two.
+
+66
+00:03:37,720 --> 00:03:38,800
+Which one is small.
+
+67
+00:03:38,870 --> 00:03:39,870
+One is.
+
+68
+00:03:39,880 --> 00:03:43,320
+So we put one here and then we move on.
+
+69
+00:03:43,330 --> 00:03:45,840
+In this first array we're now looking at 10.
+
+70
+00:03:46,120 --> 00:03:51,250
+So if I were to put a little marker here like that it's not a very great way of writing that and our
+
+71
+00:03:51,250 --> 00:03:52,580
+marker over here.
+
+72
+00:03:52,750 --> 00:03:56,170
+This is going to bite me this is going to be annoying to keep track of is too.
+
+73
+00:03:56,320 --> 00:04:00,530
+So next time through we're comparing ten into which one is smaller too.
+
+74
+00:04:00,940 --> 00:04:02,350
+So we put two in here.
+
+75
+00:04:02,620 --> 00:04:07,730
+Which means that now we need to shift this over and now we're looking at 10 and 14.
+
+76
+00:04:07,830 --> 00:04:09,000
+So now which one is smaller.
+
+77
+00:04:09,040 --> 00:04:09,820
+Ten is.
+
+78
+00:04:09,820 --> 00:04:12,910
+So we put 10 in and then we move this up.
+
+79
+00:04:12,910 --> 00:04:13,970
+Not this one.
+
+80
+00:04:14,020 --> 00:04:19,170
+Now we're looking at 14 and 50 which one is smaller 14.
+
+81
+00:04:19,240 --> 00:04:19,630
+All right.
+
+82
+00:04:19,630 --> 00:04:22,040
+So then we move this to 99.
+
+83
+00:04:22,270 --> 00:04:24,060
+And get.
+
+84
+00:04:25,600 --> 00:04:28,810
+OK 50 in 99 which wins 50 wins.
+
+85
+00:04:29,040 --> 00:04:31,940
+So then we've now exhausted that array.
+
+86
+00:04:32,340 --> 00:04:37,200
+And what that tells us if we've hit the end of this all we do is take all remaining values in this other
+
+87
+00:04:37,200 --> 00:04:41,700
+one because if this is sorted and they have to be sorted in the same way I should have mentioned that
+
+88
+00:04:42,000 --> 00:04:44,670
+we can't have one in ascending and descending.
+
+89
+00:04:45,060 --> 00:04:49,740
+They're sort of in the same rate same way whatever is at the end of this array if we have stuff that's
+
+90
+00:04:49,740 --> 00:04:55,320
+left in the other array we know for sure it's all greater than whatever that 50 in this case.
+
+91
+00:04:55,320 --> 00:05:01,670
+So now we just add in 99 and then 100 and now we have successfully merge the two arrays.
+
+92
+00:05:01,680 --> 00:05:04,660
+So that's the approach that I'd like for you to try and take.
+
+93
+00:05:04,860 --> 00:05:08,520
+Otherwise if you don't want to do it in the next video I'll just show you a solution.
+
+94
+00:05:08,550 --> 00:05:10,890
+So this is a first important step for merger.
+

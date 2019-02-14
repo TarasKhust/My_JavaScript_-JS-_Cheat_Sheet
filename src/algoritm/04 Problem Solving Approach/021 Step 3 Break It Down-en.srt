@@ -1,0 +1,488 @@
+1
+00:00:00,210 --> 00:00:00,780
+Welcome back.
+
+2
+00:00:00,810 --> 00:00:02,100
+So let's move on to part three.
+
+3
+00:00:02,100 --> 00:00:05,320
+Step three of solving a problem or at least trying to.
+
+4
+00:00:05,370 --> 00:00:06,650
+So we understand the problem.
+
+5
+00:00:06,660 --> 00:00:09,160
+We explored concrete examples.
+
+6
+00:00:09,180 --> 00:00:15,690
+Now before we start typing code I like to break it down and I actually like to do it sounds like I don't
+
+7
+00:00:15,690 --> 00:00:18,090
+start dancing in the middle of the interview.
+
+8
+00:00:18,150 --> 00:00:18,830
+I break it down.
+
+9
+00:00:18,830 --> 00:00:23,460
+I mean take the actual steps of the problem and write them down.
+
+10
+00:00:23,650 --> 00:00:27,810
+Doesn't have to full pseudo code it doesn't have to be valid you know syntax.
+
+11
+00:00:27,810 --> 00:00:32,610
+I like to do just little comments as a guide for the steps they need to take in especially in an interview
+
+12
+00:00:32,610 --> 00:00:33,340
+setting.
+
+13
+00:00:33,360 --> 00:00:38,850
+This is really important what a lot of interviewers are looking for is you know you to communicate what
+
+14
+00:00:38,850 --> 00:00:39,230
+you're doing.
+
+15
+00:00:39,240 --> 00:00:43,800
+You don't want to just start typing right away or start writing code on a white board silently with
+
+16
+00:00:43,800 --> 00:00:46,650
+your brow furrowed angrily writing code.
+
+17
+00:00:46,650 --> 00:00:50,220
+It's much better to say All right here's just the steps I'm going to try and take.
+
+18
+00:00:50,250 --> 00:00:53,650
+You know sometimes you can get a little hint you can throw in.
+
+19
+00:00:53,840 --> 00:00:58,140
+Do you think they'll work or you know does that does that sound crazy to you or could this be the right
+
+20
+00:00:58,140 --> 00:00:59,000
+way of doing it.
+
+21
+00:00:59,190 --> 00:01:01,350
+And sometimes they'll give you a little hint.
+
+22
+00:01:01,440 --> 00:01:03,670
+So breaking it down can be really important.
+
+23
+00:01:03,690 --> 00:01:07,490
+So I recommend explicitly writing out the steps that you need to take.
+
+24
+00:01:07,500 --> 00:01:11,370
+It doesn't have to be a ton of detail it doesn't have to be a line by line every line you need to write
+
+25
+00:01:11,640 --> 00:01:14,340
+just the basic components of the solution.
+
+26
+00:01:14,340 --> 00:01:19,650
+So this forces you to think about your code before you actually write it so that you're not just Freewheelin
+
+27
+00:01:19,680 --> 00:01:21,710
+and trying to come up with it on the fly.
+
+28
+00:01:21,900 --> 00:01:27,810
+And it also helps you kind of catch or figure out any lingering questions or you know parts that you're
+
+29
+00:01:27,810 --> 00:01:30,320
+scared of that you don't understand.
+
+30
+00:01:30,330 --> 00:01:33,260
+So that's why I really recommend doing this.
+
+31
+00:01:33,270 --> 00:01:37,730
+It helps you just lay out your steps and that's always nice and it helps you stay focused.
+
+32
+00:01:37,770 --> 00:01:42,400
+But also it helps you highlight the problems you might still not be confident about.
+
+33
+00:01:42,630 --> 00:01:45,690
+And then you can just dive in and start writing the code.
+
+34
+00:01:45,690 --> 00:01:47,610
+So let me show you what it looks like.
+
+35
+00:01:47,610 --> 00:01:52,210
+If I were to break down this same problem write a function which takes in a string and returns count
+
+36
+00:01:52,230 --> 00:01:53,750
+of each character in the string.
+
+37
+00:01:53,750 --> 00:01:55,890
+It's the same problem from before.
+
+38
+00:01:55,890 --> 00:01:56,150
+All right.
+
+39
+00:01:56,160 --> 00:01:59,740
+So I have a sheet of paper or a white board or whatever it is in my interview.
+
+40
+00:01:59,820 --> 00:02:06,330
+I've written down some examples and now I'm going to type up the skeleton of my function so we'll call
+
+41
+00:02:06,330 --> 00:02:10,790
+it Char count and we know that you know it accepts a string.
+
+42
+00:02:10,860 --> 00:02:16,800
+It's called as TR and then stop with the actual code and I'm going to start writing some comments.
+
+43
+00:02:16,800 --> 00:02:18,500
+We're going to break it down for myself.
+
+44
+00:02:18,720 --> 00:02:23,880
+And the simplest thing we can start with is just do something and then add in our return value return
+
+45
+00:02:23,880 --> 00:02:28,060
+an object with keys that are lowercase alphanumeric characters in the string.
+
+46
+00:02:28,080 --> 00:02:33,540
+So just to clarify I decided or my interviewer decided that we only need to care about alphanumeric
+
+47
+00:02:33,540 --> 00:02:35,700
+characters lowercase as well.
+
+48
+00:02:35,730 --> 00:02:39,570
+So that means you know in this example your PIN number is 1 2 3 4.
+
+49
+00:02:39,660 --> 00:02:45,570
+We are keeping track of the numbers and we are keeping track of all letters but only lowercase them
+
+50
+00:02:45,750 --> 00:02:48,230
+so p i n pin.
+
+51
+00:02:48,330 --> 00:02:55,190
+We're going to keep that you know one lowercase P to lower case I's this one here and this one here.
+
+52
+00:02:55,260 --> 00:02:55,750
+OK.
+
+53
+00:02:56,100 --> 00:02:59,060
+So we could start with something simple like this.
+
+54
+00:02:59,130 --> 00:03:01,170
+Put our return value down there.
+
+55
+00:03:01,770 --> 00:03:05,100
+I'm going to duplicate this and expand upon it.
+
+56
+00:03:05,100 --> 00:03:08,040
+So if we think about the actual steps of what we want to do.
+
+57
+00:03:08,280 --> 00:03:12,420
+Well we're going to need to do something once for every character in the string.
+
+58
+00:03:12,420 --> 00:03:12,840
+Right.
+
+59
+00:03:12,850 --> 00:03:15,660
+We're going to go over it at some point.
+
+60
+00:03:15,660 --> 00:03:19,940
+We also need to make an object that we're going to return at the very end.
+
+61
+00:03:19,950 --> 00:03:23,010
+Right that one simple we need to make the thing that we're going to return.
+
+62
+00:03:23,010 --> 00:03:24,930
+We need to return it at the end.
+
+63
+00:03:25,050 --> 00:03:31,050
+But the bulk of the logic involves looping over every character in our string and doing something.
+
+64
+00:03:31,110 --> 00:03:37,030
+So I might start let's get rid of this and simplify this a bit.
+
+65
+00:03:37,080 --> 00:03:43,970
+I would start with something like make object to return and then after that I would do no loop over
+
+66
+00:03:43,980 --> 00:03:50,330
+string and we'll come back and fill in the detail and then return object at.
+
+67
+00:03:50,330 --> 00:03:56,680
+And so now we have the very basic steps and we can you know fill in the blanks.
+
+68
+00:03:56,730 --> 00:04:00,210
+But looping over string is definitely the bulk of our logic.
+
+69
+00:04:00,240 --> 00:04:01,700
+So what do we need to do.
+
+70
+00:04:01,920 --> 00:04:06,600
+Well if we loop over the string we know that we're going to need to look at each character and let's
+
+71
+00:04:06,600 --> 00:04:10,300
+start with why we're going to need to look at why and lowercase.
+
+72
+00:04:10,380 --> 00:04:13,310
+So we know we could lowercase the entire string at the beginning.
+
+73
+00:04:13,310 --> 00:04:14,250
+That's one option.
+
+74
+00:04:14,550 --> 00:04:16,570
+Or we can lowercase each character as we go.
+
+75
+00:04:16,650 --> 00:04:21,290
+But we're going to start by taking a look at this character and what do we do we check.
+
+76
+00:04:21,390 --> 00:04:27,570
+Well are there any in our object are ready and technically it's going to start out empty so there's
+
+77
+00:04:27,570 --> 00:04:28,410
+nothing in there.
+
+78
+00:04:28,410 --> 00:04:32,640
+So then we would add why instead it's count to 1.
+
+79
+00:04:32,790 --> 00:04:37,040
+But if there already was a y in that object then we would add 1 to it.
+
+80
+00:04:37,290 --> 00:04:44,820
+So that's really the logic loop over string for each character.
+
+81
+00:04:44,820 --> 00:04:57,280
+Then we'll do something like if I'll just do char is in our object let's say is a key in Object add
+
+82
+00:04:57,280 --> 00:05:07,380
+one to count if the character is not in our object at it and set value to one.
+
+83
+00:05:07,840 --> 00:05:14,890
+So that makes sense although this isn't accounting for the fact that we only care about alphanumeric
+
+84
+00:05:15,220 --> 00:05:20,010
+characters so the spaces we're not going to add in the exclamation point we won't add.
+
+85
+00:05:20,010 --> 00:05:21,650
+And so we should clarify that.
+
+86
+00:05:21,730 --> 00:05:29,530
+We should say if the character is a number slash a letter and is a key and or object I'd want to count
+
+87
+00:05:29,860 --> 00:05:31,650
+if the character is a.
+
+88
+00:05:31,720 --> 00:05:34,690
+Slash letter and not in our object.
+
+89
+00:05:34,690 --> 00:05:43,600
+Add it to the object and set value to one and then Otherwise we'll say like if character is something
+
+90
+00:05:43,600 --> 00:05:50,040
+else a space period etc. don't do anything.
+
+91
+00:05:50,560 --> 00:05:53,590
+And then at the very end we return our object.
+
+92
+00:05:53,590 --> 00:05:55,720
+So we make our object at the beginning.
+
+93
+00:05:55,720 --> 00:05:57,900
+Then we go character by character.
+
+94
+00:05:58,060 --> 00:05:59,360
+We have our main logic.
+
+95
+00:05:59,380 --> 00:06:06,280
+It will just be a loop probably a for loop and then we'll take each character look at it make sure check
+
+96
+00:06:06,310 --> 00:06:07,450
+is it alphanumeric.
+
+97
+00:06:07,480 --> 00:06:12,050
+Is it a number or letter if it is then we will add it into our object.
+
+98
+00:06:12,190 --> 00:06:19,210
+And that means either incrementing an existing part of an object or adding into the object and setting
+
+99
+00:06:19,210 --> 00:06:20,760
+its value to one.
+
+100
+00:06:20,920 --> 00:06:23,170
+And if it's not alphanumeric we just don't do anything.
+
+101
+00:06:23,170 --> 00:06:27,830
+So we build up our object one character at a time and then we return it at the very end.
+
+102
+00:06:28,230 --> 00:06:34,390
+And now that we have these basic steps we can now go fill in the blanks and I highly recommend you know
+
+103
+00:06:34,390 --> 00:06:35,740
+this is a simpler problem.
+
+104
+00:06:35,740 --> 00:06:40,150
+Some of you probably could have a lot of you probably could solve this without having to do any of this
+
+105
+00:06:40,210 --> 00:06:45,220
+you know pseudo code and this isn't even full pseudo code but just writing these comments out.
+
+106
+00:06:45,280 --> 00:06:51,220
+But for more complicated problems it really can be a lifesaver because if you write out the steps especially
+
+107
+00:06:51,220 --> 00:06:55,480
+in an interview you write out the steps you know what you need to do even if you're not sure how to
+
+108
+00:06:55,480 --> 00:06:56,370
+accomplish it.
+
+109
+00:06:56,380 --> 00:07:01,870
+It demonstrates to your interviewer that you at least have formulated an approach and if you run out
+
+110
+00:07:01,870 --> 00:07:07,100
+of time and you only get halfway there but you have to lay out for what you would have done.
+
+111
+00:07:07,120 --> 00:07:11,890
+So like if we stopped here for example this is a short problem but say this is where we ran out of time.
+
+112
+00:07:11,920 --> 00:07:13,810
+Everything is implemented in code.
+
+113
+00:07:13,960 --> 00:07:18,800
+If we have these notes down here our interviewer could see that we knew where we were going or we had
+
+114
+00:07:18,800 --> 00:07:24,530
+a general idea and that can often make the difference in demonstrating that you know are competent.
+
+115
+00:07:25,000 --> 00:07:26,490
+Even if you don't finish the problem.
+
+116
+00:07:26,530 --> 00:07:31,090
+I've seen many people get jobs who didn't you know they thought that they failed the interview because
+
+117
+00:07:31,090 --> 00:07:32,160
+they didn't finish the problem.
+
+118
+00:07:32,170 --> 00:07:34,660
+They didn't have the right return value at the end.
+
+119
+00:07:34,660 --> 00:07:39,880
+But often these problems are made to be so difficult or so time consuming that you're not supposed to
+
+120
+00:07:39,880 --> 00:07:40,260
+finish.
+
+121
+00:07:40,270 --> 00:07:42,500
+And it's really about seeing your process.
+
+122
+00:07:42,550 --> 00:07:44,790
+So that's what all of this is about the process.
+

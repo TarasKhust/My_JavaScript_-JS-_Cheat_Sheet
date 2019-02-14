@@ -1,0 +1,548 @@
+1
+00:00:00,210 --> 00:00:01,580
+All right welcome back.
+
+2
+00:00:01,590 --> 00:00:04,460
+So let's start by defining our Nope not in caps.
+
+3
+00:00:04,620 --> 00:00:09,750
+Our function called pivot and it accepts an array we have a start.
+
+4
+00:00:09,750 --> 00:00:11,220
+And you can go back and look at the pseudo code.
+
+5
+00:00:11,220 --> 00:00:13,410
+It should default to 0 and an end.
+
+6
+00:00:13,410 --> 00:00:17,230
+Defaults to arrayed at length plus 1.
+
+7
+00:00:17,340 --> 00:00:19,360
+And then here's my sample call.
+
+8
+00:00:19,590 --> 00:00:25,500
+So pivot of this take a moment and figure out what you think this should return positive you'd like
+
+9
+00:00:25,880 --> 00:00:31,530
+but it should return is the index 3 because it's going to take this first item which is 4 as our pivot
+
+10
+00:00:31,860 --> 00:00:34,340
+and figure out the correct index that it should be in.
+
+11
+00:00:34,500 --> 00:00:41,420
+So if we look at the sorted array like this this is the final array of these numbers.
+
+12
+00:00:41,430 --> 00:00:46,660
+This will not be returned from this but from our eventual quicksort it will be.
+
+13
+00:00:46,920 --> 00:00:51,090
+If you look at where 4 is that index of 0 1 2 3.
+
+14
+00:00:51,150 --> 00:00:54,650
+So our code should return the index of 3.
+
+15
+00:00:54,690 --> 00:01:00,330
+Now the array it could look like this at the end but more than likely it will look like this possibly.
+
+16
+00:01:00,360 --> 00:01:04,800
+And then on this side we might have 8 6 7 5.
+
+17
+00:01:05,250 --> 00:01:09,210
+All that matters is that four is in the correct spot.
+
+18
+00:01:09,210 --> 00:01:11,430
+So anything on the left just needs to be lower.
+
+19
+00:01:11,430 --> 00:01:14,000
+Anything on the right is greater but the order doesn't matter.
+
+20
+00:01:14,120 --> 00:01:18,960
+So the first thing we'll do is to find a variable called pivot and remember that our example we're starting
+
+21
+00:01:18,960 --> 00:01:21,120
+with the pivot always that's the first element.
+
+22
+00:01:21,120 --> 00:01:24,920
+So if start defaults zero will set this to be a array of start.
+
+23
+00:01:24,960 --> 00:01:31,000
+So we start with four for example as our pivot or if our array looks like this it would be 10.
+
+24
+00:01:31,560 --> 00:01:35,870
+So we start with that and then we're going to make a variable called Swap index.
+
+25
+00:01:35,880 --> 00:01:41,060
+Now swap index is going to keep track of where we're going to swap this for you at the very end.
+
+26
+00:01:41,190 --> 00:01:43,270
+And also is what we're going to return.
+
+27
+00:01:43,290 --> 00:01:44,990
+This is going to be the index.
+
+28
+00:01:45,120 --> 00:01:46,520
+In our case it should be 3.
+
+29
+00:01:46,520 --> 00:01:48,880
+Hopefully at the very end that we return.
+
+30
+00:01:49,260 --> 00:01:52,490
+So I'm going to start it at the beginning index of zero.
+
+31
+00:01:52,800 --> 00:01:54,230
+So it starts at zero.
+
+32
+00:01:54,660 --> 00:02:00,660
+Now we need to loop over every item in this array but there's no reason to loop over this first one
+
+33
+00:02:00,930 --> 00:02:02,540
+and compare it to itself.
+
+34
+00:02:02,550 --> 00:02:04,900
+So let's loop over everything after start.
+
+35
+00:02:05,010 --> 00:02:07,910
+So that means four of our equals instead of zero.
+
+36
+00:02:08,070 --> 00:02:14,180
+Let's do start plus one is less than a length I plus plus.
+
+37
+00:02:14,340 --> 00:02:20,840
+So rather than doing for comparing it to four and then 8 just do four and start off our loop right here.
+
+38
+00:02:20,850 --> 00:02:23,750
+Now all we want to do is compare our pivot.
+
+39
+00:02:23,820 --> 00:02:24,840
+So that's going to be four.
+
+40
+00:02:24,840 --> 00:02:32,300
+So if pivot is greater then we want to compare it to array of I.
+
+41
+00:02:32,340 --> 00:02:33,880
+The next element that we're looking at.
+
+42
+00:02:33,930 --> 00:02:36,960
+So our first time through is for greater than 8.
+
+43
+00:02:37,200 --> 00:02:37,720
+No.
+
+44
+00:02:37,950 --> 00:02:43,860
+So we're not going to do anything next time through though we're comparing four and now I had gone up
+
+45
+00:02:44,010 --> 00:02:45,320
+to the index of two.
+
+46
+00:02:45,420 --> 00:02:47,950
+So we compare four in the value of two.
+
+47
+00:02:48,300 --> 00:02:50,180
+Four is greater than two.
+
+48
+00:02:50,190 --> 00:02:54,380
+So what we're going to do is increment swap index by 1.
+
+49
+00:02:54,720 --> 00:03:00,680
+So this tells us OK there is one thing at least so far that is less than our pivot.
+
+50
+00:03:00,990 --> 00:03:08,190
+But then we're also going to swap two with 8 because our swap Index is one.
+
+51
+00:03:08,280 --> 00:03:15,360
+All we have to do is swap array of I with array of swap indexes that make sense or swap index was zero.
+
+52
+00:03:15,360 --> 00:03:18,160
+Now we found the first item that is less than four.
+
+53
+00:03:18,390 --> 00:03:23,880
+So we increment the counter that's keeping track of how many things to less than for where we moving
+
+54
+00:03:24,020 --> 00:03:27,630
+forward to at the very end it's equal to 1 anyway.
+
+55
+00:03:27,780 --> 00:03:28,920
+Now we need to swap.
+
+56
+00:03:28,920 --> 00:03:32,610
+So now what I'm going to do is just copy in any swap function.
+
+57
+00:03:32,670 --> 00:03:34,320
+This is our basic one.
+
+58
+00:03:34,410 --> 00:03:39,140
+It just takes an array and then two indices and it swaps the values in that array.
+
+59
+00:03:39,510 --> 00:03:43,320
+And I'm going to put it in a function because we're going to actually use it more than once in our code.
+
+60
+00:03:43,440 --> 00:03:44,720
+So we're actually almost there.
+
+61
+00:03:44,940 --> 00:03:49,110
+What we're going to do now is swap the array inside of it.
+
+62
+00:03:49,110 --> 00:03:52,900
+The swap index followed by I.
+
+63
+00:03:53,310 --> 00:03:59,090
+So our first time through the first swap we make is 2 which is indebt which is I of two actually the
+
+64
+00:03:59,090 --> 00:04:04,410
+same number and then we're going to swap it with swapped index which is one.
+
+65
+00:04:04,500 --> 00:04:04,740
+OK.
+
+66
+00:04:04,740 --> 00:04:06,810
+So then we repeat the code.
+
+67
+00:04:06,810 --> 00:04:08,750
+Next time through we compare four and one.
+
+68
+00:04:08,910 --> 00:04:11,930
+Well one is still less than four.
+
+69
+00:04:11,970 --> 00:04:14,720
+So this time we increment swap index again.
+
+70
+00:04:14,810 --> 00:04:22,860
+So swap index is now two and then we're going to swap the item an index of two with the item index of
+
+71
+00:04:22,940 --> 00:04:27,310
+it which means we're going to swap one with the idon the tier which is actually 8.
+
+72
+00:04:27,330 --> 00:04:32,580
+So if I were to visualize this whole thing you start off like this.
+
+73
+00:04:32,800 --> 00:04:39,610
+And the next time through we don't do anything for Nate but then we do swap two and eights like that.
+
+74
+00:04:39,790 --> 00:04:42,990
+And then the next time through we're comparing four and one.
+
+75
+00:04:43,020 --> 00:04:45,010
+Well one is less than four.
+
+76
+00:04:45,390 --> 00:04:50,210
+So we swap one in eight like this.
+
+77
+00:04:50,580 --> 00:04:52,590
+And now our swap index is right here.
+
+78
+00:04:52,590 --> 00:04:56,160
+So at the end of the code if we if there was nothing less than four which there actually is.
+
+79
+00:04:56,160 --> 00:05:01,740
+But if there wasn't at the very end we're going to swap 4 and 1 and if we did that we end up with all
+
+80
+00:05:01,740 --> 00:05:03,730
+the numbers less than four on this side.
+
+81
+00:05:03,810 --> 00:05:06,380
+Ignoring the fact that we still have to account for three.
+
+82
+00:05:06,960 --> 00:05:11,730
+So we keep going and next you compare four and five nothing happens and we compare four and seven nothing
+
+83
+00:05:11,730 --> 00:05:12,120
+happens.
+
+84
+00:05:12,120 --> 00:05:13,650
+Four and six nothing happens.
+
+85
+00:05:13,650 --> 00:05:17,740
+Four and three this time three is less than four.
+
+86
+00:05:17,750 --> 00:05:25,880
+So what do we do we take three and we swap it with our swap index which was right here.
+
+87
+00:05:25,880 --> 00:05:33,940
+So now we swap eight and 3 and so we added one to our swap index which now makes it index of three which
+
+88
+00:05:33,950 --> 00:05:36,340
+are yes it also has the value of three that's confusing.
+
+89
+00:05:36,530 --> 00:05:38,350
+But this is our swap index.
+
+90
+00:05:38,360 --> 00:05:45,590
+So the very last thing we have to do after our loop is take that last swap index and swap it with the
+
+91
+00:05:45,590 --> 00:05:47,830
+start like this.
+
+92
+00:05:48,190 --> 00:05:50,510
+And now for is that the correct position.
+
+93
+00:05:50,510 --> 00:05:52,130
+So basically all that we've been doing.
+
+94
+00:05:52,220 --> 00:05:54,940
+We keep going through here and we move things over to the left.
+
+95
+00:05:54,950 --> 00:05:57,080
+We swap them anytime it's less than four.
+
+96
+00:05:57,350 --> 00:05:59,670
+But we've left four at the first position.
+
+97
+00:05:59,720 --> 00:06:04,330
+At the very end we can just swap four to the correct spot but we need to do.
+
+98
+00:06:04,390 --> 00:06:07,120
+Now if we actually just printed out array.
+
+99
+00:06:07,650 --> 00:06:11,240
+I think this would make it clear for us.
+
+100
+00:06:11,390 --> 00:06:15,770
+You can see here we start off I'm only printing it out when we do the swaps.
+
+101
+00:06:15,770 --> 00:06:18,690
+But you can see the final state is this.
+
+102
+00:06:18,950 --> 00:06:24,050
+And then we need to do our final swap move four and three swap them and then we need to return that
+
+103
+00:06:24,080 --> 00:06:26,110
+index of swap index.
+
+104
+00:06:26,120 --> 00:06:31,700
+So let's come down here after the loop and add in our final swap which is in the start the pseudo code
+
+105
+00:06:31,700 --> 00:06:34,190
+swap the starting element with the pivot index.
+
+106
+00:06:34,190 --> 00:06:37,610
+So we just do swap which again is coming from here.
+
+107
+00:06:38,060 --> 00:06:39,340
+And what are we going to swap.
+
+108
+00:06:39,410 --> 00:06:42,130
+We're going to swap the array.
+
+109
+00:06:42,170 --> 00:06:47,090
+Start and then swap index.
+
+110
+00:06:47,220 --> 00:06:54,490
+So we're not swapping the pivot because pivot is the value the start is the index of that pivot.
+
+111
+00:06:55,050 --> 00:06:58,070
+So this is kind of a headache to try and walk through.
+
+112
+00:06:58,070 --> 00:07:01,320
+Totally recognize that but let's just make sure it works first.
+
+113
+00:07:01,380 --> 00:07:04,950
+We need to return at the very end swap index.
+
+114
+00:07:04,950 --> 00:07:08,460
+Remember that's the whole point is to return the swap index.
+
+115
+00:07:08,550 --> 00:07:11,070
+We run it it returns three.
+
+116
+00:07:11,550 --> 00:07:18,120
+And if we start off with a different number like nine here returns 8 because nine the correct location
+
+117
+00:07:18,120 --> 00:07:21,010
+is at the very end of the array of index of 8.
+
+118
+00:07:21,060 --> 00:07:22,430
+So go back to 4.
+
+119
+00:07:22,920 --> 00:07:29,010
+So we get three if we don't log the array at the very end you should see four is in the correct spot.
+
+120
+00:07:29,010 --> 00:07:31,960
+All the lower numbers are before it all the greater numbers are after it.
+
+121
+00:07:32,070 --> 00:07:33,690
+So that's our pivot helper.
+
+122
+00:07:33,690 --> 00:07:34,750
+So that kind of a lot of work.
+
+123
+00:07:34,800 --> 00:07:39,530
+So now that we have that done we need to move on to the actual sorting part.
+
+124
+00:07:39,540 --> 00:07:41,180
+We're doing this one time.
+
+125
+00:07:41,340 --> 00:07:46,650
+We need to repeat this on the left side and then on the right side and then repeat that and repeat that
+
+126
+00:07:46,680 --> 00:07:48,890
+until we hit the one item race.
+
+127
+00:07:48,930 --> 00:07:49,660
+So we'll get there.
+
+128
+00:07:49,810 --> 00:07:50,990
+Oh and before I forget.
+
+129
+00:07:51,090 --> 00:07:57,990
+Here is the E.S. 2015 version where we just use our fancier version of swap and I use LET instead of
+
+130
+00:07:57,990 --> 00:07:59,190
+far and that's pretty much it.
+
+131
+00:07:59,210 --> 00:08:00,580
+It's the same exact logic.
+
+132
+00:08:00,630 --> 00:08:01,510
+It still works.
+
+133
+00:08:01,530 --> 00:08:02,760
+We still get three.
+
+134
+00:08:03,060 --> 00:08:04,740
+So I'll leave them both in there.
+
+135
+00:08:04,890 --> 00:08:06,780
+You can use the one you prefer.
+
+136
+00:08:06,780 --> 00:08:06,990
+All right.
+
+137
+00:08:06,990 --> 00:08:07,940
+Next to a quick sort.
+

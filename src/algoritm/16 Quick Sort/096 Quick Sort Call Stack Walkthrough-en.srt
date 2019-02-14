@@ -1,0 +1,276 @@
+1
+00:00:00,120 --> 00:00:00,390
+All right.
+
+2
+00:00:00,390 --> 00:00:06,280
+So Leslie let's just step through the call stack visualizing what actually happens with the chrome debugger.
+
+3
+00:00:06,300 --> 00:00:12,600
+So I have a simpler array with six elements in it and all that we're going to do is execute it so I
+
+4
+00:00:12,600 --> 00:00:16,170
+put my breakpoint command center and I'm going to step through it.
+
+5
+00:00:16,170 --> 00:00:23,520
+So first up at the beginning this is our array left is 0 5 right is 5 and the the last index.
+
+6
+00:00:23,520 --> 00:00:24,710
+That makes sense.
+
+7
+00:00:24,720 --> 00:00:31,680
+So now we're going to because left this is less than right we're going to call pivot from 0 to 5 on
+
+8
+00:00:31,680 --> 00:00:32,450
+that array.
+
+9
+00:00:32,820 --> 00:00:41,490
+So we have to pivot and at the end a fast forwarded we get to swap index is two which has returned and
+
+10
+00:00:41,490 --> 00:00:47,250
+the array now looks like this where four is an index of two and two in one urn to the left of it and
+
+11
+00:00:47,250 --> 00:00:49,260
+six and five are to the right of it.
+
+12
+00:00:49,260 --> 00:00:53,110
+So we return that then we get to this line.
+
+13
+00:00:53,280 --> 00:00:55,390
+So we have pivot indexes now too.
+
+14
+00:00:55,400 --> 00:00:58,320
+We just calculated that and the array looks different.
+
+15
+00:00:58,360 --> 00:01:00,940
+And now we're going to do quick sort of this array.
+
+16
+00:01:01,210 --> 00:01:04,290
+But from the left until pivot index minus 1.
+
+17
+00:01:04,290 --> 00:01:10,140
+So if you watch the call stack there's a new call of quicksort on top of it but left to zero and right
+
+18
+00:01:10,170 --> 00:01:11,430
+is 1.
+
+19
+00:01:11,460 --> 00:01:14,560
+So now we're looking at these two items.
+
+20
+00:01:14,560 --> 00:01:23,510
+And so we do the same thing we find the pivot pivot index is 1 so we return 1 and then we move on.
+
+21
+00:01:24,790 --> 00:01:30,670
+And there's a new quicksort has been added this time we're going from zero to zero of this array which
+
+22
+00:01:30,670 --> 00:01:32,380
+now left is not less than right.
+
+23
+00:01:32,380 --> 00:01:34,090
+So what does that mean.
+
+24
+00:01:34,090 --> 00:01:36,470
+It means that we return the array.
+
+25
+00:01:36,550 --> 00:01:44,380
+So now this is the array that gets returned back to the previous quick sort which is waiting for this
+
+26
+00:01:44,380 --> 00:01:45,670
+side the right side.
+
+27
+00:01:45,670 --> 00:01:47,980
+So now the array looks like this one two and four.
+
+28
+00:01:47,980 --> 00:01:49,170
+The left side is sorted.
+
+29
+00:01:49,300 --> 00:01:52,760
+So this quicksort is now waiting to do the right set.
+
+30
+00:01:53,080 --> 00:01:55,570
+So pivot Index is one.
+
+31
+00:01:55,930 --> 00:02:00,000
+So this quicksort is the second part it's the right side.
+
+32
+00:02:00,010 --> 00:02:03,570
+So when we did these two elements we did the left.
+
+33
+00:02:03,610 --> 00:02:08,050
+Now we do the right thing is if there is no right because right is less than left.
+
+34
+00:02:08,050 --> 00:02:15,230
+So all that is returned is the array again as you'll see it's unchanged 1 2 4 6 9 5.
+
+35
+00:02:15,400 --> 00:02:20,940
+We go back to an earlier quicksort that was waiting and this time.
+
+36
+00:02:21,150 --> 00:02:22,110
+Here we go.
+
+37
+00:02:22,370 --> 00:02:25,150
+And now we're sorting the right half.
+
+38
+00:02:25,180 --> 00:02:27,990
+So pivot indexes has which is right here.
+
+39
+00:02:28,570 --> 00:02:35,120
+And we're going to call sort of sort the array from that pivot index plus 1 meaning index of three.
+
+40
+00:02:35,260 --> 00:02:38,530
+Up until this the end.
+
+41
+00:02:38,530 --> 00:02:41,490
+So here we go we call it and you can see that.
+
+42
+00:02:41,500 --> 00:02:45,520
+Now this time around left is three and right is five.
+
+43
+00:02:45,520 --> 00:02:47,010
+Now we find the new pivot.
+
+44
+00:02:47,080 --> 00:02:49,860
+We find that the pivot index is forward.
+
+45
+00:02:50,170 --> 00:02:52,350
+This is what the array looks like now.
+
+46
+00:02:52,870 --> 00:02:55,600
+So we found that 6 was our pivot.
+
+47
+00:02:55,600 --> 00:02:56,760
+We put five left.
+
+48
+00:02:56,800 --> 00:02:57,900
+Nine is on the right.
+
+49
+00:02:57,910 --> 00:02:59,760
+We return the value of four.
+
+50
+00:03:00,190 --> 00:03:05,770
+So back here we now have a new pivot index of four and we're going to take that index.
+
+51
+00:03:05,860 --> 00:03:07,030
+Now we're going to call quicksort.
+
+52
+00:03:07,030 --> 00:03:15,010
+On the left side which is really if you look it's from three which is the left until our index was four
+
+53
+00:03:15,010 --> 00:03:15,550
+minus one.
+
+54
+00:03:15,550 --> 00:03:18,280
+So three to three as you can see here.
+
+55
+00:03:18,310 --> 00:03:19,090
+And what does that mean.
+
+56
+00:03:19,090 --> 00:03:20,490
+Well left is less than right.
+
+57
+00:03:20,590 --> 00:03:22,650
+Notice the new quick stack on the stack.
+
+58
+00:03:23,150 --> 00:03:25,710
+Quicksort on the stack left is less than right.
+
+59
+00:03:25,750 --> 00:03:34,390
+So we are going to return that array as it is and then we get to our next one quick sort.
+
+60
+00:03:34,390 --> 00:03:41,110
+On the right side which also is going to be sorted because you'll see that left his five right S-5.
+
+61
+00:03:41,110 --> 00:03:47,830
+That means that we need to just return the array which is what we do and that takes us back to the next
+
+62
+00:03:48,040 --> 00:03:51,970
+quicksort which is waiting to return array which now has been updated.
+
+63
+00:03:51,970 --> 00:03:54,400
+So we return the array and then we're on our final.
+
+64
+00:03:54,400 --> 00:04:00,910
+This is the original call where now we have both sides have finished left and right and we're finally
+
+65
+00:04:00,910 --> 00:04:02,680
+going to return array.
+
+66
+00:04:03,060 --> 00:04:04,630
+And here's the return value.
+
+67
+00:04:04,960 --> 00:04:08,610
+And there we go 1 2 4 5 6 9.
+
+68
+00:04:08,620 --> 00:04:12,660
+Congratulations on not quitting this video early if you made it through.
+
+69
+00:04:12,780 --> 00:04:15,720
+Is a lot but that's the basics of quicksort.
+

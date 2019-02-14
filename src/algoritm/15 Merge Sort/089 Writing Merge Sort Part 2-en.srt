@@ -1,0 +1,712 @@
+1
+00:00:00,220 --> 00:00:03,200
+OK so let's get writing our own merge sort.
+
+2
+00:00:03,540 --> 00:00:06,150
+So I have a new snippet again.
+
+3
+00:00:06,270 --> 00:00:12,840
+I have our merge function that works from two videos so we can get rid of this line for now.
+
+4
+00:00:12,840 --> 00:00:17,430
+Now I'll define our merge sort function which takes a single array.
+
+5
+00:00:18,060 --> 00:00:24,840
+And if we go back to our pseudo code all that we want to do is keep splitting it up into smaller arrays
+
+6
+00:00:25,230 --> 00:00:32,430
+and calling merge sort on those arrays until they the length of the array is 1 or 0.
+
+7
+00:00:32,490 --> 00:00:37,740
+So we can start with the base case if we want if array length is less than or equal to 1.
+
+8
+00:00:37,830 --> 00:00:43,160
+We're going to return the array not array one array.
+
+9
+00:00:43,920 --> 00:00:45,850
+So right now that doesn't mean much.
+
+10
+00:00:46,140 --> 00:00:51,060
+Basically we're not doing any recursive calls remember every recursive function has a base case and
+
+11
+00:00:51,060 --> 00:00:54,610
+then the recursive case a recursive function call.
+
+12
+00:00:54,630 --> 00:01:01,800
+So we're going to call merge sort on something again but it needs to be on the two halves of the array.
+
+13
+00:01:01,800 --> 00:01:04,140
+So how do we how do we put this array in half.
+
+14
+00:01:04,140 --> 00:01:15,640
+So for example if I call merge sort down here on this array 10 for 24 76 73 72 and 1.
+
+15
+00:01:16,080 --> 00:01:17,860
+So how do we split this in half.
+
+16
+00:01:18,270 --> 00:01:22,020
+So if we just took this I recommended using slice.
+
+17
+00:01:22,020 --> 00:01:28,790
+So if I save this variable var a r r equals that how do we splice it or slice it in half.
+
+18
+00:01:28,830 --> 00:01:33,920
+Well we go from zero for the left side we go from zero until what.
+
+19
+00:01:33,930 --> 00:01:35,410
+How do we find the midpoint.
+
+20
+00:01:35,790 --> 00:01:41,040
+Well we could take the array length divided by two and then floor that.
+
+21
+00:01:41,040 --> 00:01:41,370
+All right.
+
+22
+00:01:41,380 --> 00:01:43,640
+So remember binary search we did the same thing.
+
+23
+00:01:43,950 --> 00:01:52,340
+So that's what I would do math the floor of array length by 2 and that gives us 3.
+
+24
+00:01:52,350 --> 00:01:57,090
+So then I would do array does slice from 0 to 3.
+
+25
+00:01:57,120 --> 00:02:04,370
+And that gives us the first three items and then we need to array that slice from three to what we need
+
+26
+00:02:04,390 --> 00:02:10,080
+to do just see what we can actually just do it right up slice 3 and it will go from 3 until the end.
+
+27
+00:02:10,080 --> 00:02:14,760
+That's how it works you don't have to pass in the second number if you don't want to.
+
+28
+00:02:14,760 --> 00:02:16,110
+So that will split the array.
+
+29
+00:02:16,110 --> 00:02:20,820
+That's our first step and then we'll call merge sort on each of those.
+
+30
+00:02:20,820 --> 00:02:25,480
+So let's just write that code to start so we can define the midpoint here.
+
+31
+00:02:25,560 --> 00:02:32,110
+So let midpoint or let's just call it made equal that stop flow or just the same thing we saw a radar
+
+32
+00:02:32,160 --> 00:02:35,430
+length divide by two.
+
+33
+00:02:35,430 --> 00:02:43,470
+So that gives us the halfway point then we're going to say the left side equals a dot slice from zero
+
+34
+00:02:44,100 --> 00:02:52,050
+until the midpoint and then we'll say the right side equals what the right side is going to be a great
+
+35
+00:02:52,200 --> 00:02:55,570
+slice just from midpoint until the end.
+
+36
+00:02:55,870 --> 00:02:59,600
+So now we've split that array into two pieces are missing and are here.
+
+37
+00:02:59,590 --> 00:03:00,860
+There we go.
+
+38
+00:03:00,870 --> 00:03:05,740
+Now comes the tricky part instead of just doing the left equals a right out slice.
+
+39
+00:03:05,760 --> 00:03:14,790
+I'm actually going to call merge sort array slice and same thing here merge sort right out slice until
+
+40
+00:03:14,790 --> 00:03:15,760
+the end.
+
+41
+00:03:16,320 --> 00:03:16,830
+OK.
+
+42
+00:03:16,830 --> 00:03:18,370
+So what's happening here.
+
+43
+00:03:18,420 --> 00:03:23,970
+If we called this the first time through with this array right at length is not less than or equal to
+
+44
+00:03:23,970 --> 00:03:24,270
+1.
+
+45
+00:03:24,270 --> 00:03:25,200
+So we skipped that.
+
+46
+00:03:25,200 --> 00:03:28,150
+We find the midpoint and we find left and right.
+
+47
+00:03:28,350 --> 00:03:35,580
+So if we focus on left we're calling merge sort again on this array that you can see right here.
+
+48
+00:03:35,640 --> 00:03:40,840
+So that goes through and it's called again out like this not less and equal to one.
+
+49
+00:03:40,860 --> 00:03:43,650
+So we skip that line and then we split it in half again.
+
+50
+00:03:43,770 --> 00:03:50,580
+And now we call merge sort from the left and right and then one time through one of them has the length
+
+51
+00:03:50,580 --> 00:03:51,320
+of one.
+
+52
+00:03:51,390 --> 00:03:52,490
+So we turn that array.
+
+53
+00:03:52,500 --> 00:03:55,510
+But the other one has length of two because there's three items.
+
+54
+00:03:55,590 --> 00:03:57,690
+So we call merge sort again.
+
+55
+00:03:57,960 --> 00:04:04,200
+And then at that point we have three single item arrays and now we have to worry about merging them
+
+56
+00:04:04,260 --> 00:04:05,110
+back.
+
+57
+00:04:05,520 --> 00:04:11,680
+And this is the other bit of magic we merge the left and the right.
+
+58
+00:04:11,980 --> 00:04:15,820
+So this is the code and I'm going to walk through line by line how it works we're going to step through
+
+59
+00:04:15,820 --> 00:04:23,350
+the call stack with a smaller version but let's just make sure that it's working if I execute it looks
+
+60
+00:04:23,350 --> 00:04:23,630
+good.
+
+61
+00:04:23,650 --> 00:04:27,320
+1 9 10 24 72 73 76.
+
+62
+00:04:28,030 --> 00:04:28,250
+OK.
+
+63
+00:04:28,270 --> 00:04:35,220
+Now let's call it on let's do four items and I'm going to put a breakpoint right here.
+
+64
+00:04:36,050 --> 00:04:41,990
+Now if we look at what happened just with these four items to step through it's going to run the code.
+
+65
+00:04:42,890 --> 00:04:45,880
+And when we close the console so we have more space.
+
+66
+00:04:46,430 --> 00:04:48,390
+Look at our call stack over here.
+
+67
+00:04:48,840 --> 00:04:51,800
+OK here we go on our journey.
+
+68
+00:04:51,980 --> 00:04:55,160
+So we start and merge sort is called on this array it's four items long.
+
+69
+00:04:55,160 --> 00:04:57,740
+So this first thing does not happen.
+
+70
+00:04:57,740 --> 00:05:01,530
+Then we find the midpoint which is two.
+
+71
+00:05:01,550 --> 00:05:02,540
+Now here's the first thing.
+
+72
+00:05:02,540 --> 00:05:04,590
+Watch what happens to a call stack.
+
+73
+00:05:04,790 --> 00:05:06,450
+We are recursively adding.
+
+74
+00:05:06,560 --> 00:05:09,210
+So there's another merge sort that's been added to the call stack.
+
+75
+00:05:09,320 --> 00:05:13,980
+And if you look now at this merge sort it's been called on the left half right.
+
+76
+00:05:14,090 --> 00:05:19,580
+So the left half is just 10 and 24 is the array length less than or equal to 1.
+
+77
+00:05:19,880 --> 00:05:20,520
+Nope.
+
+78
+00:05:20,780 --> 00:05:27,210
+So we skip it and what happens again we find the new midpoint which is just index which is just the
+
+79
+00:05:27,210 --> 00:05:33,830
+middle of the survey we're calling merge sort on what if we look at our stack again.
+
+80
+00:05:33,860 --> 00:05:39,360
+There we go calling merge sort on a single element 10.
+
+81
+00:05:39,360 --> 00:05:40,180
+All right.
+
+82
+00:05:40,240 --> 00:05:45,160
+Now this time rate at length is less than or equal to 1 right.
+
+83
+00:05:45,170 --> 00:05:50,740
+So we're going to return the array of 10 and you'll see it pop off the stack here.
+
+84
+00:05:51,170 --> 00:06:00,390
+Just a second return value array and it pops next.
+
+85
+00:06:00,450 --> 00:06:02,100
+We're back to this one.
+
+86
+00:06:02,160 --> 00:06:04,650
+So now we're back to we left off right here right.
+
+87
+00:06:04,650 --> 00:06:06,800
+This was this is a hard thing about recursion.
+
+88
+00:06:06,810 --> 00:06:10,160
+I wish I had a white board diagram this all up but we were waiting.
+
+89
+00:06:10,770 --> 00:06:17,030
+This function call waited for left to go all the way until it returned something and now right needs
+
+90
+00:06:17,040 --> 00:06:24,930
+to go all the way until the returns of being so right on that second half is 10 common 24 we split it
+
+91
+00:06:25,020 --> 00:06:30,410
+and the right side goes in and we get the array of 24 length is less than or equal to 1.
+
+92
+00:06:30,780 --> 00:06:38,580
+So we return array and see it pops up the call stack and just the second now we merge the left and right
+
+93
+00:06:38,900 --> 00:06:42,640
+10 and 24 and we merge them together.
+
+94
+00:06:43,140 --> 00:06:50,160
+It calls merge all this code happens and at the end of the day we end up merging.
+
+95
+00:06:50,160 --> 00:06:55,460
+And then finally returning and watch the call stack.
+
+96
+00:06:55,520 --> 00:06:56,970
+Now we pop off again.
+
+97
+00:06:57,380 --> 00:07:01,370
+Now this time we've finished left right that was waiting.
+
+98
+00:07:01,520 --> 00:07:04,030
+And this code we are waiting to merge the left side.
+
+99
+00:07:04,100 --> 00:07:05,410
+Now we need to do the right side.
+
+100
+00:07:05,600 --> 00:07:07,090
+We never even ran this line.
+
+101
+00:07:07,400 --> 00:07:13,720
+So now the right side is now going to go and if we take a look it's calling merge sort again with what
+
+102
+00:07:13,730 --> 00:07:16,830
+is it passing in just a moment ago.
+
+103
+00:07:16,850 --> 00:07:21,670
+76 and 73 so that length was not less than or equal to 1.
+
+104
+00:07:21,680 --> 00:07:22,610
+So we didn't return it.
+
+105
+00:07:22,700 --> 00:07:28,440
+So we move on now we call merge sort on the left side which gives us 76.
+
+106
+00:07:28,460 --> 00:07:31,640
+The length is less than or equal to 1.
+
+107
+00:07:31,640 --> 00:07:37,890
+So we're going to return array and you'll see it pop off that call stack go in there we go.
+
+108
+00:07:38,000 --> 00:07:41,440
+And now we're back here at merge sort for the right side.
+
+109
+00:07:41,450 --> 00:07:47,870
+It's crazy I know this is the hard part to understand but we're back here and this time we're calling
+
+110
+00:07:47,870 --> 00:07:50,660
+it was 73 or read at length less than or equal to one that's true.
+
+111
+00:07:50,660 --> 00:07:54,770
+We return that array which is 73 pops off the call stack.
+
+112
+00:07:54,770 --> 00:08:00,990
+Now what we have is left and right so left to 76 right is the array 73 we merge them together.
+
+113
+00:08:01,010 --> 00:08:11,420
+So we call back up here go through this merge them and then eventually return results which is the merged
+
+114
+00:08:11,420 --> 00:08:12,320
+array.
+
+115
+00:08:12,360 --> 00:08:19,660
+Now we returned that from this merge sort call to our original call of merge sort which was waiting.
+
+116
+00:08:19,660 --> 00:08:22,220
+So we have left and right that have now been merged.
+
+117
+00:08:22,370 --> 00:08:26,690
+Well they haven't been mercy weather excuse me they have been sorted they've been split up and sorted
+
+118
+00:08:26,690 --> 00:08:28,880
+individually and then merged.
+
+119
+00:08:28,900 --> 00:08:34,790
+Now we have two item two arrays that are two items long and we merge those together with our final merge
+
+120
+00:08:35,510 --> 00:08:41,830
+left and right now this code takes a bit longer because we've got two pieces of data for each one.
+
+121
+00:08:41,900 --> 00:08:44,100
+You can see results down here.
+
+122
+00:08:44,150 --> 00:08:47,310
+We return results to merge sort.
+
+123
+00:08:47,330 --> 00:08:55,090
+So now we have 10 24 76 73 and that is what we return out.
+
+124
+00:08:55,120 --> 00:09:00,570
+And finally I think for show the cons. We end up with that return value.
+
+125
+00:09:00,850 --> 00:09:05,140
+So as you can see it's a lot to keep track of in your own just four elements trying to keep track of
+
+126
+00:09:05,140 --> 00:09:07,130
+it all in your head can be a lot.
+
+127
+00:09:07,210 --> 00:09:12,680
+So I diagrammed it out and let's just take a look at the actual order thing happening.
+
+128
+00:09:12,700 --> 00:09:20,610
+So when we call merge sort on 10:24 76 73 first thing that happened array is this array we check is
+
+129
+00:09:20,680 --> 00:09:22,130
+the length bus some are equal to one.
+
+130
+00:09:22,150 --> 00:09:23,040
+No.
+
+131
+00:09:23,050 --> 00:09:30,070
+So we find the middle point and then we'd call merge sort on the left side from 0 until the midpoint.
+
+132
+00:09:30,460 --> 00:09:34,310
+So this is called merge sort of 10 common 24.
+
+133
+00:09:34,330 --> 00:09:41,750
+So then in that code if our list is 10 24 it's still not less than or equal to one the length.
+
+134
+00:09:41,860 --> 00:09:44,850
+So then we call merge sort again on the left.
+
+135
+00:09:45,340 --> 00:09:50,510
+And now this time the length of this array is less than or equal to 1.
+
+136
+00:09:50,740 --> 00:09:53,880
+And in that event we return array.
+
+137
+00:09:54,580 --> 00:09:56,280
+So we return 10.
+
+138
+00:09:56,480 --> 00:10:03,250
+So now this merge sort of 10 common 24 the list of two items long it now has a value for left.
+
+139
+00:10:03,580 --> 00:10:05,720
+So next it finds a value for right.
+
+140
+00:10:05,740 --> 00:10:07,240
+It was waiting for this to come back.
+
+141
+00:10:07,240 --> 00:10:10,030
+Remember now it came back so it moves on to the next line.
+
+142
+00:10:10,030 --> 00:10:17,440
+Right now would call merge sort of the right side which is 24 merge sort of 24.
+
+143
+00:10:17,500 --> 00:10:19,880
+The length of that array is less than or equal to one.
+
+144
+00:10:19,900 --> 00:10:22,260
+So it returns 24.
+
+145
+00:10:22,840 --> 00:10:26,520
+So now we have our left and we have our right.
+
+146
+00:10:26,880 --> 00:10:32,210
+So now we can move on to this line merge left come right.
+
+147
+00:10:32,230 --> 00:10:39,070
+So when we call merge left come right with 10 and 24 remember our merge function takes into sorted arrays.
+
+148
+00:10:39,340 --> 00:10:43,750
+It merges them and that returns a value which is the array.
+
+149
+00:10:43,750 --> 00:10:48,830
+10:24 Yes it was already sorted but ignore that part and our code doesn't know that.
+
+150
+00:10:49,030 --> 00:10:50,850
+So it returns a value now.
+
+151
+00:10:51,490 --> 00:10:57,750
+So that was returned from this merge sort call which was the left side of our first merge sort.
+
+152
+00:10:57,760 --> 00:11:02,980
+So now our very first merge sort was waiting and it has a side returned.
+
+153
+00:11:02,980 --> 00:11:05,380
+Now its going to do the whole right side.
+
+154
+00:11:05,710 --> 00:11:10,050
+So we call merge sort on 76 73 in that code.
+
+155
+00:11:10,180 --> 00:11:11,960
+The length is not less than or equal to 1.
+
+156
+00:11:12,130 --> 00:11:20,110
+So it computes the midpoint and then it does the left side merge sort of of 76 which that that is a
+
+157
+00:11:20,110 --> 00:11:28,300
+one item array so it returns a value 76 then this right side which was waiting we can we completed this
+
+158
+00:11:28,300 --> 00:11:28,960
+side.
+
+159
+00:11:28,960 --> 00:11:36,490
+Now we're going to merge sort the rest and that gives us 73 as a return value because it's a single
+
+160
+00:11:36,490 --> 00:11:37,930
+item array.
+
+161
+00:11:37,930 --> 00:11:40,640
+Then once again we move on to this line.
+
+162
+00:11:40,750 --> 00:11:41,800
+This was waiting.
+
+163
+00:11:41,800 --> 00:11:42,940
+Merge left and right.
+
+164
+00:11:42,970 --> 00:11:50,530
+Well now we have our left and our rights we merge them and that returns 73 Comus 76 to item array then
+
+165
+00:11:50,890 --> 00:11:52,110
+this merge sort appear.
+
+166
+00:11:52,120 --> 00:11:55,000
+Now has the left and the right that it was waiting on.
+
+167
+00:11:55,300 --> 00:11:59,160
+So it finally got this then eventually this.
+
+168
+00:11:59,260 --> 00:12:07,840
+Now it can actually merge left and right and to the left and right merge we end up with this 10:24 73
+
+169
+00:12:07,840 --> 00:12:09,260
+and 76.
+
+170
+00:12:09,310 --> 00:12:10,060
+I know it's a lot.
+
+171
+00:12:10,210 --> 00:12:12,730
+But remember I've said this a couple of times.
+
+172
+00:12:12,760 --> 00:12:17,170
+Just focus on being able to explain what's happening or walk through if you have a white board or a
+
+173
+00:12:17,170 --> 00:12:21,850
+piece of paper I think it can be really helpful to write down exactly what's in the call stack at any
+
+174
+00:12:21,850 --> 00:12:22,410
+given point.
+
+175
+00:12:22,430 --> 00:12:25,560
+And I recommend you don't try it on a super long array.
+
+176
+00:12:25,570 --> 00:12:31,230
+If you go into like six seven items it takes a lot more time and a lot more space to diagram.
+
+177
+00:12:31,270 --> 00:12:33,170
+Please don't feel too intimidated by this.
+
+178
+00:12:33,280 --> 00:12:36,820
+In the next video we'll talk about the big O of merge sort.
+

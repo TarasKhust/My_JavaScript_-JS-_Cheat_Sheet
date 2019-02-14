@@ -1,0 +1,744 @@
+1
+00:00:00,240 --> 00:00:00,990
+Welcome back.
+
+2
+00:00:01,170 --> 00:00:05,870
+So as I mentioned a couple of years ago there's more than one way of implementing a stack.
+
+3
+00:00:05,880 --> 00:00:13,080
+It's just a general idea of a data structure where we can add data in and remove data using a last in
+
+4
+00:00:13,080 --> 00:00:14,320
+first out principle.
+
+5
+00:00:14,470 --> 00:00:15,560
+Lifeso.
+
+6
+00:00:16,170 --> 00:00:20,520
+You know the last thing that's added in is the first thing we get back and I showed you how to do that
+
+7
+00:00:20,520 --> 00:00:21,580
+using an array.
+
+8
+00:00:21,720 --> 00:00:22,510
+And that works.
+
+9
+00:00:22,560 --> 00:00:27,480
+We didn't have to write any new code we didn't even defined a class we just used an array and use the
+
+10
+00:00:27,480 --> 00:00:29,550
+built in methods we get for free.
+
+11
+00:00:29,550 --> 00:00:30,560
+Nothing wrong with that.
+
+12
+00:00:30,690 --> 00:00:32,640
+I mean it's a little heavy handed.
+
+13
+00:00:32,640 --> 00:00:36,720
+We don't need you know indices for example which we get for free.
+
+14
+00:00:36,780 --> 00:00:38,550
+We don't need all the other.
+
+15
+00:00:38,550 --> 00:00:41,750
+I don't know dozen plus methods that an array comes with.
+
+16
+00:00:41,790 --> 00:00:42,900
+We don't need any of that.
+
+17
+00:00:42,900 --> 00:00:48,360
+All we really need are the methods to add and remove in a last in first out fashion.
+
+18
+00:00:48,360 --> 00:00:54,150
+So what I'm going to show you in this video is how to build our own stack class that doesn't use an
+
+19
+00:00:54,150 --> 00:00:55,140
+array at all.
+
+20
+00:00:55,170 --> 00:00:59,270
+In fact it's built kind of following the principles of a singly linked list.
+
+21
+00:00:59,370 --> 00:01:03,900
+So if you didn't watch the section on singly linked lists you should go back and check that out.
+
+22
+00:01:04,290 --> 00:01:08,790
+You could also do it with a double dealing first but I'm not going to you know do both because it's
+
+23
+00:01:08,790 --> 00:01:10,890
+a lot of time and it's very similar.
+
+24
+00:01:10,980 --> 00:01:14,490
+And if you see how it works with a single thing I still get it with a double one.
+
+25
+00:01:14,820 --> 00:01:15,310
+All right.
+
+26
+00:01:15,450 --> 00:01:22,050
+So one note when we use and learn other algorithms later on some of them use a stack and Qs which we'll
+
+27
+00:01:22,050 --> 00:01:27,630
+see in a second to help them to store data sort of to keep track of what's open process and what has
+
+28
+00:01:27,630 --> 00:01:28,890
+yet to be processed.
+
+29
+00:01:29,070 --> 00:01:33,620
+And we could use an array implementation we could use her own class to keep it short.
+
+30
+00:01:33,630 --> 00:01:35,610
+I will be using an array implementation.
+
+31
+00:01:35,640 --> 00:01:38,650
+That doesn't mean it's better though it's just easier and quicker.
+
+32
+00:01:38,850 --> 00:01:41,030
+But this is the stacks and queue section.
+
+33
+00:01:41,070 --> 00:01:46,480
+So I'm going to show you how to make sort of the best possible stack from scratch and it should work
+
+34
+00:01:46,610 --> 00:01:47,880
+look like this.
+
+35
+00:01:47,880 --> 00:01:56,460
+I should be able to initialize a new stack and there's only two methods we care about stacked up push
+
+36
+00:01:56,550 --> 00:01:57,880
+and stacked up pop.
+
+37
+00:01:57,990 --> 00:02:05,340
+So I could push something like first and get a couple more seconds notice it's returning to me the size
+
+38
+00:02:05,340 --> 00:02:06,570
+or the length of it.
+
+39
+00:02:07,320 --> 00:02:14,630
+And then I do one last one and then when I pop it should of course follow Last In First Out.
+
+40
+00:02:14,940 --> 00:02:19,220
+So it gives me fourth and then third and second then first and then no.
+
+41
+00:02:19,530 --> 00:02:20,160
+So that's it.
+
+42
+00:02:20,190 --> 00:02:25,920
+We need a class defined called stack and it needs a way of storing data.
+
+43
+00:02:26,070 --> 00:02:29,010
+So we'll have a node class as well.
+
+44
+00:02:29,010 --> 00:02:35,040
+Looks like this just like we did with full length list instead of head and tail end and length.
+
+45
+00:02:35,040 --> 00:02:40,410
+I went with the first last and size head and tail is usually reserved for length list.
+
+46
+00:02:40,410 --> 00:02:47,120
+Even though this is a subset or a special case of a length list I like to use first and last but it's
+
+47
+00:02:47,130 --> 00:02:52,830
+the same idea head and tail are just pointers there variables and then we have the Node class that has
+
+48
+00:02:52,830 --> 00:02:58,170
+a value for each node and then a pointer to the next node in the stack.
+
+49
+00:02:58,170 --> 00:03:02,540
+So at this point you might be thinking well we already built a single length list.
+
+50
+00:03:02,700 --> 00:03:05,770
+It had a bunch of other methods but it had push and pop.
+
+51
+00:03:05,820 --> 00:03:08,980
+So why not just use push and pop as they are.
+
+52
+00:03:09,420 --> 00:03:15,810
+And that could work except for one small problem which is that in a stack push and pop are supposed
+
+53
+00:03:15,810 --> 00:03:17,530
+to be constant time.
+
+54
+00:03:17,730 --> 00:03:22,800
+And if we if you remember if you didn't watch the Stingley thing for this section this probably won't
+
+55
+00:03:22,800 --> 00:03:29,760
+make sense but pop in particular was not constant time because to pop something off the end of the list
+
+56
+00:03:30,000 --> 00:03:35,870
+the way that it works we have to iterate over the entire list and stop one node before the end.
+
+57
+00:03:35,880 --> 00:03:37,390
+One note before the tail.
+
+58
+00:03:37,470 --> 00:03:38,990
+That's what this code is doing here.
+
+59
+00:03:39,150 --> 00:03:43,010
+So this is not constant time because we have to loop over the entire list.
+
+60
+00:03:43,140 --> 00:03:49,260
+So instead it's much better to use shift and unshipped except there's supposed to be called push and
+
+61
+00:03:49,260 --> 00:03:49,870
+pop.
+
+62
+00:03:49,890 --> 00:03:51,380
+So I'm going to show you.
+
+63
+00:03:51,480 --> 00:03:53,490
+I'll actually write the code but hint hint.
+
+64
+00:03:53,490 --> 00:03:59,520
+You could basically just rename shift in and shift to push and pop and call it a day.
+
+65
+00:03:59,760 --> 00:04:02,350
+But I'm going to define my own stack class right now.
+
+66
+00:04:02,460 --> 00:04:06,930
+I do have pseudo code if you want to do this on your own but I didn't want to drag it out into multiple
+
+67
+00:04:06,930 --> 00:04:07,810
+videos.
+
+68
+00:04:07,920 --> 00:04:14,420
+So basically push is going to work a little differently than push that we wrote earlier on because we're
+
+69
+00:04:14,430 --> 00:04:18,990
+going to be adding to the beginning of the list and removing from the beginning of the list instead
+
+70
+00:04:18,990 --> 00:04:21,310
+of adding to the end and removing from the end.
+
+71
+00:04:21,330 --> 00:04:22,050
+Same idea.
+
+72
+00:04:22,050 --> 00:04:27,810
+It's just that when we add and remove from the beginning it's faster it's constant time in a singly
+
+73
+00:04:27,810 --> 00:04:28,960
+linked list.
+
+74
+00:04:29,010 --> 00:04:31,860
+If we use a doubly linked list then it wouldn't really matter.
+
+75
+00:04:31,860 --> 00:04:37,810
+It would be constant time to pop as well from the end anyway so well to find a function called Push
+
+76
+00:04:38,070 --> 00:04:39,370
+and it should accept a value.
+
+77
+00:04:39,360 --> 00:04:43,120
+Create a new node with that value if there are no nodes in the stack.
+
+78
+00:04:43,170 --> 00:04:48,660
+So the first and last property to be that new node if there is at least one node create a variable that
+
+79
+00:04:48,660 --> 00:04:55,560
+stores the current first and then reset the first to be the new node and then all we need to do is connect
+
+80
+00:04:55,620 --> 00:04:56,500
+everything together.
+
+81
+00:04:56,640 --> 00:05:01,920
+So set the next property on the node to be the previously created variable and then increment the size
+
+82
+00:05:02,010 --> 00:05:03,630
+by 1.
+
+83
+00:05:03,660 --> 00:05:07,830
+So I'm going to come over here and define my first I'll do my node class.
+
+84
+00:05:08,040 --> 00:05:09,630
+So node is really simple.
+
+85
+00:05:09,720 --> 00:05:17,790
+It's copied from before we have a constructor or fastforward that looks like this value pass in.
+
+86
+00:05:17,820 --> 00:05:24,930
+We set a value equal to whatever is passed in this next starts as null then we start with our class
+
+87
+00:05:24,990 --> 00:05:30,170
+called Stack which also is really basic at the beginning doesn't take anything.
+
+88
+00:05:30,270 --> 00:05:35,500
+And instead of head and tail I'm going to set first to no last to know.
+
+89
+00:05:35,640 --> 00:05:40,830
+And then also I'm going to go with size instead of length just to differentiate it and it starts at
+
+90
+00:05:40,830 --> 00:05:41,660
+zero.
+
+91
+00:05:42,170 --> 00:05:42,710
+OK.
+
+92
+00:05:42,810 --> 00:05:45,010
+So now to push in.
+
+93
+00:05:45,060 --> 00:05:51,300
+Needs to accept avowe and then we create a new node with that value.
+
+94
+00:05:51,550 --> 00:06:00,730
+So let's just do our new node equals new node with whatever was passed in then we check if there are
+
+95
+00:06:00,730 --> 00:06:02,120
+no nodes in the stack.
+
+96
+00:06:02,230 --> 00:06:05,330
+So the first and last property to be that new node.
+
+97
+00:06:05,760 --> 00:06:12,030
+So we'll just check if there's we could check if the size is zero or just if there is no first.
+
+98
+00:06:12,310 --> 00:06:19,120
+If there's nothing at the beginning we set this up first to be the node the new node and then do the
+
+99
+00:06:19,120 --> 00:06:21,870
+same thing for the last.
+
+100
+00:06:21,880 --> 00:06:22,640
+All right.
+
+101
+00:06:22,720 --> 00:06:29,740
+So that's that next if there is at least one node create a variable that stores the current first property
+
+102
+00:06:29,740 --> 00:06:31,660
+on the stack and we can go from there.
+
+103
+00:06:31,660 --> 00:06:37,290
+So we need to have an else and I'm just going to make a variable called Temp equals this stuff.
+
+104
+00:06:37,290 --> 00:06:41,090
+First the current first because we're adding this to the beginning.
+
+105
+00:06:41,380 --> 00:06:45,770
+Then we're just going to say this first is now equal to new node.
+
+106
+00:06:46,240 --> 00:06:50,020
+And then this first dot next equals temp.
+
+107
+00:06:50,080 --> 00:06:56,160
+The old beginning and then the very last thing we need to do is increment the size of the stack by 1.
+
+108
+00:06:56,230 --> 00:07:02,020
+And I didn't actually add this in the pseudo code but I explained this earlier that it's best to return
+
+109
+00:07:02,080 --> 00:07:02,860
+the size.
+
+110
+00:07:02,950 --> 00:07:05,960
+So I'm going to do that in one line just return.
+
+111
+00:07:06,040 --> 00:07:08,690
+Plus plus this dot size.
+
+112
+00:07:08,860 --> 00:07:20,150
+And if I run my code I should be able to do var stack equals new stack and do a push.
+
+113
+00:07:20,310 --> 00:07:22,960
+Let's just push some random numbers in.
+
+114
+00:07:23,050 --> 00:07:29,050
+Looks like well we can actually tell if it's working but at this point the order of in that stack the
+
+115
+00:07:29,050 --> 00:07:32,980
+first very beginning should be 2 3 0 1.
+
+116
+00:07:33,190 --> 00:07:37,560
+And then that should point 2 to 30 and then that should point to 23.
+
+117
+00:07:37,570 --> 00:07:43,120
+So now we just need to implement pop which will remove from the beginning which again we're doing it
+
+118
+00:07:43,120 --> 00:07:44,190
+backwards.
+
+119
+00:07:44,440 --> 00:07:50,110
+Sort of counter to what we did with a singly linked list because we want constant time for adding and
+
+120
+00:07:50,110 --> 00:07:52,290
+removing for pushing and popping.
+
+121
+00:07:52,340 --> 00:07:55,960
+So now to implement Pop we're going to define a function called Pop.
+
+122
+00:07:56,230 --> 00:08:00,160
+And we're going to check if there is or if there are no nodes in the stack.
+
+123
+00:08:00,250 --> 00:08:01,930
+If it's empty return no.
+
+124
+00:08:02,110 --> 00:08:07,360
+Otherwise we're going to take whatever the first property is on the stack and store that in a variable
+
+125
+00:08:07,360 --> 00:08:09,230
+to return at the very end.
+
+126
+00:08:09,680 --> 00:08:10,180
+Whoops.
+
+127
+00:08:10,390 --> 00:08:14,130
+If there's only one node set the first and last property to be no.
+
+128
+00:08:14,980 --> 00:08:19,160
+Meaning if the first is now equal to the last set the last and first to be no.
+
+129
+00:08:19,330 --> 00:08:24,610
+If there's more than one node set the first property to be the next property on the current first decrease
+
+130
+00:08:24,610 --> 00:08:28,540
+decided by 1 return the value of the removed node.
+
+131
+00:08:29,140 --> 00:08:32,130
+So you could posit if you want to implement this on your own.
+
+132
+00:08:32,140 --> 00:08:37,460
+But again these two are very similar to shift and an shift on our singly linked list.
+
+133
+00:08:37,480 --> 00:08:43,460
+We're just using first and last and size instead of head and tail and renaming them push and pop.
+
+134
+00:08:43,870 --> 00:08:44,100
+OK.
+
+135
+00:08:44,110 --> 00:08:46,380
+So pop first we're going to check.
+
+136
+00:08:46,510 --> 00:08:47,270
+What was it.
+
+137
+00:08:47,320 --> 00:08:50,110
+If the list is empty so I'm going to do.
+
+138
+00:08:50,410 --> 00:08:52,710
+If not this stuff first.
+
+139
+00:08:52,780 --> 00:08:55,060
+If that's the case return null.
+
+140
+00:08:55,060 --> 00:08:59,500
+That means there's nothing to overturn we're done or there's nothing in the stack to pop.
+
+141
+00:08:59,500 --> 00:09:04,500
+Otherwise I'm going to take a call a temp set that equaled the first.
+
+142
+00:09:04,510 --> 00:09:07,380
+This is what we'll return at the very end and I'll actually do that.
+
+143
+00:09:07,380 --> 00:09:12,010
+Now return temp Vau or value.
+
+144
+00:09:12,100 --> 00:09:14,090
+So we're returning the value at the end.
+
+145
+00:09:14,110 --> 00:09:17,180
+But along the way we need to patch things together.
+
+146
+00:09:17,290 --> 00:09:20,510
+So we want to check if there's only one node.
+
+147
+00:09:20,650 --> 00:09:30,590
+Meaning if this first equals this outlasts What do we want to do this last.
+
+148
+00:09:30,800 --> 00:09:32,490
+Equals no.
+
+149
+00:09:33,080 --> 00:09:36,120
+And that's just an edge case when there's only one thing left in there.
+
+150
+00:09:36,170 --> 00:09:41,120
+We need to make sure we're also updating last because on this next step we're going to update first
+
+151
+00:09:41,640 --> 00:09:44,710
+this first equals this first.
+
+152
+00:09:44,750 --> 00:09:45,720
+Next.
+
+153
+00:09:45,800 --> 00:09:48,460
+So we needed to do this beforehand.
+
+154
+00:09:48,560 --> 00:09:54,590
+If it's the last thing in this list or in this stack we need to make sure that last is null so that
+
+155
+00:09:54,590 --> 00:09:57,150
+when we do this stuff first equals this up first.
+
+156
+00:09:57,170 --> 00:10:00,210
+Next we're setting first to be no as well.
+
+157
+00:10:00,410 --> 00:10:06,410
+But in the case of this example where we have three things in our stack we're not going to change last
+
+158
+00:10:06,410 --> 00:10:07,120
+to be no.
+
+159
+00:10:07,340 --> 00:10:12,770
+Instead we're just updating first and then the only other thing we need to decrement size.
+
+160
+00:10:12,830 --> 00:10:16,340
+So this size minus minus just like that.
+
+161
+00:10:16,580 --> 00:10:18,450
+And we should be good to go.
+
+162
+00:10:18,500 --> 00:10:19,630
+Let's test it out.
+
+163
+00:10:19,700 --> 00:10:24,090
+So let's make a new stack var stack equals new.
+
+164
+00:10:24,500 --> 00:10:26,240
+It's not supposed to happen.
+
+165
+00:10:26,240 --> 00:10:27,890
+I thought I was going to autocomplete for me.
+
+166
+00:10:27,890 --> 00:10:28,670
+Stacked up.
+
+167
+00:10:28,750 --> 00:10:30,780
+Bush let's do first.
+
+168
+00:10:30,810 --> 00:10:33,960
+Like this second and third.
+
+169
+00:10:34,630 --> 00:10:38,900
+Sorry my cat is making a lot of noise over there what is doing.
+
+170
+00:10:39,650 --> 00:10:41,610
+And then will do stacked up pop.
+
+171
+00:10:41,720 --> 00:10:45,710
+We should get third and then second and then first and now nothing.
+
+172
+00:10:46,220 --> 00:10:49,290
+And we have successfully implemented a stack.
+
+173
+00:10:49,400 --> 00:10:52,700
+So hopefully you did watch the singly links section.
+
+174
+00:10:52,820 --> 00:10:56,450
+Otherwise this would be a complete whirlwind and that's not my intent.
+
+175
+00:10:56,450 --> 00:11:01,310
+You're not supposed to see this unless you went through that first section because there's a lot of
+
+176
+00:11:01,310 --> 00:11:04,180
+stuff here that I'm not explaining anyway.
+
+177
+00:11:04,220 --> 00:11:09,800
+So just to reiterate why we did it this way rather than using push and pop that we already wrote for
+
+178
+00:11:09,830 --> 00:11:11,210
+a singly linked list.
+
+179
+00:11:11,210 --> 00:11:12,030
+Just to reiterate.
+
+180
+00:11:12,050 --> 00:11:17,330
+Remember for adding to the end and removing from the end it's not constant time to remove from the end
+
+181
+00:11:17,570 --> 00:11:23,120
+because we had to iterate the entire list to get to the second to last item to set that to be the new
+
+182
+00:11:23,120 --> 00:11:23,840
+tail.
+
+183
+00:11:24,470 --> 00:11:26,830
+And the stack is supposed to be constant time.
+
+184
+00:11:26,840 --> 00:11:30,010
+So we're adding and removing from the beginning of our list.
+
+185
+00:11:30,050 --> 00:11:33,020
+But we're calling it push and pop because it is a stack.
+
+186
+00:11:33,200 --> 00:11:33,480
+All right.
+

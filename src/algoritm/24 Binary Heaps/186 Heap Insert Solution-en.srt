@@ -1,0 +1,656 @@
+1
+00:00:00,270 --> 00:00:01,380
+All right welcome back.
+
+2
+00:00:01,500 --> 00:00:04,980
+So let's implement insert on our Macs binary heap class.
+
+3
+00:00:04,980 --> 00:00:08,150
+But first we need to actually define the class.
+
+4
+00:00:08,330 --> 00:00:09,600
+So I'm going to do that now.
+
+5
+00:00:10,020 --> 00:00:16,800
+Max binary heap it's super simple at least the skeleton of it is we have our constructor and all we
+
+6
+00:00:16,800 --> 00:00:20,810
+have is the property values which is an empty array.
+
+7
+00:00:21,060 --> 00:00:23,360
+That's where we're going to store the heap.
+
+8
+00:00:23,400 --> 00:00:30,750
+And down here I just have in the comments sort of our initial This is exactly the same representation
+
+9
+00:00:30,950 --> 00:00:33,290
+or the representation of this data here.
+
+10
+00:00:33,510 --> 00:00:36,450
+Just so that we can work with it and visualize what's happening.
+
+11
+00:00:36,450 --> 00:00:41,400
+So the pseudocode we're going to define a method called the answer.
+
+12
+00:00:41,400 --> 00:00:49,950
+It takes an element or value and the easiest part and we push it on to this of values just added to
+
+13
+00:00:49,950 --> 00:00:50,760
+the end.
+
+14
+00:00:50,760 --> 00:00:56,340
+So for example if this is what values looks like if we just pushed fifty five onto the end that's the
+
+15
+00:00:56,340 --> 00:01:02,520
+first step then we need to do the harder part which is bubble up and I'm going to define a separate
+
+16
+00:01:02,520 --> 00:01:05,550
+method just to do that just to keep this.
+
+17
+00:01:05,820 --> 00:01:07,850
+I just personally like it like to do it this way.
+
+18
+00:01:07,850 --> 00:01:08,950
+You definitely don't have to.
+
+19
+00:01:08,950 --> 00:01:10,210
+You can do all the logic here.
+
+20
+00:01:10,320 --> 00:01:13,750
+So I'm going to call this up bubble up which doesn't exist.
+
+21
+00:01:14,430 --> 00:01:18,930
+So we had to find that bubble up and then in here we'll put the actual logic.
+
+22
+00:01:18,940 --> 00:01:27,210
+So remember what we need to do is take this item take the index of this item in order to find the parent
+
+23
+00:01:27,630 --> 00:01:32,940
+which is going to be if this is index of 6 we need to take 6 minus 1 which gives us 5.
+
+24
+00:01:32,970 --> 00:01:40,760
+Divide by 2 which gives us 2.5 and then a round down or floor which gives us index of 2 which is this.
+
+25
+00:01:40,770 --> 00:01:44,490
+So let's make a variable to store the element and also its index.
+
+26
+00:01:44,490 --> 00:01:46,770
+So we're just going to find the last element.
+
+27
+00:01:46,920 --> 00:01:50,860
+So that's going to be this dot values dot length.
+
+28
+00:01:50,880 --> 00:01:55,400
+Minus 1 gives us the index so let's make a variable called index.
+
+29
+00:01:55,410 --> 00:01:59,720
+This will keep track of where the newly inserted item is.
+
+30
+00:01:59,730 --> 00:02:01,440
+It will start as the last index.
+
+31
+00:02:01,530 --> 00:02:06,810
+But if we swap we're then going to update index to be here for example and if we swap again we'd update
+
+32
+00:02:06,810 --> 00:02:13,880
+it to be wherever we swapped with I'm using and cons just to get to include some East 20:15 syntax.
+
+33
+00:02:13,920 --> 00:02:15,010
+So that's the index.
+
+34
+00:02:15,090 --> 00:02:19,780
+Let's also going to make a variable just to store the value of the element itself.
+
+35
+00:02:19,830 --> 00:02:25,720
+So Konst elements of index is going to be changing content will just stay as the element.
+
+36
+00:02:25,770 --> 00:02:28,470
+So it's going to be this dot values
+
+37
+00:02:31,260 --> 00:02:31,920
+idea.
+
+38
+00:02:31,950 --> 00:02:33,890
+This is just an easy way.
+
+39
+00:02:33,900 --> 00:02:39,720
+I mean we could also make it so that the method bubble up accepts the element and you wouldn't have
+
+40
+00:02:39,720 --> 00:02:40,900
+to do this.
+
+41
+00:02:40,950 --> 00:02:42,400
+I'm fine with habitus here.
+
+42
+00:02:42,450 --> 00:02:45,810
+So we're grabbing the index six in our case.
+
+43
+00:02:46,090 --> 00:02:50,580
+And when I say in our case actually right now there is no heap that exists.
+
+44
+00:02:50,580 --> 00:02:52,560
+So I should do that now let's do it.
+
+45
+00:02:52,560 --> 00:03:00,570
+Heap equals new max binary heap and I'm just going to initialize it a cheat just have it start this
+
+46
+00:03:01,020 --> 00:03:08,830
+so that we don't have to insert those manually then we're going to call insert fifty five OK.
+
+47
+00:03:09,160 --> 00:03:15,350
+So if we've just done that we've added 55 to the end for Called we've called bubble up indexes 6.
+
+48
+00:03:15,400 --> 00:03:17,550
+The element is 55.
+
+49
+00:03:18,160 --> 00:03:18,870
+OK.
+
+50
+00:03:19,150 --> 00:03:22,020
+Now what we want to do is loop.
+
+51
+00:03:22,090 --> 00:03:27,700
+So I'm going to start with just a while true and just continue to loop over and over and over and then
+
+52
+00:03:27,700 --> 00:03:29,990
+break out at an appropriate time.
+
+53
+00:03:30,010 --> 00:03:34,320
+So our process is going to be to take this element and compare it to the parent element.
+
+54
+00:03:34,330 --> 00:03:40,180
+So first we need to find the index of the parent so to calculate that'll make a variable called parent
+
+55
+00:03:40,390 --> 00:03:41,390
+id x.
+
+56
+00:03:41,560 --> 00:03:44,200
+Remember the formula if you don't it's over here.
+
+57
+00:03:44,410 --> 00:03:48,200
+We take the floor of the index minus one divided by two.
+
+58
+00:03:48,400 --> 00:03:49,970
+So I'm going to do math.
+
+59
+00:03:50,050 --> 00:03:59,520
+Floor and then we need to add extra parens subtract one first and then divide by two.
+
+60
+00:04:00,150 --> 00:04:00,530
+OK.
+
+61
+00:04:00,580 --> 00:04:08,290
+So let parent indexical math up for index minus 1 to get right to and actually let me just get rid of
+
+62
+00:04:08,290 --> 00:04:10,080
+the loop for just a moment.
+
+63
+00:04:10,540 --> 00:04:15,880
+Let's just do a that log parent index to make sure that's working.
+
+64
+00:04:15,970 --> 00:04:17,140
+Run my code.
+
+65
+00:04:18,650 --> 00:04:24,080
+Three B's that's not correct hopefully you saw that before me try that again.
+
+66
+00:04:24,150 --> 00:04:24,540
+OK.
+
+67
+00:04:24,600 --> 00:04:28,320
+So it's giving us to printing out too which is the parent index.
+
+68
+00:04:28,320 --> 00:04:29,390
+Is that correct.
+
+69
+00:04:29,550 --> 00:04:31,360
+Let's look at 0 1 2.
+
+70
+00:04:31,440 --> 00:04:33,810
+That gives us the element 33.
+
+71
+00:04:33,810 --> 00:04:36,930
+That is indeed the parent of 55.
+
+72
+00:04:37,260 --> 00:04:42,700
+And if you want to verify that based off of this sort of a visualization you can see.
+
+73
+00:04:42,750 --> 00:04:43,920
+Thirty three is the parent.
+
+74
+00:04:44,130 --> 00:04:44,500
+OK.
+
+75
+00:04:44,640 --> 00:04:51,150
+So now what we want to do is compare the item at this index to our element 55.
+
+76
+00:04:51,150 --> 00:04:52,110
+Compare those two things.
+
+77
+00:04:52,110 --> 00:04:56,460
+So we have the index of the element and we have its parent index.
+
+78
+00:04:56,510 --> 00:04:57,910
+Now let's do a comparison.
+
+79
+00:04:58,260 --> 00:05:02,210
+So I'm going to make a separate variable to do this because it's a little bit shorter.
+
+80
+00:05:02,220 --> 00:05:13,150
+So let parent equal values of parent index because we have to we don't have to do a variable right.
+
+81
+00:05:13,150 --> 00:05:20,130
+We could just compare this but I like to just label it as parents then what are we going to do.
+
+82
+00:05:20,350 --> 00:05:29,260
+Well if parents can do it either direction if element is greater than parents that means we want to
+
+83
+00:05:29,260 --> 00:05:30,310
+swap.
+
+84
+00:05:30,310 --> 00:05:38,580
+So I'm just going to do this that values of parent index equals elements.
+
+85
+00:05:38,590 --> 00:05:42,110
+So that's putting 55 here.
+
+86
+00:05:42,280 --> 00:05:51,180
+And then we need to set this start index up the values of index to now be parent.
+
+87
+00:05:51,400 --> 00:05:55,150
+So that should swap the values at least one time.
+
+88
+00:05:55,150 --> 00:05:56,600
+We're not looping still.
+
+89
+00:05:56,650 --> 00:06:01,340
+So and that's only if the element is greater so in our case it is when we insert 55.
+
+90
+00:06:01,420 --> 00:06:03,510
+Let's just see if it works.
+
+91
+00:06:03,760 --> 00:06:04,260
+OK.
+
+92
+00:06:04,420 --> 00:06:10,630
+So let's look at our help now and you can see we have 55 where 33 used to be.
+
+93
+00:06:10,930 --> 00:06:12,670
+So that's correct.
+
+94
+00:06:12,670 --> 00:06:18,130
+Now we just need to get it to happen again or keep happening while what.
+
+95
+00:06:18,220 --> 00:06:24,490
+Well I'm going to keep it as while true for now but I'm going to change my loop a little bit so we're
+
+96
+00:06:24,490 --> 00:06:28,590
+getting the parent index reading the parent We're checking if the element needs to be swapped.
+
+97
+00:06:28,590 --> 00:06:29,520
+Then we're swapping.
+
+98
+00:06:29,770 --> 00:06:33,570
+But if we leave it at this we're going to have an infinite loop that goes forever.
+
+99
+00:06:33,970 --> 00:06:40,510
+And also we're never updating index indexes always still remaining 6.
+
+100
+00:06:40,570 --> 00:06:43,180
+So every time through a parent index it's going to be this.
+
+101
+00:06:43,240 --> 00:06:47,500
+So we're going to be comparing six into those indices over and over and over.
+
+102
+00:06:47,500 --> 00:06:54,790
+So what we want to do is actually update index to the parent index because if we swapped fifty five
+
+103
+00:06:54,790 --> 00:06:59,270
+and 33 we now need to look at what's at 55 and find its parent.
+
+104
+00:06:59,290 --> 00:07:03,820
+So we need to change index to be this the old parent index.
+
+105
+00:07:04,030 --> 00:07:09,370
+So we're almost there but rather than doing it this way where I'm checking if element is greater than
+
+106
+00:07:09,410 --> 00:07:12,940
+parent I'm actually going to change my logic entirely.
+
+107
+00:07:13,210 --> 00:07:22,120
+Well I'm going to flip it on its head and change this conditional to be the opposite if element is less
+
+108
+00:07:22,120 --> 00:07:24,130
+than or equal to parent.
+
+109
+00:07:24,250 --> 00:07:31,540
+If that's the case break and then otherwise do this.
+
+110
+00:07:31,540 --> 00:07:33,720
+So it's just a slightly shorter way of saying that.
+
+111
+00:07:33,940 --> 00:07:39,540
+So while true forever find the parent index find the parent the value there.
+
+112
+00:07:39,820 --> 00:07:43,060
+If the element is less than or equal to the parent break we're done.
+
+113
+00:07:43,270 --> 00:07:52,930
+If that's the case if for example we inserted I don't know 11 compare 11 to its parent 33 we don't swap
+
+114
+00:07:52,950 --> 00:07:54,040
+were done.
+
+115
+00:07:54,700 --> 00:08:02,950
+However in the case of 55 first time through this is what we had then we swap so that we end up with
+
+116
+00:08:02,950 --> 00:08:07,950
+33 here and 55 here and then index.
+
+117
+00:08:07,960 --> 00:08:09,120
+Now is this.
+
+118
+00:08:09,250 --> 00:08:11,330
+And parent indexes right here.
+
+119
+00:08:11,440 --> 00:08:16,460
+So we're working to zero in two and we compare again and we swap again.
+
+120
+00:08:16,630 --> 00:08:20,210
+So if we actually look at what we get it's still not going to be totally correct.
+
+121
+00:08:20,800 --> 00:08:26,500
+But if you look at heape you can see that 55.
+
+122
+00:08:26,800 --> 00:08:32,040
+OK you can see what's happening we've got a swap where at index 2 we have 41.
+
+123
+00:08:32,040 --> 00:08:32,890
+That's correct.
+
+124
+00:08:32,890 --> 00:08:35,400
+So we swapped 41 and 55.
+
+125
+00:08:35,500 --> 00:08:42,140
+So we went from just put them all in a row from this where we had 55 at the end we swapped it to here.
+
+126
+00:08:42,400 --> 00:08:51,220
+Then we went to this where we swapped 41 and 55 but our code keeps going one more time because it's
+
+127
+00:08:51,220 --> 00:08:58,270
+trying to compare 55 which is index of 0 and then it's trying to find the parent index which is zero
+
+128
+00:08:58,300 --> 00:09:05,200
+minus one negative 1 divided by two rounded down or floor down index of negative 1 which is going to
+
+129
+00:09:05,200 --> 00:09:09,780
+be undefined and it's comparing undefined to 55.
+
+130
+00:09:10,240 --> 00:09:16,430
+And so you can see it actually does a swap and we end up with 55 at index of negative 1.
+
+131
+00:09:16,450 --> 00:09:17,670
+So this is a simple fix.
+
+132
+00:09:17,680 --> 00:09:24,610
+We just want to stop instead of while true let's just say well index is greater than zero because if
+
+133
+00:09:24,610 --> 00:09:28,260
+index is now zero we know that the element is the largest element.
+
+134
+00:09:28,270 --> 00:09:31,150
+For example 55 we swapped it.
+
+135
+00:09:31,300 --> 00:09:32,470
+We swapped it again.
+
+136
+00:09:32,470 --> 00:09:33,620
+We should stop now.
+
+137
+00:09:33,730 --> 00:09:35,440
+There's nothing we could swap it with.
+
+138
+00:09:35,440 --> 00:09:37,280
+So just stop.
+
+139
+00:09:37,410 --> 00:09:39,970
+Now let's test it out and see if it works.
+
+140
+00:09:39,970 --> 00:09:43,950
+Now look at our heap.
+
+141
+00:09:43,960 --> 00:09:45,610
+All right we have 55 there.
+
+142
+00:09:45,640 --> 00:09:48,420
+Now let's insert something that's not as large.
+
+143
+00:09:48,850 --> 00:09:52,620
+Let's insert something that that isn't going to be swapped at all.
+
+144
+00:09:53,170 --> 00:09:56,340
+Let's do like one look at our heape.
+
+145
+00:09:56,530 --> 00:09:58,020
+Nope not here.
+
+146
+00:09:59,200 --> 00:10:01,720
+If you look at it you can see right it stays at the end.
+
+147
+00:10:01,720 --> 00:10:06,220
+Now let's insert something like I don't know.
+
+148
+00:10:06,340 --> 00:10:08,310
+About 45.
+
+149
+00:10:09,640 --> 00:10:11,820
+And we look at the heap again.
+
+150
+00:10:11,900 --> 00:10:13,580
+So we made a swap with 18.
+
+151
+00:10:13,840 --> 00:10:16,380
+So we it was on the end here we stopped it.
+
+152
+00:10:16,380 --> 00:10:21,640
+So then 45 was right here and then we did one more swap between 45 and 39.
+
+153
+00:10:21,730 --> 00:10:23,200
+So we end up with 45 right here.
+
+154
+00:10:23,230 --> 00:10:24,740
+And that's correct.
+
+155
+00:10:24,760 --> 00:10:30,490
+And then finally let's just make sure we try and insert something massive that is larger hundred ninety
+
+156
+00:10:30,490 --> 00:10:31,620
+nine.
+
+157
+00:10:31,650 --> 00:10:32,570
+It should bubble.
+
+158
+00:10:32,620 --> 00:10:34,410
+Oh my gosh the same typo again.
+
+159
+00:10:34,510 --> 00:10:36,520
+It should bubble its way all the way up top.
+
+160
+00:10:36,550 --> 00:10:40,000
+Let's just look at the values and it does OK.
+
+161
+00:10:40,180 --> 00:10:41,870
+So that is insert.
+
+162
+00:10:42,010 --> 00:10:44,210
+Again it's just one way of writing it.
+
+163
+00:10:44,230 --> 00:10:49,030
+There are many possible variations but they all follow the same idea where you insert it at the end
+
+164
+00:10:49,180 --> 00:10:51,530
+and then you bubble it up to the correct spot.
+

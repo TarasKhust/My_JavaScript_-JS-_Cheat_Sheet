@@ -1,0 +1,428 @@
+1
+00:00:00,300 --> 00:00:00,560
+All right.
+
+2
+00:00:00,570 --> 00:00:01,320
+Welcome back.
+
+3
+00:00:01,320 --> 00:00:05,630
+Now we're going to actually take a look at how you declare a class in East 2015.
+
+4
+00:00:05,640 --> 00:00:07,580
+Here's a really simple example.
+
+5
+00:00:07,620 --> 00:00:10,200
+So we have a class called Student conventionally.
+
+6
+00:00:10,200 --> 00:00:13,270
+Classes should start with a capital letter that should be OK.
+
+7
+00:00:13,650 --> 00:00:18,900
+So you've got student here so this is a pattern for a student and every student is just going to have
+
+8
+00:00:18,900 --> 00:00:20,120
+a first name and a last name.
+
+9
+00:00:20,130 --> 00:00:21,120
+That's it.
+
+10
+00:00:21,120 --> 00:00:23,930
+Obviously this is something we don't need a class to do.
+
+11
+00:00:24,040 --> 00:00:27,550
+Yeah I mean you don't really need a class to do any of the things that we're going to do in this course.
+
+12
+00:00:27,570 --> 00:00:29,780
+It's just a nice way of organizing your code.
+
+13
+00:00:29,820 --> 00:00:33,160
+We could use just a plain old object just key value pairs.
+
+14
+00:00:33,270 --> 00:00:39,540
+But instead we're going to create this blueprint so that our code is easier to work with easier to understand
+
+15
+00:00:39,750 --> 00:00:42,020
+and just nicer better organized.
+
+16
+00:00:42,060 --> 00:00:47,400
+So we define our class student and then we have our curly braces but then we have to have this thing
+
+17
+00:00:47,400 --> 00:00:48,690
+called a constructor.
+
+18
+00:00:48,690 --> 00:00:54,570
+So it has to be named constructor and it's a special method that will be used to instantiate new student
+
+19
+00:00:54,660 --> 00:00:55,740
+instances.
+
+20
+00:00:55,950 --> 00:01:00,450
+So we pass in when we when we create a new student we're going to provide a first name and a last name
+
+21
+00:01:00,780 --> 00:01:05,790
+and then all that we do in here is set this first name equal to whatever the first name was and this
+
+22
+00:01:05,790 --> 00:01:09,410
+dot last name equal to whatever the last name was that were that was passed in.
+
+23
+00:01:09,420 --> 00:01:15,090
+So this is just a way of saying that whatever is passed in when a new student is created assigned those
+
+24
+00:01:15,090 --> 00:01:19,830
+two properties to the individual object the individual student.
+
+25
+00:01:19,830 --> 00:01:25,390
+So the next to actually create a new instance we have to find the pattern here.
+
+26
+00:01:25,410 --> 00:01:26,070
+The blueprint.
+
+27
+00:01:26,110 --> 00:01:29,430
+This doesn't make any students we have to use the new keyword.
+
+28
+00:01:29,430 --> 00:01:32,070
+So this is how we instantiate objects from a class.
+
+29
+00:01:32,250 --> 00:01:33,390
+So we say new student.
+
+30
+00:01:33,390 --> 00:01:36,390
+And then we pass in first name and last name.
+
+31
+00:01:36,680 --> 00:01:39,250
+So we have two cold steel and blue steel.
+
+32
+00:01:39,420 --> 00:01:45,560
+And each of those is going to basically create a new student object based off of this pattern where
+
+33
+00:01:45,570 --> 00:01:51,990
+first name will be set to Colt last name will be steel in the first one and then the second one first
+
+34
+00:01:51,990 --> 00:01:58,400
+and then will be blue in last name will be still so if we just copy this over quickly here and let's
+
+35
+00:01:58,400 --> 00:02:04,550
+expand on this and let's add in first name last name and let's also add in year or grade level or whatever
+
+36
+00:02:04,550 --> 00:02:05,470
+you want to call it.
+
+37
+00:02:05,480 --> 00:02:10,540
+But the idea is that it's just going to be you know how far it's in school the student is.
+
+38
+00:02:10,580 --> 00:02:16,940
+So let's say that our school goes from zero to four it's high school in the U.S. at least there's four
+
+39
+00:02:16,940 --> 00:02:18,150
+years of high school.
+
+40
+00:02:18,350 --> 00:02:20,880
+So I'm going to say this year equal to year.
+
+41
+00:02:20,990 --> 00:02:23,570
+Now this name can be anything I want just like this can.
+
+42
+00:02:23,840 --> 00:02:26,720
+So if I call this instead grade that's fine.
+
+43
+00:02:26,780 --> 00:02:32,080
+This grade will be set to whatever is passed in when a new student is instantiated.
+
+44
+00:02:32,090 --> 00:02:32,310
+OK.
+
+45
+00:02:32,330 --> 00:02:34,950
+So just on under-tone if I run this nothing happens.
+
+46
+00:02:35,210 --> 00:02:39,200
+But now I'm able to instantiate questions and nothing happens.
+
+47
+00:02:39,200 --> 00:02:40,720
+No students are created.
+
+48
+00:02:40,730 --> 00:02:42,140
+We've just defined a pattern.
+
+49
+00:02:42,170 --> 00:02:46,640
+We're basically saying All right here's this thing that now we have this blueprint we can actually go
+
+50
+00:02:46,640 --> 00:02:53,060
+and make new students we've made like a mole's like get a factory you make a mold for a part that's
+
+51
+00:02:53,060 --> 00:02:54,280
+not actually making the part.
+
+52
+00:02:54,290 --> 00:02:55,870
+You just are ready to make the parts.
+
+53
+00:02:55,880 --> 00:02:58,340
+Now I don't know if that's very helpful.
+
+54
+00:02:58,370 --> 00:03:04,850
+So if I did something like this new student and then I pass in some data so let's say let's have a new
+
+55
+00:03:04,850 --> 00:03:10,950
+student named not email it and M. I don't know.
+
+56
+00:03:11,180 --> 00:03:15,940
+Katz and he is a he's in year 3.
+
+57
+00:03:15,950 --> 00:03:24,500
+Sure you can see what I get back is just javascript object that has a first name set to M-L a meal grade
+
+58
+00:03:24,500 --> 00:03:30,860
+is 3 and last name is cats notice year is nowhere to be found the actual name year because we just called
+
+59
+00:03:30,860 --> 00:03:31,780
+it grade instead.
+
+60
+00:03:31,790 --> 00:03:35,250
+This is just a placeholder just like any argument in function.
+
+61
+00:03:35,710 --> 00:03:36,280
+OK.
+
+62
+00:03:36,380 --> 00:03:39,800
+Now if I say that to a variable let's call it.
+
+63
+00:03:39,970 --> 00:03:41,960
+Let's just call it person.
+
+64
+00:03:41,960 --> 00:03:43,320
+Now this then terrible at this.
+
+65
+00:03:43,490 --> 00:03:47,030
+Let's go with a mill like this.
+
+66
+00:03:47,030 --> 00:03:50,330
+I can now access for example first name.
+
+67
+00:03:50,330 --> 00:03:52,450
+So nothing revolutionary at this point.
+
+68
+00:03:52,490 --> 00:03:54,580
+This is just a nice way of organizing our code.
+
+69
+00:03:55,010 --> 00:03:59,990
+But I just want to make that really clear that when we define a class it doesn't do anything on its
+
+70
+00:03:59,990 --> 00:04:00,260
+own.
+
+71
+00:04:00,260 --> 00:04:06,650
+We have to actually instantiate using the new keyword instances of that class.
+
+72
+00:04:06,860 --> 00:04:15,890
+So we will eventually have a class called let's say tree for example or singly linked lists defining
+
+73
+00:04:15,890 --> 00:04:21,950
+the class is just the pattern that then we are still going to have to say new tree or new singly linked
+
+74
+00:04:21,950 --> 00:04:24,740
+lists and then do something with that call a method on it.
+
+75
+00:04:24,740 --> 00:04:30,880
+So now if I run this we have two students by the way if you're just skipping to this I use command enter
+
+76
+00:04:30,890 --> 00:04:32,210
+to run my snippets.
+
+77
+00:04:32,210 --> 00:04:34,210
+You can also click here or wherever you're doing this.
+
+78
+00:04:34,220 --> 00:04:37,310
+But I realize that might have looked like magic I hit command enter.
+
+79
+00:04:37,320 --> 00:04:42,710
+So now we have a first student and we have second student and notice that grade is undefined and all
+
+80
+00:04:42,710 --> 00:04:43,730
+of them.
+
+81
+00:04:43,970 --> 00:04:49,940
+And also if I wanted to I could now define a greater updated grade to be C for second student greatest
+
+82
+00:04:49,940 --> 00:04:53,040
+for now if we look at second student greatest set to 4.
+
+83
+00:04:53,240 --> 00:04:56,650
+So you might be wondering what the this key word is referring to here.
+
+84
+00:04:56,900 --> 00:05:02,720
+So often the key word this is a source of confusion pretty much always in javascript for many students
+
+85
+00:05:03,020 --> 00:05:06,130
+and it changes its meaning changes depending on its context.
+
+86
+00:05:06,260 --> 00:05:11,600
+But in this situation when we're inside of a constructor or another instance method We'll talk about
+
+87
+00:05:11,750 --> 00:05:16,460
+instance methods in the next video but when we're inside of a constructor let's just say that for now
+
+88
+00:05:16,880 --> 00:05:20,980
+this refers to the individual instance of the class.
+
+89
+00:05:21,140 --> 00:05:22,500
+So the individual student.
+
+90
+00:05:22,670 --> 00:05:27,770
+So this refers to this student or this student depending on which one we're talking about.
+
+91
+00:05:28,010 --> 00:05:39,680
+So when we instantiate a new student let's say let Kitty equal new student and her name is Kitty cat
+
+92
+00:05:40,700 --> 00:05:42,680
+and she's in grade 1.
+
+93
+00:05:42,840 --> 00:05:44,840
+I like that when I do this.
+
+94
+00:05:45,080 --> 00:05:52,100
+What it is saying is that on this new instance of student this specific instance its first name should
+
+95
+00:05:52,100 --> 00:05:54,140
+be equal to whatever is passed in.
+
+96
+00:05:54,160 --> 00:05:59,690
+Kitty its last name should be equal to whatever last name is passed in which is cat and this up grade.
+
+97
+00:05:59,750 --> 00:06:03,490
+It's individual grade should be set to whatever the value of year is.
+
+98
+00:06:03,490 --> 00:06:04,310
+Hit enter.
+
+99
+00:06:04,420 --> 00:06:06,220
+And now we have our kitty defined.
+
+100
+00:06:06,540 --> 00:06:06,870
+OK.
+
+101
+00:06:06,890 --> 00:06:10,460
+So that's the basics of the class syntax the idea of the constructor.
+
+102
+00:06:10,460 --> 00:06:15,320
+I guess I never win over the fact that we're never explicitly calling the constructor right we're not
+
+103
+00:06:15,320 --> 00:06:18,000
+saying student Dom constructor or something.
+
+104
+00:06:18,080 --> 00:06:23,600
+There's some magic behind the scenes some syntactic sugar that we use the new keyword but the constructor
+
+105
+00:06:23,600 --> 00:06:29,240
+method is going to be executed or data will basically be patched on through and our constructor will
+
+106
+00:06:29,240 --> 00:06:33,250
+run when we instantiate a new student or whatever our class is.
+
+107
+00:06:33,290 --> 00:06:36,950
+OK so next we're going to talk about defining methods on our classes.
+

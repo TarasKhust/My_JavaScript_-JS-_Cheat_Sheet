@@ -1,0 +1,276 @@
+1
+00:00:00,240 --> 00:00:01,080
+Welcome back.
+
+2
+00:00:01,080 --> 00:00:06,020
+Next up is insert so insert is sort of like set in that it takes two pieces of data.
+
+3
+00:00:06,030 --> 00:00:08,290
+It takes an index and a value.
+
+4
+00:00:08,310 --> 00:00:14,730
+However instead of updating an existing node insert is going to insert a new node at whatever position
+
+5
+00:00:14,730 --> 00:00:15,960
+we specify.
+
+6
+00:00:15,960 --> 00:00:25,830
+So for example I could call on this list insert at position to the number 17 in which case we would
+
+7
+00:00:25,830 --> 00:00:27,340
+go 0 1 2.
+
+8
+00:00:27,360 --> 00:00:32,970
+So we would put the number 17 a new node right here and would connect this node to it and then connect
+
+9
+00:00:33,060 --> 00:00:34,650
+it to 77.
+
+10
+00:00:34,650 --> 00:00:36,770
+So let's actually do that.
+
+11
+00:00:36,780 --> 00:00:42,420
+So this allows me to insert at the beginning and shift it or push to the end after the tail.
+
+12
+00:00:42,510 --> 00:00:48,940
+Here I can insert out a specific Index index of two I said 17 and posit.
+
+13
+00:00:49,290 --> 00:00:49,670
+OK.
+
+14
+00:00:49,890 --> 00:00:56,120
+So what we want to do if we pass an index of two we want to find the item an index of 1.
+
+15
+00:00:56,400 --> 00:00:58,980
+And we're going to connect that to our new node.
+
+16
+00:00:58,980 --> 00:01:02,910
+So for inserting 17 OK here we found index of 2.
+
+17
+00:01:03,120 --> 00:01:06,630
+So we know we need to insert between these two things.
+
+18
+00:01:06,990 --> 00:01:16,430
+And so we take our new node which is 17 that's the value and we're going to have it point at 77 so we
+
+19
+00:01:16,430 --> 00:01:23,390
+hook it up one way and then we need to change this so that the prior node is pointing at the one we
+
+20
+00:01:23,390 --> 00:01:25,690
+just inserted like that.
+
+21
+00:01:26,150 --> 00:01:26,740
+OK.
+
+22
+00:01:26,990 --> 00:01:27,600
+So it can't.
+
+23
+00:01:27,650 --> 00:01:32,300
+This is can be a little more complicated than some of the other methods but we also can make use of
+
+24
+00:01:32,450 --> 00:01:33,970
+methods we've already built.
+
+25
+00:01:33,980 --> 00:01:36,770
+So let's talk about how you can define a function.
+
+26
+00:01:36,770 --> 00:01:39,290
+It takes two things in the index in the value.
+
+27
+00:01:39,920 --> 00:01:46,250
+And if the index is less than zero or greater than the length return false because we can't insert something
+
+28
+00:01:46,250 --> 00:01:46,730
+there.
+
+29
+00:01:46,820 --> 00:01:50,260
+Notice that it's greater than the length not greater than or equal to.
+
+30
+00:01:50,430 --> 00:01:57,530
+Because if the index is the same as the length that means just inserted at the end in which case your
+
+31
+00:01:57,530 --> 00:02:01,750
+code can just rely or call upon your existing push method.
+
+32
+00:02:01,760 --> 00:02:06,490
+So if we're trying to insert something at the end just use push don't rewrite it.
+
+33
+00:02:06,530 --> 00:02:11,740
+Same thing if it's trying to be inserted or if someone is trying to insert something an index of 0.
+
+34
+00:02:11,750 --> 00:02:13,330
+Use your unshipped method.
+
+35
+00:02:13,490 --> 00:02:15,380
+Don't rewrite that logic.
+
+36
+00:02:15,380 --> 00:02:20,510
+So the first little bit of the method can be a couple of conditional statements so if none of these
+
+37
+00:02:20,510 --> 00:02:26,150
+are true it means that the index is somewhere in the middle of our list let's say index of 3.
+
+38
+00:02:26,150 --> 00:02:33,050
+What we want to do is basically find the item an index of 2 and we have a really easy way of doing that.
+
+39
+00:02:33,050 --> 00:02:41,340
+Now we have that get method we built so we can just call get but pass in the index minus 1.
+
+40
+00:02:41,600 --> 00:02:45,550
+So instead of get of the index we want the item before.
+
+41
+00:02:45,740 --> 00:02:54,020
+So remember if I was trying to insert 17 index of 2 0 1 2 we could call get on index of 1 which would
+
+42
+00:02:54,020 --> 00:02:56,360
+give us this node right here.
+
+43
+00:02:56,360 --> 00:03:01,250
+Then all that we need to do once we have the previous node the one right before where we're trying to
+
+44
+00:03:01,250 --> 00:03:08,000
+insert we take that previous node and we said it's next to be the newly created node which I didn't
+
+45
+00:03:08,000 --> 00:03:10,350
+specify you need to create a new node but you do.
+
+46
+00:03:10,570 --> 00:03:16,430
+So we create the new node we find the one right before using get and we connect that sort of pathway
+
+47
+00:03:16,550 --> 00:03:18,790
+from the previous one to the new node.
+
+48
+00:03:18,860 --> 00:03:23,600
+Then we have to connect the new node to the old next node.
+
+49
+00:03:24,100 --> 00:03:24,510
+Right.
+
+50
+00:03:24,530 --> 00:03:28,000
+So if we find this here this is our old one.
+
+51
+00:03:28,520 --> 00:03:32,530
+We need to connect this to this and this to this.
+
+52
+00:03:32,540 --> 00:03:33,620
+Now the order they go in.
+
+53
+00:03:33,620 --> 00:03:35,040
+It doesn't matter which one you do.
+
+54
+00:03:35,210 --> 00:03:38,110
+You just might need to use a temporary placeholder or variable.
+
+55
+00:03:38,450 --> 00:03:39,000
+OK.
+
+56
+00:03:39,290 --> 00:03:43,880
+So then the final thing is to increment the length because we've inserted something and then return
+
+57
+00:03:43,880 --> 00:03:44,450
+true.
+
+58
+00:03:44,450 --> 00:03:45,510
+So one quick note.
+
+59
+00:03:45,680 --> 00:03:49,290
+Ideally your method will return only true or false.
+
+60
+00:03:49,370 --> 00:03:54,860
+So if the insert was successful it returns true if it was unsuccessful it returns false.
+
+61
+00:03:54,860 --> 00:04:01,880
+The problem is that if we're going to rely on our push method and our unshipped method for example those
+
+62
+00:04:01,880 --> 00:04:03,880
+don't return true or false.
+
+63
+00:04:03,890 --> 00:04:08,850
+So if you want to get fancy you could coerce the return value of push.
+
+64
+00:04:09,070 --> 00:04:11,660
+And of upshift to be a boolean true or false.
+
+65
+00:04:11,660 --> 00:04:16,640
+But don't worry about that honestly I'll show you a really quick way of doing that in the solution but
+
+66
+00:04:16,640 --> 00:04:21,500
+it's just a note that to make this a little nicer it should always return true or false.
+
+67
+00:04:21,570 --> 00:04:22,350
+OK.
+
+68
+00:04:22,380 --> 00:04:26,630
+Insert is probably one of the trickier ones so give yourself a break if you can't get it.
+
+69
+00:04:26,630 --> 00:04:27,460
+Well see in the next video.
+

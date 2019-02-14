@@ -1,0 +1,164 @@
+1
+00:00:00,210 --> 00:00:00,920
+Welcome back.
+
+2
+00:00:00,930 --> 00:00:02,700
+Let's get to work on post order.
+
+3
+00:00:02,970 --> 00:00:04,830
+So we're going to take any node.
+
+4
+00:00:04,830 --> 00:00:08,240
+We're going to explore the entire left side then the right side.
+
+5
+00:00:08,310 --> 00:00:10,510
+And then finally visit the node itself.
+
+6
+00:00:10,510 --> 00:00:11,980
+Add it to our list.
+
+7
+00:00:12,510 --> 00:00:21,360
+Let's hop over to my code and I'm just going to define depth first search post order like this will
+
+8
+00:00:21,360 --> 00:00:29,010
+make our data array to store our data and at the end will return data.
+
+9
+00:00:29,010 --> 00:00:35,190
+Then I'm going to define my function traverse the helper function that takes a node but rather than
+
+10
+00:00:35,190 --> 00:00:40,680
+pushing in the data first and then looking at the left and looking at the right we're going to do if
+
+11
+00:00:40,890 --> 00:00:52,660
+node left traverse nodes out left if node right traverse no doubt right.
+
+12
+00:00:53,130 --> 00:00:59,670
+And then afterwards data up push node value.
+
+13
+00:01:00,650 --> 00:01:08,400
+And then we need to invoke traverse at the end traverse with the route this dot route.
+
+14
+00:01:09,370 --> 00:01:10,930
+And that's it.
+
+15
+00:01:10,930 --> 00:01:17,110
+So it's the exact same code except we move this line where we actually visit the node by adding it to
+
+16
+00:01:17,110 --> 00:01:21,130
+the array we moved it after we explore the left and the right.
+
+17
+00:01:21,250 --> 00:01:27,920
+So would you left then right then we push it in and if we just verify that it works first.
+
+18
+00:01:28,060 --> 00:01:36,210
+Let's do both a tree dot DFS preorder tree dot DFS posts.
+
+19
+00:01:36,340 --> 00:01:37,780
+Nope that tree again.
+
+20
+00:01:40,150 --> 00:01:41,920
+And let's make sure it works.
+
+21
+00:01:41,960 --> 00:01:47,790
+So execute my code and it's a should have known better something giving me the last return value.
+
+22
+00:01:47,900 --> 00:01:48,980
+OK here we go.
+
+23
+00:01:48,980 --> 00:01:50,780
+So this was what we just did.
+
+24
+00:01:50,780 --> 00:01:52,210
+This is from the last video.
+
+25
+00:01:52,580 --> 00:01:56,300
+So you can see this is working we're getting the expected order.
+
+26
+00:01:56,300 --> 00:01:59,470
+So if this is our tree here it's the same that I had in the slides.
+
+27
+00:01:59,690 --> 00:02:04,750
+The order would be three and then eight then six not ten.
+
+28
+00:02:04,790 --> 00:02:06,520
+We still have to go down the right side.
+
+29
+00:02:06,560 --> 00:02:08,190
+So that means 20 15.
+
+30
+00:02:08,210 --> 00:02:12,110
+And then finally you get back to 10 until this work correctly.
+
+31
+00:02:12,110 --> 00:02:16,330
+Compare that with preorder where we visit and then look at the left and then the right.
+
+32
+00:02:16,520 --> 00:02:17,890
+So we visit 10.
+
+33
+00:02:18,020 --> 00:02:19,560
+Then we go down to the left.
+
+34
+00:02:19,580 --> 00:02:20,820
+We visit six.
+
+35
+00:02:20,990 --> 00:02:22,780
+Then we go down to the left.
+
+36
+00:02:22,790 --> 00:02:23,830
+We visit three.
+
+37
+00:02:23,960 --> 00:02:25,070
+Then we go to the right.
+
+38
+00:02:25,070 --> 00:02:26,190
+We visit eight.
+
+39
+00:02:26,390 --> 00:02:27,690
+Then we're back at 10.
+
+40
+00:02:27,740 --> 00:02:35,930
+We visit the right side 15 and 20 and that's all there is to changing the order to doing a post order
+
+41
+00:02:35,960 --> 00:02:38,660
+depth first search or depth first traversal.
+

@@ -1,0 +1,192 @@
+1
+00:00:00,240 --> 00:00:00,660
+All right.
+
+2
+00:00:00,660 --> 00:00:02,190
+So let's give it a shot.
+
+3
+00:00:02,330 --> 00:00:07,920
+I'll head over here and the first thing we need to do is define our graph class.
+
+4
+00:00:07,920 --> 00:00:14,200
+We need to add our constructor doesn't take anything and we set this adjacency.
+
+5
+00:00:14,250 --> 00:00:19,950
+That's the hardest part is spelling adjacency list is going to equal an object.
+
+6
+00:00:19,980 --> 00:00:20,460
+OK.
+
+7
+00:00:20,640 --> 00:00:27,960
+Then we add our method called add Virtex which accepts a new vertex key and then all we have to do is
+
+8
+00:00:27,960 --> 00:00:35,910
+do this dot adjacency list of Vertex whatever that vertex is instead of equal to an empty array.
+
+9
+00:00:35,910 --> 00:00:39,030
+Now I didn't specify how this should handle duplicate.
+
+10
+00:00:39,060 --> 00:00:44,610
+So if there's already a key in there we're one thing we're going to do with this graph class is keep
+
+11
+00:00:44,610 --> 00:00:45,050
+it simple.
+
+12
+00:00:45,060 --> 00:00:48,390
+We're not going to you know add in a bunch of error handling.
+
+13
+00:00:48,420 --> 00:00:51,140
+So if somebody tries to add a new vertex it's already in there.
+
+14
+00:00:51,270 --> 00:00:56,190
+It's fine if we overwrite it obviously in the real world you would want to add some sort of protection
+
+15
+00:00:56,190 --> 00:00:57,340
+in there.
+
+16
+00:00:57,460 --> 00:01:02,940
+You know return or throw an error that says there's already a vertex in there or ignore it because our
+
+17
+00:01:02,940 --> 00:01:08,100
+code is just going to overwrite it and set it to be empty but it be super simple to fix out right.
+
+18
+00:01:08,140 --> 00:01:16,000
+We were just check if this adjacency list of Virtex if that exists.
+
+19
+00:01:16,010 --> 00:01:23,240
+Or let's say if it's not there then let's just do it on the one line and see how long that line is.
+
+20
+00:01:23,250 --> 00:01:24,960
+I think that's OK with me.
+
+21
+00:01:24,960 --> 00:01:28,030
+So we'll just do this just to keep it really simple.
+
+22
+00:01:28,080 --> 00:01:33,030
+If there's nothing there already then make it an empty array and that's it doesn't even need to return
+
+23
+00:01:33,030 --> 00:01:33,540
+something.
+
+24
+00:01:33,540 --> 00:01:34,700
+Let's run our code.
+
+25
+00:01:34,950 --> 00:01:36,160
+Let's make a new graph.
+
+26
+00:01:36,180 --> 00:01:39,720
+Just call it g equals new graph.
+
+27
+00:01:40,330 --> 00:01:40,770
+OK.
+
+28
+00:01:40,830 --> 00:01:47,870
+And we do not add vertex of Tokyo for example.
+
+29
+00:01:48,010 --> 00:01:52,630
+We look at g at the adjacency list and now has Tokyo set to an empty array.
+
+30
+00:01:52,680 --> 00:01:56,230
+Do one more with what else should we do.
+
+31
+00:01:56,230 --> 00:02:00,510
+San Francisco Okay.
+
+32
+00:02:00,990 --> 00:02:03,310
+And basically that's all there is to it.
+
+33
+00:02:03,540 --> 00:02:06,800
+But let's just make sure that little tiny bit of error checking worked.
+
+34
+00:02:06,840 --> 00:02:11,840
+So I'm going to manually change this is not how you should interact with it but we don't have any methods
+
+35
+00:02:11,850 --> 00:02:12,750
+to do anything.
+
+36
+00:02:12,810 --> 00:02:14,440
+So I'm just going to change it.
+
+37
+00:02:14,550 --> 00:02:21,240
+Tokyo from an empty array to just have something in there so if we look at the adjacency of us now Tokyo
+
+38
+00:02:21,240 --> 00:02:22,690
+is not an empty array.
+
+39
+00:02:22,710 --> 00:02:26,370
+Pretend that that's an actual relationship that's data we care about.
+
+40
+00:02:26,370 --> 00:02:33,140
+So if I now did not add vertex of Tokyo again we don't want it to overwrite it.
+
+41
+00:02:33,180 --> 00:02:37,220
+And if we look we still have Tokyo set to its initial data.
+
+42
+00:02:37,400 --> 00:02:37,690
+OK.
+
+43
+00:02:37,710 --> 00:02:38,730
+So this is fine.
+
+44
+00:02:39,090 --> 00:02:41,900
+That's about as much error handling as we need.
+
+45
+00:02:41,940 --> 00:02:44,790
+Looks good that at Vertex really simple.
+
+46
+00:02:44,970 --> 00:02:46,320
+You didn't even need to do this first part.
+
+47
+00:02:46,320 --> 00:02:50,490
+Just set the adjacency list of that key to be an empty array.
+
+48
+00:02:50,490 --> 00:02:54,000
+Next we'll add relationships between vertices will add edges.
+

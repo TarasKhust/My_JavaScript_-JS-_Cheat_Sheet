@@ -1,0 +1,388 @@
+1
+00:00:00,210 --> 00:00:01,500
+All right we'll come back.
+
+2
+00:00:01,500 --> 00:00:05,160
+So in this video we're finally going to write our first recursive function.
+
+3
+00:00:05,190 --> 00:00:06,150
+So big moment.
+
+4
+00:00:06,450 --> 00:00:11,340
+And the first thing we should do is just talk about the game plan for any recursive function.
+
+5
+00:00:11,340 --> 00:00:13,670
+There's two things that must be present.
+
+6
+00:00:13,710 --> 00:00:20,250
+So the idea is that we're invoking the same function over and over having one function call itself recursively.
+
+7
+00:00:20,460 --> 00:00:25,320
+But there has to be a stopping point and that's the second piece which is called the base case.
+
+8
+00:00:25,680 --> 00:00:27,890
+So the base case is where the recursion stops.
+
+9
+00:00:27,990 --> 00:00:30,080
+There has to be an end of the line.
+
+10
+00:00:30,180 --> 00:00:33,670
+It doesn't just continue to call itself over and over and over and over forever.
+
+11
+00:00:33,810 --> 00:00:38,130
+That would be a huge problem just like a wild pass to have some place to stop.
+
+12
+00:00:38,130 --> 00:00:41,250
+Otherwise it just goes forever and makes your computer angry.
+
+13
+00:00:41,250 --> 00:00:47,430
+So if we go back to this example with Martin and the dragon every time let's say that this is this represents
+
+14
+00:00:47,430 --> 00:00:54,360
+a single function call let's call it check for odd numbers and it's called over and over on a smaller
+
+15
+00:00:54,360 --> 00:00:56,290
+piece of data each time.
+
+16
+00:00:56,490 --> 00:00:58,030
+But that doesn't just go forever.
+
+17
+00:00:58,050 --> 00:00:59,710
+There's a clear stopping point.
+
+18
+00:00:59,880 --> 00:01:04,890
+The code if we were to write this and we can do it in a bit the code would basically have a conditional
+
+19
+00:01:04,890 --> 00:01:08,750
+to check is the list empty is an empty array for numbers.
+
+20
+00:01:08,970 --> 00:01:11,660
+If that's the case then stop.
+
+21
+00:01:11,700 --> 00:01:17,250
+So the two essential parts of any recursive function the base case that has to be there that's the end
+
+22
+00:01:17,250 --> 00:01:17,890
+of the line.
+
+23
+00:01:17,910 --> 00:01:21,860
+That's where the recursion stops and then different input.
+
+24
+00:01:21,870 --> 00:01:26,310
+I can't really think of a good name for this but basically the recursive call you're going to call the
+
+25
+00:01:26,310 --> 00:01:31,890
+same function over and over but each time you want to call it with a different piece of data you don't
+
+26
+00:01:31,890 --> 00:01:37,410
+want to just use the same list of numbers and check for the first item in that list to see if it's odd
+
+27
+00:01:37,770 --> 00:01:41,750
+over and over and over because you would never get anywhere what you would want to do.
+
+28
+00:01:41,800 --> 00:01:44,070
+And that's with that Martin the dragging solution.
+
+29
+00:01:44,070 --> 00:01:45,240
+We change the list.
+
+30
+00:01:45,240 --> 00:01:50,460
+We basically chop off one number at the beginning and then pass the list through again and try to do
+
+31
+00:01:50,460 --> 00:01:53,180
+the same thing until we hit an empty list.
+
+32
+00:01:53,250 --> 00:01:56,360
+So there's the different input and then there's the base case.
+
+33
+00:01:56,370 --> 00:01:58,180
+So let's take a look at a real example now.
+
+34
+00:01:58,290 --> 00:02:01,950
+Our first simple recursive function it's called Countdown.
+
+35
+00:02:01,950 --> 00:02:06,880
+It doesn't do much to just print numbers starting from whatever number we pass in it.
+
+36
+00:02:06,960 --> 00:02:11,440
+Let's say 5 it will print 5 4 3 2 1 and then all done.
+
+37
+00:02:11,460 --> 00:02:13,540
+So I have it in a snippet here.
+
+38
+00:02:13,920 --> 00:02:19,070
+If I execute this you'll see the output is 5 4 3 2 1.
+
+39
+00:02:19,110 --> 00:02:20,400
+All done.
+
+40
+00:02:20,400 --> 00:02:22,690
+So we could easily write this without recursion.
+
+41
+00:02:22,690 --> 00:02:23,850
+Do iterative fully.
+
+42
+00:02:24,060 --> 00:02:25,280
+I went ahead and typed it up.
+
+43
+00:02:25,330 --> 00:02:30,580
+I could do something like this to make a comment that one out function count down takes a number would
+
+44
+00:02:30,600 --> 00:02:34,550
+just loop start I at the number like 5 while I.
+
+45
+00:02:34,550 --> 00:02:36,450
+Is greater than zero.
+
+46
+00:02:36,900 --> 00:02:40,970
+Subtract one from each time and let's verify that it works.
+
+47
+00:02:43,450 --> 00:02:48,010
+Let me clear this just so we can double check there we go.
+
+48
+00:02:48,030 --> 00:02:49,940
+So we go five four three two one.
+
+49
+00:02:50,040 --> 00:02:50,800
+All done.
+
+50
+00:02:50,840 --> 00:02:51,080
+OK.
+
+51
+00:02:51,090 --> 00:02:54,970
+So I just wanted to show that you can easily do this without recursion and that's not the point.
+
+52
+00:02:55,230 --> 00:02:59,470
+This is something that we all are familiar with just looping and printing numbers.
+
+53
+00:02:59,580 --> 00:03:01,660
+But to do it recursively is a bit different.
+
+54
+00:03:01,680 --> 00:03:03,160
+So let's walk through how it works.
+
+55
+00:03:03,210 --> 00:03:08,430
+When I call count down let's do something simpler let's do three count down with three.
+
+56
+00:03:08,820 --> 00:03:10,470
+Well let's just walk through line by line.
+
+57
+00:03:10,470 --> 00:03:12,990
+Is number less than or equal to zero.
+
+58
+00:03:13,140 --> 00:03:14,370
+No it's three.
+
+59
+00:03:14,400 --> 00:03:15,680
+So none of this happens.
+
+60
+00:03:15,840 --> 00:03:17,600
+So all we do is print three.
+
+61
+00:03:18,000 --> 00:03:23,960
+Then we subtract one from them and then we Cocq count down with none which is now 2.
+
+62
+00:03:24,300 --> 00:03:32,990
+So we print 3 so we can if we step through basically print 3 then the next line is now 2.
+
+63
+00:03:33,060 --> 00:03:36,390
+So we call count down with two.
+
+64
+00:03:37,140 --> 00:03:41,090
+So then let's start over is to less than or equal to zero.
+
+65
+00:03:41,260 --> 00:03:41,540
+No.
+
+66
+00:03:41,550 --> 00:03:42,900
+So we skip this.
+
+67
+00:03:42,910 --> 00:03:44,070
+We constantly log nothing.
+
+68
+00:03:44,070 --> 00:03:50,620
+So that's going to be print to again we subtract one from now I'm turning it into one and we call count
+
+69
+00:03:50,620 --> 00:03:51,810
+down with one
+
+70
+00:03:54,570 --> 00:03:57,340
+then start over a count down of 1.
+
+71
+00:03:57,600 --> 00:04:01,810
+If Nahm is less than or equal to zero that's still false council about LAGNADO.
+
+72
+00:04:01,860 --> 00:04:04,260
+So then we print one.
+
+73
+00:04:04,690 --> 00:04:06,640
+I cannot spell print.
+
+74
+00:04:06,640 --> 00:04:07,440
+Print 1.
+
+75
+00:04:07,530 --> 00:04:14,190
+And then countdown of 1 or excuse me content of zero because we subtract 1 from them giving us zero.
+
+76
+00:04:14,250 --> 00:04:14,790
+Start over.
+
+77
+00:04:14,790 --> 00:04:15,960
+Count down of zero.
+
+78
+00:04:16,140 --> 00:04:17,370
+Now this is our base case.
+
+79
+00:04:17,370 --> 00:04:18,400
+This is the endpoint.
+
+80
+00:04:18,420 --> 00:04:22,870
+Otherwise if we didn't have this we'd keep going into negative numbers and just forever.
+
+81
+00:04:22,890 --> 00:04:25,920
+So what does our base case is less than or equal to zero.
+
+82
+00:04:25,920 --> 00:04:26,240
+Yes.
+
+83
+00:04:26,250 --> 00:04:27,180
+Now it is.
+
+84
+00:04:27,280 --> 00:04:28,400
+Number is zero.
+
+85
+00:04:28,590 --> 00:04:30,220
+So numbers less than or equal to zero.
+
+86
+00:04:30,420 --> 00:04:32,460
+So we cancel that log all done.
+
+87
+00:04:32,790 --> 00:04:36,270
+And then this is important we return and we're not returning anything.
+
+88
+00:04:36,300 --> 00:04:42,930
+We have to have this here because if we didn't if we just printed all done then we'd keep going right
+
+89
+00:04:43,240 --> 00:04:44,840
+to that LOEG zero.
+
+90
+00:04:44,840 --> 00:04:49,160
+Now mind minus minus would be numbers negative 1 and be called Count down with negative 1.
+
+91
+00:04:49,170 --> 00:04:54,450
+So we have to have this return in order to stop it or I guess if we wanted to we could wrap this all
+
+92
+00:04:54,450 --> 00:04:55,340
+in and else.
+
+93
+00:04:55,350 --> 00:04:57,160
+So hopefully that's clear what happens.
+
+94
+00:04:57,160 --> 00:05:01,250
+We just add our final print all done here.
+
+95
+00:05:02,580 --> 00:05:05,440
+So you can see when we call it with three.
+
+96
+00:05:05,550 --> 00:05:09,410
+It calls itself count down with two calls and self-content of one with zero.
+
+97
+00:05:09,420 --> 00:05:11,580
+And then we hit the base case and we stop.
+

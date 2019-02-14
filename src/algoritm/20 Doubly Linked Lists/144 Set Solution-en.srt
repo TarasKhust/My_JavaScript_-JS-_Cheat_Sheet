@@ -1,0 +1,152 @@
+1
+00:00:00,150 --> 00:00:00,810
+Welcome back.
+
+2
+00:00:00,810 --> 00:00:02,280
+Let's right set.
+
+3
+00:00:02,310 --> 00:00:04,360
+So we're going to go below.
+
+4
+00:00:04,410 --> 00:00:13,830
+Get in at our set which takes an index and a new value and the first thing we do is just call get with
+
+5
+00:00:13,830 --> 00:00:14,860
+that index.
+
+6
+00:00:14,910 --> 00:00:22,290
+So we'll do this get passed and that index and save it to a variable let's call it found Noad or no
+
+7
+00:00:22,620 --> 00:00:23,550
+call that everyone.
+
+8
+00:00:23,570 --> 00:00:25,050
+I'm going to go with found a..
+
+9
+00:00:25,260 --> 00:00:30,520
+And then we're just going to check if found Noad or we could do it the other way and say if not found
+
+10
+00:00:30,520 --> 00:00:31,100
+Noad.
+
+11
+00:00:31,110 --> 00:00:36,220
+So if there was a found node we could also be more specific and check if it's not.
+
+12
+00:00:36,230 --> 00:00:39,000
+No it's probably better.
+
+13
+00:00:39,720 --> 00:00:47,010
+So if found notice not equal to nil we're going to take a found Noad dot Vau equals the new valve that
+
+14
+00:00:47,010 --> 00:00:54,550
+comes in and then we return to otherwise return false.
+
+15
+00:00:54,630 --> 00:01:01,580
+And we don't need to do an else we can just return false check our suit or pseudo code or anything else.
+
+16
+00:01:01,580 --> 00:01:02,670
+I think that was it.
+
+17
+00:01:02,960 --> 00:01:04,520
+And let's test it out.
+
+18
+00:01:04,550 --> 00:01:04,880
+All right.
+
+19
+00:01:04,880 --> 00:01:07,060
+So we have our list and it has three items.
+
+20
+00:01:07,070 --> 00:01:10,000
+Harry Ron and Hermione let's just test it out first.
+
+21
+00:01:10,000 --> 00:01:15,730
+Doing this does set a negative one negative for 100 or 10 apparently because I didn't type in next year.
+
+22
+00:01:16,280 --> 00:01:19,070
+And just make sure it doesn't work OK.
+
+23
+00:01:19,190 --> 00:01:20,120
+It's false.
+
+24
+00:01:20,120 --> 00:01:21,370
+Our list is unchanged.
+
+25
+00:01:21,530 --> 00:01:25,240
+Same thing if we tried to do with index of 10.
+
+26
+00:01:25,310 --> 00:01:27,460
+Same thing unchanged.
+
+27
+00:01:27,890 --> 00:01:33,450
+Now let's try and set let's say the first item instead of harry.
+
+28
+00:01:33,500 --> 00:01:34,700
+That's the all caps.
+
+29
+00:01:34,700 --> 00:01:36,850
+Harry you get true.
+
+30
+00:01:36,860 --> 00:01:42,310
+And if we look at the list it's still three items but the first notice Harry and everything looks good.
+
+31
+00:01:42,350 --> 00:01:47,110
+Otherwise it's still pointing to Ron which is still pointing to Hermione which is pointing to nothing.
+
+32
+00:01:47,330 --> 00:01:54,110
+Let's try and update her mind each index of two and we'll do all caps again.
+
+33
+00:01:55,020 --> 00:01:59,170
+And if you look at a list or look at the tail it's all caps.
+
+34
+00:01:59,540 --> 00:02:00,070
+Cool.
+
+35
+00:02:00,080 --> 00:02:00,910
+So that's working.
+
+36
+00:02:00,920 --> 00:02:07,130
+That's all there is to set nice and easy if we write get that is without get it's a pain but we have
+
+37
+00:02:07,140 --> 00:02:07,450
+to get.
+
+38
+00:02:07,450 --> 00:02:08,410
+So it's nice and short.
+

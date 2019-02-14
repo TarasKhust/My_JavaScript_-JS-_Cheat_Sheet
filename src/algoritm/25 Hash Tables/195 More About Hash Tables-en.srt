@@ -1,0 +1,304 @@
+1
+00:00:00,380 --> 00:00:00,990
+All right.
+
+2
+00:00:00,990 --> 00:00:07,080
+So in the last video we talked about wanting to store information using a key like Suyin or pink or
+
+3
+00:00:07,140 --> 00:00:08,640
+H any string.
+
+4
+00:00:08,880 --> 00:00:14,250
+And by the way in a data and data table and a hash table it doesn't have to be a string but we're just
+
+5
+00:00:14,250 --> 00:00:17,900
+going to focus on strings just to narrow down some of the complexity.
+
+6
+00:00:17,970 --> 00:00:21,280
+But either way whatever we use it's not a number.
+
+7
+00:00:21,480 --> 00:00:27,370
+So let's say we're using a string like cyan rather than a number like 0 or 2 or 1 million.
+
+8
+00:00:27,390 --> 00:00:28,630
+This is a lot clearer.
+
+9
+00:00:28,830 --> 00:00:30,690
+So we want human readability.
+
+10
+00:00:30,780 --> 00:00:33,170
+But of course it needs to also work.
+
+11
+00:00:33,210 --> 00:00:35,310
+It needs to be a real thing on our computer.
+
+12
+00:00:35,310 --> 00:00:41,120
+And unfortunately computers don't know how to find something or insert something at index pink or index
+
+13
+00:00:41,340 --> 00:00:46,240
+hello world are out damn spot or h it just computers don't know how to do that.
+
+14
+00:00:46,350 --> 00:00:49,230
+Thankfully we have hash tables to the rescue.
+
+15
+00:00:49,610 --> 00:00:50,050
+OK.
+
+16
+00:00:50,130 --> 00:00:52,450
+So quickly just a little preface here.
+
+17
+00:00:52,470 --> 00:00:57,210
+Remember that every language at least every language I've worked with has a built in implementation
+
+18
+00:00:57,210 --> 00:00:58,230
+of a hash table.
+
+19
+00:00:58,230 --> 00:01:03,360
+We are actually reinventing the wheel here which is usually something I try and avoid in these courses
+
+20
+00:01:03,660 --> 00:01:06,540
+but it's just to help us understand how this works.
+
+21
+00:01:06,720 --> 00:01:09,540
+It's important to understand what's happening behind the scenes.
+
+22
+00:01:09,570 --> 00:01:15,510
+I like to think of it as I don't know we're building a little model like a toy model of a car engine
+
+23
+00:01:15,660 --> 00:01:19,790
+on our desk to help us understand how real car engines work.
+
+24
+00:01:20,040 --> 00:01:26,280
+If you actually had to use one you would probably pick the Ferrari engine that you magically have laying
+
+25
+00:01:26,280 --> 00:01:30,050
+around in your house rather than the toy model you built out of cardboard.
+
+26
+00:01:30,240 --> 00:01:32,910
+But either way you understand how they work now.
+
+27
+00:01:33,150 --> 00:01:36,000
+I don't know if it's a good analogy honestly.
+
+28
+00:01:36,120 --> 00:01:39,980
+So that's what we're doing we're trying to build a model to understand how it works and to do that.
+
+29
+00:01:40,020 --> 00:01:45,910
+We're going to use an array or a list a way of storing information where we have to use numbers.
+
+30
+00:01:46,140 --> 00:01:50,330
+So what we do in a hash table is we take an input.
+
+31
+00:01:50,370 --> 00:01:56,790
+Again we're narrowing it down to say strings like hello or pink We need a way to take pink and turn
+
+32
+00:01:56,790 --> 00:01:59,640
+it into a number that we can store in the array.
+
+33
+00:01:59,640 --> 00:02:07,230
+So if our array goes from 0 to 99 it has 100 slots 0 to 99 we need a way to convert pink to a number
+
+34
+00:02:07,260 --> 00:02:11,110
+between 0 and 99 and then we store the data at that number.
+
+35
+00:02:11,130 --> 00:02:17,060
+So there are functions that help us do that and they're called hash functions or hashing functions.
+
+36
+00:02:17,130 --> 00:02:21,720
+They actually have a separate video after this one where I talk about the complications of writing a
+
+37
+00:02:21,720 --> 00:02:22,890
+good hash function.
+
+38
+00:02:22,950 --> 00:02:24,110
+Why it's difficult.
+
+39
+00:02:24,150 --> 00:02:27,990
+We'll talk about some examples of existing famous hash functions.
+
+40
+00:02:27,990 --> 00:02:30,430
+They are used all over the place.
+
+41
+00:02:30,450 --> 00:02:37,770
+There are very intense teams of people like multi-country efforts of people working on hash functions
+
+42
+00:02:37,980 --> 00:02:41,750
+because they have a lot of applications in security and cryptography.
+
+43
+00:02:41,850 --> 00:02:46,070
+But what we're talking about are going to be very simple and limited in scope hash functions.
+
+44
+00:02:46,080 --> 00:02:48,350
+The idea is we pass in a string.
+
+45
+00:02:48,540 --> 00:02:55,470
+If this is our array where we are storing our data we have 10 slots we pass in a number to our hash
+
+46
+00:02:55,470 --> 00:02:56,300
+function.
+
+47
+00:02:56,340 --> 00:03:00,660
+There are many many implementations just some mysterious hash function over here.
+
+48
+00:03:01,010 --> 00:03:03,360
+I guess you can't see where I'm pointing to my right.
+
+49
+00:03:03,390 --> 00:03:04,570
+It's a box.
+
+50
+00:03:04,620 --> 00:03:09,750
+If I pass in the string pink it needs to give me some number between 0 and 9.
+
+51
+00:03:10,110 --> 00:03:13,800
+And every time I pass and pink it should give me the same number.
+
+52
+00:03:13,890 --> 00:03:15,490
+So it happened to give me zero.
+
+53
+00:03:15,630 --> 00:03:20,010
+The way this hash function is worked is worked the way this hash function is built.
+
+54
+00:03:20,010 --> 00:03:20,930
+It gives me zero.
+
+55
+00:03:21,090 --> 00:03:28,470
+So I store pink as the key and then this as the value at index 0 then I go to the same hash function
+
+56
+00:03:28,470 --> 00:03:31,030
+and I say hey here is orange red.
+
+57
+00:03:31,110 --> 00:03:32,380
+What does that convert to.
+
+58
+00:03:32,520 --> 00:03:34,100
+Well it happens to convert to 7.
+
+59
+00:03:34,140 --> 00:03:35,370
+So I start at 7.
+
+60
+00:03:35,550 --> 00:03:38,140
+I do the same thing for Psion and I get three.
+
+61
+00:03:38,220 --> 00:03:40,250
+So I start at three.
+
+62
+00:03:40,260 --> 00:03:42,420
+So that's how we go about storing things.
+
+63
+00:03:42,420 --> 00:03:45,460
+Now if somebody asked me hey what's an index.
+
+64
+00:03:45,480 --> 00:03:46,980
+I don't know index Suyin.
+
+65
+00:03:47,340 --> 00:03:53,460
+Well our code still doesn't know what index Suyin is but I can take Suyin and pass it to the hash function
+
+66
+00:03:53,490 --> 00:04:00,440
+again and say hey what was the number you gave me earlier and it gives me 3 and then I go to index 3.
+
+67
+00:04:00,450 --> 00:04:01,550
+Same thing for pink.
+
+68
+00:04:01,710 --> 00:04:06,030
+So this is why it's important we always get the same number back if it's not.
+
+69
+00:04:06,030 --> 00:04:08,140
+If that doesn't happen then this whole thing is broken.
+
+70
+00:04:08,280 --> 00:04:12,210
+Because if I ask for what's the index of Suyin and it gives me nine.
+
+71
+00:04:12,300 --> 00:04:13,440
+There's nothing here.
+
+72
+00:04:13,440 --> 00:04:15,450
+It always has to be the same thing.
+
+73
+00:04:15,480 --> 00:04:18,570
+Once we've inserted something we need it to be consistent.
+
+74
+00:04:18,840 --> 00:04:26,610
+So reading a hash function that works that takes a string or any piece of data an image a PTF a video
+
+75
+00:04:26,790 --> 00:04:29,150
+and somehow spits out a number.
+
+76
+00:04:29,160 --> 00:04:32,170
+It's not easy and that's what we'll talk about in the next video.
+

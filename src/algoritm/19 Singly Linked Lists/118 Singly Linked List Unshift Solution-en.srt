@@ -1,0 +1,400 @@
+1
+00:00:00,270 --> 00:00:00,760
+All right.
+
+2
+00:00:00,780 --> 00:00:03,690
+So let's get to work writing and shift.
+
+3
+00:00:03,830 --> 00:00:11,430
+So you go over to my snippet and I'm just going to define on shift which takes a value that we're adding
+
+4
+00:00:11,430 --> 00:00:15,470
+in and the first thing we need to do is make a new node.
+
+5
+00:00:15,600 --> 00:00:22,100
+So I'll just do var new node equals new node and pass in that value.
+
+6
+00:00:22,620 --> 00:00:28,980
+OK once you've done that we now need to check our edge case which is if there's no property so we'll
+
+7
+00:00:28,980 --> 00:00:31,970
+just do if there's not ahead.
+
+8
+00:00:32,070 --> 00:00:36,310
+In that case we set both the head and the tail to be that new node.
+
+9
+00:00:36,310 --> 00:00:43,710
+So do this head equals new node tail equals new node or godhead just like that.
+
+10
+00:00:43,720 --> 00:00:46,160
+They're now both set to the new node.
+
+11
+00:00:46,350 --> 00:00:50,430
+If there was nothing in the list to start after that.
+
+12
+00:00:50,610 --> 00:00:56,400
+Otherwise we're going to set the newly created nodes next to property to be the current property on
+
+13
+00:00:56,400 --> 00:00:57,120
+the list.
+
+14
+00:00:57,130 --> 00:00:59,800
+So if this is what our linked list looks like right now.
+
+15
+00:00:59,880 --> 00:01:00,930
+Hello is the head.
+
+16
+00:01:01,050 --> 00:01:04,710
+If we added something to the beginning let's just say it was a star.
+
+17
+00:01:04,710 --> 00:01:11,250
+For some reason and this is still the head all we do is we take this new node and we point it at the
+
+18
+00:01:11,250 --> 00:01:12,600
+head.
+
+19
+00:01:12,600 --> 00:01:18,990
+So that's just a matter of saying new node dot next equals this dot head.
+
+20
+00:01:19,290 --> 00:01:23,130
+So that gives us this connection but this is still the head.
+
+21
+00:01:23,130 --> 00:01:25,680
+So then we need to update the head.
+
+22
+00:01:25,680 --> 00:01:30,930
+So we just say this dumbhead equals new node.
+
+23
+00:01:31,980 --> 00:01:38,160
+And then that effectively moves our head over here and that's all we have to do.
+
+24
+00:01:38,160 --> 00:01:40,130
+So no matter how long our list is.
+
+25
+00:01:40,200 --> 00:01:41,740
+Again I've been saying this a couple times.
+
+26
+00:01:41,760 --> 00:01:45,640
+If it's a million items long it's just one little thing we have to do.
+
+27
+00:01:45,780 --> 00:01:50,560
+Unlike an array even though us humans don't have to do anything behind the scenes.
+
+28
+00:01:50,560 --> 00:01:55,080
+If we add something to the beginning of an array of two million items long the entire thing has to be
+
+29
+00:01:55,080 --> 00:01:59,450
+re-index every single item gets a new index and that's not good.
+
+30
+00:01:59,460 --> 00:02:05,400
+So I think all we have left to do is to increment the length of the list and then return the list.
+
+31
+00:02:05,490 --> 00:02:10,420
+So we'll do this at length plus plus return the whole return this.
+
+32
+00:02:10,590 --> 00:02:11,860
+Let's test it out.
+
+33
+00:02:11,940 --> 00:02:13,820
+So you get rid of that.
+
+34
+00:02:14,070 --> 00:02:15,780
+We've created our list here.
+
+35
+00:02:15,810 --> 00:02:16,940
+I execute the code.
+
+36
+00:02:16,980 --> 00:02:18,200
+So we have our list.
+
+37
+00:02:18,570 --> 00:02:25,990
+It's three items long legs due in shift of I don't know I'm going to write first.
+
+38
+00:02:26,150 --> 00:02:28,210
+Looks like I have a typo in here.
+
+39
+00:02:28,330 --> 00:02:29,090
+Ah.
+
+40
+00:02:29,360 --> 00:02:31,190
+If not this head.
+
+41
+00:02:31,370 --> 00:02:32,730
+Hopefully you saw that before me.
+
+42
+00:02:32,750 --> 00:02:35,440
+Let's rerun this code one more time.
+
+43
+00:02:35,590 --> 00:02:36,080
+OK.
+
+44
+00:02:36,230 --> 00:02:43,970
+List has three items and shift first looks like it's working.
+
+45
+00:02:43,980 --> 00:02:47,010
+Well actually we can't tell from this it added something in.
+
+46
+00:02:47,280 --> 00:02:55,320
+Indeed the head is first and it's pointing to Halo which is pointed to by which is pointing to exclamation
+
+47
+00:02:55,320 --> 00:02:56,850
+point which points to nothing.
+
+48
+00:02:56,850 --> 00:03:01,210
+Now there is one issue with our code that only becomes clear when we have an empty list.
+
+49
+00:03:01,230 --> 00:03:03,440
+So I'm going to do pop a couple of.
+
+50
+00:03:03,480 --> 00:03:07,740
+I guess that's a dumb way to make an empty list but that's one way to do it.
+
+51
+00:03:07,740 --> 00:03:08,840
+Just pop everything out there.
+
+52
+00:03:08,840 --> 00:03:11,090
+Or you know you could just start from an empty list.
+
+53
+00:03:11,100 --> 00:03:12,520
+But I didn't think of that.
+
+54
+00:03:12,720 --> 00:03:14,150
+So we have our empty list now.
+
+55
+00:03:14,190 --> 00:03:25,410
+If I shifted list on shift let's say add me it looks like it works the head and a tail are both set
+
+56
+00:03:25,410 --> 00:03:33,590
+correctly but the next property on the head and the next property on the tail are actually self referential.
+
+57
+00:03:33,750 --> 00:03:36,690
+You can keep clicking next and it's always pointing to at me.
+
+58
+00:03:36,840 --> 00:03:38,080
+So this is wrong.
+
+59
+00:03:38,100 --> 00:03:47,130
+Now as soon as we shift to something else let's shift one hundred and we look at list.
+
+60
+00:03:47,130 --> 00:03:53,130
+Now the head is one hundred and it's pointing to add me but add me is still pointing to add me over
+
+61
+00:03:53,130 --> 00:03:53,900
+and over and over.
+
+62
+00:03:53,970 --> 00:03:56,180
+And our table is still set up like that.
+
+63
+00:03:56,280 --> 00:04:01,810
+But if I push something at the very end and we look at it now it should be fixed.
+
+64
+00:04:02,040 --> 00:04:06,250
+If we look at our head or to the next is add me and it's next.
+
+65
+00:04:06,280 --> 00:04:07,190
+And.
+
+66
+00:04:07,260 --> 00:04:07,570
+OK.
+
+67
+00:04:07,590 --> 00:04:10,220
+So it's not the end of the world but it's not good.
+
+68
+00:04:10,230 --> 00:04:11,460
+We don't want that.
+
+69
+00:04:11,460 --> 00:04:14,470
+And it's happening because of this logic right here.
+
+70
+00:04:14,760 --> 00:04:16,770
+It's a very small change that we need to make.
+
+71
+00:04:16,800 --> 00:04:20,760
+Right now we have an if statement to check if the list is empty if there's no head.
+
+72
+00:04:20,880 --> 00:04:23,700
+And then we have this other code that always runs.
+
+73
+00:04:23,700 --> 00:04:25,010
+In reality it should be.
+
+74
+00:04:25,050 --> 00:04:29,830
+And it's actually in the pseudo code it says if there's no head do this if it's empty.
+
+75
+00:04:30,000 --> 00:04:33,210
+Otherwise meaning else.
+
+76
+00:04:34,040 --> 00:04:41,040
+And we don't have that else right now because what's happening there is without the else we are setting
+
+77
+00:04:41,070 --> 00:04:43,280
+the head in the tail to be the new node.
+
+78
+00:04:43,350 --> 00:04:47,410
+If it's an empty list we go back let's just do.
+
+79
+00:04:47,580 --> 00:04:52,340
+L equals new singly length first Ellas empty right now.
+
+80
+00:04:52,500 --> 00:04:59,040
+If I do Elda on shift hello It sets the head and tail to be hello and then without this.
+
+81
+00:04:59,040 --> 00:05:04,880
+Else here it takes Hello next instead to the head which is hello.
+
+82
+00:05:04,920 --> 00:05:06,610
+So we're saying hello Nexus Hello.
+
+83
+00:05:06,930 --> 00:05:11,750
+And then it said to the head to be hello which is not what we want.
+
+84
+00:05:12,030 --> 00:05:12,950
+It's already set to that.
+
+85
+00:05:12,990 --> 00:05:14,610
+So we add the else in.
+
+86
+00:05:14,700 --> 00:05:19,870
+So this code only runs when there's at least one thing in here in the list.
+
+87
+00:05:19,980 --> 00:05:22,380
+This code only runs if it's empty.
+
+88
+00:05:22,440 --> 00:05:25,670
+And then this code run runs needs to run in either scenario.
+
+89
+00:05:26,070 --> 00:05:29,880
+So let's try refreshing running it again.
+
+90
+00:05:30,810 --> 00:05:32,680
+This is a very stupid way of doing this.
+
+91
+00:05:32,710 --> 00:05:35,610
+OK let's start on shift.
+
+92
+00:05:35,790 --> 00:05:37,290
+Add me.
+
+93
+00:05:37,290 --> 00:05:42,840
+If we look at this now it still works but there is no next set on me.
+
+94
+00:05:42,840 --> 00:05:44,040
+It's set up correctly.
+
+95
+00:05:44,220 --> 00:05:44,580
+All right.
+
+96
+00:05:44,580 --> 00:05:46,770
+A tiny change but important.
+
+97
+00:05:46,770 --> 00:05:48,150
+That is an shift.
+
+98
+00:05:48,150 --> 00:05:52,560
+Next up we're going to take a look at some other methods that have to do with retrieving values based
+
+99
+00:05:52,560 --> 00:05:56,350
+off of a position or an index called Get set.
+
+100
+00:05:56,430 --> 00:05:57,950
+And these are a little bit trickier.
+

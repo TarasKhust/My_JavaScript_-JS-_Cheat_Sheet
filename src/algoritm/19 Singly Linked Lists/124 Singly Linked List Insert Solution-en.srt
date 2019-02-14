@@ -1,0 +1,484 @@
+1
+00:00:00,660 --> 00:00:03,060
+OK so let's get defining insert.
+
+2
+00:00:03,150 --> 00:00:06,210
+So it takes an index and a value.
+
+3
+00:00:06,540 --> 00:00:11,400
+And the first thing we want to check is if it's a ridiculous value if it's negative or if it's greater
+
+4
+00:00:11,400 --> 00:00:13,830
+than the like so we'll just do.
+
+5
+00:00:13,830 --> 00:00:18,870
+If index is less than zero zero is OK but if it's less than zero that's not ok.
+
+6
+00:00:19,080 --> 00:00:24,520
+Or if index is greater than this length and it's OK if it's equal to the wavelength.
+
+7
+00:00:24,630 --> 00:00:26,840
+That just means insert at the very end.
+
+8
+00:00:26,850 --> 00:00:34,130
+So even in this scenario the greatest index is 3 right 0 1 2 3 if we wanted to insert at 4 that's OK.
+
+9
+00:00:34,260 --> 00:00:36,700
+Even though there is no current index for it.
+
+10
+00:00:37,050 --> 00:00:40,400
+So if that's the case let's return false.
+
+11
+00:00:40,890 --> 00:00:44,130
+OK so that's if there's a problem.
+
+12
+00:00:44,220 --> 00:00:45,880
+Next we have.
+
+13
+00:00:46,140 --> 00:00:48,410
+If the index is equal to the length.
+
+14
+00:00:48,450 --> 00:00:55,400
+So if index equals this length what do we do in that case.
+
+15
+00:00:55,400 --> 00:00:57,100
+Well we'll just do this dot.
+
+16
+00:00:57,230 --> 00:01:01,270
+Push the value OK.
+
+17
+00:01:01,340 --> 00:01:06,460
+And I'm just going to return that and we'll come back to this because push on its own.
+
+18
+00:01:06,560 --> 00:01:10,390
+If we pass in a value we go all the way back up where are you.
+
+19
+00:01:10,420 --> 00:01:13,080
+It doesn't return true or false returns the whole list.
+
+20
+00:01:13,310 --> 00:01:18,260
+So if we wanted to make everything true or false in this method we have a little work to do but let's
+
+21
+00:01:18,260 --> 00:01:22,880
+leave it for now because we have another scenario which is if the index is zero.
+
+22
+00:01:22,910 --> 00:01:27,500
+So if index is equal to zero what do we want to do.
+
+23
+00:01:27,500 --> 00:01:33,800
+We're going to call this dot and shift with the valve that inserts at the beginning and we'll also return
+
+24
+00:01:33,800 --> 00:01:38,470
+that but and shift doesn't return true or false or returns the entire list.
+
+25
+00:01:38,480 --> 00:01:40,530
+So we need to address that later.
+
+26
+00:01:40,760 --> 00:01:42,910
+But functionally this should work.
+
+27
+00:01:42,920 --> 00:01:45,020
+So if it's invalid return false.
+
+28
+00:01:45,020 --> 00:01:49,910
+If the index is equal to the length call push with the value push it to the end.
+
+29
+00:01:49,910 --> 00:01:53,740
+If the index is equal to zero call an shift added to the beginning.
+
+30
+00:01:54,030 --> 00:01:56,330
+OK so now we have the rest of the logic.
+
+31
+00:01:56,480 --> 00:02:01,730
+This means that the index is somewhere in the middle of our list let's say index of 2 which would give
+
+32
+00:02:01,730 --> 00:02:04,570
+us this 0 1 2 right here.
+
+33
+00:02:05,000 --> 00:02:05,300
+OK.
+
+34
+00:02:05,300 --> 00:02:08,270
+So we need to find the item right before it.
+
+35
+00:02:08,510 --> 00:02:15,500
+So we can just use our Get index minus one and save that to a variable.
+
+36
+00:02:15,560 --> 00:02:18,500
+I'll call it previous.
+
+37
+00:02:18,500 --> 00:02:19,060
+Right.
+
+38
+00:02:19,100 --> 00:02:24,350
+So that is going to use get which we defined up here and it's going to give us the item break before
+
+39
+00:02:24,350 --> 00:02:24,690
+it.
+
+40
+00:02:24,920 --> 00:02:28,120
+So if we're trying to insert here it will give us this note.
+
+41
+00:02:28,160 --> 00:02:33,080
+So once we have the previous The other thing we need to do sooner rather than later is make our new
+
+42
+00:02:33,080 --> 00:02:33,530
+node.
+
+43
+00:02:33,650 --> 00:02:38,470
+So we'll call it new node equals new node and pass in that value.
+
+44
+00:02:38,660 --> 00:02:45,920
+OK so now we just need to connect previous to our new node and new node 2 whatever came after previous.
+
+45
+00:02:45,920 --> 00:02:53,510
+So if this is previous we're going to put our new node right here and connect previous to new node new
+
+46
+00:02:53,510 --> 00:02:55,600
+node 2 this.
+
+47
+00:02:55,700 --> 00:03:02,840
+Now the thing is if we just went right ahead and did previous next equals new node there's a problem
+
+48
+00:03:03,380 --> 00:03:09,830
+which is we are erasing the connection to this node because all that we had connecting this node to
+
+49
+00:03:09,830 --> 00:03:12,440
+this one was next on this.
+
+50
+00:03:12,440 --> 00:03:14,240
+Right next is equal to this.
+
+51
+00:03:14,480 --> 00:03:24,860
+So if I change previous next to be our new node like this and I try and set new node this is gone because
+
+52
+00:03:24,860 --> 00:03:27,740
+it used to be right here so I need to use a placeholder variable.
+
+53
+00:03:27,920 --> 00:03:36,110
+So I'll just make one called I temp var temp equals the current previous dot next.
+
+54
+00:03:36,110 --> 00:03:38,370
+So I'm just saving whatever was in there.
+
+55
+00:03:38,420 --> 00:03:38,780
+All right.
+
+56
+00:03:38,780 --> 00:03:42,140
+So we've now set previous next to be the new node.
+
+57
+00:03:42,440 --> 00:03:44,320
+So we've connected one part of it.
+
+58
+00:03:44,420 --> 00:03:51,410
+Then we just need to set new node next to equal temp which is just holding what used to come after it.
+
+59
+00:03:52,510 --> 00:03:56,990
+So if this is where we're inserting it right here this is previous.
+
+60
+00:03:57,280 --> 00:03:57,920
+OK.
+
+61
+00:03:58,100 --> 00:04:04,130
+And so we're saving this to a temporary variable right here and we're just inserting the new note here
+
+62
+00:04:04,570 --> 00:04:07,510
+and we're saying previous dot next is new node new node.
+
+63
+00:04:07,600 --> 00:04:10,860
+Next is temp and that's just place holding it.
+
+64
+00:04:10,990 --> 00:04:15,660
+So now we have 2 0 5 or whatever the number is we're trying to insert 225.
+
+65
+00:04:15,670 --> 00:04:17,690
+I think what I said anyway.
+
+66
+00:04:18,160 --> 00:04:21,720
+So all we have left to do now is add 1 to the length.
+
+67
+00:04:21,760 --> 00:04:31,810
+So this dupped length plus plus and we need to return true because that means it works OK.
+
+68
+00:04:32,170 --> 00:04:38,000
+So if we run this code right now if we look at our list right now it's four items long.
+
+69
+00:04:38,170 --> 00:04:45,990
+If we want to insert index zero do list out insert zero and let's insert just the string first.
+
+70
+00:04:46,090 --> 00:04:53,840
+If we look at our list the first thing is now first and that points to 100 which is the old head.
+
+71
+00:04:54,220 --> 00:04:55,160
+All right.
+
+72
+00:04:55,510 --> 00:05:00,400
+So if we do get what's the last index we have in there I think it's four right now.
+
+73
+00:05:00,550 --> 00:05:03,270
+Let's get four is the last thing if we did five.
+
+74
+00:05:03,340 --> 00:05:04,330
+There's nothing there.
+
+75
+00:05:04,570 --> 00:05:08,250
+So if we do an insert at index 5 the string last.
+
+76
+00:05:08,250 --> 00:05:12,930
+This should add something to the very end which will trigger our push rate here.
+
+77
+00:05:14,030 --> 00:05:15,790
+Notice that what we get back.
+
+78
+00:05:15,890 --> 00:05:17,210
+Well it works.
+
+79
+00:05:17,210 --> 00:05:18,890
+But what we're getting back is the whole list.
+
+80
+00:05:18,890 --> 00:05:25,700
+And I I I mentioned it would be nice to get true or false because if we do list insert at index 1 I
+
+81
+00:05:25,700 --> 00:05:26,000
+don't know.
+
+82
+00:05:26,000 --> 00:05:28,800
+Insert thirty seven at index of one.
+
+83
+00:05:29,060 --> 00:05:30,060
+It gives us true.
+
+84
+00:05:30,150 --> 00:05:38,690
+If I do list insert negative 1 or negative to something it gives me false if I insert at index 100 It
+
+85
+00:05:38,690 --> 00:05:39,620
+gives me false.
+
+86
+00:05:39,620 --> 00:05:43,960
+So it would be nice if it was consistent and always gave me true if the insert worked.
+
+87
+00:05:44,030 --> 00:05:45,400
+So there's a simple way to change that.
+
+88
+00:05:45,410 --> 00:05:50,230
+If you didn't want to expand these into separate like you could do this right.
+
+89
+00:05:50,290 --> 00:06:00,680
+If index equals this length do brackets here multi-line and then move this inside and say this stop
+
+90
+00:06:00,740 --> 00:06:06,920
+push vowel and you could just do you know return true for example and we could do the same thing down
+
+91
+00:06:06,920 --> 00:06:07,450
+here.
+
+92
+00:06:07,490 --> 00:06:14,900
+Or we can do that sort of sneaky thing which is to put double banks to double the negate whatever comes
+
+93
+00:06:14,900 --> 00:06:17,170
+back from push or from unshipped.
+
+94
+00:06:17,210 --> 00:06:20,250
+So that means it's a boolean operator not.
+
+95
+00:06:20,270 --> 00:06:25,790
+So if we just had a string like high if we do not high.
+
+96
+00:06:26,040 --> 00:06:28,310
+No not like that.
+
+97
+00:06:28,310 --> 00:06:32,150
+It's going to give us the it's going to coerce it to a boolean value.
+
+98
+00:06:32,150 --> 00:06:33,240
+Give us the opposite of it.
+
+99
+00:06:33,240 --> 00:06:36,730
+So if we do bang bang it gives us true.
+
+100
+00:06:36,950 --> 00:06:42,760
+If it's truth the bang bang of two it's true but bang bang of zero is false.
+
+101
+00:06:42,770 --> 00:06:46,040
+So this is just a way of converting this to a boolean.
+
+102
+00:06:46,040 --> 00:06:53,940
+This push is going to return the entire list and shift returns the entire list.
+
+103
+00:06:53,960 --> 00:06:57,660
+So if we coerce it to a boolean it should just return true.
+
+104
+00:06:57,890 --> 00:07:00,290
+So let's test it out and just rerun the code.
+
+105
+00:07:00,290 --> 00:07:04,870
+If we'd now do a list insert an index of 0 first.
+
+106
+00:07:05,060 --> 00:07:08,450
+It gives us true if we do with the end of the list.
+
+107
+00:07:08,480 --> 00:07:10,820
+What is our last index right now.
+
+108
+00:07:11,060 --> 00:07:14,650
+Let's get it for.
+
+109
+00:07:14,740 --> 00:07:15,020
+OK.
+
+110
+00:07:15,020 --> 00:07:17,260
+So if we did 5 it would be the last thing.
+
+111
+00:07:17,300 --> 00:07:27,220
+So if we do list insert at 5 last it gives us true versus insert at one hundred.
+
+112
+00:07:27,260 --> 00:07:28,450
+It's not going to work.
+
+113
+00:07:28,460 --> 00:07:29,640
+It gives us false.
+
+114
+00:07:30,120 --> 00:07:30,630
+OK.
+
+115
+00:07:30,680 --> 00:07:31,870
+So that's insert.
+
+116
+00:07:32,060 --> 00:07:38,720
+Personally I would sort of put this on its new little new section just to separate these edge cases
+
+117
+00:07:38,720 --> 00:07:39,700
+out.
+
+118
+00:07:39,740 --> 00:07:41,600
+I think that's all I want to cover here.
+
+119
+00:07:41,610 --> 00:07:44,240
+So that's insert a little more complicated.
+
+120
+00:07:44,270 --> 00:07:48,770
+Next we're going to talk about Remove which is sort of like a sister to insert.
+
+121
+00:07:48,770 --> 00:07:49,420
+That's coming up next.
+

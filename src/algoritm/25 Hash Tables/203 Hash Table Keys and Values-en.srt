@@ -1,0 +1,112 @@
+1
+00:00:00,270 --> 00:00:00,840
+All right.
+
+2
+00:00:00,870 --> 00:00:01,590
+Welcome back.
+
+3
+00:00:01,590 --> 00:00:04,610
+Next up we have two more methods to add to our hash table.
+
+4
+00:00:04,660 --> 00:00:07,420
+Are very similar just to them in one video.
+
+5
+00:00:07,450 --> 00:00:08,610
+Extremely similar.
+
+6
+00:00:08,790 --> 00:00:14,730
+There's one method called keys which returns an array a list of all the keys in our table.
+
+7
+00:00:14,760 --> 00:00:18,990
+So you need to collect all of the keys and then another one called values that does the same thing but
+
+8
+00:00:18,990 --> 00:00:23,600
+for values so it collects all the values in a single array and returns that array.
+
+9
+00:00:23,970 --> 00:00:29,370
+So if you've done much programming before and pretty much any language there is a way to iterate over
+
+10
+00:00:29,730 --> 00:00:36,360
+a hash table a dictionary javascript object and it often involves looking at the keys or looking at
+
+11
+00:00:36,360 --> 00:00:40,960
+the values as an array or some sort of iterable list and then looping over that.
+
+12
+00:00:41,130 --> 00:00:46,550
+So we're just going to implement similar functionality using our two method keys and values.
+
+13
+00:00:46,770 --> 00:00:52,040
+One thing that I didn't write here but I would pay attention to is how you handle duplicate data.
+
+14
+00:00:52,170 --> 00:00:59,190
+For example values it's very likely that we might have multiple values that are exactly the same.
+
+15
+00:00:59,310 --> 00:01:04,790
+For example for keeping track of grades inside of our like if I'm a teacher and I'm going to map you
+
+16
+00:01:04,790 --> 00:01:08,840
+know Colts got to see Dave got an A.
+
+17
+00:01:08,860 --> 00:01:10,430
+Liane Lizanne.
+
+18
+00:01:10,440 --> 00:01:12,590
+Has it got a C.
+
+19
+00:01:12,600 --> 00:01:13,530
+That sort of thing.
+
+20
+00:01:13,530 --> 00:01:17,400
+Well there were two c's as the values do we return both of them.
+
+21
+00:01:17,400 --> 00:01:23,640
+Or do we return one and most of the time it's just the unique values that you return and the unique
+
+22
+00:01:23,680 --> 00:01:30,330
+keys that you return and kids are supposed to be unique anyway but values aren't so feel free to implement
+
+23
+00:01:30,330 --> 00:01:30,410
+it.
+
+24
+00:01:30,420 --> 00:01:32,150
+Either way I will show both.
+
+25
+00:01:32,400 --> 00:01:36,920
+So you can see how it works but implement two methods keys and values that are very very similar.
+
+26
+00:01:36,920 --> 00:01:40,490
+You can copy and paste the code from one to the other and just slightly tweak it.
+
+27
+00:01:40,620 --> 00:01:41,270
+Have a solution.
+
+28
+00:01:41,280 --> 00:01:41,810
+Up next.
+

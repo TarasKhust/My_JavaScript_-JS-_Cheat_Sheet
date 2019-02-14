@@ -1,0 +1,80 @@
+1
+00:00:00,330 --> 00:00:00,720
+All right.
+
+2
+00:00:00,720 --> 00:00:05,420
+Next up we have set on our doubly linked list so set takes an index like get.
+
+3
+00:00:05,610 --> 00:00:11,460
+But it also takes in a piece of data or a value to update the node at that index with.
+
+4
+00:00:11,460 --> 00:00:17,370
+So we can say set the item at index 3 to now be hallelujah.
+
+5
+00:00:17,370 --> 00:00:20,700
+So if you implement it get from the last video set.
+
+6
+00:00:20,700 --> 00:00:26,010
+It's really really easy because we don't have to do any of the logic to find the node that's what does
+
+7
+00:00:26,090 --> 00:00:30,170
+it we can call get and all we have to do is actually update the node.
+
+8
+00:00:30,330 --> 00:00:32,430
+So the pseudo code is pretty short.
+
+9
+00:00:32,430 --> 00:00:38,520
+Create a variable which is the result of the get method at the index that was passed to the function.
+
+10
+00:00:39,030 --> 00:00:44,400
+So we don't actually even have to check if the index is valid or invalid because we did that in get
+
+11
+00:00:44,700 --> 00:00:48,800
+get started checking if the index is negative or greater than or equal to the length.
+
+12
+00:00:48,840 --> 00:00:56,190
+So we just use get pass in the index and what ever comes back if it returns a valid node set the value
+
+13
+00:00:56,190 --> 00:01:01,230
+of that node to be the value that was passed in to set and return true.
+
+14
+00:01:01,230 --> 00:01:03,060
+Otherwise just return false.
+
+15
+00:01:03,180 --> 00:01:05,110
+So you can do this one in just a couple of lines.
+
+16
+00:01:05,160 --> 00:01:06,600
+It's four or five lines.
+
+17
+00:01:06,690 --> 00:01:12,230
+It's just the same as what we did is I think it's identical actually to what we did with a singly length
+
+18
+00:01:12,270 --> 00:01:12,960
+list.
+
+19
+00:01:12,960 --> 00:01:16,470
+So if you want to practice rewrite it put it super short.
+
+20
+00:01:16,470 --> 00:01:18,110
+All right solution coming up.
+

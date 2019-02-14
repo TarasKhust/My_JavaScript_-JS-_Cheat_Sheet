@@ -1,0 +1,176 @@
+1
+00:00:00,120 --> 00:00:02,070
+All right so let's implement an shift.
+
+2
+00:00:02,070 --> 00:00:05,710
+First thing we'll do is create a new node with the value passed in.
+
+3
+00:00:06,200 --> 00:00:06,670
+OK.
+
+4
+00:00:06,810 --> 00:00:15,560
+So we have an shift which takes a value and we just make new node equals new node with that value.
+
+5
+00:00:16,020 --> 00:00:20,070
+All right then what we're going to do is check if the list is empty.
+
+6
+00:00:20,070 --> 00:00:26,520
+If the length is zero or that's just one way of doing it if this link equals equals zero we can also
+
+7
+00:00:26,520 --> 00:00:27,460
+do this.
+
+8
+00:00:27,510 --> 00:00:29,330
+If not this knothead.
+
+9
+00:00:29,730 --> 00:00:32,480
+If that's the case we're going to set this damn head.
+
+10
+00:00:32,730 --> 00:00:38,050
+Equal equals new node and this dovetail equals new node.
+
+11
+00:00:38,840 --> 00:00:39,850
+OK.
+
+12
+00:00:40,020 --> 00:00:41,900
+Next up I have four equals.
+
+13
+00:00:42,080 --> 00:00:42,870
+There you go.
+
+14
+00:00:43,200 --> 00:00:47,340
+Otherwise set the previous property on the head of the list to be the new node.
+
+15
+00:00:47,390 --> 00:00:47,860
+So it will do.
+
+16
+00:00:47,860 --> 00:00:55,330
+Else the previous property on the heads of this head previous equals new node.
+
+17
+00:00:56,280 --> 00:01:01,740
+Then we need to go the other direction set the next property on the new node to be the current head
+
+18
+00:01:02,130 --> 00:01:06,270
+so new node next equals this head.
+
+19
+00:01:06,300 --> 00:01:12,470
+The current head not for long though because we're now going to update the head to be the new node this
+
+20
+00:01:12,830 --> 00:01:17,320
+head equals new node.
+
+21
+00:01:17,580 --> 00:01:21,670
+And then finally increment the length and return the list.
+
+22
+00:01:21,690 --> 00:01:26,640
+So that's going to be this stuff length plus plus return.
+
+23
+00:01:26,790 --> 00:01:28,710
+This we return the entire list.
+
+24
+00:01:28,770 --> 00:01:29,960
+Let's make sure it works.
+
+25
+00:01:30,060 --> 00:01:35,770
+So I'm going to execute the code and what we have here a list of three things in it.
+
+26
+00:01:36,000 --> 00:01:39,450
+Do lists dot on shift.
+
+27
+00:01:39,450 --> 00:01:41,450
+I think this is Harry Potter themed.
+
+28
+00:01:41,610 --> 00:01:42,720
+Let's do.
+
+29
+00:01:42,930 --> 00:01:45,210
+I don't know Hagrid.
+
+30
+00:01:46,080 --> 00:01:46,640
+OK.
+
+31
+00:01:46,740 --> 00:01:50,120
+If we look at list the head now is Hagrid.
+
+32
+00:01:50,220 --> 00:01:51,010
+Perfect.
+
+33
+00:01:51,390 --> 00:01:55,230
+And it should be pointing to Harry which it is.
+
+34
+00:01:55,350 --> 00:02:00,460
+And there's no previous perfect Let's just pop them all off or shift.
+
+35
+00:02:00,510 --> 00:02:03,150
+Let's do pop a couple of times.
+
+36
+00:02:03,470 --> 00:02:04,350
+OK.
+
+37
+00:02:04,680 --> 00:02:06,970
+Now we just have what we have is it's empty.
+
+38
+00:02:07,050 --> 00:02:07,980
+It's empty now.
+
+39
+00:02:08,010 --> 00:02:08,950
+Let's do this.
+
+40
+00:02:08,980 --> 00:02:10,710
+On shift and make sure it works
+
+41
+00:02:13,380 --> 00:02:16,080
+when it's empty and it looks like it does.
+
+42
+00:02:16,140 --> 00:02:16,560
+Yep.
+
+43
+00:02:16,560 --> 00:02:18,660
+Head and tail are both set properly.
+
+44
+00:02:18,690 --> 00:02:19,170
+OK.
+

@@ -1,0 +1,448 @@
+1
+00:00:00,150 --> 00:00:00,500
+All right.
+
+2
+00:00:00,510 --> 00:00:01,220
+Welcome back.
+
+3
+00:00:01,320 --> 00:00:05,230
+Let's talk a bit more about the hash function part of our hash table.
+
+4
+00:00:05,520 --> 00:00:12,990
+So we'll be using hash functions to convert keys like the string pink or what was the cyan and turn
+
+5
+00:00:12,990 --> 00:00:14,640
+that into a valid array index.
+
+6
+00:00:14,640 --> 00:00:19,670
+A small number but hash functions have uses all over the world of the Internet and privacy and just
+
+7
+00:00:19,680 --> 00:00:20,850
+computing in general.
+
+8
+00:00:20,940 --> 00:00:24,930
+So on Wikipedia the first use that is listed is indeed hash tables.
+
+9
+00:00:24,930 --> 00:00:26,030
+What we're talking about.
+
+10
+00:00:26,190 --> 00:00:31,590
+But they're also used to help protect your data to store your data to authenticate you when you log
+
+11
+00:00:31,590 --> 00:00:36,390
+in on a Web site they're used in crypto currencies and cryptography in general.
+
+12
+00:00:36,410 --> 00:00:41,910
+There's there's many many types of hash functions including a subgroup called cryptographic hash functions
+
+13
+00:00:42,180 --> 00:00:43,420
+which are crazy.
+
+14
+00:00:43,440 --> 00:00:45,200
+The math and the science behind them.
+
+15
+00:00:45,360 --> 00:00:50,520
+This is the stuff where I said there's like teams of researchers working on them cryptographic hash
+
+16
+00:00:50,520 --> 00:00:56,780
+functions are a crazy branch of cryptography which is already a crazy branch of science.
+
+17
+00:00:56,820 --> 00:00:57,970
+It's fun stuff.
+
+18
+00:00:57,970 --> 00:00:59,210
+I have of course.
+
+19
+00:00:59,270 --> 00:01:04,590
+Am I allowed to say that I may or may not have a course on this topic and on crypto currencies and how
+
+20
+00:01:04,590 --> 00:01:05,620
+it all fits together.
+
+21
+00:01:05,870 --> 00:01:08,110
+OK I hope I don't get in trouble for that.
+
+22
+00:01:08,220 --> 00:01:14,070
+Anyway what we're talking about are just basic hash functions and the definition of a basic hash function
+
+23
+00:01:14,370 --> 00:01:20,220
+is just a function that takes data of arbitrary size whether it's a thousand characters or a million
+
+24
+00:01:20,220 --> 00:01:23,550
+characters and it's going to spit out data of a fixed size.
+
+25
+00:01:23,580 --> 00:01:28,160
+It's going to map an input to an output of a fixed size.
+
+26
+00:01:28,170 --> 00:01:31,020
+So for us we just show you an example.
+
+27
+00:01:31,020 --> 00:01:36,180
+This is in Python which I know a lot of you probably don't know this is not a Python specific course
+
+28
+00:01:36,720 --> 00:01:38,030
+that's not important.
+
+29
+00:01:38,030 --> 00:01:43,470
+Languages like javascript actually don't expose a built in hash function but Python does and some others
+
+30
+00:01:43,470 --> 00:01:43,940
+do.
+
+31
+00:01:43,950 --> 00:01:48,780
+So I'm just going to use this here to demonstrate this is one type of hash function there's many many
+
+32
+00:01:48,780 --> 00:01:55,410
+implementations but this one allows us to pass in some data like let's say hello with an exclamation
+
+33
+00:01:55,410 --> 00:01:56,920
+point when I hit enter.
+
+34
+00:01:57,000 --> 00:01:58,120
+I get a number.
+
+35
+00:01:58,170 --> 00:02:04,800
+I'm not going to count the characters or the bits but of this size and I can do it again and just change
+
+36
+00:02:04,800 --> 00:02:07,510
+something slightly like make a capital H.
+
+37
+00:02:08,700 --> 00:02:10,460
+And I get a number of the same size.
+
+38
+00:02:10,470 --> 00:02:12,970
+It's shifted over because of this negative sign was there.
+
+39
+00:02:13,200 --> 00:02:17,820
+But if we look at the same time it is the same number of characters but it's totally different just
+
+40
+00:02:17,820 --> 00:02:19,110
+from changing that H.
+
+41
+00:02:19,260 --> 00:02:22,060
+But I could do a single character like a.
+
+42
+00:02:22,320 --> 00:02:27,720
+And I still get this really wrong number or I could do a super long string that is much larger than
+
+43
+00:02:27,720 --> 00:02:32,360
+that number and it's going to be condensed down to this.
+
+44
+00:02:32,400 --> 00:02:34,500
+Now a couple of things that we should talk about.
+
+45
+00:02:34,500 --> 00:02:34,960
+1.
+
+46
+00:02:34,980 --> 00:02:36,800
+So this is a fixed size.
+
+47
+00:02:36,870 --> 00:02:39,840
+This is similarly sized data no matter what the input is.
+
+48
+00:02:39,840 --> 00:02:41,270
+And that's important.
+
+49
+00:02:41,280 --> 00:02:46,680
+The other thing that I don't talk about is in most cases of a hash function we can't work backwards.
+
+50
+00:02:46,680 --> 00:02:48,820
+This is actually meaningless on its own.
+
+51
+00:02:48,870 --> 00:02:50,430
+If all we have is the output.
+
+52
+00:02:50,550 --> 00:02:57,780
+This is usually a one way function meaning that I can't just take this and figure out exactly what generated
+
+53
+00:02:57,780 --> 00:02:58,590
+this number.
+
+54
+00:02:58,590 --> 00:03:03,690
+So this hash function is generating pretty large relatively small in the grand scheme of things compared
+
+55
+00:03:03,690 --> 00:03:04,920
+to other hash functions.
+
+56
+00:03:05,040 --> 00:03:08,350
+But for us it's too large we don't want to store numbers.
+
+57
+00:03:08,400 --> 00:03:10,700
+You know what this index in an array.
+
+58
+00:03:10,890 --> 00:03:13,880
+Because then we're going to have a ton of empty space in our array.
+
+59
+00:03:13,950 --> 00:03:21,210
+We want to store stuff in an array of like 200 or 20 or even ten spot 10 elements.
+
+60
+00:03:21,360 --> 00:03:23,630
+And this is like what trillions.
+
+61
+00:03:23,640 --> 00:03:25,990
+I don't even know more than trillions probably.
+
+62
+00:03:26,130 --> 00:03:29,940
+So we're not going to use this hash function we're going to write our own simple one both talk about
+
+63
+00:03:29,940 --> 00:03:31,690
+what makes a good hash function.
+
+64
+00:03:31,890 --> 00:03:34,130
+So first up it needs to be fast.
+
+65
+00:03:34,170 --> 00:03:39,360
+We don't want to spend forever hashing something because when we insert something into our hash table
+
+66
+00:03:39,360 --> 00:03:40,310
+it needs to be hashed.
+
+67
+00:03:40,470 --> 00:03:46,560
+But also when we go and fetch it or update it or remove it every time we try to access it afterwards
+
+68
+00:03:46,620 --> 00:03:48,780
+we still have to run that hash function again.
+
+69
+00:03:48,960 --> 00:03:49,230
+Right.
+
+70
+00:03:49,230 --> 00:03:53,040
+I have to say hey what's the hash of pink that's going to give me a number and then I'm going to go
+
+71
+00:03:53,040 --> 00:03:57,090
+to that number in the array and then if I'm trying to update paint and when I say here's pink What's
+
+72
+00:03:57,090 --> 00:03:58,030
+the hash.
+
+73
+00:03:58,050 --> 00:04:00,110
+So we want it to be fast.
+
+74
+00:04:00,510 --> 00:04:05,520
+We want to make sure that it's relatively random or random serang term we want to make sure that it
+
+75
+00:04:05,520 --> 00:04:11,340
+distributes things uniformly so that things don't cluster we don't want to sit like a dumb hash function
+
+76
+00:04:11,340 --> 00:04:15,100
+that's always going to just give us the middle of an array or position zero.
+
+77
+00:04:15,210 --> 00:04:18,770
+It's useless if if every element is stored at the same spot.
+
+78
+00:04:18,870 --> 00:04:23,700
+Now we might have collisions and we'll talk about how to handle what we might have if we're only storing
+
+79
+00:04:23,700 --> 00:04:26,410
+things in a hundred spots in an array.
+
+80
+00:04:26,760 --> 00:04:32,400
+If we're storing like 500 things we're going to have to share some cubbyholes some elements there and
+
+81
+00:04:32,400 --> 00:04:33,030
+that's OK.
+
+82
+00:04:33,060 --> 00:04:35,390
+But we want it to be pretty evenly spread out.
+
+83
+00:04:35,400 --> 00:04:39,130
+And then lastly we want it to be deterministic and this is really important.
+
+84
+00:04:39,150 --> 00:04:45,090
+It means that every time we pass in one input we always get the same output it's determined that we're
+
+85
+00:04:45,090 --> 00:04:46,030
+going to get the same output.
+
+86
+00:04:46,030 --> 00:04:52,800
+We don't want to have to we don't want there to be any uncertainty or multiple answers or output per
+
+87
+00:04:52,890 --> 00:04:54,070
+one given input.
+
+88
+00:04:54,180 --> 00:04:57,500
+So we want the same input to always give the same output.
+
+89
+00:04:57,510 --> 00:05:00,270
+So let's just quickly run through those Here's an example.
+
+90
+00:05:00,340 --> 00:05:04,930
+This is a bad example which is why I wrote an example of a slow hash function.
+
+91
+00:05:04,930 --> 00:05:06,450
+We don't want this.
+
+92
+00:05:06,460 --> 00:05:12,760
+All it does is at the beginning it loops a thousand times 10000 times and just print something out and
+
+93
+00:05:12,760 --> 00:05:13,950
+then it does the hashing.
+
+94
+00:05:13,990 --> 00:05:14,190
+All right.
+
+95
+00:05:14,200 --> 00:05:15,070
+That's silly.
+
+96
+00:05:15,070 --> 00:05:18,340
+But we want to try and keep things quick and fast.
+
+97
+00:05:18,340 --> 00:05:21,290
+We don't want to have to you know loop a ton of times.
+
+98
+00:05:21,370 --> 00:05:23,590
+We want something that is constant time.
+
+99
+00:05:23,680 --> 00:05:26,200
+So we're going to write some of our own hash functions in just a bit.
+
+100
+00:05:26,240 --> 00:05:26,870
+Keep that in mind.
+
+101
+00:05:26,890 --> 00:05:28,500
+We want it to be fast.
+
+102
+00:05:28,840 --> 00:05:31,440
+We want it to distribute values uniformly.
+
+103
+00:05:31,450 --> 00:05:34,710
+So not like this which just gives zero.
+
+104
+00:05:34,740 --> 00:05:37,900
+This is a valid hash function if it meets our definition.
+
+105
+00:05:37,990 --> 00:05:42,550
+It takes an input of any size and it maps it to an output of fixed size.
+
+106
+00:05:42,550 --> 00:05:49,030
+It just maps every input to zero which is not what we want and then deterministic so it also is not
+
+107
+00:05:49,030 --> 00:05:51,520
+a good one because it is non-deterministic.
+
+108
+00:05:51,520 --> 00:05:58,120
+It involves a random number multiplied by 1000 and then floor that that's not good because that's not
+
+109
+00:05:58,120 --> 00:06:01,930
+going to give us the same output every time for the same input.
+
+110
+00:06:01,930 --> 00:06:05,890
+So in the next video I'm going to show you a simple hash function that we could write that will work
+
+111
+00:06:05,890 --> 00:06:06,840
+with strings only.
+
+112
+00:06:06,840 --> 00:06:11,040
+But it meets some of these criteria and then we'll try and tweak it and make it better.
+

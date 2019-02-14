@@ -1,0 +1,120 @@
+1
+00:00:00,210 --> 00:00:00,860
+Welcome back.
+
+2
+00:00:00,900 --> 00:00:06,200
+In this video we're just going to upgrade our code a bit using a binary heap priority queue.
+
+3
+00:00:06,480 --> 00:00:10,090
+So this is the priority queue we wrote earlier in the course.
+
+4
+00:00:10,510 --> 00:00:13,660
+We were doing things like with hospital priority queue.
+
+5
+00:00:13,890 --> 00:00:15,150
+So I'm going to get rid of that.
+
+6
+00:00:15,180 --> 00:00:17,520
+I copied it over and not just altering the original.
+
+7
+00:00:17,700 --> 00:00:19,230
+And we can actually leave everything the same.
+
+8
+00:00:19,230 --> 00:00:22,470
+So we have NQ and dequeue.
+
+9
+00:00:22,560 --> 00:00:23,670
+And it's the same interface.
+
+10
+00:00:23,670 --> 00:00:27,090
+It takes a value in a priority a value in a priority.
+
+11
+00:00:27,090 --> 00:00:31,440
+So all that we have to do now is just add our code into this.
+
+12
+00:00:31,690 --> 00:00:35,510
+This file here there is a node class but we don't have to interact with that.
+
+13
+00:00:35,520 --> 00:00:40,270
+The priority queue does if you have never seen this code definitely recommend to check that out first.
+
+14
+00:00:40,290 --> 00:00:46,280
+It's a lot going on but it's much faster than doing our naive priority queue here.
+
+15
+00:00:46,350 --> 00:00:49,480
+Then we'll just take everything else like this.
+
+16
+00:00:49,870 --> 00:00:52,620
+You know I just deleted it all.
+
+17
+00:00:52,620 --> 00:00:58,050
+Copy it and move it over here and I'm going to put it up top.
+
+18
+00:00:58,050 --> 00:01:05,880
+I think that we have the weighted graph class first and then I'll move all of these variables and method
+
+19
+00:01:05,880 --> 00:01:12,600
+calls down to the very bottom and if we take a look there's a lot of code going on here.
+
+20
+00:01:12,750 --> 00:01:17,300
+But we have our weighted graph which interacts with the priority queue which is a binary heap.
+
+21
+00:01:17,400 --> 00:01:22,740
+This priority queue implementation uses a node class and then at the bottom we're creating our graph
+
+22
+00:01:22,980 --> 00:01:26,680
+we're adding the edges and then finally we're testing it out.
+
+23
+00:01:27,150 --> 00:01:29,990
+So Moment of Truth and it still works.
+
+24
+00:01:30,060 --> 00:01:34,020
+If you made it through the binary heap section you should know that this implementation of a priority
+
+25
+00:01:34,020 --> 00:01:40,200
+queue is much faster than a naive version just using an array even though the binary heap itself is
+
+26
+00:01:40,200 --> 00:01:41,690
+stored in an array.
+
+27
+00:01:41,880 --> 00:01:47,610
+The way it works is much more efficient than traditional just sorting the array over and over and over
+
+28
+00:01:47,610 --> 00:01:49,520
+and picking the minimum value.
+
+29
+00:01:49,550 --> 00:01:50,470
+All righty.
+
+30
+00:01:50,610 --> 00:01:52,710
+So that's just upgrading our code a bit.
+

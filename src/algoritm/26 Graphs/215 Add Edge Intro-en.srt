@@ -1,0 +1,168 @@
+1
+00:00:00,150 --> 00:00:00,870
+Welcome back.
+
+2
+00:00:00,870 --> 00:00:06,600
+Next up we'll focus on adding edges on drawing those connections between two vertices.
+
+3
+00:00:06,690 --> 00:00:13,460
+So if we are adding cities in Tokyo in Dallas and Los Angeles and Hong Kong and that sort of thing let's
+
+4
+00:00:13,470 --> 00:00:18,060
+say that we are working for an airline we're representing like all the flights that an airline has and
+
+5
+00:00:18,060 --> 00:00:21,070
+the connections you know at the back of those airline magazines.
+
+6
+00:00:21,180 --> 00:00:26,280
+If you ever read those anymore there's those maps that have all those lines from cities will do the
+
+7
+00:00:26,280 --> 00:00:27,230
+same thing sort of.
+
+8
+00:00:27,230 --> 00:00:29,510
+We're going to model that data structure.
+
+9
+00:00:29,810 --> 00:00:30,330
+OK.
+
+10
+00:00:30,540 --> 00:00:36,390
+So an edge will represent a flight from one city to another that our airline offers so of actually at
+
+11
+00:00:36,390 --> 00:00:39,720
+an edge we need to specify the two cities the two vertices.
+
+12
+00:00:39,780 --> 00:00:41,720
+We will just call them Virtex one and two.
+
+13
+00:00:41,870 --> 00:00:48,960
+So the function called add edge needs to accept two arguments V1 V2 vertex 1 v vertex to whatever you
+
+14
+00:00:48,960 --> 00:00:58,200
+want and it should find in the adjacency list the key of Vertex 1 and then push vertex 2 into that array
+
+15
+00:00:58,560 --> 00:01:01,040
+and then do the same thing for Virtex 2.
+
+16
+00:01:01,050 --> 00:01:06,740
+So it should find in that adjacency list the key of vertex to push vertex 1 into that array.
+
+17
+00:01:07,170 --> 00:01:09,020
+And don't worry about handling errors.
+
+18
+00:01:09,030 --> 00:01:15,630
+If somebody enters an invalid vertex if that edge already exists don't worry about that for now.
+
+19
+00:01:15,750 --> 00:01:17,650
+Let's just get the basics.
+
+20
+00:01:17,670 --> 00:01:20,400
+This is really more about fundamentally how this all works.
+
+21
+00:01:20,400 --> 00:01:22,690
+So let me just show you roughly how it work.
+
+22
+00:01:22,800 --> 00:01:27,930
+If this is what we have at the beginning like we can do this right now just add a new vertex added vertex
+
+23
+00:01:27,930 --> 00:01:30,320
+add a new vertex Tokyo Dallas and Aspen.
+
+24
+00:01:30,320 --> 00:01:33,500
+There's nothing connecting them there's no edges.
+
+25
+00:01:33,840 --> 00:01:40,040
+Then if we did add edge Tokyo and Dallas remember that this is an undirected graph.
+
+26
+00:01:40,140 --> 00:01:46,020
+So it doesn't matter if we do Tokyo and then Dallas or Dallas than Tokyo but our end result would look
+
+27
+00:01:46,020 --> 00:01:46,740
+like this.
+
+28
+00:01:46,740 --> 00:01:47,560
+Tokyo.
+
+29
+00:01:47,670 --> 00:01:51,070
+The key of Tokyo now has now has Dallas in its array.
+
+30
+00:01:51,210 --> 00:01:54,120
+And the key of Dallas now has Tokyo in its array.
+
+31
+00:01:54,420 --> 00:02:00,030
+Or if we did an edge from Dallas to Aspen which is really the same thing is Aspen to Dallas.
+
+32
+00:02:00,300 --> 00:02:03,990
+We end up with Dallas now has Aspen and they're in Aspen.
+
+33
+00:02:03,990 --> 00:02:05,340
+Now has Dallas.
+
+34
+00:02:05,670 --> 00:02:06,100
+OK.
+
+35
+00:02:06,270 --> 00:02:08,000
+So this is pretty short as well.
+
+36
+00:02:08,010 --> 00:02:12,600
+It's really just two lines that you need to do if if we're not doing any of the air checking as I mentioned
+
+37
+00:02:12,960 --> 00:02:18,270
+all that we're doing is accepting to write a method called an edge it accepts two arguments.
+
+38
+00:02:18,330 --> 00:02:24,210
+You take that first one and you find it in the adjacency list using it as is key and then you push the
+
+39
+00:02:24,210 --> 00:02:25,750
+second one into that array.
+
+40
+00:02:25,770 --> 00:02:30,800
+And then you do the same thing for Virtex 2 you push the first vertex into its array.
+
+41
+00:02:31,160 --> 00:02:31,690
+OK.
+
+42
+00:02:31,980 --> 00:02:32,710
+Let's see how it goes.
+

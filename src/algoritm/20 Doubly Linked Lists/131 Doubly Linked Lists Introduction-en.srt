@@ -1,0 +1,312 @@
+1
+00:00:00,270 --> 00:00:01,530
+Hey welcome back.
+
+2
+00:00:01,530 --> 00:00:06,870
+So we're moving on to our second data structure another length list first this time it's a doubly linked
+
+3
+00:00:06,870 --> 00:00:11,210
+list instead of a singly linked list and basically spoiler alert.
+
+4
+00:00:11,220 --> 00:00:16,790
+All that we do is add a pointer to the previous node and the next node.
+
+5
+00:00:16,800 --> 00:00:22,360
+So each node points in two directions that seems like a very tiny change and it is to the actual structure
+
+6
+00:00:22,650 --> 00:00:26,810
+but it has some large ramifications for the code that we write the methods.
+
+7
+00:00:26,820 --> 00:00:29,730
+But first let's talk about our objectives.
+
+8
+00:00:29,730 --> 00:00:31,850
+We're going to construct a doubly linked list.
+
+9
+00:00:31,980 --> 00:00:37,170
+We'll compare and contrast doublin singly length lists and will also implement basic operations like
+
+10
+00:00:37,170 --> 00:00:42,210
+we did in the last section push pop shift shift insert get set.
+
+11
+00:00:42,360 --> 00:00:43,300
+All those things.
+
+12
+00:00:43,560 --> 00:00:46,390
+But first let's start by just describing how it works.
+
+13
+00:00:46,620 --> 00:00:47,600
+So it's a property mentioned.
+
+14
+00:00:47,610 --> 00:00:49,990
+It's almost identical to a singly linked list.
+
+15
+00:00:50,010 --> 00:00:51,300
+We have a bunch of nodes.
+
+16
+00:00:51,380 --> 00:00:52,940
+There's no indexing.
+
+17
+00:00:52,940 --> 00:00:54,080
+So it's still a blink first.
+
+18
+00:00:54,090 --> 00:00:55,320
+It's not like an array.
+
+19
+00:00:55,440 --> 00:00:58,410
+We don't have random access using numbers or an index.
+
+20
+00:00:58,410 --> 00:01:03,840
+We start we have a head and we have a tail but every node in the list points to the next node ahead
+
+21
+00:01:03,840 --> 00:01:04,180
+of it.
+
+22
+00:01:04,320 --> 00:01:07,490
+But also the previous node behind it.
+
+23
+00:01:07,650 --> 00:01:12,210
+So that's where the doubly linked part comes from instead of just pointing to the next next next.
+
+24
+00:01:12,210 --> 00:01:13,770
+It looks more like this.
+
+25
+00:01:13,800 --> 00:01:20,190
+So we have a head pointing to the next item and then also has a previous pointer but there's nothing
+
+26
+00:01:20,190 --> 00:01:21,250
+because it's the beginning.
+
+27
+00:01:21,420 --> 00:01:27,870
+So then our second item points to the next item but also to the previous item and all the way down to
+
+28
+00:01:27,870 --> 00:01:29,260
+our tail the last item.
+
+29
+00:01:29,310 --> 00:01:32,110
+It has no next but it has a previous.
+
+30
+00:01:32,130 --> 00:01:37,650
+So as you mentioned it's a tiny change structurally to each node just one pointer pointing to the previous
+
+31
+00:01:37,650 --> 00:01:43,380
+node in each node but it has a large impact on some of the code we write and the efficiency of certain
+
+32
+00:01:43,380 --> 00:01:44,280
+operations.
+
+33
+00:01:44,280 --> 00:01:50,580
+For example when we're talking about popping off the last item of a lengthy list a singly linked lists
+
+34
+00:01:50,580 --> 00:01:54,960
+like we have here there's just one way this Duret the arrows are pointing one direction.
+
+35
+00:01:54,960 --> 00:01:55,830
+There you go.
+
+36
+00:01:56,050 --> 00:02:04,230
+If you want to pop this last item off and I go to remove from the tail we have to iterate the entire
+
+37
+00:02:04,230 --> 00:02:08,370
+list and we have to find the the second to last item.
+
+38
+00:02:08,430 --> 00:02:13,080
+Remember if you watched the video on pop in the last section we had to find the second to last item
+
+39
+00:02:13,110 --> 00:02:14,610
+and make that the new tail.
+
+40
+00:02:14,790 --> 00:02:20,300
+We can't just go to the tail like if we go on to remove 16 we can just go to 16 and remove it.
+
+41
+00:02:20,520 --> 00:02:24,000
+We have to go to the item before it and make that the new tail.
+
+42
+00:02:24,150 --> 00:02:27,540
+So we can't work backwards when we're talking about a double length.
+
+43
+00:02:27,540 --> 00:02:34,420
+First however if I want to remove the last item I can just go to the tail and work backwards with previous.
+
+44
+00:02:34,440 --> 00:02:39,300
+I can move this direction instead of having to go from the beginning until the end of the second to
+
+45
+00:02:39,300 --> 00:02:39,800
+last item.
+
+46
+00:02:39,810 --> 00:02:40,980
+I can just work backwards.
+
+47
+00:02:41,040 --> 00:02:43,460
+Or another thing that is much much easier.
+
+48
+00:02:43,470 --> 00:02:49,790
+Imagine that you wanted to print out a length list in reverse or you wanted to iterate it in reverse.
+
+49
+00:02:49,890 --> 00:02:52,790
+If you had a singly link first and you try to go backwards.
+
+50
+00:02:53,040 --> 00:02:54,480
+It is a huge pain.
+
+51
+00:02:54,480 --> 00:02:55,790
+It's horribly inefficient.
+
+52
+00:02:55,920 --> 00:03:00,020
+You basically start at the beginning go all the way to the end and you can't work backwards.
+
+53
+00:03:00,120 --> 00:03:05,430
+So you could start over and go to the second the last thing or I mean you could make an array and just
+
+54
+00:03:05,460 --> 00:03:09,740
+add things to that array one the time as you go through and then reverse that array.
+
+55
+00:03:09,810 --> 00:03:14,070
+But there's no easy way to just start at the beginning and go or start at the end and go at the beginning
+
+56
+00:03:14,520 --> 00:03:15,690
+with the doubling length first.
+
+57
+00:03:15,720 --> 00:03:19,520
+You can start here and we can just do up previous previous previous.
+
+58
+00:03:19,530 --> 00:03:21,990
+It's just as easy as going from the beginning.
+
+59
+00:03:21,990 --> 00:03:23,270
+Next up next up next.
+
+60
+00:03:23,310 --> 00:03:28,710
+And as we go through the section Oh definitely spend time comparing the two singly and doubling for
+
+61
+00:03:28,710 --> 00:03:33,540
+us and how they perform on certain operations and you'll see that some of the code we write is a little
+
+62
+00:03:33,540 --> 00:03:40,770
+bit more complicated because at the bare minimum we have to now account for two pointers we have to
+
+63
+00:03:40,770 --> 00:03:47,010
+update a next and previous every time we add something in or remove something or delete some well remove
+
+64
+00:03:47,010 --> 00:03:48,750
+and delete that exact same thing.
+
+65
+00:03:49,050 --> 00:03:52,950
+So we have some more work to do but it's not that much harder.
+
+66
+00:03:52,950 --> 00:03:55,830
+The real drawback is that it takes up more memory.
+
+67
+00:03:55,830 --> 00:04:01,590
+So it's kind of always a tradeoff in programming more flexibility using a doubling length list but it
+
+68
+00:04:01,590 --> 00:04:02,910
+also means more memory.
+
+69
+00:04:02,910 --> 00:04:08,270
+That's a huge step because now we're storing our previous and next instead of just next.
+
+70
+00:04:08,310 --> 00:04:08,610
+OK.
+
+71
+00:04:08,670 --> 00:04:12,180
+So this will be something we come back to but we will leave this off for now.
+
+72
+00:04:12,210 --> 00:04:17,390
+At this singly linked lists and a doubling First they are very very similar in a lot of ways for length.
+
+73
+00:04:17,430 --> 00:04:19,810
+There's no there there is no indices.
+
+74
+00:04:19,860 --> 00:04:25,050
+There is an order to them and they just consist of a bunch of nodes connected by pointers singly link
+
+75
+00:04:25,090 --> 00:04:32,460
+this is one directional just that next or I mean theoretically just previous but a doubly linked list
+
+76
+00:04:32,550 --> 00:04:37,860
+has both directions it points to the next item and the item behind it the previous item in the next
+
+77
+00:04:37,860 --> 00:04:43,110
+video will implement our own doubling length list and we'll get working on push and pop and some of
+
+78
+00:04:43,110 --> 00:04:43,780
+the other methods.
+

@@ -1,0 +1,496 @@
+1
+00:00:00,240 --> 00:00:01,320
+Hey welcome back.
+
+2
+00:00:01,500 --> 00:00:06,590
+So the first thing I should say is that this video is paired here it goes along with the previous video.
+
+3
+00:00:06,630 --> 00:00:09,540
+We're going to solve the same problem in two different ways.
+
+4
+00:00:09,570 --> 00:00:13,260
+So in the last video if you didn't watch it I recommend you at least skim it.
+
+5
+00:00:13,410 --> 00:00:20,010
+We talked about helper method recursion one strategy one approach to solving this problem collect odd
+
+6
+00:00:20,010 --> 00:00:24,070
+values so recursively doing this is easy.
+
+7
+00:00:24,120 --> 00:00:28,850
+Can use a loop and it's not difficult but to do it recursively is a little bit more difficult.
+
+8
+00:00:29,040 --> 00:00:35,100
+So collect old values takes an array of numbers even and odd and it should return only the odd numbers
+
+9
+00:00:35,130 --> 00:00:39,140
+extracted from that array without actually changing the original array.
+
+10
+00:00:39,480 --> 00:00:44,970
+So helper method recursion was one strategy but that's not the only way we can do it with what's called
+
+11
+00:00:44,970 --> 00:00:50,680
+Pure recursion meaning the function itself is totally self-contained in its recursive.
+
+12
+00:00:50,760 --> 00:00:55,420
+We don't have some external data structure like we had here this external result today.
+
+13
+00:00:55,470 --> 00:00:59,070
+We're not doing a nested function helper method recursion.
+
+14
+00:00:59,070 --> 00:01:00,190
+We're not doing any of that.
+
+15
+00:01:00,210 --> 00:01:02,170
+We can do it with pure recursion.
+
+16
+00:01:02,220 --> 00:01:03,840
+It's just a little more challenging.
+
+17
+00:01:04,080 --> 00:01:05,180
+So here's the code.
+
+18
+00:01:05,280 --> 00:01:09,500
+It is shorter but it's a little harder to wrap your head around at first.
+
+19
+00:01:09,600 --> 00:01:12,950
+So I'm going to copy this over and show you that it works.
+
+20
+00:01:12,960 --> 00:01:13,780
+Here we go.
+
+21
+00:01:13,850 --> 00:01:17,980
+If I execute the code collect our values on 1 2 3 4 5.
+
+22
+00:01:18,120 --> 00:01:20,640
+It works we get 1 3 and 5.
+
+23
+00:01:20,670 --> 00:01:23,710
+Now if we walk through how it works it's a little bit different.
+
+24
+00:01:24,090 --> 00:01:28,490
+So we are defining this variable new array each time through.
+
+25
+00:01:28,530 --> 00:01:33,990
+And if you remember in the last video what I said was if you were if you define this new array each
+
+26
+00:01:33,990 --> 00:01:36,640
+time through it's going to be reset to be empty.
+
+27
+00:01:36,870 --> 00:01:38,060
+And that's true.
+
+28
+00:01:38,130 --> 00:01:42,920
+This is going to be an empty array every time the function is called recursively down here.
+
+29
+00:01:42,930 --> 00:01:46,900
+What's different is that we don't care we want it to work that way.
+
+30
+00:01:47,040 --> 00:01:53,970
+And what we actually do is concatenate all the arrays at the very very end into one array and return
+
+31
+00:01:53,970 --> 00:01:54,480
+that.
+
+32
+00:01:54,630 --> 00:01:56,150
+Let me just walk you through what happens.
+
+33
+00:01:56,160 --> 00:01:57,420
+It accepts an array.
+
+34
+00:01:57,570 --> 00:01:58,490
+One two three four or five.
+
+35
+00:01:58,500 --> 00:01:59,570
+That's what we'll start with.
+
+36
+00:01:59,790 --> 00:02:02,010
+Then we define a new array to be empty.
+
+37
+00:02:02,070 --> 00:02:04,600
+We check if the array that input is empty.
+
+38
+00:02:04,680 --> 00:02:07,440
+It's not in our case it's 1 2 3 4 5.
+
+39
+00:02:07,530 --> 00:02:11,240
+Then we check if the first number in our array is odd.
+
+40
+00:02:11,610 --> 00:02:13,170
+And in our case it is.
+
+41
+00:02:13,170 --> 00:02:17,610
+So we push that number one on to new array.
+
+42
+00:02:17,610 --> 00:02:20,300
+So at this point our new array looks like this.
+
+43
+00:02:20,460 --> 00:02:21,690
+Just one.
+
+44
+00:02:21,900 --> 00:02:31,620
+Then we assign new array to equal new array that current value dot concat the result of collect odd
+
+45
+00:02:31,620 --> 00:02:34,170
+values on the rest of the array.
+
+46
+00:02:34,170 --> 00:02:43,950
+So array slice 1 if we take this array for example 2 3 4 5 slice 1 it gives me everything from the first
+
+47
+00:02:43,950 --> 00:02:49,890
+element onwards so ignoring the zero element or the index of zero element we get three four or five.
+
+48
+00:02:49,910 --> 00:02:53,000
+So a rate of slice 1 is going to take this array
+
+49
+00:02:56,660 --> 00:02:57,980
+like that.
+
+50
+00:02:58,460 --> 00:03:01,050
+Collect odd values of two three four five.
+
+51
+00:03:01,250 --> 00:03:05,270
+So of course we're waiting here's the recursive part we're waiting for this to come back and return
+
+52
+00:03:05,270 --> 00:03:06,100
+a value.
+
+53
+00:03:06,830 --> 00:03:08,380
+And that can take a moment.
+
+54
+00:03:08,390 --> 00:03:14,990
+So when we call that we diagram this out collect our values 2 three four or 5 we make a new empty array
+
+55
+00:03:15,220 --> 00:03:18,060
+new array array at length is not zero.
+
+56
+00:03:18,320 --> 00:03:20,510
+It still has values in it for them.
+
+57
+00:03:20,510 --> 00:03:21,830
+So we skip this.
+
+58
+00:03:21,830 --> 00:03:23,620
+The first number is not odd.
+
+59
+00:03:23,720 --> 00:03:24,620
+It's 2.
+
+60
+00:03:24,740 --> 00:03:26,900
+So we skip it we don't add it in.
+
+61
+00:03:26,900 --> 00:03:34,240
+Then we get to this line new array equals new array concat collect odd values array slice 1 so new array
+
+62
+00:03:34,250 --> 00:03:37,670
+this time is actually empty.
+
+63
+00:03:37,730 --> 00:03:38,740
+This is what new array is.
+
+64
+00:03:38,750 --> 00:03:39,260
+New array.
+
+65
+00:03:39,250 --> 00:03:41,960
+Doc concat the same thing.
+
+66
+00:03:41,960 --> 00:03:45,070
+Collect odd values of the array.
+
+67
+00:03:45,300 --> 00:03:50,600
+Three four five Sorry if you can hear that car honking outside.
+
+68
+00:03:50,900 --> 00:03:52,580
+It's a bit ridiculous.
+
+69
+00:03:52,850 --> 00:03:53,800
+Three four five.
+
+70
+00:03:53,900 --> 00:03:56,570
+This array slice 1.
+
+71
+00:03:56,720 --> 00:04:02,070
+So speeding through the rest of this when we call it next time we're waiting on this collect our values.
+
+72
+00:04:02,060 --> 00:04:03,110
+Three four five.
+
+73
+00:04:03,300 --> 00:04:04,700
+Well what does that return.
+
+74
+00:04:04,730 --> 00:04:10,760
+Well it's going to concatenate on a non-empty array this time new array contains three because it's
+
+75
+00:04:10,760 --> 00:04:12,580
+the first value is odd.
+
+76
+00:04:12,830 --> 00:04:20,730
+And so then we call that concat on collect odd values on for Khama 5.
+
+77
+00:04:21,020 --> 00:04:23,560
+And then this repeats I'm just going to copy this down
+
+78
+00:04:26,350 --> 00:04:33,590
+so this time it's an empty array because the first value is even and then next time through.
+
+79
+00:04:33,600 --> 00:04:39,190
+We're almost there it contains five and we try on an empty array.
+
+80
+00:04:39,390 --> 00:04:45,570
+And then finally when we call collect our values with an empty array if it's empty we return new array
+
+81
+00:04:45,930 --> 00:04:47,640
+or new array is just empty.
+
+82
+00:04:47,640 --> 00:04:51,600
+So this finally returns this value.
+
+83
+00:04:51,930 --> 00:04:53,340
+So we get an empty array.
+
+84
+00:04:53,640 --> 00:04:54,460
+So then what happens.
+
+85
+00:04:54,460 --> 00:05:02,190
+Well this was waiting to concatenate this with whatever this returned and this happened to return an
+
+86
+00:05:02,190 --> 00:05:03,300
+empty array.
+
+87
+00:05:03,870 --> 00:05:04,440
+OK.
+
+88
+00:05:04,860 --> 00:05:09,860
+So when we concatenate five with an empty array it's just 5.
+
+89
+00:05:10,050 --> 00:05:12,420
+Then we return new array at the end.
+
+90
+00:05:12,720 --> 00:05:17,790
+So we return this so we can replace this right here with that.
+
+91
+00:05:17,790 --> 00:05:22,880
+So now we can once again we concatenate an empty array with this array.
+
+92
+00:05:23,130 --> 00:05:26,430
+And that's going to give us this array and we return it.
+
+93
+00:05:26,430 --> 00:05:33,700
+So then here collect odd values return this and we concatenated with this the array containing 3.
+
+94
+00:05:33,750 --> 00:05:36,920
+So we end up with this array.
+
+95
+00:05:37,270 --> 00:05:44,670
+Then we take this and that's returned and we filled in there and we concatenate it with an empty array.
+
+96
+00:05:45,160 --> 00:05:48,920
+Which just leaves us the same thing.
+
+97
+00:05:49,210 --> 00:05:57,820
+We return that here which is concatenated with this which gives us our final return value.
+
+98
+00:05:57,940 --> 00:06:00,230
+One comma three comma five.
+
+99
+00:06:00,220 --> 00:06:05,110
+So along the way we use concat to help build up the result.
+
+100
+00:06:05,350 --> 00:06:08,960
+If we just tried to push into new array over and over.
+
+101
+00:06:09,010 --> 00:06:11,070
+It would be reassigned instead.
+
+102
+00:06:11,350 --> 00:06:19,170
+New array is just going to allow us to either concatenate nothing as you saw five rebuild this.
+
+103
+00:06:19,660 --> 00:06:21,050
+I won't let me go back.
+
+104
+00:06:21,190 --> 00:06:27,160
+Well a lot of the time with even numbers we were returning an empty array or concatenating an empty
+
+105
+00:06:27,160 --> 00:06:32,050
+array with another return value that wasn't empty that contained an odd value.
+
+106
+00:06:32,080 --> 00:06:34,120
+So we use concat to help us out here.
+
+107
+00:06:34,360 --> 00:06:39,250
+And this is the pure recursion way of accomplishing the same problem.
+
+108
+00:06:39,250 --> 00:06:43,500
+I think personally that helper method recursion is more straightforward.
+
+109
+00:06:43,570 --> 00:06:48,940
+Yes it does involve you know a little more code to make that separate second method but I don't think
+
+110
+00:06:48,940 --> 00:06:54,520
+that it's a big deal and when you get to more complex logic you're working with more difficult logic
+
+111
+00:06:54,520 --> 00:06:57,970
+and data structures rather than just pulling out the odd numbers.
+
+112
+00:06:58,000 --> 00:07:00,910
+You can always do it using pure recursion you can.
+
+113
+00:07:00,910 --> 00:07:05,030
+You know you can make that work but often I prefer to go with helper recursion.
+
+114
+00:07:05,080 --> 00:07:07,190
+But in this case I kind of like this solution.
+
+115
+00:07:07,210 --> 00:07:07,900
+It's kind of cute.
+
+116
+00:07:07,960 --> 00:07:15,130
+Doing all this concat over and over and over just to show you a couple of tips when you're using arrays
+
+117
+00:07:15,340 --> 00:07:18,920
+and you're trying to do a pure recursive solution without a helper method.
+
+118
+00:07:18,970 --> 00:07:24,880
+You can use methods like slice the spread operator and Concat that will make copies of arrays so you
+
+119
+00:07:24,880 --> 00:07:25,840
+don't mutate them.
+
+120
+00:07:25,840 --> 00:07:30,790
+And this will allow you also to accumulate some sort of result.
+
+121
+00:07:30,790 --> 00:07:36,160
+Strings are immutable so you'll need to use methods like slice or substring to make copies and with
+
+122
+00:07:36,190 --> 00:07:36,780
+objects.
+
+123
+00:07:36,780 --> 00:07:39,850
+It's helpful to use object as a sign or the spread operator.
+
+124
+00:07:40,120 --> 00:07:44,910
+So we will come back to this later in the course we will be writing quite a few recursive solutions.
+

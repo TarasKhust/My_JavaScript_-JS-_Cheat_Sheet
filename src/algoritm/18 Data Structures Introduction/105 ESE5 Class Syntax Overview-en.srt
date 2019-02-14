@@ -1,0 +1,356 @@
+1
+00:00:00,210 --> 00:00:01,200
+Hey welcome back.
+
+2
+00:00:01,320 --> 00:00:05,750
+So as I've already mentioned this section marks a significant turning point in the course.
+
+3
+00:00:05,970 --> 00:00:10,980
+We're now going to focus our attention on a bunch of data structures so classic data structures like
+
+4
+00:00:10,980 --> 00:00:14,350
+singly linked list double-D linked lists stacks CU's.
+
+5
+00:00:14,370 --> 00:00:20,250
+We're also going to implement more complicated ones like trees and binary search trees graphs but along
+
+6
+00:00:20,250 --> 00:00:24,690
+the way not only are we going to learn about these these data structures and talk about why they matter
+
+7
+00:00:24,690 --> 00:00:25,830
+and how they're useful.
+
+8
+00:00:25,830 --> 00:00:27,450
+We're also going to implement them.
+
+9
+00:00:27,480 --> 00:00:30,040
+Javascript doesn't come with any of these pre-built.
+
+10
+00:00:30,210 --> 00:00:33,740
+And so the point is that we're going to go through and write our own.
+
+11
+00:00:33,810 --> 00:00:40,170
+But in order to do that we need to take advantage of the east 2015 class syntax and Javascript.
+
+12
+00:00:40,170 --> 00:00:45,900
+So depending on how familiar familiar you are with javascript and with object oriented programming you
+
+13
+00:00:45,900 --> 00:00:50,130
+may know that javascript doesn't really support O.P. or object oriented programming.
+
+14
+00:00:50,130 --> 00:00:55,000
+However with the 2015 a new class keyword was was introduced.
+
+15
+00:00:54,990 --> 00:00:58,920
+We're going to take advantage of that throughout this course because it makes it really easy and simple
+
+16
+00:00:58,920 --> 00:01:01,070
+for us to define our data structures.
+
+17
+00:01:01,080 --> 00:01:05,490
+So if you're already familiar with it if you feel good about writing using the class keyword writing
+
+18
+00:01:05,490 --> 00:01:11,460
+constructors instantiating new instances using your class in javascript then you could skip this section
+
+19
+00:01:11,670 --> 00:01:15,390
+but if you need some review over it then or if you've never learned it before.
+
+20
+00:01:15,450 --> 00:01:17,710
+I think that this will help you out.
+
+21
+00:01:17,730 --> 00:01:23,460
+Also if you've never worked with any sort of Object-Oriented language before or you've never defined
+
+22
+00:01:23,460 --> 00:01:29,670
+any sort of patterns whether it's in javascript or in Python or Ruby or any other language then this
+
+23
+00:01:29,670 --> 00:01:32,850
+is going to be kind of a lot to take in right away.
+
+24
+00:01:33,180 --> 00:01:37,470
+But I recommend that you watch this video you try some of the examples and then you start out with a
+
+25
+00:01:37,470 --> 00:01:40,390
+singly linked list which is up next and see how that goes.
+
+26
+00:01:40,650 --> 00:01:41,770
+But take it slow if you.
+
+27
+00:01:41,770 --> 00:01:46,950
+If you've never written a class before so first our objectives were going to start by talking about
+
+28
+00:01:46,950 --> 00:01:51,740
+what classes are going to understand how javascript implements the idea of classes.
+
+29
+00:01:51,910 --> 00:01:54,620
+Bolded because it's not quite true.
+
+30
+00:01:54,630 --> 00:01:55,920
+Object Oriented Programming.
+
+31
+00:01:56,100 --> 00:01:56,800
+Well different.
+
+32
+00:01:56,790 --> 00:02:02,430
+Define terms like abstraction encapsulation and polymorphism and then we'll use as 20:15 classes to
+
+33
+00:02:02,430 --> 00:02:04,040
+implement data structures.
+
+34
+00:02:04,220 --> 00:02:07,720
+OK so first up what the heck is a class.
+
+35
+00:02:07,740 --> 00:02:13,870
+So in general a class is like a blueprint for creating objects with pre-defined properties and methods.
+
+36
+00:02:14,130 --> 00:02:18,670
+So we'll learn how to make a singly linked lists are doubly linked list.
+
+37
+00:02:18,720 --> 00:02:24,960
+We define a pattern for a doubly linked list but then we can actually instantiate many objects many
+
+38
+00:02:24,960 --> 00:02:29,130
+individual linked lists using that blueprint using our class.
+
+39
+00:02:29,130 --> 00:02:32,710
+It's sort of like arrays and Javascript although it's not quite the same.
+
+40
+00:02:32,730 --> 00:02:37,170
+We have a pattern for for an array and arrays come with a bunch of methods and things that they can
+
+41
+00:02:37,170 --> 00:02:37,690
+do.
+
+42
+00:02:37,950 --> 00:02:43,380
+But we have to first instantiate a new array and then we can get access to all of those so there's an
+
+43
+00:02:43,380 --> 00:02:44,060
+array.
+
+44
+00:02:44,220 --> 00:02:48,930
+It's not technically a class but you can think of it as sort of a blueprint and then we can instantiate
+
+45
+00:02:48,960 --> 00:02:50,830
+objects based off of that blueprint.
+
+46
+00:02:50,940 --> 00:02:54,960
+So as I kind of hinted at javascript doesn't really have classes.
+
+47
+00:02:54,960 --> 00:03:00,810
+If you go to the documentation on M.D n Mozilla developer network you can see up top on the this is
+
+48
+00:03:00,810 --> 00:03:07,740
+there are classes main page javascript classes introduced and as 20:15 are primarily syntactical sugar
+
+49
+00:03:08,040 --> 00:03:11,330
+over javascript's existing prototype based inheritance.
+
+50
+00:03:11,330 --> 00:03:15,880
+The class syntax does not introduce a new Object-Oriented inheritance model to Javascript.
+
+51
+00:03:15,990 --> 00:03:18,390
+So this is saying this is basically javascript.
+
+52
+00:03:18,380 --> 00:03:20,910
+It has never really been truly object oriented.
+
+53
+00:03:20,980 --> 00:03:27,750
+It takes advantage of something called prototype based inheritance or prototype CL and all that happens
+
+54
+00:03:27,750 --> 00:03:33,090
+with East 2015 is that this class syntax was introduced but it's not changing how things work behind
+
+55
+00:03:33,090 --> 00:03:33,600
+the scenes.
+
+56
+00:03:33,630 --> 00:03:38,920
+It's just an easier way to work and to define class like structures.
+
+57
+00:03:38,970 --> 00:03:44,670
+So if you are not familiar with either those with object oriented programming or prototype based inheritance
+
+58
+00:03:44,940 --> 00:03:47,110
+then that probably made zero sense.
+
+59
+00:03:47,340 --> 00:03:51,410
+But all that will say is that it does help to know that technically this is not true.
+
+60
+00:03:51,420 --> 00:03:52,520
+Object Oriented Programming.
+
+61
+00:03:52,530 --> 00:03:54,460
+But that's not going to hinder us in any way.
+
+62
+00:03:54,600 --> 00:03:56,450
+We just have to it's good to know that.
+
+63
+00:03:56,460 --> 00:03:57,570
+Let's just leave it at that.
+
+64
+00:03:57,570 --> 00:03:59,610
+So next why do we need to learn this.
+
+65
+00:03:59,610 --> 00:04:04,290
+Well as I've already mentioned we're going to implement tons of data structures as classes.
+
+66
+00:04:04,290 --> 00:04:09,590
+So any time we build We're going to learn how to build a tree or a graph or a singly length list.
+
+67
+00:04:09,600 --> 00:04:14,730
+We're going to define a class define a pattern in javascript that we can then instantiate individual
+
+68
+00:04:14,730 --> 00:04:15,540
+lists from.
+
+69
+00:04:15,540 --> 00:04:17,460
+For example here's a little spoiler.
+
+70
+00:04:17,490 --> 00:04:23,880
+Here's two classes we defined for our singly linked list so you can see we have the class keyword constructor
+
+71
+00:04:23,880 --> 00:04:24,900
+will go into all this detail.
+
+72
+00:04:24,900 --> 00:04:28,650
+But here is the class for the singly linked list is kind of long.
+
+73
+00:04:28,650 --> 00:04:30,360
+There's a lot of methods we add in there.
+
+74
+00:04:30,360 --> 00:04:33,490
+This is a blueprint though this doesn't actually represent any data.
+
+75
+00:04:33,500 --> 00:04:35,580
+There's no there's no instance of a list.
+
+76
+00:04:35,580 --> 00:04:37,330
+We still have to instantiate one.
+
+77
+00:04:37,440 --> 00:04:44,130
+Here's another really short class called a node and the singly linked list class utilizes the Node class
+
+78
+00:04:44,130 --> 00:04:44,820
+inside of it.
+
+79
+00:04:44,850 --> 00:04:46,080
+So that's all I'll say about it for now.
+
+80
+00:04:46,080 --> 00:04:50,860
+But this is just a single example of many that we're going to see and implement on our own.
+
+81
+00:04:50,970 --> 00:04:52,420
+So I think that I'll leave off here.
+
+82
+00:04:52,440 --> 00:04:56,000
+Just know that classes are what we're going to use throughout the rest of the course.
+
+83
+00:04:56,130 --> 00:05:00,670
+Coming up next a bunch of data structures in the next video though are going to introduce the syntax
+
+84
+00:05:00,730 --> 00:05:01,710
+for classes.
+
+85
+00:05:01,810 --> 00:05:04,840
+So if you know what you can skip it take get some review.
+
+86
+00:05:04,900 --> 00:05:08,680
+But if you don't know it I highly recommend that you just sit through the next couple of videos.
+
+87
+00:05:08,680 --> 00:05:12,910
+I know it's not on an data structures just yet but it's really important because we're going to use
+
+88
+00:05:12,910 --> 00:05:13,530
+this.
+
+89
+00:05:13,540 --> 00:05:14,650
+OK I'll shut up.
+

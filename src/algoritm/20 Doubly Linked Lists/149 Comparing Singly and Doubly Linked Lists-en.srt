@@ -1,0 +1,336 @@
+1
+00:00:00,150 --> 00:00:00,530
+All right.
+
+2
+00:00:00,550 --> 00:00:01,530
+Welcome back.
+
+3
+00:00:01,530 --> 00:00:07,530
+Last video on doubly linked lists but I'd like to do here is just run down and recap the Big O notation
+
+4
+00:00:08,130 --> 00:00:10,830
+for the common operations insertion removal.
+
+5
+00:00:10,860 --> 00:00:11,920
+Searching and access.
+
+6
+00:00:11,940 --> 00:00:16,020
+Same thing that we did for singly linked lists and then a lot of cases it's very similar.
+
+7
+00:00:16,050 --> 00:00:17,580
+But there's a couple of exceptions.
+
+8
+00:00:17,730 --> 00:00:21,160
+So insertion is constant time which is the same.
+
+9
+00:00:21,180 --> 00:00:23,630
+It's what it was for singly linked first.
+
+10
+00:00:23,640 --> 00:00:25,710
+That's really where length lists Excel.
+
+11
+00:00:25,830 --> 00:00:27,410
+Inserting data is very very easy.
+
+12
+00:00:27,400 --> 00:00:28,290
+Does it matter where.
+
+13
+00:00:28,350 --> 00:00:29,200
+It's very easy.
+
+14
+00:00:29,200 --> 00:00:33,050
+It doesn't matter how long the list is unlike an array removal.
+
+15
+00:00:33,060 --> 00:00:39,150
+For a doubly linked list is always constant which is not the case for a singly linked list.
+
+16
+00:00:39,150 --> 00:00:45,420
+Remember that if we are removing from the end of a singly linked list we have to iterate over the entire
+
+17
+00:00:45,420 --> 00:00:51,360
+thing until we get to the second to last item to make that the new tail on a doubly length list.
+
+18
+00:00:51,540 --> 00:00:52,480
+It's constant time.
+
+19
+00:00:52,530 --> 00:00:55,470
+It doesn't matter if you're at the millionth item.
+
+20
+00:00:55,470 --> 00:01:00,870
+You don't have to traverse the entire list to get to the nine hundred ninety nine thousand nine hundred
+
+21
+00:01:00,870 --> 00:01:02,770
+ninety nine node.
+
+22
+00:01:02,910 --> 00:01:05,280
+You just do previous snow removal.
+
+23
+00:01:05,340 --> 00:01:07,820
+It's faster or it can be at least.
+
+24
+00:01:08,070 --> 00:01:14,730
+Searching is still alive and but I have a note down here because the way we implemented searching is
+
+25
+00:01:15,150 --> 00:01:19,890
+optimized where we either start in the left side from the head and move towards the middle or we start
+
+26
+00:01:19,890 --> 00:01:22,440
+on the right side from the tail and move towards the middle.
+
+27
+00:01:22,440 --> 00:01:23,980
+Depending on what the indexes.
+
+28
+00:01:24,120 --> 00:01:27,340
+If it's closer to the end or to the beginning.
+
+29
+00:01:27,660 --> 00:01:35,640
+But even though that is 0 of and divided by two that still simplifies to 0 of an overall as and grows
+
+30
+00:01:36,010 --> 00:01:39,270
+it still insignificant for dividing it by 2.
+
+31
+00:01:39,660 --> 00:01:45,720
+When we talk about things like squared or constant time the differences are so large that dividing by
+
+32
+00:01:45,720 --> 00:01:48,230
+two doesn't matter so we simplify it to 0.
+
+33
+00:01:48,480 --> 00:01:53,550
+But keep in mind it is faster still and it's worth knowing that because we use that divide and conquer
+
+34
+00:01:53,550 --> 00:01:56,850
+approach where we either start at the beginning or the end and move towards the middle.
+
+35
+00:01:56,850 --> 00:02:02,460
+All right so that's a big O Really what it comes down to is that doubly linked lists are basically the
+
+36
+00:02:02,460 --> 00:02:06,060
+same except there's an extra pointer pointing to the previous node.
+
+37
+00:02:06,090 --> 00:02:09,670
+So we have two connections and that does make certain things much easier.
+
+38
+00:02:09,690 --> 00:02:13,170
+For example if we didn't talk about this really in this big video.
+
+39
+00:02:13,170 --> 00:02:16,530
+But if you need to start at the end and work backwards.
+
+40
+00:02:16,590 --> 00:02:22,560
+Often if you need to access your data in a reverse manner let's say that you're representing your browser
+
+41
+00:02:22,560 --> 00:02:23,050
+history.
+
+42
+00:02:23,100 --> 00:02:30,120
+This is actually often done with a doubly linked list because every page that you're on has a next Or
+
+43
+00:02:30,120 --> 00:02:33,120
+a preview and the previous Actually both are set.
+
+44
+00:02:33,120 --> 00:02:35,930
+So you know if I hit back which I won't do.
+
+45
+00:02:35,940 --> 00:02:38,530
+Who knows what's what I was looking at before this but if I hit back.
+
+46
+00:02:38,530 --> 00:02:43,610
+There's a web page and if I was on that web page I could hit forward or back.
+
+47
+00:02:43,620 --> 00:02:45,620
+That is a doubly linked list.
+
+48
+00:02:45,720 --> 00:02:50,730
+And a double link for us allows us to easily move backwards using daat previous or forwards using.
+
+49
+00:02:50,730 --> 00:02:53,260
+Next a singly linked list would not work.
+
+50
+00:02:53,280 --> 00:02:57,990
+Also double linked lists are better for finding things because it can be done in half the time.
+
+51
+00:02:57,990 --> 00:03:02,330
+However that extra pointer comes at a cost because it does take up more memory.
+
+52
+00:03:02,430 --> 00:03:07,350
+So if that's something you're worried about or you want to keep in mind even if you don't care it's
+
+53
+00:03:07,350 --> 00:03:08,550
+just something you should know.
+
+54
+00:03:08,550 --> 00:03:10,400
+If you need to talk about the length first.
+
+55
+00:03:10,410 --> 00:03:13,940
+If it comes up in an interview that's really the key distinction.
+
+56
+00:03:14,040 --> 00:03:19,680
+So double the linked list can be much better in certain ways and they're certainly easier to navigate
+
+57
+00:03:20,040 --> 00:03:21,890
+but it comes at a cost of more memory.
+
+58
+00:03:22,020 --> 00:03:22,430
+All right.
+
+59
+00:03:22,440 --> 00:03:28,640
+So I said this at the last video of the last section that the most recent recap for singling for lists.
+
+60
+00:03:28,650 --> 00:03:29,730
+This is very heavy stuff.
+
+61
+00:03:29,730 --> 00:03:30,910
+There's a lot here.
+
+62
+00:03:31,020 --> 00:03:32,310
+It's a lot to digest.
+
+63
+00:03:32,310 --> 00:03:38,580
+It's also not the most captivating content potentially for a lot of people in my experience teaching
+
+64
+00:03:38,580 --> 00:03:39,750
+this in person.
+
+65
+00:03:39,750 --> 00:03:45,240
+Some students love the problem solving aspects they didn't care that it wasn't really building any sort
+
+66
+00:03:45,240 --> 00:03:46,340
+of final product.
+
+67
+00:03:46,380 --> 00:03:48,870
+We're not making a game or an app or a Web site.
+
+68
+00:03:49,020 --> 00:03:51,870
+Some people love that or didn't care.
+
+69
+00:03:51,870 --> 00:03:54,730
+Other people though had a really hard time staying motivated.
+
+70
+00:03:54,810 --> 00:03:58,180
+So I said this in the last video in the last section.
+
+71
+00:03:58,230 --> 00:04:00,040
+Do whatever makes you happy.
+
+72
+00:04:00,120 --> 00:04:04,530
+If you're going to come back to the next section I wouldn't just add these all together and try and
+
+73
+00:04:04,530 --> 00:04:06,160
+do some power session.
+
+74
+00:04:06,300 --> 00:04:08,440
+Cram all of this into a night or two.
+
+75
+00:04:08,550 --> 00:04:10,170
+I would spread this out a lot.
+
+76
+00:04:10,170 --> 00:04:15,750
+Go pet a dog or cat or llama or get a foot rub.
+
+77
+00:04:15,870 --> 00:04:17,440
+If you're if you can do that.
+
+78
+00:04:17,550 --> 00:04:18,210
+Make some coffee.
+
+79
+00:04:18,210 --> 00:04:19,140
+Do whatever you need to do.
+
+80
+00:04:19,200 --> 00:04:19,560
+All right.
+
+81
+00:04:19,590 --> 00:04:24,470
+That is doubly linked lists were done with singly linked lists and double which means we are done with
+
+82
+00:04:24,470 --> 00:04:25,390
+little bursts.
+
+83
+00:04:25,590 --> 00:04:29,880
+Hopefully by now you feel pretty comfortable with at the very least explaining what they are and how
+
+84
+00:04:29,880 --> 00:04:32,340
+they compare to each other and also to array's.
+

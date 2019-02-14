@@ -1,0 +1,616 @@
+1
+00:00:00,120 --> 00:00:00,690
+All right.
+
+2
+00:00:00,720 --> 00:00:02,490
+So we have this true code laid out.
+
+3
+00:00:02,490 --> 00:00:06,000
+We have our helper methods written let's write the logic.
+
+4
+00:00:06,000 --> 00:00:10,990
+So the first thing I'll do I need my helper methods I'm going to keep those and I'm going to define
+
+5
+00:00:10,990 --> 00:00:18,090
+a function called radix sort and it takes a list of numbers and the very first thing after that I need
+
+6
+00:00:18,090 --> 00:00:21,140
+to figure out how many digits the largest number has.
+
+7
+00:00:21,570 --> 00:00:22,830
+So we have this method.
+
+8
+00:00:22,830 --> 00:00:24,040
+Most digits.
+
+9
+00:00:24,120 --> 00:00:28,540
+So let's make a variable called most digits or something like that Max digit.
+
+10
+00:00:28,590 --> 00:00:35,290
+Let's do that Max digit count equals most digits of numbers.
+
+11
+00:00:35,460 --> 00:00:37,930
+And then let's just print that out so we can see that it works
+
+12
+00:00:40,630 --> 00:00:41,080
+OK.
+
+13
+00:00:41,200 --> 00:00:47,500
+And then let's call RADICH sort down here and pass in a list of numbers with a couple small ones some
+
+14
+00:00:47,500 --> 00:00:49,630
+larger ones.
+
+15
+00:00:50,800 --> 00:00:51,550
+OK.
+
+16
+00:00:51,850 --> 00:00:57,490
+So what is the max digit count if this looks like it should be for the largest number we have is a four
+
+17
+00:00:57,490 --> 00:00:58,750
+digit number.
+
+18
+00:00:58,750 --> 00:01:00,810
+If we run the code we get four.
+
+19
+00:01:01,090 --> 00:01:07,080
+All right so now we know we need to loop four times so we can start with that loop from K.
+
+20
+00:01:07,110 --> 00:01:09,430
+It doesn't have to be k but k equals zero.
+
+21
+00:01:09,430 --> 00:01:11,250
+Up to that largest number of digits.
+
+22
+00:01:11,440 --> 00:01:22,060
+So let's write a for loop for k equals zero K is a less than max digit count K plus plus.
+
+23
+00:01:22,090 --> 00:01:26,850
+So this gives us an index k going from 0 to 1 to 2 to 3.
+
+24
+00:01:26,950 --> 00:01:34,420
+So we can use that and pass it into this method get digit so we can ask for the zero digit or that the
+
+25
+00:01:34,420 --> 00:01:35,560
+third digit.
+
+26
+00:01:35,990 --> 00:01:40,100
+OK now that we have that written we need to make our buckets.
+
+27
+00:01:40,180 --> 00:01:42,310
+So I'm going to make a list.
+
+28
+00:01:42,310 --> 00:01:51,850
+I'm just going to call it digit buckets with one B and we could you know manually construct this make
+
+29
+00:01:51,850 --> 00:01:54,860
+an array and then push in 10 empty arrays.
+
+30
+00:01:55,150 --> 00:02:04,300
+But there's also an easy way relatively easy if we do array from and then here right here if we pass
+
+31
+00:02:04,300 --> 00:02:06,170
+in a length.
+
+32
+00:02:06,240 --> 00:02:13,450
+I set it to be 10 and then we tell each one to be an empty suburb.
+
+33
+00:02:13,720 --> 00:02:17,070
+So if I just copy this over here and paste it in.
+
+34
+00:02:17,070 --> 00:02:22,560
+If we look at what did your book it is it's an array of 10 empty arrays.
+
+35
+00:02:22,600 --> 00:02:26,060
+So if I changed it slightly to be an array containing the string.
+
+36
+00:02:26,160 --> 00:02:35,050
+Well we end up with 10 sub arrays each with EHLO Well is there one element not what we want but we want
+
+37
+00:02:35,050 --> 00:02:35,730
+an empty array.
+
+38
+00:02:35,740 --> 00:02:43,120
+So now we have 10 buckets 10 slots inside of this one larger bucket called did one array called digit
+
+39
+00:02:43,120 --> 00:02:45,430
+buckets and they're all empty.
+
+40
+00:02:45,490 --> 00:02:47,780
+Now we need to loop over every number.
+
+41
+00:02:48,010 --> 00:02:57,920
+So this part's easy let's just do for zero is less than numbers that length plus plus.
+
+42
+00:02:58,000 --> 00:03:03,930
+So for each number we're now going to take that individual number just numbs I.
+
+43
+00:03:04,120 --> 00:03:12,360
+And we're going to figure out at position k so at index 0 of each number what what value do we get.
+
+44
+00:03:12,700 --> 00:03:14,520
+And then K will change of course.
+
+45
+00:03:14,680 --> 00:03:26,620
+So we're going to do get digit of Gnome's I comma K and so that will give us digit 3 5 7 2 5.
+
+46
+00:03:26,650 --> 00:03:27,720
+The first time through.
+
+47
+00:03:27,910 --> 00:03:32,670
+And then K will go up and K will be 1 2 then will look at this number.
+
+48
+00:03:33,130 --> 00:03:38,290
+The index one number and then will go up again and will keep going.
+
+49
+00:03:38,500 --> 00:03:40,460
+So we don't just want to get that number.
+
+50
+00:03:40,570 --> 00:03:49,000
+We want to take that number that comes back and then put Gnome's I in the bucket at that index.
+
+51
+00:03:49,030 --> 00:03:55,330
+So if we if I just print this out right now it's going to be pretty ugly but you'll see what we end
+
+52
+00:03:55,330 --> 00:03:58,870
+up with here on our code.
+
+53
+00:03:58,870 --> 00:04:00,360
+So a lot of comprador logs.
+
+54
+00:04:00,520 --> 00:04:06,100
+But the very first time through we end up with 3 5 7 2 5.
+
+55
+00:04:06,290 --> 00:04:10,040
+So 3 5 7 2 5 2.
+
+56
+00:04:10,330 --> 00:04:12,380
+So we need to take those numbers.
+
+57
+00:04:12,380 --> 00:04:15,250
+We need to put this number at index three.
+
+58
+00:04:15,250 --> 00:04:16,580
+This number we got five.
+
+59
+00:04:16,600 --> 00:04:20,890
+We need to put it at index 5 so we could just do this.
+
+60
+00:04:20,890 --> 00:04:25,980
+We could do it in one ugly line which I don't like digit buckets.
+
+61
+00:04:27,360 --> 00:04:33,660
+Of that result so digit buckets have indexed three or index five or whatever we get back.
+
+62
+00:04:33,720 --> 00:04:35,650
+Push number.
+
+63
+00:04:35,670 --> 00:04:38,160
+I know this is kind of a gross line in my opinion.
+
+64
+00:04:38,160 --> 00:04:39,280
+I'm going to break it up.
+
+65
+00:04:39,480 --> 00:04:46,830
+But if we actually do this and let's just do it one time and then let's just print out at the end of
+
+66
+00:04:46,830 --> 00:04:51,050
+this loop the chip buckets you'll see.
+
+67
+00:04:51,400 --> 00:04:56,490
+Well I don't want to comment for the hatch but everything should be in the correct spot like the first
+
+68
+00:04:56,490 --> 00:04:57,720
+time through.
+
+69
+00:04:57,720 --> 00:05:04,360
+We end up with all the numbers that have to as their first digit are in the two bucket.
+
+70
+00:05:04,410 --> 00:05:06,380
+We have 23 in this bucket.
+
+71
+00:05:06,390 --> 00:05:09,940
+We have these numbers that end with the 5 and the five bucket.
+
+72
+00:05:09,990 --> 00:05:12,280
+So that's all working.
+
+73
+00:05:12,300 --> 00:05:14,480
+But I just don't like how long this line is.
+
+74
+00:05:14,580 --> 00:05:23,290
+So I'm going to break this up a little bit and make a variable called digit just like this.
+
+75
+00:05:23,340 --> 00:05:27,850
+Copied one extra part and then we'll do index of digit.
+
+76
+00:05:27,900 --> 00:05:30,190
+Push comes I.
+
+77
+00:05:30,330 --> 00:05:31,950
+So we're going to get the digit.
+
+78
+00:05:32,170 --> 00:05:33,260
+So that would give us three.
+
+79
+00:05:33,260 --> 00:05:37,120
+And then this is just a way of breaking up the code digit pockets of three.
+
+80
+00:05:37,230 --> 00:05:39,340
+Push the number OK.
+
+81
+00:05:39,360 --> 00:05:40,320
+So we're almost there.
+
+82
+00:05:40,410 --> 00:05:46,650
+But the one thing we're missing is after we break them into their buckets we need to recollect them
+
+83
+00:05:46,860 --> 00:05:49,780
+into a new array and do the same thing.
+
+84
+00:05:49,800 --> 00:05:51,920
+Otherwise we're just keeping them in the same order.
+
+85
+00:05:52,140 --> 00:05:54,790
+And then just sorting them into buckets.
+
+86
+00:05:54,900 --> 00:05:59,910
+So we're sorting them based off of their first number and then we're doing the same thing based off
+
+87
+00:05:59,910 --> 00:06:07,490
+of the second number but we're never actually ending up with a new order to the main list called Nomes.
+
+88
+00:06:07,560 --> 00:06:13,470
+So we need to afterwards right here where we're printing out after we've put them in the correct bucket
+
+89
+00:06:13,950 --> 00:06:16,370
+we need to then concat the array.
+
+90
+00:06:16,370 --> 00:06:18,860
+So there's a nice easy way of doing this in javascript.
+
+91
+00:06:18,860 --> 00:06:28,860
+We reassign numbers to be array dot concat and then I'm going to use spread digit buckets and I use
+
+92
+00:06:28,860 --> 00:06:34,520
+the spread operator the special syntax with the three dots which you're not familiar with it.
+
+93
+00:06:34,580 --> 00:06:41,230
+It allows me to pass in all the arguments or every element in digit buckets as an individual argument.
+
+94
+00:06:41,280 --> 00:06:47,160
+And the reason I need to do this rather than just passing in digit buckets is if we imagine here I'll
+
+95
+00:06:47,160 --> 00:06:48,170
+do it down here.
+
+96
+00:06:48,540 --> 00:06:56,740
+If I do a duck can cats and let's say that I have three arrays because this is an array of arrays right.
+
+97
+00:06:56,820 --> 00:06:57,940
+What we're looking at here.
+
+98
+00:06:58,080 --> 00:07:00,210
+So let's say that digit looks like this.
+
+99
+00:07:00,210 --> 00:07:04,460
+It's very simple but it looks something like this.
+
+100
+00:07:04,710 --> 00:07:10,800
+If I call a radar concat it's going to concat these into a new array.
+
+101
+00:07:10,830 --> 00:07:14,120
+But they still are in separate buckets.
+
+102
+00:07:14,130 --> 00:07:18,930
+If I want to take these numbers and just combine them back into the original form.
+
+103
+00:07:18,930 --> 00:07:28,310
+So this but in a different order if I use the spread operator that dot dot dot I end up with this just
+
+104
+00:07:28,310 --> 00:07:31,390
+the values there turned into a new array.
+
+105
+00:07:31,700 --> 00:07:32,510
+So this is what I want.
+
+106
+00:07:32,510 --> 00:07:33,960
+This is a nice easy way.
+
+107
+00:07:34,040 --> 00:07:40,340
+I don't have to manually you could loop over digit buckets for each bucket loop over all the values
+
+108
+00:07:40,370 --> 00:07:44,490
+in that bucket and push them into Gnome's or a new array.
+
+109
+00:07:44,660 --> 00:07:47,120
+But this is a nice succinct way of doing it.
+
+110
+00:07:47,540 --> 00:07:52,630
+And that's all we need to do aside from returning names.
+
+111
+00:07:53,050 --> 00:07:57,590
+So let's do that and let's see if it works.
+
+112
+00:07:57,650 --> 00:08:02,790
+What I would like to do here is do a constant log.
+
+113
+00:08:03,830 --> 00:08:06,180
+Let's go with digit buckets here.
+
+114
+00:08:06,470 --> 00:08:12,800
+And then afterwards after we can get back into Nom's can count about log numbers.
+
+115
+00:08:13,070 --> 00:08:13,670
+OK.
+
+116
+00:08:13,820 --> 00:08:14,910
+Let's run the code.
+
+117
+00:08:15,350 --> 00:08:15,780
+All right.
+
+118
+00:08:15,800 --> 00:08:21,020
+So first time through we end up with everything sorted or not sorted but everything put into the correct
+
+119
+00:08:21,020 --> 00:08:23,270
+bucket based off the zero digit.
+
+120
+00:08:23,270 --> 00:08:25,220
+The first one from the right.
+
+121
+00:08:25,220 --> 00:08:27,710
+Then we can catch this.
+
+122
+00:08:27,710 --> 00:08:29,510
+So the order is preserved.
+
+123
+00:08:29,510 --> 00:08:33,450
+Think of it as just smushing them all together into this array.
+
+124
+00:08:33,450 --> 00:08:35,040
+Now number looks like this.
+
+125
+00:08:35,180 --> 00:08:42,170
+So we have 12 digit 2 followed by 9 8 5 2 which ends in a two and then which one end in a three and
+
+126
+00:08:42,170 --> 00:08:43,430
+a five and so on.
+
+127
+00:08:43,430 --> 00:08:46,200
+So we took this order and just smashed them together.
+
+128
+00:08:46,280 --> 00:08:49,740
+Then we went through and put them into buckets based off of this number.
+
+129
+00:08:50,080 --> 00:08:51,440
+So you can see them here.
+
+130
+00:08:51,770 --> 00:08:54,560
+So this is in slot one bucket one.
+
+131
+00:08:54,560 --> 00:08:56,930
+This is in bucket to bucket for.
+
+132
+00:08:57,230 --> 00:08:58,700
+And then we can catch them again.
+
+133
+00:08:58,760 --> 00:09:02,470
+So we keep this order and we end up with this.
+
+134
+00:09:02,510 --> 00:09:10,040
+So each time we get a little more sorted then we do it again and we look at the index to 0 1 2.
+
+135
+00:09:10,290 --> 00:09:15,310
+So some of the numbers don't have a value there in which case they're in the zero bucket.
+
+136
+00:09:15,680 --> 00:09:18,680
+So the smallest numbers are already in the correct bucket.
+
+137
+00:09:18,950 --> 00:09:23,000
+But the three and four digit numbers are still working their way to their correct spots.
+
+138
+00:09:23,390 --> 00:09:25,430
+So we can catch it again.
+
+139
+00:09:25,460 --> 00:09:26,570
+We end up with this.
+
+140
+00:09:26,750 --> 00:09:27,980
+And then one more time.
+
+141
+00:09:27,980 --> 00:09:34,500
+Put them in buckets based off of their index of three number what digit is right here.
+
+142
+00:09:35,000 --> 00:09:41,060
+And then we can cat we end up with this we're done and we return that and that is radix sort.
+
+143
+00:09:41,060 --> 00:09:42,890
+So I think it's kind of a fun one.
+
+144
+00:09:42,890 --> 00:09:48,080
+Once you actually write the methods or you find the methods on Stack Overflow for getting a digit counting
+
+145
+00:09:48,080 --> 00:09:52,610
+digits finding the most digits the logic itself can get rid of the concert about logs.
+
+146
+00:09:52,730 --> 00:09:58,670
+It's relatively straightforward I think aside from you know this if you haven't ever seen this operator
+
+147
+00:09:58,970 --> 00:10:00,500
+this is just a simplification.
+
+148
+00:10:00,500 --> 00:10:02,230
+A nice short way of doing this.
+
+149
+00:10:02,360 --> 00:10:04,750
+But the idea of what we're doing I think is simple.
+
+150
+00:10:04,940 --> 00:10:08,820
+We're separating things into buckets based off of a digit in a given position.
+
+151
+00:10:09,110 --> 00:10:14,150
+And then we Re-Forum them into a new list or a new array and then repeat it on the next digit.
+
+152
+00:10:14,150 --> 00:10:18,730
+For all of those numbers and keep going until we've done it for every digit in the largest number.
+
+153
+00:10:18,980 --> 00:10:19,600
+All right.
+
+154
+00:10:19,670 --> 00:10:24,890
+So we'll talk about big-O in the next video and then we are done with sorting rhythms all right.
+

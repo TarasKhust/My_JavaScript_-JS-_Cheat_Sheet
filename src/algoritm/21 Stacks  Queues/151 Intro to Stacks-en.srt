@@ -1,0 +1,420 @@
+1
+00:00:00,210 --> 00:00:01,230
+Hey welcome back.
+
+2
+00:00:01,230 --> 00:00:07,200
+This section covers two new data structures that are linked together that are often taught as one chapter
+
+3
+00:00:07,200 --> 00:00:12,750
+in a book or one day and of course they're very simple and this will be a lot less code than something
+
+4
+00:00:12,750 --> 00:00:13,970
+like a linked list.
+
+5
+00:00:14,010 --> 00:00:16,850
+So those two structures are stacks and Qs.
+
+6
+00:00:16,950 --> 00:00:19,580
+We're going to start with stacks for the first couple of videos.
+
+7
+00:00:19,620 --> 00:00:25,380
+But like I said this will be much faster much easier than some of the length list logic we had before.
+
+8
+00:00:25,410 --> 00:00:29,040
+So first couple of objectives what is a stack.
+
+9
+00:00:29,040 --> 00:00:30,550
+We're going to talk about a definition.
+
+10
+00:00:30,600 --> 00:00:34,160
+We want to talk about use cases both in the real world.
+
+11
+00:00:34,230 --> 00:00:39,390
+They're used all over the place but also in this course we will come back and you stacks later on and
+
+12
+00:00:39,390 --> 00:00:41,760
+then we'll implement operations on the stack.
+
+13
+00:00:41,760 --> 00:00:44,830
+We're actually going to talk about two different ways to implement a stack.
+
+14
+00:00:45,240 --> 00:00:47,290
+But first what is a stack.
+
+15
+00:00:47,520 --> 00:00:47,860
+OK.
+
+16
+00:00:47,890 --> 00:00:51,330
+So both the stacks and Qs which we'll talk about in just a bit.
+
+17
+00:00:51,390 --> 00:00:54,500
+They are both data collections their data structure.
+
+18
+00:00:54,570 --> 00:00:57,130
+They're an abstract data structure.
+
+19
+00:00:57,570 --> 00:01:04,530
+And really the only rule is it's a collection of data and it needs to abide by a life principle.
+
+20
+00:01:04,560 --> 00:01:06,660
+Last In First Out.
+
+21
+00:01:06,660 --> 00:01:12,160
+So a queue follows a different principle which is first in first out.
+
+22
+00:01:12,270 --> 00:01:13,750
+But we're talking about stacks.
+
+23
+00:01:13,830 --> 00:01:19,830
+So the last element added to a stack is going to be the first one to be removed.
+
+24
+00:01:20,130 --> 00:01:26,460
+Think of a collection of books on your desk or if you have a messy countertop and you haven't done the
+
+25
+00:01:26,460 --> 00:01:31,830
+dishes because your roommate is a terrible person if you have a bunch of plates stacked up the most
+
+26
+00:01:31,830 --> 00:01:33,910
+recently added plate is on top.
+
+27
+00:01:34,110 --> 00:01:38,610
+And when you remove a plate you're going to remove from the top you're going to remove the one that
+
+28
+00:01:38,610 --> 00:01:39,750
+was just added.
+
+29
+00:01:39,850 --> 00:01:45,170
+Unless you're crazy and you want to remove the very bottom plate and you know cause a crazy mess.
+
+30
+00:01:45,270 --> 00:01:48,530
+So a stack again is just a collection of data.
+
+31
+00:01:48,930 --> 00:01:53,380
+And the first thing that you added in is the last thing to be removed.
+
+32
+00:01:53,460 --> 00:01:57,540
+The last thing to be added in is the first thing to be removed.
+
+33
+00:01:57,550 --> 00:02:02,320
+There's more than one way to implement a stack but you could use a length list and we'll get to that.
+
+34
+00:02:02,610 --> 00:02:08,070
+But what we have here is our first element added in our last element added in.
+
+35
+00:02:08,220 --> 00:02:12,140
+And we would remove from the last side of things from the left.
+
+36
+00:02:12,150 --> 00:02:14,050
+When you remove something you would come from here.
+
+37
+00:02:14,220 --> 00:02:19,680
+And then here then here and then finally seven would be removed as our last thing to be removed.
+
+38
+00:02:19,680 --> 00:02:21,590
+It was the first thing to be added.
+
+39
+00:02:21,900 --> 00:02:23,540
+So we've seen this before.
+
+40
+00:02:23,730 --> 00:02:27,830
+If you remember in the recursion section we talked about the call stack.
+
+41
+00:02:27,870 --> 00:02:31,290
+So if you're not familiar with the call stack I recommend you go check that section out.
+
+42
+00:02:31,290 --> 00:02:32,420
+We talk a lot about it.
+
+43
+00:02:32,430 --> 00:02:33,950
+The name says stack in it.
+
+44
+00:02:34,080 --> 00:02:40,450
+And if I head over to some code and I run this code here's factorial it's recursive.
+
+45
+00:02:40,550 --> 00:02:42,760
+It doesn't matter if you remember how it works or not.
+
+46
+00:02:42,870 --> 00:02:47,790
+When I execute this for the break point if you watch the call stack Here's the well this is the first
+
+47
+00:02:47,790 --> 00:02:48,050
+thing.
+
+48
+00:02:48,060 --> 00:02:54,000
+But here's our first function call that we wrote added into the call stack and it will be the last one
+
+49
+00:02:54,000 --> 00:02:55,100
+to be removed.
+
+50
+00:02:55,110 --> 00:03:00,320
+So things are added on top of it as you can see we're almost there.
+
+51
+00:03:00,370 --> 00:03:00,670
+Thank you.
+
+52
+00:03:00,670 --> 00:03:01,460
+Our last one.
+
+53
+00:03:01,770 --> 00:03:02,550
+Yes.
+
+54
+00:03:02,550 --> 00:03:08,220
+So we now have this stack where this was the first thing I did in this is the last thing added and this
+
+55
+00:03:08,220 --> 00:03:09,810
+is going to be removed first.
+
+56
+00:03:09,840 --> 00:03:14,560
+Imagine a stack of books here we take from the top until we get to the bottom.
+
+57
+00:03:14,730 --> 00:03:20,380
+And so then we pop We removed from the top although that is deceiving because it does look like we're
+
+58
+00:03:20,380 --> 00:03:21,590
+removing from down here.
+
+59
+00:03:21,690 --> 00:03:24,110
+But the length the list is just shrinking.
+
+60
+00:03:24,120 --> 00:03:33,580
+So if you look in this context we're looking at a return value of two x's to this one X is 3 x's 4.
+
+61
+00:03:33,810 --> 00:03:37,520
+So when we remove There we go we removed one.
+
+62
+00:03:37,530 --> 00:03:40,920
+Now we're back and we're down to X's three x's four.
+
+63
+00:03:40,920 --> 00:03:46,110
+So it looks sort of like we're removing from the bottom the way the animation works here but we are
+
+64
+00:03:46,110 --> 00:03:48,670
+indeed removing from the top of the stack.
+
+65
+00:03:49,140 --> 00:03:50,320
+And now we have one more.
+
+66
+00:03:50,370 --> 00:03:55,140
+We remove this and we get back to this original anonymous and now we're done.
+
+67
+00:03:55,560 --> 00:03:56,020
+OK.
+
+68
+00:03:56,160 --> 00:03:58,400
+So if you don't remember how the call stack works.
+
+69
+00:03:58,440 --> 00:04:02,570
+Definitely check out the recursion section but this is an example of a stack.
+
+70
+00:04:02,580 --> 00:04:05,510
+The last thing added in is the first thing removed.
+
+71
+00:04:05,520 --> 00:04:06,660
+So a couple of other uses.
+
+72
+00:04:06,750 --> 00:04:09,990
+We talked about how stacks are used to manage function invocations.
+
+73
+00:04:10,170 --> 00:04:16,740
+That's in many many programming languages really commonly used undo and redo functionality like in Photoshop
+
+74
+00:04:17,130 --> 00:04:21,720
+when you're typing Well I guess not typing but when you're editing a photo you know removing wrinkles
+
+75
+00:04:21,930 --> 00:04:25,980
+on your mom's face because she makes you do that because she knows you know how to photoshop things.
+
+76
+00:04:26,220 --> 00:04:29,640
+Well if you make a mistake you hit command Z.
+
+77
+00:04:29,670 --> 00:04:33,070
+It's going to undo the latest action which is at the top of the stack.
+
+78
+00:04:33,120 --> 00:04:35,970
+It doesn't just go you know a hundred actions back.
+
+79
+00:04:35,970 --> 00:04:40,770
+You have to step through it constantly so every time you do a new action you remove something or you
+
+80
+00:04:40,770 --> 00:04:45,780
+clone something it gets added to the top of the stack and then when you undo it you're removing from
+
+81
+00:04:45,780 --> 00:04:46,880
+the top of that stack.
+
+82
+00:04:46,890 --> 00:04:50,580
+Another example has to do with history objects in your browser.
+
+83
+00:04:50,580 --> 00:04:58,020
+Many front end frameworks like react will use a stack to model the history that the pages you've viewed
+
+84
+00:04:58,110 --> 00:05:00,590
+the routes that you've visited that makes sense.
+
+85
+00:05:00,700 --> 00:05:05,600
+And one final example in this course we'll actually use stacks and some of our own algorithms.
+
+86
+00:05:05,830 --> 00:05:11,770
+So when we get to things like trees and graphs later on some of the algorithms that we'll be writing
+
+87
+00:05:12,250 --> 00:05:17,710
+we actually use a stack and also Qs which we'll talk about later but in this case we'll use a stack
+
+88
+00:05:17,890 --> 00:05:22,090
+to store sort of the history of things things that we want to come back to.
+
+89
+00:05:22,120 --> 00:05:24,840
+We're going to use them as an intermediate in our algorithm.
+
+90
+00:05:24,850 --> 00:05:26,590
+So here's an example again.
+
+91
+00:05:26,600 --> 00:05:32,590
+Don't don't worry about the code itself but we make a stack and you can see here I'm calling on my stack
+
+92
+00:05:33,040 --> 00:05:39,400
+I'm calling on my stack inside of this algorithm and we're using it as a place to help us to store data
+
+93
+00:05:39,730 --> 00:05:43,900
+along the way as we go through this algorithm we're collecting things and then removing them from the
+
+94
+00:05:43,900 --> 00:05:45,210
+stack anyway.
+
+95
+00:05:45,520 --> 00:05:49,580
+Don't worry about the code itself just know that this is not a one and done thing where I'm going to
+
+96
+00:05:49,580 --> 00:05:53,000
+introduce a concept and say Yeah these are cool and they're used.
+
+97
+00:05:53,080 --> 00:05:55,020
+We're actually going to use them later.
+
+98
+00:05:55,360 --> 00:06:00,760
+So in the next video I want to show you that we can implement a stack without actually writing any new
+
+99
+00:06:00,760 --> 00:06:01,540
+code ourselves.
+
+100
+00:06:01,540 --> 00:06:03,590
+We don't have to create our own data structure.
+
+101
+00:06:03,610 --> 00:06:05,670
+There's more than one way to implement a stack.
+
+102
+00:06:05,680 --> 00:06:11,470
+It's an abstract concept and we're going to start by just doing one with an array using a builtin javascript
+
+103
+00:06:11,470 --> 00:06:13,260
+array to build a stack.
+
+104
+00:06:13,390 --> 00:06:14,420
+So that's coming up next.
+
+105
+00:06:14,620 --> 00:06:19,060
+And then we'll do a more official linked list implementation where we write some code.
+

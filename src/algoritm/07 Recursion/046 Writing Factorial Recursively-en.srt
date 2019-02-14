@@ -1,0 +1,212 @@
+1
+00:00:00,180 --> 00:00:00,990
+Welcome back.
+
+2
+00:00:00,990 --> 00:00:02,900
+Let's do the same thing right factorial.
+
+3
+00:00:02,910 --> 00:00:05,330
+But do it the recursive way.
+
+4
+00:00:05,880 --> 00:00:06,280
+OK.
+
+5
+00:00:06,330 --> 00:00:10,580
+So what we need to do the first thing aside from just defining our function.
+
+6
+00:00:10,740 --> 00:00:18,330
+The first thing is going to be to understand both the base case and the smaller chunk the recursive
+
+7
+00:00:18,330 --> 00:00:20,890
+call the different whatever you want to call it.
+
+8
+00:00:21,120 --> 00:00:23,390
+Basically the two different components.
+
+9
+00:00:23,410 --> 00:00:29,100
+So I mean just to find it here takes in a number like this.
+
+10
+00:00:29,100 --> 00:00:37,950
+And what we're going to do factorial of three is equal to three times the factorial of two factorial
+
+11
+00:00:37,950 --> 00:00:42,180
+of two is equal to two times a factorial of 1.
+
+12
+00:00:42,180 --> 00:00:50,590
+So what we're going to do at the end of the day we're going to return here numb times factorial of numb
+
+13
+00:00:50,820 --> 00:00:52,040
+minus one.
+
+14
+00:00:52,650 --> 00:00:58,370
+So hopefully this part makes sense but if we just had this this would be problematic because there's
+
+15
+00:00:58,380 --> 00:00:59,640
+no stopping point.
+
+16
+00:00:59,910 --> 00:01:04,400
+If numb starts at 10:00 then we're going to return 10 times factorial of nine.
+
+17
+00:01:04,570 --> 00:01:08,180
+But then factorial of nine returns nine times sectorial of eight.
+
+18
+00:01:08,250 --> 00:01:12,540
+But it keeps going he goes past zero goes to negatives and it will go forever.
+
+19
+00:01:12,540 --> 00:01:13,660
+So that's not good.
+
+20
+00:01:13,980 --> 00:01:15,230
+So we need to have the endpoint.
+
+21
+00:01:15,270 --> 00:01:16,700
+Well what is our End Point.
+
+22
+00:01:17,010 --> 00:01:22,800
+Well we kind of can take what we did in the interim version iterative version we multiply by 1.
+
+23
+00:01:22,920 --> 00:01:24,640
+That's the end of the road.
+
+24
+00:01:24,690 --> 00:01:30,600
+We don't want to keep going to zero because if we do if we multiply by zero it eliminates all of our
+
+25
+00:01:30,600 --> 00:01:32,640
+hard work because it wipes everything out.
+
+26
+00:01:32,640 --> 00:01:34,140
+The magical power of zero.
+
+27
+00:01:34,320 --> 00:01:41,730
+So we'll just do something like if numb is equal to one return one factorial of one should be one right
+
+28
+00:01:41,730 --> 00:01:46,050
+if we plug one in here we should get one right away one time to one.
+
+29
+00:01:46,260 --> 00:01:48,280
+There's nothing below it to multiply by.
+
+30
+00:01:48,750 --> 00:01:49,630
+And this is it.
+
+31
+00:01:49,710 --> 00:01:51,330
+This is the solution.
+
+32
+00:01:51,840 --> 00:01:53,020
+So it's short.
+
+33
+00:01:53,640 --> 00:01:57,100
+And if we step through it let's do it with three again.
+
+34
+00:01:57,120 --> 00:02:00,810
+We're going to it's the same idea behind the last one we did with some range.
+
+35
+00:02:00,880 --> 00:02:07,950
+Right it looks identical except for multiplying instead of adding So factorial of three is going to
+
+36
+00:02:07,950 --> 00:02:12,280
+return three times factorial of two factorial of two.
+
+37
+00:02:12,480 --> 00:02:16,630
+It's going to return to times factor of 1 factorial of 1 returned 1.
+
+38
+00:02:16,800 --> 00:02:19,000
+So then we work back up.
+
+39
+00:02:19,020 --> 00:02:26,340
+So if we just really quickly do this factorial of three actually that manufacturable of 5 a little bit
+
+40
+00:02:26,340 --> 00:02:27,060
+larger.
+
+41
+00:02:27,150 --> 00:02:30,800
+Just to show you and I'm not going to go through it step by step.
+
+42
+00:02:30,800 --> 00:02:37,270
+We're just going to very quickly look at what happens to our stack over there as it continues to grow.
+
+43
+00:02:37,300 --> 00:02:38,620
+OK so now Gnome is one.
+
+44
+00:02:38,690 --> 00:02:41,230
+So we have one two three four five calls here.
+
+45
+00:02:41,540 --> 00:02:43,430
+Naam is one which is returned.
+
+46
+00:02:43,860 --> 00:02:50,010
+So then we work backwards you can see the return value growing from one that is multiplied by two then
+
+47
+00:02:50,010 --> 00:02:50,460
+by three.
+
+48
+00:02:50,460 --> 00:02:52,040
+Now we're going to multiply it by four.
+
+49
+00:02:52,110 --> 00:02:52,960
+We get 24.
+
+50
+00:02:53,010 --> 00:02:59,160
+Then you multiply it by five and we get 120 and that's the return value of 120 and you can see the console
+
+51
+00:02:59,400 --> 00:03:02,730
+shows us it displays the return value of 120.
+
+52
+00:03:02,730 --> 00:03:10,550
+All right so that is recursive factorial a very very common intro to recursion exercise and it's a pattern
+
+53
+00:03:10,890 --> 00:03:15,570
+as I already explained it's basically the same thing here except we're multiplying now instead of adding.
+

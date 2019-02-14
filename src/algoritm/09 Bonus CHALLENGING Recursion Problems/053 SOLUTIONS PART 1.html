@@ -1,0 +1,38 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>053 SOLUTIONS PART 1</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><h4>RECURSION CHALLENGE SECTION SOLUTIONS</h4><p><strong>Reverse Solution</strong></p><pre class="prettyprint linenums">function reverse(str){
+	if(str.length &lt;= 1) return str;
+	return reverse(str.slice(1)) + str[0];
+}</pre><p><strong>isPalindrome Solution</strong></p><pre class="prettyprint linenums">function isPalindrome(str){
+    if(str.length === 1) return true;
+    if(str.length === 2) return str[0] === str[1];
+    if(str[0] === str.slice(-1)) return isPalindrome(str.slice(1,-1))
+    return false;
+}</pre><p><strong>someRecursive Solution</strong></p><pre class="prettyprint linenums">function someRecursive(array, callback) {
+    if (array.length === 0) return false;
+    if (callback(array[0])) return true;
+    return someRecursive(array.slice(1),callback);
+}</pre><p><strong>flatten Solution</strong></p><pre class="prettyprint linenums">function flatten(oldArr){
+  var newArr = []
+  	for(var i = 0; i &lt; oldArr.length; i++){
+    	if(Array.isArray(oldArr[i])){
+      		newArr = newArr.concat(flatten(oldArr[i]))
+    	} else {
+      		newArr.push(oldArr[i])
+    	}
+  } 
+  return newArr;
+}</pre><p><br></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

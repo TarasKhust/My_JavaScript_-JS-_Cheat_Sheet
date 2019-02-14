@@ -1,0 +1,408 @@
+1
+00:00:00,210 --> 00:00:00,800
+All right.
+
+2
+00:00:00,810 --> 00:00:03,380
+So here's my solution for anagrams.
+
+3
+00:00:03,390 --> 00:00:08,790
+Again there's many ways of doing it but the way that I wanted you to try was to solve it with a frequency
+
+4
+00:00:08,790 --> 00:00:14,250
+counter use an object construct it using a loop and then use a second loop that's not nested.
+
+5
+00:00:14,310 --> 00:00:18,740
+So we still maintain our big-O of of and time complexity.
+
+6
+00:00:18,750 --> 00:00:19,920
+Here's my version.
+
+7
+00:00:20,190 --> 00:00:26,870
+So it's called valid and Graham and Graham and it takes two arguments first and second if I called them
+
+8
+00:00:27,360 --> 00:00:32,970
+and the very first thing I did just like before if the length of those two strings is different if they
+
+9
+00:00:32,970 --> 00:00:35,640
+don't match then immediately we can throw it out.
+
+10
+00:00:35,700 --> 00:00:37,820
+There's no way for it to be true.
+
+11
+00:00:37,830 --> 00:00:42,980
+There's no possible anagram of two strings that are different like they have to be the same.
+
+12
+00:00:42,990 --> 00:00:45,050
+So we return false right away.
+
+13
+00:00:45,240 --> 00:00:50,840
+Then what I did was made an object called look up you could call this frequency counter or just object
+
+14
+00:00:50,860 --> 00:00:51,870
+O.B. J.
+
+15
+00:00:51,900 --> 00:00:55,170
+I wouldn't call it object Sabet idea but obey is OK.
+
+16
+00:00:55,350 --> 00:01:01,860
+So look up and I'm going to loop through the first string right here and I'm going to create an object
+
+17
+00:01:01,860 --> 00:01:04,260
+that is a breakdown of the first string.
+
+18
+00:01:04,260 --> 00:01:10,880
+So if I called valid Let's just grab one of these examples like this one right here.
+
+19
+00:01:11,520 --> 00:01:17,160
+So this should return true and the first thing that I'm going to do I'll just model this object here.
+
+20
+00:01:17,670 --> 00:01:21,390
+We're going to go through we loop over it.
+
+21
+00:01:21,390 --> 00:01:24,190
+So I starts at 0 as less and first at length.
+
+22
+00:01:24,240 --> 00:01:29,640
+Plus plus it's going to loop over this first string which is called first and I'm going to take the
+
+23
+00:01:29,640 --> 00:01:33,070
+first character the very first time through using a variable called Letter.
+
+24
+00:01:33,090 --> 00:01:38,960
+Just to make my code a little cleaner instead of writing first I all over the place.
+
+25
+00:01:39,030 --> 00:01:44,670
+So this letter's going to start at A and I'm going to check if my look up object already has a in it
+
+26
+00:01:44,960 --> 00:01:45,820
+and it's empty right now.
+
+27
+00:01:45,840 --> 00:01:46,870
+So it doesn't.
+
+28
+00:01:46,890 --> 00:01:52,880
+So this line is going to either set it equal to 1 or we're going to add one.
+
+29
+00:01:52,890 --> 00:01:54,820
+If it's already initialized to a value.
+
+30
+00:01:54,990 --> 00:01:58,110
+So in our case there is no A in our object.
+
+31
+00:01:58,110 --> 00:01:59,220
+If this is our object.
+
+32
+00:01:59,310 --> 00:02:02,070
+So we add we initialize it to 1.
+
+33
+00:02:02,070 --> 00:02:02,990
+This is not true.
+
+34
+00:02:03,060 --> 00:02:06,400
+It returns falsie because there's nothing in there.
+
+35
+00:02:06,720 --> 00:02:08,380
+And so we set it to 1.
+
+36
+00:02:08,430 --> 00:02:15,530
+So we set a equal to 1 then we go through for an and we set an equal to 1.
+
+37
+00:02:15,550 --> 00:02:20,380
+Right then we get to you again this time we look up a well it's already in there.
+
+38
+00:02:20,520 --> 00:02:25,700
+So this time this part runs we add one look up of a plus equals one.
+
+39
+00:02:25,710 --> 00:02:26,910
+So he said it to two.
+
+40
+00:02:27,300 --> 00:02:27,530
+OK.
+
+41
+00:02:27,540 --> 00:02:33,380
+So we construct the entire object first and just so you can see what that looks like at the end of that
+
+42
+00:02:33,390 --> 00:02:34,550
+log.
+
+43
+00:02:34,860 --> 00:02:38,430
+Look up right here and run my code.
+
+44
+00:02:38,460 --> 00:02:41,100
+This is what we start off with.
+
+45
+00:02:41,100 --> 00:02:45,180
+So I constructed this look up and now we're going to actually use it.
+
+46
+00:02:45,180 --> 00:02:52,230
+So we're now going to loop over the second string and we're going to compare each character to our look
+
+47
+00:02:52,230 --> 00:02:55,350
+up object that we created based off of the first string.
+
+48
+00:02:55,680 --> 00:03:02,640
+And what we'll do is because you know we have multiple like a is in here twice or three times so we
+
+49
+00:03:02,640 --> 00:03:04,330
+can't just check in here.
+
+50
+00:03:04,410 --> 00:03:08,190
+We need to make sure A's in there exactly the number of times and they're equivalent.
+
+51
+00:03:08,190 --> 00:03:11,640
+So what we'll do is subtract one from a.
+
+52
+00:03:11,640 --> 00:03:17,020
+So if we start it and we're going to find and and then we'll subtract 1 percent and set it to zero.
+
+53
+00:03:17,280 --> 00:03:20,400
+If we find a we're going to go to AA and subtract 1.
+
+54
+00:03:20,430 --> 00:03:22,920
+Now we need to find two more A's.
+
+55
+00:03:23,400 --> 00:03:24,120
+And we keep going.
+
+56
+00:03:24,120 --> 00:03:29,700
+So just to show you that we loop over the second string we make a placeholder variable called letter
+
+57
+00:03:30,060 --> 00:03:32,610
+that is just going to store the individual letter.
+
+58
+00:03:32,640 --> 00:03:37,290
+And at the beginning and the first thing we do if we can't look up that letter.
+
+59
+00:03:37,320 --> 00:03:42,540
+Meaning it's not in there like if we were looking for an S and there's no s in here as a key then we
+
+60
+00:03:42,540 --> 00:03:43,870
+return False we're done.
+
+61
+00:03:44,070 --> 00:03:45,690
+Otherwise we subtract 1.
+
+62
+00:03:45,990 --> 00:03:49,310
+So we go through and we look for and.
+
+63
+00:03:49,310 --> 00:03:49,580
+All right.
+
+64
+00:03:49,600 --> 00:03:53,070
+Well said to one well now we subtract one and it's set to zero.
+
+65
+00:03:53,450 --> 00:03:56,590
+And so now we go through again and we're looking at a.
+
+66
+00:03:56,760 --> 00:04:00,190
+So we find a way to set it to two and then we move on to G.
+
+67
+00:04:00,250 --> 00:04:01,320
+We set G to zero.
+
+68
+00:04:01,340 --> 00:04:05,820
+We subtract 1 and we go to egg then we subtract 1 and we go to our.
+
+69
+00:04:06,060 --> 00:04:10,680
+We subtract 1 goes to zero and we go to a we subtract 1 again.
+
+70
+00:04:10,910 --> 00:04:15,900
+So it goes to zero and then we go to M and we subtract 1 and we're done.
+
+71
+00:04:15,990 --> 00:04:20,010
+And so we don't have to do any check at the end we don't have to see is everything zero or anything
+
+72
+00:04:20,010 --> 00:04:20,760
+like that.
+
+73
+00:04:20,940 --> 00:04:26,920
+Let's say somehow would be an example if we had some random letter here like an S like this.
+
+74
+00:04:26,920 --> 00:04:30,180
+So we'd have to set to 1 and we have another m.
+
+75
+00:04:30,270 --> 00:04:33,350
+So we just did this M and we crossed it off and set it to zero.
+
+76
+00:04:33,450 --> 00:04:35,540
+Then we get to an M again.
+
+77
+00:04:35,900 --> 00:04:43,290
+Well this time we look up a letter and it's going to give us what is the value for m is zero because
+
+78
+00:04:43,290 --> 00:04:44,280
+zero is falsie.
+
+79
+00:04:44,400 --> 00:04:48,210
+If we run not look up of letter not zero.
+
+80
+00:04:48,210 --> 00:04:49,750
+That means this is true.
+
+81
+00:04:49,770 --> 00:04:50,970
+So we will return false.
+
+82
+00:04:50,970 --> 00:04:57,030
+So if we ever encounter zero that means that there is a problem because we've exhausted basically what
+
+83
+00:04:57,030 --> 00:05:01,060
+this represents or the characters that we've gone through in our first thing.
+
+84
+00:05:01,190 --> 00:05:02,920
+So all we have left is an essay.
+
+85
+00:05:02,930 --> 00:05:05,640
+There has to be one s over here in order for there to be a match.
+
+86
+00:05:05,750 --> 00:05:08,330
+And if instead we get to zero.
+
+87
+00:05:08,360 --> 00:05:13,220
+That means that we're working on a character in the second string that didn't exist in the first string.
+
+88
+00:05:13,670 --> 00:05:16,360
+So it's a nice simple solution I think.
+
+89
+00:05:16,410 --> 00:05:18,540
+I kind of like it I think it's kind of cute.
+
+90
+00:05:18,590 --> 00:05:25,160
+It involves you know just two simple loops does not involve nested loops which you could do easily.
+
+91
+00:05:25,190 --> 00:05:30,080
+We could start with an A here and loop over the string and then look for it in the second string.
+
+92
+00:05:30,350 --> 00:05:34,980
+And we could start and end and look for an end in the second string and that would involve nested loops.
+
+93
+00:05:35,000 --> 00:05:40,760
+And of course we would also have to pay attention to making sure that we were crossing things off or
+
+94
+00:05:40,760 --> 00:05:42,680
+removing things as we went.
+
+95
+00:05:42,680 --> 00:05:45,200
+So that we were not you know getting a false positive.
+
+96
+00:05:45,350 --> 00:05:49,170
+Hopefully you can see how it is a helpful pattern in this scenario.
+
+97
+00:05:49,280 --> 00:05:54,530
+Any time you have multiple pieces of data and you need to compare them in particular if we need to see
+
+98
+00:05:54,530 --> 00:06:01,230
+if they consist of the same individual pieces whether it's anagrams or you're trying to see if you know
+
+99
+00:06:02,210 --> 00:06:08,380
+if one array is equal to another array squared each individual piece or what else have I seen.
+
+100
+00:06:08,570 --> 00:06:13,550
+If you need to tell if numbers consist of the same digits just in a different order.
+
+101
+00:06:14,000 --> 00:06:16,040
+There's a lot of applications for this.
+
+102
+00:06:16,100 --> 00:06:18,000
+Anyway moving on to our next pattern.
+

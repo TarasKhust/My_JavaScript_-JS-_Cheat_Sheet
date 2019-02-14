@@ -1,0 +1,472 @@
+1
+00:00:00,090 --> 00:00:02,080
+All right let's implement it.
+
+2
+00:00:02,100 --> 00:00:09,240
+So first things first let's define get except an index and we're going to check for edge case or the
+
+3
+00:00:09,240 --> 00:00:09,720
+error.
+
+4
+00:00:09,740 --> 00:00:13,270
+If if index is negative not good.
+
+5
+00:00:13,410 --> 00:00:18,590
+We can't find that or index is greater than or equal to this length.
+
+6
+00:00:18,750 --> 00:00:22,080
+So we can't have it be out of bounds on either side.
+
+7
+00:00:22,530 --> 00:00:27,420
+And again we can't have it equal to the length because the highest index just like an array is always
+
+8
+00:00:27,420 --> 00:00:28,600
+one less than the length.
+
+9
+00:00:28,830 --> 00:00:34,840
+If that's the case return and what I say no undefined false it doesn't really matter to me.
+
+10
+00:00:35,070 --> 00:00:38,500
+Just returned something bad to the negative.
+
+11
+00:00:39,060 --> 00:00:39,550
+OK.
+
+12
+00:00:39,570 --> 00:00:45,130
+Otherwise what we need to do now is let's just start by implementing the left part.
+
+13
+00:00:45,150 --> 00:00:49,700
+So we start at the head just like we did with single wheeling first and just do.
+
+14
+00:00:49,710 --> 00:00:52,330
+Next up next we're going to have to do that at some point.
+
+15
+00:00:52,350 --> 00:00:53,430
+So let's just start there.
+
+16
+00:00:53,550 --> 00:00:57,900
+So I'll make a variable called Count and started at zero and then I'm going to make another variable
+
+17
+00:00:57,900 --> 00:01:01,730
+called Current and set that to be the head.
+
+18
+00:01:02,210 --> 00:01:02,760
+OK.
+
+19
+00:01:03,030 --> 00:01:08,090
+And then I'm just going to do while count is not equal to indexed.
+
+20
+00:01:08,130 --> 00:01:11,780
+So we're going to start with counting zero and we're going to add 1.
+
+21
+00:01:11,800 --> 00:01:15,580
+What we're going to do current equals current up next to traverse the list.
+
+22
+00:01:15,630 --> 00:01:22,530
+Hopefully this sort of approach is review at this point and then we'll add one to count count plus plus.
+
+23
+00:01:23,370 --> 00:01:28,190
+So we start to say we're looking for index of to count starts at zero current is head.
+
+24
+00:01:28,540 --> 00:01:35,820
+And this started then we check his count equal to index it's not so current now is equal to the head
+
+25
+00:01:36,050 --> 00:01:36,530
+next.
+
+26
+00:01:36,540 --> 00:01:41,950
+And we add one to count and we keep going until we hit whatever is an index to her mind.
+
+27
+00:01:42,120 --> 00:01:47,280
+And then once we found that item we just need to return current at the end.
+
+28
+00:01:47,280 --> 00:01:49,850
+So this is an optimized version.
+
+29
+00:01:50,120 --> 00:01:51,780
+Well let's just make sure it works.
+
+30
+00:01:51,930 --> 00:01:55,430
+So if I have any errors in this make this a little bit larger.
+
+31
+00:01:55,620 --> 00:01:57,350
+Let's push on a couple of other things.
+
+32
+00:01:57,350 --> 00:02:03,280
+Let's just push on last and then I'll do actually last.
+
+33
+00:02:03,830 --> 00:02:11,160
+OK so if we look at list it has five things I shouldn't be able to do do get of negative 1 or of 10
+
+34
+00:02:12,060 --> 00:02:13,480
+or even five.
+
+35
+00:02:13,980 --> 00:02:24,060
+But if I did get of say three index of three it gives me last if I do index of four gives me actually
+
+36
+00:02:24,060 --> 00:02:26,510
+last index of zero.
+
+37
+00:02:26,620 --> 00:02:29,890
+Harry one is ran into is her my any.
+
+38
+00:02:29,930 --> 00:02:34,280
+Once I get I have to yell at my cat.
+
+39
+00:02:37,270 --> 00:02:38,860
+They're destroying my furniture.
+
+40
+00:02:39,030 --> 00:02:39,270
+OK.
+
+41
+00:02:39,310 --> 00:02:40,120
+So that's great.
+
+42
+00:02:40,120 --> 00:02:41,140
+That works.
+
+43
+00:02:41,230 --> 00:02:42,950
+We're going to use a lot of this logic.
+
+44
+00:02:43,060 --> 00:02:44,760
+But now we also want to do the same thing.
+
+45
+00:02:44,800 --> 00:02:50,770
+We want to start at the end and work towards the middle and we're going to do it based off of where
+
+46
+00:02:50,770 --> 00:02:52,690
+the index is in that list.
+
+47
+00:02:52,720 --> 00:02:58,750
+How high or low that indexes will go back to the pseudo code now and check if the index is less than
+
+48
+00:02:58,750 --> 00:03:00,820
+or equal to half the length of the list.
+
+49
+00:03:01,000 --> 00:03:03,490
+So we're going to do this approach right here.
+
+50
+00:03:03,720 --> 00:03:04,760
+If index.
+
+51
+00:03:04,810 --> 00:03:05,830
+So I'm going to write this out.
+
+52
+00:03:05,830 --> 00:03:09,800
+If index is less than or equal to the equals part doesn't.
+
+53
+00:03:09,820 --> 00:03:11,350
+You could do it on the other one.
+
+54
+00:03:11,530 --> 00:03:13,180
+Whichever way you'd prefer to do it doesn't matter.
+
+55
+00:03:13,180 --> 00:03:19,000
+But I'm going to say if the index is less than or equal to this length divide by two.
+
+56
+00:03:19,420 --> 00:03:23,530
+If that's the case we're going to do all of this and we'll refactor this in a bit.
+
+57
+00:03:23,530 --> 00:03:30,220
+There's going to be a little duplication otherwise that means we're going to start at the end of the
+
+58
+00:03:30,220 --> 00:03:30,910
+list.
+
+59
+00:03:31,210 --> 00:03:39,100
+So we're going to start with a count variable equal to this length minus one.
+
+60
+00:03:39,100 --> 00:03:43,680
+For example if our list looks like this our length is 10.
+
+61
+00:03:43,690 --> 00:03:49,640
+Our last item is index of nine so we're going to start with count at nine and subtract one each time.
+
+62
+00:03:49,780 --> 00:03:52,590
+So we're actually going to write the same sort of loop.
+
+63
+00:03:52,690 --> 00:03:54,890
+We're just going to do what I need to do.
+
+64
+00:03:54,890 --> 00:03:58,470
+Current as well var current equals this tale.
+
+65
+00:03:58,480 --> 00:03:59,650
+We're starting at the end.
+
+66
+00:03:59,830 --> 00:04:03,610
+Well counting is not equal to index.
+
+67
+00:04:03,610 --> 00:04:04,240
+What are we going to do.
+
+68
+00:04:04,240 --> 00:04:07,750
+We're going to say current equals current dot previous.
+
+69
+00:04:07,750 --> 00:04:13,540
+We're going to step backwards and then we're going to do count minus minus subtract one from Count and
+
+70
+00:04:13,540 --> 00:04:15,860
+then at the end return current.
+
+71
+00:04:16,390 --> 00:04:20,700
+Ok ok I'm back.
+
+72
+00:04:21,130 --> 00:04:23,080
+So let's add a little test.
+
+73
+00:04:23,140 --> 00:04:28,380
+Let's just do a counted out log to say working from beginning.
+
+74
+00:04:28,450 --> 00:04:34,420
+I don't I hate typing the word beginning say working from start and then the else will do working from
+
+75
+00:04:35,490 --> 00:04:41,680
+end and let's see which one runs and then we'll read reduce some of the duplication.
+
+76
+00:04:42,100 --> 00:04:42,370
+OK.
+
+77
+00:04:42,370 --> 00:04:44,650
+So we have a list that has three things in it.
+
+78
+00:04:44,770 --> 00:04:51,870
+Let's push in 300 400 500 and 600.
+
+79
+00:04:52,360 --> 00:04:52,630
+OK.
+
+80
+00:04:52,630 --> 00:04:54,700
+So length is seven.
+
+81
+00:04:54,910 --> 00:04:58,420
+If I do it this does get zero.
+
+82
+00:04:58,540 --> 00:05:06,580
+It says working from start to a list get of let's say 5 it does working from end.
+
+83
+00:05:07,270 --> 00:05:11,340
+And if I do with a six that's our last thing in there right.
+
+84
+00:05:11,360 --> 00:05:13,240
+There's no index of seven right.
+
+85
+00:05:13,840 --> 00:05:15,850
+So it looks like it's working.
+
+86
+00:05:15,850 --> 00:05:21,520
+It says that it's working from and we could you know you could create a variable to count how many times
+
+87
+00:05:22,030 --> 00:05:23,490
+the loop actually runs.
+
+88
+00:05:23,560 --> 00:05:27,510
+If you wanted to really test it out but we can just trust that this works.
+
+89
+00:05:27,640 --> 00:05:31,530
+We've added a little bit of logic to check if we're closer to the beginning of the end.
+
+90
+00:05:31,750 --> 00:05:37,330
+And that changes where we're working from now a tiny change.
+
+91
+00:05:37,330 --> 00:05:40,720
+First of all we can return current afterwards.
+
+92
+00:05:40,720 --> 00:05:42,440
+So we don't need to duplicate that.
+
+93
+00:05:42,450 --> 00:05:48,220
+So let's move that outside of the conditional and just put it afterwards it happens for either one.
+
+94
+00:05:48,220 --> 00:05:51,810
+Either one of you say that we also have.
+
+95
+00:05:51,950 --> 00:05:54,210
+See you can get rid of those logs.
+
+96
+00:05:54,220 --> 00:06:00,850
+Now we have count and current are both being declared.
+
+97
+00:06:00,850 --> 00:06:02,110
+This is fine.
+
+98
+00:06:02,170 --> 00:06:12,010
+I would probably do this personally to our count and current and then just update them but it doesn't
+
+99
+00:06:12,010 --> 00:06:12,960
+really matter.
+
+100
+00:06:12,970 --> 00:06:17,970
+Honestly we still have to have these lines that are duplicated here.
+
+101
+00:06:18,020 --> 00:06:21,300
+But overall I'm happy with how this looks how it's working.
+
+102
+00:06:21,350 --> 00:06:26,630
+If you have a better refactor absolutely there are other ways of doing this or freeriding this where
+
+103
+00:06:27,200 --> 00:06:28,690
+we don't have so much.
+
+104
+00:06:28,700 --> 00:06:34,310
+This logic is very very similar except for the actual operation that we're doing inside of there but
+
+105
+00:06:34,370 --> 00:06:36,260
+this loop is the same.
+
+106
+00:06:36,260 --> 00:06:38,350
+Right we're sitting current We're sitting count.
+
+107
+00:06:38,420 --> 00:06:42,730
+There are ways slightly more complicated of Slimming this down but this is fine.
+
+108
+00:06:42,800 --> 00:06:44,330
+Absolutely it works.
+
+109
+00:06:44,330 --> 00:06:46,880
+Let's just verify it one more time that it works.
+
+110
+00:06:47,240 --> 00:06:48,560
+So we've got our list.
+
+111
+00:06:48,680 --> 00:06:52,070
+Let's do this don't get negative one shouldn't work.
+
+112
+00:06:52,820 --> 00:06:53,360
+Let's do this.
+
+113
+00:06:53,360 --> 00:06:54,460
+I get 0.
+
+114
+00:06:54,530 --> 00:06:57,320
+It works 1 2.
+
+115
+00:06:57,330 --> 00:07:01,190
+No I didn't type a number and then three shouldn't work.
+
+116
+00:07:01,400 --> 00:07:02,330
+Looks good.
+
+117
+00:07:02,330 --> 00:07:03,130
+It's working.
+
+118
+00:07:03,350 --> 00:07:04,730
+I think that's all that there is.
+

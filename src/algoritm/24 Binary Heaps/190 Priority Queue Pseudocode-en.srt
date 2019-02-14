@@ -1,0 +1,248 @@
+1
+00:00:00,210 --> 00:00:00,630
+All right.
+
+2
+00:00:00,630 --> 00:00:05,220
+So if you want to try and implement the priority queue class using what we've already learned about
+
+3
+00:00:05,220 --> 00:00:07,580
+binary heaps it's very very similar.
+
+4
+00:00:07,590 --> 00:00:10,580
+We just have to change the comparison to tiny tiny little bit.
+
+5
+00:00:10,770 --> 00:00:12,600
+So make a class called priority queue.
+
+6
+00:00:12,600 --> 00:00:18,030
+Basically you could just rename your binary heap class just copy it so you can if you want to save the
+
+7
+00:00:18,030 --> 00:00:18,840
+original.
+
+8
+00:00:18,840 --> 00:00:20,570
+Change it to priority queue.
+
+9
+00:00:20,610 --> 00:00:25,200
+We're still keeping a list of values and that's that's all we need structurally aside from all the methods
+
+10
+00:00:25,770 --> 00:00:29,190
+we just need to store the value so that's unchanged really aside from the name.
+
+11
+00:00:29,570 --> 00:00:34,500
+What is different though is we're not just storing numbers like we were in the past where we stored
+
+12
+00:00:34,500 --> 00:00:38,240
+numbers and we just use the values of the numbers and compared.
+
+13
+00:00:38,280 --> 00:00:42,170
+We didn't have a class we didn't have individual items that we were storing.
+
+14
+00:00:42,360 --> 00:00:48,840
+We had numbers but we didn't have a secondary class like node which we are going to with our priority
+
+15
+00:00:48,840 --> 00:00:54,850
+queue because now each element has a value or each node has a value and a priority.
+
+16
+00:00:54,930 --> 00:00:57,320
+Oops I spell this out right probably.
+
+17
+00:00:57,410 --> 00:00:58,540
+I guess that is right.
+
+18
+00:00:58,540 --> 00:01:02,200
+I mistakenly thought I spoke wrong anyway.
+
+19
+00:01:02,250 --> 00:01:06,530
+So we have this node class and each node will look something like this.
+
+20
+00:01:06,540 --> 00:01:09,720
+We have a value it could be a string it could be a number it could be something else.
+
+21
+00:01:09,750 --> 00:01:12,910
+It doesn't matter because we're not using the value to compare.
+
+22
+00:01:12,930 --> 00:01:14,820
+We're only using the priority.
+
+23
+00:01:15,120 --> 00:01:20,790
+So each node has a priority and that's the value that we use when we actually construct and rearrange
+
+24
+00:01:20,790 --> 00:01:21,150
+the heap.
+
+25
+00:01:21,150 --> 00:01:25,960
+If something is inserted we are going to compare its priority to the other elements priorities.
+
+26
+00:01:26,100 --> 00:01:29,380
+Once we remove something from the top we need to sink down.
+
+27
+00:01:29,490 --> 00:01:31,430
+You know a new element to the correct spot.
+
+28
+00:01:31,500 --> 00:01:34,080
+We're going to compare using its priority.
+
+29
+00:01:34,080 --> 00:01:40,550
+Also just for some variety here we are going to implement a min binary heap rather than a max.
+
+30
+00:01:40,560 --> 00:01:44,800
+We've done everything as emacs often as like in the case of a hospital.
+
+31
+00:01:44,820 --> 00:01:51,520
+Also with the way that Unix the nice values work a lower value is going to be served first.
+
+32
+00:01:51,540 --> 00:01:54,880
+So in this case priority one is the highest priority.
+
+33
+00:01:55,110 --> 00:01:58,280
+Two is a medium priority three is a low priority.
+
+34
+00:01:58,440 --> 00:02:03,900
+So in the hospital at least some that I've been to the most critical emergency things are like Level
+
+35
+00:02:03,900 --> 00:02:09,000
+0 level 1 and the most or the least critical or level 5 or something like that.
+
+36
+00:02:09,010 --> 00:02:13,650
+OK so we have two classes now a priority queue class and a node class.
+
+37
+00:02:13,680 --> 00:02:17,210
+Each node has a value which doesn't matter for what we're doing.
+
+38
+00:02:17,220 --> 00:02:21,000
+We just need to initialize it and a priority and that's important.
+
+39
+00:02:21,030 --> 00:02:23,340
+OK so here's how it should work.
+
+40
+00:02:23,370 --> 00:02:28,140
+Write a min binary heap so all that means to make it a min heap you're going to need to change that
+
+41
+00:02:28,140 --> 00:02:29,340
+comparison a little bit.
+
+42
+00:02:29,400 --> 00:02:34,440
+Where in the past we were swapping things if one thing was greater than something we now swap if one
+
+43
+00:02:34,440 --> 00:02:36,540
+thing is less than or vice versa.
+
+44
+00:02:36,960 --> 00:02:38,460
+Otherwise it's the same idea.
+
+45
+00:02:38,460 --> 00:02:40,940
+So each node has a value in a priority.
+
+46
+00:02:41,130 --> 00:02:44,000
+Use the priority to build the heap as something is inserted.
+
+47
+00:02:44,010 --> 00:02:50,460
+Compare the priority as something is removed compare the priority then to methods rather than an insert
+
+48
+00:02:50,460 --> 00:02:52,940
+method and an extract Max.
+
+49
+00:02:53,110 --> 00:02:56,920
+We're going to Riskin them as NQ and dequeue.
+
+50
+00:02:57,030 --> 00:03:02,760
+Honestly the naming doesn't really matter but you do need to change in your code is that when you insert
+
+51
+00:03:02,760 --> 00:03:07,080
+something into an already mentioned you compare the priority of eval you don't compare the value of
+
+52
+00:03:07,080 --> 00:03:08,120
+the element itself.
+
+53
+00:03:08,140 --> 00:03:13,260
+You compare the priority when you remove something you're going to remove the root of the heap.
+
+54
+00:03:13,260 --> 00:03:18,330
+The toplevel thing which is the highest technically the lowest number but the highest priority.
+
+55
+00:03:18,330 --> 00:03:24,090
+We remove that and then we have to have you know we swap it with the last element we have it sink down
+
+56
+00:03:24,090 --> 00:03:25,490
+or percolate down.
+
+57
+00:03:25,560 --> 00:03:27,360
+Compare using the priority.
+
+58
+00:03:27,360 --> 00:03:28,500
+So that's our goal.
+
+59
+00:03:28,500 --> 00:03:30,590
+Give it a shot in the next video.
+
+60
+00:03:30,600 --> 00:03:34,560
+I'm just going to take our code we've already written and alter it so you won't have to watch me that
+
+61
+00:03:34,560 --> 00:03:38,330
+you know reconstruct the entire heap over like half an hour of code.
+
+62
+00:03:38,340 --> 00:03:42,820
+We'll just take what we've done and just turn it upside down a tiny bit to make it a priority queue.
+

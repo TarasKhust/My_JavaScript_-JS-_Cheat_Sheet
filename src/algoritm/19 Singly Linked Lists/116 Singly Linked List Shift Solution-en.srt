@@ -1,0 +1,188 @@
+1
+00:00:00,320 --> 00:00:01,750
+OK so let's type this out.
+
+2
+00:00:01,770 --> 00:00:05,570
+First we need to define shift and it doesn't take any arguments.
+
+3
+00:00:05,670 --> 00:00:07,450
+And then let's start with this first one liner.
+
+4
+00:00:07,470 --> 00:00:10,470
+If there's no nodes if it's empty return undefined.
+
+5
+00:00:10,770 --> 00:00:11,240
+OK.
+
+6
+00:00:11,430 --> 00:00:18,310
+So down here we'll just do shift and we'll check again there's a lot of ways of doing this.
+
+7
+00:00:18,360 --> 00:00:26,000
+If this Dalt length is zero if there's no head it doesn't really matter return undefined.
+
+8
+00:00:26,510 --> 00:00:31,560
+OK next store the current head property in a variable.
+
+9
+00:00:31,940 --> 00:00:38,130
+So I'm going to make a variable I'll call it current head equals knothead.
+
+10
+00:00:38,240 --> 00:00:45,170
+This is pointing to in our case below at the beginning then we're going to move the head over to the
+
+11
+00:00:45,170 --> 00:00:47,720
+current head next node.
+
+12
+00:00:47,770 --> 00:00:57,140
+So you say this dot head equals the current heads dot next.
+
+13
+00:00:57,220 --> 00:01:01,630
+So we've saved this to a variable called current head and we say this is the old hood.
+
+14
+00:01:01,760 --> 00:01:04,530
+Well now the new head is right here.
+
+15
+00:01:04,930 --> 00:01:07,780
+We take current head next and make that the new head.
+
+16
+00:01:07,800 --> 00:01:08,510
+All right.
+
+17
+00:01:08,590 --> 00:01:12,950
+Almost there then we need to document the length by 1.
+
+18
+00:01:13,480 --> 00:01:17,430
+So this length minus minus.
+
+19
+00:01:17,920 --> 00:01:22,800
+And then finally return current head which is technically no longer current.
+
+20
+00:01:22,810 --> 00:01:27,160
+So you could have also called this old head removed head doesn't matter.
+
+21
+00:01:27,160 --> 00:01:29,140
+This is what we took off.
+
+22
+00:01:29,370 --> 00:01:40,600
+And if we test it out run our code if i do list that shift we get hello which is the beginning and if
+
+23
+00:01:40,590 --> 00:01:45,390
+we look at the list now it's two items long in which the head the head is now.
+
+24
+00:01:45,410 --> 00:01:46,320
+Goodbye.
+
+25
+00:01:46,520 --> 00:01:47,640
+Let's do it one more time.
+
+26
+00:01:48,730 --> 00:01:49,870
+We got good bye off.
+
+27
+00:01:49,900 --> 00:01:56,970
+Now the head if we look at the list again is equal to this head and tail are the same thing.
+
+28
+00:01:57,420 --> 00:02:03,380
+I will note though if we do list that shift one more time it does give us the right value.
+
+29
+00:02:03,550 --> 00:02:07,520
+And if we look at list the head is no the tail isn't.
+
+30
+00:02:07,530 --> 00:02:13,500
+No and that's not really going to be a problem because as soon as we reassign something to the head
+
+31
+00:02:13,760 --> 00:02:17,670
+as we push something back in the tail will be reassigned.
+
+32
+00:02:17,670 --> 00:02:24,240
+However if we wanted to fix that if we wanted it to be no we could just add an extra conditional check
+
+33
+00:02:24,750 --> 00:02:29,250
+and just check you know right here if this basically just copy this code.
+
+34
+00:02:30,290 --> 00:02:34,430
+Set tail to be null just like that.
+
+35
+00:02:34,430 --> 00:02:41,850
+So if we refresh our code run it again list that shift shift again.
+
+36
+00:02:41,880 --> 00:02:46,800
+Right now the list has one item in it which is the exclamation point.
+
+37
+00:02:46,810 --> 00:02:51,470
+If we shift to a more time and we look at the list it now is NO NO.
+
+38
+00:02:51,480 --> 00:02:57,670
+Lanc this year so if you try it again we get undefined the lists unchanged the length is still zero.
+
+39
+00:02:57,710 --> 00:03:01,250
+Let's just make sure we can still push something in let's push 100 in.
+
+40
+00:03:01,460 --> 00:03:08,550
+We look at the list head and tail are both one hundred push or more thing in one thousand.
+
+41
+00:03:08,620 --> 00:03:10,310
+Anyway it's working.
+
+42
+00:03:10,310 --> 00:03:11,400
+All looks good.
+
+43
+00:03:11,430 --> 00:03:15,460
+Let's pop gives us 1000 list.
+
+44
+00:03:15,570 --> 00:03:20,420
+That shift gives us 100 and list is now empty.
+
+45
+00:03:20,420 --> 00:03:21,020
+Perfect.
+
+46
+00:03:21,020 --> 00:03:21,260
+All right.
+
+47
+00:03:21,260 --> 00:03:22,060
+So that's shift.
+

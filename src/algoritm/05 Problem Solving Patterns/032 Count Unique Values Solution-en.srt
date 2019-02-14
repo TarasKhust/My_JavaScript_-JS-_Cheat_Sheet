@@ -1,0 +1,472 @@
+1
+00:00:00,120 --> 00:00:01,140
+All right welcome back.
+
+2
+00:00:01,140 --> 00:00:05,670
+Here's my solution using two pointers for the count unique values problem.
+
+3
+00:00:05,670 --> 00:00:10,870
+So as I mentioned we use two pointers starting from the left one starting here and next one is the index
+
+4
+00:00:10,910 --> 00:00:14,590
+0 and then index of 1 and then we look forward from there.
+
+5
+00:00:14,880 --> 00:00:21,630
+And then we update the first pointer only at a particular condition which is when we find two unique
+
+6
+00:00:21,630 --> 00:00:24,380
+values two values that do not match.
+
+7
+00:00:24,900 --> 00:00:26,120
+So let's hop over here.
+
+8
+00:00:26,400 --> 00:00:32,710
+And first thing I'll do is just define my function call it count unique values and it will take an array
+
+9
+00:00:33,810 --> 00:00:36,890
+and let me call it down here with a new list of unique value.
+
+10
+00:00:36,890 --> 00:00:44,200
+So let's do one come a one comma two three three.
+
+11
+00:00:45,020 --> 00:00:45,430
+All right.
+
+12
+00:00:45,500 --> 00:00:51,210
+That's good enough like this and I want to start with making a variable I and setting it equal to zero.
+
+13
+00:00:51,420 --> 00:00:52,820
+So it's going to start right here.
+
+14
+00:00:52,940 --> 00:00:53,390
+Right.
+
+15
+00:00:53,540 --> 00:00:59,030
+And then I'm going to make a loop and this will be a for loop let's call it J.
+
+16
+00:00:59,300 --> 00:01:01,560
+And I'm not going to said it equal to zero.
+
+17
+00:01:01,610 --> 00:01:05,810
+I mean a set is equal to index of 1 which also is value of 1.
+
+18
+00:01:05,810 --> 00:01:06,650
+I hate when that happens.
+
+19
+00:01:06,650 --> 00:01:07,710
+But yeah.
+
+20
+00:01:07,940 --> 00:01:09,440
+Index zero index of 1.
+
+21
+00:01:09,770 --> 00:01:14,600
+So J equals 1 while J is less than a red dot length.
+
+22
+00:01:14,600 --> 00:01:16,060
+We don't want it to go any further.
+
+23
+00:01:16,370 --> 00:01:17,030
+And then I.
+
+24
+00:01:17,030 --> 00:01:19,930
+Plus plus no J plus plus.
+
+25
+00:01:20,180 --> 00:01:24,010
+So J is just going to go through the entire loop from here to the end.
+
+26
+00:01:24,170 --> 00:01:26,720
+So we have one iteration and that's it.
+
+27
+00:01:26,750 --> 00:01:34,370
+Now inside of those iteration of the loop we're going to compare index array index of an array index
+
+28
+00:01:34,370 --> 00:01:34,940
+of J.
+
+29
+00:01:35,120 --> 00:01:36,140
+So we could just start with that.
+
+30
+00:01:36,140 --> 00:01:41,100
+So array Y and array of J.
+
+31
+00:01:41,420 --> 00:01:42,740
+So what do we want to check.
+
+32
+00:01:43,190 --> 00:01:45,750
+If they are not equal to one another.
+
+33
+00:01:45,980 --> 00:01:48,770
+So array is not equal to array J.
+
+34
+00:01:48,770 --> 00:01:49,810
+What are we going to do.
+
+35
+00:01:49,850 --> 00:01:53,590
+First of all it invalid syntax to make it a conditional statement.
+
+36
+00:01:53,690 --> 00:01:56,070
+If they are not equal.
+
+37
+00:01:56,570 --> 00:02:02,200
+If you didn't watch the entire video we talked about my approach in the last I guess yeah the last video.
+
+38
+00:02:02,330 --> 00:02:03,920
+Two years ago.
+
+39
+00:02:03,920 --> 00:02:09,230
+What we do is we compare them if they are equal we just move ahead until we find something that is not
+
+40
+00:02:09,290 --> 00:02:11,060
+equal to what I am looking at.
+
+41
+00:02:11,060 --> 00:02:12,410
+So they're not equal now.
+
+42
+00:02:12,410 --> 00:02:17,490
+We move up by one and then we put this value here.
+
+43
+00:02:17,930 --> 00:02:22,100
+So we don't have to swap them we just put two here as well.
+
+44
+00:02:22,100 --> 00:02:25,400
+So to do that we just can do I.
+
+45
+00:02:25,550 --> 00:02:28,230
+Plus plus that adds one to high.
+
+46
+00:02:28,250 --> 00:02:29,660
+So it started at zero.
+
+47
+00:02:29,660 --> 00:02:38,130
+Now we move it up here and then we set array of I to now equal what is an array of J.
+
+48
+00:02:38,480 --> 00:02:42,760
+And then we move forward again so that J goes up.
+
+49
+00:02:42,830 --> 00:02:44,470
+So now J is 3.
+
+50
+00:02:44,480 --> 00:02:46,160
+This has to be a two for us to do that.
+
+51
+00:02:46,260 --> 00:02:48,090
+So now J is 3 we compare it.
+
+52
+00:02:48,260 --> 00:02:49,710
+Oh well they don't match again.
+
+53
+00:02:49,910 --> 00:02:51,250
+So we move forward.
+
+54
+00:02:51,260 --> 00:02:57,200
+I plus plus and we set array of I to be three array of is equal to array of J.
+
+55
+00:02:57,410 --> 00:02:58,680
+And then the loop moves on.
+
+56
+00:02:58,730 --> 00:03:00,300
+This time they are equal.
+
+57
+00:03:00,470 --> 00:03:03,080
+When that's the case we don't do anything.
+
+58
+00:03:03,080 --> 00:03:06,080
+J increments automatically because of the loop.
+
+59
+00:03:06,080 --> 00:03:07,380
+So three and three are equal.
+
+60
+00:03:07,430 --> 00:03:10,150
+So next time through J goes up to four.
+
+61
+00:03:10,370 --> 00:03:12,230
+Well now we have a mismatch again.
+
+62
+00:03:12,440 --> 00:03:14,780
+So we take four and we put it here.
+
+63
+00:03:14,780 --> 00:03:19,130
+So first we technically move up and then we put four here.
+
+64
+00:03:19,170 --> 00:03:22,520
+So now we're comparing four to five.
+
+65
+00:03:22,580 --> 00:03:23,370
+So we do the same thing.
+
+66
+00:03:23,390 --> 00:03:24,240
+We move up.
+
+67
+00:03:24,320 --> 00:03:26,110
+We put a 5 here.
+
+68
+00:03:26,210 --> 00:03:27,690
+Now we're comparing six to five.
+
+69
+00:03:27,740 --> 00:03:32,090
+So we move up and we put a six here and then we move up again.
+
+70
+00:03:32,150 --> 00:03:32,890
+They match.
+
+71
+00:03:32,930 --> 00:03:35,120
+So we don't do anything move up again.
+
+72
+00:03:35,280 --> 00:03:38,330
+We put I right here and we put a 7 there.
+
+73
+00:03:38,330 --> 00:03:44,510
+So now we've built up this beginning part of the array that has all the unique values and it's basically
+
+74
+00:03:44,510 --> 00:03:49,070
+all we want is the length of this portion and we have that by default.
+
+75
+00:03:49,070 --> 00:03:51,250
+If we look at I and J at the very end.
+
+76
+00:03:51,440 --> 00:03:55,480
+J is going to be the very last index of our array.
+
+77
+00:03:55,610 --> 00:03:58,420
+So actually to demonstrate this.
+
+78
+00:03:58,670 --> 00:04:00,620
+Remember this only works with a sorted array.
+
+79
+00:04:00,620 --> 00:04:07,370
+So I can't directly use this array as it is I need to return it to how it was.
+
+80
+00:04:07,390 --> 00:04:09,670
+So that would be I don't actually remember it.
+
+81
+00:04:09,670 --> 00:04:19,060
+Now let's just say 1 1 1 2 2 3 4 5 5 5 6 7 like that.
+
+82
+00:04:19,060 --> 00:04:23,160
+How many unique numbers are there with those 1 2 3 4 5 6 7.
+
+83
+00:04:23,230 --> 00:04:28,160
+So we should get 7 and we'll call count unique values with that.
+
+84
+00:04:28,510 --> 00:04:35,240
+And then what I'm going to do is in here let's go inside the loop at the very end of that log.
+
+85
+00:04:35,710 --> 00:04:37,170
+I Khama J.
+
+86
+00:04:37,450 --> 00:04:42,380
+And we have to do it in here if we want J because J is going to disappear.
+
+87
+00:04:42,490 --> 00:04:43,270
+And if we run it.
+
+88
+00:04:43,420 --> 00:04:43,900
+OK.
+
+89
+00:04:44,200 --> 00:04:46,870
+So we can see you know here's I here's J.
+
+90
+00:04:47,050 --> 00:04:54,460
+And at the very end J hits the end of the array and we stop the loop is at 6 because that's index of
+
+91
+00:04:54,500 --> 00:04:55,350
+six.
+
+92
+00:04:55,540 --> 00:05:00,310
+And that's because internally the array looks something like this where we have all the unique values
+
+93
+00:05:00,310 --> 00:05:01,060
+right here.
+
+94
+00:05:01,060 --> 00:05:06,650
+This is where I is get rid of this highest rate here which is index of six.
+
+95
+00:05:06,700 --> 00:05:14,080
+So we need to add one to I because it's basically the length of this section up until I and we don't
+
+96
+00:05:14,080 --> 00:05:14,840
+want to start with zero.
+
+97
+00:05:14,830 --> 00:05:16,450
+We want to start at 1 when we're counting.
+
+98
+00:05:16,570 --> 00:05:19,820
+So we want to return I plus 1 just down here.
+
+99
+00:05:21,120 --> 00:05:28,910
+Just like this and if we now test it out we get seven and that should be right.
+
+100
+00:05:29,070 --> 00:05:32,730
+Let's try it with something like this one.
+
+101
+00:05:32,730 --> 00:05:35,670
+Number three we should get to and we do.
+
+102
+00:05:35,670 --> 00:05:40,820
+Now there is a special case which if we have an empty array it's not working.
+
+103
+00:05:40,980 --> 00:05:45,150
+It's giving us one and it should give us zero there's no digits in there.
+
+104
+00:05:45,160 --> 00:05:46,010
+And why is that.
+
+105
+00:05:46,080 --> 00:05:47,650
+Well I started at zero.
+
+106
+00:05:48,030 --> 00:05:54,570
+And even if none of this runs and nothing happens and here we are returning 0 plus 1.
+
+107
+00:05:54,900 --> 00:05:57,200
+So I'll add a little short circuit at the beginning.
+
+108
+00:05:57,330 --> 00:06:00,990
+Just check if a rate length is equal to zero.
+
+109
+00:06:01,140 --> 00:06:03,430
+Just return zero.
+
+110
+00:06:03,480 --> 00:06:05,610
+That means there's zero unique digits.
+
+111
+00:06:05,610 --> 00:06:06,790
+Now we get zero.
+
+112
+00:06:06,810 --> 00:06:18,190
+But if we go back to one let's do like this we get 5 1 2 3 4 5 unique numbers.
+
+113
+00:06:18,400 --> 00:06:19,010
+OK.
+
+114
+00:06:19,030 --> 00:06:20,890
+So that is one way of solving this.
+
+115
+00:06:20,890 --> 00:06:28,150
+Using two pointers and it's over and time it's linear time because we're only looping once which is
+
+116
+00:06:28,150 --> 00:06:29,410
+pretty nice.
+
+117
+00:06:29,410 --> 00:06:30,020
+All right.
+
+118
+00:06:30,190 --> 00:06:30,790
+Moving on.
+

@@ -1,0 +1,488 @@
+1
+00:00:00,140 --> 00:00:00,460
+It there.
+
+2
+00:00:00,480 --> 00:00:01,400
+Welcome back.
+
+3
+00:00:01,410 --> 00:00:07,560
+So this section as well as the next section they're really one massive section but a split in half just
+
+4
+00:00:07,560 --> 00:00:09,990
+so I don't end up with this one behemoth section.
+
+5
+00:00:09,990 --> 00:00:16,290
+But both of them have to do with algorithms and problem solving patterns or strategies game plans approaches
+
+6
+00:00:16,290 --> 00:00:17,490
+whatever you want to call it.
+
+7
+00:00:17,490 --> 00:00:22,590
+Basically you're faced with a tough challenge some code a problem you have to solve and you don't know
+
+8
+00:00:22,590 --> 00:00:24,350
+how to do it right off the bat.
+
+9
+00:00:24,480 --> 00:00:26,790
+What are the steps you can take to make it solvable.
+
+10
+00:00:26,880 --> 00:00:28,580
+And it really falls into two categories.
+
+11
+00:00:28,650 --> 00:00:34,550
+This first section is more about the basic approach to solving a problem you don't know how to solve.
+
+12
+00:00:34,740 --> 00:00:37,570
+Steps you can take things you can do to make it easier.
+
+13
+00:00:37,680 --> 00:00:43,590
+And then the second section that comes after this is about specific blueprints or archetypes little
+
+14
+00:00:43,590 --> 00:00:48,980
+strategies you can keep in your back pocket that help solve a lot of problems so it's more code specific
+
+15
+00:00:48,990 --> 00:00:49,950
+in the next section.
+
+16
+00:00:50,040 --> 00:00:51,550
+But both are equally important.
+
+17
+00:00:51,810 --> 00:00:57,570
+But first objectives really quickly we're going to start by defining what an algorithm is in like 10
+
+18
+00:00:57,570 --> 00:00:58,580
+seconds.
+
+19
+00:00:58,590 --> 00:01:04,110
+Devise a plan to solve algorithms and then compare and contrast problem solving patterns including things
+
+20
+00:01:04,110 --> 00:01:07,550
+like frequency counters to pointer problems and divide and conquer.
+
+21
+00:01:07,710 --> 00:01:09,660
+So that's coming up in the next section.
+
+22
+00:01:09,690 --> 00:01:15,630
+Like I said this section is really more focused on devising a plan sort of an approach to solving problems
+
+23
+00:01:15,720 --> 00:01:19,720
+and then afterwards we'll dive into specific named patterns.
+
+24
+00:01:20,090 --> 00:01:23,080
+OK quickly what is an algorithm.
+
+25
+00:01:23,190 --> 00:01:28,210
+Well in today's world it's like the trendiest of the trendy buzzwords.
+
+26
+00:01:28,350 --> 00:01:33,750
+I was watching an ad the other day for was on Instagram and there was an electric toothbrush and they
+
+27
+00:01:33,750 --> 00:01:38,930
+were advertising you know this finely tuned algorithm for the vibrations and the toothbrush.
+
+28
+00:01:39,020 --> 00:01:42,160
+It's a word that you can't escape.
+
+29
+00:01:42,450 --> 00:01:49,230
+Really it just means a process or set of steps to accomplish a certain task rather underwhelming definition.
+
+30
+00:01:49,230 --> 00:01:50,730
+But that's all that it is.
+
+31
+00:01:50,730 --> 00:01:55,740
+So when we say algorithm I mean we could be talking about you know a set of mathematical steps that
+
+32
+00:01:55,740 --> 00:01:57,560
+we need to do to solve a problem.
+
+33
+00:01:57,630 --> 00:02:03,000
+We could be talking about Facebook's algorithm that you know suggests certain ads to you or Google's
+
+34
+00:02:03,000 --> 00:02:08,700
+algorithm when you search for something where it's a matter of you know 50 developers working together.
+
+35
+00:02:08,730 --> 00:02:14,160
+It's probably vastly underestimating it maybe 100 developers who are working on search result algorithms
+
+36
+00:02:14,640 --> 00:02:16,920
+over you know 10 plus years.
+
+37
+00:02:16,980 --> 00:02:18,300
+So it really runs the gamut.
+
+38
+00:02:18,310 --> 00:02:22,670
+But at its core it's just a set of steps to accomplish a task.
+
+39
+00:02:22,710 --> 00:02:27,720
+So that could be something simple like you know calculate the first 100 prime numbers.
+
+40
+00:02:27,930 --> 00:02:34,740
+There's many ways of doing that or it could be something like you know Instagram's algorithm that used
+
+41
+00:02:34,740 --> 00:02:39,070
+to just show you results in chronological order and then they decided to change it.
+
+42
+00:02:39,150 --> 00:02:42,750
+And now you miss a million posts by your friends anyway.
+
+43
+00:02:43,170 --> 00:02:44,270
+Why do you need to know this.
+
+44
+00:02:44,310 --> 00:02:47,560
+Well hopefully this is sort of clear already.
+
+45
+00:02:48,120 --> 00:02:53,040
+Almost everything that you do in programming involves some sort of algorithm whether it's super basic
+
+46
+00:02:53,040 --> 00:02:56,520
+things that you're doing your or you're building a complex application.
+
+47
+00:02:56,640 --> 00:03:00,730
+You have to make these decisions you have to come up with a way of solving problems.
+
+48
+00:03:00,750 --> 00:03:06,030
+So this stuff is super important but I do want to sort of constrict our definition of algorithm for
+
+49
+00:03:06,030 --> 00:03:06,670
+now.
+
+50
+00:03:06,870 --> 00:03:13,320
+We're not going to learn how to you know solve Instagram timeline algorithm.
+
+51
+00:03:13,390 --> 00:03:20,880
+We're focusing on really a much narrower category and that is things that come up in interviews.
+
+52
+00:03:20,880 --> 00:03:24,390
+So this is probably why a lot of you are taking this course.
+
+53
+00:03:24,510 --> 00:03:30,710
+Yes this stuff is good to know especially this section applies to a lot of programming pretty much everything.
+
+54
+00:03:30,840 --> 00:03:33,650
+But it also really applies to interview settings.
+
+55
+00:03:33,750 --> 00:03:38,730
+Being able to you know sit in a office somewhere you've never been an answer tough questions or solve
+
+56
+00:03:38,730 --> 00:03:40,240
+a problem you've never seen before.
+
+57
+00:03:40,320 --> 00:03:44,790
+So just to reiterate this stuff comes up all the time in interviews.
+
+58
+00:03:45,260 --> 00:03:50,050
+Oh boy how many of these do get interviews every go.
+
+59
+00:03:50,370 --> 00:03:53,210
+So how do you get better at this stuff.
+
+60
+00:03:53,210 --> 00:03:58,340
+You know a lot of people think this is just inherently people or good or bad at it.
+
+61
+00:03:58,410 --> 00:04:00,210
+And I've seen that a lot when I'm teaching some.
+
+62
+00:04:00,240 --> 00:04:03,870
+Some people are just naturally better at solving problems.
+
+63
+00:04:03,870 --> 00:04:10,950
+I would say or they're more find their brain works right out of the box solving problems but that doesn't
+
+64
+00:04:10,950 --> 00:04:12,900
+mean that it's hopeless for people who struggle.
+
+65
+00:04:12,900 --> 00:04:14,910
+I've seen it many many times in my classes.
+
+66
+00:04:15,030 --> 00:04:19,740
+During our interview weeks towards the end where we're doing computer science and sort of what this
+
+67
+00:04:19,740 --> 00:04:23,710
+course is based off with some people pick it up much faster.
+
+68
+00:04:23,790 --> 00:04:26,970
+Other people have to work towards that just like anything in life honestly.
+
+69
+00:04:26,970 --> 00:04:32,430
+But I've seen many people turn it around and struggled during our first mock interview and have a panic
+
+70
+00:04:32,430 --> 00:04:37,640
+attack basically in the middle of our you know conference room and then a week or two later.
+
+71
+00:04:37,800 --> 00:04:39,440
+Brand new problem they've never seen before.
+
+72
+00:04:39,480 --> 00:04:40,590
+Equally as difficult.
+
+73
+00:04:40,680 --> 00:04:45,540
+They're able to sit there calmly and solve it using some of the steps I lay out here.
+
+74
+00:04:45,870 --> 00:04:47,460
+So how do you improve.
+
+75
+00:04:47,730 --> 00:04:51,470
+There's two things have already mentioned this first devise a plan for solving problems.
+
+76
+00:04:51,480 --> 00:04:53,630
+So this is more of a non-technical.
+
+77
+00:04:53,670 --> 00:04:58,290
+It still is technical but it's more about how do you approach the problem strategies for breaking it
+
+78
+00:04:58,290 --> 00:04:58,890
+down.
+
+79
+00:04:58,890 --> 00:05:04,490
+There's a couple of steps that I read it and then afterwards master common problem solving patterns.
+
+80
+00:05:04,570 --> 00:05:10,570
+So a lot of algorithms especially in interviews a lot of these problems that come up can be broken into
+
+81
+00:05:10,630 --> 00:05:12,050
+sort of different categories.
+
+82
+00:05:12,310 --> 00:05:17,620
+And if you can identify some of those categories there are some steps you can take in your code.
+
+83
+00:05:17,680 --> 00:05:23,130
+Some recipes you can keep that you can pull out and that will help you solve the algorithm or the challenge.
+
+84
+00:05:23,140 --> 00:05:26,780
+We're starting off with this first one problem solving strategies.
+
+85
+00:05:26,830 --> 00:05:33,130
+So this section is focused on a simple foolproof magical miraculous failsafe approach to solving every
+
+86
+00:05:33,130 --> 00:05:38,260
+problem ever which can be yours for only two payments of nine hundred ninety nine dollars ninety nine
+
+87
+00:05:38,260 --> 00:05:38,980
+cents.
+
+88
+00:05:38,980 --> 00:05:40,190
+Call now.
+
+89
+00:05:40,210 --> 00:05:41,170
+No not really.
+
+90
+00:05:41,170 --> 00:05:44,730
+This is not at all what the section is about.
+
+91
+00:05:44,770 --> 00:05:47,800
+This is just laying down a set of steps that can help you.
+
+92
+00:05:47,800 --> 00:05:50,110
+But of course it is not going to solve the problem for you.
+
+93
+00:05:50,110 --> 00:05:55,330
+It's not foolproof but I've seen many people like you already mentioned turned their problem solving
+
+94
+00:05:55,330 --> 00:06:00,010
+approaches around many people who have gone from feeling really apprehensive about solving new problems
+
+95
+00:06:00,370 --> 00:06:07,000
+and lock up in the middle of an interview setting and giving them sort of a game plan a set of steps
+
+96
+00:06:07,150 --> 00:06:11,270
+that you can keep in your mind it's a concrete thing to refer back to.
+
+97
+00:06:11,410 --> 00:06:12,860
+Step by step what you should do.
+
+98
+00:06:13,090 --> 00:06:18,130
+And I've seen it help a lot of people so it's not miraculous it's not magical or foolproof but still
+
+99
+00:06:18,130 --> 00:06:19,390
+is pretty helpful.
+
+100
+00:06:19,390 --> 00:06:20,800
+So what are those steps.
+
+101
+00:06:20,800 --> 00:06:23,280
+Well first understand the problem.
+
+102
+00:06:23,290 --> 00:06:25,750
+So each of these bullet points will get its own video.
+
+103
+00:06:25,750 --> 00:06:27,220
+Understand the problem.
+
+104
+00:06:27,220 --> 00:06:29,530
+Explore concrete examples.
+
+105
+00:06:29,530 --> 00:06:30,850
+Break it down.
+
+106
+00:06:31,060 --> 00:06:36,680
+Solve slash simplify the problem and then look back and refactor.
+
+107
+00:06:36,700 --> 00:06:40,140
+So these are the different videos we're going to have in this section.
+
+108
+00:06:40,240 --> 00:06:43,900
+Each of these points there's a lot more behind it and it's all.
+
+109
+00:06:43,910 --> 00:06:46,010
+Each one is part of this plan.
+
+110
+00:06:46,030 --> 00:06:49,400
+This game plan this recipe for solving a challenge or a problem.
+
+111
+00:06:49,510 --> 00:06:50,710
+So that's where we're going here.
+
+112
+00:06:50,770 --> 00:06:55,070
+And then the next section is on more concrete archetypes for algorithms.
+
+113
+00:06:55,140 --> 00:06:56,260
+But we're starting here.
+
+114
+00:06:56,260 --> 00:06:56,580
+All right.
+
+115
+00:06:56,590 --> 00:06:58,490
+So problem solving hopefully.
+
+116
+00:06:58,570 --> 00:06:59,800
+You know why this is important.
+
+117
+00:06:59,830 --> 00:07:01,420
+Don't make me go back to this slide.
+
+118
+00:07:01,430 --> 00:07:03,960
+It's too many button presses interviews.
+
+119
+00:07:04,030 --> 00:07:04,680
+Yeah.
+
+120
+00:07:04,930 --> 00:07:05,610
+Great stuff.
+
+121
+00:07:05,680 --> 00:07:06,250
+OK.
+
+122
+00:07:06,580 --> 00:07:08,050
+Let's get started in the next video.
+

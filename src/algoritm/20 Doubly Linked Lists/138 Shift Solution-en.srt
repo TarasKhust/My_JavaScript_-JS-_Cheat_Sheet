@@ -1,0 +1,296 @@
+1
+00:00:00,300 --> 00:00:00,800
+All right.
+
+2
+00:00:00,810 --> 00:00:03,700
+So let's get working on shift.
+
+3
+00:00:03,760 --> 00:00:05,730
+OK so the very first thing we'll do.
+
+4
+00:00:05,730 --> 00:00:08,890
+Aside from defining it it's adding that edge case.
+
+5
+00:00:09,110 --> 00:00:15,360
+Again we can check if the list is empty by checking if that head is no or if it doesn't exist or by
+
+6
+00:00:15,360 --> 00:00:17,560
+checking if the length is zero.
+
+7
+00:00:17,850 --> 00:00:27,660
+So I'll do length this time we did this dumbhead last time I'll do if this data length equals zero return
+
+8
+00:00:27,690 --> 00:00:29,870
+undefined.
+
+9
+00:00:29,910 --> 00:00:31,050
+All right.
+
+10
+00:00:31,050 --> 00:00:35,440
+Now the next thing we need to do is store the current head in a variable.
+
+11
+00:00:35,970 --> 00:00:42,860
+So I'll call it old head or shifted node or whatever you want to call it is right now the current head
+
+12
+00:00:43,210 --> 00:00:45,590
+of head but that's about to change.
+
+13
+00:00:45,630 --> 00:00:51,000
+First we have this edge case like this one and we remove the last item we need to make sure the head
+
+14
+00:00:51,030 --> 00:00:52,770
+and the tail are no.
+
+15
+00:00:52,800 --> 00:01:00,060
+So if this length is equal to one we're going to set this dud head equal to no.
+
+16
+00:01:00,060 --> 00:01:01,930
+I could've just copied this from above.
+
+17
+00:01:01,990 --> 00:01:04,180
+This tail equals nil.
+
+18
+00:01:04,500 --> 00:01:06,730
+OK so that's that edge case.
+
+19
+00:01:06,750 --> 00:01:11,090
+Now we need to update the head to be the next of the old.
+
+20
+00:01:11,300 --> 00:01:12,930
+Going back to this diagram.
+
+21
+00:01:12,990 --> 00:01:17,490
+I think I'll put in comments because it's getting an error if we have ninety nine and one hundred two
+
+22
+00:01:17,490 --> 00:01:21,540
+items in our list we have two connections to the next and the previous.
+
+23
+00:01:21,810 --> 00:01:22,680
+What we want to do.
+
+24
+00:01:22,710 --> 00:01:25,240
+We also have a reference to the head first.
+
+25
+00:01:25,290 --> 00:01:27,770
+This is the current head and I've stored it in a variable.
+
+26
+00:01:27,790 --> 00:01:30,120
+I'm moving the head to be 100.
+
+27
+00:01:30,120 --> 00:01:35,530
+So I'm just going to say this head equals old head next.
+
+28
+00:01:35,990 --> 00:01:37,790
+So ninety nine dot next meaning.
+
+29
+00:01:37,800 --> 00:01:38,860
+This is the new head.
+
+30
+00:01:38,880 --> 00:01:43,670
+Now we just need to sever these bonds so it doesn't matter which one we do first.
+
+31
+00:01:43,680 --> 00:01:49,300
+I can say this head meaning the new head dot previous equals no.
+
+32
+00:01:49,550 --> 00:01:56,240
+So that's going to remove that connection and then I can say old head dot next equals nil.
+
+33
+00:01:56,280 --> 00:02:02,940
+This is the old red dot next there's no old heard dot next no.
+
+34
+00:02:03,740 --> 00:02:08,260
+And now that removes this entirely they're not connected at all.
+
+35
+00:02:08,280 --> 00:02:11,750
+This is called the head now and this is it.
+
+36
+00:02:11,820 --> 00:02:13,760
+So I can return old head.
+
+37
+00:02:13,760 --> 00:02:21,480
+We have one more thing which is to decrement the length so this dot length minus minus and then return
+
+38
+00:02:21,810 --> 00:02:23,260
+old.
+
+39
+00:02:23,900 --> 00:02:25,180
+And that should be it.
+
+40
+00:02:25,200 --> 00:02:27,120
+So I just added in some code here.
+
+41
+00:02:27,300 --> 00:02:29,530
+So I don't have to type push over and over.
+
+42
+00:02:29,530 --> 00:02:30,810
+You have to watch me do that.
+
+43
+00:02:30,820 --> 00:02:33,210
+So we have our list that has three items.
+
+44
+00:02:33,240 --> 00:02:37,750
+Harry Ron and Hermione in there and let's do a list.
+
+45
+00:02:37,830 --> 00:02:40,080
+Shift.
+
+46
+00:02:40,190 --> 00:02:41,270
+So it looks like that works.
+
+47
+00:02:41,270 --> 00:02:45,620
+We got Harry back there next and previous is not totally isolated.
+
+48
+00:02:45,620 --> 00:02:48,930
+And if we look at the list now the head is rotten.
+
+49
+00:02:49,040 --> 00:02:50,180
+It has no previous.
+
+50
+00:02:50,180 --> 00:02:50,780
+That's correct.
+
+51
+00:02:50,790 --> 00:02:54,310
+It's at the beginning and the tail is her mind.
+
+52
+00:02:54,980 --> 00:02:57,280
+Let's do this double shift again.
+
+53
+00:02:57,890 --> 00:03:00,050
+OK we've got Ron on it's own.
+
+54
+00:03:00,050 --> 00:03:00,920
+And we look at the list.
+
+55
+00:03:00,920 --> 00:03:04,730
+It's one item now her mind the no next no previous.
+
+56
+00:03:04,730 --> 00:03:06,740
+It's just head and tail or her mind.
+
+57
+00:03:06,890 --> 00:03:08,610
+One more shift.
+
+58
+00:03:08,720 --> 00:03:15,350
+So we have a problem here which is that in this use case this use case scenario where length is one
+
+59
+00:03:15,910 --> 00:03:17,650
+we're sitting head and tail to be No.
+
+60
+00:03:17,960 --> 00:03:27,630
+We don't want to do any of this other stuff so I'm going to add an else here on these three lines and
+
+61
+00:03:27,640 --> 00:03:28,930
+close it up there.
+
+62
+00:03:29,070 --> 00:03:34,830
+And this is the same thing we did appear for pop we checked if there's one said the head and tail to
+
+63
+00:03:34,830 --> 00:03:35,300
+be no.
+
+64
+00:03:35,430 --> 00:03:38,040
+Otherwise do this.
+
+65
+00:03:38,040 --> 00:03:41,800
+So we had we set the head and tail to be no because there is nothing else to do.
+
+66
+00:03:42,120 --> 00:03:44,880
+And then we subtract one from length and returned the old head.
+
+67
+00:03:44,890 --> 00:03:51,540
+So just make sure it works rerun the code so I'll do that shift one time two times three times four
+
+68
+00:03:51,540 --> 00:03:52,180
+times.
+
+69
+00:03:52,440 --> 00:03:57,270
+And now the list is empty but we don't get an error if I keep trying to shift like we were doing or
+
+70
+00:03:57,270 --> 00:03:58,900
+where we were getting before.
+
+71
+00:03:59,290 --> 00:03:59,650
+OK.
+
+72
+00:03:59,700 --> 00:04:05,190
+So shift is pretty much the same or very similar to writing shift for a singly linked list.
+
+73
+00:04:05,190 --> 00:04:09,060
+We just have to pay attention to previous and next rather than only next.
+
+74
+00:04:09,060 --> 00:04:12,110
+Next up we're working on surprise surprise on shift.
+

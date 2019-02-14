@@ -1,0 +1,564 @@
+1
+00:00:00,300 --> 00:00:00,890
+All right.
+
+2
+00:00:00,930 --> 00:00:06,000
+So if you happen to skip the last video we're talking about Dexter's algorithm here and the two important
+
+3
+00:00:06,000 --> 00:00:12,600
+things you need to know before you begin this are graphs and priority queues with a binary heap both
+
+4
+00:00:12,600 --> 00:00:15,090
+of which I have a lot of content on in this course.
+
+5
+00:00:15,090 --> 00:00:17,360
+So what is the algorithm.
+
+6
+00:00:17,370 --> 00:00:20,430
+It's one of the most famous and widely used algorithms around.
+
+7
+00:00:20,490 --> 00:00:25,440
+Pretty much every computer science classroom in the world learned that at some point and more than that
+
+8
+00:00:25,450 --> 00:00:30,660
+it's not just an academic thing it's not just you know interview challenge although it often is.
+
+9
+00:00:30,660 --> 00:00:32,060
+It does come up in interviews.
+
+10
+00:00:32,130 --> 00:00:35,970
+Most importantly it's used all the time often.
+
+11
+00:00:36,180 --> 00:00:42,600
+Big tech companies will base a lot of their more proprietary sort of special secret algorithms on top
+
+12
+00:00:42,600 --> 00:00:43,380
+of Dykstra.
+
+13
+00:00:43,560 --> 00:00:46,550
+And in some of their own special flavor I guess so.
+
+14
+00:00:46,580 --> 00:00:48,500
+So we'll talk about what that would look like.
+
+15
+00:00:48,960 --> 00:00:55,560
+And a lot of the use cases but what it does primarily is it finds the shortest path between two vertices
+
+16
+00:00:55,560 --> 00:00:56,270
+on a graph.
+
+17
+00:00:56,370 --> 00:01:02,580
+So if you have a graph with you know 10000 different vertex vertices how do we get from point A to Point
+
+18
+00:01:02,610 --> 00:01:03,130
+B.
+
+19
+00:01:03,140 --> 00:01:08,580
+What's the fastest way there could be a million a billion options and a really large graph how do we
+
+20
+00:01:08,580 --> 00:01:10,290
+calculate the shortest one.
+
+21
+00:01:10,320 --> 00:01:13,070
+So that's a problem that digesters our themselves.
+
+22
+00:01:13,230 --> 00:01:17,680
+Hence the term or the name Dykstra is shortest path algorithm.
+
+23
+00:01:17,750 --> 00:01:21,880
+First let's talk about who dextro was just a sidebar here.
+
+24
+00:01:21,880 --> 00:01:24,950
+So Edgar Dykstra butchering it.
+
+25
+00:01:24,950 --> 00:01:27,120
+I know he was a Dutch programmer.
+
+26
+00:01:27,150 --> 00:01:29,440
+He actually died relatively recently.
+
+27
+00:01:29,580 --> 00:01:38,040
+Well not that recently but 2002 or 2003 I believe but he was working in the very in the early 20th century
+
+28
+00:01:38,580 --> 00:01:41,010
+when computer science was sort of a new field.
+
+29
+00:01:41,190 --> 00:01:42,480
+And he was a bit of a polymath.
+
+30
+00:01:42,490 --> 00:01:46,810
+He was I think he started out as a physicist theoretical physicist.
+
+31
+00:01:46,830 --> 00:01:52,590
+He wrote a bunch of essays not to mention tons and tons of academic papers on programming mathematics
+
+32
+00:01:52,590 --> 00:01:53,490
+problem solving.
+
+33
+00:01:53,490 --> 00:01:57,480
+Really smart guy and more than just smart very influential.
+
+34
+00:01:57,480 --> 00:02:03,090
+So he helped to advance the field of computer science from at the time was more of a burgeoning art
+
+35
+00:02:03,450 --> 00:02:06,920
+to the crazy academic discipline that it is now.
+
+36
+00:02:06,980 --> 00:02:12,970
+He really established a lot of the academic rigor that's present in computer science.
+
+37
+00:02:12,990 --> 00:02:17,770
+He came up with a bunch of papers most of which are still cited today.
+
+38
+00:02:17,860 --> 00:02:24,480
+I read some facts that out of the 30 most influential papers he wrote six of them I think something
+
+39
+00:02:24,480 --> 00:02:24,830
+like that.
+
+40
+00:02:24,840 --> 00:02:28,100
+I don't know how you you know how you determine most influential.
+
+41
+00:02:28,110 --> 00:02:35,610
+But anyway the other thing is that he actually created new fields in within computer science single
+
+42
+00:02:35,610 --> 00:02:38,720
+papers that he wrote spawned off these new disciplines.
+
+43
+00:02:38,820 --> 00:02:40,310
+So very very influential.
+
+44
+00:02:40,320 --> 00:02:47,400
+And unlike some other pioneers whose work sort of at the time was very important and led the way for
+
+45
+00:02:47,400 --> 00:02:52,830
+other breakthroughs a lot of the stuff that he talked about and wrote about is still in practice today
+
+46
+00:02:52,830 --> 00:02:55,830
+are commonly used like nature's outgrew them.
+
+47
+00:02:56,340 --> 00:03:02,090
+So here's a little screenshot from Wikipedia on the right side of his Wikipedia page.
+
+48
+00:03:02,140 --> 00:03:08,670
+Like any sort of academic figure or really any person there's a little bar that says no one for you
+
+49
+00:03:08,670 --> 00:03:11,420
+can see he's known for a lot of top.
+
+50
+00:03:11,550 --> 00:03:13,770
+His main achievement that people recognize today.
+
+51
+00:03:13,940 --> 00:03:19,080
+It's like saurus algorithm but there are many other algorithms that you can see but also things like
+
+52
+00:03:19,980 --> 00:03:27,660
+self stabilizing distributed systems shunting yard algorithm smooth sword separation of concerns early
+
+53
+00:03:27,660 --> 00:03:28,740
+software architecture.
+
+54
+00:03:28,740 --> 00:03:31,530
+He did a lot and contributed a lot.
+
+55
+00:03:31,530 --> 00:03:35,020
+So really cool guy and very very important person.
+
+56
+00:03:35,040 --> 00:03:37,700
+Now the algorithm itself it is listed up top.
+
+57
+00:03:37,710 --> 00:03:43,410
+It's widely used widely taught as I mentioned and we've we've kind of explored the main idea behind
+
+58
+00:03:43,410 --> 00:03:48,480
+it finding the shortest path between one point and another but the story of how he came up with it and
+
+59
+00:03:48,480 --> 00:03:51,740
+why he even tackled this problem is kind of interesting.
+
+60
+00:03:51,840 --> 00:03:57,600
+I don't know if this is 100 percent true but it's on Wikipedia which doesn't always mean much but apparently
+
+61
+00:03:57,600 --> 00:04:03,330
+that the impetus for him actually doing this for coming up with his shortest path algorithm is that
+
+62
+00:04:03,330 --> 00:04:09,390
+he wanted a problem that he could come up with to demonstrate to the general public why computers are
+
+63
+00:04:09,390 --> 00:04:10,860
+awesome why they were powerful.
+
+64
+00:04:10,860 --> 00:04:17,150
+He wanted to show something that was difficult for humans to do and how easily computers could do it.
+
+65
+00:04:17,160 --> 00:04:23,460
+So he came up with this travel problem of finding the shortest path along the massive train network
+
+66
+00:04:23,550 --> 00:04:27,960
+in the Netherlands figuring out the fastest is the shortest way.
+
+67
+00:04:27,960 --> 00:04:28,950
+This is his quote.
+
+68
+00:04:28,950 --> 00:04:32,520
+What is the shortest way to travel from Rotterdam to granite again.
+
+69
+00:04:32,670 --> 00:04:33,480
+Not much.
+
+70
+00:04:33,480 --> 00:04:34,900
+Sorry about that.
+
+71
+00:04:35,100 --> 00:04:39,010
+From any given city to city it's the algorithm for the shortest path.
+
+72
+00:04:39,240 --> 00:04:43,980
+And then here's his little humble brag which I designed in about 20 minutes.
+
+73
+00:04:43,980 --> 00:04:48,360
+Apparently he was shopping and then over coffee and he was tired.
+
+74
+00:04:48,540 --> 00:04:52,240
+He designed it like a little cafe table in 20 minutes.
+
+75
+00:04:52,920 --> 00:04:55,430
+And eventually that algorithm became to my great amazement.
+
+76
+00:04:55,530 --> 00:04:57,160
+One of the cornerstones of my fame.
+
+77
+00:04:57,270 --> 00:04:58,370
+So it's kind of fascinating.
+
+78
+00:04:58,380 --> 00:05:04,140
+He didn't set out to solve this as his you know his thesis or is his greatest achievement this problem
+
+79
+00:05:04,140 --> 00:05:05,900
+that haunted him his entire life.
+
+80
+00:05:05,970 --> 00:05:11,220
+It was more of oh I want to just come up with something that the public will understand something that
+
+81
+00:05:11,220 --> 00:05:14,490
+will demonstrate the intrinsic value worthiness of computers.
+
+82
+00:05:14,490 --> 00:05:19,800
+How about finding the shortest path using the rail network in the Netherlands and then that is actually
+
+83
+00:05:19,800 --> 00:05:23,700
+what went on to have a lot of implications and use cases to this day.
+
+84
+00:05:23,700 --> 00:05:25,680
+So Leslie let's talk about why that is.
+
+85
+00:05:25,710 --> 00:05:27,410
+Why is it still useful.
+
+86
+00:05:27,450 --> 00:05:33,000
+So the most obvious thing that I've already mentioned this as an example GPS GPS or any sort of mapping
+
+87
+00:05:33,120 --> 00:05:38,070
+software whatever app you use whether it's Google Maps Apple Maps or whatever other versions that are
+
+88
+00:05:38,070 --> 00:05:42,370
+out there or you have one of those old school GPS devices in your car.
+
+89
+00:05:42,570 --> 00:05:47,970
+Mapquest all of that involves finding the shortest path from one point to another and all of that data
+
+90
+00:05:48,000 --> 00:05:50,010
+can be represented using a graph.
+
+91
+00:05:50,010 --> 00:05:54,260
+Now of course there's a lot of other complications in today's world.
+
+92
+00:05:54,360 --> 00:06:00,390
+And like Google Maps its algorithm takes not only the distance but the capacity of a road the number
+
+93
+00:06:00,390 --> 00:06:04,690
+of lanes that traffic accidents whether time of day.
+
+94
+00:06:04,710 --> 00:06:08,210
+I'm sure there's many other factors I'm not even thinking about holidays.
+
+95
+00:06:08,610 --> 00:06:08,950
+Yeah.
+
+96
+00:06:09,120 --> 00:06:13,180
+There's a lot that goes into it but it's still based on fighting.
+
+97
+00:06:13,230 --> 00:06:14,640
+Finding the shortest path.
+
+98
+00:06:14,820 --> 00:06:20,820
+Now what makes something short might be different because our version we're going to talk about we're
+
+99
+00:06:20,820 --> 00:06:24,410
+looking at a single criteria like distance on a map.
+
+100
+00:06:24,570 --> 00:06:26,910
+We're not implementing traffic and all of that stuff.
+
+101
+00:06:27,000 --> 00:06:31,650
+But at its core we could take it take digesters algorithm as we're going to learn it and then tweak
+
+102
+00:06:31,650 --> 00:06:35,040
+it to add in traffic or to account for weather and that sort of thing.
+
+103
+00:06:35,040 --> 00:06:39,930
+Next up the network routing finding the shortest path for data across a massive network.
+
+104
+00:06:40,020 --> 00:06:43,590
+If you think of computers you know they're connected in a graph.
+
+105
+00:06:44,040 --> 00:06:45,680
+Let's just say a million computers.
+
+106
+00:06:45,720 --> 00:06:46,700
+How do we send.
+
+107
+00:06:47,100 --> 00:06:49,960
+How do we break up a large message into a bunch of little pieces.
+
+108
+00:06:50,070 --> 00:06:55,080
+Senator Krus bunch of computers end up at another computer which is the fastest shortest way to get
+
+109
+00:06:55,080 --> 00:06:57,070
+there biology.
+
+110
+00:06:57,420 --> 00:07:05,970
+It's used often to model the spread of of infectious diseases across humans often used in projections.
+
+111
+00:07:05,970 --> 00:07:07,730
+I have no expertise in that.
+
+112
+00:07:07,740 --> 00:07:08,910
+That's just something I read online.
+
+113
+00:07:08,900 --> 00:07:10,490
+What I found fascinating.
+
+114
+00:07:10,830 --> 00:07:15,300
+Airline tickets if you ever go on those Web sites and you know you enter where you're trying to go from
+
+115
+00:07:15,300 --> 00:07:18,030
+one city to another let's just say one way.
+
+116
+00:07:18,030 --> 00:07:25,920
+Of course you can optimize for all sorts of different things like duration price number of airline miles.
+
+117
+00:07:25,980 --> 00:07:30,090
+But if you're willing let's say you're trying to come up with the cheapest possible option and you're
+
+118
+00:07:30,090 --> 00:07:32,880
+willing to make like three different stops.
+
+119
+00:07:33,120 --> 00:07:37,920
+Well there's a lot of options and it would be a huge pain to try and manually compute that but using
+
+120
+00:07:37,920 --> 00:07:45,090
+a shortest path algorithm where it's minimizing it's optimizing for cheapest rather than shortest distance
+
+121
+00:07:45,600 --> 00:07:49,800
+you might end up flying across the world a couple of times that might be cheap and you might have long
+
+122
+00:07:49,800 --> 00:07:55,170
+layovers but the algorithm could do that could figure that out for you.
+
+123
+00:07:55,240 --> 00:07:57,150
+Looks like you put biology on here twice.
+
+124
+00:07:57,210 --> 00:07:59,010
+Whoops sorry about that.
+
+125
+00:07:59,010 --> 00:08:04,830
+And many many other uses as we'll talk about as we go but we're going to start with just a blended graph.
+
+126
+00:08:04,830 --> 00:08:11,190
+Maybe look something like this where we have numbers representing the distances between cities are junctions
+
+127
+00:08:11,460 --> 00:08:12,770
+in different paths.
+
+128
+00:08:12,840 --> 00:08:17,760
+But before we can even talk about the algorithm we have one small problem which is we don't have a way
+
+129
+00:08:17,760 --> 00:08:24,330
+of storing this data right now if we simplify it for that that math background we can't do this part
+
+130
+00:08:24,480 --> 00:08:25,960
+right here.
+
+131
+00:08:26,100 --> 00:08:30,940
+We don't have a way of storing the information about a given edge.
+
+132
+00:08:30,960 --> 00:08:34,920
+Our graphs are just vertices and edges.
+
+133
+00:08:34,920 --> 00:08:37,830
+They are undirected meaning there's no arrows.
+
+134
+00:08:37,830 --> 00:08:42,730
+They are both ways but they're also unweighted meaning there's no value associated with them.
+
+135
+00:08:42,750 --> 00:08:47,910
+So the first thing we need to do before we can find a shortest path we need to just add distances or
+
+136
+00:08:47,910 --> 00:08:49,840
+add a weight to our graph.
+
+137
+00:08:49,890 --> 00:08:50,580
+So it's not hard.
+
+138
+00:08:50,580 --> 00:08:52,800
+It will just take a minute or two and the next video.
+
+139
+00:08:53,040 --> 00:08:54,240
+That's what we do next.
+
+140
+00:08:54,240 --> 00:08:57,190
+So then we can actually implement the shortest path algorithm.
+
+141
+00:08:57,330 --> 00:09:00,020
+So in the next video I'll be back to write a weighted graph.
+

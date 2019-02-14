@@ -1,0 +1,180 @@
+1
+00:00:00,150 --> 00:00:00,810
+Welcome back.
+
+2
+00:00:00,930 --> 00:00:05,400
+In this video I just want to get us set up with our basic skeleton our two classes.
+
+3
+00:00:05,490 --> 00:00:10,550
+So we'll have a binary search tree class and then a node class just like we did with a linked list.
+
+4
+00:00:10,560 --> 00:00:13,290
+We had the link to this class and then a node.
+
+5
+00:00:13,290 --> 00:00:19,310
+So a binary search tree itself really only has one important property which is the root.
+
+6
+00:00:19,680 --> 00:00:21,940
+And then each node has a value.
+
+7
+00:00:22,190 --> 00:00:28,190
+But instead of having a dot next or previous We have a left and a right so I'll quickly code this up
+
+8
+00:00:28,200 --> 00:00:30,380
+I'll fast forward through some of it.
+
+9
+00:00:30,520 --> 00:00:35,770
+So our constructor takes a single value in and we just said this value equals value.
+
+10
+00:00:35,970 --> 00:00:37,830
+And then this dot right.
+
+11
+00:00:38,070 --> 00:00:39,020
+I like to do the left first.
+
+12
+00:00:39,030 --> 00:00:43,100
+I don't know why and this dot right doesn't matter at all.
+
+13
+00:00:43,600 --> 00:00:43,880
+OK.
+
+14
+00:00:43,890 --> 00:00:45,980
+So that's our single node.
+
+15
+00:00:46,400 --> 00:00:55,170
+Now we'll just make our binary search tree you could just do B S T if you prefer and instead of that
+
+16
+00:00:55,340 --> 00:00:57,840
+of a constructor it doesn't take anything.
+
+17
+00:00:57,840 --> 00:01:01,910
+You could have it take an initial value and create the node if you want it to.
+
+18
+00:01:01,920 --> 00:01:04,910
+But we won't do that and we'll just do this.
+
+19
+00:01:04,940 --> 00:01:07,310
+Root equals no.
+
+20
+00:01:07,860 --> 00:01:15,240
+Now with this we could construct our own basic BSD I could say you know our tree equals binary search
+
+21
+00:01:15,240 --> 00:01:15,920
+tree.
+
+22
+00:01:16,050 --> 00:01:23,800
+I need to say new binary search tree and then we could do tree dot root equals new node.
+
+23
+00:01:24,390 --> 00:01:32,090
+Let's say with the value of 10 and then we could manually say tree root dot right equals new nodes so
+
+24
+00:01:32,100 --> 00:01:41,490
+it needs to be greater than 10 let's say 15 tree root left it equals new node of something less than
+
+25
+00:01:41,490 --> 00:01:41,770
+10.
+
+26
+00:01:41,770 --> 00:01:45,210
+How about 7 and we could keep going.
+
+27
+00:01:45,210 --> 00:01:50,650
+I'll just do one more level to do tree root dot left dot right.
+
+28
+00:01:50,700 --> 00:01:55,240
+So this needs to be less than 15 because it's to the left of it.
+
+29
+00:01:55,470 --> 00:01:57,740
+But it also needs to be greater than 7.
+
+30
+00:01:57,780 --> 00:02:02,460
+So let's say no and you start to be less than 10 and greater than 7.
+
+31
+00:02:02,460 --> 00:02:08,720
+So let's go with it actually 9 like odd numbers and this sets up a simple binary search tree.
+
+32
+00:02:08,740 --> 00:02:11,340
+Although it's a huge pain to insert things like this.
+
+33
+00:02:11,340 --> 00:02:17,970
+So just like we did with a singly linked list where we're going to add is a method called insert and
+
+34
+00:02:17,970 --> 00:02:19,760
+it will figure out where something goes.
+
+35
+00:02:19,760 --> 00:02:23,220
+Based off of comparisons Oh this needs to be new.
+
+36
+00:02:23,220 --> 00:02:26,980
+Node 9 showed I was doing there let's run it.
+
+37
+00:02:27,030 --> 00:02:28,910
+Just make sure it works.
+
+38
+00:02:29,070 --> 00:02:30,240
+If you look at our tree.
+
+39
+00:02:30,510 --> 00:02:30,860
+OK.
+
+40
+00:02:30,990 --> 00:02:32,470
+We've got to root out roots.
+
+41
+00:02:32,640 --> 00:02:35,780
+I mean there's not much for us to really check at this point.
+
+42
+00:02:35,970 --> 00:02:39,640
+We have some nodes that are connected each node has a value left and a right.
+
+43
+00:02:39,870 --> 00:02:40,230
+OK.
+
+44
+00:02:40,350 --> 00:02:43,150
+In the next video I'll explain how Insearch would work.
+
+45
+00:02:43,320 --> 00:02:44,550
+And then we'll get coding.
+

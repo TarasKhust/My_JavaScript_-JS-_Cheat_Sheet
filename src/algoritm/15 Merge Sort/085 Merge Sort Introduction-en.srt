@@ -1,0 +1,380 @@
+1
+00:00:00,200 --> 00:00:01,410
+Hey welcome back.
+
+2
+00:00:01,410 --> 00:00:06,090
+So the first of the fancier sorting algorithms that we're going to take a look at is called merge sort.
+
+3
+00:00:06,180 --> 00:00:10,900
+It's very well known one that was created back in 1948.
+
+4
+00:00:10,980 --> 00:00:16,980
+A computer scientist slash math mathematician and all around smart guy named Jonathan Van Norman or
+
+5
+00:00:16,980 --> 00:00:22,210
+Von Neumann wrote the first ever recorded program of merge sort.
+
+6
+00:00:22,230 --> 00:00:26,730
+It was 23 pages of code for this computer here called Ed VAK.
+
+7
+00:00:26,760 --> 00:00:27,840
+It's a very large computer.
+
+8
+00:00:27,840 --> 00:00:33,210
+It was like six six thousand or so vacuum tubes writing code back then obviously very different than
+
+9
+00:00:33,210 --> 00:00:33,770
+it was today.
+
+10
+00:00:33,780 --> 00:00:38,420
+But the algorithm the idea was first conceived in 1948.
+
+11
+00:00:38,670 --> 00:00:44,110
+So the idea behind it it's really a combination of two things merging and sorting.
+
+12
+00:00:44,310 --> 00:00:49,920
+And actually you can say it's really a combination of three things splitting up sorting and merging
+
+13
+00:00:49,980 --> 00:00:51,420
+all three things take place.
+
+14
+00:00:52,280 --> 00:00:58,260
+So it exploits the fact that arrays of zero or one element one element are already sorted.
+
+15
+00:00:58,280 --> 00:01:03,050
+So if you're asked to sort an array that just consists of the number one and that's it you know it's
+
+16
+00:01:03,050 --> 00:01:07,390
+sorted or it's just number nine it's sorted or it's empty it's sorted.
+
+17
+00:01:07,430 --> 00:01:14,450
+So merge so it takes advantage of that fact it works by decomposing an array into smaller arrays.
+
+18
+00:01:14,660 --> 00:01:19,110
+So that's something known as a divide and conquer algorithm a divide and conquer approach.
+
+19
+00:01:19,280 --> 00:01:24,890
+We split up the larger array we're trying to sort into smaller sub arrays all the way down.
+
+20
+00:01:24,890 --> 00:01:28,690
+We keep doing it until we get to zero or one element arrays.
+
+21
+00:01:28,760 --> 00:01:33,530
+So we would take an eight element array and split it and then split it and then split it until we end
+
+22
+00:01:33,530 --> 00:01:38,900
+up with eight single element arrays and then we merge them back together.
+
+23
+00:01:38,900 --> 00:01:40,890
+So here's a little visualization.
+
+24
+00:01:40,940 --> 00:01:47,390
+Imagine we have this array here 8 3 5 4 7 6 1 2 that is 8 elements.
+
+25
+00:01:47,390 --> 00:01:49,100
+What do we do we start.
+
+26
+00:01:49,100 --> 00:01:51,840
+Or the code starts by splitting it in half.
+
+27
+00:01:52,070 --> 00:01:57,770
+So we're dividing it and we're still not at one or zero element arrays right.
+
+28
+00:01:57,830 --> 00:01:58,950
+These are four elements.
+
+29
+00:01:59,000 --> 00:02:00,350
+So we split again.
+
+30
+00:02:00,770 --> 00:02:03,330
+And now we have four two element arrays.
+
+31
+00:02:03,530 --> 00:02:04,530
+We're still not there.
+
+32
+00:02:04,550 --> 00:02:05,830
+So we flip again.
+
+33
+00:02:05,870 --> 00:02:11,060
+Now what we have are eight single out arrays single element arrays.
+
+34
+00:02:11,120 --> 00:02:13,520
+So now we merge them together.
+
+35
+00:02:13,520 --> 00:02:15,610
+So let's focus here.
+
+36
+00:02:15,740 --> 00:02:18,250
+We take these two arrays and we merge them back.
+
+37
+00:02:18,250 --> 00:02:20,840
+And as we merge them they are already sorted.
+
+38
+00:02:20,840 --> 00:02:22,460
+We know that they're sorted.
+
+39
+00:02:22,460 --> 00:02:29,210
+So sorting merging two sorted arrays is easy relative to merging two unsorted arrays.
+
+40
+00:02:29,240 --> 00:02:35,470
+So what we do we basically just compare the number which one is smaller while the smaller one goes first.
+
+41
+00:02:35,660 --> 00:02:39,670
+Which one of these is smaller smaller one goes first which one of these is smaller.
+
+42
+00:02:39,770 --> 00:02:44,200
+Put that first one goes before you then repeat the process.
+
+43
+00:02:44,210 --> 00:02:46,820
+Now remerging this array with this array.
+
+44
+00:02:47,000 --> 00:02:48,840
+But notice this is already sorted.
+
+45
+00:02:48,890 --> 00:02:50,360
+This is already sorted.
+
+46
+00:02:50,750 --> 00:02:52,650
+So now we just make a couple of comparisons.
+
+47
+00:02:52,670 --> 00:02:54,850
+Take the first item compared to the first item.
+
+48
+00:02:54,950 --> 00:02:55,890
+Which one is smaller.
+
+49
+00:02:56,000 --> 00:02:57,200
+Put that one first.
+
+50
+00:02:57,380 --> 00:02:59,790
+Then we take this item compared to that item which was smaller.
+
+51
+00:02:59,820 --> 00:03:04,660
+OK put four and then we do it again put 5 and then 8 and then the same thing over here.
+
+52
+00:03:04,760 --> 00:03:10,800
+So we end up with 1 2 6 7 and 3 4 5 8 2 sorted arrays that are smaller.
+
+53
+00:03:10,880 --> 00:03:17,590
+Now our final merge we put them all together and we end up with this one two three four five six seven
+
+54
+00:03:17,590 --> 00:03:18,430
+eight.
+
+55
+00:03:18,500 --> 00:03:24,470
+So hopefully you can see yes this algorithm is a little more complicated but it involves first splitting
+
+56
+00:03:24,470 --> 00:03:29,530
+up splitting up until we end up with sorted arrays which are zero or one element.
+
+57
+00:03:29,680 --> 00:03:33,950
+That's that's the base case that's the smallest thing we get to we know they're sorted if they're only
+
+58
+00:03:33,950 --> 00:03:37,400
+one item wrong or they're empty then what do we do.
+
+59
+00:03:37,820 --> 00:03:40,620
+We merge them merging sorted arrays is easy.
+
+60
+00:03:40,670 --> 00:03:46,720
+Well compared to merging unsorted or it's still not that easy and we sort them back until we finish
+
+61
+00:03:46,720 --> 00:03:48,300
+and we get a totally sorted array.
+
+62
+00:03:48,530 --> 00:03:50,210
+Here's another visualization.
+
+63
+00:03:50,210 --> 00:03:52,060
+Here we have eight elements in an array.
+
+64
+00:03:52,220 --> 00:03:56,720
+And the very first thing that happens is we split them all up into eight individual arrays.
+
+65
+00:03:56,730 --> 00:04:01,880
+Now they all have each color represents the fact that they're an individual array and then as we merge
+
+66
+00:04:01,880 --> 00:04:03,210
+them together they change color.
+
+67
+00:04:03,320 --> 00:04:04,850
+So it starts with the first two.
+
+68
+00:04:04,880 --> 00:04:05,630
+These are two arrays.
+
+69
+00:04:05,630 --> 00:04:12,110
+How do we sort them into one three and 44 takes them out and put them back in in that order they're
+
+70
+00:04:12,170 --> 00:04:12,830
+sorted.
+
+71
+00:04:12,830 --> 00:04:15,100
+So now we have this is one array here.
+
+72
+00:04:15,520 --> 00:04:17,350
+So we have seven arrays right away.
+
+73
+00:04:17,390 --> 00:04:18,600
+One two three four five.
+
+74
+00:04:18,620 --> 00:04:19,120
+Yes.
+
+75
+00:04:19,140 --> 00:04:20,300
+Seven can't count.
+
+76
+00:04:20,300 --> 00:04:28,050
+So next we take these two individual arrays and we sort them into one and put them back.
+
+77
+00:04:28,060 --> 00:04:35,430
+Now we take these to erase the orange and the red of those two items each and we sort them into one
+
+78
+00:04:35,460 --> 00:04:36,750
+array like this.
+
+79
+00:04:36,750 --> 00:04:41,190
+And then we put that back then we have to start on the right side.
+
+80
+00:04:41,190 --> 00:04:43,530
+So this was the left division.
+
+81
+00:04:43,530 --> 00:04:49,740
+Now we take 47 and 15 we sort them from two arrays of one item into one array of two items.
+
+82
+00:04:49,740 --> 00:04:53,510
+Same thing with 36 and 26.
+
+83
+00:04:53,530 --> 00:04:54,260
+Now what do we do.
+
+84
+00:04:54,310 --> 00:04:56,270
+We merge these two arrays together.
+
+85
+00:04:56,290 --> 00:04:58,880
+The yellow and the green.
+
+86
+00:04:59,150 --> 00:05:00,220
+There we go.
+
+87
+00:05:00,280 --> 00:05:01,390
+Put that back in.
+
+88
+00:05:01,540 --> 00:05:06,510
+And now we merge our two arrays of four items at the very end.
+
+89
+00:05:08,500 --> 00:05:09,140
+There we go.
+
+90
+00:05:09,310 --> 00:05:10,490
+So that's merge sort.
+
+91
+00:05:10,810 --> 00:05:14,350
+And as you can imagine there's a little bit of logic involved in the next video.
+
+92
+00:05:14,350 --> 00:05:17,310
+We're going to implement the first step which is merging.
+
+93
+00:05:17,320 --> 00:05:22,110
+So we have to understand how to merge two sorted arrays and then the rest is actually pretty easy.
+
+94
+00:05:22,120 --> 00:05:23,790
+So in the next video we're going to cover that.
+
+95
+00:05:23,800 --> 00:05:25,450
+We're going to build emerging function.
+

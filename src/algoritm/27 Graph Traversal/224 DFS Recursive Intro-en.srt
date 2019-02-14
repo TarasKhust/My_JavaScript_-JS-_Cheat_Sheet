@@ -1,0 +1,496 @@
+1
+00:00:00,210 --> 00:00:01,030
+Welcome back.
+
+2
+00:00:01,110 --> 00:00:04,460
+So we're going to start off by implementing depth first traversal of a graph.
+
+3
+00:00:04,470 --> 00:00:06,860
+Two ways recursively and intuitively.
+
+4
+00:00:06,870 --> 00:00:09,590
+But first we're doing the recursive version.
+
+5
+00:00:10,020 --> 00:00:16,190
+So I have a more detailed bit of pseudo code after this but here's sort of the basic explanation.
+
+6
+00:00:16,230 --> 00:00:19,130
+So define your function your method DFS.
+
+7
+00:00:19,150 --> 00:00:24,390
+You might want to call it DFS recursive so that you can do both iterative and recursive and it takes
+
+8
+00:00:24,480 --> 00:00:25,900
+a vertex to start from.
+
+9
+00:00:25,920 --> 00:00:29,880
+There is no you know automatic inherent start point like a tree.
+
+10
+00:00:29,880 --> 00:00:31,970
+So let's say you pass an A.
+
+11
+00:00:32,430 --> 00:00:36,030
+So we need to have a base case when we're doing something recursively.
+
+12
+00:00:36,090 --> 00:00:39,600
+If you haven't seen the recursive section you definitely check that out first.
+
+13
+00:00:39,600 --> 00:00:41,830
+Otherwise this will make no sense.
+
+14
+00:00:41,880 --> 00:00:44,670
+So our base case is when vertex is empty.
+
+15
+00:00:44,760 --> 00:00:50,040
+So the first time around that's not going to be the case because we're passing in A or B or some starting
+
+16
+00:00:50,040 --> 00:00:50,600
+point.
+
+17
+00:00:50,970 --> 00:00:55,620
+If that is the case we return something return no just get out of there.
+
+18
+00:00:55,680 --> 00:00:58,370
+Otherwise we're going to have a list of results.
+
+19
+00:00:58,380 --> 00:01:01,140
+So we're building this array to return at the very end.
+
+20
+00:01:01,140 --> 00:01:04,970
+So we add the vertex to the results list meaning we've visited it.
+
+21
+00:01:05,010 --> 00:01:09,780
+So we would add a in and then we mark Virtex as visited.
+
+22
+00:01:09,810 --> 00:01:12,690
+So what would we do to actually market has visited.
+
+23
+00:01:12,690 --> 00:01:14,230
+I'm just going to do something like this.
+
+24
+00:01:14,240 --> 00:01:21,830
+I have an object key value pairs and when we visit F for example we add F in here and set it to be true.
+
+25
+00:01:22,170 --> 00:01:24,300
+You don't have to do this you don't have to set it to be true.
+
+26
+00:01:24,300 --> 00:01:29,940
+You could use just another array and add a in there but I like this approach it's more explicit and
+
+27
+00:01:29,940 --> 00:01:35,450
+it also later on would allow you to mark something unvisited if for some reason you wanted to consider
+
+28
+00:01:35,490 --> 00:01:38,020
+to be false but it doesn't really matter.
+
+29
+00:01:38,040 --> 00:01:39,330
+But this is how I'm going to do it.
+
+30
+00:01:39,630 --> 00:01:46,770
+So mark it as visited then for each neighbor in that vertexes neighbors so for all of A's neighbors
+
+31
+00:01:46,970 --> 00:01:51,500
+if that is not visited recursively call DFS on that neighbor.
+
+32
+00:01:51,600 --> 00:01:57,070
+So we would call depth first search on B and on D if those are the two neighbors.
+
+33
+00:01:57,600 --> 00:02:03,120
+And then for each one of those we do the same thing we add it to the results list and then we market
+
+34
+00:02:03,150 --> 00:02:08,340
+as visited we would add into to here so that we don't visit visit it again we don't duplicate our work
+
+35
+00:02:08,500 --> 00:02:12,780
+but don't get stuck in a little loop which I'll show you that is possible if you don't mark thinks is
+
+36
+00:02:12,780 --> 00:02:15,770
+visited and then we visit each of its neighbors.
+
+37
+00:02:15,890 --> 00:02:20,850
+But when we do it recursively the way that these things are ordered on the call stack I'll walk through
+
+38
+00:02:20,850 --> 00:02:24,270
+it and the solution video we end up with a depth first traversal.
+
+39
+00:02:24,270 --> 00:02:25,050
+So a couple of things.
+
+40
+00:02:25,080 --> 00:02:30,320
+Here's the same explanation as before we just moved through this very quickly.
+
+41
+00:02:30,420 --> 00:02:34,950
+We see that this is the adjacency list representing this graph structure over here.
+
+42
+00:02:35,250 --> 00:02:39,960
+And what we'll do is as we visit a we're going to start there.
+
+43
+00:02:39,960 --> 00:02:44,580
+I'll add it to my visited object key value pair and any time.
+
+44
+00:02:44,610 --> 00:02:47,990
+Let's say we're looking at see later on we would check.
+
+45
+00:02:48,030 --> 00:02:51,320
+All right which of its neighbors do we have so we have see.
+
+46
+00:02:51,330 --> 00:02:51,600
+All right.
+
+47
+00:02:51,600 --> 00:02:53,450
+Well we have a and we'll look at a.
+
+48
+00:02:53,490 --> 00:02:54,420
+Oh it's already visited.
+
+49
+00:02:54,420 --> 00:02:56,300
+So we're not going to do that anyway.
+
+50
+00:02:56,550 --> 00:02:58,530
+So we started a market has visited.
+
+51
+00:02:58,680 --> 00:03:05,490
+So then we go to A's children and we look at both of them has been visited has been visited will be
+
+52
+00:03:05,490 --> 00:03:06,050
+hasn't.
+
+53
+00:03:06,180 --> 00:03:13,020
+So we're going to recursively called depth first search on B and C but because it's recursive this is
+
+54
+00:03:13,020 --> 00:03:19,200
+going to happen first and all of these neighbors will happen before we come back to see it will be waiting
+
+55
+00:03:19,200 --> 00:03:26,310
+on the call stack then we go to B we visit be we added to our list of object visited vertices and we
+
+56
+00:03:26,310 --> 00:03:28,500
+look at B and it has 2 neighbors.
+
+57
+00:03:28,740 --> 00:03:30,460
+Well for each one we're going to check.
+
+58
+00:03:30,480 --> 00:03:32,790
+Has it been visited it's been visited.
+
+59
+00:03:32,790 --> 00:03:33,480
+Yes it has.
+
+60
+00:03:33,480 --> 00:03:36,760
+We're not going to recursively call it D.
+
+61
+00:03:36,780 --> 00:03:37,860
+Has not been.
+
+62
+00:03:37,900 --> 00:03:42,720
+So we keep going and you can step through this on your own but this is the idea where we're going to
+
+63
+00:03:42,720 --> 00:03:44,940
+keep track of what's been visited and each time through.
+
+64
+00:03:44,940 --> 00:03:48,850
+We have this pseudo code for each neighbor in that one verdict.
+
+65
+00:03:48,870 --> 00:03:54,870
+Vertexes neighbors check if it's been visited if it hasn't been visited yet recursively called depth
+
+66
+00:03:54,870 --> 00:03:55,900
+first search on it.
+
+67
+00:03:56,160 --> 00:04:00,140
+So remember recursion call the exact same function again.
+
+68
+00:04:00,180 --> 00:04:02,720
+Now I'll show you the more detailed pseudocode in just a moment.
+
+69
+00:04:02,850 --> 00:04:04,870
+But first I want to show you this.
+
+70
+00:04:04,920 --> 00:04:09,770
+This is the code with what we've already written that generates this graph structure.
+
+71
+00:04:09,780 --> 00:04:14,400
+So if you do want to follow along so you can test if things are working correctly it can be a little
+
+72
+00:04:14,400 --> 00:04:16,700
+harder to just make up your own graph.
+
+73
+00:04:16,710 --> 00:04:22,830
+It can be harder to know if it's working because it's less it's less linear than a tree.
+
+74
+00:04:22,860 --> 00:04:25,910
+So it's harder to think through it at least for me personally.
+
+75
+00:04:25,920 --> 00:04:31,050
+So you could copy this code and have the same structure as me to the same graph and you should get the
+
+76
+00:04:31,050 --> 00:04:31,890
+same order.
+
+77
+00:04:32,040 --> 00:04:37,940
+So as far as the more explicit pseudo code the more detailed pseudo code for the recursive version write
+
+78
+00:04:37,950 --> 00:04:44,400
+a function that accepts a starting node and we'll just go with a for now but don't make it implicit
+
+79
+00:04:44,440 --> 00:04:45,750
+You know don't set a default.
+
+80
+00:04:45,900 --> 00:04:52,080
+You pass and then you're going to create an empty list in array to store the end result that will return
+
+81
+00:04:52,080 --> 00:04:52,730
+at the very end.
+
+82
+00:04:52,740 --> 00:04:54,020
+So this will store the order.
+
+83
+00:04:54,030 --> 00:04:57,510
+It should be you know a and then B and then D and so on.
+
+84
+00:04:57,780 --> 00:05:04,100
+If we're starting from may create an object to store your visited vertices so that something like this
+
+85
+00:05:04,130 --> 00:05:05,920
+but it should start empty.
+
+86
+00:05:06,740 --> 00:05:12,560
+Ok then the slightly trickier part inside of you don't you don't have to do it inside the same function
+
+87
+00:05:12,590 --> 00:05:17,560
+but I'm going to do it inside of it to help her function which accepts a vertex.
+
+88
+00:05:17,780 --> 00:05:23,050
+So what I'll probably do is name the outer function depth first search recursive and then the inside
+
+89
+00:05:23,060 --> 00:05:29,070
+I'll just call DFS and this is the part of our logic that matches the pseudo code I showed you before.
+
+90
+00:05:29,090 --> 00:05:31,170
+So this is the actual recursive function.
+
+91
+00:05:31,190 --> 00:05:36,500
+This function just sets up the array it sets up the results that will return at the end.
+
+92
+00:05:36,590 --> 00:05:42,020
+At first originally called a recursive function because I don't know if you remember from the recursive
+
+93
+00:05:42,020 --> 00:05:47,450
+section we talked about helper method recursion where sometimes you need some data to persist so you
+
+94
+00:05:47,450 --> 00:05:50,060
+can't just have one recursive function that calls itself.
+
+95
+00:05:50,210 --> 00:05:51,650
+You might need an outer function.
+
+96
+00:05:51,650 --> 00:05:52,880
+So that's the case here.
+
+97
+00:05:53,180 --> 00:05:58,820
+OK so your help function should return early if the vertex is empty helper function accepts vertex.
+
+98
+00:05:58,820 --> 00:06:00,230
+If it's empty We're done.
+
+99
+00:06:00,260 --> 00:06:06,440
+The whole function should place the vertex except into the visited object market has visited and push
+
+100
+00:06:06,440 --> 00:06:11,840
+it into the result a way away from the results array our list that we return at the end.
+
+101
+00:06:11,870 --> 00:06:15,770
+Then for that vertex loop over all of its children children is the wrong term.
+
+102
+00:06:15,770 --> 00:06:22,820
+All of its neighbors and for each one if they have not been visited recursively invoke the helper function
+
+103
+00:06:22,820 --> 00:06:23,630
+with that vertex.
+
+104
+00:06:23,630 --> 00:06:24,870
+This helper function.
+
+105
+00:06:24,950 --> 00:06:31,010
+So we don't recursively call the main function we recursively call the smaller helper function and then
+
+106
+00:06:31,190 --> 00:06:31,750
+we evolve.
+
+107
+00:06:31,750 --> 00:06:36,110
+You know Mark Each one has visited added to the array check that children are visited and keep doing
+
+108
+00:06:36,110 --> 00:06:37,480
+the same thing.
+
+109
+00:06:37,700 --> 00:06:41,710
+Then the important part is the very end invoke the helper function here.
+
+110
+00:06:41,750 --> 00:06:44,780
+So you define it then invoke it with the starting vertex.
+
+111
+00:06:44,780 --> 00:06:51,590
+So we set it on its way and this inner function is going to be updating that results array and its going
+
+112
+00:06:51,590 --> 00:06:54,870
+to be updating the visited object each time through.
+
+113
+00:06:54,890 --> 00:06:56,070
+It will have access to that.
+
+114
+00:06:56,270 --> 00:06:59,260
+And then at the very very end return the result array.
+
+115
+00:06:59,270 --> 00:07:03,730
+This is what will have been constructed by these recursive functions.
+
+116
+00:07:03,860 --> 00:07:06,250
+So we'll end up with a b d blah blah blah.
+
+117
+00:07:06,290 --> 00:07:08,090
+If you use the same graph that I used.
+
+118
+00:07:08,090 --> 00:07:10,980
+And again you can create it easily by just copying this.
+
+119
+00:07:11,240 --> 00:07:12,990
+All right so you give it a shot.
+
+120
+00:07:13,280 --> 00:07:17,090
+Recursion can be hard but I think I tried to write it out very clearly.
+
+121
+00:07:17,120 --> 00:07:19,410
+Step by step but if you don't want to try.
+
+122
+00:07:19,430 --> 00:07:20,800
+Just watch the next video.
+
+123
+00:07:20,870 --> 00:07:24,990
+As I step through the call stack We'll see how it works and why it actually is up first.
+
+124
+00:07:25,040 --> 00:07:26,550
+That's coming up next.
+

@@ -1,0 +1,264 @@
+1
+00:00:00,210 --> 00:00:00,700
+All right.
+
+2
+00:00:00,720 --> 00:00:05,920
+So we're moving on from stacks to talk about a similar sister data structure called the CU.
+
+3
+00:00:06,210 --> 00:00:08,250
+These two are often talked together.
+
+4
+00:00:08,270 --> 00:00:13,000
+They're often grouped into one section just like they are in this very course stacks and cues.
+
+5
+00:00:13,000 --> 00:00:18,750
+So before we get into the details quickly define our objectives to find what a cue is understand use
+
+6
+00:00:18,750 --> 00:00:23,940
+cases and examples of where they are used and then implement our own data structure just like we did
+
+7
+00:00:23,940 --> 00:00:25,360
+with Stex.
+
+8
+00:00:25,380 --> 00:00:26,970
+So what is the cue.
+
+9
+00:00:26,970 --> 00:00:32,730
+Well it's very similar to a stack in the sense that it's a data structure that you add data in and you
+
+10
+00:00:32,730 --> 00:00:36,170
+remove data out and those are really the only two operations.
+
+11
+00:00:36,240 --> 00:00:40,680
+Adding and removing However the order is different.
+
+12
+00:00:40,680 --> 00:00:48,180
+Instead of last in first out for a stack lifeso this is a fivefold FIFO and data structure first in
+
+13
+00:00:48,210 --> 00:00:49,360
+first out.
+
+14
+00:00:49,410 --> 00:00:54,960
+So the name Q Just like with stacks where I said think of a stack of paper or books on your desk with
+
+15
+00:00:54,960 --> 00:00:55,430
+a queue.
+
+16
+00:00:55,440 --> 00:00:56,410
+Think of a line.
+
+17
+00:00:56,450 --> 00:01:01,170
+Q What a lot of people around the world would say in the US who would say we're waiting in line but
+
+18
+00:01:01,500 --> 00:01:07,350
+lots of places say forming a Q So a queue like at Disneyland or you're waiting for and getting on an
+
+19
+00:01:07,350 --> 00:01:08,580
+airplane or something.
+
+20
+00:01:08,580 --> 00:01:11,710
+The first person in line is the first person out.
+
+21
+00:01:11,760 --> 00:01:17,930
+The first piece of data in a queue is the first thing out and these have uses all over the place you
+
+22
+00:01:17,940 --> 00:01:18,980
+know waiting in line.
+
+23
+00:01:18,990 --> 00:01:21,300
+Yeah humans do that all the time.
+
+24
+00:01:21,300 --> 00:01:23,510
+It's a miserable experience for most people.
+
+25
+00:01:23,730 --> 00:01:28,050
+But in programming in our computers that are also really commonly used.
+
+26
+00:01:28,050 --> 00:01:33,390
+If you've ever played a video game or you're waiting to join a game like it's an online game there's
+
+27
+00:01:33,420 --> 00:01:37,410
+usually some queue structure keeping track of who has been waiting the longest.
+
+28
+00:01:37,500 --> 00:01:40,930
+Who's going to get you know added into the game first.
+
+29
+00:01:41,010 --> 00:01:43,780
+Also background tasks on your computer.
+
+30
+00:01:43,930 --> 00:01:46,250
+Time are uploading or downloading something.
+
+31
+00:01:46,350 --> 00:01:51,570
+If you click like you know you download one file and it takes a while and you go to download another
+
+32
+00:01:51,570 --> 00:01:51,950
+file.
+
+33
+00:01:51,960 --> 00:01:58,470
+If they're the exact same size the first thing that was added in is going to be processed first or if
+
+34
+00:01:58,470 --> 00:02:04,110
+you're uploading something usually the first thing that you start to upload is going to finish first.
+
+35
+00:02:04,110 --> 00:02:09,120
+However that's a little tricky because there's different file sizes and some things will upload or download
+
+36
+00:02:09,120 --> 00:02:10,090
+much faster.
+
+37
+00:02:10,260 --> 00:02:13,040
+So a better example is a print queue.
+
+38
+00:02:13,140 --> 00:02:18,280
+So if you go and print 10 different things a printer can only handle one thing at a time.
+
+39
+00:02:18,420 --> 00:02:23,340
+So unlike uploading or downloading where things could be happening concurrently when we're talking about
+
+40
+00:02:23,340 --> 00:02:26,460
+printing you print one page at a time one project.
+
+41
+00:02:26,670 --> 00:02:32,190
+So there's a queue like at a public library 20 people try and print their essays the last night before
+
+42
+00:02:32,190 --> 00:02:36,690
+they're due whoever hit print first is going to be processed first.
+
+43
+00:02:36,730 --> 00:02:42,480
+If we used a stack instead of a queue that would be disastrous if we did last in first out that would
+
+44
+00:02:42,480 --> 00:02:45,220
+reward people who waited until the very very end.
+
+45
+00:02:45,450 --> 00:02:47,940
+So they are used all over the place.
+
+46
+00:02:48,060 --> 00:02:54,210
+It's a 5 0 5 000 first in first out data structure and just like before we can implement them with an
+
+47
+00:02:54,210 --> 00:02:54,860
+array.
+
+48
+00:02:55,020 --> 00:02:58,700
+Or we could implement our own Q class and we're going to do both.
+
+49
+00:02:58,770 --> 00:03:01,220
+And just like before as well.
+
+50
+00:03:01,500 --> 00:03:07,050
+I'm going to mention that in later algorithms that we learn will be using QS.
+
+51
+00:03:07,080 --> 00:03:13,260
+We'll also be using stacks and we could use the classes that I'm going to show to show the stack class
+
+52
+00:03:13,470 --> 00:03:18,510
+but to keep it short and simple I'll be using an array but that doesn't mean that it's better to use
+
+53
+00:03:18,510 --> 00:03:19,160
+an array.
+
+54
+00:03:19,170 --> 00:03:24,660
+It might be simpler or shorter definitely doesn't require as much work on our end but it's definitely
+
+55
+00:03:24,660 --> 00:03:29,280
+worthwhile knowing how to implement your own queue class because it's lighter weight.
+
+56
+00:03:29,280 --> 00:03:33,210
+We don't have to worry about all the extra garbage we get when we use an array.
+
+57
+00:03:33,510 --> 00:03:40,050
+So next I am going to show you how to model a Q or I should say model is it is a cue to create a Q Using
+
+58
+00:03:40,050 --> 00:03:43,560
+an array and then also how to create our own Q class.
+
+59
+00:03:43,560 --> 00:03:48,780
+So in summation just like with a stack there is more than one way to implement a Q.
+
+60
+00:03:48,840 --> 00:03:50,730
+It's not you know rigid.
+
+61
+00:03:50,760 --> 00:03:52,670
+There are many different implementations.
+
+62
+00:03:52,710 --> 00:03:57,800
+The only rules governing it is that the first thing added in is the first thing removed.
+
+63
+00:03:57,810 --> 00:04:05,190
+So we need an interface to add something in usually called NQ E and Q And then a way to remove something
+
+64
+00:04:05,190 --> 00:04:07,100
+usually called dequeue D.
+
+65
+00:04:07,170 --> 00:04:09,720
+Q And that's really it.
+
+66
+00:04:09,720 --> 00:04:14,480
+So in the next few videos I'll show you two different ways of meeting those requirements.
+

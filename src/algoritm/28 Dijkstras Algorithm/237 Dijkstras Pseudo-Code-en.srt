@@ -1,0 +1,280 @@
+1
+00:00:00,280 --> 00:00:02,440
+OK so now that we have the basic priority.
+
+2
+00:00:02,440 --> 00:00:04,130
+Q We've talked about how it works.
+
+3
+00:00:04,140 --> 00:00:05,090
+Here's the Sudoku.
+
+4
+00:00:05,200 --> 00:00:05,470
+All right.
+
+5
+00:00:05,490 --> 00:00:10,870
+So define your function on the graph and define it as a method on the weighted weighted graph class.
+
+6
+00:00:10,990 --> 00:00:14,890
+Just call it shortest path or Dykstra or whatever works for you.
+
+7
+00:00:15,090 --> 00:00:20,730
+It should accept a starting vertex and an ending vertex of going from 8 to from A to Z.
+
+8
+00:00:20,730 --> 00:00:25,690
+Are we going from SFO to L.A.X. whatever the vertex names are.
+
+9
+00:00:25,710 --> 00:00:31,770
+It accepts to start and end whichever comes first will be starting in our case then we need to make
+
+10
+00:00:31,770 --> 00:00:36,610
+a couple of data structures and we'll create our object we can call it distances.
+
+11
+00:00:36,690 --> 00:00:43,020
+This will act as this table here where for each vertex we're going to store the current shortest distance
+
+12
+00:00:43,020 --> 00:00:44,970
+from whatever start point.
+
+13
+00:00:44,990 --> 00:00:49,090
+It doesn't have to be a of course but let's say we're working with a to e again.
+
+14
+00:00:49,230 --> 00:00:55,920
+We're going to store in this object the shortest distance from A to B from A to C to D and at the very
+
+15
+00:00:55,920 --> 00:00:58,620
+beginning we initialize everything to infinity.
+
+16
+00:00:58,620 --> 00:01:04,290
+If you remember that because we don't know how far it is from A to C or ADA D The only value we know
+
+17
+00:01:04,290 --> 00:01:08,160
+for sure is a day which we start at zero.
+
+18
+00:01:08,610 --> 00:01:14,840
+Then after initializing the values and the distances object we're also going to make our priority queue.
+
+19
+00:01:14,940 --> 00:01:21,930
+So we make a new priority queue and starts out empty and we add each one of our vertices into that priority
+
+20
+00:01:21,930 --> 00:01:26,320
+queue where we set the priority to be the distance from A.
+
+21
+00:01:26,610 --> 00:01:33,090
+So basically we add all the vertices in with the priority of infinity except for a with a priority of
+
+22
+00:01:33,090 --> 00:01:33,750
+zero.
+
+23
+00:01:33,750 --> 00:01:39,600
+So of course we get a first but then later on we'll have actual values in there that aren't infinity.
+
+24
+00:01:39,660 --> 00:01:43,550
+And every time we dequeue we get the smallest value back and that's where we begin.
+
+25
+00:01:43,560 --> 00:01:44,830
+That's what we visit first.
+
+26
+00:01:45,030 --> 00:01:45,300
+OK.
+
+27
+00:01:45,300 --> 00:01:47,420
+So this just initialises things.
+
+28
+00:01:47,640 --> 00:01:48,980
+And there's actually one more step.
+
+29
+00:01:49,020 --> 00:01:54,660
+We also have to create our previous object where it's just a simple object where we have a key for every
+
+30
+00:01:54,660 --> 00:01:58,150
+vertex and we initialize it to a value of no.
+
+31
+00:01:58,170 --> 00:02:00,340
+So that's this data structure here.
+
+32
+00:02:00,570 --> 00:02:02,310
+But everything should start at No.
+
+33
+00:02:02,430 --> 00:02:06,000
+And we will update the value for each key as we go.
+
+34
+00:02:06,180 --> 00:02:06,700
+All right.
+
+35
+00:02:06,750 --> 00:02:09,920
+So it's mainly the set up that takes some time to explain.
+
+36
+00:02:10,050 --> 00:02:14,130
+Then we just loop as long as there's anything in the priority queue.
+
+37
+00:02:14,160 --> 00:02:18,630
+So as long as there's something to visit we're going to dequeue of vertex in the priority queue.
+
+38
+00:02:18,630 --> 00:02:24,060
+So that means picking the smallest distance from a what are we going to start with let's say D because
+
+39
+00:02:24,060 --> 00:02:28,400
+it has a value of 2 and everything else has a value of four or six or 10 or something.
+
+40
+00:02:28,410 --> 00:02:32,050
+So we start with that and then the first thing we do is we check.
+
+41
+00:02:32,070 --> 00:02:38,120
+Is this the vertex I'm trying to get to have I hit the end and if that's the case then we're done.
+
+42
+00:02:38,130 --> 00:02:43,530
+Otherwise we loop through each of its neighbors so we'd look at all the neighbors for D and we calculate
+
+43
+00:02:43,530 --> 00:02:50,670
+the distance to that vertex from the starting vertex and then if that new distance that sum is less
+
+44
+00:02:50,670 --> 00:02:56,610
+than what we're currently storing we update the distances object with a new lower distance.
+
+45
+00:02:56,610 --> 00:03:00,540
+So this is all what we did in the last video or two videos we go walking through.
+
+46
+00:03:00,570 --> 00:03:06,120
+We update the distance we update the previous object to now reflect where we came from.
+
+47
+00:03:06,540 --> 00:03:12,360
+And then we cue then the same vertex with a new total distance from the start note and that's it.
+
+48
+00:03:12,390 --> 00:03:13,940
+We keep going over and over.
+
+49
+00:03:13,950 --> 00:03:19,480
+So for example here we'd pick the smallest value using the priority queue.
+
+50
+00:03:19,530 --> 00:03:23,460
+Currently it would have D E and F in there because we've done a C and B.
+
+51
+00:03:23,670 --> 00:03:29,090
+So we dequeue which would give us D because it's the smallest with a value of four.
+
+52
+00:03:29,100 --> 00:03:30,780
+So then we're going to look at these neighbors.
+
+53
+00:03:30,780 --> 00:03:37,200
+There's two CNF and we start looking at the summit together it gives us 7 that's actually not less than
+
+54
+00:03:37,200 --> 00:03:38,170
+what we currently have.
+
+55
+00:03:38,250 --> 00:03:39,440
+So we don't do anything.
+
+56
+00:03:39,600 --> 00:03:42,510
+But then we move on to the next neighbor of D.
+
+57
+00:03:42,650 --> 00:03:44,030
+So that gives us five.
+
+58
+00:03:44,270 --> 00:03:46,820
+And if you look at what we stored right now it's 6.
+
+59
+00:03:46,860 --> 00:03:49,870
+So 5 The new total is definitely less than 6.
+
+60
+00:03:49,890 --> 00:03:51,350
+So we update it here.
+
+61
+00:03:51,600 --> 00:03:57,590
+Then we come to previous and we say all right the new shortest way to get to F is not from C anymore
+
+62
+00:03:57,930 --> 00:03:59,970
+it's actually to go through D.
+
+63
+00:04:00,030 --> 00:04:07,590
+So we just put D right there and then after that we want to end Q f with the new value of 5 so that
+
+64
+00:04:07,820 --> 00:04:12,960
+it's updated in our priority queue and we know next time are going to pick 5 first because it's the
+
+65
+00:04:12,960 --> 00:04:14,230
+new smallest value.
+
+66
+00:04:14,490 --> 00:04:15,150
+All right.
+
+67
+00:04:15,210 --> 00:04:16,540
+So let's give this a shot.
+
+68
+00:04:16,560 --> 00:04:21,620
+And if you want to of course try to implement it but definitely not something you have to do.
+
+69
+00:04:21,820 --> 00:04:27,180
+It's a little more complicated if you want to the pseudo code should get you there otherwise in the
+
+70
+00:04:27,180 --> 00:04:28,570
+next video I'll go ahead and build.
+

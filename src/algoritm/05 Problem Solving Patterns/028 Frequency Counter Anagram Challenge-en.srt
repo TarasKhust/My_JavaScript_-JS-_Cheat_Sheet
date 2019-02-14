@@ -1,0 +1,180 @@
+1
+00:00:00,180 --> 00:00:00,850
+Welcome back.
+
+2
+00:00:00,930 --> 00:00:03,770
+I'm just here quickly to introduce the next problem.
+
+3
+00:00:03,840 --> 00:00:05,040
+If you want to give it a shot.
+
+4
+00:00:05,220 --> 00:00:09,410
+So it has to do with anagrams writing function called valid anagram.
+
+5
+00:00:09,420 --> 00:00:13,980
+That takes two strings and it returns true if the strings are anagrams of one another.
+
+6
+00:00:13,980 --> 00:00:15,790
+Now there's many ways of solving this.
+
+7
+00:00:15,810 --> 00:00:21,390
+Obviously some are better than others but my idea or the goal here is for you to try and solve it using
+
+8
+00:00:21,390 --> 00:00:25,450
+the frequency counter pattern or whatever you want to call it.
+
+9
+00:00:25,470 --> 00:00:30,960
+This is a perfect use case where we have two strings two items and we want to compare the occurrence
+
+10
+00:00:30,990 --> 00:00:34,820
+of characters in each one and see if they are the same.
+
+11
+00:00:34,830 --> 00:00:40,230
+So not only if the letters are in there but also if they're in there the correct number of times the
+
+12
+00:00:40,230 --> 00:00:41,880
+frequencies are correct.
+
+13
+00:00:41,880 --> 00:00:48,420
+So for example well empty string empty string that should be true and easy a Z Z Z A.
+
+14
+00:00:48,600 --> 00:00:53,910
+So it's not a matter of just checking if they have the same characters because this has this has a Z
+
+15
+00:00:54,050 --> 00:00:57,780
+that has this is the it needs to be the same number as well.
+
+16
+00:00:57,900 --> 00:00:59,580
+So this will be false.
+
+17
+00:00:59,580 --> 00:01:05,840
+This is true anagram and nag ram rat and car falls.
+
+18
+00:01:05,850 --> 00:01:07,700
+Of course I don't know why there's two falses.
+
+19
+00:01:07,710 --> 00:01:09,030
+Sorry about that.
+
+20
+00:01:09,590 --> 00:01:15,070
+And yep you can watch the rest of the examples or check take a look at them but basically take one string.
+
+21
+00:01:15,100 --> 00:01:21,170
+Take another string and see if they consist of the exact same characters in the same order possibly.
+
+22
+00:01:21,180 --> 00:01:21,390
+Right.
+
+23
+00:01:21,390 --> 00:01:28,020
+That should be true if we tried cat and cat but most likely in a different order and recommend.
+
+24
+00:01:28,050 --> 00:01:33,180
+The goal is to use the frequency counter pattern to create an object or you could do it with two or
+
+25
+00:01:33,180 --> 00:01:39,870
+just one object that is going to be the that will represent the occurrence of each letter in one of
+
+26
+00:01:39,870 --> 00:01:40,930
+the strings.
+
+27
+00:01:41,040 --> 00:01:42,990
+So you'll have to have more than one loop.
+
+28
+00:01:42,990 --> 00:01:47,970
+You'll need to create this object and then you'll need to loop over the other string whichever one you
+
+29
+00:01:47,970 --> 00:01:52,980
+didn't use to construct that object and compare it and sort of update the object with it.
+
+30
+00:01:53,010 --> 00:01:54,210
+So I don't want to say too much.
+
+31
+00:01:54,210 --> 00:01:55,840
+I'm going to give you a solution.
+
+32
+00:01:55,860 --> 00:01:57,210
+In a video that follows.
+
+33
+00:01:57,330 --> 00:02:01,920
+But if you want to try it out I have an exercise actually in the editor so you can test your code and
+
+34
+00:02:01,920 --> 00:02:02,830
+see if it works.
+
+35
+00:02:02,880 --> 00:02:05,240
+And then I'll be back with an actual solution walkthrough.
+
+36
+00:02:05,400 --> 00:02:10,860
+Oh and before I forget you can assume all the inputs will be single words so there won't be spaces there
+
+37
+00:02:10,860 --> 00:02:13,560
+won't be periods any punctuation there won't be numbers.
+
+38
+00:02:13,560 --> 00:02:19,240
+You can also assume that they're all lower case letters and so you won't need to worry about you know
+
+39
+00:02:19,360 --> 00:02:21,570
+capital and comparing that to a lower case a.
+
+40
+00:02:21,630 --> 00:02:23,120
+So everything is lowercase.
+
+41
+00:02:23,160 --> 00:02:27,420
+If this were an interview setting I would definitely encourage you to ask those questions what about
+
+42
+00:02:27,420 --> 00:02:28,140
+the edge cases.
+
+43
+00:02:28,140 --> 00:02:29,350
+What about spaces.
+
+44
+00:02:29,490 --> 00:02:33,050
+All of that but we're not we're just focusing on lowercase words.
+
+45
+00:02:33,140 --> 00:02:33,480
+OK.
+

@@ -1,0 +1,680 @@
+1
+00:00:00,330 --> 00:00:05,610
+All right we'll come back so early on I think it is the first video in the section I talked about why
+
+2
+00:00:05,610 --> 00:00:07,720
+you should know or care about binary heaps.
+
+3
+00:00:07,740 --> 00:00:09,200
+Yeah they come up in interviews.
+
+4
+00:00:09,210 --> 00:00:14,400
+Yes they're taught in pretty much every computer science course but also they're used really commonly
+
+5
+00:00:14,400 --> 00:00:16,570
+to implement something called a priority queue.
+
+6
+00:00:16,800 --> 00:00:20,180
+And I gave it a five second rundown of what a priority queue is.
+
+7
+00:00:20,370 --> 00:00:22,060
+And I said we'd come back to it later.
+
+8
+00:00:22,080 --> 00:00:23,100
+We are now doing just that.
+
+9
+00:00:23,100 --> 00:00:24,140
+We're coming back to it.
+
+10
+00:00:24,180 --> 00:00:26,870
+We're going to explain in more detail what a priority queue is.
+
+11
+00:00:27,030 --> 00:00:32,090
+Give some use cases for it but then also implement one using our binary heap code.
+
+12
+00:00:32,100 --> 00:00:33,800
+So we don't have to write a ton of new code.
+
+13
+00:00:33,810 --> 00:00:38,890
+It's really just modifying what we've already done or duplicating it and changing a few things.
+
+14
+00:00:38,910 --> 00:00:40,190
+So that's what we're going to do here.
+
+15
+00:00:40,200 --> 00:00:44,440
+But first let's just understand what a priority queue is.
+
+16
+00:00:44,460 --> 00:00:49,950
+So according to Wikipedia it's just a data structure where each element has a priority associated with
+
+17
+00:00:49,950 --> 00:00:54,690
+it and elements with higher priorities are served before elements with lower priorities.
+
+18
+00:00:54,690 --> 00:00:56,850
+So we have a collection of data in each node.
+
+19
+00:00:56,850 --> 00:01:03,580
+Each element has a priority associated with it and we want to basically be served that's passive voice
+
+20
+00:01:03,580 --> 00:01:05,080
+say Yes you want to retrieve.
+
+21
+00:01:05,210 --> 00:01:10,500
+We're going to take one element at a time out of this list or this structure whatever we're using to
+
+22
+00:01:10,500 --> 00:01:10,980
+store it.
+
+23
+00:01:11,070 --> 00:01:13,430
+We want one thing at a time that we're going to tackle next.
+
+24
+00:01:13,440 --> 00:01:18,390
+Just like in an emergency room at a hospital you have a bunch of people waiting everybody's assigned
+
+25
+00:01:18,600 --> 00:01:24,150
+internally at least some sort of priority level and then a nurse or doctor comes out and retrieves one
+
+26
+00:01:24,150 --> 00:01:26,880
+person at a time based off of that priority level.
+
+27
+00:01:26,880 --> 00:01:31,680
+So you know somebody who walks in with a gunshot wound is going to be seen before somebody with a scratchy
+
+28
+00:01:31,680 --> 00:01:33,630
+throat for example.
+
+29
+00:01:33,630 --> 00:01:39,270
+So any time you need to manage data or information of varying priority and have things you know that
+
+30
+00:01:39,270 --> 00:01:43,860
+you're inserting and they may not be the lowest priority you're not inserting things in order.
+
+31
+00:01:43,980 --> 00:01:48,630
+You might be adding something in like in the E.R. example someone walks in with a gunshot wound.
+
+32
+00:01:48,720 --> 00:01:52,830
+Well there could be 100 people who were there first but they all have the flu.
+
+33
+00:01:52,920 --> 00:01:55,280
+The person with the gunshot wound is going to be seen first.
+
+34
+00:01:55,500 --> 00:01:57,680
+So a priority queue should account for that.
+
+35
+00:01:57,690 --> 00:02:00,470
+It always serves the highest priority element.
+
+36
+00:02:00,680 --> 00:02:05,620
+Here's a more real world example on Unix machines well on every machine.
+
+37
+00:02:05,650 --> 00:02:09,810
+There's there's a bunch of processes processes happening behind the scenes.
+
+38
+00:02:10,020 --> 00:02:15,630
+You know thousands of different things that are running behind all the magic of your computer and you
+
+39
+00:02:15,630 --> 00:02:21,000
+can view it or view a lot of them at least on a Unix machine by typing the command.
+
+40
+00:02:21,060 --> 00:02:26,280
+And I've added in some additional options but what it's showing me here is the process id and then here
+
+41
+00:02:26,340 --> 00:02:32,460
+this is it's technically not called priority it's called nice but it is a priority level and you can
+
+42
+00:02:32,460 --> 00:02:33,930
+see that are pretty much all the same.
+
+43
+00:02:33,930 --> 00:02:39,240
+But then we have certain things that have a higher level or higher nice value which actually means a
+
+44
+00:02:39,240 --> 00:02:40,880
+lower priority Im pretty sure.
+
+45
+00:02:40,920 --> 00:02:48,320
+So if zero all of these are going to be basically served in the order that they are added in but then
+
+46
+00:02:48,330 --> 00:02:50,990
+occasionally there is something.
+
+47
+00:02:51,120 --> 00:02:54,590
+Is or anything else come on those.
+
+48
+00:02:54,690 --> 00:02:55,680
+There you go.
+
+49
+00:02:55,680 --> 00:02:56,130
+Area.
+
+50
+00:02:56,130 --> 00:02:58,650
+This thing has a nice level of 10.
+
+51
+00:02:58,650 --> 00:03:00,900
+Its just a priority or same thing here.
+
+52
+00:03:00,930 --> 00:03:03,230
+This is another thing for Adobe apparently.
+
+53
+00:03:03,420 --> 00:03:07,210
+So I am not the person to explain how this all works.
+
+54
+00:03:07,230 --> 00:03:12,030
+I know very little about you know the underpinnings of your operating system and what's happening behind
+
+55
+00:03:12,030 --> 00:03:12,740
+the scenes.
+
+56
+00:03:12,750 --> 00:03:15,530
+I basically know how to find one of these and stop it if it's broken.
+
+57
+00:03:15,540 --> 00:03:16,570
+And that's about it.
+
+58
+00:03:16,740 --> 00:03:20,280
+But what I'm trying to illustrate is that there's a ton of things happening at any given point on your
+
+59
+00:03:20,280 --> 00:03:22,880
+machine but at the end of the day there is an order.
+
+60
+00:03:22,920 --> 00:03:25,690
+They're not just all going at the exact same time.
+
+61
+00:03:25,770 --> 00:03:31,710
+Things are being served are being worked on in an order and there's a priority that each element gets
+
+62
+00:03:31,800 --> 00:03:33,600
+which is used to determine that order.
+
+63
+00:03:33,630 --> 00:03:37,470
+Another thing worth knowing is that priority queues are separate from heaps.
+
+64
+00:03:37,470 --> 00:03:44,310
+They are just an abstract concept you could implement a priority queue with an array or a list which
+
+65
+00:03:44,310 --> 00:03:45,580
+I'll show you in just a second.
+
+66
+00:03:45,600 --> 00:03:47,120
+It's not a great version.
+
+67
+00:03:47,170 --> 00:03:48,780
+Slow but it's possible.
+
+68
+00:03:48,840 --> 00:03:52,930
+It's just like when we say list the idea of a list.
+
+69
+00:03:53,040 --> 00:03:55,140
+Well you could have a list as a linked list.
+
+70
+00:03:55,140 --> 00:03:57,440
+You could have a list implemented as an array.
+
+71
+00:03:57,450 --> 00:03:59,590
+There are different ways of implementing them.
+
+72
+00:03:59,610 --> 00:04:03,280
+It's just a generic sort of abstract concept a priority queue.
+
+73
+00:04:03,510 --> 00:04:05,040
+So you could go about it like this.
+
+74
+00:04:05,040 --> 00:04:09,160
+You could use an array or a list and just store things as they come in.
+
+75
+00:04:09,180 --> 00:04:14,160
+So something's inserted you put at the end or at the beginning and then when you need to remove something
+
+76
+00:04:14,160 --> 00:04:19,410
+when it's time to you know serve the next item you would just iterate over the entire thing and just
+
+77
+00:04:19,530 --> 00:04:22,900
+check what's the highest priority keep a variable restart.
+
+78
+00:04:22,920 --> 00:04:25,310
+OK priority 3 that's the highest.
+
+79
+00:04:25,440 --> 00:04:27,240
+And then we we hit one.
+
+80
+00:04:27,240 --> 00:04:32,300
+Also it's worth noting oftentimes a lower number actually denotes a higher priority.
+
+81
+00:04:32,310 --> 00:04:35,850
+So in this case if we're working for the lowest number we would start here.
+
+82
+00:04:35,880 --> 00:04:38,240
+OK the lowest number is three.
+
+83
+00:04:38,280 --> 00:04:39,390
+Then we get to 1.
+
+84
+00:04:39,390 --> 00:04:42,620
+OK well that's lower So this is our new element that we're going to serve.
+
+85
+00:04:42,630 --> 00:04:43,910
+But let's keep going.
+
+86
+00:04:43,920 --> 00:04:44,470
+Nope.
+
+87
+00:04:44,790 --> 00:04:45,830
+This is still greater.
+
+88
+00:04:45,840 --> 00:04:46,700
+This is greater.
+
+89
+00:04:46,860 --> 00:04:51,600
+This is greater than we hit the very end and we realized Alright this is the highest priority thing
+
+90
+00:04:51,600 --> 00:04:52,410
+we're going to serve.
+
+91
+00:04:52,500 --> 00:04:54,530
+The lowest number the highest priority.
+
+92
+00:04:54,660 --> 00:04:58,880
+So that's not a great approach because every single time we need to search something new.
+
+93
+00:04:59,170 --> 00:05:04,230
+Have to go all the way through and compare you know something to every single item because it could
+
+94
+00:05:04,230 --> 00:05:06,730
+be at the very last note it could be at the very first item.
+
+95
+00:05:06,810 --> 00:05:08,870
+It's not a nice way of doing it.
+
+96
+00:05:08,940 --> 00:05:11,210
+It's simple but it's naive.
+
+97
+00:05:11,580 --> 00:05:16,170
+So as you've already probably surmise we're going to use a heap.
+
+98
+00:05:16,170 --> 00:05:18,390
+So here's an example of how we could do it.
+
+99
+00:05:18,390 --> 00:05:25,380
+This is using a hospital sort of metaphor emergency room people walk in and they have different injuries.
+
+100
+00:05:25,410 --> 00:05:27,600
+So at first he is empty.
+
+101
+00:05:27,600 --> 00:05:32,740
+There's one person who walks in with a low fever so they're going to be the next person to get help.
+
+102
+00:05:32,760 --> 00:05:36,440
+We always remove from the top or from the root of our heap.
+
+103
+00:05:36,450 --> 00:05:37,560
+Right now there's only one element.
+
+104
+00:05:37,560 --> 00:05:38,370
+It is the root.
+
+105
+00:05:38,400 --> 00:05:39,770
+So they get help first.
+
+106
+00:05:39,840 --> 00:05:44,630
+But let's say that before they get helped someone else walks in they have a concussion.
+
+107
+00:05:44,850 --> 00:05:47,830
+That is a higher priority element or value.
+
+108
+00:05:47,860 --> 00:05:48,050
+Right.
+
+109
+00:05:48,060 --> 00:05:51,160
+They need to be seen before someone with a low fever or a high fever.
+
+110
+00:05:51,210 --> 00:05:51,930
+That's up for debate.
+
+111
+00:05:51,930 --> 00:05:53,690
+A low fever though I think they can wait.
+
+112
+00:05:53,730 --> 00:05:55,000
+Just take a little Tylenol.
+
+113
+00:05:55,140 --> 00:05:57,880
+What is that Motrin whatever you take.
+
+114
+00:05:58,020 --> 00:06:02,670
+So they the person with the concussion or the next to get help now they are the root.
+
+115
+00:06:02,670 --> 00:06:05,460
+Someone else walks in and they have a lower priority.
+
+116
+00:06:05,550 --> 00:06:07,020
+Well we don't put them at the root.
+
+117
+00:06:07,110 --> 00:06:11,600
+It's a heap so this value is less than this priority.
+
+118
+00:06:11,640 --> 00:06:13,110
+So they're going to be below it.
+
+119
+00:06:13,170 --> 00:06:15,290
+It's a child of this parent.
+
+120
+00:06:15,480 --> 00:06:20,880
+So we're still following the rules whether this is a man tree or men heap or a max heap it doesn't really
+
+121
+00:06:20,880 --> 00:06:22,580
+matter as long as we're consistent.
+
+122
+00:06:22,860 --> 00:06:27,690
+So what we end up with is that concussion is going to be served there the next person to get help but
+
+123
+00:06:27,690 --> 00:06:31,230
+then someone comes in off the street with an exploded head.
+
+124
+00:06:31,380 --> 00:06:32,370
+It's not good.
+
+125
+00:06:32,370 --> 00:06:34,110
+And they need help immediately.
+
+126
+00:06:34,110 --> 00:06:39,120
+So when we insert something with a higher priority like this it's going to remember how this works.
+
+127
+00:06:39,120 --> 00:06:42,150
+We add it to the end and then we bubble up in our heap.
+
+128
+00:06:42,180 --> 00:06:44,800
+So if we added it here we bubble it up to the top.
+
+129
+00:06:45,030 --> 00:06:51,240
+We end up with exploded head with the red priority is the next thing to get help then concussion is
+
+130
+00:06:51,250 --> 00:06:52,410
+his first child.
+
+131
+00:06:52,410 --> 00:06:54,730
+Then the drunk person then the low fever.
+
+132
+00:06:54,870 --> 00:06:57,710
+But really all that matters is what the next thing is.
+
+133
+00:06:58,320 --> 00:07:00,790
+And then someone else comes in they have the flu.
+
+134
+00:07:00,960 --> 00:07:04,280
+Well they're not as high a priority as an exploded head.
+
+135
+00:07:04,350 --> 00:07:06,240
+So we're just going to put them here for now.
+
+136
+00:07:06,240 --> 00:07:09,060
+So then let's say the exploded head person gets help.
+
+137
+00:07:09,090 --> 00:07:12,450
+So what happens when we remove this node from our heap.
+
+138
+00:07:12,450 --> 00:07:17,340
+And remember what we do is we swap it with the last node and then we have it sink down to the correct
+
+139
+00:07:17,340 --> 00:07:17,900
+spot.
+
+140
+00:07:17,970 --> 00:07:19,710
+And this is what we end up with.
+
+141
+00:07:19,710 --> 00:07:24,540
+So now our heap is serving somebody with the next highest priority person with a concussion.
+
+142
+00:07:24,540 --> 00:07:29,520
+And if we were to remove this one again we would end up with a new route as the flu.
+
+143
+00:07:29,820 --> 00:07:34,240
+So everybody who has a yellow priority will be served before I went to that green priority.
+
+144
+00:07:34,260 --> 00:07:37,630
+Anyone with the red priority is served before everyone else.
+
+145
+00:07:37,640 --> 00:07:41,550
+Anyway that's kind of a convoluted explanation but that's how a priority queue works when you use a
+
+146
+00:07:41,550 --> 00:07:42,360
+heap.
+
+147
+00:07:42,360 --> 00:07:48,990
+All that we care about is the top level element the minimum or the maximum thing and every time we add
+
+148
+00:07:48,990 --> 00:07:53,850
+something in that could potentially be updated every time we remove something we always remove from
+
+149
+00:07:53,850 --> 00:07:54,540
+the top.
+
+150
+00:07:54,540 --> 00:07:57,620
+And so there's going to be a new element there that wasn't there before.
+
+151
+00:07:57,630 --> 00:08:04,260
+So he works really well because insertion and removal are they have a time complexity of log and compared
+
+152
+00:08:04,260 --> 00:08:10,680
+to if we just did this naive version if we had a million let's say a thousand elements in here every
+
+153
+00:08:10,680 --> 00:08:15,330
+time we wanted to remove something if there was no order to them we were just comparing every single
+
+154
+00:08:15,330 --> 00:08:17,620
+priority to find the lowest or the highest.
+
+155
+00:08:17,640 --> 00:08:20,370
+We're working with 0 of end time complexity.
+
+156
+00:08:20,550 --> 00:08:23,710
+So if there's a thousand elements we're talking about a thousand comparisons roughly.
+
+157
+00:08:23,910 --> 00:08:24,750
+So that's not good.
+
+158
+00:08:24,900 --> 00:08:26,010
+That's not a good version.
+
+159
+00:08:26,010 --> 00:08:27,660
+It would work but free is a heap.
+
+160
+00:08:27,660 --> 00:08:28,900
+It's much faster.
+
+161
+00:08:29,100 --> 00:08:29,360
+OK.
+
+162
+00:08:29,370 --> 00:08:34,410
+So that's an explanation into what a priority is or priority queue is using a heap.
+
+163
+00:08:34,560 --> 00:08:40,560
+But again you can implement them in other ways but a heap is a classic one on Wikipedia it goes as far
+
+164
+00:08:40,560 --> 00:08:46,980
+as to say that many people confuse the two or conflate the ideas because a priority queue is so commonly
+
+165
+00:08:46,980 --> 00:08:48,230
+done with a heap.
+
+166
+00:08:48,330 --> 00:08:50,710
+But again it is an abstract concept.
+
+167
+00:08:50,910 --> 00:08:52,720
+You can implement it in many ways.
+
+168
+00:08:52,770 --> 00:08:57,090
+All right so next up I'm going to give sort of my overview the pseudo code for how we could implement
+
+169
+00:08:57,090 --> 00:08:57,720
+our own.
+
+170
+00:08:57,900 --> 00:08:59,400
+And then after that I'll have a solution.
+

@@ -1,0 +1,516 @@
+1
+00:00:00,100 --> 00:00:01,320
+Hey we'll welcome back.
+
+2
+00:00:01,320 --> 00:00:05,760
+So the first of the sorting algorithms that we're going to take a look at is called bubble sort.
+
+3
+00:00:05,760 --> 00:00:08,450
+So bubble sort is not all that efficient.
+
+4
+00:00:08,470 --> 00:00:09,950
+It's not that commonly used.
+
+5
+00:00:09,960 --> 00:00:12,780
+There is one use case will discuss where it does excel.
+
+6
+00:00:12,870 --> 00:00:17,480
+But generally we're not learning it because it's going to be it's not going to rock your world.
+
+7
+00:00:17,490 --> 00:00:21,610
+You're not going to be implementing it all the time although it is a very good problem.
+
+8
+00:00:21,640 --> 00:00:23,710
+It's a fun one if you know how to do it.
+
+9
+00:00:23,730 --> 00:00:25,330
+And there are some optimizations we can make.
+
+10
+00:00:25,330 --> 00:00:27,100
+So it's a good thing to talk about.
+
+11
+00:00:27,420 --> 00:00:30,900
+And it also helps us understand why other algorithms improve upon it.
+
+12
+00:00:30,930 --> 00:00:32,190
+So don't skip it please.
+
+13
+00:00:32,350 --> 00:00:32,760
+OK.
+
+14
+00:00:32,880 --> 00:00:34,280
+Now that I've made it sound terrible.
+
+15
+00:00:34,410 --> 00:00:36,550
+Let's talk about why it's called bubble sort.
+
+16
+00:00:36,600 --> 00:00:42,450
+So the idea is that if we have an array and resorting from smallest to greatest So in ascending numeric
+
+17
+00:00:42,450 --> 00:00:47,340
+order the larger values will bubble to the top one at a time.
+
+18
+00:00:47,580 --> 00:00:51,250
+So what I'm going to introduce now is something that we haven't seen up until now.
+
+19
+00:00:51,300 --> 00:00:53,660
+I think it's called visual.
+
+20
+00:00:53,750 --> 00:00:56,710
+I actually don't know how to use this all the time in my classes.
+
+21
+00:00:56,790 --> 00:01:03,500
+Visual go visual Owego it's a combination of visual and I'll go for algorithm.
+
+22
+00:01:03,810 --> 00:01:09,820
+So I like visual go but the way it's highlighted it makes me question my pronunciation.
+
+23
+00:01:09,900 --> 00:01:16,170
+So what it is is a really cool interactive tool in the browser that lets you step through sorting out
+
+24
+00:01:16,170 --> 00:01:16,560
+rhythms.
+
+25
+00:01:16,560 --> 00:01:22,040
+Among other things I'm currently looking at bubble sort and you can see that we have some data.
+
+26
+00:01:22,050 --> 00:01:24,900
+If you open this up by the way your dataset will look different.
+
+27
+00:01:25,120 --> 00:01:30,600
+I I put these numbers specifically I didn't want to have a massive dataset that took me like 10 minutes
+
+28
+00:01:30,600 --> 00:01:31,670
+to step through.
+
+29
+00:01:31,710 --> 00:01:37,540
+So we have one two three four five six seven elements ranging from 10 up to 37.
+
+30
+00:01:37,900 --> 00:01:39,430
+OK so this is our array.
+
+31
+00:01:39,510 --> 00:01:41,820
+This is the first item and this is the last item.
+
+32
+00:01:41,910 --> 00:01:48,060
+The way that bubble sort works is that as we loop through each item we compare it to the next item the
+
+33
+00:01:48,060 --> 00:01:51,130
+one in front of it and we check.
+
+34
+00:01:51,200 --> 00:01:54,450
+Is this one larger than what we're comparing it to.
+
+35
+00:01:54,470 --> 00:01:56,370
+And if it is we swap.
+
+36
+00:01:56,460 --> 00:02:02,370
+So swapping is really important to bubble sort is how it works you basically swap if something is larger
+
+37
+00:02:02,370 --> 00:02:03,880
+and then you compare it to the next one.
+
+38
+00:02:03,930 --> 00:02:06,450
+Is it larger swap again compared to the next one.
+
+39
+00:02:06,450 --> 00:02:08,170
+So let's just step step through that.
+
+40
+00:02:08,370 --> 00:02:10,170
+So twenty nine and 10.
+
+41
+00:02:10,620 --> 00:02:14,760
+We swap because 29 gets larger 29 and 14.
+
+42
+00:02:15,060 --> 00:02:16,980
+That's next comparison we swap.
+
+43
+00:02:16,980 --> 00:02:19,010
+Now we compared twenty nine and thirty.
+
+44
+00:02:19,410 --> 00:02:21,600
+This time we don't swap.
+
+45
+00:02:21,600 --> 00:02:24,230
+So now we have 30 and 37.
+
+46
+00:02:24,420 --> 00:02:26,100
+Thirty is not larger than thirty seven.
+
+47
+00:02:26,100 --> 00:02:28,190
+So once again we don't swap.
+
+48
+00:02:28,290 --> 00:02:31,590
+Now we compare 37 and 14 and now we do soie.
+
+49
+00:02:31,800 --> 00:02:34,370
+Now we're on to 37 and 18.
+
+50
+00:02:34,380 --> 00:02:36,840
+Compare the two and we swap.
+
+51
+00:02:36,840 --> 00:02:39,930
+So that was our first pass all the way through the array.
+
+52
+00:02:40,200 --> 00:02:44,000
+And what happened is that the largest value bubbled to the top.
+
+53
+00:02:44,000 --> 00:02:50,340
+We've also heard this as sinkings sort where the largest values sink to the end to the bottom.
+
+54
+00:02:50,340 --> 00:02:53,760
+I think that's a little more pessimistic bubble that's so much happier.
+
+55
+00:02:53,790 --> 00:02:55,030
+He doesn't like bubbles.
+
+56
+00:02:55,290 --> 00:02:57,840
+So now we repeat the process.
+
+57
+00:02:57,910 --> 00:03:03,390
+I won't make you watch every single step of this but we started again at the beginning so we compare
+
+58
+00:03:03,490 --> 00:03:04,990
+10:14.
+
+59
+00:03:05,600 --> 00:03:08,010
+We don't swap we compare 14 and 29.
+
+60
+00:03:08,030 --> 00:03:12,280
+Again we don't swap we compare 29 and 30 we don't swap.
+
+61
+00:03:12,320 --> 00:03:18,020
+Now we compare 30 and 14 and we do next we compare 30 and 18.
+
+62
+00:03:18,020 --> 00:03:19,830
+Once again we swap.
+
+63
+00:03:19,880 --> 00:03:24,380
+So now we have the last two values cemented in place right.
+
+64
+00:03:24,410 --> 00:03:26,430
+13:30 seven Those are sorted.
+
+65
+00:03:26,600 --> 00:03:31,920
+So we're building this list as the values bubble up to the top to the end the largest values.
+
+66
+00:03:32,150 --> 00:03:37,940
+We know that those last two items are now sorted those don't need to change and on and on we go very
+
+67
+00:03:37,940 --> 00:03:44,010
+quickly go through this we swap 29 bubbles to the top and eventually we end up with the sorted array.
+
+68
+00:03:44,210 --> 00:03:48,670
+So on the slides I have a simple walkthrough of one of those iterations.
+
+69
+00:03:48,710 --> 00:03:56,270
+So if this is our re our array our array we swap if we compare five and three we swap.
+
+70
+00:03:56,360 --> 00:04:02,290
+So five moves up next we compare five and four we swap again next five and one we swap again.
+
+71
+00:04:02,300 --> 00:04:07,750
+And finally we compare five and two and we swap because five is the largest element in the array and
+
+72
+00:04:07,770 --> 00:04:08,970
+ends up at the end.
+
+73
+00:04:08,990 --> 00:04:14,390
+So thats for one single iteration then all we need to do is repeat that over and over.
+
+74
+00:04:14,780 --> 00:04:18,100
+And you could start by repeating once for every item in the array.
+
+75
+00:04:18,230 --> 00:04:26,180
+But remember that the as we go through the amount of items from need to sort decreases because we started
+
+76
+00:04:26,180 --> 00:04:29,120
+out with one two three four five elements that were unsorted.
+
+77
+00:04:29,120 --> 00:04:33,740
+Now we have four unsorted elements and one solidified sorted element.
+
+78
+00:04:33,770 --> 00:04:35,750
+So that means that we have fewer elements to sort.
+
+79
+00:04:35,750 --> 00:04:38,400
+As we go through so our loops can reflect that.
+
+80
+00:04:38,720 --> 00:04:42,750
+But first let's talk about swapping since that's such a crucial part.
+
+81
+00:04:42,830 --> 00:04:43,960
+We have to swap.
+
+82
+00:04:44,030 --> 00:04:45,040
+How does that work.
+
+83
+00:04:45,260 --> 00:04:48,400
+Well in javascript there's a couple of ways of swapping.
+
+84
+00:04:48,410 --> 00:04:50,750
+I have two two listed here.
+
+85
+00:04:50,750 --> 00:04:52,400
+This is honestly my preference.
+
+86
+00:04:52,400 --> 00:04:58,240
+It's not the it's not the newer way of doing it but this is how the tried and true way of shopping values.
+
+87
+00:04:58,250 --> 00:05:01,040
+I think it's kind of more legible easier to understand.
+
+88
+00:05:01,070 --> 00:05:03,440
+You don't even have to make a separate function to do this.
+
+89
+00:05:03,440 --> 00:05:04,220
+Of course.
+
+90
+00:05:04,220 --> 00:05:09,890
+But here what we have is an array and then the two indices that we want to swap and we set up a template
+
+91
+00:05:09,890 --> 00:05:12,550
+variable to store one of them and then.
+
+92
+00:05:12,560 --> 00:05:19,050
+So if that's the first one index of 1 we set up a temp variable and save that to that value then we
+
+93
+00:05:19,050 --> 00:05:23,420
+change what was in array of index 1 to now be what's in array of index 2.
+
+94
+00:05:23,450 --> 00:05:27,570
+And then lastly we use that temp variable to update array of index 2.
+
+95
+00:05:27,590 --> 00:05:29,030
+So that's how I like to do it.
+
+96
+00:05:29,030 --> 00:05:35,480
+But there's also in 2015 the syntax for doing it which I don't know I don't think it's very readable
+
+97
+00:05:35,690 --> 00:05:41,720
+personally but the syntax basically is take the whatevers in index one and swap it with index to take
+
+98
+00:05:41,870 --> 00:05:44,270
+an index to swap it with the next one.
+
+99
+00:05:44,270 --> 00:05:46,600
+And this works and it has a single lines.
+
+100
+00:05:46,610 --> 00:05:53,770
+So for those of you who are file size Queens who care about how short your files are you can use this.
+
+101
+00:05:53,840 --> 00:05:58,610
+I'll probably use both but it helps to define a function called swopped because then our bubble sort
+
+102
+00:05:58,610 --> 00:06:00,430
+code becomes even shorter.
+
+103
+00:06:00,440 --> 00:06:03,810
+The actual logic really is just about the comparisons in the loops.
+
+104
+00:06:03,830 --> 00:06:08,300
+And then we can just call swap but you don't have to define a separate function if you want to implement
+
+105
+00:06:08,300 --> 00:06:10,540
+it which I highly recommend you give it a shot.
+
+106
+00:06:10,550 --> 00:06:12,240
+Here are some of the steps.
+
+107
+00:06:12,470 --> 00:06:13,310
+Start looping.
+
+108
+00:06:13,370 --> 00:06:14,320
+So define a function.
+
+109
+00:06:14,330 --> 00:06:16,370
+I didn't add that and called bubble sort.
+
+110
+00:06:16,370 --> 00:06:22,370
+It takes an array and you can assume it's all numbers start looping with a variable called I at the
+
+111
+00:06:22,460 --> 00:06:23,330
+end of the array.
+
+112
+00:06:23,330 --> 00:06:29,210
+Towards the beginning and we'll discuss exactly why but it has to do with the fact that we're shrinking
+
+113
+00:06:29,210 --> 00:06:31,920
+down the amount of space that we're sorting.
+
+114
+00:06:32,060 --> 00:06:36,330
+Then an inner loop inside of that outer loop with a variable called J.
+
+115
+00:06:36,410 --> 00:06:38,840
+From the beginning until I minus one.
+
+116
+00:06:38,840 --> 00:06:42,180
+So I is referring to the first loop.
+
+117
+00:06:42,200 --> 00:06:48,140
+So we have a nested loop that is depending on the first loop minus one and then we just compare array
+
+118
+00:06:48,140 --> 00:06:48,800
+of J.
+
+119
+00:06:48,800 --> 00:06:52,700
+So that's going to be our individual for want back here.
+
+120
+00:06:52,910 --> 00:06:54,800
+Let's say we're comparing If J is zero.
+
+121
+00:06:54,860 --> 00:06:58,540
+We're going to compare it to array of J plus 1 which is the next item.
+
+122
+00:06:58,670 --> 00:07:02,210
+So whatever J is we're going to compare the item ahead of it.
+
+123
+00:07:02,420 --> 00:07:03,880
+So J and J plus.
+
+124
+00:07:04,200 --> 00:07:04,640
+OK.
+
+125
+00:07:04,730 --> 00:07:10,250
+So if a Ray-J is greater than array of J plus 1 that means you need to swap and you can swap however
+
+126
+00:07:10,250 --> 00:07:13,260
+you like using whichever version I showed you.
+
+127
+00:07:13,490 --> 00:07:16,940
+And then at the end just return the sorted array after the loops are done.
+
+128
+00:07:16,970 --> 00:07:18,350
+So give it a shot if you'd like.
+
+129
+00:07:18,530 --> 00:07:20,950
+And in the next video we'll have an implementation.
+

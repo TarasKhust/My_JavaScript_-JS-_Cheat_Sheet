@@ -1,0 +1,180 @@
+1
+00:00:00,150 --> 00:00:03,580
+The other approach we'll discuss is called an adjacency list.
+
+2
+00:00:03,780 --> 00:00:06,120
+So I actually change these nodes.
+
+3
+00:00:06,120 --> 00:00:11,460
+The verdict seems to be numeric and you'll see why in just a second it's easier to show how you could
+
+4
+00:00:11,460 --> 00:00:12,210
+store this.
+
+5
+00:00:12,240 --> 00:00:14,750
+So instead of A and B C D.
+
+6
+00:00:14,760 --> 00:00:17,630
+So on we have 0 1 2 3 4 5.
+
+7
+00:00:17,670 --> 00:00:22,360
+So the way that this works is we use an array or list to store the edges.
+
+8
+00:00:22,410 --> 00:00:29,220
+So if we wanted to figure out what edges what connections there were between 3 and its other nodes the
+
+9
+00:00:29,220 --> 00:00:35,590
+other vertices we would go to index three of our array 0 1 2 3 right here.
+
+10
+00:00:35,820 --> 00:00:39,100
+And then there's a list there that contains that connection.
+
+11
+00:00:39,090 --> 00:00:43,350
+So there is a connection between three and two and three and four as you can see here those are the
+
+12
+00:00:43,350 --> 00:00:44,400
+edges.
+
+13
+00:00:44,400 --> 00:00:48,380
+If we wanted to know is there an edge between 5 and 1.
+
+14
+00:00:48,480 --> 00:00:52,640
+Well we would either look at index 1 and look 4 or 5.
+
+15
+00:00:52,650 --> 00:00:56,460
+It's not there or we'd look at index 5 and look for one.
+
+16
+00:00:56,460 --> 00:00:59,860
+It's also not there and this is an undirected graph.
+
+17
+00:00:59,880 --> 00:01:02,520
+So we have things stored both ways.
+
+18
+00:01:02,520 --> 00:01:05,880
+For example zero has a edge to one.
+
+19
+00:01:05,880 --> 00:01:07,560
+One has an edge to zero.
+
+20
+00:01:07,560 --> 00:01:09,860
+So this is another way of storing it.
+
+21
+00:01:09,900 --> 00:01:16,100
+However if we're talking about letters we're going back to this where we have a B C D E F and letters
+
+22
+00:01:16,100 --> 00:01:17,030
+is arbitrary.
+
+23
+00:01:17,040 --> 00:01:22,080
+But let's say it's a name a string or something else that isn't just a number.
+
+24
+00:01:22,170 --> 00:01:22,350
+Right.
+
+25
+00:01:22,350 --> 00:01:28,760
+This one hinges on using the positions of an array to find the connections the edges from zero.
+
+26
+00:01:28,800 --> 00:01:31,560
+We go to this zero with item and that works.
+
+27
+00:01:31,560 --> 00:01:33,350
+But what if our nodes aren't numeric.
+
+28
+00:01:33,360 --> 00:01:35,140
+What if they're not in order like this.
+
+29
+00:01:35,490 --> 00:01:39,120
+What if their strengths are what if there's huge gaps between the numbers.
+
+30
+00:01:39,220 --> 00:01:41,120
+So we don't want to just use an array.
+
+31
+00:01:41,160 --> 00:01:42,230
+What else could we do.
+
+32
+00:01:42,540 --> 00:01:50,040
+Well we could use a hash table use a key value pair data structure so a dictionary a javascript object
+
+33
+00:01:50,040 --> 00:01:50,640
+a map.
+
+34
+00:01:50,730 --> 00:01:52,860
+There's many ways of doing this depending on the language.
+
+35
+00:01:52,950 --> 00:01:59,940
+But here's the exact same information where we store for a given key instead of a key being a number
+
+36
+00:01:59,940 --> 00:02:01,590
+like zero in an array.
+
+37
+00:02:01,590 --> 00:02:07,950
+It's now in a hash table or hash map to look at the connections the edges from a we look up a inside
+
+38
+00:02:07,950 --> 00:02:12,900
+of this structure and then we look at the list and we see right there something from a to b and a TO
+
+39
+00:02:12,900 --> 00:02:13,370
+F..
+
+40
+00:02:13,410 --> 00:02:16,830
+As you can see here a to b A to F. same thing.
+
+41
+00:02:16,880 --> 00:02:17,700
+Let's do.
+
+42
+00:02:17,820 --> 00:02:22,340
+So we'd ask for e from this hash map and we get this.
+
+43
+00:02:22,440 --> 00:02:25,890
+So that tells us there's a connection between Ian D and F..
+
+44
+00:02:26,360 --> 00:02:26,820
+OK.
+
+45
+00:02:27,000 --> 00:02:28,990
+So this is an adjacency list.
+

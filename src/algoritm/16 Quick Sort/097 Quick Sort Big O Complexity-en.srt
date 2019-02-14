@@ -1,0 +1,240 @@
+1
+00:00:00,330 --> 00:00:01,090
+Welcome back.
+
+2
+00:00:01,110 --> 00:00:02,930
+Our last video on quicksort.
+
+3
+00:00:02,970 --> 00:00:04,700
+Good riddance if you ask me.
+
+4
+00:00:04,740 --> 00:00:09,210
+We're going to talk about the time complexity and space complexity of quicksort.
+
+5
+00:00:09,210 --> 00:00:14,710
+So first off notice that best and average are both 0 of and Lagann which is the same as merge.
+
+6
+00:00:15,000 --> 00:00:18,990
+And if we look at why let's look at best case for example.
+
+7
+00:00:18,990 --> 00:00:24,430
+So here's our array and you have to make a composition and then another decomposition.
+
+8
+00:00:24,480 --> 00:00:29,940
+Another one just like we did with merge sort where the pattern here as end grows we have to make log
+
+9
+00:00:29,940 --> 00:00:34,350
+and log base to an decompositions.
+
+10
+00:00:34,410 --> 00:00:41,100
+So as we have more elements for example we had 32 elements we have to make 5 decompositions slice it
+
+11
+00:00:41,100 --> 00:00:42,630
+in half five times.
+
+12
+00:00:42,630 --> 00:00:47,010
+If we are and this is the best case remember we're going to see the worst case in just a moment.
+
+13
+00:00:47,280 --> 00:00:50,310
+If we have I don't know what's next 64.
+
+14
+00:00:50,310 --> 00:00:55,630
+We would have to make six decompositions so that grows at rate of the rate of fly again.
+
+15
+00:00:55,680 --> 00:01:02,670
+But then each level each decomposition that we make we have to make all of any comparisons per decomposition.
+
+16
+00:01:02,670 --> 00:01:07,110
+So that's happening when we're pivoting remembering or finding the pivot we're comparing to every other
+
+17
+00:01:07,110 --> 00:01:08,690
+element one time.
+
+18
+00:01:08,730 --> 00:01:11,850
+So that is how we get analog and it's very similar.
+
+19
+00:01:11,880 --> 00:01:13,590
+It's the same reason really why we got.
+
+20
+00:01:13,620 --> 00:01:15,690
+And again with merge sort.
+
+21
+00:01:16,080 --> 00:01:18,440
+Now let's talk about worst case.
+
+22
+00:01:18,440 --> 00:01:24,540
+So with our algorithm our pivot function it takes the first item as the pivot always.
+
+23
+00:01:24,660 --> 00:01:27,330
+Now that's problematic if our data is already sorted.
+
+24
+00:01:27,330 --> 00:01:31,750
+So here's the worst case for our current quicksort.
+
+25
+00:01:32,160 --> 00:01:37,110
+If we have this array and we're trying to sort it and of course our code doesn't know that it's sorted.
+
+26
+00:01:37,110 --> 00:01:43,210
+So we take this in and the very first thing we do is find the first item and use that as the pivot.
+
+27
+00:01:43,260 --> 00:01:47,790
+Well we compare it to every item in that array but nothing is less than that.
+
+28
+00:01:47,820 --> 00:01:54,150
+So our entire the next array is that the composition really only gave us a single item.
+
+29
+00:01:54,210 --> 00:01:56,940
+We have this entire Subah array left.
+
+30
+00:01:56,940 --> 00:02:03,450
+So every time we go through each decomposition is only one item that we're pivoting on.
+
+31
+00:02:03,510 --> 00:02:08,640
+And so everything moves to the right side with our current algorithm and we have to keep going and going
+
+32
+00:02:08,640 --> 00:02:13,920
+and going over and over and over because we're only taking the first item and it's already sorted.
+
+33
+00:02:14,340 --> 00:02:20,300
+And then for each one of those so that is an decompositions the worst case with our current setup is
+
+34
+00:02:20,390 --> 00:02:26,640
+of and decompositions and on each level each decomposition we have to make up and comparisons which
+
+35
+00:02:26,700 --> 00:02:31,650
+results in 0 of end squared quadratic time for the worst case.
+
+36
+00:02:31,890 --> 00:02:37,020
+So basically the problem arises when the pivot is chose when the pivot that is chosen is the minimum
+
+37
+00:02:37,020 --> 00:02:37,410
+element.
+
+38
+00:02:37,410 --> 00:02:41,970
+Every single time or the pivot is always the maximum element.
+
+39
+00:02:42,000 --> 00:02:47,790
+So to fix that in this example at least if we're dealing with a sorted array we could get around it
+
+40
+00:02:47,790 --> 00:02:54,330
+by instead of pivoting around the first item no matter what pivot around a random item just pick anything
+
+41
+00:02:54,330 --> 00:02:55,350
+in here doesn't matter.
+
+42
+00:02:55,350 --> 00:02:59,520
+Just pick a random item or try and pick the middle element every time.
+
+43
+00:02:59,520 --> 00:03:03,650
+And that way even if we have a sorted array we can avoid the problem.
+
+44
+00:03:03,900 --> 00:03:09,180
+But of course there's still a chance that if we pick the middle element every time it's possible that
+
+45
+00:03:09,450 --> 00:03:13,950
+the raise is unsorted and it's supposed to be in random order or we think it is.
+
+46
+00:03:14,070 --> 00:03:18,930
+But somehow we're always picking the minimum every time we can never avoid that worst case entirely
+
+47
+00:03:18,930 --> 00:03:23,700
+because the way the algorithm works if you're pivoting around the minimum or the maximum repeatedly
+
+48
+00:03:24,150 --> 00:03:25,530
+that's going to be quadratic time.
+
+49
+00:03:25,530 --> 00:03:30,900
+But we can just do our best to avoid the chances of constantly picking the minimum or the maximum.
+
+50
+00:03:31,020 --> 00:03:36,860
+Which is why you would do a random number or the median instead of the first element every single time.
+
+51
+00:03:37,290 --> 00:03:42,630
+But by doing that what we did picking the first element every time it allows me to illustrate this problem
+
+52
+00:03:42,630 --> 00:03:44,110
+the worst case scenario.
+
+53
+00:03:44,430 --> 00:03:48,270
+So take a deep breath that was quick sort as a lot I know.
+
+54
+00:03:48,480 --> 00:03:52,230
+Again I do not feel any pressure to be able to write that on your own.
+
+55
+00:03:52,230 --> 00:03:54,690
+It's really more about understanding how it works.
+
+56
+00:03:54,720 --> 00:03:59,520
+Being able to walk through if you had a whiteboard could you write down the value of the array each
+
+57
+00:03:59,520 --> 00:04:00,130
+time through.
+
+58
+00:04:00,180 --> 00:04:02,290
+Could you diagram out the recursion.
+
+59
+00:04:02,340 --> 00:04:04,790
+That's the sort of thing that I hope you took away from this.
+
+60
+00:04:05,030 --> 00:04:06,060
+Get moving on.
+

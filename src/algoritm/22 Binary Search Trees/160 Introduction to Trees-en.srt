@@ -1,0 +1,516 @@
+1
+00:00:00,240 --> 00:00:01,260
+Hey welcome back.
+
+2
+00:00:01,350 --> 00:00:07,260
+So we have a brand new section here on a brand new exciting hopefully exciting data structure trees.
+
+3
+00:00:07,560 --> 00:00:12,900
+So trees aside from being everyone's favorite perennial plants are also a classic data structure.
+
+4
+00:00:12,900 --> 00:00:15,470
+They're taught in computer science classes around the world.
+
+5
+00:00:15,480 --> 00:00:18,020
+They're also very commonly used all around the world.
+
+6
+00:00:18,120 --> 00:00:23,250
+So they are a bit of a step up from links to lists a little more complicated but also maybe a little
+
+7
+00:00:23,250 --> 00:00:24,080
+more interesting.
+
+8
+00:00:24,210 --> 00:00:26,530
+So quickly let's run through our objectives.
+
+9
+00:00:26,550 --> 00:00:28,510
+We want to define what a tree is.
+
+10
+00:00:28,620 --> 00:00:32,850
+Compare and contrast trees with length lists and arrays and things like that.
+
+11
+00:00:33,030 --> 00:00:36,720
+Explain the differences between these different types of trees.
+
+12
+00:00:36,720 --> 00:00:40,110
+We're going to talk about just plain old trees than binary trees.
+
+13
+00:00:40,110 --> 00:00:46,050
+And then finally binary search trees and binary search trees is what what this section is really focused
+
+14
+00:00:46,050 --> 00:00:46,430
+on.
+
+15
+00:00:46,650 --> 00:00:52,020
+But we're going to talk about these three categories and then most of what we'll be doing is implementing
+
+16
+00:00:52,020 --> 00:00:54,530
+a bunch of operations on binary search trees.
+
+17
+00:00:54,540 --> 00:00:57,690
+So we'll define our own BSD binary search tree.
+
+18
+00:00:57,830 --> 00:00:59,470
+I say BSD from here on out.
+
+19
+00:00:59,700 --> 00:01:04,590
+Our own BSD class and out a bunch of methods like we did with a singly linked list or doubly linked
+
+20
+00:01:04,620 --> 00:01:05,080
+list.
+
+21
+00:01:05,220 --> 00:01:08,250
+But first we have to talk about what a tree is.
+
+22
+00:01:08,250 --> 00:01:14,220
+So trees are data structures that consist of nodes just like the links listed but they're in a parent
+
+23
+00:01:14,250 --> 00:01:15,740
+child relationship.
+
+24
+00:01:15,810 --> 00:01:19,820
+Hopefully consensual we basically end up with branches.
+
+25
+00:01:19,890 --> 00:01:26,460
+So from one node we can have it connects to one other node or two or three or 10 or 0 nodes but we end
+
+26
+00:01:26,460 --> 00:01:28,480
+up with these branching structures.
+
+27
+00:01:28,560 --> 00:01:30,050
+Hence the name tree.
+
+28
+00:01:30,060 --> 00:01:31,660
+Think of an actual tree.
+
+29
+00:01:31,710 --> 00:01:37,650
+We follow a branch and it splits at some point and then that branch can split and they can keep splitting
+
+30
+00:01:37,650 --> 00:01:42,960
+and we end up with all these different little branches off of this main original branch.
+
+31
+00:01:42,960 --> 00:01:48,570
+Now often when we see diagrams or they look more like this where they're top down rather than a tree
+
+32
+00:01:48,570 --> 00:01:50,060
+which grows from the ground up.
+
+33
+00:01:50,130 --> 00:01:53,380
+It doesn't matter right to same exact structure it's just flipped.
+
+34
+00:01:53,490 --> 00:01:56,230
+But usually you will see them represented like this.
+
+35
+00:01:56,640 --> 00:01:58,850
+So here is an example of a tree.
+
+36
+00:01:58,950 --> 00:02:03,540
+Each one of these circles represents a node just like it did on our length list.
+
+37
+00:02:03,540 --> 00:02:08,970
+But notice this is very different than the length list in that each node can point to more than one
+
+38
+00:02:08,970 --> 00:02:11,970
+or can have more than one reference to another node.
+
+39
+00:02:11,970 --> 00:02:14,920
+So this is our top most node will go over the terminology.
+
+40
+00:02:14,940 --> 00:02:16,140
+This is called the root.
+
+41
+00:02:16,470 --> 00:02:19,200
+And it points to 9 as another node.
+
+42
+00:02:19,200 --> 00:02:22,270
+It also references 12 and 8 in ninety nine and 10.
+
+43
+00:02:22,560 --> 00:02:28,300
+And each of those nodes potentially references one or more other nodes or actually zero.
+
+44
+00:02:28,350 --> 00:02:36,330
+In this case this is a dead end and nothing comes after 12 has 1 2 three children Nine-Nine has two
+
+45
+00:02:36,330 --> 00:02:38,550
+children 10 has two children and so on.
+
+46
+00:02:38,550 --> 00:02:42,230
+So this is an example of a tree but they're not always like this.
+
+47
+00:02:42,360 --> 00:02:44,010
+You might have a tree that looks like this.
+
+48
+00:02:44,070 --> 00:02:49,980
+We have a single top most node and it branches off into two nodes and then each of those only branches
+
+49
+00:02:49,980 --> 00:02:50,930
+off into one node.
+
+50
+00:02:51,060 --> 00:02:54,930
+So it doesn't have to be this nasty complicated mess.
+
+51
+00:02:54,930 --> 00:02:56,000
+It could be simple.
+
+52
+00:02:56,340 --> 00:03:00,780
+This is also another example of a tree and you know it doesn't have to be numbers we can just like a
+
+53
+00:03:00,780 --> 00:03:06,030
+linked list we can store data in there we can store strings or I mean if you wanted to you could store
+
+54
+00:03:06,330 --> 00:03:06,890
+anything.
+
+55
+00:03:06,960 --> 00:03:08,020
+Arrays are.
+
+56
+00:03:08,130 --> 00:03:09,880
+I don't know what would you want to put there.
+
+57
+00:03:09,900 --> 00:03:15,570
+Most of the time it's numbers and strings but it could be anything so when we talk about lists lists
+
+58
+00:03:15,570 --> 00:03:16,260
+are linear.
+
+59
+00:03:16,260 --> 00:03:21,180
+It's one thing and then the next then the next then the next then the next everything is in a line in
+
+60
+00:03:21,180 --> 00:03:21,960
+a row.
+
+61
+00:03:22,230 --> 00:03:23,560
+Trees are non-linear.
+
+62
+00:03:23,580 --> 00:03:24,510
+They can branch.
+
+63
+00:03:24,570 --> 00:03:27,670
+We can have more than one pathway through a tree with a length.
+
+64
+00:03:27,690 --> 00:03:34,680
+There's one path in a double Alicea you could work backwards or forwards but still there is one line
+
+65
+00:03:34,860 --> 00:03:41,340
+through our data structure in trees there's many different paths we could take just like the journey
+
+66
+00:03:41,340 --> 00:03:42,310
+of life.
+
+67
+00:03:42,470 --> 00:03:43,830
+All right you end up here.
+
+68
+00:03:43,970 --> 00:03:45,720
+This is a decision you have to make.
+
+69
+00:03:45,720 --> 00:03:47,520
+You could make one choice and go this way.
+
+70
+00:03:47,880 --> 00:03:51,650
+And if you do make that choice you'll never know what was over here.
+
+71
+00:03:51,960 --> 00:03:53,330
+And then you make another choice.
+
+72
+00:03:53,360 --> 00:03:54,740
+This is one path here.
+
+73
+00:03:54,800 --> 00:03:56,100
+This is another path.
+
+74
+00:03:56,100 --> 00:03:58,690
+This is another path with a length list.
+
+75
+00:03:58,740 --> 00:04:00,740
+There's only one pathway through.
+
+76
+00:04:01,260 --> 00:04:05,950
+So you can think of a singly linked list as a very special case of a tree.
+
+77
+00:04:06,000 --> 00:04:07,630
+So this could be a tree.
+
+78
+00:04:07,920 --> 00:04:14,850
+It's not a great use for a tree but if we had this to pointing to 12 which points to its child 11 you
+
+79
+00:04:14,850 --> 00:04:16,450
+could represent that as a length.
+
+80
+00:04:16,500 --> 00:04:22,050
+Just to add 12 to 11 but you probably wouldn't do that it would probably just use the length lists.
+
+81
+00:04:22,060 --> 00:04:26,510
+If this is what your data looks like but I just want to show that this is a special case.
+
+82
+00:04:26,520 --> 00:04:32,520
+But as soon as we added a second branch here or here it's not it's not a first as soon as it becomes
+
+83
+00:04:32,550 --> 00:04:33,750
+non-linear.
+
+84
+00:04:33,750 --> 00:04:36,480
+Now when we're talking about trees there are some rules.
+
+85
+00:04:36,630 --> 00:04:38,260
+So this is not a tree.
+
+86
+00:04:38,280 --> 00:04:43,320
+So what we have here are nodes that are referencing other nodes that are not below them.
+
+87
+00:04:43,440 --> 00:04:44,830
+That makes sense or not children.
+
+88
+00:04:45,150 --> 00:04:48,890
+So a node can only point to a child and the parent child relationship.
+
+89
+00:04:48,930 --> 00:04:53,430
+We can't have a child pointing to parents we can't have a node pointing to a sibling.
+
+90
+00:04:53,550 --> 00:04:55,530
+We can't have what what's going on here.
+
+91
+00:04:55,560 --> 00:04:57,130
+This is actually what's known as a graph.
+
+92
+00:04:57,150 --> 00:05:03,590
+Talk about these later a tree every node is moving away from the root node if that makes sense.
+
+93
+00:05:03,600 --> 00:05:06,980
+All these arrows have to point down if we are trying to represent it.
+
+94
+00:05:07,380 --> 00:05:09,920
+So this is also not a tree.
+
+95
+00:05:10,110 --> 00:05:16,080
+It looks like it could be because all the nodes are pointing away from the root but there is no one
+
+96
+00:05:16,080 --> 00:05:16,590
+root.
+
+97
+00:05:16,590 --> 00:05:19,150
+We have two beginnings of this tree.
+
+98
+00:05:19,260 --> 00:05:20,550
+So that's not a tree.
+
+99
+00:05:20,550 --> 00:05:22,290
+We need to have one entry point.
+
+100
+00:05:22,740 --> 00:05:24,670
+So as I mentioned there is some terminology.
+
+101
+00:05:25,020 --> 00:05:27,850
+The root is the top node in a tree.
+
+102
+00:05:27,870 --> 00:05:34,050
+So if we go back to this tree this is the roots a child is a node directly connected to another node.
+
+103
+00:05:34,140 --> 00:05:38,840
+When moving away from the root a parent that's the converse notion of a child.
+
+104
+00:05:38,970 --> 00:05:44,460
+I think those two make sense siblings are nodes that have the same parent.
+
+105
+00:05:44,460 --> 00:05:48,090
+A leaf is a node with no children on this tree.
+
+106
+00:05:48,390 --> 00:05:50,000
+This is a leaf.
+
+107
+00:05:50,040 --> 00:05:51,920
+It has no children.
+
+108
+00:05:51,920 --> 00:05:54,210
+This is also a child of this node.
+
+109
+00:05:54,210 --> 00:05:56,090
+This is the parent of this node.
+
+110
+00:05:56,460 --> 00:05:57,870
+This is the root.
+
+111
+00:05:57,930 --> 00:06:02,280
+And lastly there's terminology for the connection which we call an edge.
+
+112
+00:06:02,280 --> 00:06:06,700
+It's the actual arrow between one node and another or at least in my diagrams It's an arrow.
+
+113
+00:06:06,840 --> 00:06:07,190
+OK.
+
+114
+00:06:07,200 --> 00:06:08,180
+So we have root.
+
+115
+00:06:08,310 --> 00:06:09,440
+This is an edge.
+
+116
+00:06:09,450 --> 00:06:15,320
+This is a child relative to this parent but it's a parent relative to this child.
+
+117
+00:06:15,330 --> 00:06:16,980
+This is also a leaf.
+
+118
+00:06:16,980 --> 00:06:18,130
+It has no children.
+
+119
+00:06:18,420 --> 00:06:20,600
+And I think that's all the terminology right edge.
+
+120
+00:06:20,640 --> 00:06:20,850
+Yeah.
+
+121
+00:06:20,880 --> 00:06:21,790
+I covered Bill.
+
+122
+00:06:22,020 --> 00:06:22,580
+OK.
+
+123
+00:06:22,770 --> 00:06:27,570
+So that's basic terminology it's just helpful for us to discuss when we're implementing code I'll say
+
+124
+00:06:27,570 --> 00:06:28,110
+something like.
+
+125
+00:06:28,110 --> 00:06:31,510
+All right we need to you know add the edge from this parent to this child.
+
+126
+00:06:31,530 --> 00:06:36,320
+Or I might say Let's check if a node is the root or if it's a leaf and so on.
+
+127
+00:06:36,390 --> 00:06:38,150
+OK so we'll leave off here.
+
+128
+00:06:38,220 --> 00:06:44,130
+Next I'm going to talk about some real applications of trees and we'll also introduce binary trees and
+
+129
+00:06:44,130 --> 00:06:45,880
+binary search trees in the next video.
+

@@ -1,0 +1,392 @@
+1
+00:00:00,210 --> 00:00:00,570
+All right.
+
+2
+00:00:00,570 --> 00:00:01,330
+Welcome back.
+
+3
+00:00:01,470 --> 00:00:05,890
+So we're still talking about binary search trees but we're not going to implement any new methods.
+
+4
+00:00:05,970 --> 00:00:09,640
+We're going to do right now is review the two methods we've already added.
+
+5
+00:00:09,650 --> 00:00:13,890
+And in particular focus on their performance their time complexity.
+
+6
+00:00:13,890 --> 00:00:20,280
+So as a binary search tree grows whether it's let's say it starts at 10 nodes and it goes up to a million
+
+7
+00:00:20,280 --> 00:00:20,780
+nodes.
+
+8
+00:00:21,000 --> 00:00:25,230
+How much more time on average but we'll also talk about best and worst cases.
+
+9
+00:00:25,290 --> 00:00:29,490
+How much more time does it take to insert a value or to search.
+
+10
+00:00:29,520 --> 00:00:31,240
+I've actually given it away already.
+
+11
+00:00:31,290 --> 00:00:35,140
+This is best and average case of log.
+
+12
+00:00:35,460 --> 00:00:37,880
+And I'm going explain why that is in just a moment.
+
+13
+00:00:37,920 --> 00:00:41,170
+But if you don't remember what the log is what logarithms are.
+
+14
+00:00:41,280 --> 00:00:44,070
+If you didn't watch the well if you don't remember from math class.
+
+15
+00:00:44,070 --> 00:00:45,390
+Totally understandable.
+
+16
+00:00:45,930 --> 00:00:50,700
+It's not that useful in everyday life but if you didn't watch the video in the beginning of this course
+
+17
+00:00:50,700 --> 00:00:53,710
+in the Big O section you might want to go check that out.
+
+18
+00:00:53,730 --> 00:00:57,190
+It explains in some more detail basically what this means.
+
+19
+00:00:57,330 --> 00:01:03,570
+And just as a refresher this actually means a log based to of and which is really it's so lazy the way
+
+20
+00:01:03,570 --> 00:01:06,300
+that big-O works we just simplify simplify simplify.
+
+21
+00:01:06,300 --> 00:01:08,890
+We get rid of the base too and you just say log in.
+
+22
+00:01:09,030 --> 00:01:09,270
+OK.
+
+23
+00:01:09,270 --> 00:01:11,080
+So let's talk about how we arrived here.
+
+24
+00:01:11,250 --> 00:01:13,710
+The first thing to get out of the way is that Logan is good.
+
+25
+00:01:13,710 --> 00:01:18,990
+That is a solid time complexity that if we look at the chart which we will in a moment you'll see that
+
+26
+00:01:19,350 --> 00:01:21,300
+it grows pretty slowly.
+
+27
+00:01:21,300 --> 00:01:21,660
+All right.
+
+28
+00:01:21,720 --> 00:01:25,180
+So here we have two trees two binary search trees.
+
+29
+00:01:25,200 --> 00:01:29,760
+I just want to reiterate what I'm talking about in this video is only for binary search trees.
+
+30
+00:01:29,790 --> 00:01:34,110
+They have to be sorted because they give us this nice nice shortcut.
+
+31
+00:01:34,110 --> 00:01:35,920
+So here's this first tree.
+
+32
+00:01:36,000 --> 00:01:37,530
+It's what seven nodes.
+
+33
+00:01:37,530 --> 00:01:38,520
+Something like that.
+
+34
+00:01:38,940 --> 00:01:43,830
+As we look for a value let's say that we're searching or inserting it doesn't matter because we're basically
+
+35
+00:01:43,830 --> 00:01:45,090
+doing the same thing.
+
+36
+00:01:45,210 --> 00:01:47,150
+We're finding the correct spot for it.
+
+37
+00:01:47,340 --> 00:01:51,240
+So let's say I'm trying to insert 15:9 into this top tree.
+
+38
+00:01:51,510 --> 00:01:57,090
+Well we're going to have to start here and we're gonna have to make a comparison go here another comparison
+
+39
+00:01:57,360 --> 00:02:00,780
+go here another comparison and then insert the value.
+
+40
+00:02:00,810 --> 00:02:03,040
+Now if we doubled the size of the tree.
+
+41
+00:02:03,090 --> 00:02:10,980
+So this has double the nodes as the one above it only has one more level down one more step.
+
+42
+00:02:11,010 --> 00:02:12,680
+Its height grows by 1.
+
+43
+00:02:12,720 --> 00:02:19,170
+So in this tree even though it has double the nodes as the one from above we only have to look one more
+
+44
+00:02:19,170 --> 00:02:21,530
+time we have to only take one more step.
+
+45
+00:02:21,540 --> 00:02:29,490
+So if I was trying to insert 61 this time I just have to go one step two steps three steps four steps.
+
+46
+00:02:29,490 --> 00:02:32,600
+This one that has half the nodes was three steps.
+
+47
+00:02:32,940 --> 00:02:38,900
+So this relationship here because the way we keep it sorted and again that only works in a search tree
+
+48
+00:02:38,910 --> 00:02:43,810
+a binary search tree as the tree doubles as a number of nodes doubles.
+
+49
+00:02:44,010 --> 00:02:46,410
+We only increase the number of steps by 1.
+
+50
+00:02:46,440 --> 00:02:49,250
+So that relationship is log based 2.
+
+51
+00:02:49,620 --> 00:02:54,340
+So here's the actual chart from Wikipedia of log 2 of X..
+
+52
+00:02:54,420 --> 00:03:01,140
+If you look at it just the positive side as we double the value from 1 to 2 we only take one step up
+
+53
+00:03:01,740 --> 00:03:05,730
+as we double it again to 4 two steps up.
+
+54
+00:03:05,810 --> 00:03:09,390
+So we double it again to eight 3 steps up.
+
+55
+00:03:09,390 --> 00:03:14,610
+If we go back to this big O complexity chart where we just see all of the different notations charted
+
+56
+00:03:14,610 --> 00:03:18,200
+next to one another you can see that log in is really solid.
+
+57
+00:03:18,240 --> 00:03:24,270
+It grows very very slowly compared to something like I don't know and squared quadratic time.
+
+58
+00:03:24,270 --> 00:03:29,330
+I mean that's not good or analog in or even linear time.
+
+59
+00:03:29,340 --> 00:03:33,470
+The only thing that's better on this chart at least is constant time.
+
+60
+00:03:33,540 --> 00:03:35,100
+So log in is good.
+
+61
+00:03:35,100 --> 00:03:37,970
+It takes a while takes a long time for it to start to grow.
+
+62
+00:03:38,250 --> 00:03:42,220
+And this is the same for insertion and for searching.
+
+63
+00:03:42,270 --> 00:03:47,430
+Just to reiterate that they're the same idea because the way that the tree is set up we follow the same
+
+64
+00:03:47,430 --> 00:03:50,500
+steps we compare do we go right or left compare.
+
+65
+00:03:50,560 --> 00:03:51,730
+Do we go right or left.
+
+66
+00:03:51,960 --> 00:03:54,710
+And whether we find the value or we insert.
+
+67
+00:03:54,840 --> 00:03:57,080
+It's the same sort of number of steps.
+
+68
+00:03:57,480 --> 00:04:01,250
+OK so now let's talk about why I said not guaranteed.
+
+69
+00:04:01,440 --> 00:04:08,080
+So of log in is it time complexity for the average case of a tree but also for the best case there's
+
+70
+00:04:08,100 --> 00:04:09,870
+no faster possible way.
+
+71
+00:04:10,140 --> 00:04:13,460
+But when we talk about worst case it's not guaranteed.
+
+72
+00:04:13,590 --> 00:04:20,220
+And that's because there are some binary search tree configurations that are very slow at least compared
+
+73
+00:04:20,220 --> 00:04:22,560
+to the ones we've been looking at.
+
+74
+00:04:22,650 --> 00:04:28,370
+For example this very sad floppy mopy binary search tree.
+
+75
+00:04:28,590 --> 00:04:35,430
+This tree which really just looks like a linked list or something there is very it's entirely one sided
+
+76
+00:04:35,790 --> 00:04:41,580
+but it's still a valid binary search tree because if we take a value every node to the right is greater
+
+77
+00:04:41,580 --> 00:04:45,810
+than its parent and we keep going into valid the entire way.
+
+78
+00:04:46,230 --> 00:04:52,890
+So if we're talking about inserting into this tree if we have a tree like this let's say how many items
+
+79
+00:04:52,890 --> 00:04:54,410
+is this 8 or something.
+
+80
+00:04:54,570 --> 00:05:00,280
+If we had it grow to a million items and it was still a one sided tree which is not a good use for binary
+
+81
+00:05:00,280 --> 00:05:04,960
+search tree but if that's what you had and it kept growing and growing and growing then the number of
+
+82
+00:05:04,960 --> 00:05:10,570
+steps it's going to take to insert or to search is going to grow as the number of nodes grow.
+
+83
+00:05:10,690 --> 00:05:11,570
+So that would be 0.
+
+84
+00:05:11,590 --> 00:05:15,310
+And if you had a completely one sided tree like this.
+
+85
+00:05:15,400 --> 00:05:20,440
+Now there's a really easy solution to this which is just don't store a binary tree or binary search
+
+86
+00:05:20,440 --> 00:05:21,420
+tree like this.
+
+87
+00:05:21,610 --> 00:05:28,210
+If you needed this as a tree and you wanted it to be sortable you could rewrite this binary search tree
+
+88
+00:05:28,450 --> 00:05:30,500
+where you pick a different route pick.
+
+89
+00:05:30,520 --> 00:05:36,490
+I don't know 34 is the root and then restructure the entire tree and have these values to write these
+
+90
+00:05:36,490 --> 00:05:38,230
+values to the left.
+
+91
+00:05:38,230 --> 00:05:42,130
+That would make your searching and insertion much faster already.
+
+92
+00:05:42,160 --> 00:05:45,110
+So I just want to point out though this is a valid BSD.
+
+93
+00:05:45,130 --> 00:05:49,050
+So this is why I said not guaranteed to be overflow again.
+
+94
+00:05:49,090 --> 00:05:55,020
+But on average insertion and searching in a binary search tree are 0 of log and for time complexity.
+
+95
+00:05:55,060 --> 00:05:56,480
+And that is pretty good.
+
+96
+00:05:56,690 --> 00:05:57,440
+Pretty good.
+
+97
+00:05:57,610 --> 00:05:58,280
+All right.
+
+98
+00:05:58,390 --> 00:05:58,890
+Moving on.
+

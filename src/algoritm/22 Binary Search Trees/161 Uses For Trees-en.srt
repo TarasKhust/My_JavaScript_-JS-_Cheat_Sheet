@@ -1,0 +1,408 @@
+1
+00:00:00,180 --> 00:00:00,450
+All right.
+
+2
+00:00:00,450 --> 00:00:01,280
+Welcome back.
+
+3
+00:00:01,290 --> 00:00:06,090
+Next what I'd like to do is quickly run through some real world use cases for trees.
+
+4
+00:00:06,090 --> 00:00:09,530
+These aren't just theoretical things this isn't just about you know interview prep.
+
+5
+00:00:09,600 --> 00:00:12,880
+Trees are used all the time even if you're not fully conscious of it.
+
+6
+00:00:12,930 --> 00:00:18,390
+You've interacted with trees both as a javascript developer most likely but then also just as a user
+
+7
+00:00:18,570 --> 00:00:19,280
+of the Internet.
+
+8
+00:00:19,410 --> 00:00:22,290
+So the most common example is Tim L and the DOM.
+
+9
+00:00:22,320 --> 00:00:24,030
+The document object model.
+
+10
+00:00:24,120 --> 00:00:28,150
+So when we think about age Tim Well it lends itself to a tree like structure.
+
+11
+00:00:28,170 --> 00:00:34,080
+Right we have elements and inside of elements we can have nested elements that are child that are child
+
+12
+00:00:34,140 --> 00:00:39,080
+that are children and we can keep having children nested in nested nested further down.
+
+13
+00:00:39,140 --> 00:00:43,770
+And if a parent child relationship between those aged him elements which are just text but then once
+
+14
+00:00:43,770 --> 00:00:48,840
+he gets to the browser after a request and get the response the browser then reads through it all parses
+
+15
+00:00:48,840 --> 00:00:50,480
+it and it creates the DOM.
+
+16
+00:00:50,490 --> 00:00:57,240
+The document object model and in Chrome we get this nice debugger we can click through sort of an interactive
+
+17
+00:00:57,240 --> 00:00:59,340
+way of viewing the different nodes.
+
+18
+00:00:59,340 --> 00:01:05,270
+But behind the scenes there is a corresponding javascript object for each one of these nodes.
+
+19
+00:01:05,340 --> 00:01:13,870
+So there's a body you know we can access it just by talking typing document dot body and print text
+
+20
+00:01:13,870 --> 00:01:15,930
+for us here but it's actually an object.
+
+21
+00:01:15,930 --> 00:01:21,970
+And if we do dot we can see it has a bunch of properties a bunch of methods we can call and we can do
+
+22
+00:01:21,970 --> 00:01:27,610
+things like look at its children and it gives us a list of children.
+
+23
+00:01:27,640 --> 00:01:36,390
+So let's take the first thing in there that gives us a node and we can do it children on that and there
+
+24
+00:01:36,390 --> 00:01:41,850
+are so just one thing in there that looks like there's just one child div instead of that first child.
+
+25
+00:01:41,850 --> 00:01:46,320
+Anyway if you're not familiar with the Dom I wouldn't worry about it just know that it's a tree structure
+
+26
+00:01:46,500 --> 00:01:47,380
+very very.
+
+27
+00:01:47,380 --> 00:01:48,030
+They use one.
+
+28
+00:01:48,150 --> 00:01:50,730
+So another application has to do with network routing.
+
+29
+00:01:50,820 --> 00:01:52,630
+Definitely not my expertise.
+
+30
+00:01:52,650 --> 00:01:57,420
+I'm not even going to try to explain how it works but if you go to the routing page in Wikipedia we
+
+31
+00:01:57,420 --> 00:01:59,400
+get all sorts of diagrams of trees over here.
+
+32
+00:01:59,400 --> 00:02:04,830
+So these are different delivery schemes for how basically a message is transmitted to a node or to multiple
+
+33
+00:02:04,830 --> 00:02:10,380
+nodes and you can see that we've got some tree structures going on here and that's pretty much all of
+
+34
+00:02:10,730 --> 00:02:13,520
+that because I know nothing about network routing.
+
+35
+00:02:14,250 --> 00:02:19,890
+But behind the scenes there are some trees being used there's a bunch of you know classic computer science
+
+36
+00:02:19,950 --> 00:02:22,270
+logic that goes into finding the shortest path.
+
+37
+00:02:22,290 --> 00:02:25,940
+Anyways Next up we'll talk about abstract syntax trees.
+
+38
+00:02:26,160 --> 00:02:32,270
+So these are our way of describing the syntax of a programming language using a tree structure.
+
+39
+00:02:32,670 --> 00:02:35,550
+So without going into too much detail really doesn't matter.
+
+40
+00:02:35,550 --> 00:02:38,890
+Honestly all that matters is that you see that this is a tree structure.
+
+41
+00:02:39,000 --> 00:02:41,420
+Whatever language this is for it's from Wikipedia.
+
+42
+00:02:41,420 --> 00:02:47,630
+If you do want to read more about it we you know we have let's say a while loop instead of a while block.
+
+43
+00:02:47,880 --> 00:02:54,840
+We have a condition as part of the while and then we also have the body inside of that while And in
+
+44
+00:02:54,840 --> 00:03:01,050
+that condition we can have a comparison between a variable and a constant and this is a very succinct
+
+45
+00:03:01,050 --> 00:03:03,420
+shortened version it's missing a lot of logic.
+
+46
+00:03:03,510 --> 00:03:09,240
+But the point is to show you that this is a way of basically if you were writing code to take in other
+
+47
+00:03:09,240 --> 00:03:14,820
+code and run that code or to parse that code or to make sure it's valid syntax you could use an abstraction
+
+48
+00:03:14,820 --> 00:03:17,400
+text tree to help you out next.
+
+49
+00:03:17,400 --> 00:03:20,160
+Trees are used in artificial intelligence all the time.
+
+50
+00:03:20,160 --> 00:03:24,380
+There are tons of applications for trees and artificial intelligence and machine learning.
+
+51
+00:03:24,420 --> 00:03:28,560
+Probably the simplest example is something called a minimax tree.
+
+52
+00:03:28,740 --> 00:03:34,590
+So let's say we're building a tic tac toe game we want to build an AI that is very good that it isn't
+
+53
+00:03:34,590 --> 00:03:36,060
+just picking random moves.
+
+54
+00:03:36,240 --> 00:03:41,790
+We could basically break down the logic of the game into a tree and we basically would say here's a
+
+55
+00:03:41,790 --> 00:03:43,010
+given state of the board.
+
+56
+00:03:43,350 --> 00:03:47,480
+And these are all the possible moves that the human player could make with them.
+
+57
+00:03:47,490 --> 00:03:55,170
+They are so the computer is X and what we see here is OK you know if a human player plays in oh here
+
+58
+00:03:55,170 --> 00:04:02,000
+the best possible mood to move to make is to put an X right here and in that way X would win.
+
+59
+00:04:02,340 --> 00:04:08,190
+If an O goes here the best possible move is to put an X in the middle and then it depends what 0 does
+
+60
+00:04:08,190 --> 00:04:09,070
+next.
+
+61
+00:04:09,090 --> 00:04:10,890
+You know there's multiple options.
+
+62
+00:04:10,890 --> 00:04:16,280
+Basically this tree structure just describes a bunch of different possible options for what could happen.
+
+63
+00:04:16,290 --> 00:04:21,420
+And after a given move by the opponent the best possible next move.
+
+64
+00:04:21,420 --> 00:04:23,190
+So that's really superficial.
+
+65
+00:04:23,190 --> 00:04:27,550
+You didn't even scratch the surface of how you actually implement this and what the minimax part is
+
+66
+00:04:27,650 --> 00:04:28,440
+the logic.
+
+67
+00:04:28,500 --> 00:04:31,730
+But all that I want to show you is that this is basically called The Decision Tree.
+
+68
+00:04:31,860 --> 00:04:37,170
+You have different decisions that you make branching points and you follow one and then that splits
+
+69
+00:04:37,200 --> 00:04:39,630
+and you follow the next decision and you keep going.
+
+70
+00:04:39,630 --> 00:04:45,870
+And these have applications in very complicated you know classification algorithms for example not just
+
+71
+00:04:45,930 --> 00:04:47,050
+tic tac toe AI.
+
+72
+00:04:47,130 --> 00:04:52,230
+And then finally probably the simplest example is the way that your folders are models and an operating
+
+73
+00:04:52,230 --> 00:04:58,050
+system you know if you see something like this on a Mac or PC your computer is represented as a tree
+
+74
+00:04:58,050 --> 00:04:58,710
+structure.
+
+75
+00:04:58,710 --> 00:05:01,190
+There's all these directories it's hierarchical.
+
+76
+00:05:01,240 --> 00:05:02,280
+There's a root.
+
+77
+00:05:02,280 --> 00:05:05,810
+There is a top most folder you know on a Mac.
+
+78
+00:05:06,000 --> 00:05:07,890
+I actually don't know what it is anymore.
+
+79
+00:05:07,890 --> 00:05:09,440
+On your account it's the root directory.
+
+80
+00:05:09,450 --> 00:05:11,390
+But you know there's multiple accounts.
+
+81
+00:05:11,400 --> 00:05:12,950
+You can get a computer anyway so it doesn't matter.
+
+82
+00:05:12,970 --> 00:05:18,310
+But let's just say we're looking at a given folder this folder inside this is maybe our root.
+
+83
+00:05:18,330 --> 00:05:20,050
+We have two other folders inside.
+
+84
+00:05:20,280 --> 00:05:21,900
+And then they have files in.
+
+85
+00:05:21,990 --> 00:05:22,240
+Yeah.
+
+86
+00:05:22,260 --> 00:05:29,610
+Technically this has two types of nodes you could say those files and folders but the structure itself
+
+87
+00:05:29,640 --> 00:05:34,060
+is treelike we have all these branches and those children have children of their own and so on.
+
+88
+00:05:34,170 --> 00:05:38,660
+So that's just a quick introduction to some of the real world use cases for trees.
+
+89
+00:05:38,730 --> 00:05:43,310
+Sure you know this is not a purely theoretical thing it's not just an exercise.
+
+90
+00:05:43,350 --> 00:05:45,870
+This is stuff that comes up all the time in programming.
+
+91
+00:05:45,870 --> 00:05:48,470
+One example I totally forgot to mention is Jason.
+
+92
+00:05:48,630 --> 00:05:52,830
+So if you've ever worked with Jaison javascript object notation you'd get it you know I don't know an
+
+93
+00:05:52,830 --> 00:05:58,110
+AJAX call you're sending in a request and you're getting some data from an API when you parse that response
+
+94
+00:05:58,110 --> 00:06:03,600
+from a string into javascript or for using Python or whatever language you're using.
+
+95
+00:06:03,600 --> 00:06:09,510
+There's code that is traversing a tree or creating a tree like structure as you can see here I'm using
+
+96
+00:06:09,510 --> 00:06:16,060
+a Chrome extension just to view some child nodes and they each have children and this is a tree structure.
+
+97
+00:06:16,080 --> 00:06:17,540
+You can represent this easily.
+
+98
+00:06:17,550 --> 00:06:22,170
+Well I shouldn't say easily it suits itself to being represented by a tree it's a lot of work but it
+
+99
+00:06:22,170 --> 00:06:27,960
+still is a tree structure where we have parent and child nodes but there's at the end of the day a single
+
+100
+00:06:28,020 --> 00:06:28,570
+root.
+
+101
+00:06:28,680 --> 00:06:30,190
+All right I'll leave it off there.
+
+102
+00:06:30,220 --> 00:06:32,250
+There is a lot of different uses for trees.
+

@@ -1,0 +1,248 @@
+1
+00:00:00,150 --> 00:00:01,130
+They will come back.
+
+2
+00:00:01,200 --> 00:00:06,750
+So when this section we're talking about search and searching algorithms and when I say search some
+
+3
+00:00:06,750 --> 00:00:10,410
+of you might think of something like Google right away.
+
+4
+00:00:10,560 --> 00:00:15,870
+Now the algorithm behind Google and its search is very complex probably one of the most complicated
+
+5
+00:00:15,900 --> 00:00:21,660
+algorithms out there and it's probably more like 10 different algorithms that are being tested at any
+
+6
+00:00:21,660 --> 00:00:23,580
+given time and things are being tweaked.
+
+7
+00:00:23,580 --> 00:00:29,340
+Not to mention the fact that this algorithm changes so much depending on who you are your browsing history
+
+8
+00:00:29,970 --> 00:00:33,050
+the things that you've done and the things you've clicked on.
+
+9
+00:00:33,060 --> 00:00:37,260
+So when I search for howler monkey I might see different results than if you search for howler monkey.
+
+10
+00:00:37,560 --> 00:00:41,680
+So we're not going to even try and recreate anything like this.
+
+11
+00:00:41,710 --> 00:00:47,340
+What we will get to later in the course not right now but later once we cover graphs and trees and other
+
+12
+00:00:47,340 --> 00:00:52,560
+complicated data structures We'll discuss how to search and traverse something like a graph which is
+
+13
+00:00:52,560 --> 00:00:54,640
+closer to what Google is doing.
+
+14
+00:00:54,660 --> 00:00:58,650
+We're not going to talk about the machine learning behind all of this and how it decides you know what
+
+15
+00:00:58,650 --> 00:01:03,300
+is best tailored to me cold versus to someone else down the street.
+
+16
+00:01:03,330 --> 00:01:08,910
+We're just going to talk about when Google first started before you even cared about people in ads and
+
+17
+00:01:08,910 --> 00:01:11,480
+tracking all of that if there even was a period.
+
+18
+00:01:11,550 --> 00:01:11,970
+Who knows.
+
+19
+00:01:11,970 --> 00:01:12,630
+I doubt there was.
+
+20
+00:01:12,650 --> 00:01:16,130
+But if there was then we're going to kind of approximate that.
+
+21
+00:01:16,230 --> 00:01:21,540
+But for now we're focusing on are even simpler searching algorithms that are really commonly used.
+
+22
+00:01:21,630 --> 00:01:28,470
+But we may not often call it search for example but say that we have a string and we're checking to
+
+23
+00:01:28,470 --> 00:01:32,150
+see if if there's another string contained in that string.
+
+24
+00:01:32,560 --> 00:01:38,340
+Or let's say that I have a Web site and I want people to sign up and they add their user name and they
+
+25
+00:01:38,340 --> 00:01:40,130
+sign up the username and password.
+
+26
+00:01:40,130 --> 00:01:42,600
+All we need to tell them if their user name is taken.
+
+27
+00:01:42,870 --> 00:01:46,900
+So let's say there's not even a database don't worry about how this works.
+
+28
+00:01:46,920 --> 00:01:52,560
+Let's say I have an array of user names if somebody types in a user name into the form and says OK I'm
+
+29
+00:01:52,560 --> 00:02:01,140
+going to be I hate cash that's going to be my username and password will be secretly loves cats 72 or
+
+30
+00:02:01,140 --> 00:02:01,680
+something.
+
+31
+00:02:01,890 --> 00:02:04,200
+If I hit enter I need to.
+
+32
+00:02:04,320 --> 00:02:08,570
+Me the developer needs to take that username and somehow figure out if it's taken.
+
+33
+00:02:08,640 --> 00:02:14,820
+So if I have a list of user names how am I going to figure out if this I hate cat is contained in that
+
+34
+00:02:14,820 --> 00:02:15,310
+list.
+
+35
+00:02:15,360 --> 00:02:18,260
+And javascript has many built in ways of doing this.
+
+36
+00:02:18,330 --> 00:02:26,400
+You could for example do index of it's a simple one and let's try that username set index of.
+
+37
+00:02:26,400 --> 00:02:28,860
+I hate cats.
+
+38
+00:02:29,220 --> 00:02:30,730
+This is using a searching algorithm.
+
+39
+00:02:30,740 --> 00:02:32,520
+Behind the scenes and so we get 11.
+
+40
+00:02:32,520 --> 00:02:36,600
+And if it weren't in there like that we should get a negative one.
+
+41
+00:02:36,600 --> 00:02:40,740
+There are some others that will see some other options but what we're going to talk about in this section
+
+42
+00:02:40,740 --> 00:02:45,570
+is how these are working behind the scenes and how we can implement our own versions of some of these
+
+43
+00:02:45,570 --> 00:02:49,840
+functions built in methods and how we can search across arrays and strings.
+
+44
+00:02:49,890 --> 00:02:55,500
+Or one more really quick example if we had a list of states an array in the US.
+
+45
+00:02:55,500 --> 00:03:01,380
+I apologize for being America centric in video but if this is what we had we wanted to make sure a user
+
+46
+00:03:01,380 --> 00:03:03,350
+was putting a valid state.
+
+47
+00:03:03,660 --> 00:03:07,810
+Well we could check it against this but how are we going to do that what's the best algorithm.
+
+48
+00:03:07,980 --> 00:03:10,260
+We're going to get into that in this section.
+
+49
+00:03:10,290 --> 00:03:11,830
+So what are our objectives.
+
+50
+00:03:11,830 --> 00:03:14,100
+First describe what a searching algorithm is.
+
+51
+00:03:14,100 --> 00:03:18,940
+We kind of talked about that a bit and we're going to implement linear search on arrays.
+
+52
+00:03:19,260 --> 00:03:24,340
+Then we're going to talk about a slightly better algorithm binary search on sorted arrays.
+
+53
+00:03:24,390 --> 00:03:26,770
+So we'll talk about the pros and cons of those approaches.
+
+54
+00:03:27,000 --> 00:03:32,730
+Then we'll implement a naive string searching algorithm as well as something called the KMP string searching
+
+55
+00:03:32,760 --> 00:03:33,520
+algorithm.
+
+56
+00:03:33,780 --> 00:03:39,410
+So this section is really the first where we're getting into named algorithms in the recursion section
+
+57
+00:03:39,420 --> 00:03:45,480
+for example we talked about how to write a solution to the factorial problem but it didn't have a name
+
+58
+00:03:45,680 --> 00:03:50,420
+like we haven't really seen code that has a particular name to the solution but that's going to change
+
+59
+00:03:50,430 --> 00:03:54,870
+in this section and that will be something that we see throughout the course is a recurring theme.
+
+60
+00:03:54,930 --> 00:03:59,400
+We'll talk about sorting those particular names for a lot of common sorting algorithms.
+
+61
+00:03:59,400 --> 00:04:03,740
+So those are our goals and the first thing we're going to do with the next video is implement linear
+
+62
+00:04:03,750 --> 00:04:04,200
+search.
+

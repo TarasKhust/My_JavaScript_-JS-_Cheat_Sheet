@@ -1,0 +1,80 @@
+1
+00:00:00,240 --> 00:00:00,930
+All right.
+
+2
+00:00:00,930 --> 00:00:02,790
+Next up we're working with the set.
+
+3
+00:00:02,880 --> 00:00:10,530
+So set is a method that will accept two things a position or an index and a value to update the item
+
+4
+00:00:10,530 --> 00:00:12,380
+at that index too.
+
+5
+00:00:12,540 --> 00:00:19,560
+So we would pass in for example this visual go doesn't actually have the capability to illustrate this
+
+6
+00:00:19,830 --> 00:00:26,590
+but if I were to say this list don't set one as the index comma.
+
+7
+00:00:27,030 --> 00:00:34,230
+Hello world what that is saying is take whatever that index 1 says 0 1 Take this node and update or
+
+8
+00:00:34,230 --> 00:00:38,270
+change its value set it to Hello World.
+
+9
+00:00:38,310 --> 00:00:44,910
+So to make it work you need to define a function that accepts two things a value and an index.
+
+10
+00:00:44,940 --> 00:00:46,790
+I actually like to put the index first.
+
+11
+00:00:46,860 --> 00:00:51,870
+So I should have written an index and a value but it doesn't matter as long as you are consistent.
+
+12
+00:00:52,110 --> 00:00:57,610
+And we can actually use our GET method that we just defined in the last video to help us out.
+
+13
+00:00:57,630 --> 00:01:02,970
+So we're going to use our get function to find that node or if it's not there or get function we'll
+
+14
+00:01:02,970 --> 00:01:03,740
+handle it.
+
+15
+00:01:03,750 --> 00:01:10,140
+For example if you tried to update the negative 10 item but it should return to us the found node and
+
+16
+00:01:10,140 --> 00:01:11,690
+then we just updated value.
+
+17
+00:01:11,700 --> 00:01:18,540
+So if the node is not found return false if the node is found update its value and then return true.
+
+18
+00:01:18,870 --> 00:01:20,790
+So it's a nice short one.
+
+19
+00:01:20,820 --> 00:01:22,520
+It's like four or five lines I think.
+
+20
+00:01:22,530 --> 00:01:26,090
+So in the next video we'll have a solution ready set go.
+

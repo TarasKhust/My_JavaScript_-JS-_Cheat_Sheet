@@ -1,0 +1,144 @@
+1
+00:00:00,190 --> 00:00:01,300
+Hey welcome back.
+
+2
+00:00:01,320 --> 00:00:03,390
+So we're talking about a method called for move.
+
+3
+00:00:03,390 --> 00:00:05,020
+We're almost done with singly linked lists.
+
+4
+00:00:05,040 --> 00:00:05,850
+I promise.
+
+5
+00:00:05,850 --> 00:00:13,530
+Remove takes in an index and it removes the value at that index and it matches up the list around it.
+
+6
+00:00:13,530 --> 00:00:17,180
+So if you were to remove from the beginning just take out the last item right.
+
+7
+00:00:17,310 --> 00:00:18,980
+My gosh takes the first item.
+
+8
+00:00:19,040 --> 00:00:20,870
+If you remove from the very end it takes the last item.
+
+9
+00:00:20,880 --> 00:00:23,460
+But if you removed from the middle it's a little more complicated.
+
+10
+00:00:24,320 --> 00:00:33,350
+So if we take an example if we remove the index of one from here all we have to do is first find that
+
+11
+00:00:33,350 --> 00:00:34,070
+item.
+
+12
+00:00:34,130 --> 00:00:35,830
+This is the one that's going to be deleted.
+
+13
+00:00:35,840 --> 00:00:39,880
+Index of 1 0 1 and we take it out.
+
+14
+00:00:39,890 --> 00:00:47,580
+But to do that all it really means is taking the previous one and setting it next to the deleted ones
+
+15
+00:00:47,610 --> 00:00:48,200
+next.
+
+16
+00:00:48,210 --> 00:00:51,290
+So set this next to this.
+
+17
+00:00:51,290 --> 00:00:57,770
+So here's a pseudo code to find a function should accept an index if the index is negative or it's greater
+
+18
+00:00:57,770 --> 00:00:59,910
+than the length return undefined.
+
+19
+00:01:00,850 --> 00:01:01,680
+Or something.
+
+20
+00:01:01,690 --> 00:01:02,150
+No.
+
+21
+00:01:02,200 --> 00:01:06,100
+Whatever you want if the index is the same the length minus one.
+
+22
+00:01:06,400 --> 00:01:11,380
+So technically this should be greater than or equal to the length because you can't remove you know
+
+23
+00:01:11,720 --> 00:01:15,090
+if there's five items the length is going to be five.
+
+24
+00:01:15,100 --> 00:01:16,580
+But the greatest index is four.
+
+25
+00:01:16,780 --> 00:01:18,300
+So we can't remove from five.
+
+26
+00:01:18,370 --> 00:01:20,200
+We can only remove from 4.
+
+27
+00:01:20,200 --> 00:01:23,770
+So if the index is the same as the length minus one you want a pop.
+
+28
+00:01:23,770 --> 00:01:26,770
+Just use our pop method we've already written.
+
+29
+00:01:26,770 --> 00:01:29,660
+Same thing with the beginning if the index is equal to zero.
+
+30
+00:01:29,680 --> 00:01:31,750
+Use our shift method.
+
+31
+00:01:31,960 --> 00:01:37,290
+Otherwise use our Get method sort of what we did in the last video where we used to get.
+
+32
+00:01:37,300 --> 00:01:43,660
+But we passed an index minus one to get the previous node and then we just set the next property on
+
+33
+00:01:43,660 --> 00:01:47,130
+the previous node to be the next of the next node.
+
+34
+00:01:47,710 --> 00:01:52,150
+And then we subtract one from the length and returned the value of the removed node.
+
+35
+00:01:52,480 --> 00:01:54,490
+So give it a shot in the next video.
+
+36
+00:01:54,490 --> 00:01:56,370
+Surprise surprise will have a solution.
+

@@ -1,0 +1,588 @@
+1
+00:00:00,150 --> 00:00:01,200
+Hey welcome back.
+
+2
+00:00:01,320 --> 00:00:05,400
+Let's kick things off with depth first traversal of a graph.
+
+3
+00:00:05,400 --> 00:00:10,440
+So just like with trees which we spent a good amount of time on binary search trees or binary trees
+
+4
+00:00:10,440 --> 00:00:15,110
+in general there are two main options for traversing these trees.
+
+5
+00:00:15,150 --> 00:00:17,240
+Depth first and breadth first traversal.
+
+6
+00:00:17,430 --> 00:00:23,850
+Now within depth first we did talk about pre order Post order in order but the general idea behind depth
+
+7
+00:00:23,850 --> 00:00:25,680
+and breadth first is what we care about.
+
+8
+00:00:25,950 --> 00:00:32,640
+So when we say depth first for this binary search tree or any tree it means that we're focusing we're
+
+9
+00:00:32,640 --> 00:00:41,490
+prioritizing visiting children of a given node before we visit siblings or we deepen the traversal before
+
+10
+00:00:41,490 --> 00:00:42,720
+we widen it.
+
+11
+00:00:42,720 --> 00:00:47,880
+So what that really means whether we're going left or right first doesn't really matter but let's say
+
+12
+00:00:47,880 --> 00:00:49,120
+that we go left.
+
+13
+00:00:49,200 --> 00:00:50,500
+So we start at 41.
+
+14
+00:00:50,640 --> 00:00:57,660
+We're going to visit 20 and rather than going to the sibling we're now going to finish out the children
+
+15
+00:00:57,660 --> 00:00:58,350
+of 20.
+
+16
+00:00:58,440 --> 00:01:02,130
+So that gets us to 11 and didn't go back to 20.
+
+17
+00:01:02,130 --> 00:01:03,610
+Finish Out the children.
+
+18
+00:01:03,690 --> 00:01:04,800
+Now we had a dead end.
+
+19
+00:01:05,130 --> 00:01:08,050
+Now we go back and visit 20's sibling.
+
+20
+00:01:08,550 --> 00:01:10,130
+And then we keep doing that.
+
+21
+00:01:10,140 --> 00:01:16,800
+So we prioritize deepening of the traversal rather than broad broadening whether weather rather than
+
+22
+00:01:16,800 --> 00:01:19,050
+widening So that's depth first.
+
+23
+00:01:19,080 --> 00:01:24,150
+But in this section we're talking about graphs that are not trees and they're not necessarily harder
+
+24
+00:01:24,150 --> 00:01:29,970
+to traverse but sometimes they can be a little trickier to understand what depth means versus breath
+
+25
+00:01:30,510 --> 00:01:37,670
+because it's easy on a tree where we have a clear direction down or it depends you know how it's drawn
+
+26
+00:01:37,680 --> 00:01:40,370
+sometimes you see trees drawn upwards from the root.
+
+27
+00:01:40,500 --> 00:01:44,410
+But however it's drawn there's a clear path through that tree.
+
+28
+00:01:44,430 --> 00:01:45,460
+There's one root.
+
+29
+00:01:45,660 --> 00:01:50,680
+And then you descend away or you ascend away whatever it is you're moving away from that root.
+
+30
+00:01:50,700 --> 00:01:53,760
+So depth first means moving away from the root.
+
+31
+00:01:53,820 --> 00:01:58,980
+When we talk about a graph a more general graph like this and this is a directed graph.
+
+32
+00:01:58,990 --> 00:02:02,470
+Unfortunately this website doesn't let me do undirected graphs and traverse them.
+
+33
+00:02:02,550 --> 00:02:06,150
+But anyway let's say that we pick one of these vertices.
+
+34
+00:02:06,180 --> 00:02:07,760
+There is no root node.
+
+35
+00:02:07,860 --> 00:02:11,050
+There isn't a tree but let's say we're going to start at zero.
+
+36
+00:02:11,550 --> 00:02:14,740
+What does it mean to do depth first traversal from here.
+
+37
+00:02:15,090 --> 00:02:20,110
+Well really all that it means is finding one neighbor following one neighbor.
+
+38
+00:02:20,310 --> 00:02:24,410
+Let's say one but there's actually three neighbors we have six and two.
+
+39
+00:02:24,570 --> 00:02:31,950
+Let's say we follow one and then we continue to follow the neighbors of one before we visit its siblings
+
+40
+00:02:32,610 --> 00:02:36,840
+and when we say siblings it's kind of different than a tree because they're not necessarily on the same
+
+41
+00:02:36,840 --> 00:02:37,600
+level.
+
+42
+00:02:38,070 --> 00:02:40,470
+But let me just put it this way we started zero.
+
+43
+00:02:40,680 --> 00:02:45,800
+Let's say that we always choose the lowest number as our next item to visit.
+
+44
+00:02:45,870 --> 00:02:48,270
+So we go to 0 to 1.
+
+45
+00:02:48,270 --> 00:02:56,160
+Now in a breath first which will come back to we would then visit the other neighbors of 0 2 and 6 but
+
+46
+00:02:56,160 --> 00:03:03,930
+in depth first we're going to go 0 to 1 to 5 and then come back to 1 and go to six and then from 6 we
+
+47
+00:03:03,930 --> 00:03:10,260
+visit it's neighbors like 7 and then 9 and so on rather than the breadth first where we're going to
+
+48
+00:03:10,260 --> 00:03:14,040
+visit 0 1 2 6.
+
+49
+00:03:14,100 --> 00:03:19,360
+All of zeros neighbors first before we visit one's neighbors and twos neighbors and so on.
+
+50
+00:03:19,680 --> 00:03:22,660
+So let me show you a little animated diagram I put together.
+
+51
+00:03:22,660 --> 00:03:24,360
+Here's a simpler graph.
+
+52
+00:03:24,360 --> 00:03:30,420
+There is no you know root node that we start from by default but let's say we're doing a depth first
+
+53
+00:03:30,420 --> 00:03:31,790
+traversal starting from a.
+
+54
+00:03:31,830 --> 00:03:38,580
+We want to explore as far as possible down one branch before we backtrack again we have to decide the
+
+55
+00:03:38,640 --> 00:03:40,560
+order we're going to visit things in.
+
+56
+00:03:40,860 --> 00:03:44,430
+So we if we have a there's two neighbors which one do we visit first.
+
+57
+00:03:44,580 --> 00:03:47,930
+Well let's just go with alphabetical order to keep it consistent.
+
+58
+00:03:47,970 --> 00:03:52,550
+These are both neighbors and we could visit either one first but let's say we're going to visit alphabetically.
+
+59
+00:03:52,560 --> 00:03:53,700
+So we start from a.
+
+60
+00:03:53,970 --> 00:03:56,040
+And then we visit B.
+
+61
+00:03:56,070 --> 00:03:59,690
+Now if this were breadth first we would then go back and visit.
+
+62
+00:03:59,900 --> 00:04:04,100
+But depth first means we're now going to explore these neighbors.
+
+63
+00:04:04,110 --> 00:04:06,960
+So let's pick a neighbor alphabetically first.
+
+64
+00:04:06,960 --> 00:04:12,520
+We have see we could do D but let's do C to be consistent now from C..
+
+65
+00:04:12,690 --> 00:04:16,110
+We have two neighbors and we've already visited B.
+
+66
+00:04:16,140 --> 00:04:17,730
+So this is an important idea.
+
+67
+00:04:17,790 --> 00:04:19,380
+We have to remember where we've been.
+
+68
+00:04:19,380 --> 00:04:21,140
+Otherwise we could just go back to be.
+
+69
+00:04:21,330 --> 00:04:22,340
+So we we've done.
+
+70
+00:04:22,440 --> 00:04:24,060
+So that leaves us D.
+
+71
+00:04:24,480 --> 00:04:30,720
+Now from D We have two choices and if we're going alphabetically we're going to go to E and then to
+
+72
+00:04:30,720 --> 00:04:31,250
+f.
+
+73
+00:04:31,260 --> 00:04:34,220
+Now that order doesn't really matter as far as depth first.
+
+74
+00:04:34,220 --> 00:04:35,950
+These are both neighbors to D.
+
+75
+00:04:36,090 --> 00:04:41,770
+But it's just helpful for us to kind of be you know have a concrete order if we're just doing alphabetical.
+
+76
+00:04:42,090 --> 00:04:42,620
+OK.
+
+77
+00:04:42,780 --> 00:04:46,120
+So it's really important that we remember where every bend.
+
+78
+00:04:46,410 --> 00:04:48,350
+Otherwise we would go from a.
+
+79
+00:04:48,390 --> 00:04:50,300
+Let's say we go to be again.
+
+80
+00:04:50,520 --> 00:04:53,100
+Well B has two neighbors or three neighbors.
+
+81
+00:04:53,100 --> 00:04:54,590
+C d n.
+
+82
+00:04:54,810 --> 00:04:57,050
+And if we don't remember we've already been to a.
+
+83
+00:04:57,390 --> 00:05:03,140
+What's stopping us from just going back to a and then going back to B for always picking the earliest
+
+84
+00:05:03,140 --> 00:05:08,500
+alphabetical the lowest alphabet A and then B we'd get stuck.
+
+85
+00:05:08,660 --> 00:05:11,180
+So here's another example a slightly different graph.
+
+86
+00:05:11,180 --> 00:05:15,120
+I know it's the same nodes the same vertices but different edges.
+
+87
+00:05:15,140 --> 00:05:22,090
+If we start from a again if we're doing lowest alphabetically we would go to B and then from B we only
+
+88
+00:05:22,090 --> 00:05:23,000
+have one choice.
+
+89
+00:05:23,020 --> 00:05:23,900
+We go to D.
+
+90
+00:05:24,100 --> 00:05:26,660
+Now we have two choices which one do we go to.
+
+91
+00:05:26,900 --> 00:05:28,570
+Well we're doing alphabetically first.
+
+92
+00:05:28,570 --> 00:05:29,550
+We go to E.
+
+93
+00:05:29,680 --> 00:05:31,690
+Now we have two choices.
+
+94
+00:05:31,780 --> 00:05:34,620
+There are three edges but we know we've already been to D.
+
+95
+00:05:34,660 --> 00:05:40,380
+So do we go to C or F for doing it alphabetically we go to see now from C..
+
+96
+00:05:40,410 --> 00:05:41,410
+It's it's a dead end.
+
+97
+00:05:41,500 --> 00:05:43,440
+We visited a we visited e.
+
+98
+00:05:43,540 --> 00:05:45,230
+So if we go back to e..
+
+99
+00:05:45,610 --> 00:05:46,860
+And now we have to finish.
+
+100
+00:05:46,870 --> 00:05:50,260
+E We have F and then we're done.
+
+101
+00:05:50,500 --> 00:05:58,330
+So here is one more exact same graph actually same animation but down here I'm displaying our adjacency
+
+102
+00:05:58,330 --> 00:05:59,020
+list.
+
+103
+00:05:59,230 --> 00:06:03,070
+So you can see a is connected to B and C and that's reflected here.
+
+104
+00:06:03,460 --> 00:06:06,150
+And I do have things listed alphabetically first.
+
+105
+00:06:06,250 --> 00:06:10,510
+So the the edge from a to b comes before 8 is c.
+
+106
+00:06:10,570 --> 00:06:12,220
+Again it doesn't really matter.
+
+107
+00:06:12,280 --> 00:06:15,280
+But for me to explain it's easier to do alphabetically first.
+
+108
+00:06:15,520 --> 00:06:21,820
+OK so if we look at what happens from a we started a and we visited a so we're going to cross it off
+
+109
+00:06:22,240 --> 00:06:27,280
+meaning that any time we see a so adjacent node we're going to ignore it.
+
+110
+00:06:27,400 --> 00:06:33,850
+So we look at a and we see that there's two edges two vertices so we could go to a B or C and we'll
+
+111
+00:06:33,850 --> 00:06:36,060
+just take the first one we go to beat.
+
+112
+00:06:36,280 --> 00:06:43,240
+So when we visit B we now cross off from here and from here to all of its edges.
+
+113
+00:06:43,240 --> 00:06:47,950
+This doesn't mean deleting them it just means that we're going to remember I've already been to be so
+
+114
+00:06:47,950 --> 00:06:49,810
+ignore it next time we see it.
+
+115
+00:06:50,020 --> 00:06:55,760
+So we get to be which is right here and we see that it has two edges a and D.
+
+116
+00:06:55,810 --> 00:06:58,120
+But we've already Benty we cross that off.
+
+117
+00:06:58,120 --> 00:07:02,890
+So now we go to D and we cross off because we've been there it has three edges.
+
+118
+00:07:02,890 --> 00:07:05,140
+We cross d everywhere.
+
+119
+00:07:05,260 --> 00:07:10,350
+So now at d we look well there's three choices but we've already been to be.
+
+120
+00:07:10,410 --> 00:07:14,580
+So we'll go to each next and we cross off all those e's.
+
+121
+00:07:14,650 --> 00:07:15,790
+Now we go to E.
+
+122
+00:07:16,060 --> 00:07:17,250
+Where should we go from.
+
+123
+00:07:17,350 --> 00:07:19,120
+Well let's go to see.
+
+124
+00:07:19,540 --> 00:07:20,050
+OK.
+
+125
+00:07:20,260 --> 00:07:21,360
+So good to see.
+
+126
+00:07:21,550 --> 00:07:27,320
+And we cross all those seas off and now we go back to where we were last.
+
+127
+00:07:28,030 --> 00:07:29,300
+And we've already visited Sea.
+
+128
+00:07:29,350 --> 00:07:30,910
+We've already visited D.
+
+129
+00:07:31,180 --> 00:07:33,890
+Now we need to visit F and we're done.
+
+130
+00:07:34,290 --> 00:07:34,870
+OK.
+
+131
+00:07:35,140 --> 00:07:38,060
+So that's the basic idea of depth first traversal.
+
+132
+00:07:38,080 --> 00:07:40,580
+We follow a branch down.
+
+133
+00:07:40,810 --> 00:07:46,780
+It's harder to say we're deepening because it's a little more challenging to visually understand what
+
+134
+00:07:46,780 --> 00:07:50,600
+depth means in a graph because you know when you have a tree it's easier.
+
+135
+00:07:50,620 --> 00:07:51,890
+We're moving away from the route.
+
+136
+00:07:51,970 --> 00:07:55,620
+In this case it looks like a loop basically.
+
+137
+00:07:55,930 --> 00:08:01,480
+So depth is harder to explain what it really means is just following the neighbors and continuing to
+
+138
+00:08:01,480 --> 00:08:03,320
+follow neighbors before backtrack.
+
+139
+00:08:03,400 --> 00:08:07,120
+So we're going to implement depth first search both recursively.
+
+140
+00:08:07,280 --> 00:08:11,470
+I said search we're actually going to do traversal is the same idea except we're not searching for something
+
+141
+00:08:11,710 --> 00:08:13,910
+we're just going to visit every node every vertex.
+
+142
+00:08:14,020 --> 00:08:15,660
+Anyway we're going to do it recursively.
+
+143
+00:08:15,700 --> 00:08:20,570
+And if we just to show you both approaches it's a good thing to know.
+
+144
+00:08:20,860 --> 00:08:23,630
+So we'll start with recursive the recursive solution.
+
+145
+00:08:23,680 --> 00:08:27,670
+Well first the pseudo code in the next video and then an implementation afterwards and then we'll do
+
+146
+00:08:27,700 --> 00:08:30,360
+it or to flee and then we'll cover breath first.
+
+147
+00:08:30,430 --> 00:08:30,690
+OK.
+

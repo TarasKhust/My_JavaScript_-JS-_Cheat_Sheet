@@ -1,0 +1,428 @@
+1
+00:00:00,150 --> 00:00:00,540
+All right.
+
+2
+00:00:00,540 --> 00:00:01,400
+Welcome back.
+
+3
+00:00:01,590 --> 00:00:07,200
+So in the last video I mentioned there are two main strategies for traversing a tree breadth first search
+
+4
+00:00:07,340 --> 00:00:14,910
+for FS and depth first search DFS and these just refer to sort of the general order that we that we
+
+5
+00:00:14,910 --> 00:00:21,510
+visit things are we going to prioritize visiting all nodes on the same level before we move down or
+
+6
+00:00:21,510 --> 00:00:26,270
+do we want to work in a more vertical way which is what depth first is so fast.
+
+7
+00:00:26,400 --> 00:00:31,770
+What we're starting with breadth first search just means we want to visit every node on the same level
+
+8
+00:00:31,770 --> 00:00:35,150
+every sibling node before we look at a child.
+
+9
+00:00:35,550 --> 00:00:43,830
+So for us the order of this tree would look like 10 6 15 3 8 20 and then we would keep going if there
+
+10
+00:00:43,830 --> 00:00:46,300
+were more from left to right in our case.
+
+11
+00:00:46,500 --> 00:00:48,960
+But that that part is not as important to left to right.
+
+12
+00:00:49,020 --> 00:00:52,070
+What's more important is just that we're working horizontally.
+
+13
+00:00:52,110 --> 00:00:56,140
+Now I'm sure you're wondering why would you use this versus another one.
+
+14
+00:00:56,220 --> 00:00:58,740
+Why are there all these different orders why are we learning this.
+
+15
+00:00:58,740 --> 00:01:03,510
+I will talk about in a separate standalone video once we've gone over the different approaches.
+
+16
+00:01:03,630 --> 00:01:08,280
+Why you would use one versus the other because it's a little hard to talk about it before you have the
+
+17
+00:01:08,280 --> 00:01:11,610
+context of the other algorithms and how they work.
+
+18
+00:01:11,610 --> 00:01:15,840
+So for now I'm just going to punt on that and say I'm going to teach them if you have questions about
+
+19
+00:01:15,840 --> 00:01:16,590
+why.
+
+20
+00:01:16,860 --> 00:01:18,440
+Let's just wait I guess.
+
+21
+00:01:18,450 --> 00:01:21,410
+You know technically it's a video so we you kind of have to wait.
+
+22
+00:01:21,430 --> 00:01:23,220
+But just hang in there.
+
+23
+00:01:23,220 --> 00:01:28,200
+The one thing I would mention is keep in mind this is a small binary tree but we might be working with
+
+24
+00:01:28,200 --> 00:01:33,030
+a tree that is super super deep and narrow or something it's really wide.
+
+25
+00:01:33,030 --> 00:01:34,290
+It doesn't have to be a binary tree.
+
+26
+00:01:34,290 --> 00:01:37,690
+We could be talking about each node has 100 children.
+
+27
+00:01:37,890 --> 00:01:42,720
+And so these different approaches these different strategies actually have an impact depending on what
+
+28
+00:01:42,720 --> 00:01:45,470
+the tree looks like how the data is distributed.
+
+29
+00:01:45,510 --> 00:01:49,170
+Anyway that's enough about the general approach to be fast.
+
+30
+00:01:49,440 --> 00:01:50,940
+Let's get into specifics.
+
+31
+00:01:50,940 --> 00:01:53,170
+How do we implement this to do that.
+
+32
+00:01:53,190 --> 00:01:54,620
+We're going to take advantage of.
+
+33
+00:01:54,630 --> 00:01:59,310
+Q So I don't recommend creating your own Q class and going through all of that.
+
+34
+00:01:59,340 --> 00:02:04,570
+Just use a list or an array to model a Q Which if you didn't watch the section or you don't remember.
+
+35
+00:02:04,590 --> 00:02:07,650
+It's a first in first out structure.
+
+36
+00:02:07,650 --> 00:02:14,670
+So if we used a simple array or a list you could just use push to add things in and then shift to remove
+
+37
+00:02:14,670 --> 00:02:19,290
+from the beginning so that whatever was added in first is always the first thing out.
+
+38
+00:02:19,290 --> 00:02:20,680
+So here's our basic approach.
+
+39
+00:02:20,760 --> 00:02:22,450
+We're going to have two variables.
+
+40
+00:02:22,470 --> 00:02:27,960
+We're going to have the Q to help us keep track of things and then we're going to build up a list of
+
+41
+00:02:27,960 --> 00:02:30,240
+data to return at the end to our end goal.
+
+42
+00:02:30,240 --> 00:02:34,980
+If this was our tree and we're doing a b fs on this breath first search we want to return this at the
+
+43
+00:02:34,980 --> 00:02:37,470
+end of our queue at the end will be empty.
+
+44
+00:02:37,470 --> 00:02:39,430
+So the queue is just to help us out.
+
+45
+00:02:40,020 --> 00:02:43,340
+So our main idea we take the route we added to the queue.
+
+46
+00:02:43,830 --> 00:02:50,160
+Then we loop as long as there's anything in the queue and we dequeue a node from the cube which if you're
+
+47
+00:02:50,160 --> 00:02:54,170
+using an array just means shifting from the beginning of federate.
+
+48
+00:02:54,390 --> 00:03:00,120
+Take that node and we add it to our return value the list that we're going to return at the end.
+
+49
+00:03:00,510 --> 00:03:06,210
+And then we check if there's a left on that node and we added to the queue if there is then we check
+
+50
+00:03:06,210 --> 00:03:11,310
+if there's a rate and we added to the queue if there is and then we return at the very end after the
+
+51
+00:03:11,310 --> 00:03:14,340
+loop returned the variable that stores all of our values.
+
+52
+00:03:14,340 --> 00:03:18,130
+So if that sounds confusing it is if we don't look at it visually.
+
+53
+00:03:18,150 --> 00:03:20,440
+So let's walk through this briefly.
+
+54
+00:03:20,580 --> 00:03:21,340
+So I have to.
+
+55
+00:03:21,350 --> 00:03:27,210
+This is not really in a programming language but I have a cue that I'm keeping track of and then this
+
+56
+00:03:27,210 --> 00:03:33,200
+visited thing the structure that at the very end I'll return this list or this array of data and our
+
+57
+00:03:33,270 --> 00:03:33,890
+will be empty.
+
+58
+00:03:33,990 --> 00:03:37,050
+So we start within the root and we add 10 to our queue.
+
+59
+00:03:37,050 --> 00:03:43,680
+This is like our list of okay things we need to do is start to do list and then we start our loop which
+
+60
+00:03:43,680 --> 00:03:48,800
+just says while there is something in the queue so our queue has something we're going to take it out.
+
+61
+00:03:49,050 --> 00:03:53,970
+We're going to add it to our visited list and then we're going to check if there's a left.
+
+62
+00:03:54,000 --> 00:03:54,840
+Is there a left.
+
+63
+00:03:54,870 --> 00:03:55,500
+Yes.
+
+64
+00:03:55,500 --> 00:03:57,050
+So we add that to the queue.
+
+65
+00:03:57,210 --> 00:03:57,720
+Then we check.
+
+66
+00:03:57,720 --> 00:03:58,660
+Is there right.
+
+67
+00:03:58,830 --> 00:03:59,460
+Yes.
+
+68
+00:03:59,580 --> 00:04:06,180
+15 so we add that to the queue then the loop starts over and we remove the first thing from the queue
+
+69
+00:04:06,210 --> 00:04:08,020
+first thing and first thing out.
+
+70
+00:04:08,040 --> 00:04:15,200
+So we take six and now we add it to our list that we visited we have visited six.
+
+71
+00:04:15,270 --> 00:04:17,120
+Now we check is there left.
+
+72
+00:04:17,130 --> 00:04:18,340
+Yes.
+
+73
+00:04:18,420 --> 00:04:19,580
+So we're going to add it in.
+
+74
+00:04:19,590 --> 00:04:20,920
+So that gives us three.
+
+75
+00:04:20,970 --> 00:04:22,000
+Is there a right.
+
+76
+00:04:22,140 --> 00:04:23,130
+Yes.
+
+77
+00:04:23,130 --> 00:04:25,900
+So we add an 8 and then we're done.
+
+78
+00:04:25,920 --> 00:04:26,690
+We start over.
+
+79
+00:04:26,760 --> 00:04:27,510
+We're not done done.
+
+80
+00:04:27,510 --> 00:04:28,700
+We're done with six.
+
+81
+00:04:29,040 --> 00:04:30,590
+And now we take 15 out.
+
+82
+00:04:30,660 --> 00:04:35,700
+So hopefully you can see already this pattern right we're going this level finished than this level
+
+83
+00:04:35,910 --> 00:04:40,840
+this level and we're creating this queue to help us remember the things that need to come next.
+
+84
+00:04:40,980 --> 00:04:46,480
+But we're not visiting them next or waiting to visit them until we've finished a horizontal level the
+
+85
+00:04:46,500 --> 00:04:48,270
+breadth first search.
+
+86
+00:04:48,300 --> 00:04:56,340
+So we take 15 out and we add it to our list that we visited and would check if there's a left is there
+
+87
+00:04:56,560 --> 00:04:57,220
+no.
+
+88
+00:04:57,360 --> 00:04:58,180
+Is there a right.
+
+89
+00:04:58,230 --> 00:04:59,110
+Yes.
+
+90
+00:04:59,130 --> 00:05:08,320
+So we add Ian and then start over we take three hours and we keep going so there's no left no right.
+
+91
+00:05:08,340 --> 00:05:10,070
+We don't add anything to the queue.
+
+92
+00:05:10,070 --> 00:05:11,100
+Same thing with eight.
+
+93
+00:05:11,120 --> 00:05:12,090
+We take eight out.
+
+94
+00:05:12,170 --> 00:05:13,790
+There's no left no right.
+
+95
+00:05:13,890 --> 00:05:14,740
+So we had that in.
+
+96
+00:05:14,780 --> 00:05:16,570
+Then we get to 20.
+
+97
+00:05:16,700 --> 00:05:21,570
+Now the queue is empty which is how we know we're done and we return this value at the end.
+
+98
+00:05:21,740 --> 00:05:26,950
+This is our breath first search 10 6 15 3 8 and 20.
+
+99
+00:05:26,990 --> 00:05:28,390
+This is how we traversed it.
+
+100
+00:05:28,400 --> 00:05:30,170
+This is the order we visited things.
+
+101
+00:05:30,230 --> 00:05:33,590
+So we take advantage of a cue to just store it's like a To Do list.
+
+102
+00:05:33,620 --> 00:05:39,170
+Don't forget this comeback but we take things from the beginning and we add to the end to the first
+
+103
+00:05:39,170 --> 00:05:41,040
+thing it is the first thing out.
+
+104
+00:05:41,180 --> 00:05:43,960
+Hopefully that explanation makes sense.
+
+105
+00:05:44,000 --> 00:05:46,790
+The pseudo code is pretty clear I think.
+
+106
+00:05:46,790 --> 00:05:50,910
+So try and follow this and give it your best shot in the next video.
+
+107
+00:05:50,920 --> 00:05:51,700
+I have a solution.
+

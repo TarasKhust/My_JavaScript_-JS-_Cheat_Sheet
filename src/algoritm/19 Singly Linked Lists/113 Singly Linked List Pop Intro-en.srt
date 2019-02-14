@@ -1,0 +1,516 @@
+1
+00:00:00,070 --> 00:00:01,050
+They Hey welcome back.
+
+2
+00:00:01,050 --> 00:00:03,090
+Our next method to implement is pop.
+
+3
+00:00:03,090 --> 00:00:10,080
+So just like on an array a pop a pop when we call pop it removes from the end of full length list.
+
+4
+00:00:10,230 --> 00:00:13,470
+It takes the last item on the tail and returns it to us.
+
+5
+00:00:13,470 --> 00:00:17,810
+Now that seems simple because we're keeping track of the last item the tail.
+
+6
+00:00:17,820 --> 00:00:19,650
+So we we should just be able to return it.
+
+7
+00:00:19,650 --> 00:00:23,620
+The problem is to remove it we have to assign a new tail.
+
+8
+00:00:23,790 --> 00:00:29,640
+And that involves going all the way through the lists from the beginning because we don't have a backwards
+
+9
+00:00:29,790 --> 00:00:30,200
+pointer.
+
+10
+00:00:30,210 --> 00:00:33,400
+We can't just take the tail and say Give me the one before this.
+
+11
+00:00:33,450 --> 00:00:36,920
+That's not how singly length singly length list is set up.
+
+12
+00:00:36,960 --> 00:00:42,400
+If we look at visual algo again if we try and pop off of this we just say take the last item off but
+
+13
+00:00:42,460 --> 00:00:44,220
+we have the tail we know it's 90.
+
+14
+00:00:44,220 --> 00:00:49,910
+I could give you the last item very easy easily but to then update the tail here.
+
+15
+00:00:50,100 --> 00:00:54,850
+Otherwise we're not actually popping it off or just getting the last item to move the tail here.
+
+16
+00:00:54,870 --> 00:01:01,530
+We have to start at the beginning go to the next go to the next and go to the second to last item and
+
+17
+00:01:01,530 --> 00:01:03,330
+make that the new tail.
+
+18
+00:01:03,330 --> 00:01:06,320
+So if we insert Let's walk through this.
+
+19
+00:01:06,460 --> 00:01:08,630
+No he's not inserting let's remove.
+
+20
+00:01:08,730 --> 00:01:10,300
+We want to remove from the tail.
+
+21
+00:01:10,620 --> 00:01:12,870
+So that would be popping.
+
+22
+00:01:13,350 --> 00:01:15,210
+We go to the second to last item.
+
+23
+00:01:15,210 --> 00:01:16,800
+All right so we found it.
+
+24
+00:01:16,800 --> 00:01:18,330
+Let me slow this down a little bit.
+
+25
+00:01:19,570 --> 00:01:20,530
+And rerun this.
+
+26
+00:01:20,780 --> 00:01:25,910
+If you want you can look at that code on the right but I'm going to walk through let's go step by step.
+
+27
+00:01:25,910 --> 00:01:26,370
+OK.
+
+28
+00:01:26,600 --> 00:01:28,280
+So we start at the beginning.
+
+29
+00:01:28,640 --> 00:01:30,300
+We go to the next thing.
+
+30
+00:01:30,470 --> 00:01:31,660
+That's not the end.
+
+31
+00:01:31,940 --> 00:01:35,790
+And we have two variables because we need to keep track of the second to last item.
+
+32
+00:01:35,870 --> 00:01:38,160
+And how do we know with the second to last item is.
+
+33
+00:01:38,410 --> 00:01:45,230
+Well if we have the first variable in the end so we have this sort of like offset by 1 1 node.
+
+34
+00:01:45,260 --> 00:01:49,640
+So we have this one variable called pre or previous node or second to last.
+
+35
+00:01:49,640 --> 00:01:54,950
+It doesn't matter or new tail and that's going to keep track of what we're actually going to set the
+
+36
+00:01:54,950 --> 00:01:55,900
+table to be.
+
+37
+00:01:56,030 --> 00:01:58,430
+And we're just trying to find the second to last item.
+
+38
+00:01:58,840 --> 00:01:59,330
+OK.
+
+39
+00:01:59,450 --> 00:02:02,620
+So we have now found the second to last item.
+
+40
+00:02:02,750 --> 00:02:08,330
+So we remove 85 and all that that means is taking this item next.
+
+41
+00:02:08,570 --> 00:02:12,000
+Setting it to know that severs the link and then we return.
+
+42
+00:02:12,040 --> 00:02:19,460
+We take this and save it to a variable so we can return it and then we set this to be the new tail.
+
+43
+00:02:19,490 --> 00:02:20,340
+Does that make sense.
+
+44
+00:02:20,410 --> 00:02:24,330
+Hopefully it's a little more complicated and I'll go walk to the pseudo code.
+
+45
+00:02:24,340 --> 00:02:30,610
+But the first thing that we have to be able to do is traverse our list so to traverse it it's not that
+
+46
+00:02:30,610 --> 00:02:31,100
+bad.
+
+47
+00:02:31,180 --> 00:02:36,240
+All that we do is start at the beginning using the head and then we can loop and keep going.
+
+48
+00:02:36,280 --> 00:02:38,310
+While there is a dot next.
+
+49
+00:02:38,320 --> 00:02:43,300
+So this isn't the solution but if I wanted to make a method called traverse all that we would need to
+
+50
+00:02:43,300 --> 00:02:44,170
+do.
+
+51
+00:02:44,260 --> 00:02:46,610
+Let's say I just wanted to print out every item in the list.
+
+52
+00:02:46,840 --> 00:02:48,300
+So we're going to start with a variable.
+
+53
+00:02:48,310 --> 00:02:49,830
+Let's just call it current.
+
+54
+00:02:49,830 --> 00:02:52,300
+If I can spell equals this head.
+
+55
+00:02:52,300 --> 00:02:56,330
+So we start with the beginning and we can do a while loop for loop.
+
+56
+00:02:56,410 --> 00:02:58,230
+You could use the length and do a for loop.
+
+57
+00:02:58,240 --> 00:03:05,590
+I'm going to do a while loop and just say while there is a current just like that we're going to say
+
+58
+00:03:06,820 --> 00:03:16,360
+print no not print come to log current Val and then we need to update current equals the next off of
+
+59
+00:03:16,360 --> 00:03:16,820
+current.
+
+60
+00:03:16,840 --> 00:03:19,690
+That makes it keep saying does that make sense.
+
+61
+00:03:19,690 --> 00:03:20,590
+Probably not.
+
+62
+00:03:20,590 --> 00:03:21,390
+It's confusing.
+
+63
+00:03:21,520 --> 00:03:22,960
+So we started the head.
+
+64
+00:03:23,200 --> 00:03:29,700
+If we have hello goodbye and let's do exclamation point at the end like this if we started the head
+
+65
+00:03:30,250 --> 00:03:32,430
+we're going to set current to be this node.
+
+66
+00:03:32,530 --> 00:03:33,260
+Hello.
+
+67
+00:03:33,550 --> 00:03:37,760
+And we're going to cancel that log hello then we're going to change current to be current next.
+
+68
+00:03:37,870 --> 00:03:39,370
+Which means it's now goodbye.
+
+69
+00:03:39,400 --> 00:03:40,480
+The loop starts over.
+
+70
+00:03:40,480 --> 00:03:41,370
+This is still true.
+
+71
+00:03:41,530 --> 00:03:43,160
+So we counted that log goodbye.
+
+72
+00:03:43,180 --> 00:03:46,400
+Now current is current up next which is exclamation point it starts over.
+
+73
+00:03:46,420 --> 00:03:47,080
+Still true.
+
+74
+00:03:47,110 --> 00:03:48,760
+We print exclamation point.
+
+75
+00:03:48,880 --> 00:03:50,760
+Then we set current to be current.
+
+76
+00:03:50,770 --> 00:03:51,400
+Next.
+
+77
+00:03:51,400 --> 00:03:53,090
+There is no next to no.
+
+78
+00:03:53,230 --> 00:03:55,200
+So this loop now is done.
+
+79
+00:03:55,450 --> 00:03:57,600
+And if we tried running this can
+
+80
+00:04:00,850 --> 00:04:07,310
+and if we tried running this to do list traverse up I have three hours.
+
+81
+00:04:07,310 --> 00:04:08,740
+Hopefully you saw that before me.
+
+82
+00:04:08,870 --> 00:04:10,000
+Try this one more time.
+
+83
+00:04:12,360 --> 00:04:15,690
+Rerun it would do list of Traverse again.
+
+84
+00:04:15,750 --> 00:04:16,180
+All right.
+
+85
+00:04:16,200 --> 00:04:17,610
+So we get hello goodbye.
+
+86
+00:04:17,610 --> 00:04:18,390
+Exclamation point.
+
+87
+00:04:18,390 --> 00:04:20,440
+Nothing's returned so we get undefined.
+
+88
+00:04:20,610 --> 00:04:22,310
+So that's one way of traversing a list.
+
+89
+00:04:22,320 --> 00:04:27,960
+And we're going to need to do something like this in order to figure out the new tail.
+
+90
+00:04:27,960 --> 00:04:31,560
+Now there's a slight distinction which is we don't want to get all the way to the end of the list.
+
+91
+00:04:31,620 --> 00:04:35,470
+We need to get to the second to last item and we don't need to print anything out.
+
+92
+00:04:35,640 --> 00:04:37,780
+So I'm going to actually comment this out.
+
+93
+00:04:37,830 --> 00:04:39,330
+We're not using this in our code.
+
+94
+00:04:39,370 --> 00:04:41,580
+I just wanted to show you one way of traversing.
+
+95
+00:04:41,840 --> 00:04:42,180
+OK.
+
+96
+00:04:42,210 --> 00:04:43,630
+So if you want to try this on your own.
+
+97
+00:04:43,800 --> 00:04:45,300
+First thing you need to do is define.
+
+98
+00:04:45,300 --> 00:04:50,280
+I didn't at this time to find a function called Pop and it doesn't take in any variable or any data
+
+99
+00:04:50,350 --> 00:04:50,630
+right.
+
+100
+00:04:50,630 --> 00:04:52,620
+It just pops the last thing every time.
+
+101
+00:04:52,620 --> 00:04:54,000
+If there's nothing in the list.
+
+102
+00:04:54,000 --> 00:04:55,760
+Nice and easy return undefined.
+
+103
+00:04:55,860 --> 00:04:57,830
+So you could check if there is no head.
+
+104
+00:04:57,990 --> 00:04:59,900
+Or you could check if the length is zero.
+
+105
+00:05:00,090 --> 00:05:04,170
+Whatever metric you use return undefined if it's empty.
+
+106
+00:05:04,170 --> 00:05:07,560
+Otherwise loop through the entire list until you reach the tail.
+
+107
+00:05:07,830 --> 00:05:12,210
+But it's not that simple because what we're actually doing is trying to get the thing right before the
+
+108
+00:05:12,210 --> 00:05:12,720
+tail.
+
+109
+00:05:13,140 --> 00:05:18,060
+So loop through until you get the tail but also have a variable that keeps track of whatever the last
+
+110
+00:05:18,060 --> 00:05:23,860
+item was like we saw in visual algo where we all this is a bad example.
+
+111
+00:05:23,860 --> 00:05:26,700
+If I go back and I go back here here we go.
+
+112
+00:05:26,790 --> 00:05:33,660
+So we have two variables and we're getting to the end with this one called temp and then prae is always
+
+113
+00:05:33,660 --> 00:05:34,150
+one.
+
+114
+00:05:34,180 --> 00:05:39,150
+It's like getting one item one node behind that that's going to give us the second to last item what
+
+115
+00:05:39,230 --> 00:05:41,380
+once temp hits the end.
+
+116
+00:05:41,430 --> 00:05:42,060
+All right.
+
+117
+00:05:42,150 --> 00:05:48,150
+So we just set the next property of the second to last known to be no and then update that tail to be
+
+118
+00:05:48,150 --> 00:05:50,380
+that second to last node.
+
+119
+00:05:50,610 --> 00:05:55,070
+And then we subtract one from the length and return the node that was removed.
+
+120
+00:05:55,110 --> 00:05:57,040
+So that is important and it's stored in a variable.
+
+121
+00:05:57,060 --> 00:05:58,070
+So you can return it.
+
+122
+00:05:58,290 --> 00:05:58,560
+OK.
+
+123
+00:05:58,560 --> 00:05:59,580
+So that's pop.
+
+124
+00:05:59,670 --> 00:06:05,200
+This one actually pushes pretty straight forward I think Pop is one of the trickier ones.
+
+125
+00:06:05,370 --> 00:06:08,760
+Some of the other things we'll see later on are actually easier.
+
+126
+00:06:08,760 --> 00:06:10,350
+It's just that push and pop go together.
+
+127
+00:06:10,350 --> 00:06:12,530
+So I felt bad about splitting them up.
+
+128
+00:06:12,570 --> 00:06:13,320
+Anyway give it a shot.
+
+129
+00:06:13,350 --> 00:06:14,490
+Don't feel bad if you get stuck.
+

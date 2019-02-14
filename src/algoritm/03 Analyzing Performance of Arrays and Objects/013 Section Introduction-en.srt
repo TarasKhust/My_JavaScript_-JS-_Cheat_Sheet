@@ -1,0 +1,132 @@
+1
+00:00:00,120 --> 00:00:01,320
+Everyone will come back.
+
+2
+00:00:01,320 --> 00:00:03,540
+This is going to be a really quick section.
+
+3
+00:00:03,630 --> 00:00:07,530
+I just want to take what we just learned talking about Big-O notation.
+
+4
+00:00:07,530 --> 00:00:13,230
+Time and space complexity analyzing code performance take that content and apply it to the stuff we
+
+5
+00:00:13,230 --> 00:00:13,960
+already know.
+
+6
+00:00:14,100 --> 00:00:19,380
+So before we get to the advanced algorithms and sorting and crazy data structures let's just talk about
+
+7
+00:00:19,380 --> 00:00:20,470
+what we get for free.
+
+8
+00:00:20,550 --> 00:00:25,210
+The basics in javascript so things like arrays and objects built in methods loops.
+
+9
+00:00:25,320 --> 00:00:26,200
+How do they perform.
+
+10
+00:00:26,280 --> 00:00:29,170
+What are the easy things the fast things we can do to an array.
+
+11
+00:00:29,250 --> 00:00:32,190
+What's the method that might be slower than you would expect.
+
+12
+00:00:32,210 --> 00:00:34,380
+That's what we're going to talk about and it's going to be really quick.
+
+13
+00:00:34,380 --> 00:00:39,560
+Again I'm not going to teach these things from scratch not showing how an array works or what it is.
+
+14
+00:00:39,630 --> 00:00:41,580
+We're just going to talk about how it performs.
+
+15
+00:00:41,580 --> 00:00:47,550
+So first our objectives understand how objects and arrays work through the lens of big-O.
+
+16
+00:00:47,730 --> 00:00:49,530
+So various operations.
+
+17
+00:00:49,560 --> 00:00:53,910
+Is there a fast way to insert to an array or slow way that sort of thing.
+
+18
+00:00:53,910 --> 00:00:59,490
+Explain why up spoiler explain why adding elements to the beginning of an array is costly gave it away
+
+19
+00:00:59,790 --> 00:01:04,230
+and we'll talk about why that is and how it works and if there are alternatives or if there's a better
+
+20
+00:01:04,230 --> 00:01:09,550
+way of inserting and then we'll compare and contrast the runtime for arrays and objects but also they're
+
+21
+00:01:09,550 --> 00:01:10,560
+built in methods.
+
+22
+00:01:10,560 --> 00:01:12,340
+There's a lot of these methods we get for free.
+
+23
+00:01:12,360 --> 00:01:19,390
+Like the built in javascript sort for an array for each object that keys object has own property.
+
+24
+00:01:19,400 --> 00:01:24,090
+All that stuff we're going to discuss but it's going to be quick and this isn't I should sit out and
+
+25
+00:01:24,090 --> 00:01:28,770
+say this isn't a something you need to memorize it's not something that you know you need to refer to
+
+26
+00:01:28,770 --> 00:01:29,860
+the slides.
+
+27
+00:01:29,880 --> 00:01:34,410
+I just want to give you a chance to take what we've learned about big-O and apply it to something tangible.
+
+28
+00:01:34,410 --> 00:01:36,990
+Before we dive into these crazier algorithms.
+
+29
+00:01:36,990 --> 00:01:37,200
+All right.
+
+30
+00:01:37,230 --> 00:01:40,030
+So let's start first we're going to discuss objects.
+
+31
+00:01:40,030 --> 00:01:41,060
+It will be nice and quick.
+
+32
+00:01:41,130 --> 00:01:41,890
+So don't go anywhere.
+
+33
+00:01:41,910 --> 00:01:42,720
+I'll see in the next video.
+

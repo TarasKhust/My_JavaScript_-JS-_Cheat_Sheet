@@ -1,0 +1,492 @@
+1
+00:00:00,390 --> 00:00:00,780
+All right.
+
+2
+00:00:00,780 --> 00:00:01,530
+Welcome back.
+
+3
+00:00:01,650 --> 00:00:06,980
+So if I made a new snippet otherwise basically doing everything the same I have my same code.
+
+4
+00:00:07,080 --> 00:00:10,820
+You can get that from the slides a couple of videos ago we talked about this if you want to follow with
+
+5
+00:00:10,850 --> 00:00:12,130
+the same graph.
+
+6
+00:00:12,270 --> 00:00:18,620
+So I'll start by defining breath first down here which takes a start vertex.
+
+7
+00:00:18,660 --> 00:00:26,700
+Just call it start and then we need to define a couple of variables so we can make my Q As an empty
+
+8
+00:00:26,700 --> 00:00:31,620
+array and I'm just going to add start in right out right out of the gate.
+
+9
+00:00:31,620 --> 00:00:36,910
+We need to make our result we could just copy this from up top any of these.
+
+10
+00:00:37,170 --> 00:00:43,470
+If you watch the previous videos and my variable visited to keep track of what we can do then we're
+
+11
+00:00:43,470 --> 00:00:51,180
+going to loop while the q has a length and the first thing that we do is remove the first node in the
+
+12
+00:00:51,180 --> 00:00:52,340
+queue from the beginning.
+
+13
+00:00:52,350 --> 00:00:55,590
+So instead of Pop we're going to do shift.
+
+14
+00:00:55,650 --> 00:01:02,670
+So qued shift and stored in a variable and we could define the variable here I'm going to call it current
+
+15
+00:01:02,670 --> 00:01:04,940
+vertex just like we did in the last video.
+
+16
+00:01:05,220 --> 00:01:11,700
+But I'm actually not going to redefine it in a loop going to move it up here and then set it here so
+
+17
+00:01:12,030 --> 00:01:15,230
+initialize it once set it over and over update it.
+
+18
+00:01:15,400 --> 00:01:16,120
+OK.
+
+19
+00:01:16,230 --> 00:01:23,140
+And then we're going to visit that node which means results push current vertex.
+
+20
+00:01:23,190 --> 00:01:29,530
+So if we take the first item out and then we push it into our array that we return at the end.
+
+21
+00:01:29,550 --> 00:01:33,120
+Now the slightly trickier part we need to go to all of its neighbors.
+
+22
+00:01:33,540 --> 00:01:38,000
+So that's a this adjacency list of current Virtex.
+
+23
+00:01:38,580 --> 00:01:43,470
+And then for each for each Naver.
+
+24
+00:01:43,980 --> 00:01:50,550
+But we're going to do well we're going to check if it's been visited or actually we're going to check
+
+25
+00:01:50,550 --> 00:01:52,590
+if it's not been visited.
+
+26
+00:01:52,590 --> 00:01:53,560
+That's what we care about.
+
+27
+00:01:53,640 --> 00:01:57,420
+Because if it hasn't been visited then we need to market has visited
+
+28
+00:02:00,180 --> 00:02:03,570
+just set it to true and we need to push it on to the queue
+
+29
+00:02:06,420 --> 00:02:08,250
+and we're actually done.
+
+30
+00:02:08,670 --> 00:02:11,130
+So at the end we do need to return it it's kind of a lie.
+
+31
+00:02:11,130 --> 00:02:13,350
+We're not quite done now are.
+
+32
+00:02:14,130 --> 00:02:22,140
+So the way that this one works if we step through it before we even run it here's our sort of visited
+
+33
+00:02:22,140 --> 00:02:24,400
+result that we're going to have at the very end.
+
+34
+00:02:24,510 --> 00:02:27,220
+And then here's our Q Let's do it like this.
+
+35
+00:02:27,510 --> 00:02:28,310
+Okay.
+
+36
+00:02:29,530 --> 00:02:36,190
+Perfect We start by adding a to the queue and then we remove it first thing and add it to result and
+
+37
+00:02:36,190 --> 00:02:38,310
+then we go to its neighbors.
+
+38
+00:02:38,370 --> 00:02:41,670
+This adjacency list of A for each.
+
+39
+00:02:41,710 --> 00:02:48,660
+So there's two things in that list there's B and there's C and we're taking the first thing.
+
+40
+00:02:48,880 --> 00:02:53,950
+If we if we actually looked at the list B does come but before C because I added that connection first.
+
+41
+00:02:54,280 --> 00:03:02,200
+So we're going to add B into our Q And we're also going to add c into the Q And then the loop starts
+
+42
+00:03:02,200 --> 00:03:05,440
+over and we take from the beginning we shift.
+
+43
+00:03:05,590 --> 00:03:08,570
+So we remove B and we add it here.
+
+44
+00:03:09,130 --> 00:03:13,090
+If I can type and then we add its neighbors.
+
+45
+00:03:13,180 --> 00:03:18,490
+So we loop through its neighbors or A&amp;E will a has already been visited so we ignore it.
+
+46
+00:03:18,490 --> 00:03:27,490
+So we add d to the end right here and then we remove from the beginning which gives us c so we add c
+
+47
+00:03:27,490 --> 00:03:28,460
+into the result.
+
+48
+00:03:28,550 --> 00:03:31,570
+And now we go to its neighbors what weve already been to a.
+
+49
+00:03:31,660 --> 00:03:33,100
+So now we have to go to eat.
+
+50
+00:03:33,370 --> 00:03:36,870
+So we had the after D in the queue.
+
+51
+00:03:36,880 --> 00:03:39,470
+Remember first in first out.
+
+52
+00:03:39,940 --> 00:03:50,080
+So we take out and revisit D and we go to DS neighbors weve already been to be so we don't add that
+
+53
+00:03:50,080 --> 00:03:50,520
+in.
+
+54
+00:03:50,590 --> 00:03:51,910
+We've already been to e.
+
+55
+00:03:51,950 --> 00:03:55,620
+Well it's in the queue at least and that's when we market.
+
+56
+00:03:55,630 --> 00:03:58,680
+Remember we added in after remarket visited.
+
+57
+00:03:59,040 --> 00:03:59,650
+OK.
+
+58
+00:03:59,920 --> 00:04:01,990
+So then all we have left is f..
+
+59
+00:04:02,380 --> 00:04:10,840
+So we add F and now we go to take that from the beginning with shift we put it here and then we're going
+
+60
+00:04:10,840 --> 00:04:12,520
+to go to its neighbors.
+
+61
+00:04:12,550 --> 00:04:15,080
+We've been to all of them so we don't actually add anything in.
+
+62
+00:04:15,430 --> 00:04:17,040
+And we were moved finally.
+
+63
+00:04:17,230 --> 00:04:19,580
+And that's what we've lost.
+
+64
+00:04:19,930 --> 00:04:25,390
+Now let's see if I'm making that entire thing up or if it actually works and a comment that out run
+
+65
+00:04:25,390 --> 00:04:32,530
+our code and we have graph dot breadth first starting from ABC.
+
+66
+00:04:32,650 --> 00:04:35,890
+Oh looks like we have a little issue here.
+
+67
+00:04:35,890 --> 00:04:37,180
+Let's see.
+
+68
+00:04:37,540 --> 00:04:39,130
+I found the problem.
+
+69
+00:04:39,130 --> 00:04:40,460
+Maybe you saw this performing.
+
+70
+00:04:40,630 --> 00:04:46,540
+But what we're not doing here is marking a as visited at the beginning which actually is in my pseudo
+
+71
+00:04:46,540 --> 00:04:46,880
+code.
+
+72
+00:04:46,930 --> 00:04:47,820
+And I ignored it.
+
+73
+00:04:47,940 --> 00:04:51,460
+You can see here marked the starting vertex as visited.
+
+74
+00:04:51,460 --> 00:04:52,540
+So what's happening there.
+
+75
+00:04:52,570 --> 00:05:01,110
+We just print out let's do it at the beginning here constantly log the queue and run my code G dot breadth
+
+76
+00:05:01,130 --> 00:05:06,130
+first from a 0 3 running.
+
+77
+00:05:06,180 --> 00:05:07,260
+OK here we go.
+
+78
+00:05:07,530 --> 00:05:13,110
+We start with a in there but I don't market as visited in my visited object.
+
+79
+00:05:13,140 --> 00:05:14,810
+So then we go take it out.
+
+80
+00:05:14,820 --> 00:05:20,250
+We added to our result we had the children of the neighbors B and C then we take B.
+
+81
+00:05:20,540 --> 00:05:23,460
+But B actually has two neighbors right.
+
+82
+00:05:23,490 --> 00:05:24,250
+A indeed.
+
+83
+00:05:24,360 --> 00:05:26,740
+But we didn't mark a as visited the first time.
+
+84
+00:05:26,880 --> 00:05:31,540
+So we add it back in and then we add D and then we keep going from there.
+
+85
+00:05:31,680 --> 00:05:34,040
+That's not right because we started that way.
+
+86
+00:05:34,380 --> 00:05:39,230
+So if we market visited you'll see at the very end we have a in there twice.
+
+87
+00:05:39,230 --> 00:05:40,260
+It's not good.
+
+88
+00:05:40,260 --> 00:05:42,300
+So we market visited right up here.
+
+89
+00:05:42,480 --> 00:05:48,000
+Well just two visited of start equals true perfect.
+
+90
+00:05:48,120 --> 00:05:57,210
+You could also just set that here visited the D and now if we keep that constant log rerun the code
+
+91
+00:05:57,870 --> 00:06:04,840
+we end up with a b c d f at the very end because a never gets added back in and it's all working.
+
+92
+00:06:05,050 --> 00:06:06,090
+All right.
+
+93
+00:06:06,090 --> 00:06:08,080
+So let's get rid of that constant log.
+
+94
+00:06:08,330 --> 00:06:22,320
+If we go one more time to read the first search of a a b c d e f which means going a to b to c d e f
+
+95
+00:06:22,650 --> 00:06:25,040
+that Brett first.
+
+96
+00:06:25,080 --> 00:06:27,710
+OK so we're going sort of left to right.
+
+97
+00:06:27,780 --> 00:06:32,940
+You can think of it whatever order they are in the edges or in the adjacency list we're going from the
+
+98
+00:06:33,000 --> 00:06:34,350
+beginning of the list to the end.
+
+99
+00:06:34,650 --> 00:06:44,040
+So I added a B before a c so we visit B C and then D before E and then f you could change it if you
+
+100
+00:06:44,040 --> 00:06:45,970
+really wanted to.
+
+101
+00:06:46,050 --> 00:06:49,230
+There's no easy as far as I know there's no shortcut to reverse.
+
+102
+00:06:49,380 --> 00:06:54,250
+For each some languages you can you know just specify I want to loop over this array backwards.
+
+103
+00:06:54,630 --> 00:06:58,950
+But the sort of easy way just to show you if we do this.
+
+104
+00:06:58,950 --> 00:07:01,290
+So I start reverse and I run the code.
+
+105
+00:07:01,290 --> 00:07:10,050
+Now you'll see we start from a but now go to a C and then B and then E and then D and then f.
+
+106
+00:07:10,050 --> 00:07:15,570
+So rather than a b c like left to right left or right we're going right to left.
+
+107
+00:07:15,570 --> 00:07:16,530
+Still breath first.
+
+108
+00:07:16,530 --> 00:07:17,850
+Just like with depth first.
+
+109
+00:07:17,880 --> 00:07:19,380
+We had different orders.
+
+110
+00:07:19,410 --> 00:07:20,430
+Same thing here.
+
+111
+00:07:20,640 --> 00:07:25,500
+And I want to be clear there's not only two orders this could be a much larger graph and we can have
+
+112
+00:07:25,560 --> 00:07:31,350
+you know five neighbors for a in which case it's not just b c or C B.
+
+113
+00:07:31,350 --> 00:07:34,160
+There would be five other two or three other neighbors to worry about.
+
+114
+00:07:34,350 --> 00:07:34,620
+OK.
+
+115
+00:07:34,630 --> 00:07:35,620
+So that's breadth first.
+
+116
+00:07:35,640 --> 00:07:41,690
+Hopefully you can see it's very similar to what we did with the depth first iterative solution.
+
+117
+00:07:41,760 --> 00:07:46,000
+Now that we have all this out of the way we're able to visit every single vertex in the graph.
+
+118
+00:07:46,110 --> 00:07:51,080
+We get to go to the fun stuff which has to do with mainly shortest path algorithms.
+
+119
+00:07:51,120 --> 00:07:55,260
+This is a really important use or really important thing to be able to do with graphs and one of the
+
+120
+00:07:55,260 --> 00:08:01,140
+most commonly done things in all sorts of applications whether we're talking about Uber we're talking
+
+121
+00:08:01,140 --> 00:08:04,920
+about Google Maps or we're talking about Google search results.
+
+122
+00:08:04,920 --> 00:08:07,310
+It's not just maps stuff and GPS.
+
+123
+00:08:07,410 --> 00:08:08,960
+So we'll talk about that in just a bit.
+

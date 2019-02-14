@@ -1,0 +1,120 @@
+1
+00:00:00,240 --> 00:00:00,930
+Welcome back.
+
+2
+00:00:00,930 --> 00:00:04,040
+Next up we'll add two different methods to remove nodes.
+
+3
+00:00:04,080 --> 00:00:06,110
+Excuse me vertices and edges.
+
+4
+00:00:06,120 --> 00:00:10,800
+So first let's remove an edge so we'll need to provide two different arguments.
+
+5
+00:00:10,920 --> 00:00:14,190
+What's the actual edge we're trying to remove from Dallas to Tokyo.
+
+6
+00:00:14,460 --> 00:00:15,120
+OK.
+
+7
+00:00:15,420 --> 00:00:20,220
+And then what that actually means is removing two different pieces of data because our connection is
+
+8
+00:00:20,220 --> 00:00:21,960
+stored in two places.
+
+9
+00:00:21,960 --> 00:00:27,690
+So write a method called remove edge that accepts to two vertices the names of two vertices two keys
+
+10
+00:00:27,750 --> 00:00:29,180
+in our list.
+
+11
+00:00:29,700 --> 00:00:35,160
+Then it should reassign the key of Vertex one to be an array that contains everything that was there
+
+12
+00:00:35,160 --> 00:00:35,900
+before.
+
+13
+00:00:36,000 --> 00:00:42,060
+Minus vertex 2 and do the same thing for vertex to reassign the key of vertex to to be an array that
+
+14
+00:00:42,060 --> 00:00:47,160
+does not contain vertex 1 and don't worry about handling errors in invalid vertices things that aren't
+
+15
+00:00:47,160 --> 00:00:52,600
+there just assume that we're calling these methods with valid names for all of vertices.
+
+16
+00:00:52,650 --> 00:00:53,840
+So here's an example.
+
+17
+00:00:53,970 --> 00:01:02,940
+If this is the state of our current adjacency list if we called remove edge Tokyo in Dallas we are going
+
+18
+00:01:02,940 --> 00:01:08,350
+to need to remove Dallas from the Tokyo list and remove Tokyo from the Dallas list.
+
+19
+00:01:08,460 --> 00:01:10,780
+But that doesn't mean just setting it to be empty of course.
+
+20
+00:01:10,770 --> 00:01:12,320
+We can't delete the entire thing.
+
+21
+00:01:12,390 --> 00:01:14,610
+We need to maintain Aspen in there.
+
+22
+00:01:14,610 --> 00:01:22,020
+So really it just means re-assigning this list Dallas to be equal to this whole thing minus Tokyo.
+
+23
+00:01:22,080 --> 00:01:24,760
+There's many ways of doing it but give it a shot.
+
+24
+00:01:24,780 --> 00:01:26,340
+Here's what our end result would look like.
+
+25
+00:01:26,340 --> 00:01:27,730
+Tokyo is empty.
+
+26
+00:01:27,750 --> 00:01:29,540
+Dallas still contains Aspen.
+
+27
+00:01:29,670 --> 00:01:31,440
+But that connection has been severed.
+
+28
+00:01:31,440 --> 00:01:34,530
+Dallas and Tokyo no longer are on edge.
+
+29
+00:01:34,860 --> 00:01:35,150
+All right.
+
+30
+00:01:35,160 --> 00:01:35,820
+So give it a shot.
+

@@ -1,0 +1,504 @@
+1
+00:00:00,180 --> 00:00:01,190
+Hey welcome back.
+
+2
+00:00:01,200 --> 00:00:02,520
+So let's start writing our code.
+
+3
+00:00:02,520 --> 00:00:05,930
+Remember that a linked list is just a collection of notes.
+
+4
+00:00:05,940 --> 00:00:10,200
+So let's start by defining a class for each node in a node is very simple.
+
+5
+00:00:10,200 --> 00:00:19,230
+It just stores a piece of data we'll call it Vau or value and then it stores a reference to next node
+
+6
+00:00:19,470 --> 00:00:21,310
+which we'll call next.
+
+7
+00:00:21,720 --> 00:00:25,260
+So let's define our class or call it node.
+
+8
+00:00:25,260 --> 00:00:28,920
+We need to add our constructor and it will just taken a vow.
+
+9
+00:00:29,130 --> 00:00:36,210
+Whatever the piece of information is and we'll just set this dot Vau equals Vau and then we'll initialize
+
+10
+00:00:36,210 --> 00:00:38,200
+this dot next to be No.
+
+11
+00:00:38,220 --> 00:00:41,230
+Because at the beginning there's nothing that comes after it.
+
+12
+00:00:41,610 --> 00:00:41,880
+All right.
+
+13
+00:00:41,880 --> 00:00:43,770
+So this is actually all we need for our node.
+
+14
+00:00:43,770 --> 00:00:49,500
+It's very simple and we could sort of approximate a linked list right now what we're going to do is
+
+15
+00:00:49,500 --> 00:00:53,810
+define our own singly linked lists class that will utilize node.
+
+16
+00:00:53,910 --> 00:01:01,050
+But for now I could just do something like this for our first equals new node and let's say our first
+
+17
+00:01:01,050 --> 00:01:13,380
+node is high then I could do first next equals new node to capitalize there and then do the same thing
+
+18
+00:01:13,380 --> 00:01:16,140
+again next.
+
+19
+00:01:16,170 --> 00:01:16,890
+Does that make sense.
+
+20
+00:01:16,890 --> 00:01:21,690
+We're starting with the first thing and then we're just accessing the next and setting it to be a whole
+
+21
+00:01:21,690 --> 00:01:28,130
+other new node and then we're taking that value and giving it a new dot next a whole other new node.
+
+22
+00:01:28,260 --> 00:01:30,180
+So I'll do hi there.
+
+23
+00:01:30,180 --> 00:01:37,290
+How are you overcommitted to the number of words here.
+
+24
+00:01:37,290 --> 00:01:38,800
+All right we'll leave it at this.
+
+25
+00:01:38,800 --> 00:01:40,700
+How are you.
+
+26
+00:01:40,700 --> 00:01:43,110
+I think I need to I need to do next.
+
+27
+00:01:43,150 --> 00:01:46,490
+I don't have any of my shortcuts in this go.
+
+28
+00:01:46,650 --> 00:01:52,740
+So this is a very bad way of representing it like this because if I were to add something in I need
+
+29
+00:01:52,740 --> 00:01:53,790
+to keep writing.
+
+30
+00:01:53,790 --> 00:01:59,280
+Next up next up next up next what will be defining later on is will have a linked list class and I should
+
+31
+00:01:59,280 --> 00:02:05,670
+be able to say list does push you for example and that will add on to the end it will keep track of
+
+32
+00:02:05,670 --> 00:02:07,010
+where to add that.
+
+33
+00:02:07,010 --> 00:02:08,660
+Anyway this is what we have for now.
+
+34
+00:02:08,670 --> 00:02:13,430
+So if I actually run this if we look at first.
+
+35
+00:02:13,830 --> 00:02:14,440
+All right.
+
+36
+00:02:14,580 --> 00:02:19,170
+That's what we have the value is high and there's a reference to the next node.
+
+37
+00:02:19,320 --> 00:02:23,000
+If I click on it we can see next is this no that says there.
+
+38
+00:02:23,190 --> 00:02:28,940
+And if we can come that I can see that the next is on that is a value that says how we could keep going.
+
+39
+00:02:29,130 --> 00:02:34,010
+So let's actually define our linked list class to make this a little bit cleaner so we don't have do
+
+40
+00:02:34,020 --> 00:02:35,110
+all this.
+
+41
+00:02:35,220 --> 00:02:42,300
+So down here I mean define class singly linked list and or constructor.
+
+42
+00:02:42,450 --> 00:02:45,290
+And it's not going to actually take anything.
+
+43
+00:02:45,450 --> 00:02:50,430
+Our interface is going to be something like this will define a new length list so new length list.
+
+44
+00:02:50,430 --> 00:02:56,230
+Technically it should be singly linked list so quickly update that save it to variable.
+
+45
+00:02:56,340 --> 00:02:57,100
+Let's say it.
+
+46
+00:02:57,120 --> 00:02:59,820
+I don't know list equals.
+
+47
+00:03:00,860 --> 00:03:02,630
+So the interface will be something like this.
+
+48
+00:03:02,640 --> 00:03:09,940
+We create a new singly linked list and then we can say let's push something list out push Hello list
+
+49
+00:03:09,990 --> 00:03:16,830
+up push goodbye and this will add on to the end of the list and we don't have to do next dot next out
+
+50
+00:03:16,830 --> 00:03:20,000
+next up next it will just keep track of it and do it for us.
+
+51
+00:03:20,250 --> 00:03:21,520
+So this is where we're going.
+
+52
+00:03:21,540 --> 00:03:25,070
+Still very simple but much better than having to do it this way.
+
+53
+00:03:25,170 --> 00:03:27,990
+So our constructor we don't initialize whole thing for us with any data.
+
+54
+00:03:27,990 --> 00:03:30,210
+So it's just empty it's not empty.
+
+55
+00:03:30,210 --> 00:03:34,440
+But it doesn't take any arguments and in here we're going to define a couple of things.
+
+56
+00:03:34,440 --> 00:03:38,400
+Remember that a length list has a pointer to the head of the list.
+
+57
+00:03:38,600 --> 00:03:40,290
+A pointer to the tail.
+
+58
+00:03:40,290 --> 00:03:43,150
+Those are just variables and then a length.
+
+59
+00:03:43,160 --> 00:03:46,240
+And so at the beginning it's not length should be zero.
+
+60
+00:03:47,030 --> 00:03:48,990
+Also head and tail will be null.
+
+61
+00:03:49,010 --> 00:03:54,390
+So this dot head equals this tail equals nil.
+
+62
+00:03:54,470 --> 00:03:56,140
+So we've now defined the basics.
+
+63
+00:03:56,150 --> 00:03:58,010
+Here are two constructors that are actually done.
+
+64
+00:03:58,010 --> 00:03:59,360
+We're not going to change those.
+
+65
+00:03:59,360 --> 00:04:04,330
+What we are going to work on is adding a bunch of methods into singly linked list.
+
+66
+00:04:04,340 --> 00:04:10,550
+So what we're going to do in this video is add a push method so push should take a piece of data let's
+
+67
+00:04:10,550 --> 00:04:12,010
+call it Vau.
+
+68
+00:04:12,080 --> 00:04:13,800
+So I should be able to do this list.
+
+69
+00:04:13,850 --> 00:04:14,430
+Push.
+
+70
+00:04:14,510 --> 00:04:15,310
+Hello.
+
+71
+00:04:15,590 --> 00:04:22,280
+And it should assign a new node should it create a new node like we did over here and assign it to the
+
+72
+00:04:22,280 --> 00:04:23,720
+head of the list.
+
+73
+00:04:23,960 --> 00:04:26,160
+And also the tail because there's nothing in here.
+
+74
+00:04:26,180 --> 00:04:32,510
+And then if we push something in again it should now assign goodbye to be the tail of the list and have
+
+75
+00:04:32,510 --> 00:04:36,010
+it the head hollow point to the tail of goodbye.
+
+76
+00:04:36,230 --> 00:04:40,220
+So if we were to visualize how push would work right now we have an empty length list.
+
+77
+00:04:40,220 --> 00:04:42,910
+And if I try to insert.
+
+78
+00:04:43,130 --> 00:04:45,800
+So push means inserting at the end.
+
+79
+00:04:46,130 --> 00:04:48,710
+So we're going to go with this option after the tail.
+
+80
+00:04:48,740 --> 00:04:55,660
+So if I insert 80 at the beginning it's super easy because we just set the head and the tail to be 80.
+
+81
+00:04:56,120 --> 00:04:59,660
+But now Phi inserts something else at the end.
+
+82
+00:04:59,780 --> 00:05:01,530
+Let's go with 100.
+
+83
+00:05:02,160 --> 00:05:02,580
+OK.
+
+84
+00:05:02,750 --> 00:05:03,990
+I guess that's too high.
+
+85
+00:05:03,990 --> 00:05:05,940
+Let's go with 81.
+
+86
+00:05:07,000 --> 00:05:12,960
+All that we do now is take the head and have the next property point to 81 and then we set the tail
+
+87
+00:05:12,960 --> 00:05:14,240
+to be 81.
+
+88
+00:05:14,250 --> 00:05:15,420
+All right one more.
+
+89
+00:05:15,510 --> 00:05:18,080
+Let's do eighty five.
+
+90
+00:05:18,090 --> 00:05:19,500
+Go and real high here.
+
+91
+00:05:19,640 --> 00:05:21,410
+So I mean insert this at the end.
+
+92
+00:05:21,690 --> 00:05:28,670
+All we have to do is take the current tail and point it to 85 and then update that to be the tail.
+
+93
+00:05:28,860 --> 00:05:31,800
+So inserting pushing to the end of a list is super easy.
+
+94
+00:05:31,800 --> 00:05:36,310
+If we have a thousand or a million items in here we don't traverse the whole thing as long as we're
+
+95
+00:05:36,330 --> 00:05:38,600
+keeping track of the last item in the list.
+
+96
+00:05:38,640 --> 00:05:44,370
+All we have to do is say hey take that last item pointed over to this new last item and now the tail
+
+97
+00:05:44,550 --> 00:05:47,370
+is we update the tail to be the very end 85.
+
+98
+00:05:47,640 --> 00:05:48,820
+So here's some pseudo code.
+
+99
+00:05:48,930 --> 00:05:53,230
+If you would like to try and implement this on your own in the next video of go through a solution.
+
+100
+00:05:53,280 --> 00:05:57,700
+So we're going to implement a push method I already defined the skeleton here.
+
+101
+00:05:57,810 --> 00:06:04,620
+All it needs to do is accept devaluate or to give that to you create a new node using that value that
+
+102
+00:06:04,620 --> 00:06:05,480
+we passed it.
+
+103
+00:06:05,550 --> 00:06:10,790
+So if we pass in 50 you should make a new node where the value of that notice 50.
+
+104
+00:06:10,810 --> 00:06:13,350
+Now there's a special edge case if there is no head.
+
+105
+00:06:13,420 --> 00:06:18,150
+If Meaning if a list is empty set the head and the tail to be that newly created node.
+
+106
+00:06:18,310 --> 00:06:22,930
+That's the first thing we saw over here where we had an empty list when we added in aty the head and
+
+107
+00:06:22,930 --> 00:06:25,170
+tail both pointed to 80.
+
+108
+00:06:25,600 --> 00:06:33,190
+Otherwise if there is a head set the next property on the tail to be the new node and then update the
+
+109
+00:06:33,190 --> 00:06:35,380
+tail property to be the newly created node.
+
+110
+00:06:35,770 --> 00:06:43,330
+Once again if we added one more thing in here this is our current tail if we add in 90.
+
+111
+00:06:43,330 --> 00:06:48,760
+All that would do is take the current tail pointed to the new node with 90 and then set the tail to
+
+112
+00:06:48,760 --> 00:06:52,170
+be 90 and then finally increment the length by 1.
+
+113
+00:06:52,170 --> 00:06:53,550
+We are keeping track at full length.
+
+114
+00:06:53,680 --> 00:06:56,230
+So add 1 because we're pushing something in.
+
+115
+00:06:56,230 --> 00:06:56,580
+All right.
+
+116
+00:06:56,590 --> 00:06:58,260
+So those are the basic steps.
+
+117
+00:06:58,270 --> 00:07:00,760
+Give it a shot if you'd like in the next video.
+
+118
+00:07:00,940 --> 00:07:01,830
+Obvious solution.
+
+119
+00:07:01,960 --> 00:07:02,920
+If you do get stuck.
+
+120
+00:07:02,920 --> 00:07:06,380
+Don't be hard on yourself if you've never seen like this before.
+
+121
+00:07:06,430 --> 00:07:12,190
+I recommend attempting as much as you can get through the section and then if you have time or the energy
+
+122
+00:07:12,280 --> 00:07:17,120
+at some point go through all the exercises and try them from scratch and see if you can replicate it.
+
+123
+00:07:17,120 --> 00:07:19,140
+Nobody's expecting you to get everything right.
+
+124
+00:07:19,150 --> 00:07:20,360
+The very first time through.
+
+125
+00:07:20,410 --> 00:07:20,690
+OK.
+
+126
+00:07:20,710 --> 00:07:22,410
+The next video will be a solution to push.
+

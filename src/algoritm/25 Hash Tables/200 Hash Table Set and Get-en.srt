@@ -1,0 +1,284 @@
+1
+00:00:00,210 --> 00:00:00,680
+All right.
+
+2
+00:00:00,680 --> 00:00:01,600
+So let's get started.
+
+3
+00:00:01,650 --> 00:00:04,140
+Let's actually build out our hash table class.
+
+4
+00:00:04,170 --> 00:00:08,400
+I remember not going to be you know revolutionary were doing this really to understand how this all
+
+5
+00:00:08,400 --> 00:00:08,940
+works.
+
+6
+00:00:09,120 --> 00:00:09,560
+OK.
+
+7
+00:00:09,660 --> 00:00:11,150
+So here's the starter code.
+
+8
+00:00:11,270 --> 00:00:13,460
+Just copy this or type it out.
+
+9
+00:00:13,500 --> 00:00:16,500
+I'll include it as a file that's also in the slides.
+
+10
+00:00:16,500 --> 00:00:19,340
+We have our basic hash table class.
+
+11
+00:00:19,590 --> 00:00:24,640
+We have our constructor which accepts a size for how large the hash table should be.
+
+12
+00:00:24,780 --> 00:00:29,030
+And there's a default value of 53 because we want it to be a prime number.
+
+13
+00:00:29,070 --> 00:00:35,820
+So if we don't include a size it will just be 53 then what we do is make a new array of that size and
+
+14
+00:00:35,820 --> 00:00:37,580
+store that as key map.
+
+15
+00:00:37,590 --> 00:00:39,330
+This is where it will store all of the data.
+
+16
+00:00:39,330 --> 00:00:43,380
+This dumb key map then I just copied over the hash function.
+
+17
+00:00:43,650 --> 00:00:49,830
+I changed it slightly because now we don't have to pass in the size of the hash table because it's in
+
+18
+00:00:49,830 --> 00:00:56,880
+a class so we can access key map and you can see here we're modulo modulo ing modulus ing modding by
+
+19
+00:00:56,880 --> 00:00:58,410
+this that key mapped out length.
+
+20
+00:00:58,530 --> 00:00:59,840
+So here's the hash function.
+
+21
+00:01:00,000 --> 00:01:03,510
+We will be adding methods like set and get.
+
+22
+00:01:03,510 --> 00:01:07,990
+Which will then be calling underscore hash passing in the key and getting a value.
+
+23
+00:01:08,190 --> 00:01:09,770
+OK so here's where we're going to start.
+
+24
+00:01:09,780 --> 00:01:14,620
+First two methods are set and get so set accepts a value and a key.
+
+25
+00:01:14,670 --> 00:01:20,520
+I should say that the other way around a key and a value like pink corresponds to the value whatever
+
+26
+00:01:20,520 --> 00:01:26,210
+that hexadecimal code was 0 0 F F something something key and a value.
+
+27
+00:01:26,250 --> 00:01:29,880
+And what we're going to need to do is hash the key that's the first thing.
+
+28
+00:01:29,880 --> 00:01:33,110
+Figure out where to store it and then the second part.
+
+29
+00:01:33,270 --> 00:01:35,280
+We're doing this with separate chaining.
+
+30
+00:01:35,280 --> 00:01:39,870
+So it's a little more complicated than just storing the data there because we're going to store it in
+
+31
+00:01:39,870 --> 00:01:41,460
+a nested structure.
+
+32
+00:01:41,670 --> 00:01:49,120
+So just to remind you rewind here what that really means is when we hash something we get four.
+
+33
+00:01:49,410 --> 00:01:51,740
+We're going to go to index of four and check.
+
+34
+00:01:51,810 --> 00:01:53,300
+Is there anything here.
+
+35
+00:01:53,340 --> 00:01:56,040
+If not we're going to store it there.
+
+36
+00:01:56,100 --> 00:01:58,090
+But we store it in an array.
+
+37
+00:01:58,110 --> 00:01:59,890
+So a nested burst already.
+
+38
+00:02:00,000 --> 00:02:03,930
+So that next time through it we can just push onto this list if we have something else.
+
+39
+00:02:03,960 --> 00:02:05,790
+It's really easy to add it in.
+
+40
+00:02:05,790 --> 00:02:09,680
+So basically you're never going to just store the data here alone on its own.
+
+41
+00:02:09,720 --> 00:02:13,210
+If it's a single item you're still going to put it in a nested structure.
+
+42
+00:02:13,260 --> 00:02:14,970
+So your logic will be slightly different.
+
+43
+00:02:14,990 --> 00:02:20,600
+You need to hash the key and get that number go to that position and check if there's already data there.
+
+44
+00:02:20,610 --> 00:02:25,030
+If it is or if there is just push this on to the array that's already there.
+
+45
+00:02:25,080 --> 00:02:29,770
+If not put an array there first and then put the data inside that array.
+
+46
+00:02:29,850 --> 00:02:34,500
+So that's the pseudo code for set you except a key value you hash the key.
+
+47
+00:02:34,500 --> 00:02:40,590
+Then you store the key value pair in the hash table via a separate chaining meaning in a nested structure.
+
+48
+00:02:40,980 --> 00:02:41,390
+OK.
+
+49
+00:02:41,460 --> 00:02:43,150
+Now the way that get works is similar.
+
+50
+00:02:43,170 --> 00:02:46,350
+It accepts a key like salmon for example.
+
+51
+00:02:46,440 --> 00:02:51,390
+We're going to hash salmon and get that number back using our underscore hash function that's already
+
+52
+00:02:51,390 --> 00:02:52,530
+defined for you.
+
+53
+00:02:52,800 --> 00:02:57,420
+And once we get that value we go to the position that index in our array.
+
+54
+00:02:57,420 --> 00:03:01,220
+The key map array and we retrieve the value.
+
+55
+00:03:01,320 --> 00:03:06,540
+But of course what that actually means using separate chaining all more time winding here.
+
+56
+00:03:07,260 --> 00:03:10,110
+For example with salmon we hash that we get four.
+
+57
+00:03:10,110 --> 00:03:11,410
+We go to four.
+
+58
+00:03:11,460 --> 00:03:14,020
+There's there's possibly more than one item there.
+
+59
+00:03:14,040 --> 00:03:19,940
+So we need to check based off of the key salmon we're going to loop through these and try and find salmon.
+
+60
+00:03:20,010 --> 00:03:22,410
+And once we do we return this whole thing.
+
+61
+00:03:22,830 --> 00:03:25,600
+So there's no guaranteed order within.
+
+62
+00:03:25,740 --> 00:03:29,850
+So we don't know if salmon will be the first one the second one the fifth one we're just going to check.
+
+63
+00:03:29,850 --> 00:03:35,660
+Once we get to index for where salmon is we're just going to look for salmon in that nested list.
+
+64
+00:03:35,760 --> 00:03:40,480
+And then finally if it's not in our hash table at all return undefined.
+
+65
+00:03:40,500 --> 00:03:44,040
+Just make sure it works if someone tries to retrieve a value that's not there.
+
+66
+00:03:44,130 --> 00:03:46,910
+We don't want a break or code should return undefined.
+
+67
+00:03:47,070 --> 00:03:47,330
+OK.
+
+68
+00:03:47,340 --> 00:03:52,800
+So add these set and get to this code or use your own hash function if you'd like but just make sure
+
+69
+00:03:52,800 --> 00:03:58,020
+that it you know is it meets the important criteria is deterministic always the same output for a given
+
+70
+00:03:58,020 --> 00:04:00,650
+input and give it a shot.
+
+71
+00:04:00,780 --> 00:04:02,670
+Let's implement this in the next video.
+

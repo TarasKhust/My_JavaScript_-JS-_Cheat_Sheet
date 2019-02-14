@@ -1,0 +1,1252 @@
+1
+00:00:00,220 --> 00:00:00,900
+Welcome back.
+
+2
+00:00:00,900 --> 00:00:04,440
+Now that we have the weighted graph in place we can move on to diet.
+
+3
+00:00:04,590 --> 00:00:06,790
+That's nice.
+
+4
+00:00:07,000 --> 00:00:07,580
+Nope.
+
+5
+00:00:07,800 --> 00:00:09,380
+There we go.
+
+6
+00:00:09,390 --> 00:00:12,740
+It's a dumb joke but this is actually the three attempts took me to get it right.
+
+7
+00:00:12,870 --> 00:00:15,110
+I'm sorry to tarnish his legacy.
+
+8
+00:00:15,120 --> 00:00:18,270
+I can never remember how to spell his name but it's the bottom one here.
+
+9
+00:00:18,270 --> 00:00:19,570
+D i j.
+
+10
+00:00:19,590 --> 00:00:24,810
+Anyway what we're going to do now is walk through the steps of how the algorithm works for you to visually
+
+11
+00:00:24,810 --> 00:00:28,150
+go through it one step at a time before we translate it to code.
+
+12
+00:00:28,350 --> 00:00:30,630
+And the graph we're going to work with looks like this.
+
+13
+00:00:30,630 --> 00:00:32,310
+So it's a weighted graph.
+
+14
+00:00:32,370 --> 00:00:37,890
+Here's you know what six vertices and each edge has a number associated with it.
+
+15
+00:00:37,890 --> 00:00:43,350
+Hopefully it's clear what goes with what and the path the shortest path that we want to find is from
+
+16
+00:00:43,380 --> 00:00:45,090
+A to Z.
+
+17
+00:00:45,630 --> 00:00:47,070
+So there's a couple of options.
+
+18
+00:00:47,090 --> 00:00:51,080
+This is very small graph and most of the ones in the real world are quite large.
+
+19
+00:00:51,210 --> 00:00:55,120
+But even with this small data set there are many ways to get from A to.
+
+20
+00:00:55,560 --> 00:01:00,970
+Can go around the edges you can go through the middle there's what four plus options.
+
+21
+00:01:01,080 --> 00:01:06,210
+Not to mention could take some absurd wraps to get there including loops in anyway.
+
+22
+00:01:06,330 --> 00:01:07,470
+So that's our goal.
+
+23
+00:01:07,470 --> 00:01:08,710
+So here's the algorithm.
+
+24
+00:01:08,710 --> 00:01:16,070
+Boiled down or distilled to four main steps each time through the main loop will do something like this.
+
+25
+00:01:16,080 --> 00:01:21,840
+So we look to visit a new node that you know that the only way that this works has restarted a and we
+
+26
+00:01:21,900 --> 00:01:25,250
+visit nodes and there has to be some order that we visit them in.
+
+27
+00:01:25,290 --> 00:01:30,660
+How do we decide where to go next and we start by picking the node with the smallest known distance
+
+28
+00:01:30,660 --> 00:01:31,860
+to visit first.
+
+29
+00:01:31,890 --> 00:01:35,010
+So I'll come back to all of this visually in just a moment.
+
+30
+00:01:35,010 --> 00:01:39,090
+But we always pick the node that has the smallest known distance from A.
+
+31
+00:01:39,360 --> 00:01:45,480
+And we visit that first then once we move to that node we look at each of its neighbors and then for
+
+32
+00:01:45,480 --> 00:01:50,750
+each one of its neighbors we sum the distance from A to that neighbor.
+
+33
+00:01:50,940 --> 00:01:57,090
+And if it's smaller than what we currently know about if it's a smaller distance then we update our
+
+34
+00:01:57,090 --> 00:01:57,770
+file.
+
+35
+00:01:57,780 --> 00:02:00,720
+Essentially this is a lot to talk about without showing you.
+
+36
+00:02:00,720 --> 00:02:02,660
+So I have a bunch of diagrams like this.
+
+37
+00:02:02,660 --> 00:02:05,460
+We'll get to in just a moment but those are the steps.
+
+38
+00:02:05,460 --> 00:02:10,890
+So every time we visit a new node every time we're looking sort of to start the loop over we visit the
+
+39
+00:02:10,890 --> 00:02:13,080
+smallest known distance from A.
+
+40
+00:02:13,080 --> 00:02:15,150
+In our case we're looking for eight.
+
+41
+00:02:15,570 --> 00:02:20,840
+So we start with that we move to that node and we look at each of its neighbors and for each neighbor
+
+42
+00:02:21,090 --> 00:02:24,800
+we already have a distance on file how far it is from a.
+
+43
+00:02:25,050 --> 00:02:31,740
+And we will update it if the new distance that we have some together is less than what we currently
+
+44
+00:02:31,740 --> 00:02:32,350
+know about.
+
+45
+00:02:32,490 --> 00:02:33,940
+And I know that sounds crazy.
+
+46
+00:02:34,080 --> 00:02:34,880
+So I'm going to come back to it.
+
+47
+00:02:34,890 --> 00:02:36,130
+But here's our diagram.
+
+48
+00:02:36,180 --> 00:02:42,930
+This is sort of a setup for the next 30 something maybe 40 slides and just fade between them and you'll
+
+49
+00:02:42,930 --> 00:02:44,420
+see stuff come and go.
+
+50
+00:02:44,430 --> 00:02:46,000
+So the same graph is up here.
+
+51
+00:02:46,080 --> 00:02:47,520
+We're going from A to E.
+
+52
+00:02:47,640 --> 00:02:49,470
+It has the same values on there.
+
+53
+00:02:49,470 --> 00:02:55,050
+And down here is sort of the file I was referring to where we store the shortest distance from a for
+
+54
+00:02:55,080 --> 00:02:56,670
+each vertex.
+
+55
+00:02:56,790 --> 00:03:03,510
+So A is a special case because it's going to be zero but something like B Well eventually the shortest
+
+56
+00:03:03,510 --> 00:03:05,820
+distance from A to B is four.
+
+57
+00:03:05,820 --> 00:03:06,720
+Of course.
+
+58
+00:03:06,720 --> 00:03:12,120
+But then like E which we'll get to that's our goal is to figure out what the shortest distance is.
+
+59
+00:03:12,390 --> 00:03:15,090
+And anyway we'll be updating this as we go.
+
+60
+00:03:15,090 --> 00:03:15,930
+And then previous.
+
+61
+00:03:15,930 --> 00:03:17,900
+I'll explain in just a bit.
+
+62
+00:03:17,910 --> 00:03:24,060
+So let's begin and the very first thing we do is initialize the shortest distances from a for every
+
+63
+00:03:24,060 --> 00:03:24,850
+vertex.
+
+64
+00:03:24,960 --> 00:03:27,380
+And we don't really know how to do that.
+
+65
+00:03:27,510 --> 00:03:28,230
+That's the whole point.
+
+66
+00:03:28,230 --> 00:03:31,590
+We don't know what the shortest distance is from a to get to F..
+
+67
+00:03:31,590 --> 00:03:33,960
+Imagine there's a million vertices on here.
+
+68
+00:03:33,960 --> 00:03:35,910
+You can't just know from the beginning.
+
+69
+00:03:35,940 --> 00:03:36,890
+So what do we do.
+
+70
+00:03:36,990 --> 00:03:41,250
+We just put infinity in here we put a large value basically an unknown.
+
+71
+00:03:41,340 --> 00:03:47,850
+We can't we don't know any of these values except for one which is we know the shortest distance from
+
+72
+00:03:47,850 --> 00:03:51,790
+A to A is zero from one vertex to itself.
+
+73
+00:03:51,900 --> 00:03:53,020
+That's going to be zero.
+
+74
+00:03:53,190 --> 00:03:57,270
+So that's what we start with this is how we always initialize the set up.
+
+75
+00:03:57,360 --> 00:04:01,380
+So we'll make a data structure for this we won't talk about code just yet.
+
+76
+00:04:01,380 --> 00:04:04,590
+But just imagine you're writing this down on a piece of paper.
+
+77
+00:04:04,710 --> 00:04:08,380
+So A to A is zero A to B.
+
+78
+00:04:08,430 --> 00:04:10,380
+Right now is infinity we don't know.
+
+79
+00:04:10,380 --> 00:04:12,060
+A to Z is infinity.
+
+80
+00:04:12,060 --> 00:04:13,740
+So we ignore that.
+
+81
+00:04:13,770 --> 00:04:15,260
+Now remember the steps.
+
+82
+00:04:15,300 --> 00:04:18,970
+The next thing we do every time we look to visit a new node.
+
+83
+00:04:19,110 --> 00:04:22,280
+We'd pick the node with the smallest known distance to visit first.
+
+84
+00:04:22,490 --> 00:04:24,860
+Well we have one choice right now.
+
+85
+00:04:25,260 --> 00:04:26,120
+That's the smallest.
+
+86
+00:04:26,130 --> 00:04:28,400
+0 is clearly smaller than infinity.
+
+87
+00:04:28,440 --> 00:04:29,940
+So we start with A.
+
+88
+00:04:29,940 --> 00:04:30,900
+So we pick the smallest.
+
+89
+00:04:30,890 --> 00:04:32,700
+That's what that's showing here.
+
+90
+00:04:32,700 --> 00:04:35,340
+And I've added it to the visited list here.
+
+91
+00:04:35,340 --> 00:04:38,950
+Now what we need to do is look at each of its neighbors.
+
+92
+00:04:38,970 --> 00:04:45,260
+So from a we have two choices A to B A to see and I'm always going to go alphabetically.
+
+93
+00:04:45,310 --> 00:04:46,500
+Doesn't really matter.
+
+94
+00:04:46,500 --> 00:04:48,500
+So we're going to start with A to B.
+
+95
+00:04:48,570 --> 00:04:52,730
+So what we do is we go down to B and we check.
+
+96
+00:04:52,830 --> 00:04:58,430
+Well currently the shortest distance from A to B is infinity because we don't know any better.
+
+97
+00:04:58,440 --> 00:05:04,550
+That's just the initial state so what we found is that the distance from A to B right here is four.
+
+98
+00:05:04,920 --> 00:05:07,670
+So four is definitely less than infinity.
+
+99
+00:05:07,710 --> 00:05:14,580
+So we update this to say all right the new shortest distance from A is 4 and you'll see that we update
+
+100
+00:05:14,580 --> 00:05:16,580
+some of these a couple of times.
+
+101
+00:05:16,620 --> 00:05:18,940
+Of course we can see looking at the graph.
+
+102
+00:05:18,940 --> 00:05:21,660
+There's nothing shorter between A and B it's definitely four.
+
+103
+00:05:21,720 --> 00:05:23,140
+That's the smallest we'll get.
+
+104
+00:05:23,470 --> 00:05:23,940
+OK.
+
+105
+00:05:24,090 --> 00:05:31,050
+So we update that here and then over here in this previous structure we're going to update be said to
+
+106
+00:05:31,050 --> 00:05:32,400
+be equal to A.
+
+107
+00:05:32,700 --> 00:05:37,950
+So what that essentially does and I know I'm missing quotes is not valid code but what this does is
+
+108
+00:05:38,100 --> 00:05:41,880
+it says the way we got to be was through a.
+
+109
+00:05:42,260 --> 00:05:44,750
+And that's obvious in this situation.
+
+110
+00:05:44,760 --> 00:05:52,080
+But later on something like f if we update the shortest distance to f we want to remember that we get
+
+111
+00:05:52,080 --> 00:05:53,210
+there from D.
+
+112
+00:05:53,220 --> 00:05:54,890
+Or did we get there from C..
+
+113
+00:05:54,930 --> 00:05:56,010
+There's multiple options.
+
+114
+00:05:56,010 --> 00:06:02,250
+So this structure helps us piece together where we came from the node that happened or that occurred
+
+115
+00:06:02,310 --> 00:06:05,030
+right before be on our path.
+
+116
+00:06:05,040 --> 00:06:06,490
+So that's a simple one.
+
+117
+00:06:06,510 --> 00:06:09,460
+So we've we've done everything we need to do for a to b.
+
+118
+00:06:09,480 --> 00:06:11,800
+Now we look at a to see.
+
+119
+00:06:12,060 --> 00:06:12,710
+OK.
+
+120
+00:06:12,900 --> 00:06:16,390
+So currently from a to c we have infinity.
+
+121
+00:06:16,740 --> 00:06:19,430
+So we look at that distance the total is two.
+
+122
+00:06:19,440 --> 00:06:22,660
+So of course we're going to update this too is definitely shorter.
+
+123
+00:06:22,800 --> 00:06:29,280
+And then we come over here to see and instead of No we update it to say all right the way we got to
+
+124
+00:06:29,280 --> 00:06:36,070
+see was from a and that's it for a we've done both neighbors for note.
+
+125
+00:06:36,520 --> 00:06:39,740
+So now what we have left to do is we repeat the process.
+
+126
+00:06:39,760 --> 00:06:43,780
+We pick the smallest known value the shortest distance from A.
+
+127
+00:06:43,990 --> 00:06:45,310
+That we haven't visited.
+
+128
+00:06:45,490 --> 00:06:47,080
+So remember we've been to a.
+
+129
+00:06:47,170 --> 00:06:51,860
+So we're not going to pick a because we just continually do a over and over and over.
+
+130
+00:06:52,090 --> 00:06:53,940
+But now we have two choices.
+
+131
+00:06:53,980 --> 00:06:57,990
+B The distance is 4 and C the distance is two.
+
+132
+00:06:58,210 --> 00:07:01,460
+And when I say distance it's the distance from node.
+
+133
+00:07:01,770 --> 00:07:02,100
+OK.
+
+134
+00:07:02,140 --> 00:07:06,690
+So as you can see we start with C that is the smallest known distance.
+
+135
+00:07:06,770 --> 00:07:12,430
+So now we look at c and its neighbors and there's three choices but we've already done eight C so we're
+
+136
+00:07:12,430 --> 00:07:13,620
+not going to do that.
+
+137
+00:07:13,630 --> 00:07:16,460
+So now we have C to D and C to F.
+
+138
+00:07:16,510 --> 00:07:16,770
+All right.
+
+139
+00:07:16,780 --> 00:07:19,040
+So let's look at c to d first.
+
+140
+00:07:19,060 --> 00:07:24,720
+So what we do again is we look at what the current value is from A to D.
+
+141
+00:07:24,790 --> 00:07:26,500
+It's stored at infinity.
+
+142
+00:07:26,710 --> 00:07:36,190
+So we calculate the new value from A to D through C and the way we do that is by summing A to C plus
+
+143
+00:07:36,430 --> 00:07:37,730
+C to D.
+
+144
+00:07:38,050 --> 00:07:45,490
+So for example we know that C to D is two guys so take two and then we look at how did we get to see
+
+145
+00:07:45,640 --> 00:07:49,340
+what was the previous for C and the previous is a.
+
+146
+00:07:49,600 --> 00:07:53,080
+So then we figure out what is the distance from A to C 2.
+
+147
+00:07:53,110 --> 00:07:55,350
+So two plus two gives us four of course.
+
+148
+00:07:55,570 --> 00:07:59,470
+And obviously it's easy for us to look at but you have to think about what your code is going to be
+
+149
+00:07:59,470 --> 00:08:00,350
+doing.
+
+150
+00:08:00,370 --> 00:08:01,960
+So we sum those two together.
+
+151
+00:08:02,100 --> 00:08:02,930
+That gives just four.
+
+152
+00:08:03,000 --> 00:08:06,180
+And we'll update this right here to save for.
+
+153
+00:08:06,220 --> 00:08:08,320
+That's definitely smaller than infinity.
+
+154
+00:08:08,650 --> 00:08:14,650
+And then we also need to update over here to say how we got to D and the way we got there was through
+
+155
+00:08:14,800 --> 00:08:15,580
+C..
+
+156
+00:08:15,720 --> 00:08:16,920
+So that's what we add.
+
+157
+00:08:17,260 --> 00:08:17,900
+OK.
+
+158
+00:08:18,250 --> 00:08:20,960
+Next up we're going to look at C to F.
+
+159
+00:08:21,040 --> 00:08:22,330
+Same process.
+
+160
+00:08:22,330 --> 00:08:27,220
+So C to F is 4 and then A to C is 2.
+
+161
+00:08:27,310 --> 00:08:33,520
+And the way we know it's definitely this edge is if we look at c we stored a as the previous The shortest
+
+162
+00:08:33,520 --> 00:08:34,530
+way to get there.
+
+163
+00:08:34,810 --> 00:08:37,270
+So two plus four gives us six.
+
+164
+00:08:37,270 --> 00:08:40,560
+So we come down to F and we check is six less than infinity.
+
+165
+00:08:40,570 --> 00:08:41,200
+Yes.
+
+166
+00:08:41,230 --> 00:08:42,210
+So we update it.
+
+167
+00:08:42,250 --> 00:08:46,470
+So we store six here and then what we need to do is update our previous.
+
+168
+00:08:46,570 --> 00:08:47,990
+How did we get to f..
+
+169
+00:08:48,200 --> 00:08:53,910
+Well what came right before it was C so hopefully you can see how this becomes useful.
+
+170
+00:08:53,980 --> 00:08:58,560
+What we're storing here is the shortest path to any given node from a.
+
+171
+00:08:58,750 --> 00:09:05,830
+So the shortest way to get to D is from C and then the shortest way to get to see from a is directly
+
+172
+00:09:05,830 --> 00:09:06,800
+from.
+
+173
+00:09:07,060 --> 00:09:09,810
+So we only need to store the previous shortest path.
+
+174
+00:09:10,030 --> 00:09:13,840
+So it's sort of step by step how we get to each node What's the shortest way to get there.
+
+175
+00:09:13,900 --> 00:09:18,260
+And we combined them all to figure out how to get to e eventually which isn't done.
+
+176
+00:09:18,520 --> 00:09:20,850
+So we update it to say we came from C..
+
+177
+00:09:20,890 --> 00:09:21,940
+Now we start over.
+
+178
+00:09:22,030 --> 00:09:27,010
+We need to pick the smallest value shortest distance from A that we haven't visited.
+
+179
+00:09:27,160 --> 00:09:35,220
+So we've done a and c so we can cross those off and the shortest thing is either b with 4 d with 4 or
+
+180
+00:09:35,230 --> 00:09:36,160
+F with six.
+
+181
+00:09:36,160 --> 00:09:41,020
+Well definitely not six and I'm picking B First just because it comes first alphabetically.
+
+182
+00:09:41,020 --> 00:09:42,250
+But either one would work.
+
+183
+00:09:42,250 --> 00:09:43,260
+They're both four.
+
+184
+00:09:43,450 --> 00:09:48,600
+So now we look at B and B is easy because we've already visited A to B.
+
+185
+00:09:48,760 --> 00:09:49,840
+So that's not happening.
+
+186
+00:09:50,050 --> 00:09:51,660
+But we have B to eat.
+
+187
+00:09:51,970 --> 00:09:52,430
+OK.
+
+188
+00:09:52,510 --> 00:09:53,590
+So we'll look at that.
+
+189
+00:09:53,920 --> 00:10:00,200
+And that gives us three plus what came before B had we get to B we came from a.
+
+190
+00:10:00,340 --> 00:10:01,720
+So that edge is four.
+
+191
+00:10:01,830 --> 00:10:04,340
+So three plus four gives us seven as the new total.
+
+192
+00:10:04,420 --> 00:10:06,500
+And that's definitely less than infinity.
+
+193
+00:10:06,670 --> 00:10:13,090
+So we update this to say well the current shortest way that we can get to Z is 7 units or whatever this
+
+194
+00:10:13,090 --> 00:10:14,820
+is seven miles or something.
+
+195
+00:10:15,220 --> 00:10:21,030
+And then the way we got there over here we'll update this to say we came from B.
+
+196
+00:10:21,160 --> 00:10:21,820
+Right.
+
+197
+00:10:21,820 --> 00:10:27,490
+So if we stopped right now it's not the shortest path but we have a path that we could piece together.
+
+198
+00:10:27,490 --> 00:10:31,050
+So we got to e from B and we got to be from a.
+
+199
+00:10:31,150 --> 00:10:34,800
+Now out of the unvisited nodes where do we go.
+
+200
+00:10:35,020 --> 00:10:41,320
+So we've done a b c and now we have DNF or which are is smallest D.
+
+201
+00:10:41,440 --> 00:10:43,360
+So we're going to the next.
+
+202
+00:10:43,360 --> 00:10:43,920
+OK.
+
+203
+00:10:44,230 --> 00:10:45,300
+So here is D.
+
+204
+00:10:45,610 --> 00:10:47,120
+And we have a couple of options.
+
+205
+00:10:47,140 --> 00:10:48,350
+We've already been to see.
+
+206
+00:10:48,400 --> 00:10:49,610
+So we're not going that way.
+
+207
+00:10:49,900 --> 00:10:54,420
+So we either go to eat or F I'm going alphabetically so e comes first.
+
+208
+00:10:54,700 --> 00:10:56,480
+So we'll look at d e.
+
+209
+00:10:56,710 --> 00:10:58,430
+So that edge is three.
+
+210
+00:10:58,480 --> 00:11:03,190
+So now we calculate the total distance from A to E through D.
+
+211
+00:11:03,430 --> 00:11:05,350
+So the total here is 7.
+
+212
+00:11:05,530 --> 00:11:09,720
+And if we look at what we have stored for right now it's already at 7.
+
+213
+00:11:09,730 --> 00:11:10,930
+So that doesn't win.
+
+214
+00:11:10,960 --> 00:11:11,740
+It's not less.
+
+215
+00:11:11,740 --> 00:11:12,570
+It's not shorter.
+
+216
+00:11:12,700 --> 00:11:14,640
+So we're not going to update it.
+
+217
+00:11:14,650 --> 00:11:19,780
+You could if you wanted to you could write your code that you added seven here if they're equal.
+
+218
+00:11:19,780 --> 00:11:23,220
+But there's no reason we already have a path that has 7 units long.
+
+219
+00:11:23,470 --> 00:11:24,580
+This one.
+
+220
+00:11:24,580 --> 00:11:25,630
+So we ignore it.
+
+221
+00:11:25,990 --> 00:11:29,980
+Now we move on to the next which is D to F.
+
+222
+00:11:29,980 --> 00:11:36,920
+So our new total here get to F is 5 and if you look at what we have stored right now we have six.
+
+223
+00:11:36,970 --> 00:11:38,260
+Well five is less than six.
+
+224
+00:11:38,290 --> 00:11:46,180
+So we update it to say five and we come over here to f and we no longer come from C. That's what we
+
+225
+00:11:46,180 --> 00:11:47,170
+had before.
+
+226
+00:11:47,170 --> 00:11:49,350
+This was the shortest way to get to F..
+
+227
+00:11:49,510 --> 00:11:52,670
+But now it's actually shorter if we come from D.
+
+228
+00:11:52,720 --> 00:11:54,750
+So we update it.
+
+229
+00:11:54,820 --> 00:11:58,380
+So this is saying you know the fastest way to get to F is from D.
+
+230
+00:11:58,450 --> 00:12:06,790
+The closest the shortest path from A to D is through C the shortest way from A to C is well through
+
+231
+00:12:07,390 --> 00:12:09,360
+because there's a direct line from A to Z.
+
+232
+00:12:09,690 --> 00:12:10,250
+OK.
+
+233
+00:12:10,390 --> 00:12:11,980
+So that finishes up D.
+
+234
+00:12:12,010 --> 00:12:14,420
+We did this edge we did this edge.
+
+235
+00:12:14,500 --> 00:12:15,490
+So now we cross it off.
+
+236
+00:12:15,490 --> 00:12:16,330
+We visited.
+
+237
+00:12:16,510 --> 00:12:17,570
+There we go.
+
+238
+00:12:17,590 --> 00:12:20,250
+Now we're going to pick the smallest again.
+
+239
+00:12:20,260 --> 00:12:21,800
+So we have two options.
+
+240
+00:12:21,850 --> 00:12:25,250
+We visited all these for a b c and d.
+
+241
+00:12:25,300 --> 00:12:31,370
+Now we have E and F which is smallest which has the closest distance or the shortest path to a.
+
+242
+00:12:31,510 --> 00:12:35,030
+Right now that's f 5 is smaller than 7.
+
+243
+00:12:35,320 --> 00:12:38,200
+So we'll start here and we only have one option.
+
+244
+00:12:38,200 --> 00:12:40,500
+We've already done this edge we've done this edge.
+
+245
+00:12:40,520 --> 00:12:43,260
+So now we look at f t.
+
+246
+00:12:43,420 --> 00:12:46,100
+So the distance is one to go from left to E.
+
+247
+00:12:46,330 --> 00:12:49,040
+And what's the shortest path to get to f..
+
+248
+00:12:49,060 --> 00:12:52,530
+So we add that all together 4 5 6.
+
+249
+00:12:52,900 --> 00:12:59,510
+And if we look at what we currently have stored for e we have 7 we have 7 from this path on the outside.
+
+250
+00:12:59,530 --> 00:13:01,050
+We've now found something shorter.
+
+251
+00:13:01,240 --> 00:13:04,650
+So we update this to cross those off.
+
+252
+00:13:04,750 --> 00:13:06,300
+And now we add six.
+
+253
+00:13:06,430 --> 00:13:10,980
+And then of course we have to update how we got there because right now we're storing the old version
+
+254
+00:13:10,990 --> 00:13:11,700
+if you look at.
+
+255
+00:13:11,710 --> 00:13:17,190
+We were saying the shortest path from A to Z goes through B but that's not the case.
+
+256
+00:13:17,350 --> 00:13:20,700
+We now just found something shorter where we go through F.
+
+257
+00:13:21,040 --> 00:13:22,110
+So we update this.
+
+258
+00:13:22,150 --> 00:13:23,530
+If we look at E.
+
+259
+00:13:24,340 --> 00:13:24,890
+There we go.
+
+260
+00:13:25,030 --> 00:13:30,670
+We now say the shortest way to get there is through F and just that one letter difference now makes
+
+261
+00:13:30,670 --> 00:13:35,940
+a huge difference because it's a cascade it's a chain because we look at where F..
+
+262
+00:13:35,950 --> 00:13:40,850
+All right well just to get to F we went through D to get to DeviantArt C to get to see we went through.
+
+263
+00:13:41,050 --> 00:13:43,510
+And at this point we have nowhere left to go.
+
+264
+00:13:43,510 --> 00:13:44,810
+Aside from E.
+
+265
+00:13:45,130 --> 00:13:47,020
+And that means that we're actually done.
+
+266
+00:13:47,020 --> 00:13:49,250
+We found the shortest path.
+
+267
+00:13:49,360 --> 00:13:55,630
+So to break that down again I won't go step by step but every time through we pick the current smallest
+
+268
+00:13:55,630 --> 00:13:57,780
+distance from that we haven't visited.
+
+269
+00:13:57,880 --> 00:14:03,820
+We explore each of its neighbors and we Koukl the new shortest distance to each neighbor and if it's
+
+270
+00:14:03,820 --> 00:14:09,460
+smaller than what we already stored we update what we stored and then we reflect the change over here
+
+271
+00:14:09,580 --> 00:14:11,270
+in our previous data structure.
+
+272
+00:14:11,440 --> 00:14:14,070
+And this allows us to piece everything together.
+
+273
+00:14:14,260 --> 00:14:18,500
+So if we look at this we're done now all we have to do is work backwards.
+
+274
+00:14:18,520 --> 00:14:22,750
+So to get to e from a we started and we look at it.
+
+275
+00:14:22,770 --> 00:14:24,010
+All right.
+
+276
+00:14:24,340 --> 00:14:30,160
+Well to get to F from a the shortest possible way that's what this is all storing we end up with a list
+
+277
+00:14:30,220 --> 00:14:38,440
+of the shortest way to get to any node from the shortest way to get to D from a is through C and to
+
+278
+00:14:38,440 --> 00:14:40,350
+get to the C we have to go from a.
+
+279
+00:14:40,510 --> 00:14:41,480
+So a C D.
+
+280
+00:14:41,500 --> 00:14:43,000
+That's the shortest way to get there.
+
+281
+00:14:43,150 --> 00:14:48,890
+The shortest way to get to is through F and from f first you go through D from D.
+
+282
+00:14:48,890 --> 00:14:51,060
+We go through C C.
+
+283
+00:14:51,310 --> 00:14:52,890
+So this is our shortest path.
+
+284
+00:14:52,960 --> 00:14:56,060
+A C D F D.
+
+285
+00:14:56,410 --> 00:15:02,350
+So Dexters algorithm works not only if to give you the shortest path between two nodes at the end the
+
+286
+00:15:02,350 --> 00:15:07,870
+way we're implementing it will have a data structure that gives us the shortest path from A to all the
+
+287
+00:15:07,870 --> 00:15:10,300
+nodes and that can be very useful.
+
+288
+00:15:10,610 --> 00:15:13,830
+If you you know you run this once and you don't change your graph.
+
+289
+00:15:13,930 --> 00:15:17,040
+You have this structure that gives you the shortest path to go anywhere.
+
+290
+00:15:17,050 --> 00:15:21,190
+You don't have to rerun it for every you know if you're trying to go from A to B and then a to d and
+
+291
+00:15:21,360 --> 00:15:24,740
+e you run at one time and you get all that information.
+
+292
+00:15:25,210 --> 00:15:25,720
+All right.
+
+293
+00:15:25,810 --> 00:15:27,040
+So I know it's a lot.
+
+294
+00:15:27,130 --> 00:15:30,370
+I made these slides took forever to make and I hope they were helpful.
+
+295
+00:15:30,370 --> 00:15:35,080
+I definitely recommend stepping through them on your own and just without me kind of explaining what
+
+296
+00:15:35,080 --> 00:15:38,560
+I'm doing in the video trying and or even on a piece of paper.
+
+297
+00:15:38,710 --> 00:15:40,450
+That's how I learned it originally.
+
+298
+00:15:40,450 --> 00:15:44,820
+Literally graph paper drawing these charts out and keeping track of you know.
+
+299
+00:15:44,890 --> 00:15:45,090
+All right.
+
+300
+00:15:45,090 --> 00:15:51,160
+We've been to a cross it off we bend to be cross it off and drawing the graph out because from here
+
+301
+00:15:51,460 --> 00:15:53,540
+the jump to the code isn't that bad.
+
+302
+00:15:53,770 --> 00:15:57,370
+It's just going to be difficult if you're not sure how this actually works.
+
+303
+00:15:57,370 --> 00:16:01,640
+So I really really really recommend that you do that if you're at all confused.
+
+304
+00:16:01,780 --> 00:16:04,600
+If you don't feel like watching the video I don't play mutes long.
+
+305
+00:16:04,600 --> 00:16:09,420
+It's not that exciting to go through but it can be a little more engaging if you do it on your own.
+
+306
+00:16:09,490 --> 00:16:12,770
+And then once you understand it jumping to the code it's a lot easier.
+
+307
+00:16:13,000 --> 00:16:13,370
+All right.
+
+308
+00:16:13,570 --> 00:16:15,080
+So that's what we're going to do next.
+
+309
+00:16:15,100 --> 00:16:18,220
+I'll actually show you sort of real pseudo code if you will.
+
+310
+00:16:18,370 --> 00:16:22,840
+And then if you want you can try and implemented or because this is a little complicated.
+
+311
+00:16:22,840 --> 00:16:25,540
+Totally understandable if you just code along with me.
+
+312
+00:16:25,570 --> 00:16:25,880
+All right.
+
+313
+00:16:25,880 --> 00:16:26,670
+That's coming up next.
+

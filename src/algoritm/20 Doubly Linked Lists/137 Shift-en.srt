@@ -1,0 +1,184 @@
+1
+00:00:00,210 --> 00:00:00,960
+Welcome back.
+
+2
+00:00:00,960 --> 00:00:04,130
+Next up we'll add shift to our doubly linked list.
+
+3
+00:00:04,380 --> 00:00:08,280
+So shift hopefully you know by now removes a node from the beginning.
+
+4
+00:00:08,400 --> 00:00:09,230
+No shame if you don't.
+
+5
+00:00:09,240 --> 00:00:13,820
+I always mix them up shift and shift and push well push and pop or shift and shift.
+
+6
+00:00:13,830 --> 00:00:18,840
+I always manage to think that shift is shift and shift his shift.
+
+7
+00:00:18,930 --> 00:00:24,600
+I should know that by now but shift removes the node from the beginning of a list and if we go back
+
+8
+00:00:24,600 --> 00:00:30,000
+to our singly linked list example to remove from the beginning it's pretty easy we just take the current
+
+9
+00:00:30,000 --> 00:00:33,940
+head we find its next and make that the new head.
+
+10
+00:00:34,500 --> 00:00:39,360
+And then we take this next in and make it all make it.
+
+11
+00:00:39,420 --> 00:00:46,160
+We set it to null and then we return that old head and we're done with it doubly linked list.
+
+12
+00:00:46,170 --> 00:00:49,250
+It's pretty much the same except we have an extra linkage.
+
+13
+00:00:49,260 --> 00:00:52,000
+If we remove from the beginning he paused.
+
+14
+00:00:52,020 --> 00:00:59,150
+This is all that we do is find the current head and then we find the next and we make that the new head.
+
+15
+00:00:59,310 --> 00:01:06,730
+Then we have to set this previous to no and this old head next to no.
+
+16
+00:01:07,230 --> 00:01:11,430
+So two connections that we have to sever and we return the old head.
+
+17
+00:01:11,490 --> 00:01:12,440
+So they are very similar.
+
+18
+00:01:12,480 --> 00:01:15,930
+Double dealing first we just have to also update the previous.
+
+19
+00:01:16,110 --> 00:01:20,000
+But there's no real benefit that we get from a double length post in this example.
+
+20
+00:01:20,010 --> 00:01:24,810
+It's just as easy or difficult or annoying or whatever it is in a single post.
+
+21
+00:01:24,810 --> 00:01:26,580
+It's the same and it doesn't do anything.
+
+22
+00:01:26,730 --> 00:01:27,840
+Except for previous.
+
+23
+00:01:28,020 --> 00:01:30,550
+OK so here's the pseudocode.
+
+24
+00:01:30,760 --> 00:01:36,690
+You can start by just checking if the length is zero or if there is no head return undefined just edge
+
+25
+00:01:36,690 --> 00:01:39,400
+case that we've been returning to.
+
+26
+00:01:40,110 --> 00:01:43,470
+Otherwise store the current head property in a variable.
+
+27
+00:01:43,470 --> 00:01:47,420
+I'll call mine old head just so that we have something to return at the end.
+
+28
+00:01:47,430 --> 00:01:48,240
+We need to store it.
+
+29
+00:01:48,240 --> 00:01:49,740
+We can't just remove it.
+
+30
+00:01:49,740 --> 00:01:50,820
+We have another special case.
+
+31
+00:01:50,820 --> 00:01:56,130
+If the length this one and you've removed the last item we need to set the head to be no and the tail
+
+32
+00:01:56,190 --> 00:02:01,590
+to be null otherwise update the head to be the next of the old head.
+
+33
+00:02:01,680 --> 00:02:04,080
+So that's what we did at the very beginning here.
+
+34
+00:02:04,200 --> 00:02:06,840
+So we have this is the old head.
+
+35
+00:02:06,990 --> 00:02:08,220
+We're going to move it.
+
+36
+00:02:08,250 --> 00:02:15,810
+The head reference to be old head next which it's just moving a little reference to point or like that.
+
+37
+00:02:15,810 --> 00:02:22,410
+So do that and then set the heads previous property to know meaning the new heads previous property
+
+38
+00:02:22,410 --> 00:02:25,410
+to No and then set the old heads next to no.
+
+39
+00:02:25,440 --> 00:02:32,010
+So that severing these bonds right here and then finally decrement the length and return the old head.
+
+40
+00:02:32,160 --> 00:02:33,410
+So give that a shot.
+
+41
+00:02:33,450 --> 00:02:37,040
+Like I said it's basically the same as doing it on a singly linked list.
+
+42
+00:02:37,050 --> 00:02:39,260
+Except you have to pay attention to previous.
+
+43
+00:02:39,360 --> 00:02:41,630
+So there's no real benefit for doubling length list.
+
+44
+00:02:41,640 --> 00:02:42,760
+In this scenario.
+
+45
+00:02:43,050 --> 00:02:43,380
+OK.
+
+46
+00:02:43,410 --> 00:02:44,580
+Next up I'll have a solution.
+

@@ -1,0 +1,552 @@
+1
+00:00:00,330 --> 00:00:01,500
+Hello welcome back.
+
+2
+00:00:01,500 --> 00:00:04,950
+So this is the first of many sections on data structures.
+
+3
+00:00:04,980 --> 00:00:08,150
+The first one we're going to talk about is called the singly linked list.
+
+4
+00:00:08,160 --> 00:00:09,590
+We also have a doubly linked list.
+
+5
+00:00:09,600 --> 00:00:10,390
+We'll see that later.
+
+6
+00:00:10,410 --> 00:00:11,360
+We're starting here.
+
+7
+00:00:11,640 --> 00:00:19,440
+So quick preface a warning a note if you're unfamiliar with the 2015 class keyword javascript's approximation
+
+8
+00:00:19,440 --> 00:00:24,260
+or syntactic sugar to sort of look like traditional object oriented programming.
+
+9
+00:00:24,270 --> 00:00:28,380
+If you've never seen that before or you want to refresh your memory on it take a look at the previous
+
+10
+00:00:28,380 --> 00:00:29,170
+section.
+
+11
+00:00:29,190 --> 00:00:33,740
+I think a lot of students may have jumped to this section if you did I would check that out.
+
+12
+00:00:33,750 --> 00:00:36,330
+If you're not familiar with how it works it's quick little section.
+
+13
+00:00:36,400 --> 00:00:41,070
+And the reason is that we're going to use that class keyword in pretty much every data structure we
+
+14
+00:00:41,070 --> 00:00:45,310
+make or every data structure we create will define our own javascript class.
+
+15
+00:00:45,540 --> 00:00:50,040
+We're going to make a singly linked list class in this section and do the same thing for graphs and
+
+16
+00:00:50,310 --> 00:00:51,680
+every other structure we see.
+
+17
+00:00:51,890 --> 00:00:52,410
+OK.
+
+18
+00:00:52,710 --> 00:00:54,500
+So quickly our objectives.
+
+19
+00:00:54,540 --> 00:00:57,990
+We want to explain what the heck a singly linked list is.
+
+20
+00:00:57,990 --> 00:01:02,400
+We're also going to compare it to the list structure we already know the built in array.
+
+21
+00:01:02,400 --> 00:01:05,060
+We use it all the time so that stores a list of data.
+
+22
+00:01:05,190 --> 00:01:06,140
+What's the difference.
+
+23
+00:01:06,360 --> 00:01:11,280
+And then the bulk of the section will be devoted to actually defining or linked lists class and adding
+
+24
+00:01:11,280 --> 00:01:17,940
+in a bunch of methods a lot of functionality to push things into it or to pop things or to search and
+
+25
+00:01:17,940 --> 00:01:20,950
+traverse or to delete things to all sorts of things.
+
+26
+00:01:20,960 --> 00:01:22,330
+So that's what we're going to do in this section.
+
+27
+00:01:22,400 --> 00:01:22,700
+OK.
+
+28
+00:01:22,710 --> 00:01:24,510
+So let's start with that definition.
+
+29
+00:01:24,510 --> 00:01:25,650
+What is something to list.
+
+30
+00:01:25,860 --> 00:01:30,150
+So it's a data structure that stores whatever data you want strings numbers.
+
+31
+00:01:30,180 --> 00:01:34,470
+It doesn't matter and it's ordered It's a list of data just like an array.
+
+32
+00:01:34,590 --> 00:01:37,020
+But there's a really big distinction in an array.
+
+33
+00:01:37,020 --> 00:01:39,970
+Each item is mapped it's indexed with a number.
+
+34
+00:01:40,080 --> 00:01:46,380
+So I can get the fifth item the 6 item and anytime we add something in it gets an index that map to
+
+35
+00:01:46,380 --> 00:01:52,830
+its position a linked list on the other hand just consists of a bunch of elements with no indices who
+
+36
+00:01:52,830 --> 00:01:55,130
+are just pointing to the next element.
+
+37
+00:01:55,150 --> 00:01:59,730
+Sort of like a bunch of train cars connected where one car connects to the next one and that one connects
+
+38
+00:01:59,730 --> 00:02:00,550
+to the next one.
+
+39
+00:02:00,660 --> 00:02:04,410
+But there is no index that we use to access things we can't say.
+
+40
+00:02:04,410 --> 00:02:05,580
+Give me the thing.
+
+41
+00:02:05,680 --> 00:02:09,450
+We've just started the first one and then moved to the second one moved to the third one moved to the
+
+42
+00:02:09,450 --> 00:02:11,410
+fourth and then moved to the fifth.
+
+43
+00:02:11,460 --> 00:02:16,200
+So just some terminology here I'm going to show you a diagram in just a second but we say that each
+
+44
+00:02:16,260 --> 00:02:17,580
+element is a node.
+
+45
+00:02:17,670 --> 00:02:19,940
+So a link post consists of a bunch of nodes.
+
+46
+00:02:19,940 --> 00:02:27,630
+A node stores a piece of data like a string or a number but it also references the next node or if it's
+
+47
+00:02:27,780 --> 00:02:32,940
+at the very end there is no next node references no and then three properties we keep track of.
+
+48
+00:02:33,060 --> 00:02:35,970
+The head is the beginning of the length list.
+
+49
+00:02:36,060 --> 00:02:37,560
+The tail is the end.
+
+50
+00:02:37,560 --> 00:02:39,420
+So we don't keep track of every single item in the middle.
+
+51
+00:02:39,420 --> 00:02:43,260
+We just keep track of the head and from the head we can figure out the next one.
+
+52
+00:02:43,320 --> 00:02:45,740
+And from there we can figure out the next one all the way until the end.
+
+53
+00:02:45,900 --> 00:02:48,680
+And then also we keep track full length to make things easier.
+
+54
+00:02:48,690 --> 00:02:52,320
+So here's sort of a diagram of what a length list looks like.
+
+55
+00:02:52,320 --> 00:02:57,980
+Notice there is no index so we don't say this is zero with the first the second the third.
+
+56
+00:02:58,140 --> 00:03:02,030
+If we want to access something from this list we start at the beginning.
+
+57
+00:03:02,310 --> 00:03:07,740
+If we want the second to last item we have to start here and ask for the next item which gives us 6
+
+58
+00:03:07,830 --> 00:03:12,030
+and we have to ask for the next item which finally gives us the second to last item.
+
+59
+00:03:12,090 --> 00:03:15,840
+So a length list is just a bunch of nodes pointing to other nodes.
+
+60
+00:03:15,870 --> 00:03:18,780
+So one node points the next one points the next one.
+
+61
+00:03:18,780 --> 00:03:20,350
+Sort of like a chain of elephants.
+
+62
+00:03:20,550 --> 00:03:25,110
+Back before that band elephants at the circus in the US they would grab each other's tails with their
+
+63
+00:03:25,290 --> 00:03:27,210
+noses and walk in a line.
+
+64
+00:03:27,660 --> 00:03:32,590
+I kind of like to think of it as a skyscraper that has no elevators.
+
+65
+00:03:32,640 --> 00:03:38,470
+So in an array there's elevators you could say take me to the fifth floor and takes you right there.
+
+66
+00:03:38,700 --> 00:03:44,100
+If you're in a length of list there's only stairs and each set of each floor is connected to the next
+
+67
+00:03:44,100 --> 00:03:45,450
+one set of stairs.
+
+68
+00:03:45,450 --> 00:03:49,800
+So to get to the fifth floor we started the first one take the stairs to the second then go up to the
+
+69
+00:03:49,800 --> 00:03:52,380
+third and the fourth and then we get to the fifth.
+
+70
+00:03:52,380 --> 00:03:53,990
+I don't know if that's a great analogy or not.
+
+71
+00:03:54,060 --> 00:03:59,850
+By the way the terminology singly linked list comes from the fact that each node is only connected one
+
+72
+00:03:59,850 --> 00:04:04,380
+directionally to the next node a doubly linked list which will get to said don't worry about it right
+
+73
+00:04:04,380 --> 00:04:04,820
+now.
+
+74
+00:04:04,950 --> 00:04:09,600
+Also as a connection pointing back to the previous node and we'll talk about the pros and cons to that
+
+75
+00:04:09,810 --> 00:04:10,490
+later on.
+
+76
+00:04:10,740 --> 00:04:15,770
+So here's a visualization on visual algo vige I'll go and never not say this.
+
+77
+00:04:15,930 --> 00:04:18,840
+It's a great Web site though and it's going to be very useful here.
+
+78
+00:04:18,960 --> 00:04:22,830
+So this is a lengthy list where each node just contains a number.
+
+79
+00:04:22,830 --> 00:04:24,210
+Remember it could be whatever we want.
+
+80
+00:04:24,240 --> 00:04:30,480
+We could have no strings we could have other could have an array and each one doesn't matter and they
+
+81
+00:04:30,480 --> 00:04:33,450
+all just point to the next item except for the last one.
+
+82
+00:04:33,460 --> 00:04:36,970
+There's nothing after it and let's say that we're going to.
+
+83
+00:04:37,260 --> 00:04:37,680
+I don't know.
+
+84
+00:04:37,680 --> 00:04:40,740
+Insert something actually would start with searching for something.
+
+85
+00:04:40,740 --> 00:04:48,330
+So if we want to search for let's say 43 in this list we have to start at the beginning and check the
+
+86
+00:04:48,330 --> 00:04:52,670
+next then the next then the next then the next and then we find 43.
+
+87
+00:04:52,750 --> 00:04:53,310
+OK.
+
+88
+00:04:53,550 --> 00:05:00,510
+If we wanted to insert something into here if you want to insert something in the middle it's one let's
+
+89
+00:05:00,510 --> 00:05:04,890
+say at position for you want to insert the number 90.
+
+90
+00:05:05,130 --> 00:05:08,760
+We have to start at the beginning then move down to the next to the next.
+
+91
+00:05:08,760 --> 00:05:13,360
+Keep going till we get to the correct spot and then we inserted in.
+
+92
+00:05:13,380 --> 00:05:18,070
+Now the actual process of inserting will come back to we're going to write our own insert functions.
+
+93
+00:05:18,120 --> 00:05:22,830
+It's pretty easy though especially for inserting I mean to the beginning or the end.
+
+94
+00:05:23,130 --> 00:05:26,030
+All we have to do is say to insert it at the very beginning.
+
+95
+00:05:27,350 --> 00:05:32,950
+Is just make this the new head and have it point to the old head and all of a sudden we're in business.
+
+96
+00:05:33,060 --> 00:05:37,650
+Unlike an array where we'd have to well we don't do this but in the array every single item would have
+
+97
+00:05:37,650 --> 00:05:40,460
+to be re-index to get a new position number.
+
+98
+00:05:40,830 --> 00:05:41,110
+OK.
+
+99
+00:05:41,130 --> 00:05:44,880
+So we're going to come back to this and spend a lot of time sort of working through this as we build
+
+100
+00:05:44,880 --> 00:05:45,850
+our own methods.
+
+101
+00:05:45,960 --> 00:05:52,050
+Well let's wrap up with a comparison with the race so linked lists don't have indices or indexes.
+
+102
+00:05:52,050 --> 00:05:54,210
+I guess I wrote I think it's indices.
+
+103
+00:05:54,210 --> 00:05:57,150
+They have no numbers that correspond to each item.
+
+104
+00:05:57,150 --> 00:06:02,610
+Instead we just have the head pointer which is just a variable that says this is the beginning of the
+
+105
+00:06:02,610 --> 00:06:03,160
+list.
+
+106
+00:06:03,360 --> 00:06:04,690
+And we have a tail.
+
+107
+00:06:04,710 --> 00:06:06,130
+You actually don't have to have a tail.
+
+108
+00:06:06,150 --> 00:06:08,490
+It just makes it easier if you're trying to add to the end.
+
+109
+00:06:08,640 --> 00:06:09,750
+But we have to have that head.
+
+110
+00:06:09,760 --> 00:06:10,600
+That's the beginning.
+
+111
+00:06:10,830 --> 00:06:15,450
+And then we can just move to the next and to the next and to the next until we find what we're looking
+
+112
+00:06:15,450 --> 00:06:20,870
+for or we insert something unlike an array there is no positional there's no indices.
+
+113
+00:06:21,120 --> 00:06:24,090
+So each node is connected with a next pointer.
+
+114
+00:06:24,100 --> 00:06:29,580
+What this means random access is not allowed so random access means I can't just ask for the tenth item
+
+115
+00:06:29,610 --> 00:06:30,890
+and get it immediately.
+
+116
+00:06:30,930 --> 00:06:34,240
+We have to traverse from the beginning all the way to the tenth item.
+
+117
+00:06:34,320 --> 00:06:37,000
+Just like the analogy I explained with a skyscraper.
+
+118
+00:06:37,020 --> 00:06:39,860
+If you have an array you get an elevator straight to the tenth floor.
+
+119
+00:06:40,110 --> 00:06:43,140
+If you have the length First you walk all the way up to the tenth floor.
+
+120
+00:06:43,140 --> 00:06:48,200
+However one of the things that length lists are good at insertion and deletion.
+
+121
+00:06:48,420 --> 00:06:50,310
+So because arrays are indexed.
+
+122
+00:06:50,310 --> 00:06:54,180
+If we insert something at the beginning or in the middle we've already talked about this.
+
+123
+00:06:54,210 --> 00:06:56,160
+It has this cascade ripple effect.
+
+124
+00:06:56,220 --> 00:06:58,760
+Everything has to be indexed in length list.
+
+125
+00:06:58,770 --> 00:07:03,420
+That's not the case and we'll get into this further we'll talk about big-O of certain operations throughout
+
+126
+00:07:03,420 --> 00:07:08,040
+the section but just know that that's one of the reasons really the main reason you would want to use
+
+127
+00:07:08,040 --> 00:07:12,960
+something for us is if you really care about insertion and deletion especially if you're working with
+
+128
+00:07:12,960 --> 00:07:19,050
+really really long pieces of data to not piece of the data with a long data set lots of information
+
+129
+00:07:19,320 --> 00:07:20,610
+and you don't need random access.
+
+130
+00:07:20,610 --> 00:07:22,190
+You just need to store it in a list.
+
+131
+00:07:22,320 --> 00:07:26,310
+While you might want to use a linked list but will again we'll come back to this.
+
+132
+00:07:26,310 --> 00:07:30,550
+Remember a lot of this right now is just going to be very sort of theoretical and conceptual.
+
+133
+00:07:30,570 --> 00:07:32,250
+Don't get too caught up on you know.
+
+134
+00:07:32,250 --> 00:07:34,170
+Why would I use this if we already have an array.
+
+135
+00:07:34,380 --> 00:07:38,970
+Because at the end of the day you could use an array for all of this but there are advantages to make
+
+136
+00:07:38,970 --> 00:07:40,960
+lists and will expand on that anyway.
+
+137
+00:07:41,060 --> 00:07:45,880
+And the next video we're going to define our length less class and add our first method in.
+
+138
+00:07:45,890 --> 00:07:46,800
+So that's coming up next.
+

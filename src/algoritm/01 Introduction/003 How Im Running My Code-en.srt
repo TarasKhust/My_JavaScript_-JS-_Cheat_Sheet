@@ -1,0 +1,248 @@
+1
+00:00:00,210 --> 00:00:01,110
+Welcome back.
+
+2
+00:00:01,110 --> 00:00:04,050
+In this video I want to address my developer environment.
+
+3
+00:00:04,050 --> 00:00:07,120
+I'm keeping things really really simple for this course.
+
+4
+00:00:07,140 --> 00:00:10,170
+I'm not even having I'm not downloading any software.
+
+5
+00:00:10,230 --> 00:00:11,820
+I'm doing everything in the browser.
+
+6
+00:00:11,910 --> 00:00:15,170
+That doesn't mean that you need to do that at this point.
+
+7
+00:00:15,180 --> 00:00:19,430
+The only requirement for the course is that you know the basic syntax javascript.
+
+8
+00:00:19,650 --> 00:00:22,200
+You know that you're comfortable writing J.S. code.
+
+9
+00:00:22,200 --> 00:00:24,240
+So however you do that up until now.
+
+10
+00:00:24,330 --> 00:00:28,740
+I would just do that continue on but I want to show you what I'm going to do if you do want to follow
+
+11
+00:00:28,740 --> 00:00:29,330
+along.
+
+12
+00:00:29,370 --> 00:00:31,170
+So I'm using Chrome as my browser.
+
+13
+00:00:31,170 --> 00:00:36,870
+I always do in all my courses and chrome comes with a little developer tool called snippets javascript
+
+14
+00:00:36,870 --> 00:00:38,010
+snippets.
+
+15
+00:00:38,010 --> 00:00:42,450
+So here's chrome and I just open up the con..
+
+16
+00:00:42,810 --> 00:00:49,170
+I usually use a shortcut on a Mac it's command shift or no it command option J but you can also go to
+
+17
+00:00:49,170 --> 00:00:56,760
+inspect and then that takes you to the elements and you can go over to the sources tab and then in the
+
+18
+00:00:56,760 --> 00:01:00,810
+sources tab there's a snippets sub tab I guess you would call it.
+
+19
+00:01:00,840 --> 00:01:05,760
+There's a couple of them but I have snippets as the only thing that shows and you can see I have a bunch
+
+20
+00:01:05,760 --> 00:01:11,430
+of names snippets I've I'm recording this after I finished writing and recording the rest of the course.
+
+21
+00:01:11,580 --> 00:01:14,940
+So you can see for example here's one of our snippets.
+
+22
+00:01:14,940 --> 00:01:19,710
+So I'm just doing everything in the browser here rather than using the terminal and running code with
+
+23
+00:01:19,710 --> 00:01:20,520
+no G-S.
+
+24
+00:01:20,550 --> 00:01:22,080
+You absolutely could do that.
+
+25
+00:01:22,080 --> 00:01:23,970
+You could write your code and Sublime Text.
+
+26
+00:01:23,970 --> 00:01:24,720
+You could use.
+
+27
+00:01:24,750 --> 00:01:29,820
+I think there's equivalents to snippets and other browsers you could use Jay Espen code pen there's
+
+28
+00:01:29,820 --> 00:01:34,570
+many options out there just run javascript but to show you how this works.
+
+29
+00:01:34,620 --> 00:01:37,680
+Let's say I'm going to make a new empty snippet.
+
+30
+00:01:37,680 --> 00:01:39,700
+You've seen me do this a couple of times in the course.
+
+31
+00:01:39,720 --> 00:01:48,060
+I'll just call this demo snippet and then in here close that I'll make it a little larger and then just
+
+32
+00:01:48,060 --> 00:01:52,950
+do some really simple thing like concept about log Hello from.
+
+33
+00:01:52,950 --> 00:01:54,660
+From this snippet.
+
+34
+00:01:54,900 --> 00:01:57,050
+Oh my gosh can not spell here.
+
+35
+00:01:57,410 --> 00:01:57,850
+OK.
+
+36
+00:01:57,900 --> 00:01:59,850
+So let's leave it at that.
+
+37
+00:01:59,970 --> 00:02:06,250
+And all I have to do is to execute this code is either go down here and click play.
+
+38
+00:02:06,420 --> 00:02:13,290
+But also it shows me the shortcut command return on a Mac and on the PC will tell you whatever the respective
+
+39
+00:02:13,290 --> 00:02:14,400
+equivalent is.
+
+40
+00:02:14,400 --> 00:02:18,660
+So when I hit that I'm going to do it right now if I scroll up I should see.
+
+41
+00:02:18,660 --> 00:02:19,160
+There we go.
+
+42
+00:02:19,230 --> 00:02:20,760
+Hello from the snippet.
+
+43
+00:02:20,850 --> 00:02:22,980
+So you'll see me do this throughout the course.
+
+44
+00:02:23,010 --> 00:02:29,580
+For example I might run this snippet here and it doesn't matter what it does it's a binary search tree
+
+45
+00:02:29,610 --> 00:02:33,280
+breath first search hit command enter.
+
+46
+00:02:33,450 --> 00:02:34,200
+It just ran.
+
+47
+00:02:34,230 --> 00:02:35,580
+And you can see this is the output.
+
+48
+00:02:35,580 --> 00:02:37,140
+This is what was returned.
+
+49
+00:02:37,770 --> 00:02:39,630
+And that's pretty much all I have to say about Crumb's.
+
+50
+00:02:39,630 --> 00:02:42,530
+Tippett So you'll see me work with them frequently.
+
+51
+00:02:42,550 --> 00:02:44,280
+I just have a bunch of them over here.
+
+52
+00:02:44,280 --> 00:02:48,890
+I usually make a new one for each thing so here's a double length list.
+
+53
+00:02:48,900 --> 00:02:56,030
+We add a set method and then I'll make a new one when we add a remove method for example.
+
+54
+00:02:56,130 --> 00:02:57,660
+But that's all I'll say for now.
+
+55
+00:02:57,660 --> 00:03:01,880
+It's a very easy way for me to run code in the browser that everyone can do.
+
+56
+00:03:01,980 --> 00:03:07,260
+You don't have to download anything that's not Mac or PC specific but also if you know how to write
+
+57
+00:03:07,260 --> 00:03:11,370
+javascript which I hope you do to take this course should know the basics.
+
+58
+00:03:11,370 --> 00:03:14,520
+You might just want to continue on with whatever you're most comfortable with.
+
+59
+00:03:14,520 --> 00:03:16,820
+This is not a requirement for the course.
+
+60
+00:03:16,860 --> 00:03:18,610
+We're writing basic javascript.
+
+61
+00:03:18,630 --> 00:03:20,850
+Run it however you prefer.
+
+62
+00:03:21,030 --> 00:03:21,470
+OK.
+

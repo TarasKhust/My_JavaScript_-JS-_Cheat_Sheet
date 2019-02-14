@@ -1,0 +1,748 @@
+1
+00:00:00,240 --> 00:00:00,810
+All right.
+
+2
+00:00:00,840 --> 00:00:03,270
+So let's implement insertion sort.
+
+3
+00:00:03,570 --> 00:00:09,720
+So I have my snippet ready and I'm going to define our function called insertion sort takes an array.
+
+4
+00:00:09,840 --> 00:00:11,440
+This should be pretty familiar right now.
+
+5
+00:00:11,460 --> 00:00:17,030
+Return that array and let's call it down here with what should we call it with.
+
+6
+00:00:17,160 --> 00:00:19,830
+Let's go with 2 4.
+
+7
+00:00:20,040 --> 00:00:20,460
+Oh wait.
+
+8
+00:00:20,460 --> 00:00:21,510
+I'm doing a sort of array.
+
+9
+00:00:21,540 --> 00:00:22,810
+That's not going to work.
+
+10
+00:00:22,900 --> 00:00:30,240
+Two comma one nine and seventy six and four.
+
+11
+00:00:30,410 --> 00:00:30,830
+OK.
+
+12
+00:00:30,870 --> 00:00:34,050
+Hardest part of my day out of the way now picking those numbers.
+
+13
+00:00:34,050 --> 00:00:35,880
+And actually that's not true.
+
+14
+00:00:35,880 --> 00:00:37,740
+All of this is hard to explain.
+
+15
+00:00:38,050 --> 00:00:38,290
+OK.
+
+16
+00:00:38,310 --> 00:00:39,400
+So we've got this here.
+
+17
+00:00:39,600 --> 00:00:44,670
+And the first thing we want to do is if we just visualize what we're what we're doing as we go through
+
+18
+00:00:44,940 --> 00:00:50,240
+rather than starting with the first element because that can be kind of an edge case.
+
+19
+00:00:50,430 --> 00:00:53,970
+Let's say we've gone through a couple of passes and our RE is sorted.
+
+20
+00:00:53,970 --> 00:00:55,570
+Up until this point.
+
+21
+00:00:55,650 --> 00:00:58,880
+So what do we need to do with for for example.
+
+22
+00:00:59,130 --> 00:01:03,360
+Well what we do we take four and we basically work backwards.
+
+23
+00:01:03,360 --> 00:01:09,300
+We compare it to 76 and we check which one is larger if Four is larger than it stays right where it
+
+24
+00:01:09,300 --> 00:01:10,160
+is and we're done.
+
+25
+00:01:10,380 --> 00:01:14,150
+But if four is less than 76 then what what do we do.
+
+26
+00:01:14,170 --> 00:01:22,490
+Well what we can do is move 76 up to where 4 is and then we we look down to the next one 9 where does
+
+27
+00:01:22,500 --> 00:01:23,280
+forfeit.
+
+28
+00:01:23,400 --> 00:01:25,720
+Well nine is still larger so we move nine.
+
+29
+00:01:25,860 --> 00:01:28,030
+Up until where 76 used to be.
+
+30
+00:01:28,200 --> 00:01:30,470
+And then we checked to all fours larger.
+
+31
+00:01:30,480 --> 00:01:32,690
+So we put four right here.
+
+32
+00:01:32,800 --> 00:01:35,490
+If that makes sense we end up with this.
+
+33
+00:01:35,790 --> 00:01:41,820
+So the reason I'm I'm starting from here is because the first easy part is we want to iterate over every
+
+34
+00:01:41,820 --> 00:01:42,260
+item.
+
+35
+00:01:42,450 --> 00:01:42,800
+Right.
+
+36
+00:01:42,800 --> 00:01:43,650
+That's that's obvious.
+
+37
+00:01:43,650 --> 00:01:46,850
+All these sorting algorithms so far have involved that we start with a loop.
+
+38
+00:01:46,920 --> 00:01:51,450
+We start roughly at the beginning although in this case we can actually start looping at the first item
+
+39
+00:01:51,870 --> 00:01:58,040
+first index rather than zero and then we look backwards and we figure out where to start or where to
+
+40
+00:01:58,100 --> 00:01:58,740
+what to do.
+
+41
+00:01:58,740 --> 00:02:03,390
+So let's write our loop for our equals 1 rather than zero.
+
+42
+00:02:03,630 --> 00:02:05,090
+It's not a problem if we do zero.
+
+43
+00:02:05,100 --> 00:02:07,910
+It's just an extra iteration and will do well.
+
+44
+00:02:07,930 --> 00:02:09,540
+It's less than the length.
+
+45
+00:02:09,810 --> 00:02:14,040
+Nope I read at length I mean add 1 to i.
+
+46
+00:02:14,700 --> 00:02:20,400
+Ok so now what we need to do is first let's make a variable to keep track of the value that we're looking
+
+47
+00:02:20,400 --> 00:02:20,520
+at.
+
+48
+00:02:20,520 --> 00:02:22,790
+So let's say that we're looking at four.
+
+49
+00:02:22,860 --> 00:02:28,050
+We're going to make a variable called I don't know what you going to call it let's go with the far current
+
+50
+00:02:28,170 --> 00:02:30,740
+value equals array.
+
+51
+00:02:30,760 --> 00:02:33,930
+I like that.
+
+52
+00:02:33,960 --> 00:02:35,570
+Now we just want to work backwards.
+
+53
+00:02:35,760 --> 00:02:36,780
+So this is why it's easier.
+
+54
+00:02:36,780 --> 00:02:41,310
+Like I said to think that we're towards the end or the middle of the array rather than at the at the
+
+55
+00:02:41,310 --> 00:02:44,640
+very beginning because there is no backward surely to to work towards.
+
+56
+00:02:44,760 --> 00:02:47,390
+So let's make another loop to go backwards.
+
+57
+00:02:47,400 --> 00:02:52,240
+So for var J equals in which we started at.
+
+58
+00:02:52,410 --> 00:02:58,340
+Well we want to start it at one less than whatever Ayas So if this is if we go back to this example
+
+59
+00:02:58,620 --> 00:03:00,100
+this is what we're looking at.
+
+60
+00:03:00,270 --> 00:03:05,880
+If I was right here so that's 0 1 2 3 4 if I asked for we want to start comparing.
+
+61
+00:03:05,880 --> 00:03:11,200
+I or this number to this number which is going to be index of minus 1.
+
+62
+00:03:11,310 --> 00:03:14,640
+So J equals I minus 1 to start.
+
+63
+00:03:15,090 --> 00:03:20,790
+And we're going to make a comparison which we haven't done yet and keep going until eventually we find
+
+64
+00:03:20,790 --> 00:03:21,540
+the right spot.
+
+65
+00:03:21,540 --> 00:03:23,490
+So worst case how many times.
+
+66
+00:03:23,490 --> 00:03:25,360
+For example if this was zero.
+
+67
+00:03:25,530 --> 00:03:27,150
+How many times do we need to go down.
+
+68
+00:03:27,150 --> 00:03:32,890
+We need j to be 3 0 1 2 3 and it's be to need to be 1 when needed to be zero.
+
+69
+00:03:33,000 --> 00:03:34,690
+And then that's where we would put 0.
+
+70
+00:03:34,740 --> 00:03:35,700
+Index zero.
+
+71
+00:03:35,970 --> 00:03:42,390
+So for that to work we want to keep going while J is greater than zero is what are greater than negative
+
+72
+00:03:42,390 --> 00:03:45,410
+1 is one way of doing it greater than or equal to zero.
+
+73
+00:03:45,420 --> 00:03:47,370
+I always would do I prefer.
+
+74
+00:03:47,400 --> 00:03:51,140
+I don't know I was going to say I have a preference but I don't really do J.
+
+75
+00:03:51,150 --> 00:03:54,380
+Greater than yes that's greater than or equal to zero.
+
+76
+00:03:54,570 --> 00:03:57,990
+So it's OK if we had zero because an Index index goes to zero.
+
+77
+00:03:57,990 --> 00:04:00,780
+Or you could do greater than negative one whichever one.
+
+78
+00:04:00,780 --> 00:04:01,770
+All right.
+
+79
+00:04:01,770 --> 00:04:04,120
+So then we're going to subtract one from J.
+
+80
+00:04:04,140 --> 00:04:06,230
+Every time.
+
+81
+00:04:06,300 --> 00:04:09,740
+So this is just our ruffs loop skeleton if you will.
+
+82
+00:04:09,750 --> 00:04:10,700
+So we pick.
+
+83
+00:04:10,710 --> 00:04:17,990
+If I is four then we have this loop J that goes from 3 down to 2 to 1 down to zero and then it stops.
+
+84
+00:04:18,000 --> 00:04:19,360
+So that's just the basic loop.
+
+85
+00:04:19,440 --> 00:04:22,440
+But we don't really want it to just keep looping for no reason.
+
+86
+00:04:22,500 --> 00:04:28,470
+We need to start figuring out where this value goes or if we're looking at this example where does zero
+
+87
+00:04:28,470 --> 00:04:29,090
+fit in.
+
+88
+00:04:29,280 --> 00:04:31,230
+So what we do we already have ZERO.
+
+89
+00:04:31,290 --> 00:04:35,130
+In our case stored under the variable current Val.
+
+90
+00:04:35,190 --> 00:04:39,130
+So whatever it is we're storing ramify in Kernville.
+
+91
+00:04:39,270 --> 00:04:40,470
+So we have it over on the side.
+
+92
+00:04:40,470 --> 00:04:45,270
+Just keep it over here the value zero and my console's not very happy about that.
+
+93
+00:04:45,270 --> 00:04:51,070
+So what happens now is that J is going to start at 76 and move backwards Will J itself isn't J-Stars
+
+94
+00:04:51,150 --> 00:04:53,470
+at 3 and moves down to zero.
+
+95
+00:04:53,490 --> 00:04:59,420
+What we want to do now is compare current value to array of J.
+
+96
+00:04:59,890 --> 00:05:04,060
+So we could write that out basically like this array of J.
+
+97
+00:05:04,210 --> 00:05:06,140
+If I can type array of J.
+
+98
+00:05:06,310 --> 00:05:08,770
+And then we want to compare that to current row.
+
+99
+00:05:09,090 --> 00:05:11,730
+What we want to check is array of J.
+
+100
+00:05:11,770 --> 00:05:13,690
+Larger than the current value.
+
+101
+00:05:13,930 --> 00:05:17,330
+So if that's the case if 76 is larger than 0.
+
+102
+00:05:17,680 --> 00:05:19,890
+We want to move zero down.
+
+103
+00:05:19,900 --> 00:05:23,490
+Which what that really means is we're going to move 76 up.
+
+104
+00:05:23,500 --> 00:05:26,430
+So if I show you which are the actual operations.
+
+105
+00:05:26,470 --> 00:05:26,670
+OK.
+
+106
+00:05:26,680 --> 00:05:33,730
+So first time through zeroes here we compare current value to 76 76 is larger.
+
+107
+00:05:33,970 --> 00:05:36,190
+So we actually move 76.
+
+108
+00:05:36,190 --> 00:05:38,470
+We copy it over to here.
+
+109
+00:05:38,620 --> 00:05:43,480
+Remember we have zero already saved in a variable so we don't have to do like a swap with a temporary
+
+110
+00:05:43,480 --> 00:05:46,980
+variable we already have that temporary variable called current value.
+
+111
+00:05:47,530 --> 00:05:54,690
+So then we move back again to night and we compare 9 and 0 9 is greater than zero still.
+
+112
+00:05:54,700 --> 00:05:58,840
+So we're going to take nine and put it there.
+
+113
+00:05:58,870 --> 00:06:00,580
+Now we move down to two.
+
+114
+00:06:00,830 --> 00:06:02,530
+Two is greater than zero.
+
+115
+00:06:02,680 --> 00:06:07,930
+So we're going to move it to J plus 1 then we get to 1 which is still greater than zero.
+
+116
+00:06:08,110 --> 00:06:13,740
+So we move it up to here and then at the very end if our loop is done we're going to take whatever this
+
+117
+00:06:13,750 --> 00:06:17,650
+value is and stick it right there.
+
+118
+00:06:18,760 --> 00:06:20,850
+So there's a better way of writing this.
+
+119
+00:06:20,860 --> 00:06:25,420
+And I'll show you what it looks like it's a little bit confusing to see a for loop like this but this
+
+120
+00:06:25,420 --> 00:06:26,730
+is one way of doing it.
+
+121
+00:06:26,740 --> 00:06:30,550
+So our loop goes while J is greater than or equal to zero.
+
+122
+00:06:31,180 --> 00:06:38,770
+And array of J is greater than current value current value.
+
+123
+00:06:39,260 --> 00:06:43,130
+So you may not have seen many for the trip like this but this is one potential way of doing it instead
+
+124
+00:06:43,130 --> 00:06:43,480
+of us.
+
+125
+00:06:43,500 --> 00:06:49,240
+Second you could do a while loop as well or in any sort of conditional check to break out of for loop.
+
+126
+00:06:49,370 --> 00:06:53,510
+But what this reads as so Jay starts is I minus 1.
+
+127
+00:06:53,690 --> 00:06:56,740
+We're going to keep going while J is greater than or equal to zero.
+
+128
+00:06:56,970 --> 00:07:00,120
+And array of J is greater than the current value.
+
+129
+00:07:00,170 --> 00:07:07,120
+So if and if at any point for example if instead of 0 this last item was 20.
+
+130
+00:07:07,640 --> 00:07:12,860
+We're going to go through once array of J is going to give us 76 that is greater so we keep looping
+
+131
+00:07:13,400 --> 00:07:15,100
+and we want to move 76 to here.
+
+132
+00:07:15,170 --> 00:07:19,240
+But then we compare 20 to nine and all of a sudden this isn't true anymore.
+
+133
+00:07:19,280 --> 00:07:20,760
+So we're done looping.
+
+134
+00:07:20,810 --> 00:07:23,330
+Now we just put 20 right here.
+
+135
+00:07:23,330 --> 00:07:28,130
+So I was kind of kind of confusing when we when we write it this way but let me just fill in the rest
+
+136
+00:07:28,130 --> 00:07:35,180
+so if any time we're going through this loop what we're going to be doing is taking a value like this
+
+137
+00:07:35,240 --> 00:07:37,060
+and moving it forward and moving it forward.
+
+138
+00:07:37,070 --> 00:07:39,270
+And then we stop at some point.
+
+139
+00:07:39,560 --> 00:07:49,260
+So to actually move that value forward it's just array of J plus one equals array of J.
+
+140
+00:07:50,450 --> 00:07:57,680
+So why don't I just do a that log to show what's happening on the log array and actually let's do it
+
+141
+00:07:58,040 --> 00:07:59,420
+in here.
+
+142
+00:07:59,600 --> 00:08:06,430
+So we're not sorting just yet because we're not actually replacing the correct value in.
+
+143
+00:08:06,500 --> 00:08:09,970
+But if I run this OK you can see what's happening.
+
+144
+00:08:10,070 --> 00:08:12,240
+So we started with one and we look back at two.
+
+145
+00:08:12,470 --> 00:08:14,870
+Well one needs to go here so we moved two forward.
+
+146
+00:08:14,900 --> 00:08:20,650
+So we get two to 9 7 76 for we just never added in one.
+
+147
+00:08:20,940 --> 00:08:27,720
+So to remedy this after this loop finishes that means that we found the correct spot for where we need
+
+148
+00:08:27,720 --> 00:08:29,550
+to insert current Vau.
+
+149
+00:08:29,730 --> 00:08:34,630
+So then here all we do is insert current value and it's not array of J.
+
+150
+00:08:34,690 --> 00:08:40,010
+It's array of J plus 1 because if we walk through this again let's say that we're starting here.
+
+151
+00:08:40,260 --> 00:08:43,070
+Then J is going to start right here.
+
+152
+00:08:43,500 --> 00:08:45,360
+So we check which one is larger.
+
+153
+00:08:45,360 --> 00:08:46,860
+OK 76 is larger.
+
+154
+00:08:47,040 --> 00:08:49,260
+So remember we have 20 saves in a variable.
+
+155
+00:08:49,320 --> 00:08:52,010
+We're going to take 76 and move it here.
+
+156
+00:08:52,200 --> 00:08:53,730
+But J was right here.
+
+157
+00:08:54,030 --> 00:08:58,430
+So next time through J moves down to here and we compare 20 and nine.
+
+158
+00:08:58,470 --> 00:09:00,780
+Well 20 is greater than nine.
+
+159
+00:09:01,050 --> 00:09:06,410
+So we're not going to move 9 forward but we don't want to swopped we don't want to put 20 right here.
+
+160
+00:09:06,420 --> 00:09:09,480
+We want to put 20 here in this space.
+
+161
+00:09:09,480 --> 00:09:12,330
+So J is this we want J plus 1.
+
+162
+00:09:12,480 --> 00:09:18,510
+So array of J plus one equals equal what we call it current value.
+
+163
+00:09:19,410 --> 00:09:21,380
+And now actually we're done.
+
+164
+00:09:21,840 --> 00:09:29,720
+So if we step through now what happens let me clear execute.
+
+165
+00:09:30,020 --> 00:09:30,570
+OK.
+
+166
+00:09:30,630 --> 00:09:36,390
+I'm printing when we move an item forward which is kind of confusing so we moved too forward.
+
+167
+00:09:36,630 --> 00:09:44,740
+But then on this line right here we inserted one at the beginning and said do cancel the log right here.
+
+168
+00:09:45,790 --> 00:09:46,230
+OK.
+
+169
+00:09:46,310 --> 00:09:47,030
+So where's the start.
+
+170
+00:09:47,040 --> 00:09:48,270
+Here we go.
+
+171
+00:09:48,360 --> 00:09:54,990
+So you can see we go through the first time and we put one where it goes goes in front of the two then
+
+172
+00:09:54,990 --> 00:09:59,770
+we're looking at nine Well it goes where it is then we look at 76 that goes where it is.
+
+173
+00:09:59,940 --> 00:10:01,820
+But then we get to four.
+
+174
+00:10:02,100 --> 00:10:06,470
+We need to move for all the way to right here and then we're sorted.
+
+175
+00:10:06,900 --> 00:10:08,670
+So this one is a bit different.
+
+176
+00:10:08,940 --> 00:10:13,670
+I know it's a maybe a little harder to understand this code but step through it.
+
+177
+00:10:13,680 --> 00:10:19,380
+If you if you do get stuck I highly encourage you to just write down what I and J are at every point.
+
+178
+00:10:19,530 --> 00:10:20,770
+Just one at a time.
+
+179
+00:10:20,820 --> 00:10:21,450
+Walk through.
+
+180
+00:10:21,450 --> 00:10:22,560
+It might take a little bit.
+
+181
+00:10:22,590 --> 00:10:23,880
+Use a shorter array.
+
+182
+00:10:24,150 --> 00:10:29,120
+Definitely when you're choosing numbers for the array it helps to choose things that make sense that
+
+183
+00:10:29,310 --> 00:10:30,740
+like work with your algorithm.
+
+184
+00:10:30,810 --> 00:10:35,190
+If you just pick a bunch of numbers like two two and two where you pick something that's already sorted
+
+185
+00:10:35,650 --> 00:10:37,210
+it doesn't help that much.
+
+186
+00:10:37,350 --> 00:10:39,180
+So pay attention to that.
+
+187
+00:10:39,240 --> 00:10:42,480
+But walk through it if you need some help try to understand what's going on.
+

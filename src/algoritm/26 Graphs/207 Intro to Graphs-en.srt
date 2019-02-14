@@ -1,0 +1,276 @@
+1
+00:00:00,270 --> 00:00:01,480
+Hey welcome back.
+
+2
+00:00:01,500 --> 00:00:02,630
+It's a new section here.
+
+3
+00:00:02,700 --> 00:00:04,920
+It's a brand new morning at least for me.
+
+4
+00:00:04,920 --> 00:00:10,940
+Recording this and most importantly a brand new data structure that graph so I love graphs personally
+
+5
+00:00:10,950 --> 00:00:16,560
+they're fun to teach They're fun to implement but most importantly they're really really useful in today's
+
+6
+00:00:16,560 --> 00:00:17,030
+world.
+
+7
+00:00:17,040 --> 00:00:24,060
+Graphs are used in basically any social network any time we're modeling users and recommendation engines
+
+8
+00:00:24,060 --> 00:00:24,750
+for example.
+
+9
+00:00:24,750 --> 00:00:30,490
+When Netflix recommends another movie or something to you or advertisers target you based off of something.
+
+10
+00:00:30,510 --> 00:00:32,490
+Graphs are usually in play.
+
+11
+00:00:32,700 --> 00:00:38,780
+And when I say graph we're not talking about a chart which in English often we also call that graph.
+
+12
+00:00:38,790 --> 00:00:43,260
+Now talking about this sort of two dimensional looking chart it's a data structure very different than
+
+13
+00:00:43,260 --> 00:00:44,170
+this.
+
+14
+00:00:44,190 --> 00:00:47,880
+So what it is we'll get to just a moment but first our objectives.
+
+15
+00:00:48,090 --> 00:00:49,520
+So explain what a graph is.
+
+16
+00:00:49,860 --> 00:00:51,330
+Obviously get to start there.
+
+17
+00:00:51,330 --> 00:00:56,430
+Compare and contrast different types of graphs and also will compare and contrast graphs to other structures
+
+18
+00:00:56,430 --> 00:01:02,390
+we've seen like trees which are actually a sort of a special type of a graph.
+
+19
+00:01:02,550 --> 00:01:06,750
+And then also talk about their utility their applications in the real world.
+
+20
+00:01:06,870 --> 00:01:10,390
+Then we'll implement a graph using something called an adjacency list.
+
+21
+00:01:10,410 --> 00:01:12,720
+So there are multiple ways to implement graphs.
+
+22
+00:01:12,750 --> 00:01:17,670
+I'm just going to show you one the adjacency list and we'll talk about why then we'll traverse through
+
+23
+00:01:17,670 --> 00:01:25,410
+a graph using our good old B if s and DFS breadth first in depth first search compare and contrast graph
+
+24
+00:01:25,410 --> 00:01:27,720
+traversal algorithms we'll talk about big-O along the way.
+
+25
+00:01:27,720 --> 00:01:33,230
+Talk about some fun algorithms but let's get started by just talking about what a graph is.
+
+26
+00:01:33,230 --> 00:01:39,810
+Take it away Wikipedia a graph data structure consists of a finite and possibly mutable set of vertices
+
+27
+00:01:39,810 --> 00:01:44,340
+or nodes or points together with a set of ordered pairs of these vertices for an undirected graph or
+
+28
+00:01:44,340 --> 00:01:46,850
+a set of ordered pairs for a directed graph.
+
+29
+00:01:47,220 --> 00:01:48,690
+OK you get that.
+
+30
+00:01:49,310 --> 00:01:49,570
+Yeah.
+
+31
+00:01:49,610 --> 00:01:53,790
+That doesn't really make much sense or probably doesn't make a lot of sense.
+
+32
+00:01:53,790 --> 00:02:00,420
+It's kind of clunky really what it comes down to is a graph is a collection of nodes and connections
+
+33
+00:02:00,420 --> 00:02:01,810
+between those notes.
+
+34
+00:02:01,830 --> 00:02:09,030
+So if we go back and read that definition again let's just sort of skim through it a finite set of vertices
+
+35
+00:02:09,030 --> 00:02:09,540
+or note.
+
+36
+00:02:09,540 --> 00:02:15,630
+So let's just say a set of nodes together with a set of pairs of these vertices.
+
+37
+00:02:15,630 --> 00:02:17,340
+So those are the connections.
+
+38
+00:02:17,460 --> 00:02:22,100
+So we have a bunch of dots a bunch of nodes and then connections between them.
+
+39
+00:02:22,290 --> 00:02:24,310
+So this is a valid graph.
+
+40
+00:02:24,330 --> 00:02:27,890
+These are the nodes and these are the connections.
+
+41
+00:02:28,500 --> 00:02:30,150
+Here's another valid graph.
+
+42
+00:02:30,150 --> 00:02:33,170
+The same nodes just different connections.
+
+43
+00:02:33,360 --> 00:02:36,960
+So the placement of them in this diagram doesn't matter.
+
+44
+00:02:36,960 --> 00:02:38,600
+We can have this same structure.
+
+45
+00:02:38,600 --> 00:02:40,660
+It's just the connections that are important.
+
+46
+00:02:40,770 --> 00:02:46,290
+But you know if these are if this be was way over here or this F was way over here doesn't matter as
+
+47
+00:02:46,290 --> 00:02:49,620
+long as we have the same lines going the same connections.
+
+48
+00:02:49,620 --> 00:02:51,750
+It's really just about those lines.
+
+49
+00:02:51,780 --> 00:02:52,010
+OK.
+
+50
+00:02:52,020 --> 00:02:54,180
+So this is a valid graph.
+
+51
+00:02:54,180 --> 00:02:55,210
+Here's another one.
+
+52
+00:02:55,290 --> 00:02:58,280
+We have some nodes with connections between them.
+
+53
+00:02:58,580 --> 00:02:59,660
+Do I have one more.
+
+54
+00:02:59,660 --> 00:03:00,320
+Here we go.
+
+55
+00:03:00,330 --> 00:03:06,360
+A very different looking one the same number of nodes the same letters for each one but different connections
+
+56
+00:03:06,360 --> 00:03:07,490
+different lines.
+
+57
+00:03:07,500 --> 00:03:12,810
+So if we go back to something like a linked list and we talked about linked lists we had nodes that
+
+58
+00:03:12,810 --> 00:03:14,970
+are connected in a linear fashion.
+
+59
+00:03:15,180 --> 00:03:20,040
+When we had no trees we had nodes that there was one parent.
+
+60
+00:03:20,050 --> 00:03:21,380
+One top most node.
+
+61
+00:03:21,630 --> 00:03:26,400
+And then from there there were a bunch of children that descended from that one node and each parent
+
+62
+00:03:26,400 --> 00:03:28,580
+could have its own children and so on.
+
+63
+00:03:28,650 --> 00:03:33,060
+So a tree is a type of a graph but in these graphs that we're looking at here.
+
+64
+00:03:33,420 --> 00:03:36,420
+There is no parent no there is no starting place.
+
+65
+00:03:36,540 --> 00:03:38,440
+There is no you know entry point.
+
+66
+00:03:38,490 --> 00:03:45,000
+These are all just notes are treated equally and they're connected in different ways and those connections
+
+67
+00:03:45,000 --> 00:03:46,440
+can mean different things.
+
+68
+00:03:46,440 --> 00:03:48,210
+Let's actually talk about a few examples.
+
+69
+00:03:48,210 --> 00:03:50,180
+First of all of where you would use this.
+

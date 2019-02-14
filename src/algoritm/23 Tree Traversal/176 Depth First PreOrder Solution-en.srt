@@ -1,0 +1,524 @@
+1
+00:00:00,270 --> 00:00:00,660
+All right.
+
+2
+00:00:00,660 --> 00:00:05,140
+So let's try implementing this depth first search pre order.
+
+3
+00:00:05,370 --> 00:00:08,380
+So we're going to go over here to define the function.
+
+4
+00:00:08,670 --> 00:00:12,830
+I'll just call it DFS pre order like this.
+
+5
+00:00:13,410 --> 00:00:18,750
+And then inside of here I'm going to start by making our variable data that will return at the very
+
+6
+00:00:18,750 --> 00:00:19,270
+end.
+
+7
+00:00:19,410 --> 00:00:22,050
+So I could actually go down to the very end and return data.
+
+8
+00:00:22,050 --> 00:00:27,270
+This is just the order that we're visiting the nodes then we'll make a variable called Current and set
+
+9
+00:00:27,270 --> 00:00:28,090
+it to be the root
+
+10
+00:00:31,520 --> 00:00:32,670
+just like that.
+
+11
+00:00:32,690 --> 00:00:37,970
+Now for the tricky part write a helper function we'll call it traverse that accepts a node.
+
+12
+00:00:38,300 --> 00:00:45,440
+So I'm just going to do that actually nested inside of your function traverse accepts a node and the
+
+13
+00:00:45,440 --> 00:00:50,580
+first thing that we do is push the value of the node to our variable data.
+
+14
+00:00:50,700 --> 00:00:55,590
+So we'll do data push node.
+
+15
+00:00:55,760 --> 00:01:01,790
+Then we check if there's a left property if there is we call the helper function with the Left property
+
+16
+00:01:01,790 --> 00:01:03,380
+and we do the same for the right.
+
+17
+00:01:03,770 --> 00:01:08,200
+So we could just do if node left.
+
+18
+00:01:08,810 --> 00:01:09,980
+What are we going to do.
+
+19
+00:01:10,010 --> 00:01:14,310
+We're going to call traverse no doubt left.
+
+20
+00:01:14,320 --> 00:01:18,590
+So this is traverse we're recursively calling it and we do the same thing.
+
+21
+00:01:18,640 --> 00:01:23,300
+No doubt right traverse node dot right.
+
+22
+00:01:24,980 --> 00:01:27,940
+And that's actually it for our solution.
+
+23
+00:01:28,340 --> 00:01:29,380
+Well that's a lie.
+
+24
+00:01:29,510 --> 00:01:33,700
+We have to actually invoke traverse which is what I talked about done here.
+
+25
+00:01:33,740 --> 00:01:36,040
+Invoke the helper function with the current variable.
+
+26
+00:01:36,080 --> 00:01:40,970
+So that's traverse current which is the root.
+
+27
+00:01:41,130 --> 00:01:45,520
+And actually he honestly don't even need this current variable.
+
+28
+00:01:45,620 --> 00:01:48,700
+You could just do traverse this route.
+
+29
+00:01:49,160 --> 00:01:49,730
+But what.
+
+30
+00:01:49,730 --> 00:01:55,700
+Sending a current variable allows you to do a user could specify a starting node to start from.
+
+31
+00:01:55,700 --> 00:01:59,680
+They may not want to traverse from the root if you have a massive tree.
+
+32
+00:01:59,900 --> 00:02:02,550
+I'll just do this though this route.
+
+33
+00:02:03,080 --> 00:02:03,770
+OK.
+
+34
+00:02:03,980 --> 00:02:11,420
+So if we actually run this right now with this tree 10:6 15 3:08 20.
+
+35
+00:02:11,420 --> 00:02:12,920
+Let me just save this.
+
+36
+00:02:13,100 --> 00:02:13,950
+Executed.
+
+37
+00:02:14,120 --> 00:02:16,040
+Let's see if it works.
+
+38
+00:02:16,180 --> 00:02:21,710
+Oh you know what I'm realizing it's easier again to push the value instead of the entire node.
+
+39
+00:02:21,710 --> 00:02:24,060
+So let's try rerunning one more time tree.
+
+40
+00:02:24,260 --> 00:02:26,200
+DFS pre order.
+
+41
+00:02:26,510 --> 00:02:32,360
+Here's what we end up with 10 6 3 8 15 20.
+
+42
+00:02:32,360 --> 00:02:36,060
+And that is the correct depth first search pre order.
+
+43
+00:02:36,080 --> 00:02:40,400
+So now let's get to the harder part which is explaining how the heck that works.
+
+44
+00:02:40,430 --> 00:02:47,600
+So I'm going to come down here and do a tree dot DFS preorder and add a breakpoint there.
+
+45
+00:02:47,600 --> 00:02:51,430
+Now let's step through what happened to execute this code.
+
+46
+00:02:52,110 --> 00:02:52,590
+OK.
+
+47
+00:02:52,750 --> 00:02:57,350
+So I'm going to order the call stack and step through this very first thing and make our array called
+
+48
+00:02:57,350 --> 00:03:01,350
+data we call traverse on the roots.
+
+49
+00:03:01,790 --> 00:03:10,310
+OK now if we look at the call stack we now have a traverse call and we're pushing 10 into our array
+
+50
+00:03:10,310 --> 00:03:11,900
+that we're returning called data.
+
+51
+00:03:11,900 --> 00:03:13,360
+So 10 is in there.
+
+52
+00:03:13,460 --> 00:03:16,300
+Then we check if there's a left and there is.
+
+53
+00:03:16,400 --> 00:03:22,680
+So we call traverse on the left and that left node is 6.
+
+54
+00:03:22,880 --> 00:03:28,490
+So we end up with another call added to the stack this time on 6.
+
+55
+00:03:28,640 --> 00:03:31,650
+And so we now push 6 into our array.
+
+56
+00:03:31,790 --> 00:03:37,960
+So our data array has 10 and then 6 and we check is there left on 6.
+
+57
+00:03:37,970 --> 00:03:40,040
+Yes there is.
+
+58
+00:03:40,040 --> 00:03:44,740
+So then we traverse no dot left which is three.
+
+59
+00:03:44,810 --> 00:03:48,390
+And so we end up with another call added on top.
+
+60
+00:03:48,390 --> 00:03:52,050
+Now we're working with three day to push node value.
+
+61
+00:03:52,050 --> 00:03:54,990
+So we add three into our list so we have 10 6.
+
+62
+00:03:54,990 --> 00:03:58,110
+Now three is in that data and we check.
+
+63
+00:03:58,110 --> 00:03:59,410
+Is there no doubt left.
+
+64
+00:03:59,430 --> 00:04:01,560
+No there is not.
+
+65
+00:04:02,220 --> 00:04:04,410
+So we don't traverse no debt left.
+
+66
+00:04:04,410 --> 00:04:05,570
+Is there no dot right.
+
+67
+00:04:05,610 --> 00:04:06,810
+Nope there's not.
+
+68
+00:04:06,810 --> 00:04:11,530
+So we don't traverse that either which means we're done with this call with three.
+
+69
+00:04:11,760 --> 00:04:13,970
+So you'll watch it actually pop off here.
+
+70
+00:04:14,010 --> 00:04:14,890
+There we go.
+
+71
+00:04:15,160 --> 00:04:20,020
+And now we go back to where we were on six because six we stopped at this line.
+
+72
+00:04:20,040 --> 00:04:20,460
+Right.
+
+73
+00:04:20,490 --> 00:04:22,680
+We're waiting for this traverse to finish.
+
+74
+00:04:22,680 --> 00:04:23,730
+Now we get to the right.
+
+75
+00:04:23,760 --> 00:04:24,850
+Is there a right side.
+
+76
+00:04:24,930 --> 00:04:26,320
+Yes there is.
+
+77
+00:04:26,370 --> 00:04:28,020
+So that is eight.
+
+78
+00:04:28,020 --> 00:04:29,710
+So now we traverse eight.
+
+79
+00:04:29,910 --> 00:04:35,940
+So we add one more call right there to traverse day to push node value which is 8.
+
+80
+00:04:35,950 --> 00:04:39,050
+So now we have 10 6 3 8.
+
+81
+00:04:39,240 --> 00:04:40,630
+Then we check is there left.
+
+82
+00:04:40,640 --> 00:04:41,980
+There's not is there right.
+
+83
+00:04:41,980 --> 00:04:42,620
+There's not.
+
+84
+00:04:42,630 --> 00:04:47,510
+So we're done like a few times and it gets popped off.
+
+85
+00:04:47,580 --> 00:04:48,700
+There we go.
+
+86
+00:04:48,750 --> 00:04:53,990
+Now we're back to six at the end because this finished we traverse the right side of 6.
+
+87
+00:04:54,020 --> 00:04:55,500
+We did the left than the right.
+
+88
+00:04:55,530 --> 00:04:56,990
+There's nothing there.
+
+89
+00:04:57,300 --> 00:04:59,300
+So we're done with six.
+
+90
+00:04:59,310 --> 00:05:00,630
+Now we're back to 10.
+
+91
+00:05:00,840 --> 00:05:03,210
+So we did the entire left side of 10.
+
+92
+00:05:03,240 --> 00:05:04,730
+Now we're going to do the right side.
+
+93
+00:05:04,740 --> 00:05:09,720
+So the way that this works is that we visit a node and then we traverse the entire left side and then
+
+94
+00:05:09,720 --> 00:05:11,190
+traverse the entire right side.
+
+95
+00:05:11,510 --> 00:05:15,350
+That's sort of the high level overview but the way recursively it works.
+
+96
+00:05:15,360 --> 00:05:17,100
+It can be a little tricky to step through.
+
+97
+00:05:17,100 --> 00:05:19,000
+So now we're on 10.
+
+98
+00:05:19,020 --> 00:05:20,640
+We finished pushing in for 10.
+
+99
+00:05:20,640 --> 00:05:21,690
+It was very easy.
+
+100
+00:05:21,690 --> 00:05:23,030
+We've traversed the entire left.
+
+101
+00:05:23,040 --> 00:05:24,590
+Now we have to traverse the right.
+
+102
+00:05:24,600 --> 00:05:25,570
+So is there a right.
+
+103
+00:05:25,590 --> 00:05:26,860
+Yes 15.
+
+104
+00:05:26,910 --> 00:05:28,740
+So we traverse 15.
+
+105
+00:05:28,860 --> 00:05:32,450
+So we get a call added to our call stack for 15.
+
+106
+00:05:32,460 --> 00:05:34,490
+We push 15 into our list.
+
+107
+00:05:34,620 --> 00:05:38,310
+Now the list is 10 6 3 8 15 and recheck.
+
+108
+00:05:38,300 --> 00:05:41,900
+Is there a left there is not a left for 15.
+
+109
+00:05:42,210 --> 00:05:43,740
+So we go to the next line.
+
+110
+00:05:43,800 --> 00:05:45,520
+Is there a right and there is.
+
+111
+00:05:45,600 --> 00:05:47,070
+Which is 20.
+
+112
+00:05:47,070 --> 00:05:52,350
+So we traverse 20 and traversing 20 really just involves you can see the call being added over here
+
+113
+00:05:52,980 --> 00:05:54,860
+day to push 20.
+
+114
+00:05:54,990 --> 00:05:58,000
+So we had 20 in and we've now visited every node.
+
+115
+00:05:58,140 --> 00:06:01,890
+We don't actually know that Intel no doubt left so this is going to be false.
+
+116
+00:06:01,900 --> 00:06:03,680
+There's no left there's no right.
+
+117
+00:06:03,810 --> 00:06:11,100
+So 20 gets popped off the call stack and then the call for 15 gets popped off and then the call for
+
+118
+00:06:11,100 --> 00:06:11,690
+10.
+
+119
+00:06:11,700 --> 00:06:17,310
+The original one is popped off and we finished all traverses So this is the line that caused all that
+
+120
+00:06:17,310 --> 00:06:18,370
+trouble.
+
+121
+00:06:18,540 --> 00:06:21,000
+And this is what data now looks like.
+
+122
+00:06:21,000 --> 00:06:25,090
+Now we just returned data and we're done.
+
+123
+00:06:25,410 --> 00:06:27,660
+Well there we go now.
+
+124
+00:06:27,870 --> 00:06:29,470
+And that's the order revisit things.
+
+125
+00:06:29,820 --> 00:06:37,230
+So to recap what we do is recursively we visit a node then we visit the entire left side and then the
+
+126
+00:06:37,230 --> 00:06:38,310
+entire right side.
+
+127
+00:06:38,310 --> 00:06:40,420
+So this order is really significant.
+
+128
+00:06:40,560 --> 00:06:44,850
+And you'll see in the next two videos or next two solutions for different orders.
+
+129
+00:06:44,850 --> 00:06:48,140
+All we have to do is tweak the order that this happens.
+
+130
+00:06:48,500 --> 00:06:48,990
+OK.
+
+131
+00:06:49,080 --> 00:06:50,280
+So that's coming up next.
+

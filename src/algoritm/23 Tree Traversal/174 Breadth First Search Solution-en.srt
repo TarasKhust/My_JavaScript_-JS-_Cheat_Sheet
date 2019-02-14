@@ -1,0 +1,456 @@
+1
+00:00:00,150 --> 00:00:00,510
+All right.
+
+2
+00:00:00,510 --> 00:00:01,250
+Welcome back.
+
+3
+00:00:01,350 --> 00:00:04,080
+Let's implement our breath first search.
+
+4
+00:00:04,500 --> 00:00:10,490
+So I'm going to go over and the very first thing is I'm going to find a method we could call it be EF-S
+
+5
+00:00:10,500 --> 00:00:11,760
+or breath for search.
+
+6
+00:00:11,760 --> 00:00:13,080
+It really doesn't matter.
+
+7
+00:00:13,110 --> 00:00:18,120
+I mean to do be a Fester's because it's really annoying to type and it doesn't need to take any arguments.
+
+8
+00:00:18,120 --> 00:00:20,310
+We're just trying to visit every single node.
+
+9
+00:00:20,770 --> 00:00:21,540
+OK.
+
+10
+00:00:21,960 --> 00:00:24,680
+And right off the bat we need two things.
+
+11
+00:00:24,870 --> 00:00:28,610
+First we need our data which is what will return at the end.
+
+12
+00:00:28,830 --> 00:00:30,590
+So I'll just make an empty array.
+
+13
+00:00:30,600 --> 00:00:34,240
+We also have a couple of other variables so I'll just declare them all together.
+
+14
+00:00:34,290 --> 00:00:39,980
+We have our Q Which will also be an empty array and we can just start with that.
+
+15
+00:00:40,620 --> 00:00:45,160
+And the first thing that will do is place the root node in the queue.
+
+16
+00:00:45,650 --> 00:00:48,080
+OK so that's easy enough.
+
+17
+00:00:48,120 --> 00:00:52,090
+Q Dot push this dot Rube's.
+
+18
+00:00:52,590 --> 00:00:53,400
+So that puts.
+
+19
+00:00:53,400 --> 00:00:59,370
+If this is the tree we're working with that puts 10 in there and then we're just going to loop as long
+
+20
+00:00:59,370 --> 00:01:01,100
+as there's anything in the queue.
+
+21
+00:01:01,380 --> 00:01:03,830
+We're going to take dequeue from.
+
+22
+00:01:03,860 --> 00:01:07,880
+Q So let's just start with that loop while there's anything in the queue.
+
+23
+00:01:07,950 --> 00:01:16,590
+So if we just did while Q In javascript if we have an empty array and we negate it this tells us that
+
+24
+00:01:16,980 --> 00:01:19,920
+we get false which means that an empty array is truthy.
+
+25
+00:01:20,070 --> 00:01:21,090
+So that's not what we want.
+
+26
+00:01:21,090 --> 00:01:26,550
+It's not like an empty string or some languages an empty array is falsie because it's empty.
+
+27
+00:01:26,550 --> 00:01:27,300
+Not the case.
+
+28
+00:01:27,300 --> 00:01:30,270
+So what we're going to do instead is wild queue length.
+
+29
+00:01:30,340 --> 00:01:37,490
+So 0 is falsie as we can see there are the we can get back to false anyway.
+
+30
+00:01:37,610 --> 00:01:39,140
+It didn't make any sense.
+
+31
+00:01:39,140 --> 00:01:40,980
+I'm sorry if I did a bad job explaining that.
+
+32
+00:01:41,040 --> 00:01:42,350
+But we can't just say while.
+
+33
+00:01:42,350 --> 00:01:44,700
+Q When you say while Q Dot length.
+
+34
+00:01:45,270 --> 00:01:52,790
+So while there is something in the Q We're going to remove something from the beginning of that Q So
+
+35
+00:01:52,800 --> 00:01:56,050
+when do Q shift and let's put this in a variable.
+
+36
+00:01:56,280 --> 00:02:02,370
+But rather than inside this loop continuing to make a new variable over and over and over and redeclare
+
+37
+00:02:02,370 --> 00:02:02,850
+it.
+
+38
+00:02:03,270 --> 00:02:10,680
+Let's actually go up here and make another variable just call the node and let's start it as one we
+
+39
+00:02:10,680 --> 00:02:13,730
+actually do this route like this.
+
+40
+00:02:13,860 --> 00:02:14,570
+OK I'm going to.
+
+41
+00:02:14,730 --> 00:02:20,820
+This is just me being sort of ridiculous but I like all this to line up.
+
+42
+00:02:21,380 --> 00:02:23,050
+OK let's just do that.
+
+43
+00:02:23,100 --> 00:02:24,200
+It really doesn't matter.
+
+44
+00:02:24,210 --> 00:02:26,940
+You could just do three different vars anyway.
+
+45
+00:02:26,970 --> 00:02:31,190
+We have nodes start as root then we can use to push node.
+
+46
+00:02:31,200 --> 00:02:37,080
+It doesn't really matter but now I don't have to do this var node equals and just have this var key
+
+47
+00:02:37,080 --> 00:02:37,930
+word in a loop.
+
+48
+00:02:37,930 --> 00:02:39,050
+It's not a good idea.
+
+49
+00:02:39,300 --> 00:02:43,680
+So I'm just going to now assign node to b q shift.
+
+50
+00:02:43,680 --> 00:02:48,330
+Now of course I could just started note as nothing could just made it undefined or no.
+
+51
+00:02:48,920 --> 00:02:50,420
+But this works fine for me.
+
+52
+00:02:50,430 --> 00:02:53,470
+So we take from the beginning of the queue.
+
+53
+00:02:53,610 --> 00:02:58,260
+So if we're pushing at the end we're going to shift from the beginning in order to get that first in
+
+54
+00:02:58,260 --> 00:02:59,430
+first out.
+
+55
+00:02:59,670 --> 00:03:04,060
+Then we need to take that note and add it to the list that we're going to return.
+
+56
+00:03:04,320 --> 00:03:06,150
+Then we check if there's a left.
+
+57
+00:03:06,180 --> 00:03:08,290
+We add that to the queue we end it.
+
+58
+00:03:08,340 --> 00:03:11,410
+If there's a write we add that to the queue as well.
+
+59
+00:03:11,910 --> 00:03:13,920
+So we know it was queued up shift.
+
+60
+00:03:13,920 --> 00:03:21,710
+Now we're going to do data push node so that's adding into our list that we're going to return to if
+
+61
+00:03:21,720 --> 00:03:27,040
+this is our queue empty and this is our data empty.
+
+62
+00:03:27,170 --> 00:03:31,250
+The very very first thing that happened is that we pushed.
+
+63
+00:03:31,280 --> 00:03:35,470
+Sorry about that Syren if you could hear that queued up push 10 given this tree.
+
+64
+00:03:35,690 --> 00:03:41,690
+Then while queued up length node equals take this out and added into our data.
+
+65
+00:03:41,690 --> 00:03:45,720
+Now we're going to check if there's a left if node left.
+
+66
+00:03:45,920 --> 00:03:54,120
+Then we'll do a Q push node left and will do the same thing.
+
+67
+00:03:54,670 --> 00:03:59,140
+If there's a right so we add that in to that.
+
+68
+00:03:59,140 --> 00:04:03,920
+Q And that's actually it for our loop then at the end.
+
+69
+00:04:03,930 --> 00:04:09,460
+We just need to return this data variable where we're building up everything we've visited.
+
+70
+00:04:09,600 --> 00:04:16,320
+So just to reiterate that if we take 10 from the beginning which was in our queue we added data then
+
+71
+00:04:16,320 --> 00:04:18,210
+we're going to check is there left for 10.
+
+72
+00:04:18,270 --> 00:04:21,390
+Well given our structure yes it's six.
+
+73
+00:04:21,390 --> 00:04:23,500
+So we had six in 10.
+
+74
+00:04:23,550 --> 00:04:24,880
+We do know right.
+
+75
+00:04:24,900 --> 00:04:25,860
+Is there are no doubt right.
+
+76
+00:04:25,860 --> 00:04:27,280
+Yes it's 15.
+
+77
+00:04:27,300 --> 00:04:31,680
+So cued up push 15 and then the loop starts over.
+
+78
+00:04:31,800 --> 00:04:33,320
+There's still length to the queue.
+
+79
+00:04:33,360 --> 00:04:40,400
+So now node is equal to 6 it would take 6 out and we push it on to data which is what we visited.
+
+80
+00:04:40,650 --> 00:04:45,030
+And we return at the end and then we check if there's a left there is.
+
+81
+00:04:45,030 --> 00:04:46,050
+So we add that in.
+
+82
+00:04:46,080 --> 00:04:47,080
+Which is three.
+
+83
+00:04:47,390 --> 00:04:49,440
+And would do the same thing with the right.
+
+84
+00:04:49,470 --> 00:04:50,090
+We add that in.
+
+85
+00:04:50,090 --> 00:04:50,980
+Which is eight.
+
+86
+00:04:51,120 --> 00:04:55,380
+And we keep going and I did this in the last video so I won't step through every single moment.
+
+87
+00:04:55,620 --> 00:04:58,980
+But let's just see if it works if it does work.
+
+88
+00:04:59,130 --> 00:05:02,030
+We expect to get this.
+
+89
+00:05:02,700 --> 00:05:04,810
+So I'll copy this over.
+
+90
+00:05:04,860 --> 00:05:06,310
+This is what we want.
+
+91
+00:05:07,290 --> 00:05:09,040
+Let's try running it.
+
+92
+00:05:09,180 --> 00:05:12,280
+So down here I have the code to actually build the tree.
+
+93
+00:05:12,510 --> 00:05:14,010
+And now I'm going to do a tree.
+
+94
+00:05:14,040 --> 00:05:16,420
+B fs.
+
+95
+00:05:16,730 --> 00:05:18,930
+Wow that's annoying.
+
+96
+00:05:18,930 --> 00:05:22,620
+Maybe I should just push the value in to make this easier to see what's happening.
+
+97
+00:05:22,620 --> 00:05:24,910
+So let's do push no doubt value.
+
+98
+00:05:24,930 --> 00:05:26,000
+It really doesn't matter.
+
+99
+00:05:26,010 --> 00:05:27,860
+But just to make this easier to see
+
+100
+00:05:31,670 --> 00:05:32,170
+OK.
+
+101
+00:05:32,400 --> 00:05:42,240
+So we got 10 6 15 3 8 20 and we're supposed to get 10 615 3:08 20 that are breadth first all the way
+
+102
+00:05:42,240 --> 00:05:44,850
+across all the way across all the way across.
+
+103
+00:05:44,910 --> 00:05:48,980
+So horizontal before we go vertical breath before depth.
+
+104
+00:05:49,290 --> 00:05:55,090
+So that's be EF-S it's relatively straightforward if you take advantage of a queue.
+
+105
+00:05:55,150 --> 00:05:59,140
+Remember first in first out just a list of things that we need to visit.
+
+106
+00:05:59,160 --> 00:06:02,420
+We're keeping track of it and it grows and it doesn't really matter.
+
+107
+00:06:02,550 --> 00:06:05,330
+Yes this is hard coded for left and right.
+
+108
+00:06:05,550 --> 00:06:09,840
+But if this was a ternary tree we could add you know first second and third child.
+
+109
+00:06:09,990 --> 00:06:14,430
+Or we could do it dynamically and have a loop and loop over all the children.
+
+110
+00:06:14,430 --> 00:06:16,350
+So it doesn't have to be a binary tree.
+
+111
+00:06:16,350 --> 00:06:18,000
+It's the same basic principle.
+
+112
+00:06:18,000 --> 00:06:18,590
+You use a.
+
+113
+00:06:18,590 --> 00:06:19,580
+Q All right.
+
+114
+00:06:19,590 --> 00:06:20,520
+So that be EF-S.
+

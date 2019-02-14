@@ -1,0 +1,192 @@
+1
+00:00:00,180 --> 00:00:00,560
+All right.
+
+2
+00:00:00,570 --> 00:00:05,850
+And this quick video I just want to set up our two classes we're going to have node just like before
+
+3
+00:00:06,240 --> 00:00:14,310
+and we're going to have doubly linked list and the basics of both are very very similar to what we had
+
+4
+00:00:14,310 --> 00:00:14,880
+before.
+
+5
+00:00:14,880 --> 00:00:22,770
+The only difference is that a node now has a value it has a next and it has a previous R.W. length list.
+
+6
+00:00:22,770 --> 00:00:28,410
+Class is just going to have a head a tail and a length.
+
+7
+00:00:28,440 --> 00:00:29,160
+Just like before.
+
+8
+00:00:29,160 --> 00:00:34,770
+So this is unchanged now but logic the code we add to this will change a lot all the different methods
+
+9
+00:00:34,770 --> 00:00:36,500
+we add compared to singly think for us.
+
+10
+00:00:36,510 --> 00:00:38,340
+That's why we have a whole section on it.
+
+11
+00:00:38,520 --> 00:00:41,230
+But the actual constructors COME UP look the same.
+
+12
+00:00:41,250 --> 00:00:48,460
+So let's start class Node class Node here at our constructor.
+
+13
+00:00:48,660 --> 00:00:49,960
+Each node has a value.
+
+14
+00:00:49,980 --> 00:00:57,240
+So we set this dot Val equals Val and then we have this next and we'll set that to know the beginning
+
+15
+00:00:57,720 --> 00:01:00,070
+and stop previous equals nil.
+
+16
+00:01:00,090 --> 00:01:03,650
+So this is really this is the only difference in the node class.
+
+17
+00:01:03,750 --> 00:01:10,320
+Otherwise it's identical and then are doubly linked list class will just do class double the length
+
+18
+00:01:10,320 --> 00:01:13,050
+list as a constructor.
+
+19
+00:01:13,050 --> 00:01:14,180
+Just leave it empty.
+
+20
+00:01:14,640 --> 00:01:21,870
+And we just need to set this head equals no this dot tail equals no.
+
+21
+00:01:22,350 --> 00:01:26,830
+And this length starts at zero and that's it.
+
+22
+00:01:26,910 --> 00:01:28,680
+That's our skeleton.
+
+23
+00:01:28,680 --> 00:01:30,240
+So I'll get rid of this now.
+
+24
+00:01:30,360 --> 00:01:31,560
+You don't need that.
+
+25
+00:01:31,560 --> 00:01:36,140
+This is what we'll be using and adding on to our node class is done when we don't touch that anymore.
+
+26
+00:01:36,150 --> 00:01:38,130
+We had everything to this class.
+
+27
+00:01:38,310 --> 00:01:44,720
+So we'll be adding you know push just like before or pop or whatever else we do if we want to just test
+
+28
+00:01:44,720 --> 00:01:46,890
+it out though just to make sure it works.
+
+29
+00:01:46,920 --> 00:01:49,760
+Let's run this code let's just work with the Node class.
+
+30
+00:01:49,770 --> 00:01:50,700
+Let's do.
+
+31
+00:01:50,700 --> 00:01:54,630
+I don't know first equals new node.
+
+32
+00:01:54,660 --> 00:01:57,570
+Give it a value just give the value of 12.
+
+33
+00:01:57,570 --> 00:01:57,880
+All right.
+
+34
+00:01:57,900 --> 00:02:03,030
+We are first and I can do first duck next equals new node.
+
+35
+00:02:03,120 --> 00:02:10,440
+This time it's going to be 13 and so far we're just working with this as a single length for us because
+
+36
+00:02:10,440 --> 00:02:14,030
+I said first dot next to be that new node.
+
+37
+00:02:14,520 --> 00:02:21,590
+Now the crazy thing is I also need to take 13 which is the next item and I need to link it backwards.
+
+38
+00:02:21,690 --> 00:02:27,460
+So I want to say first dot next which should give me 13.
+
+39
+00:02:27,480 --> 00:02:31,460
+Yup that node Next Previous.
+
+40
+00:02:31,550 --> 00:02:32,560
+It's very bizarre right.
+
+41
+00:02:32,560 --> 00:02:34,790
+Were saying first thing next.
+
+42
+00:02:34,950 --> 00:02:38,510
+It's reference to the previous thing should be the first thing.
+
+43
+00:02:38,900 --> 00:02:45,570
+And now if we look at first it connects to this next node but that next node has a reference to the
+
+44
+00:02:45,570 --> 00:02:46,450
+previous node.
+
+45
+00:02:46,710 --> 00:02:50,480
+And actually we could just keep pushing this and going back and forth between the two.
+
+46
+00:02:50,490 --> 00:02:54,280
+Anyway that's the skeleton for our doubly linked list class.
+
+47
+00:02:54,480 --> 00:02:56,950
+In the next video we're going to start adding methods.
+
+48
+00:02:56,970 --> 00:03:00,270
+First up is going to be push so we can get some data in there.
+

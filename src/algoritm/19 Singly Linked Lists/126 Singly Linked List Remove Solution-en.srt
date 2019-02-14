@@ -1,0 +1,208 @@
+1
+00:00:00,210 --> 00:00:00,630
+All right.
+
+2
+00:00:00,630 --> 00:00:07,650
+So let's write a solution for Remove going to hop over to my snippet and we'll define remove which takes
+
+3
+00:00:07,770 --> 00:00:13,440
+an index and the very first thing it needs to do is check if that index is valid.
+
+4
+00:00:13,440 --> 00:00:20,340
+So if it if the index is negative if it's less than zero or if the index is greater than or equal to
+
+5
+00:00:20,550 --> 00:00:28,960
+the length what do we do we return no or undefined it doesn't really matter.
+
+6
+00:00:28,960 --> 00:00:30,540
+Just something bad.
+
+7
+00:00:30,760 --> 00:00:32,380
+Yes he could return false too.
+
+8
+00:00:32,740 --> 00:00:37,670
+If the index is zero we're going to return this dot shift.
+
+9
+00:00:37,690 --> 00:00:46,270
+That means remove the first thing and if the index is the length minus one.
+
+10
+00:00:46,390 --> 00:00:51,500
+If it's the last item then we return this top up.
+
+11
+00:00:52,020 --> 00:00:54,700
+OK so those are the three edge cases.
+
+12
+00:00:54,700 --> 00:00:57,110
+Then we have the rest of the logic.
+
+13
+00:00:57,130 --> 00:01:01,690
+So this means if we get to this point and we haven't returned yet it's somewhere in the middle of the
+
+14
+00:01:01,690 --> 00:01:03,270
+list that we're trying to remove.
+
+15
+00:01:03,310 --> 00:01:05,370
+So we need to find the previous node.
+
+16
+00:01:05,620 --> 00:01:08,320
+So let's make a variable called previous node equals.
+
+17
+00:01:08,350 --> 00:01:11,250
+This get index minus 1.
+
+18
+00:01:11,860 --> 00:01:16,120
+So retrieve the value of retrieve the Node 1 before.
+
+19
+00:01:16,120 --> 00:01:22,840
+What we're trying to remove then what I'm going to do is make a node a variable called removed and it's
+
+20
+00:01:22,840 --> 00:01:27,240
+going to store a previous node next.
+
+21
+00:01:27,700 --> 00:01:30,050
+So this is what we're going to return to the very end.
+
+22
+00:01:30,100 --> 00:01:31,430
+Can actually just do that now.
+
+23
+00:01:31,510 --> 00:01:34,730
+Return removed but it's not removed yet.
+
+24
+00:01:34,780 --> 00:01:42,380
+So now all we need to do is set previous node next equals removed next.
+
+25
+00:01:42,390 --> 00:01:48,010
+So if we're trying to remove this right here we find the previous Node 2 0 1 and we make a variable
+
+26
+00:01:48,010 --> 00:01:52,360
+called removed and we set it equal to this dot next.
+
+27
+00:01:52,360 --> 00:01:55,850
+So this is going to be in our removed variable.
+
+28
+00:01:55,990 --> 00:02:00,760
+Then we take the previous node next and set it to removed next.
+
+29
+00:02:00,780 --> 00:02:03,700
+So we take this and said it's next to this.
+
+30
+00:02:03,850 --> 00:02:08,530
+At which point this is out of the picture we have it in a variable so we can return it at the end.
+
+31
+00:02:08,590 --> 00:02:10,480
+But we also need to before that.
+
+32
+00:02:10,480 --> 00:02:11,820
+Subtract one from the length.
+
+33
+00:02:11,890 --> 00:02:16,750
+So this dot length minus minus and that should do it for us.
+
+34
+00:02:16,750 --> 00:02:18,950
+Let's try executing it let's do list.
+
+35
+00:02:18,980 --> 00:02:22,400
+Does it remove the first item.
+
+36
+00:02:22,630 --> 00:02:27,920
+So that gives us 100 and the list now starts at 2 0 1.
+
+37
+00:02:27,970 --> 00:02:30,330
+Let's remove from the end remove.
+
+38
+00:02:30,340 --> 00:02:33,230
+Actually that's do from the middle first let's do index of 2.
+
+39
+00:02:33,250 --> 00:02:37,390
+So that should be if we remove this index of 2.
+
+40
+00:02:37,470 --> 00:02:39,340
+It's going to be the last thing isn't it.
+
+41
+00:02:39,490 --> 00:02:41,000
+OK that's two index of one.
+
+42
+00:02:41,200 --> 00:02:44,700
+So that should give us 250 and it does.
+
+43
+00:02:44,770 --> 00:02:49,790
+And if we look at the list now it has 2 items in it 201 and 350.
+
+44
+00:02:49,820 --> 00:02:50,320
+Let's do.
+
+45
+00:02:50,320 --> 00:02:57,070
+Let's remove the last item index of 1 cool so that called Pop.
+
+46
+00:02:57,230 --> 00:03:01,310
+And if you look at the list now it has one item left let's do list.
+
+47
+00:03:01,400 --> 00:03:05,570
+Remove the zero with item and we look at the list.
+
+48
+00:03:05,630 --> 00:03:06,770
+It's empty now.
+
+49
+00:03:06,860 --> 00:03:10,980
+Try and remove something that isn't in there that's not going to work.
+
+50
+00:03:11,090 --> 00:03:12,770
+Have it a positive number.
+
+51
+00:03:12,940 --> 00:03:13,650
+Cool.
+
+52
+00:03:13,700 --> 00:03:15,080
+So that is remove.
+

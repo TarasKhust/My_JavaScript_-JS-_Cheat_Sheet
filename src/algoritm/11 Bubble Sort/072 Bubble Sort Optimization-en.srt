@@ -1,0 +1,272 @@
+1
+00:00:00,230 --> 00:00:01,280
+Hey welcome back.
+
+2
+00:00:01,290 --> 00:00:03,370
+So we're actually still talking about bubble sort.
+
+3
+00:00:03,360 --> 00:00:06,890
+Because there's one important optimization we haven't discussed.
+
+4
+00:00:07,110 --> 00:00:13,590
+So there's a very specific scenario where if our data is almost sorted or if it's already sorted it's
+
+5
+00:00:13,890 --> 00:00:15,650
+doesn't need to be sorted.
+
+6
+00:00:15,780 --> 00:00:20,480
+Our bubble sort algorithm as it stands doesn't really treated any differently.
+
+7
+00:00:20,550 --> 00:00:22,960
+It still tries to sort every single item.
+
+8
+00:00:22,980 --> 00:00:30,780
+So in this scenario where we're almost sorted 5 fast forward through this OK maybe this is a bit too
+
+9
+00:00:30,780 --> 00:00:31,480
+long.
+
+10
+00:00:31,830 --> 00:00:32,690
+OK OK.
+
+11
+00:00:32,700 --> 00:00:34,120
+We're almost there now.
+
+12
+00:00:34,140 --> 00:00:35,180
+We're sorted right.
+
+13
+00:00:35,310 --> 00:00:39,050
+So if we get to the end and as humans we can see that we're done.
+
+14
+00:00:39,360 --> 00:00:43,390
+But our code is actually going to keep going and it's going to go to the end.
+
+15
+00:00:43,650 --> 00:00:49,030
+No swaps are made but then it goes again and it tries to sort all these up until here then it goes again
+
+16
+00:00:49,050 --> 00:00:53,570
+tries to sort all these to hear even though nothing is happening it's just iterating over.
+
+17
+00:00:53,580 --> 00:00:59,370
+So if we have a super long array that's going to be a problem because it just takes up a lot of unnecessary
+
+18
+00:00:59,370 --> 00:01:00,070
+time.
+
+19
+00:01:00,150 --> 00:01:07,720
+So we can short circuit our code all that we have to do is check last time through Did we make any swaps.
+
+20
+00:01:07,740 --> 00:01:11,830
+If the answer is no if we didn't swap anything that means that we're done.
+
+21
+00:01:12,150 --> 00:01:15,260
+Because if you didn't swap in the last time you're not going to swap them the next time.
+
+22
+00:01:15,360 --> 00:01:19,970
+So back in our code what I'll do is make two versions.
+
+23
+00:01:20,100 --> 00:01:21,800
+We're getting a lot of solutions going.
+
+24
+00:01:22,110 --> 00:01:27,780
+If we comment these out for now never know what the best way of doing this is because students like
+
+25
+00:01:27,780 --> 00:01:30,770
+to have the different steps as I go.
+
+26
+00:01:30,930 --> 00:01:34,980
+But I also don't like making the super long files because it can scare some people.
+
+27
+00:01:35,080 --> 00:01:42,930
+What we can do if we call this right now with a nearly sorted array like eight come a one two three
+
+28
+00:01:42,930 --> 00:01:45,330
+four five six seven for example.
+
+29
+00:01:45,330 --> 00:01:47,600
+So we're almost there right after the first pass.
+
+30
+00:01:47,610 --> 00:01:50,050
+It's going to be sorted it will be it's at the end.
+
+31
+00:01:50,340 --> 00:01:55,400
+If we take a look right now how many times or how many comparisons we're making roughly.
+
+32
+00:01:55,590 --> 00:01:56,560
+Let's run it now.
+
+33
+00:01:57,770 --> 00:01:58,810
+Are making a ton.
+
+34
+00:01:58,980 --> 00:02:05,690
+Because it was sorted at this point and we kept going without making any swaps a ton of times after
+
+35
+00:02:05,690 --> 00:02:06,250
+that.
+
+36
+00:02:06,500 --> 00:02:14,210
+So what I'll do is I'm going to make a variable I'll call it no swaps and no swaps is if it's true that
+
+37
+00:02:14,210 --> 00:02:16,780
+means there are no swaps and we're going to break out of the loop.
+
+38
+00:02:16,910 --> 00:02:20,060
+So I could start with that down here even though it's not defined.
+
+39
+00:02:20,060 --> 00:02:26,070
+I could write if no swaps break that would get us out.
+
+40
+00:02:26,180 --> 00:02:30,130
+Of course we don't have no swaps defined so appear all do far.
+
+41
+00:02:30,320 --> 00:02:32,290
+No swaps like this.
+
+42
+00:02:32,540 --> 00:02:39,260
+And then inside the loop each time through I'm going to set it to be true we'll assume there's no swaps
+
+43
+00:02:39,290 --> 00:02:40,530
+every time through.
+
+44
+00:02:40,640 --> 00:02:50,040
+But then if we make a swap which is right here remember we can set it to be no swaps equals false.
+
+45
+00:02:50,150 --> 00:02:50,960
+Does that make sense.
+
+46
+00:02:50,960 --> 00:02:57,050
+So as we go through every time at the beginning so let's say we start with this no swaps starts that
+
+47
+00:02:57,050 --> 00:02:58,070
+true.
+
+48
+00:02:58,580 --> 00:03:03,110
+And then we make a swap right off the bat eight and one we swap.
+
+49
+00:03:03,110 --> 00:03:06,340
+So now there's no chance of breaking out this time through.
+
+50
+00:03:06,500 --> 00:03:12,680
+But then we finish the iteration and eight is now at the end you could see here for example next time
+
+51
+00:03:12,680 --> 00:03:16,510
+through no swaps is true and we never make a swap.
+
+52
+00:03:16,520 --> 00:03:21,350
+This is never true so we never set it to false which means we get through the all the way to the end.
+
+53
+00:03:21,350 --> 00:03:22,700
+One time afterward.
+
+54
+00:03:22,700 --> 00:03:26,680
+So we sort it all then we iterate through no swap No swap No swap.
+
+55
+00:03:26,870 --> 00:03:28,240
+Then we get done with it.
+
+56
+00:03:28,610 --> 00:03:32,270
+And this is true now if no swaps and we break out.
+
+57
+00:03:32,330 --> 00:03:38,720
+So now if we if we take a look at what this how many times just prince out with this line you can see
+
+58
+00:03:38,720 --> 00:03:43,460
+that we basically had to get it to the end which was right here.
+
+59
+00:03:43,550 --> 00:03:49,670
+This was our first time through and then we went through one more time and we finished and then that
+
+60
+00:03:49,670 --> 00:03:50,270
+was it.
+
+61
+00:03:50,300 --> 00:03:55,390
+We didn't keep going and compare that to the previous versions where we went through.
+
+62
+00:03:55,520 --> 00:04:01,850
+We got to the end and then we kept sorting over and over and over and over and over many more passes
+
+63
+00:04:02,690 --> 00:04:05,520
+in this case we shortened it significantly.
+
+64
+00:04:05,720 --> 00:04:11,690
+And as the array grows if it is nearly sorted that makes a very big difference.
+
+65
+00:04:11,990 --> 00:04:12,270
+OK.
+
+66
+00:04:12,290 --> 00:04:14,420
+So I just added a little comment.
+
+67
+00:04:14,420 --> 00:04:20,690
+This is our next version that we optimized with the no swaps variable just a small change but it really
+
+68
+00:04:20,690 --> 00:04:22,320
+can save a lot of time.
+

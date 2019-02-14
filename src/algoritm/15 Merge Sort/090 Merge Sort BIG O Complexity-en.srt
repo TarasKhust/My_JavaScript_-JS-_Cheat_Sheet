@@ -1,0 +1,420 @@
+1
+00:00:00,320 --> 00:00:01,550
+All right welcome back.
+
+2
+00:00:01,560 --> 00:00:06,420
+I just want to quickly talk about Big O time and space complexity for merge sort.
+
+3
+00:00:06,570 --> 00:00:11,070
+So we kind of we haven't mentioned it really although I showed you in the very first intro to merge
+
+4
+00:00:11,070 --> 00:00:16,990
+sort video how much faster it is at least anecdotally compared to something like bubble sort.
+
+5
+00:00:17,220 --> 00:00:22,530
+But the best case the average case and the worst case for merge sort are all the same.
+
+6
+00:00:22,620 --> 00:00:29,130
+Oh of and log and so unlike something like bubble sort bubble sort did did OK it was quite well I wouldn't
+
+7
+00:00:29,130 --> 00:00:31,170
+even say OK it does pretty poorly.
+
+8
+00:00:31,170 --> 00:00:36,960
+It's quadratic and squared time in Must the data in the best case is already sorted in which case it
+
+9
+00:00:36,960 --> 00:00:42,050
+improves to linear time of an merge sort has no such.
+
+10
+00:00:42,570 --> 00:00:43,280
+I don't want to say this.
+
+11
+00:00:43,310 --> 00:00:45,890
+There is no edge case like that and merge sort.
+
+12
+00:00:45,940 --> 00:00:47,470
+It doesn't care what the data looks like.
+
+13
+00:00:47,470 --> 00:00:51,910
+It doesn't have an impact it's going to split it up over and over and over and merge things over and
+
+14
+00:00:51,910 --> 00:00:54,150
+over and over no matter what the input is.
+
+15
+00:00:54,160 --> 00:00:58,750
+If it's already sorted or if it's reversed or totally random It doesn't really matter.
+
+16
+00:00:58,750 --> 00:01:00,250
+So that's the first point.
+
+17
+00:01:00,250 --> 00:01:05,010
+Now the second thing is why is it end log n where does that come from.
+
+18
+00:01:05,020 --> 00:01:10,000
+And definitely I would not expect you just to know that or even necessarily to be able to compute that
+
+19
+00:01:10,000 --> 00:01:10,690
+right away.
+
+20
+00:01:10,870 --> 00:01:12,920
+But here's a basic overview.
+
+21
+00:01:13,420 --> 00:01:18,270
+So if we have this if we start with an array of eight elements.
+
+22
+00:01:18,490 --> 00:01:21,840
+So this is showing at the end of the process merging them together.
+
+23
+00:01:21,850 --> 00:01:25,600
+But just we have let's say we're starting here and moving upwards.
+
+24
+00:01:25,630 --> 00:01:28,650
+So we have to split it into two pieces.
+
+25
+00:01:28,960 --> 00:01:30,780
+So that's one decomposition.
+
+26
+00:01:31,000 --> 00:01:34,170
+Then we split it again and that's another decomposition.
+
+27
+00:01:34,170 --> 00:01:38,470
+And then again until we get items that are 1 or arrays or one item long.
+
+28
+00:01:38,710 --> 00:01:40,450
+So what is the relationship here.
+
+29
+00:01:40,450 --> 00:01:43,120
+If we have eight items in the array and is eight.
+
+30
+00:01:43,240 --> 00:01:47,700
+How many times do we have to split in order to get single element arrays.
+
+31
+00:01:47,770 --> 00:01:49,420
+In this case it's three.
+
+32
+00:01:49,720 --> 00:01:53,600
+But if instead we had an array of 32 items.
+
+33
+00:01:53,840 --> 00:01:58,140
+I will not I'm not going to type it all out but imagine that I'm just writing the length here.
+
+34
+00:01:58,150 --> 00:02:00,790
+So we have an array of 32 items.
+
+35
+00:02:00,790 --> 00:02:06,910
+We could do a split which gives just one array of 16 and another 16 and then we can split that again
+
+36
+00:02:07,000 --> 00:02:11,500
+which is what would happen we'd get an 8 8 8 8 so 4 8 item arrays.
+
+37
+00:02:11,800 --> 00:02:13,340
+And then we split that again.
+
+38
+00:02:13,540 --> 00:02:15,060
+And what do we get.
+
+39
+00:02:15,060 --> 00:02:20,630
+We get 8 4 out item a race and then we keep going.
+
+40
+00:02:20,770 --> 00:02:23,740
+And I am not going to count these precisely.
+
+41
+00:02:23,740 --> 00:02:25,030
+It doesn't exactly matter.
+
+42
+00:02:25,030 --> 00:02:27,160
+Anyway forget this the number right.
+
+43
+00:02:27,160 --> 00:02:30,670
+The point is though eventually we're going to end up with 32.
+
+44
+00:02:30,700 --> 00:02:31,810
+One item a raise.
+
+45
+00:02:31,810 --> 00:02:35,310
+Now how many splits did we have to do to get there.
+
+46
+00:02:35,320 --> 00:02:35,950
+I'm not counting.
+
+47
+00:02:35,950 --> 00:02:39,030
+Please don't hold me accountable here.
+
+48
+00:02:39,100 --> 00:02:39,930
+How many splits.
+
+49
+00:02:40,000 --> 00:02:43,690
+Well here's the first split the second the third the fourth the fifth.
+
+50
+00:02:43,780 --> 00:02:47,250
+So highs and grew to 32.
+
+51
+00:02:47,260 --> 00:02:50,230
+We had five splits when N was eight.
+
+52
+00:02:50,320 --> 00:02:51,600
+We had three splits.
+
+53
+00:02:51,700 --> 00:02:53,110
+What's that relationship.
+
+54
+00:02:53,230 --> 00:02:58,810
+Well going back to the big O.S. that log and now remember we're talking about base 2.
+
+55
+00:02:58,810 --> 00:03:00,330
+So log base 2 of.
+
+56
+00:03:00,340 --> 00:03:04,770
+And what that really means is two of what power gives us.
+
+57
+00:03:05,860 --> 00:03:13,260
+So in our case if we have eight elements we take two and raise it three times one to three to get eight
+
+58
+00:03:13,720 --> 00:03:20,260
+or if we have 32 elements that means two times two times two times two times to two to the fifth power
+
+59
+00:03:20,500 --> 00:03:22,440
+is going to give us 32.
+
+60
+00:03:22,600 --> 00:03:28,570
+So that's where the log end comes from as and grows the length of this array the number of times we
+
+61
+00:03:28,570 --> 00:03:32,500
+have to split it up grows at the rate of log n.
+
+62
+00:03:32,620 --> 00:03:35,370
+Now what about the N log and where does that come into play.
+
+63
+00:03:35,440 --> 00:03:43,510
+Well each time that we decompose it we have o of and comparison's when we're doing the merge.
+
+64
+00:03:43,510 --> 00:03:47,260
+So for example let's take a look at this row right here.
+
+65
+00:03:47,350 --> 00:03:52,660
+This is on the way back to the merge towards the the last it's the last step of merging.
+
+66
+00:03:52,660 --> 00:03:56,950
+There's always eight items for Compare it comparing each time through right.
+
+67
+00:03:57,040 --> 00:04:01,130
+We're not adding or removing items at any point we're just splitting them up and moving them around.
+
+68
+00:04:01,180 --> 00:04:03,230
+But there's always eight things total.
+
+69
+00:04:03,250 --> 00:04:09,220
+So here we would start and compare one and three to single comparison and then one of those is chosen
+
+70
+00:04:09,220 --> 00:04:09,920
+which is 1.
+
+71
+00:04:10,060 --> 00:04:15,370
+So then we move on and we compare two and three and then we compare three and six and then four and
+
+72
+00:04:15,370 --> 00:04:21,580
+six at the end of the day we have 0 of and comparisons on each of these.
+
+73
+00:04:21,580 --> 00:04:28,150
+So as the length of end grows the merge algorithm itself not the merge sort just the merge has time
+
+74
+00:04:28,150 --> 00:04:29,570
+complexity of Ovett.
+
+75
+00:04:29,710 --> 00:04:33,850
+So if we have a thousand items in the array there's roughly a thousand comparisons that need to be made
+
+76
+00:04:34,150 --> 00:04:36,610
+if we have eight items in the array.
+
+77
+00:04:36,650 --> 00:04:39,490
+There's roughly eight comparisons that need to be made to merge.
+
+78
+00:04:39,550 --> 00:04:42,530
+So in total we end up with analog again.
+
+79
+00:04:42,670 --> 00:04:47,470
+So o of all again is the number of decompositions as and grows.
+
+80
+00:04:47,470 --> 00:04:53,370
+There are the number of times the split and the number of times but the array grows at the rate of Flugge
+
+81
+00:04:53,370 --> 00:04:53,940
+end.
+
+82
+00:04:54,040 --> 00:04:59,590
+But then each time we do split each decomposition we have a live and comparison to actually perform
+
+83
+00:04:59,590 --> 00:05:00,260
+the merging.
+
+84
+00:05:00,280 --> 00:05:03,540
+So in total we end up with 0 of end log end.
+
+85
+00:05:03,730 --> 00:05:09,850
+So if we look at a chart here and log in could see its way better than something like 0 of squared quadratic
+
+86
+00:05:09,850 --> 00:05:10,740
+time.
+
+87
+00:05:10,760 --> 00:05:16,750
+Its not as good as laga And of course or linear time of and but this is actually the best that we can
+
+88
+00:05:16,750 --> 00:05:24,200
+get for a sorting algorithm unless the algorithm itself takes advantage of some weird quirk in the data.
+
+89
+00:05:24,490 --> 00:05:30,670
+So theres an algorithm will look at called radix sort that uses a particular quirk of numbers and it
+
+90
+00:05:30,670 --> 00:05:32,420
+won't work to sort anything else.
+
+91
+00:05:32,620 --> 00:05:39,070
+But if we want a data agnostic sorting algorithm the best we can do is 0 of and log in some merge sort
+
+92
+00:05:39,070 --> 00:05:40,160
+is doing great.
+
+93
+00:05:40,420 --> 00:05:44,000
+It's always over and log in best worst and average time.
+
+94
+00:05:44,050 --> 00:05:46,200
+And then finally space complexity.
+
+95
+00:05:46,210 --> 00:05:51,420
+So this is a bit different compared to things like bubble sort which have a constant space complexity.
+
+96
+00:05:51,520 --> 00:05:58,960
+When we talk about merge sort as we have a larger array we have to store more race in our memory and
+
+97
+00:05:58,960 --> 00:05:59,980
+not in our memory.
+
+98
+00:06:00,080 --> 00:06:01,330
+We have to use more space.
+
+99
+00:06:01,420 --> 00:06:02,860
+So that is a tradeoff.
+
+100
+00:06:02,860 --> 00:06:09,940
+Now usually we care about time complexity but if space is a consideration then absolutely something
+
+101
+00:06:09,940 --> 00:06:15,070
+like merge sort takes up a lot more space compared to bubble sort or any of the other earlier sorts.
+
+102
+00:06:15,170 --> 00:06:15,550
+OK.
+
+103
+00:06:15,580 --> 00:06:18,450
+So that is the big O of merge sort.
+
+104
+00:06:18,460 --> 00:06:21,530
+Next up we have a whole other fun sorting out for them.
+
+105
+00:06:21,580 --> 00:06:22,020
+See you then.
+

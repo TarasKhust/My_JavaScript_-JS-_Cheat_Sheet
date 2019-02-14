@@ -1,0 +1,368 @@
+1
+00:00:00,210 --> 00:00:06,300
+Just like an adjacency matrix there are two different ways of expressing the edges the relationships
+
+2
+00:00:06,300 --> 00:00:08,060
+between our vertices.
+
+3
+00:00:08,370 --> 00:00:08,670
+OK.
+
+4
+00:00:08,700 --> 00:00:10,230
+Now let's compare them.
+
+5
+00:00:10,260 --> 00:00:16,530
+So here's kind of an intimidating slide that talks about the Big O notation between adjacent to us and
+
+6
+00:00:16,530 --> 00:00:20,760
+adjacency matrices for various operations.
+
+7
+00:00:20,760 --> 00:00:24,990
+So first a couple of things I should explain the N E.
+
+8
+00:00:25,260 --> 00:00:28,840
+So v is a number of vertices is the number of edges.
+
+9
+00:00:29,010 --> 00:00:33,810
+So if we think about the storage how much space they take up compared to one another.
+
+10
+00:00:34,050 --> 00:00:40,530
+If we look at an adjacency matrix you can see we're looking at big-O of V squared where v is a number
+
+11
+00:00:40,530 --> 00:00:44,410
+of vertices and that makes sense because it's a two dimensional structure.
+
+12
+00:00:44,430 --> 00:00:50,220
+If we add a new vertex it means not only just adding one slot in it means actually adding an entire
+
+13
+00:00:50,220 --> 00:00:53,630
+row in an entire column to our matrix.
+
+14
+00:00:53,640 --> 00:00:55,460
+Compare that with an adjacency list.
+
+15
+00:00:55,590 --> 00:00:59,980
+It really only grows at the rate of number of vertices and edges.
+
+16
+00:01:00,540 --> 00:01:01,800
+So I think that makes sense right.
+
+17
+00:01:01,800 --> 00:01:04,670
+All we have to store here really the size is governed.
+
+18
+00:01:04,710 --> 00:01:09,630
+Or if we go back to this example same thing in the adjacency of list the size of it the amount of storage
+
+19
+00:01:09,690 --> 00:01:13,260
+is determined by how many edges how many connections we have.
+
+20
+00:01:13,260 --> 00:01:17,000
+But if we go to our matrix it doesn't matter how many connections there are.
+
+21
+00:01:17,070 --> 00:01:18,720
+It matters how many vertices.
+
+22
+00:01:18,720 --> 00:01:24,690
+So we could have 100 more vertices or let's be more conservative let's say nine more vertices and they
+
+23
+00:01:24,690 --> 00:01:29,180
+might not have very many connections they could only have one each one edge each.
+
+24
+00:01:29,370 --> 00:01:35,940
+Well we're still going to have to add nine rows down here or appear and nine columns and that's a lot
+
+25
+00:01:35,940 --> 00:01:36,940
+of space.
+
+26
+00:01:36,960 --> 00:01:42,900
+So if your data is sparse if you don't have a lot of connections a lot of edges maybe don't use a matrix.
+
+27
+00:01:43,020 --> 00:01:44,550
+So you can use this slide as a reference.
+
+28
+00:01:44,550 --> 00:01:47,180
+But here's a breakdown of some of the key points.
+
+29
+00:01:47,310 --> 00:01:53,100
+So an adjacency list as we've already talked about can take up less space in sparse graphs where you
+
+30
+00:01:53,100 --> 00:01:58,060
+don't have as many edges compared to an adjacency matrix which takes up more space.
+
+31
+00:01:58,200 --> 00:02:02,290
+V squared or V is a number of vertices an adjacency list.
+
+32
+00:02:02,340 --> 00:02:05,910
+If all you want is to know the edges just iterate.
+
+33
+00:02:05,910 --> 00:02:10,060
+For example search over all of the edges and you need to access all of them.
+
+34
+00:02:10,080 --> 00:02:15,990
+It's easier to do with an adjacency list because I think that makes sense if we have this structure
+
+35
+00:02:16,260 --> 00:02:17,310
+we can just start.
+
+36
+00:02:17,310 --> 00:02:19,670
+All right here's edge Here's all the edges all the edges.
+
+37
+00:02:19,740 --> 00:02:24,880
+If we go to a matrix we're going to have to iterate over a bunch of things that aren't edges.
+
+38
+00:02:24,960 --> 00:02:29,910
+We're going to you know there are things that are stored here that don't exist that makes sense we're
+
+39
+00:02:29,910 --> 00:02:33,330
+leaving empty spaces versus in an adjacency bust.
+
+40
+00:02:33,420 --> 00:02:40,520
+We're only storing the actual connections it so fast to iterate over alleges lower to iterate over all
+
+41
+00:02:40,520 --> 00:02:41,990
+the edges in a matrix.
+
+42
+00:02:41,990 --> 00:02:48,530
+However with an adjacency list looking up a specific edge to see if it exists for example can be slow
+
+43
+00:02:48,920 --> 00:02:49,770
+in a matrix.
+
+44
+00:02:49,820 --> 00:02:51,380
+It's very fast.
+
+45
+00:02:51,380 --> 00:02:54,860
+You can see that on our Big O here to queery something.
+
+46
+00:02:54,970 --> 00:02:58,010
+OLF one constant time for an adjacency matrix.
+
+47
+00:02:58,010 --> 00:03:03,290
+So if I wanted to know we go back here is there an edge between a and D.
+
+48
+00:03:03,350 --> 00:03:06,910
+All I have to do is go find that slot A and D.
+
+49
+00:03:07,220 --> 00:03:08,500
+No there is not.
+
+50
+00:03:08,510 --> 00:03:13,070
+Is there an edge between B and C A B C.
+
+51
+00:03:13,070 --> 00:03:14,280
+Yes there is.
+
+52
+00:03:14,330 --> 00:03:16,250
+It's constant time.
+
+53
+00:03:16,400 --> 00:03:22,280
+If we compare that to an adjacent CBEST actually let's go to letters if I want to know is there a connection
+
+54
+00:03:22,280 --> 00:03:24,350
+between A and D.
+
+55
+00:03:24,620 --> 00:03:29,390
+Well I'm going to have to ask for a first then I'm going to have to iterate over this.
+
+56
+00:03:29,420 --> 00:03:33,450
+So depending on how many connections there are how many edges to A.
+
+57
+00:03:33,590 --> 00:03:38,590
+There could be a ton and I might have to iterate over the entire thing depending on the number of edges.
+
+58
+00:03:38,750 --> 00:03:42,780
+So I can't know instantly like I did with a matrix.
+
+59
+00:03:42,860 --> 00:03:49,330
+So that's where we get oh a V plus E V is number of vertices is number of edges.
+
+60
+00:03:49,370 --> 00:03:55,730
+So the big O itself doesn't matter that much right now just know that in general a matrix takes up more
+
+61
+00:03:55,730 --> 00:03:56,460
+space.
+
+62
+00:03:56,630 --> 00:03:59,470
+When we're talking about sparse data sets it's not great.
+
+63
+00:03:59,540 --> 00:04:04,840
+It's slower to iterate over every edge but it is faster to look up a specific edge.
+
+64
+00:04:04,850 --> 00:04:10,760
+Also some people think the implementation of a matrix can be a little easier and adjacency list takes
+
+65
+00:04:10,760 --> 00:04:11,740
+up less space.
+
+66
+00:04:11,810 --> 00:04:17,030
+It's faster to iterate over all edges but it's slower to queery for the existence or to check if something
+
+67
+00:04:17,030 --> 00:04:18,420
+if an edge is in there.
+
+68
+00:04:18,740 --> 00:04:22,000
+So which one are we going to use them.
+
+69
+00:04:22,360 --> 00:04:24,040
+Are going to go with this rainbow.
+
+70
+00:04:24,050 --> 00:04:26,600
+Beautiful text and adjacency list.
+
+71
+00:04:26,660 --> 00:04:28,040
+So excited about it.
+
+72
+00:04:28,220 --> 00:04:29,240
+There three times.
+
+73
+00:04:29,270 --> 00:04:31,280
+Why are we going with an adjacency list.
+
+74
+00:04:31,610 --> 00:04:37,160
+Well mainly because of the space that it takes up and the fact that most of the data in the real world
+
+75
+00:04:37,490 --> 00:04:44,720
+whether we're talking about social network data friends modeling actors who are in movies together Wikipedia
+
+76
+00:04:44,720 --> 00:04:48,520
+pages whatever it is real world data tends to be sparse.
+
+77
+00:04:48,530 --> 00:04:54,920
+So we can have a ton of nodes lots of vertices but usually they're not all connected and that lends
+
+78
+00:04:54,920 --> 00:04:58,100
+itself more to adjacency lists.
+
+79
+00:04:58,100 --> 00:05:01,610
+Remember this chart look at any given node on here.
+
+80
+00:05:01,880 --> 00:05:03,550
+It doesn't really have many connections.
+
+81
+00:05:03,620 --> 00:05:04,380
+Some of them do.
+
+82
+00:05:04,400 --> 00:05:09,890
+Definitely but there's a lot of nodes that only have one edge one connection.
+
+83
+00:05:09,890 --> 00:05:14,960
+So for each one of these whatever the number of nodes is here the number of vertices seem to make a
+
+84
+00:05:14,960 --> 00:05:21,560
+massive matrix versus if we're only storing the actual connections using a list it's a lot easier.
+
+85
+00:05:21,590 --> 00:05:23,770
+It's a little and it takes up less space.
+
+86
+00:05:23,900 --> 00:05:28,970
+So because most real world data looks something like this even though there's a ton of data here.
+
+87
+00:05:29,120 --> 00:05:33,890
+The large set there aren't very many connections compared to how many there could be.
+
+88
+00:05:33,890 --> 00:05:37,520
+So in a matrix it works well if your data is jam packed.
+
+89
+00:05:37,520 --> 00:05:44,600
+If your matrix could be almost full then you might want to use a matrix but otherwise I prefer to use
+
+90
+00:05:44,600 --> 00:05:45,770
+an adjacency list.
+
+91
+00:05:45,950 --> 00:05:46,930
+So that's where we're going.
+
+92
+00:05:47,120 --> 00:05:51,040
+And finally in the next video we've all set up our code and get started.
+

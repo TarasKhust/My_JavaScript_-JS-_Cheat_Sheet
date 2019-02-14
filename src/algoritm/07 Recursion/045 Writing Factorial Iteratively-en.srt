@@ -1,0 +1,152 @@
+1
+00:00:00,180 --> 00:00:00,510
+All right.
+
+2
+00:00:00,510 --> 00:00:01,200
+Welcome back.
+
+3
+00:00:01,200 --> 00:00:07,680
+So we have one more basic recursion example here and it's probably the most classic example of the most
+
+4
+00:00:07,680 --> 00:00:12,830
+classic intro to recursion function that's used which is factorial.
+
+5
+00:00:12,870 --> 00:00:17,610
+So if you're not familiar with factorial B It looks something like this as a mathematical expression.
+
+6
+00:00:17,610 --> 00:00:19,000
+Exclamation point.
+
+7
+00:00:19,080 --> 00:00:26,970
+You don't read that as for that's just four factorial which is equal to 4 times three times two times
+
+8
+00:00:26,990 --> 00:00:28,180
+one.
+
+9
+00:00:28,500 --> 00:00:30,810
+And you know 10 factorial is 10.
+
+10
+00:00:30,810 --> 00:00:33,920
+I'm not going to type the whole thing out but ten times nine times eight.
+
+11
+00:00:34,170 --> 00:00:35,950
+All the way down until 1.
+
+12
+00:00:36,450 --> 00:00:42,240
+So you could easily do this without recursion just like all the other things I've shown you so far.
+
+13
+00:00:42,540 --> 00:00:43,530
+How would you do that.
+
+14
+00:00:43,770 --> 00:00:49,020
+Well hopefully you can visualize it now but use a for loop and like here.
+
+15
+00:00:49,020 --> 00:00:50,060
+Let's define our function.
+
+16
+00:00:50,090 --> 00:00:51,360
+Just call it function.
+
+17
+00:00:51,570 --> 00:00:57,690
+Factorial takes in a number and then let's make a total variable but total equal one.
+
+18
+00:00:57,960 --> 00:00:59,190
+And then we'll do a fourth.
+
+19
+00:00:59,250 --> 00:01:12,420
+So for let's do i equals numb keep going all I is greater than zero and then do I minus minus and then
+
+20
+00:01:12,420 --> 00:01:17,380
+we'll just multiply totals total times equals.
+
+21
+00:01:18,180 --> 00:01:22,260
+And then at the end return total should work.
+
+22
+00:01:22,260 --> 00:01:28,110
+So total starts that one if numbers three we're going to loop for I equals three.
+
+23
+00:01:28,110 --> 00:01:30,930
+So the first time through we multiply total by three.
+
+24
+00:01:30,960 --> 00:01:35,580
+So we get three then we subtract 1 from it's two we multiply by two.
+
+25
+00:01:35,580 --> 00:01:39,090
+Next time we get six then I is 1.
+
+26
+00:01:39,180 --> 00:01:42,150
+So we multiply by 1 which technically we don't.
+
+27
+00:01:42,330 --> 00:01:44,880
+Well let's just make sure it works around this.
+
+28
+00:01:45,160 --> 00:01:52,730
+So let's just do factorial of three K we get 6 ex-Royal of 4.
+
+29
+00:01:52,800 --> 00:01:54,050
+We get 24.
+
+30
+00:01:54,320 --> 00:01:54,560
+OK.
+
+31
+00:01:54,570 --> 00:01:55,640
+So it's working.
+
+32
+00:01:55,650 --> 00:02:01,070
+There's one small change you can make just to eliminate some redundancy if total is 31.
+
+33
+00:02:01,070 --> 00:02:03,140
+There is no reason to multiply by 1.
+
+34
+00:02:03,180 --> 00:02:06,670
+At the end because we're multiplying by 3 times 2 times 1.
+
+35
+00:02:06,750 --> 00:02:09,970
+So we can just do this is greater than 1.
+
+36
+00:02:10,170 --> 00:02:13,700
+You multiply by 1 and it still works OK.
+
+37
+00:02:13,710 --> 00:02:16,830
+So that's the non-recursive solution the iterative solution.
+
+38
+00:02:16,900 --> 00:02:19,380
+Next let's do the same thing but recursively.
+

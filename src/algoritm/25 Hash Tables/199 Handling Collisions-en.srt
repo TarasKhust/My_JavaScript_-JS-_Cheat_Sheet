@@ -1,0 +1,312 @@
+1
+00:00:00,260 --> 00:00:01,080
+I'll come back.
+
+2
+00:00:01,080 --> 00:00:04,260
+So in this video let's talk about how we handle collisions.
+
+3
+00:00:04,260 --> 00:00:09,630
+So when we have a hash function whatever it is and we have a lot of data it's pretty likely or very
+
+4
+00:00:09,630 --> 00:00:14,010
+common that we will have some collisions even if we're working with huge data sets.
+
+5
+00:00:14,040 --> 00:00:17,640
+We have a great hash function we'll still have some collisions but we're doing none of that.
+
+6
+00:00:17,640 --> 00:00:22,780
+We're working with a small hash table and a bad hash function so we are definitely going to have collisions.
+
+7
+00:00:23,070 --> 00:00:24,860
+So how do we handle that.
+
+8
+00:00:24,870 --> 00:00:30,960
+There are many strategies for this but I'm going to talk about two of them here separate chaining and
+
+9
+00:00:30,960 --> 00:00:32,410
+linear probing.
+
+10
+00:00:32,430 --> 00:00:34,740
+So let's start by talking about separate chaining.
+
+11
+00:00:34,920 --> 00:00:42,150
+What happens here is basically we just store the pieces of data at the same spot using another nested
+
+12
+00:00:42,150 --> 00:00:43,090
+data structure.
+
+13
+00:00:43,230 --> 00:00:46,880
+So it could be another array or a length list or something else.
+
+14
+00:00:46,980 --> 00:00:51,260
+But we just store them in tandem or in tandem only applied to.
+
+15
+00:00:51,420 --> 00:00:52,830
+We store them all together.
+
+16
+00:00:52,920 --> 00:00:58,290
+Joint store them so we can store things multiple key value pairs at the same position.
+
+17
+00:00:58,560 --> 00:01:05,110
+So for example if this is our hash table let's say it's empty we each hash dark blue and we get four.
+
+18
+00:01:05,190 --> 00:01:07,350
+So we're going to put that right here.
+
+19
+00:01:07,830 --> 00:01:11,240
+But then we also hash salmon and we also get four.
+
+20
+00:01:11,430 --> 00:01:13,100
+And we also put that right there.
+
+21
+00:01:13,110 --> 00:01:17,670
+Notice that it's in a nested data structure where we have the array bracket.
+
+22
+00:01:17,670 --> 00:01:21,480
+Here goes all the way down to here so they are stored together.
+
+23
+00:01:21,570 --> 00:01:22,740
+This is the first item.
+
+24
+00:01:22,740 --> 00:01:23,880
+This is the second item.
+
+25
+00:01:23,940 --> 00:01:28,720
+So if we were trying to I don't know if someone asked me what's the value for salmon.
+
+26
+00:01:28,890 --> 00:01:30,280
+Well we've had hash salmon.
+
+27
+00:01:30,330 --> 00:01:31,280
+We get four.
+
+28
+00:01:31,470 --> 00:01:36,800
+So if we go to index four and then we just loop through we look for salmon in this list.
+
+29
+00:01:36,810 --> 00:01:38,030
+We know it's here somewhere.
+
+30
+00:01:38,040 --> 00:01:39,700
+But there could be 10 things here.
+
+31
+00:01:39,720 --> 00:01:45,150
+So we find salmon and once we find it then we get the corresponding value out and return that.
+
+32
+00:01:45,300 --> 00:01:47,920
+So that's one strategy we store things together.
+
+33
+00:01:48,210 --> 00:01:52,080
+If we're using an array it's easy to just use what we'll do a nested array.
+
+34
+00:01:52,140 --> 00:01:56,460
+The second strategy that we're going to talk about at least is called venir probing.
+
+35
+00:01:56,820 --> 00:01:59,060
+So many probing is a bit different.
+
+36
+00:01:59,100 --> 00:02:05,100
+We only store one piece of data at each position add to the rule that we'd try and live by and what
+
+37
+00:02:05,100 --> 00:02:10,960
+we do when there is a collision is we look forward ahead for the next empty slot.
+
+38
+00:02:10,980 --> 00:02:16,140
+It is a little more complicated but it does allow us to not have data stored at the same index you don't
+
+39
+00:02:16,140 --> 00:02:18,160
+have to store things in a nested structure.
+
+40
+00:02:18,480 --> 00:02:25,740
+So for example if you have an empty table again we do dark blue we get for what we put that for.
+
+41
+00:02:26,190 --> 00:02:29,240
+But then we do Sam and we get four again.
+
+42
+00:02:29,380 --> 00:02:30,670
+Well we're going to look at four.
+
+43
+00:02:30,690 --> 00:02:31,790
+There's something there.
+
+44
+00:02:31,980 --> 00:02:35,440
+So then we just look for the next empty slot which happens to be five.
+
+45
+00:02:35,670 --> 00:02:37,170
+So we could store it there.
+
+46
+00:02:37,500 --> 00:02:38,840
+Then we do tomato.
+
+47
+00:02:38,910 --> 00:02:39,980
+We get four again.
+
+48
+00:02:40,140 --> 00:02:40,830
+So we look.
+
+49
+00:02:40,830 --> 00:02:41,660
+Is there something there.
+
+50
+00:02:41,700 --> 00:02:42,270
+Yes.
+
+51
+00:02:42,270 --> 00:02:43,610
+So we're not going to store it there.
+
+52
+00:02:43,620 --> 00:02:45,410
+Look for the next one is that empty.
+
+53
+00:02:45,420 --> 00:02:45,970
+Nope.
+
+54
+00:02:46,230 --> 00:02:48,000
+Look for the next one is that empty.
+
+55
+00:02:48,000 --> 00:02:48,420
+Yes.
+
+56
+00:02:48,420 --> 00:02:49,730
+So we store it there.
+
+57
+00:02:50,100 --> 00:02:51,990
+So that's how linear probing works.
+
+58
+00:02:51,990 --> 00:02:57,620
+So just to recap linear probing involves storing one thing at each position and it means looking ahead.
+
+59
+00:02:57,630 --> 00:03:02,250
+Or you can look backwards as well but it's easier usually to look ahead to find an empty space to store
+
+60
+00:03:02,250 --> 00:03:02,770
+something.
+
+61
+00:03:02,910 --> 00:03:07,920
+And that's different than how we handle it with separate chaining or we store things together in sort
+
+62
+00:03:07,920 --> 00:03:09,840
+of in a nested data structure.
+
+63
+00:03:09,930 --> 00:03:13,260
+So we're going to implement separate chaining in our hash table.
+
+64
+00:03:13,260 --> 00:03:17,390
+It allows us to have you know more data than the length of our table.
+
+65
+00:03:17,430 --> 00:03:20,230
+We can store more than 10 things in this table.
+
+66
+00:03:20,490 --> 00:03:26,640
+When we talk about the we are probing though this only allows us to store 10 things because we're only
+
+67
+00:03:26,640 --> 00:03:28,220
+storing one thing at each position.
+
+68
+00:03:28,230 --> 00:03:30,810
+Soon we're going to run out of space and then what do we do.
+
+69
+00:03:30,820 --> 00:03:34,530
+Do we remove things or do we combine it in some way with separate chaining.
+
+70
+00:03:34,650 --> 00:03:37,070
+Once the whole table is filled do we grow the table.
+
+71
+00:03:37,070 --> 00:03:39,770
+There's so many options but we're going to go with separate chaining.
+
+72
+00:03:39,780 --> 00:03:42,800
+But I just wanted to show you there's also linear probing.
+
+73
+00:03:42,990 --> 00:03:43,220
+OK.
+
+74
+00:03:43,230 --> 00:03:45,420
+So two strategies for handling collisions.
+
+75
+00:03:45,540 --> 00:03:50,160
+Now that we've got all this basic stuff out of the way explaining what hash tables are writing hash
+
+76
+00:03:50,160 --> 00:03:51,720
+function we have that done.
+
+77
+00:03:51,720 --> 00:03:55,700
+We've talked about how we're going to implement or how we're going to approach collisions.
+
+78
+00:03:55,920 --> 00:03:59,820
+Let's now implement our class and actually write the code to make this work.
+

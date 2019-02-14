@@ -1,0 +1,596 @@
+1
+00:00:00,100 --> 00:00:00,510
+OK.
+
+2
+00:00:00,540 --> 00:00:01,310
+Welcome back.
+
+3
+00:00:01,320 --> 00:00:06,500
+In this video we're going to talk about instance methods as well as static methods or class methods.
+
+4
+00:00:06,720 --> 00:00:11,970
+So to start instance methods are something we're going to use all the time in the course much more frequently
+
+5
+00:00:11,970 --> 00:00:17,370
+than the second type of methods we'll see instance methods are methods that basically don't want to
+
+6
+00:00:17,370 --> 00:00:23,670
+say they live on a particular instance but they they provide functionality that pertains to a single
+
+7
+00:00:23,850 --> 00:00:29,790
+instance of in our case our case student or when we talk about a singly linked list.
+
+8
+00:00:29,910 --> 00:00:34,110
+We will define many instance methods on those particular instances.
+
+9
+00:00:34,110 --> 00:00:36,740
+Think of for example when we're working with an array.
+
+10
+00:00:36,870 --> 00:00:38,130
+If I make a new array.
+
+11
+00:00:38,310 --> 00:00:40,370
+So let's just call this array.
+
+12
+00:00:40,560 --> 00:00:41,070
+I don't know.
+
+13
+00:00:41,070 --> 00:00:47,350
+Data equals and I'm going to do this this syntax and pass in some numbers.
+
+14
+00:00:47,370 --> 00:00:48,140
+Here we go.
+
+15
+00:00:48,150 --> 00:00:50,930
+So we now have our array called data.
+
+16
+00:00:51,090 --> 00:00:58,440
+If I do something like data dot push This is a method that acts on the individual instance of the array
+
+17
+00:00:58,440 --> 00:00:59,620
+which is data.
+
+18
+00:00:59,640 --> 00:01:04,980
+So an array is a pattern and we can define individual array objects based on that pattern.
+
+19
+00:01:05,040 --> 00:01:08,580
+And so this is one instance and push is a single method.
+
+20
+00:01:08,620 --> 00:01:13,860
+I was going to do something like sort and I realized that I made a sorted array so it will do push and
+
+21
+00:01:13,860 --> 00:01:14,960
+push it 20.
+
+22
+00:01:14,970 --> 00:01:17,960
+And about 99 and there we go.
+
+23
+00:01:18,000 --> 00:01:19,940
+Now we look at data and it's changed.
+
+24
+00:01:19,980 --> 00:01:25,200
+So we work with the instance methods all the time or the rough idea of instance methods in Javascript.
+
+25
+00:01:25,200 --> 00:01:27,030
+So we're going to do the same thing now on our student.
+
+26
+00:01:27,030 --> 00:01:31,810
+We're going to create a method or two methods that correspond to individual instances.
+
+27
+00:01:31,860 --> 00:01:38,040
+So not things that that work on the class level but the things that are relevant to individual instances.
+
+28
+00:01:38,040 --> 00:01:40,680
+So for example here's one called full name.
+
+29
+00:01:40,860 --> 00:01:43,980
+Again not very useful but it returns a string.
+
+30
+00:01:43,980 --> 00:01:45,210
+Your full name is.
+
+31
+00:01:45,330 --> 00:01:49,560
+And then inside that string we're adding in the first name and this last name.
+
+32
+00:01:49,710 --> 00:01:53,400
+And again this refers to the individual instance.
+
+33
+00:01:53,400 --> 00:01:58,590
+So whoever is calling this whether it's first student or second student will get a different output
+
+34
+00:01:58,770 --> 00:02:02,130
+assuming that they have different first and last names.
+
+35
+00:02:02,220 --> 00:02:09,210
+So if we go back to add this method in right here and now if I execute my code I have first student
+
+36
+00:02:09,210 --> 00:02:12,330
+and second student if I try first student.
+
+37
+00:02:12,600 --> 00:02:14,230
+There's no grade for either of those.
+
+38
+00:02:14,260 --> 00:02:15,080
+That's OK.
+
+39
+00:02:15,310 --> 00:02:22,380
+So let's do first student dot and now we call full name and I need to if I just leave it at this it
+
+40
+00:02:22,380 --> 00:02:23,380
+returns to me.
+
+41
+00:02:23,490 --> 00:02:28,290
+It's basically saying yes I know there is a method called that before to execute it.
+
+42
+00:02:28,290 --> 00:02:28,670
+There you go.
+
+43
+00:02:28,670 --> 00:02:30,110
+Your full name is called Steal.
+
+44
+00:02:30,210 --> 00:02:34,960
+If I do second student full name I get your full name is Blue Steel.
+
+45
+00:02:34,980 --> 00:02:40,170
+So these are silly examples of what we're doing here when we get to a linked list though we will define
+
+46
+00:02:40,630 --> 00:02:47,520
+a reverse instance method or a push instance method things that will actually work on individual instances.
+
+47
+00:02:47,520 --> 00:02:51,180
+For example in the next section here's our singly linked list class.
+
+48
+00:02:51,180 --> 00:02:58,520
+We have our constructor but then we have a push instance method a shift in unshipped get insert.
+
+49
+00:02:58,940 --> 00:03:00,860
+What else reverse remove.
+
+50
+00:03:00,870 --> 00:03:01,590
+Those are all.
+
+51
+00:03:01,630 --> 00:03:02,380
+Oh and pop.
+
+52
+00:03:02,400 --> 00:03:08,100
+Those are all individual instance methods that work on a single linked list on a single singly linked
+
+53
+00:03:08,100 --> 00:03:08,560
+lists.
+
+54
+00:03:08,590 --> 00:03:09,890
+It's confusing.
+
+55
+00:03:09,900 --> 00:03:15,690
+So we have to instantiate a length list in order to use those just like we can't if we're trying to
+
+56
+00:03:15,750 --> 00:03:17,540
+pop from an array.
+
+57
+00:03:17,610 --> 00:03:19,800
+We have to have an individual array to pop from.
+
+58
+00:03:19,800 --> 00:03:21,430
+We don't just pop from nothing.
+
+59
+00:03:21,510 --> 00:03:22,600
+We need an instance.
+
+60
+00:03:22,650 --> 00:03:24,170
+So let's extend this class.
+
+61
+00:03:24,180 --> 00:03:30,420
+Let's add it in a different method that actually updates the value of one of these properties.
+
+62
+00:03:30,450 --> 00:03:34,200
+So let's say in our school students can only be late three times.
+
+63
+00:03:34,350 --> 00:03:36,440
+So let's create a new property.
+
+64
+00:03:36,530 --> 00:03:40,550
+I'm going to call this absences too hard to spell.
+
+65
+00:03:40,650 --> 00:03:44,550
+Let's just call it at least in the U.S. we call them tardies.
+
+66
+00:03:44,670 --> 00:03:49,290
+I don't know how universal that word is but we're going to call it tardies and it's going to be set
+
+67
+00:03:49,290 --> 00:03:52,050
+to zero whenever we create a new student by default.
+
+68
+00:03:52,050 --> 00:03:59,630
+They've never been late but now we're going to have a method called Mark late and all that it does is
+
+69
+00:03:59,630 --> 00:04:05,930
+it adds 1 to tardies so need to access this stuff tardies which is referencing the individual student
+
+70
+00:04:06,090 --> 00:04:08,560
+instance his or her tardies.
+
+71
+00:04:08,900 --> 00:04:15,460
+And I'm just going to add one physical one like that so that updates it and then let's return a string.
+
+72
+00:04:15,800 --> 00:04:22,210
+Or we could just return the number of tardies But let's return a string that says let's do full name.
+
+73
+00:04:22,310 --> 00:04:30,680
+This does still this tell us to stop first name the last name has been late and then in here let's add
+
+74
+00:04:30,680 --> 00:04:35,980
+in the number of times and we're not going to pluralized correctly or anything we'll just say this dot
+
+75
+00:04:36,410 --> 00:04:38,980
+tardies like that.
+
+76
+00:04:39,170 --> 00:04:43,830
+So blue still has been late three times.
+
+77
+00:04:43,880 --> 00:04:50,750
+OK so if we save this now and we instantiate a new student we're not using grades so I guess I could
+
+78
+00:04:50,750 --> 00:04:54,360
+pass one in here so I'm in first grade or first year.
+
+79
+00:04:54,500 --> 00:04:56,230
+And blue is in second year.
+
+80
+00:04:56,390 --> 00:04:59,320
+Now I'm going to run this code and if we look at students now.
+
+81
+00:04:59,320 --> 00:05:01,640
+So let's look at first student.
+
+82
+00:05:01,690 --> 00:05:08,350
+Now if I access Mark late I have a method available to me and if I execute it I don't need to pass anything
+
+83
+00:05:08,350 --> 00:05:16,480
+in code still has been late one times and if I look at first student tardies Now I should have earlier
+
+84
+00:05:16,570 --> 00:05:22,020
+looked at it it was 0 0 0 and make this a bit larger.
+
+85
+00:05:22,060 --> 00:05:25,430
+I've now marked it and I can do the same thing one more time.
+
+86
+00:05:25,450 --> 00:05:26,600
+And how about two more times.
+
+87
+00:05:26,650 --> 00:05:27,750
+So now I have been late.
+
+88
+00:05:27,780 --> 00:05:29,120
+Three times.
+
+89
+00:05:29,530 --> 00:05:31,300
+We don't have any logic in there.
+
+90
+00:05:31,360 --> 00:05:37,540
+I mean we could add in a little conditional to check if it's greater than 3 then we expel you.
+
+91
+00:05:37,650 --> 00:05:38,940
+Why don't we do that really quickly.
+
+92
+00:05:38,940 --> 00:05:45,940
+So we'll add one to tardies and then we'll just add a conditional if this does tardies is greater than
+
+93
+00:05:45,940 --> 00:05:48,180
+or equal to 3 return.
+
+94
+00:05:48,280 --> 00:05:49,800
+You are expelled.
+
+95
+00:05:49,810 --> 00:05:57,810
+So if I rerun my code instantiate or let's go back to 1st student and do Mark late the first time the
+
+96
+00:05:57,820 --> 00:06:03,590
+second time and the third time you are expelled and every other time you're expelled.
+
+97
+00:06:03,640 --> 00:06:05,520
+OK that's good enough for us.
+
+98
+00:06:05,530 --> 00:06:09,960
+The last thing we'll talk about with an instance method is to finding one that takes some sort of argument.
+
+99
+00:06:10,180 --> 00:06:15,690
+Let's also add in an array here called scores.
+
+100
+00:06:15,690 --> 00:06:20,320
+It will start as empty because there are no tests at the beginning when we create a student but then
+
+101
+00:06:20,380 --> 00:06:26,760
+we're going to create a method and our first one this will be super easy we'll just call it add score
+
+102
+00:06:28,300 --> 00:06:31,990
+and it will take in a new score and then we'll just do this dot.
+
+103
+00:06:32,320 --> 00:06:38,170
+And what we call this test scores push score so this will just add the score on to the end.
+
+104
+00:06:38,290 --> 00:06:44,130
+Now yes you could just you could access this directly but we'll talk about that in a second.
+
+105
+00:06:44,140 --> 00:06:48,340
+So this stops scores up push and then let's return the stop scores.
+
+106
+00:06:48,340 --> 00:06:53,820
+So if I rerun my code and I now look at let's do second student this time.
+
+107
+00:06:54,100 --> 00:06:55,780
+Second student scores.
+
+108
+00:06:55,900 --> 00:07:00,150
+It's empty and I could just do manually just push on from here.
+
+109
+00:07:00,160 --> 00:07:04,540
+There's nothing stopping me from doing that but it's more conventional to define a method that will
+
+110
+00:07:04,540 --> 00:07:06,610
+do this to prevent.
+
+111
+00:07:06,610 --> 00:07:10,140
+There's nothing stopping anybody from manually changing any of these properties.
+
+112
+00:07:10,270 --> 00:07:15,490
+But the conventional way of writing a class is that you assume that a developer or somebody will use
+
+113
+00:07:15,580 --> 00:07:16,970
+a method that you put there.
+
+114
+00:07:17,260 --> 00:07:23,110
+So we're going to use this instead as our interface to the data rather than we would ask someone not
+
+115
+00:07:23,110 --> 00:07:24,800
+to directly change our data.
+
+116
+00:07:24,850 --> 00:07:27,440
+Instead go through some sort of method.
+
+117
+00:07:27,820 --> 00:07:29,100
+So we have ADD score.
+
+118
+00:07:29,290 --> 00:07:36,370
+So I'll do second student up and score and then here what do we want to add but say the score is blue
+
+119
+00:07:36,370 --> 00:07:37,180
+is pretty good.
+
+120
+00:07:37,190 --> 00:07:46,350
+He has a 92 and let's do one more this time in 87 and now if we look at second student debt scores you
+
+121
+00:07:46,350 --> 00:07:48,410
+can see where we were returning it already.
+
+122
+00:07:48,420 --> 00:07:50,220
+But we have two scores in there.
+
+123
+00:07:50,370 --> 00:07:59,040
+So the last thing that I want to do is create something called calculate average method and just need
+
+124
+00:07:59,040 --> 00:08:04,050
+to take any arguments in and it should return the average of the scores in the individual student's
+
+125
+00:08:04,110 --> 00:08:05,370
+scores array.
+
+126
+00:08:05,400 --> 00:08:11,160
+So we'll have this study scores and we're going to need to some of them all up and then we'll need to
+
+127
+00:08:11,190 --> 00:08:16,870
+divide them by the the length of the array So to calculate the sum of all the elements first.
+
+128
+00:08:16,890 --> 00:08:25,290
+You could use Reduce like this and I'm going to make a separate variable here so let's call this sum
+
+129
+00:08:26,490 --> 00:08:28,740
+and then we're going to return some.
+
+130
+00:08:28,740 --> 00:08:32,900
+Divided by this scores dot length.
+
+131
+00:08:32,970 --> 00:08:39,030
+So this logic is just here to reduce it's going to take each item and you can add it together and create
+
+132
+00:08:39,030 --> 00:08:44,700
+a total So each number in that this dot scores array save it to the sum variable and then we return
+
+133
+00:08:44,700 --> 00:08:46,660
+some divided by the Dutch course length.
+
+134
+00:08:46,710 --> 00:08:53,760
+Let's test it out so first student dot scores and a way we want to use add score to 98 and then I did
+
+135
+00:08:53,760 --> 00:08:59,970
+poorly and I got a 76 and then I did let's just leave it at those to be easier to tell if it's working
+
+136
+00:08:59,970 --> 00:09:00,750
+actually.
+
+137
+00:09:00,750 --> 00:09:05,570
+So now if we do calculate average There we go 87.
+
+138
+00:09:05,800 --> 00:09:09,930
+Now if I add a different score in C I do really well get 100.
+
+139
+00:09:09,940 --> 00:09:12,780
+Now our average goes up and we could round it and all that.
+
+140
+00:09:12,990 --> 00:09:13,530
+OK.
+
+141
+00:09:13,660 --> 00:09:18,290
+So although I want to show here is the basics of defining class with instance methods.
+
+142
+00:09:18,310 --> 00:09:23,680
+So we can define a simple instance method that just returned a string using some properties we can find
+
+143
+00:09:23,680 --> 00:09:30,370
+when a little more complex that manipulate one of the existing properties on our instance or we can
+
+144
+00:09:30,370 --> 00:09:34,280
+do something like calculate average which is going to you know have a little more math than that.
+
+145
+00:09:34,300 --> 00:09:38,260
+But the idea is that all of these operate on individual instances.
+
+146
+00:09:38,260 --> 00:09:43,330
+So next we'll take a brief look at creating a class method which we won't do very often but I should
+
+147
+00:09:43,330 --> 00:09:48,550
+put it in here just because we're talking about classes in East 20:15 at this point and it's covered.
+
+148
+00:09:48,830 --> 00:09:49,160
+OK.
+
+149
+00:09:49,180 --> 00:09:49,720
+See you then.
+

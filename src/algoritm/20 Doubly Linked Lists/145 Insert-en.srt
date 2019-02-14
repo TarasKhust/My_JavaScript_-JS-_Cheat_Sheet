@@ -1,0 +1,180 @@
+1
+00:00:00,150 --> 00:00:00,420
+All right.
+
+2
+00:00:00,420 --> 00:00:01,200
+Welcome back.
+
+3
+00:00:01,200 --> 00:00:04,350
+Next we're going to implement insert on a doubly linked list.
+
+4
+00:00:04,350 --> 00:00:08,580
+So this works in a very similar way to how it does in a single length list.
+
+5
+00:00:08,700 --> 00:00:12,070
+You pass in an index position and a value.
+
+6
+00:00:12,270 --> 00:00:17,630
+And it creates a new node with that value and adds it at that position to the length list.
+
+7
+00:00:17,640 --> 00:00:22,950
+The main difference is that we can optimize it rather than starting at the beginning and always going.
+
+8
+00:00:22,950 --> 00:00:29,730
+Next up next up next we can also start at the end and go up previous and it's up to our code to decide
+
+9
+00:00:29,730 --> 00:00:33,080
+which is more appropriate depending on what the index is.
+
+10
+00:00:33,210 --> 00:00:37,320
+But we don't really have to worry about that because we already wrote a get method so we can use the
+
+11
+00:00:37,320 --> 00:00:43,890
+get method to retrieve the appropriate place to insert it and get method already has the logic to check
+
+12
+00:00:43,920 --> 00:00:49,890
+you know length divide by two is the index less than if so start from the head and move towards the
+
+13
+00:00:49,890 --> 00:00:50,460
+middle.
+
+14
+00:00:50,460 --> 00:00:54,040
+Or is the index greater than half of the half of the length.
+
+15
+00:00:54,090 --> 00:00:57,380
+If that's the case start from the tail and move towards the middle.
+
+16
+00:00:57,510 --> 00:01:04,220
+Anyway what we want to do the same inserting an index of four the the number 77.
+
+17
+00:01:04,440 --> 00:01:07,470
+Oh I can't do that because our list is 10 things.
+
+18
+00:01:07,480 --> 00:01:11,790
+OK let's make a new list that has 9 items.
+
+19
+00:01:12,120 --> 00:01:12,920
+Do this one more time.
+
+20
+00:01:13,050 --> 00:01:15,330
+Insert index of six.
+
+21
+00:01:15,330 --> 00:01:15,900
+Sure.
+
+22
+00:01:16,040 --> 00:01:17,380
+Sixty five.
+
+23
+00:01:18,000 --> 00:01:18,270
+All right.
+
+24
+00:01:18,270 --> 00:01:24,300
+So we traverse the list until we find the item right before what we're going to insert.
+
+25
+00:01:24,300 --> 00:01:25,210
+So we found it.
+
+26
+00:01:25,680 --> 00:01:30,150
+And now the annoying part about double length list is that we have a lot of connections to make.
+
+27
+00:01:30,360 --> 00:01:33,530
+So we need to remove this connection both connections there.
+
+28
+00:01:33,780 --> 00:01:40,560
+And instead we need to have sixty six point sixty five sixty five points back at 66.
+
+29
+00:01:40,560 --> 00:01:44,690
+Then we have twelve point sixty five previous and sixty five.
+
+30
+00:01:44,700 --> 00:01:46,700
+Next point at 12.
+
+31
+00:01:46,980 --> 00:01:52,560
+So if we step through that and see all these lines that we're drawing and we're done.
+
+32
+00:01:52,810 --> 00:01:56,080
+So there are four different little patches that we have to make.
+
+33
+00:01:56,080 --> 00:01:57,620
+So here's a pseudo code.
+
+34
+00:01:57,740 --> 00:02:01,240
+First we're going to check if it's a valid index just like before.
+
+35
+00:02:01,450 --> 00:02:07,060
+If the index is too small or if it's negative or is greater than or equal to the length return false
+
+36
+00:02:07,380 --> 00:02:14,200
+if the index is ZERO use unshipped we already wrote that if the index is the same as the length meaning.
+
+37
+00:02:14,200 --> 00:02:17,070
+So if we have 8 items the length is 8.
+
+38
+00:02:17,290 --> 00:02:23,200
+If the insert is at 8 that's actually valid remember because even though it's currently not a valid
+
+39
+00:02:23,200 --> 00:02:28,750
+index it's OK for us to insert at the end which would make it a valid index.
+
+40
+00:02:28,750 --> 00:02:35,380
+So if that's the case call push or otherwise use our Get method to access the item right before where
+
+41
+00:02:35,380 --> 00:02:36,190
+we're trying to insert.
+
+42
+00:02:36,210 --> 00:02:37,950
+So index minus one.
+
+43
+00:02:38,140 --> 00:02:42,790
+And then you need to do all the patching the next and previous properties on the correct nodes to link
+
+44
+00:02:42,820 --> 00:02:44,560
+everything together.
+
+45
+00:02:44,560 --> 00:02:50,180
+Incremental length by one and return TRUE TO tried out in the next video will have a solution.
+

@@ -1,0 +1,452 @@
+1
+00:00:00,180 --> 00:00:00,540
+All right.
+
+2
+00:00:00,540 --> 00:00:01,410
+Welcome back.
+
+3
+00:00:01,410 --> 00:00:07,680
+So if you watched the last video we talked about how a stack is a lifeso Lythgoe however you pronounce
+
+4
+00:00:07,680 --> 00:00:13,710
+it last in first out data structure and there's more than one way to create something like that.
+
+5
+00:00:13,770 --> 00:00:16,530
+In fact a stack is just a concept.
+
+6
+00:00:16,530 --> 00:00:21,570
+It's basically a set of rules that says OK you need to be able to store data in such a way that the
+
+7
+00:00:21,570 --> 00:00:24,700
+first thing added in is the last thing removed.
+
+8
+00:00:24,750 --> 00:00:27,440
+The last thing added in is the first thing removed.
+
+9
+00:00:27,690 --> 00:00:30,600
+And it doesn't really define how you do that.
+
+10
+00:00:30,780 --> 00:00:32,300
+It's just a concept.
+
+11
+00:00:32,350 --> 00:00:34,060
+So there's more than one way of doing it.
+
+12
+00:00:34,350 --> 00:00:36,910
+And the easiest way is to use an array.
+
+13
+00:00:37,110 --> 00:00:42,390
+So some data structures or sorry some programming languages come with their own stack data type.
+
+14
+00:00:42,480 --> 00:00:47,440
+But we can still use a built in array or list data type to create our own stack.
+
+15
+00:00:47,640 --> 00:00:53,100
+So all that we have to do is store data in here in a way that the first thing is the last thing removed
+
+16
+00:00:53,130 --> 00:00:55,490
+and the last thing and the first thing removed.
+
+17
+00:00:55,800 --> 00:01:02,400
+So if I hop over to my console if I make a new array I'm just going to call it stack and it starts out
+
+18
+00:01:02,400 --> 00:01:03,030
+empty.
+
+19
+00:01:03,270 --> 00:01:08,190
+Let's say that I'm storing web pages that I'm visited and I'm creating a history of where I've been.
+
+20
+00:01:08,430 --> 00:01:08,920
+OK.
+
+21
+00:01:08,970 --> 00:01:12,870
+So to add something into this stack How do we add to an array.
+
+22
+00:01:12,870 --> 00:01:16,950
+Well there's a couple of options but let's just use push so I'll push.
+
+23
+00:01:16,950 --> 00:01:19,120
+I start at Google dot com.
+
+24
+00:01:19,470 --> 00:01:20,020
+OK.
+
+25
+00:01:20,250 --> 00:01:27,800
+So we push Google in and then let's say from Google I go to I don't know Instagram.
+
+26
+00:01:28,440 --> 00:01:33,770
+And then one more site that I go to is YouTube.
+
+27
+00:01:34,170 --> 00:01:36,580
+My stack now has three things in it.
+
+28
+00:01:36,600 --> 00:01:43,680
+So in order for this to be a stack I need to have a way to remove from it where the most recently added
+
+29
+00:01:43,680 --> 00:01:45,600
+thing is what I get first.
+
+30
+00:01:45,600 --> 00:01:51,210
+So when I remove from here I want to start by getting you to and then next time I should get Instagram
+
+31
+00:01:51,510 --> 00:01:52,770
+and then Google.
+
+32
+00:01:52,770 --> 00:01:54,000
+So how would I do that.
+
+33
+00:01:54,120 --> 00:02:00,870
+Well there's a method to do it stack dot pop Well array of pop so pop is going to remove from the end.
+
+34
+00:02:01,080 --> 00:02:08,580
+So using push and pop in tandem on an array create to stack as long as that's how we're adding and removing.
+
+35
+00:02:08,670 --> 00:02:12,420
+If somebody goes and add something to the middle of the array or it's the beginning or removes from
+
+36
+00:02:12,420 --> 00:02:15,820
+the beginning then it's not quite functioning as a stack anymore.
+
+37
+00:02:15,990 --> 00:02:21,120
+But if we just push and pop like we're trying to use a stack in our code which That's actually something
+
+38
+00:02:21,120 --> 00:02:25,900
+we'll do later on is using the array as a stack just because it's simpler.
+
+39
+00:02:26,280 --> 00:02:32,640
+And if I pop I get YouTube and then Instagram if I push something else in there like let's say you go
+
+40
+00:02:32,640 --> 00:02:34,210
+to Amazon.
+
+41
+00:02:34,440 --> 00:02:38,420
+Now when I remove using POP I'll get Amazon first.
+
+42
+00:02:38,460 --> 00:02:40,080
+It was the last thing added in.
+
+43
+00:02:40,230 --> 00:02:41,910
+So it's the first thing I get out.
+
+44
+00:02:42,240 --> 00:02:44,400
+And then one more time I get Google.
+
+45
+00:02:44,400 --> 00:02:49,980
+So that's one way of using an array to create a stack structure but we could do it another way using
+
+46
+00:02:49,980 --> 00:02:51,210
+builtin array methods.
+
+47
+00:02:51,360 --> 00:02:52,740
+Can you think of how that would work.
+
+48
+00:02:52,740 --> 00:02:57,760
+We're working with the end of the array right now we're adding to the end and removing from the end.
+
+49
+00:02:58,140 --> 00:02:59,290
+There's another way.
+
+50
+00:02:59,550 --> 00:03:06,090
+Well there's at least one way if I make some space here if I think I still have an empty caps lock I
+
+51
+00:03:06,090 --> 00:03:07,280
+have this empty array.
+
+52
+00:03:07,530 --> 00:03:10,680
+Well if I add to the beginning of the array I could do that.
+
+53
+00:03:10,680 --> 00:03:11,990
+So how do we get to the beginning.
+
+54
+00:03:12,070 --> 00:03:18,120
+Well you can use an shift that confusingly titled method and let's say this time we're modeling.
+
+55
+00:03:18,120 --> 00:03:25,880
+I don't know my Photoshop history so I start with create new file and then the next thing that I did.
+
+56
+00:03:26,130 --> 00:03:27,710
+What did I do afterwards.
+
+57
+00:03:27,960 --> 00:03:36,870
+I resized file and then I removed Let's see cloned out a wrinkle or something like that in Photoshop.
+
+58
+00:03:37,080 --> 00:03:37,460
+OK.
+
+59
+00:03:37,470 --> 00:03:39,650
+So our stack has three things in there.
+
+60
+00:03:39,810 --> 00:03:43,590
+In order for this to work the last thing in needs to come out first.
+
+61
+00:03:43,590 --> 00:03:49,310
+So I can't pop anymore because people were moved from here meaning all take from the end which this
+
+62
+00:03:49,350 --> 00:03:53,730
+is the first thing added in we don't want the first thing in to be the first thing out.
+
+63
+00:03:53,790 --> 00:03:54,990
+We want the opposite.
+
+64
+00:03:55,140 --> 00:03:57,500
+We want the last thing in to be the first thing out.
+
+65
+00:03:57,540 --> 00:04:06,690
+So I use an shift to add and shift to remove which were moved from the beginning cloned out Rinkel resized
+
+66
+00:04:06,690 --> 00:04:08,700
+file create new file.
+
+67
+00:04:08,700 --> 00:04:11,280
+So both of these approaches are valid stacks.
+
+68
+00:04:11,340 --> 00:04:12,160
+They work.
+
+69
+00:04:12,270 --> 00:04:17,820
+It's all that matters is that we have a way of adding data in and removing data such that it satisfies
+
+70
+00:04:17,850 --> 00:04:19,810
+this last in first out principle.
+
+71
+00:04:19,830 --> 00:04:22,010
+The first thing in the last thing out.
+
+72
+00:04:22,110 --> 00:04:23,860
+The last thing is the first thing out.
+
+73
+00:04:24,120 --> 00:04:29,800
+But there's a distinction between these two pushing and popping was the first thing we did.
+
+74
+00:04:29,850 --> 00:04:32,190
+Meaning we're adding to the end and removing from the end.
+
+75
+00:04:32,370 --> 00:04:37,190
+And then we also talked about shift and shift adding and removing from the beginning.
+
+76
+00:04:37,530 --> 00:04:43,950
+So based of what we've talked about with arrays earlier on which is better what's more efficient what's
+
+77
+00:04:43,950 --> 00:04:45,710
+the problem with one of these.
+
+78
+00:04:46,020 --> 00:04:52,050
+Well if we think about how arrays work remember that adding to the beginning removing from the beginning
+
+79
+00:04:52,350 --> 00:04:56,490
+is not good as far as Big-O notation time complexity.
+
+80
+00:04:56,550 --> 00:05:01,990
+What we have to do is if we have an array with three things in here each item has an index.
+
+81
+00:05:02,460 --> 00:05:08,910
+And if I add something to the very beginning we have to re-index all the other items because this is
+
+82
+00:05:08,910 --> 00:05:10,320
+no longer going to be index 0.
+
+83
+00:05:10,350 --> 00:05:11,830
+This will no longer be indexed.
+
+84
+00:05:12,120 --> 00:05:14,190
+Everything gets shifted down.
+
+85
+00:05:14,440 --> 00:05:21,810
+OK so if we have this stack with these three items in here if I unship again and this time I add something
+
+86
+00:05:21,810 --> 00:05:28,020
+else in like I don't know and just doing dumb abbreviations all of these indices have to be shifted
+
+87
+00:05:28,020 --> 00:05:30,350
+down and that's very inefficient.
+
+88
+00:05:30,570 --> 00:05:36,600
+I mean for for items it's not really a problem at all but just it's worth considering if we have a lot
+
+89
+00:05:36,600 --> 00:05:39,060
+of data it's not a great way of doing it.
+
+90
+00:05:39,060 --> 00:05:44,370
+Instead if we use push we're adding to the end we just have to create a new spot and new index and read
+
+91
+00:05:44,400 --> 00:05:49,720
+an add you know index of 4 but we don't have to re index every other item in there.
+
+92
+00:05:49,740 --> 00:05:55,050
+It is worth mentioning that if you actually care about the efficiency then you probably don't want to
+
+93
+00:05:55,050 --> 00:05:56,630
+use an array for a stack.
+
+94
+00:05:56,640 --> 00:06:02,310
+If you're going to have a ton of data in there all you need is this last in first out capability.
+
+95
+00:06:02,460 --> 00:06:05,670
+We'll use our second implementation coming up where we use a linked list.
+
+96
+00:06:05,670 --> 00:06:10,550
+There's no reason to have these indices we're not accessing information based off of an index.
+
+97
+00:06:10,620 --> 00:06:14,430
+We're simply accessing information based off of when it was inserted.
+
+98
+00:06:14,580 --> 00:06:18,150
+The order needs to be preserved and a linked list will do that for us.
+
+99
+00:06:18,240 --> 00:06:20,910
+So to recap we can use an array to create a stack.
+
+100
+00:06:21,030 --> 00:06:25,900
+We can use push and pop in tandem so that the first thing added in is the last thing out.
+
+101
+00:06:25,970 --> 00:06:27,630
+The last thing added in is the first thing out.
+
+102
+00:06:27,630 --> 00:06:29,320
+I know I'm a broken record on that.
+
+103
+00:06:29,440 --> 00:06:34,950
+Or we could use shift and shift and shift to add to the beginning shift to remove from the beginning
+
+104
+00:06:34,950 --> 00:06:35,660
+of the array.
+
+105
+00:06:35,790 --> 00:06:38,470
+So it doesn't matter what direction we're doing it in.
+
+106
+00:06:38,520 --> 00:06:45,020
+If we're adding down here or adding over here as long as we're removing from that same direction if
+
+107
+00:06:45,030 --> 00:06:46,160
+that makes sense.
+
+108
+00:06:46,290 --> 00:06:51,930
+But in general if you are going to use an array push and pop are the better options because it doesn't
+
+109
+00:06:52,020 --> 00:06:58,350
+require reindexing the entire array every time you add or remove something you just have to create some
+
+110
+00:06:58,440 --> 00:06:59,760
+you know a new index at the end.
+
+111
+00:06:59,820 --> 00:07:01,040
+Or remove that index.
+
+112
+00:07:01,110 --> 00:07:01,490
+OK.
+
+113
+00:07:01,530 --> 00:07:05,280
+So next up I'll show you an implementation of a stack using a linked list.
+

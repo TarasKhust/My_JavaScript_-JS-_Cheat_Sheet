@@ -1,0 +1,448 @@
+1
+00:00:00,090 --> 00:00:00,470
+You'll get.
+
+2
+00:00:00,480 --> 00:00:03,740
+So we're almost to the point where we're kind of write our own recursive functions.
+
+3
+00:00:03,780 --> 00:00:08,970
+But first we have to talk about one important thing which is what happens behind the scenes when functions
+
+4
+00:00:09,000 --> 00:00:10,420
+are called in javascript.
+
+5
+00:00:10,510 --> 00:00:15,920
+If a recursive function is calling itself over and over and over again what happens behind the scenes.
+
+6
+00:00:16,020 --> 00:00:20,980
+And this is important for us to understand in order to write effective recursive code that doesn't break.
+
+7
+00:00:21,480 --> 00:00:26,520
+So in almost all programming languages there is some data structure behind the scenes that's managing
+
+8
+00:00:26,580 --> 00:00:31,770
+function calls functions when they're invoked often are waiting on other functions to return.
+
+9
+00:00:31,780 --> 00:00:37,170
+There's there's a special order that happens right functions don't just happen randomly like if you
+
+10
+00:00:37,320 --> 00:00:41,450
+have a function called first and then instead of that function it calls a second function.
+
+11
+00:00:41,730 --> 00:00:43,550
+You need them to go in the correct order.
+
+12
+00:00:43,860 --> 00:00:49,530
+And so there's a thing a data structure in charge of that in javascript called the call stack.
+
+13
+00:00:49,680 --> 00:00:52,290
+So you can think of it as a stack of papers or something.
+
+14
+00:00:52,290 --> 00:00:55,670
+It's actually a data structure called a stack that we'll learn about later.
+
+15
+00:00:55,800 --> 00:01:00,720
+You might have heard of stacks and Qs before but all that we're going to say for now is that when a
+
+16
+00:01:00,720 --> 00:01:05,390
+function is invoked it's placed on the top of the call stack.
+
+17
+00:01:05,400 --> 00:01:10,470
+So just like we have a stack of papers on our desk the first the newest one that we put on goes on top
+
+18
+00:01:11,550 --> 00:01:16,980
+and then when javascript's sees the return key word or when a function and there's no more code to run
+
+19
+00:01:17,280 --> 00:01:21,300
+the compiler will remove the top item from the stack.
+
+20
+00:01:21,300 --> 00:01:22,570
+So the idea of a stack.
+
+21
+00:01:22,590 --> 00:01:28,320
+The reason I'm saying a stack of papers on a desk is that you put something on top when you remove something
+
+22
+00:01:28,320 --> 00:01:32,030
+you also remove from the top you don't remove from the bottom of a stack of papers.
+
+23
+00:01:32,040 --> 00:01:34,050
+You take whatever's on top.
+
+24
+00:01:34,050 --> 00:01:35,850
+So that's the idea of the call stack.
+
+25
+00:01:35,860 --> 00:01:39,740
+What I'm going to show you now is what it looks like in the chrome dev tools.
+
+26
+00:01:39,810 --> 00:01:45,700
+When we have a couple of function calls what the stack actually looks like how it reflects those functions.
+
+27
+00:01:45,870 --> 00:01:51,470
+Ok so I have a snippet here that I've made it's very silly but it has four different functions.
+
+28
+00:01:51,790 --> 00:01:57,720
+There's a function called Wake Up And wakeup calls take a shower eat breakfast and then it prints at
+
+29
+00:01:57,720 --> 00:02:00,710
+the very end when everything's done ok ready to go to work.
+
+30
+00:02:00,720 --> 00:02:07,530
+So wake up is invoked down here and then wake up calls take a shower and take shower is simple just
+
+31
+00:02:07,530 --> 00:02:09,190
+returned showering.
+
+32
+00:02:09,390 --> 00:02:15,360
+Then we have eat breakfast and eat breakfast is called and it's a little more complicated because it
+
+33
+00:02:15,450 --> 00:02:19,700
+sets a variable meal equal to cook food which is another function.
+
+34
+00:02:19,710 --> 00:02:24,240
+So cook food is going to then be called and that returns.
+
+35
+00:02:24,460 --> 00:02:27,210
+Well there's a list of items and it picks one at random.
+
+36
+00:02:27,450 --> 00:02:28,860
+So it's going to pick one of these three things.
+
+37
+00:02:28,860 --> 00:02:31,110
+That's what this code does and just return it.
+
+38
+00:02:31,110 --> 00:02:38,530
+So cook food might return eggs then eat breakfast was waiting on that meal is now eggs it returns.
+
+39
+00:02:38,550 --> 00:02:41,760
+Eating eggs and then wake up was waiting on that.
+
+40
+00:02:41,950 --> 00:02:45,310
+And it's because of the breakfast it was that was holding things up.
+
+41
+00:02:45,330 --> 00:02:47,710
+Then we move on finally to costa adult vogue.
+
+42
+00:02:47,760 --> 00:02:48,070
+OK.
+
+43
+00:02:48,090 --> 00:02:49,240
+Ready to go to work.
+
+44
+00:02:49,380 --> 00:02:51,980
+So I'm going to show you I'm going to step through this one at a time.
+
+45
+00:02:52,080 --> 00:02:54,500
+One function call at a time.
+
+46
+00:02:54,510 --> 00:03:00,480
+And the way I'm going to do that over here I have this call stack window open and I'm going to add a
+
+47
+00:03:00,480 --> 00:03:02,420
+breakpoint here.
+
+48
+00:03:02,560 --> 00:03:09,340
+So as I hit this little button to run it or command enter on a Mac what's going to happen is that over
+
+49
+00:03:09,340 --> 00:03:11,810
+here we'll see things added to the call stack.
+
+50
+00:03:12,130 --> 00:03:19,690
+So I just hit command enter and I'm going to step through it with this this little thing here this arrow.
+
+51
+00:03:19,750 --> 00:03:24,680
+So first thing that happens is that we get to wake up and you can see Wake up is on the call stack.
+
+52
+00:03:24,680 --> 00:03:26,910
+Now it's the first piece of paper put down.
+
+53
+00:03:27,460 --> 00:03:31,920
+But wake up isn't resolved it hasn't returned something it's not done.
+
+54
+00:03:31,930 --> 00:03:35,540
+In fact the very first thing it does is called Take shower.
+
+55
+00:03:35,980 --> 00:03:42,520
+So take a shower is added onto the call stack so now half the stack with two function calls on it.
+
+56
+00:03:42,700 --> 00:03:43,880
+So take a shower.
+
+57
+00:03:44,110 --> 00:03:44,630
+It's simple.
+
+58
+00:03:44,660 --> 00:03:49,400
+Just returned showering and you actually see that right here.
+
+59
+00:03:49,750 --> 00:03:56,650
+So we're on take shower now return value is showering and then it's removed from the call stack because
+
+60
+00:03:56,650 --> 00:03:58,200
+it returned a value.
+
+61
+00:03:58,240 --> 00:04:02,140
+Then we move on back to wake up the next part of wake up.
+
+62
+00:04:02,140 --> 00:04:03,310
+We already did this.
+
+63
+00:04:03,310 --> 00:04:05,290
+Now it's on to eat breakfast.
+
+64
+00:04:05,290 --> 00:04:10,840
+So breakfast is added to the top of the stack and you can see if breakfast isn't as simple.
+
+65
+00:04:11,140 --> 00:04:17,320
+Eat breakfast is going to call cook food and cook food is added to the top of the stack.
+
+66
+00:04:17,320 --> 00:04:21,060
+So now we have wake up which is still waiting for the breakfast.
+
+67
+00:04:21,060 --> 00:04:23,110
+Eat breakfast is waiting on cook food.
+
+68
+00:04:23,110 --> 00:04:31,770
+So cook food is first it makes this array of items you can see that in the local scope items is created
+
+69
+00:04:31,770 --> 00:04:32,350
+now.
+
+70
+00:04:32,500 --> 00:04:39,000
+Next line is going to pick a random item and return it which is what happened to be returned.
+
+71
+00:04:39,040 --> 00:04:40,580
+Protein shake.
+
+72
+00:04:40,600 --> 00:04:45,730
+So now cook food is done because it returned and we return back to her I shouldn't say return.
+
+73
+00:04:45,730 --> 00:04:50,970
+We go back to eat breakfast which was waiting on cook food.
+
+74
+00:04:51,010 --> 00:04:56,610
+So now you can see an eat breakfast meal in the local scope is equal to protein shake.
+
+75
+00:04:56,740 --> 00:04:58,840
+So we're going to return.
+
+76
+00:04:58,940 --> 00:05:06,030
+Eating meal your turn eating protein shake it returns.
+
+77
+00:05:06,250 --> 00:05:10,450
+Which means that eat breakfast next is removed from the stack it's done.
+
+78
+00:05:10,470 --> 00:05:15,510
+And finally we go back to wake up which has been waiting patiently this whole time and we are able to
+
+79
+00:05:15,540 --> 00:05:16,510
+cancel that log.
+
+80
+00:05:16,590 --> 00:05:17,660
+OK ready to go to work.
+
+81
+00:05:17,680 --> 00:05:19,060
+You'll see a pier down here.
+
+82
+00:05:19,990 --> 00:05:21,270
+OK ready to go to work.
+
+83
+00:05:21,340 --> 00:05:25,640
+And now we're done with Wake up and we finish now.
+
+84
+00:05:25,660 --> 00:05:26,960
+We're at the end.
+
+85
+00:05:27,010 --> 00:05:27,760
+There we go.
+
+86
+00:05:28,030 --> 00:05:30,110
+So there's a lot going on there.
+
+87
+00:05:30,280 --> 00:05:35,230
+But the idea behind it is that as functions are invoked they're added to the top of the stack and then
+
+88
+00:05:35,230 --> 00:05:38,880
+they are popped off one at a time from the top as well.
+
+89
+00:05:39,370 --> 00:05:44,220
+So the reason that we're going over this first hope with all was clear what was what's happening there
+
+90
+00:05:44,230 --> 00:05:48,880
+these dev tools are useful if you've never seen the call stack tool over here it's very nice to be able
+
+91
+00:05:48,880 --> 00:05:53,450
+to step through and understand the order things are happening in and what's waiting on what.
+
+92
+00:05:53,560 --> 00:05:57,850
+But the reason I'm showing it to you now when we're discussing recursion is that when we're writing
+
+93
+00:05:57,850 --> 00:06:01,540
+recursive functions we're going to be working with the call stack a lot.
+
+94
+00:06:01,840 --> 00:06:05,950
+So you may be you're probably used to functions being pushed on the stack and popped off right when
+
+95
+00:06:05,950 --> 00:06:06,790
+they're done.
+
+96
+00:06:07,410 --> 00:06:10,120
+But with recursive functions it's different.
+
+97
+00:06:10,120 --> 00:06:14,350
+They keep pushing new functions over and over and over onto the call stack.
+
+98
+00:06:14,350 --> 00:06:18,730
+In fact the same function over and over and over and it's waiting to be called.
+
+99
+00:06:18,730 --> 00:06:25,750
+So if we take this idea of some parts calling some parts and it keeps calling itself over and over and
+
+100
+00:06:25,750 --> 00:06:30,400
+over at the call stack is going to look like data on the up parts and up parts based on the parts that
+
+101
+00:06:30,430 --> 00:06:31,770
+it has to end somewhere.
+
+102
+00:06:32,110 --> 00:06:35,440
+And that's what we're going to talk about in the next video when we actually write our first bit of
+
+103
+00:06:35,440 --> 00:06:38,050
+recursive code is where it ends.
+
+104
+00:06:38,050 --> 00:06:41,370
+We've established that the recursive function calls itself.
+
+105
+00:06:41,590 --> 00:06:42,900
+But how do we know when it stops.
+
+106
+00:06:42,910 --> 00:06:46,390
+Because otherwise it's in the call stack just going to continue to go forever.
+
+107
+00:06:46,570 --> 00:06:48,100
+And we'll talk about that as well.
+
+108
+00:06:48,250 --> 00:06:50,440
+So hopefully this made it a little bit clearer.
+
+109
+00:06:50,470 --> 00:06:56,230
+But the call stack is it's the thing behind the scenes in javascript that it's a stack data structure
+
+110
+00:06:56,330 --> 00:07:02,350
+which all that means is that things are added to the top and remove first from the top and functions
+
+111
+00:07:02,440 --> 00:07:04,740
+when they're invoked are added to this structure.
+
+112
+00:07:05,110 --> 00:07:07,570
+So next up we're finally going to write some recursive code.
+

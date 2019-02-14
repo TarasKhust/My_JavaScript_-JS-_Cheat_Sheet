@@ -1,0 +1,328 @@
+1
+00:00:00,180 --> 00:00:00,840
+Welcome back.
+
+2
+00:00:00,900 --> 00:00:05,130
+So what I want to do now and this video is talk about some of the pitfalls the common problems that
+
+3
+00:00:05,130 --> 00:00:08,010
+arise when you're writing recursive solutions.
+
+4
+00:00:08,010 --> 00:00:12,750
+So one thing that happens more often than you might think is that you don't have a base case or your
+
+5
+00:00:12,750 --> 00:00:14,700
+base case is wrong.
+
+6
+00:00:14,970 --> 00:00:21,600
+So what I mean by that is that if you go back to factorial here without this base case right here this
+
+7
+00:00:21,600 --> 00:00:26,240
+code just keeps going and going and adding function calls to the stack over and over.
+
+8
+00:00:26,280 --> 00:00:34,290
+So if we just plug into the factorial of two it's going to do return two times factorial of one factorial
+
+9
+00:00:34,290 --> 00:00:40,080
+of one is going to return 1 times factorial of zero factorial of zero overturn zero times factorial
+
+10
+00:00:40,080 --> 00:00:42,910
+of negative 1 and it just keeps going forever.
+
+11
+00:00:43,020 --> 00:00:44,840
+There's no end in sight.
+
+12
+00:00:45,180 --> 00:00:54,370
+And if I do run this right now you'll see what we get maximum call stack size exceeded.
+
+13
+00:00:54,630 --> 00:01:00,090
+So this means that actually I don't exactly know what will happen if we do try and step through this
+
+14
+00:01:00,770 --> 00:01:07,880
+but if I if I try it out you'll see that our stack just continues to grow over and over and over.
+
+15
+00:01:07,980 --> 00:01:10,910
+So I could keep clicking forever and stepping through this.
+
+16
+00:01:10,950 --> 00:01:18,880
+We're at 100 something calls in the stack right now but there is a maximum size it does differ depending
+
+17
+00:01:19,060 --> 00:01:20,940
+on Node what engine you're using.
+
+18
+00:01:20,940 --> 00:01:25,510
+I think that it's somewhere around 10000 calls.
+
+19
+00:01:25,530 --> 00:01:26,400
+Not positive though.
+
+20
+00:01:26,400 --> 00:01:28,950
+But there's a maximum and we're going to exceed it.
+
+21
+00:01:28,980 --> 00:01:35,130
+So if I just resume the script execution you'll see if we get that error maximum call stack size exceeded.
+
+22
+00:01:35,220 --> 00:01:36,410
+OK so that's a big problem.
+
+23
+00:01:36,660 --> 00:01:41,220
+Another thing that we could run into is returning the wrong thing or forgetting to return in the first
+
+24
+00:01:41,220 --> 00:01:41,960
+place.
+
+25
+00:01:42,360 --> 00:01:47,550
+So what I mean by that is if instead of returning So let's say we have a base case the correct space
+
+26
+00:01:47,550 --> 00:01:49,100
+case so it should stop.
+
+27
+00:01:49,380 --> 00:01:53,180
+But what if we are just returning numb times factorial of no.
+
+28
+00:01:53,620 --> 00:01:58,470
+And this is a simple example it's easy to identify the problem but sometimes the code is a lot longer
+
+29
+00:01:58,830 --> 00:02:01,820
+and sometimes it's harder to walk through each individual step.
+
+30
+00:02:01,820 --> 00:02:06,540
+If you don't take the time to pay attention to what you're actually returning because even though we
+
+31
+00:02:06,540 --> 00:02:10,550
+have a base case it doesn't help we're never going to hit it because we're returning.
+
+32
+00:02:10,560 --> 00:02:17,100
+In the case of factorial to returning to times factorial of two which is going to return to time sectorial
+
+33
+00:02:17,160 --> 00:02:18,690
+to unspin forever.
+
+34
+00:02:18,960 --> 00:02:20,000
+Well not quite forever.
+
+35
+00:02:20,070 --> 00:02:20,960
+As you'll see.
+
+36
+00:02:21,140 --> 00:02:29,160
+We hit a problem there we go maximum call stack size exceeded one more potential pitfall is if instead
+
+37
+00:02:29,160 --> 00:02:33,310
+of a return here if we had a constant log one for example.
+
+38
+00:02:33,720 --> 00:02:37,130
+So we still if the base case let's change this back to number minus 1.
+
+39
+00:02:37,200 --> 00:02:42,270
+So everything looks good except that we're constantly logging one when numbers are equal to 1.
+
+40
+00:02:42,480 --> 00:02:44,350
+And what do we get.
+
+41
+00:02:44,380 --> 00:02:52,000
+Same thing maximum call stack size exceeded because we printed out one here for we to refresh and do
+
+42
+00:02:52,000 --> 00:02:55,400
+the same thing step through this.
+
+43
+00:02:55,400 --> 00:02:56,640
+If we look at the call stack.
+
+44
+00:02:56,890 --> 00:02:57,190
+OK.
+
+45
+00:02:57,190 --> 00:02:59,860
+So factorial of 2 is called.
+
+46
+00:02:59,860 --> 00:03:05,590
+So we returned two times factorial of 1 factorial of 1 isn't returning anything.
+
+47
+00:03:05,620 --> 00:03:09,430
+So it doesn't stop execution here.
+
+48
+00:03:09,940 --> 00:03:14,370
+Remember that's the way that we we pop this thing off the stack is by returning.
+
+49
+00:03:14,380 --> 00:03:16,260
+But we're not returning one.
+
+50
+00:03:16,300 --> 00:03:19,050
+So instead this is just a nice little extra thing.
+
+51
+00:03:19,060 --> 00:03:25,870
+Oh by the way if Gnome is equal to 1 print out one but then keep going return 1 times factorial of 0.
+
+52
+00:03:25,870 --> 00:03:28,850
+So you'll see that's what happens now.
+
+53
+00:03:28,860 --> 00:03:33,420
+Now one we return one time check or local hero.
+
+54
+00:03:33,510 --> 00:03:34,760
+Now name is zero.
+
+55
+00:03:34,970 --> 00:03:39,050
+And we keep going and if I keep clicking you'll see nothing keeps going down negative 7.
+
+56
+00:03:39,050 --> 00:03:45,640
+Now we're at and we'll keep going until we hit the maximum call stack size if we exceed it.
+
+57
+00:03:45,710 --> 00:03:48,740
+So I'm going to fix that and put it back as return 1.
+
+58
+00:03:48,770 --> 00:03:51,740
+So the importance of returning is.
+
+59
+00:03:51,860 --> 00:03:57,530
+I mean that's what recursion is built on the idea of this call stack where all these things are dependent
+
+60
+00:03:57,530 --> 00:04:01,250
+on one another waiting they're kind of primed in a chain.
+
+61
+00:04:01,250 --> 00:04:06,710
+But we still have to return some value at the end to then send back and then to add or multiply or do
+
+62
+00:04:06,710 --> 00:04:11,180
+something with to send back to the previous one to keep going until we get to the original function
+
+63
+00:04:11,180 --> 00:04:11,720
+call effect.
+
+64
+00:04:11,720 --> 00:04:13,560
+Tauriel too.
+
+65
+00:04:13,670 --> 00:04:13,880
+All right.
+
+66
+00:04:13,880 --> 00:04:21,530
+So let's just make sure it still works and do factorial at 5 but if we get one 20 Okay it's working.
+
+67
+00:04:21,530 --> 00:04:28,790
+Now one note in Chrome the message it's giving me is what is the maximum call stack size exceeded.
+
+68
+00:04:28,790 --> 00:04:32,350
+This is generally what's known as a stack overflow.
+
+69
+00:04:32,420 --> 00:04:33,370
+Think of the stack.
+
+70
+00:04:33,470 --> 00:04:34,540
+It's overflowing.
+
+71
+00:04:34,640 --> 00:04:34,860
+Right.
+
+72
+00:04:34,860 --> 00:04:36,620
+Too many frames on that stack.
+
+73
+00:04:36,620 --> 00:04:38,650
+Too many functions trying to be called.
+
+74
+00:04:38,960 --> 00:04:41,520
+So you might have and you've probably come across that term before.
+
+75
+00:04:41,630 --> 00:04:45,160
+And the name of a popular Web site stack overflow that's where it comes from.
+
+76
+00:04:45,440 --> 00:04:50,020
+When you have usually it's a recursive call if you see that message just keep that in mind.
+
+77
+00:04:50,030 --> 00:04:52,600
+This means that your recursion is not stopping.
+
+78
+00:04:53,000 --> 00:04:54,550
+There's never a rock bottom.
+
+79
+00:04:54,680 --> 00:04:54,990
+OK.
+
+80
+00:04:55,010 --> 00:04:58,100
+That wraps up but I want to say about common problems.
+
+81
+00:04:58,280 --> 00:05:03,040
+You don't have a base case or you're forgetting to return the value or returning the wrong thing.
+
+82
+00:05:03,050 --> 00:05:06,440
+All of those can result in a stack overflow which is not good.
+

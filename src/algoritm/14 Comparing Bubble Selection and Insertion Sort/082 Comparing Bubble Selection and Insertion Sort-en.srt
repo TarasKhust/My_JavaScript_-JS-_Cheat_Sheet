@@ -1,0 +1,384 @@
+1
+00:00:00,210 --> 00:00:01,620
+All right welcome back.
+
+2
+00:00:01,620 --> 00:00:06,510
+So what I want to do now is really quickly take the three algorithms that we've learned so far the three
+
+3
+00:00:06,510 --> 00:00:08,800
+sorts and compare them.
+
+4
+00:00:09,090 --> 00:00:13,780
+So it will be a quick wrap up but basically we've been working on each algorithm individually.
+
+5
+00:00:13,800 --> 00:00:18,510
+We've been talking about the pros and cons but we haven't really seen how they all compare and you can
+
+6
+00:00:18,510 --> 00:00:22,920
+see that they're grouped together in this section I called them elementary sorting algorithms they're
+
+7
+00:00:22,920 --> 00:00:28,920
+often called quadratic sorting algorithms because they're big O time complexity of all of them.
+
+8
+00:00:28,950 --> 00:00:30,510
+Oh and squared.
+
+9
+00:00:30,510 --> 00:00:32,530
+Remember we care about worst case.
+
+10
+00:00:32,670 --> 00:00:34,870
+That's the point of Pay-Go.
+
+11
+00:00:35,100 --> 00:00:39,610
+But we also broke it down into average seek and CEO of and squared for all of them.
+
+12
+00:00:39,690 --> 00:00:43,260
+But then if we look at time complexity there's a bit where they differ.
+
+13
+00:00:43,410 --> 00:00:47,070
+So here's bubble sort and this is with almost sorted data.
+
+14
+00:00:47,100 --> 00:00:48,570
+So that's the best case.
+
+15
+00:00:48,570 --> 00:00:54,510
+If our data is totally sorted bubble sort works really well because it goes through and it has to do
+
+16
+00:00:54,510 --> 00:00:56,070
+very few swaps.
+
+17
+00:00:56,070 --> 00:01:01,370
+We iterate over and we do one more check and it's all sorted and we're done.
+
+18
+00:01:02,600 --> 00:01:06,730
+And that's it that's a bubble sort performs very well in that situation.
+
+19
+00:01:06,730 --> 00:01:08,770
+Same thing with insertion sort.
+
+20
+00:01:08,770 --> 00:01:13,090
+If we work with nearly sorted data we place things in the correct spot.
+
+21
+00:01:13,180 --> 00:01:17,130
+But then you look at as we go we don't really have to do anything.
+
+22
+00:01:17,130 --> 00:01:22,120
+We're just checking each item to the one before it and we don't have to do any swaps.
+
+23
+00:01:22,270 --> 00:01:26,730
+So we basically iterate through the loop once doing one comparison for each item.
+
+24
+00:01:26,770 --> 00:01:31,070
+If the data is totally sorted that is in this case it was almost sorted.
+
+25
+00:01:31,120 --> 00:01:37,280
+So it's insertion sort works well in that situation selection sort however doesn't fare so well.
+
+26
+00:01:37,280 --> 00:01:39,780
+If you look what happens here's nearly sorted data.
+
+27
+00:01:39,850 --> 00:01:45,010
+We're still going to go through each time to find the lowest item so we iterate all the way through
+
+28
+00:01:45,010 --> 00:01:50,080
+and it happens to be the first set and then we do it again and we look for the smallest the minimum
+
+29
+00:01:50,080 --> 00:01:50,770
+item.
+
+30
+00:01:50,890 --> 00:01:54,060
+It doesn't matter that it's already almost sorted.
+
+31
+00:01:54,070 --> 00:01:59,740
+So selection sort does not perform well in this situation but selection sort is very simple to understand
+
+32
+00:01:59,770 --> 00:02:02,940
+which is pretty much it's only positive.
+
+33
+00:02:03,340 --> 00:02:08,890
+So returning back to this sorting algorithms animations website if we look at nearly sorted so there
+
+34
+00:02:08,890 --> 00:02:10,860
+are a bunch of algorithms we haven't talked about.
+
+35
+00:02:10,990 --> 00:02:13,650
+But we'll learn about some of these like merge sort coming up.
+
+36
+00:02:13,810 --> 00:02:19,450
+But if we click nearly sorted focus on how insertion selection and bubble perform you'll see insertion
+
+37
+00:02:19,480 --> 00:02:21,220
+and bubble finish very quickly.
+
+38
+00:02:21,220 --> 00:02:27,860
+Selection takes forever but still insertion and bubble which are generally slower than these algorithms
+
+39
+00:02:27,940 --> 00:02:29,020
+more advanced ones.
+
+40
+00:02:29,200 --> 00:02:31,740
+They still perform better on nearly sort of data.
+
+41
+00:02:31,910 --> 00:02:32,360
+OK.
+
+42
+00:02:32,480 --> 00:02:34,770
+So that's the time complexities.
+
+43
+00:02:34,810 --> 00:02:39,880
+Basically they're all over and squared except with nearly sort of data bubble and insertion performed
+
+44
+00:02:39,880 --> 00:02:41,140
+well now.
+
+45
+00:02:41,140 --> 00:02:42,420
+Space complexity.
+
+46
+00:02:42,460 --> 00:02:48,370
+They actually are all the same as well and that's because we're not really using much space with these
+
+47
+00:02:48,370 --> 00:02:49,020
+algorithms.
+
+48
+00:02:49,100 --> 00:02:50,470
+Everything is happening in place.
+
+49
+00:02:50,470 --> 00:02:53,160
+We're not actually creating new arrays.
+
+50
+00:02:53,170 --> 00:02:55,410
+It doesn't matter how long the array is.
+
+51
+00:02:55,420 --> 00:03:00,490
+We're not creating a variable for each element or two variables for each element or something like that.
+
+52
+00:03:00,730 --> 00:03:05,980
+But what you'll see later on some of the other algorithms that are faster what they do is that they
+
+53
+00:03:05,980 --> 00:03:11,320
+actually create a bunch of smaller arrays for example merge sort which will learn next at the beginning
+
+54
+00:03:11,320 --> 00:03:17,290
+of the next section it's space complexity is not 0 1 it's not constant but for these they're all basically
+
+55
+00:03:17,290 --> 00:03:18,600
+the exact same.
+
+56
+00:03:18,610 --> 00:03:20,880
+One thing about insertion sort that is special.
+
+57
+00:03:20,980 --> 00:03:26,670
+I mentioned already is that it works very well if you need your data to be continuously sorted.
+
+58
+00:03:26,670 --> 00:03:31,470
+So new elements are being added to it's not a one time thing where you have all the data ready.
+
+59
+00:03:31,600 --> 00:03:36,170
+If we're using insertion sort and I add in the number I don't know.
+
+60
+00:03:36,240 --> 00:03:42,550
+39 for example insertion sort just needs to do basically a single pass to figure out where to put that
+
+61
+00:03:43,090 --> 00:03:47,460
+versus if we were doing selection sort it would resort the entire thing.
+
+62
+00:03:47,590 --> 00:03:50,370
+It's not able to figure out exactly where it goes right away.
+
+63
+00:03:50,500 --> 00:03:56,560
+So insertion sort works well in those situations if you have data coming in and you need to resort things
+
+64
+00:03:56,560 --> 00:04:00,690
+over and over and over and maintain a running sort keep things up to date.
+
+65
+00:04:00,890 --> 00:04:01,500
+OK.
+
+66
+00:04:01,750 --> 00:04:04,540
+So just want to recap what we covered.
+
+67
+00:04:04,540 --> 00:04:08,770
+Sorting is very important it's a fundamental thing in programming.
+
+68
+00:04:08,770 --> 00:04:10,900
+It's also very common in interviews.
+
+69
+00:04:10,900 --> 00:04:16,240
+We'll talk more about what actually you need to know if you are if you are interviewing and you're concerned
+
+70
+00:04:16,240 --> 00:04:17,100
+about sorting.
+
+71
+00:04:17,140 --> 00:04:21,520
+You do not need to just sit here and memorize implementations of all of these algorithms.
+
+72
+00:04:21,520 --> 00:04:23,340
+We'll talk more about what you do need to know.
+
+73
+00:04:23,440 --> 00:04:28,690
+So bubble sort selection sort and insertion sort are all roughly equivalent in the grand scheme of things
+
+74
+00:04:29,320 --> 00:04:34,660
+especially when we compare them to the next batch of algorithms we're going to learn in the next section.
+
+75
+00:04:34,680 --> 00:04:38,950
+There are some slight differences between these three but they become insignificant when we see how
+
+76
+00:04:38,950 --> 00:04:41,450
+much faster some of these other algorithms are.
+
+77
+00:04:41,860 --> 00:04:46,310
+So they'll have average time complexities that are quadratic we can do better though.
+
+78
+00:04:46,540 --> 00:04:47,940
+And that's what's coming up next.
+
+79
+00:04:47,980 --> 00:04:49,730
+We need more complex algorithms.
+
+80
+00:04:49,840 --> 00:04:51,660
+They are a little trickier to explain.
+
+81
+00:04:51,670 --> 00:04:53,240
+They're less.
+
+82
+00:04:53,580 --> 00:04:54,770
+I don't say less human.
+
+83
+00:04:54,820 --> 00:04:56,680
+They're less they're less intuitive.
+
+84
+00:04:56,680 --> 00:04:58,000
+Right off the bat.
+
+85
+00:04:58,000 --> 00:05:02,920
+So it's a little more work but these algorithms are definitely worth knowing and also what we'll see
+
+86
+00:05:02,920 --> 00:05:04,960
+in the next video and the next section.
+
+87
+00:05:04,990 --> 00:05:09,730
+These algorithms actually can perform better on very small data sets.
+
+88
+00:05:09,730 --> 00:05:11,090
+So we'll see why that is.
+
+89
+00:05:11,140 --> 00:05:13,530
+So these aren't a complete waste of time to learn.
+
+90
+00:05:13,660 --> 00:05:18,580
+If you feel if you're worried about that and you're thinking oh he's just showing the dumb ones first
+
+91
+00:05:18,590 --> 00:05:20,590
+and so we can get to the Hardman's afterwards.
+
+92
+00:05:20,590 --> 00:05:25,000
+That's only partially true because these actually do excel when the data sets are small.
+
+93
+00:05:25,000 --> 00:05:25,320
+All right.
+
+94
+00:05:25,330 --> 00:05:29,440
+So in the next section we're going to start learning about some of these scarier algorithms.
+
+95
+00:05:29,440 --> 00:05:30,490
+We're going to take our time though.
+
+96
+00:05:30,580 --> 00:05:33,590
+So hopefully it's not too bad and we're going to start off with merge sort.
+

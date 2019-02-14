@@ -1,0 +1,128 @@
+1
+00:00:00,120 --> 00:00:00,380
+All right.
+
+2
+00:00:00,390 --> 00:00:01,890
+Next up is an shift.
+
+3
+00:00:01,890 --> 00:00:05,670
+So upshift will add a note to the beginning of our doubly linked list.
+
+4
+00:00:05,850 --> 00:00:09,480
+So it's about the same as what we did with a singly we.
+
+5
+00:00:09,480 --> 00:00:11,980
+First we just have that extra connection.
+
+6
+00:00:12,090 --> 00:00:17,920
+So if we come over here and read you insert the beginning we'll add the number eighty five.
+
+7
+00:00:18,590 --> 00:00:20,330
+All that we do is find the current head.
+
+8
+00:00:20,480 --> 00:00:21,540
+We make a new node.
+
+9
+00:00:21,560 --> 00:00:24,390
+We point the new node at the current head.
+
+10
+00:00:24,690 --> 00:00:31,000
+Then we point the head of the current head at the new node and then we make this the head.
+
+11
+00:00:31,500 --> 00:00:33,830
+That's the final step and we're done.
+
+12
+00:00:33,870 --> 00:00:38,250
+So it's pretty short all that we have to look out for is if the list is empty.
+
+13
+00:00:38,460 --> 00:00:41,560
+And in that case we make the head and the tail the same thing.
+
+14
+00:00:41,940 --> 00:00:42,490
+All right.
+
+15
+00:00:42,600 --> 00:00:43,780
+So here's the pseudocode.
+
+16
+00:00:43,860 --> 00:00:46,420
+Create a new node with the value that's passed in.
+
+17
+00:00:46,890 --> 00:00:51,210
+If the length is 0 if it's empty set the head and the tail to be that new node.
+
+18
+00:00:51,540 --> 00:00:55,940
+Otherwise we'll set the previous property on the head to be the new node.
+
+19
+00:00:56,220 --> 00:00:59,960
+Then we set the next property on the new node to be the current head.
+
+20
+00:01:00,210 --> 00:01:02,440
+And then finally we move the head label.
+
+21
+00:01:02,460 --> 00:01:06,640
+We make the head the new node we shifted over or shifted over.
+
+22
+00:01:06,900 --> 00:01:10,090
+And then we increment the length and then return the list.
+
+23
+00:01:10,110 --> 00:01:10,890
+All right.
+
+24
+00:01:11,070 --> 00:01:14,050
+So just to reiterate that we take the current head.
+
+25
+00:01:14,170 --> 00:01:15,680
+Well first we make the new node.
+
+26
+00:01:15,840 --> 00:01:20,380
+Then we take the current head and we have a new node point next to the current head.
+
+27
+00:01:20,490 --> 00:01:24,020
+Then we have the current previous set to the new node.
+
+28
+00:01:24,290 --> 00:01:28,160
+There is that other arrow and then finally we say this isn't the head anymore.
+
+29
+00:01:28,290 --> 00:01:29,890
+This is the head.
+
+30
+00:01:30,300 --> 00:01:31,400
+And we're done.
+
+31
+00:01:31,650 --> 00:01:35,470
+We just have to look out for the edge case when it's empty the head and the tail are the same thing.
+
+32
+00:01:35,760 --> 00:01:36,170
+All right.
+

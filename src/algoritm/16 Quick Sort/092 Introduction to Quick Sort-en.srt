@@ -1,0 +1,716 @@
+1
+00:00:00,180 --> 00:00:01,410
+Hey welcome back.
+
+2
+00:00:01,410 --> 00:00:05,870
+We're moving on to our next intermediate sorting algorithm which is called quicksort.
+
+3
+00:00:05,880 --> 00:00:10,380
+So it has a bit of a catchy name it sounds better than merge sort.
+
+4
+00:00:10,380 --> 00:00:13,950
+I mean who doesn't want a software that is called quicksort.
+
+5
+00:00:13,950 --> 00:00:19,980
+But I have to I have to admit personally this is the bane of my existence as far as sorting algorithms
+
+6
+00:00:20,310 --> 00:00:21,500
+not because it's bad.
+
+7
+00:00:21,510 --> 00:00:25,140
+I mean it's very useful as we'll see later on it's efficient.
+
+8
+00:00:25,140 --> 00:00:25,880
+It works well.
+
+9
+00:00:25,890 --> 00:00:27,140
+It is indeed quick.
+
+10
+00:00:27,300 --> 00:00:31,430
+But for some reason my brain just is not like the way that quicksort works.
+
+11
+00:00:31,580 --> 00:00:36,600
+And each time I have to teach these sorting algorithms I usually you know the night before a lecture
+
+12
+00:00:36,840 --> 00:00:39,600
+we'll go review make sure I remember how everything works.
+
+13
+00:00:39,600 --> 00:00:45,390
+I can rewrite the code and occasionally you know I'll have to like reference previous code or something.
+
+14
+00:00:45,450 --> 00:00:52,350
+But with quicksort every single time I have to double check my work my brain just rejects storing it.
+
+15
+00:00:52,350 --> 00:00:54,690
+It just won't it does not like it.
+
+16
+00:00:54,690 --> 00:01:00,570
+So not to poison your opinion of it ahead of time because I have had many a student who really loves
+
+17
+00:01:00,570 --> 00:01:03,500
+quicksort just for me the way my brain works.
+
+18
+00:01:03,520 --> 00:01:05,280
+It's just not very intuitive.
+
+19
+00:01:05,460 --> 00:01:07,730
+So we're going to spend special.
+
+20
+00:01:07,740 --> 00:01:12,290
+We're going to pay special attention to trying to understand it and make sure we step through it.
+
+21
+00:01:12,310 --> 00:01:17,190
+OK so quicksort it works on the same assumption that merge sort does it.
+
+22
+00:01:17,250 --> 00:01:23,580
+It's one that is going to be easiest to solve through recursion where we keep basically splitting up
+
+23
+00:01:23,940 --> 00:01:30,690
+the data the array until we hit arrays that are 0 or 1 item long which means that they are individually
+
+24
+00:01:30,690 --> 00:01:31,140
+sorted.
+
+25
+00:01:31,140 --> 00:01:32,820
+We have an item of one.
+
+26
+00:01:32,950 --> 00:01:34,080
+You have an array with one item.
+
+27
+00:01:34,080 --> 00:01:35,060
+It is sorted.
+
+28
+00:01:35,310 --> 00:01:39,030
+So that's what we take advantage of but we do something different.
+
+29
+00:01:39,370 --> 00:01:43,690
+We work by selecting a single element which we're going to call the pivot point.
+
+30
+00:01:43,860 --> 00:01:47,100
+So in any array you pick any element it doesn't actually really matter.
+
+31
+00:01:47,100 --> 00:01:49,010
+We'll talk about some of the implications.
+
+32
+00:01:49,020 --> 00:01:51,040
+But let's say we pick the element in the middle.
+
+33
+00:01:51,150 --> 00:01:57,160
+What we're going to do is move all the numbers that are lower than that number to the left of that number
+
+34
+00:01:57,160 --> 00:01:59,700
+in all the numbers that are greater than that number to the right.
+
+35
+00:01:59,700 --> 00:02:00,860
+Now we're not going to sort them all.
+
+36
+00:02:00,870 --> 00:02:06,540
+We're just going to move them to one side and then from there we know that that one number is in the
+
+37
+00:02:06,540 --> 00:02:07,160
+correct spot.
+
+38
+00:02:07,150 --> 00:02:09,000
+That is only that one number.
+
+39
+00:02:09,000 --> 00:02:09,580
+Every other.
+
+40
+00:02:09,690 --> 00:02:14,670
+All the other numbers on the right side of things are the left side but we don't know the exact position.
+
+41
+00:02:14,700 --> 00:02:18,550
+So then we repeat the process for the left side and for the right side.
+
+42
+00:02:18,840 --> 00:02:21,450
+So if that explanation made zero sense I don't blame you.
+
+43
+00:02:21,600 --> 00:02:23,580
+Let's take a look at a little diagram.
+
+44
+00:02:23,850 --> 00:02:30,600
+So if this is our array we have 8 elements 1 to 8 the numbers and they're in a random order.
+
+45
+00:02:30,690 --> 00:02:35,730
+What we do is we just pick some element and for this example we're going to pick the first one which
+
+46
+00:02:35,730 --> 00:02:40,740
+is 5 and then move all the numbers that are less than 5 to the left of it and all the numbers that are
+
+47
+00:02:40,740 --> 00:02:42,440
+greater than 5 to the right.
+
+48
+00:02:42,660 --> 00:02:48,920
+So if we count the numbers that are less than 5 we have 1 2 3 4 numbers.
+
+49
+00:02:48,990 --> 00:02:53,240
+So that means that we should have 1 2 3 4 here.
+
+50
+00:02:53,370 --> 00:02:57,720
+We're going to move them all here and then at this index right here we'll move five.
+
+51
+00:02:57,900 --> 00:03:00,880
+And then on the right side we'll have 7 6 and 8.
+
+52
+00:03:01,170 --> 00:03:03,390
+And if you look at the next step that's what we've done.
+
+53
+00:03:03,720 --> 00:03:06,120
+So five is in the correct spot.
+
+54
+00:03:06,120 --> 00:03:12,970
+We know that in our sorted array 5 is going to have index of 4 0 1 2 3 4.
+
+55
+00:03:13,200 --> 00:03:14,690
+We don't know these aren't sorted.
+
+56
+00:03:14,700 --> 00:03:15,490
+This isn't sorted.
+
+57
+00:03:15,530 --> 00:03:17,240
+This is sorted right now.
+
+58
+00:03:17,520 --> 00:03:22,090
+So now we recursively repeat the process on the left side and the right side.
+
+59
+00:03:22,500 --> 00:03:25,650
+So on the left side let's just start again.
+
+60
+00:03:25,680 --> 00:03:28,390
+It doesn't really matter what we pick it will work no matter what.
+
+61
+00:03:28,390 --> 00:03:32,340
+But let's pick the first item again and put that in the correct spot.
+
+62
+00:03:32,340 --> 00:03:38,590
+So that means it's going to be at index of 0 1 2 because 1 and 2 need to come before it.
+
+63
+00:03:38,940 --> 00:03:40,650
+And that's what we end up with.
+
+64
+00:03:40,650 --> 00:03:47,760
+So now this is in the correct spot we know in our final array 3 is going to have index of 2 5 is going
+
+65
+00:03:47,760 --> 00:03:49,160
+to have index of four.
+
+66
+00:03:49,230 --> 00:03:52,440
+The next we have an element of two or an array of two elements.
+
+67
+00:03:52,440 --> 00:03:53,560
+This is nice and easy.
+
+68
+00:03:53,790 --> 00:03:58,210
+So we pick the first element which is one and we figure out where it needs to go.
+
+69
+00:03:58,470 --> 00:04:02,790
+And that all that we have is one other element which is greater than that.
+
+70
+00:04:02,820 --> 00:04:06,760
+So the right side now becomes two and we can sort that.
+
+71
+00:04:06,890 --> 00:04:08,140
+And it's a single element.
+
+72
+00:04:08,280 --> 00:04:10,620
+So we've now hit the end on our left side.
+
+73
+00:04:10,830 --> 00:04:12,080
+And if you kind of look.
+
+74
+00:04:12,150 --> 00:04:13,860
+Imagine drawing.
+
+75
+00:04:13,950 --> 00:04:15,950
+Imagine putting these all in the same line.
+
+76
+00:04:16,020 --> 00:04:17,550
+We end up with the sorted array.
+
+77
+00:04:17,550 --> 00:04:20,270
+At least the left side of the five.
+
+78
+00:04:20,340 --> 00:04:21,770
+Then we have to get to the right side.
+
+79
+00:04:21,820 --> 00:04:24,370
+Remember all the way at the beginning we split right there.
+
+80
+00:04:24,540 --> 00:04:25,770
+We just took care of this.
+
+81
+00:04:25,930 --> 00:04:27,430
+No highlighting the wrong thing.
+
+82
+00:04:27,600 --> 00:04:27,890
+OK.
+
+83
+00:04:27,900 --> 00:04:29,610
+My computer doesn't me to highlight that.
+
+84
+00:04:29,790 --> 00:04:31,600
+We took care of the left side here.
+
+85
+00:04:31,680 --> 00:04:33,760
+Now let's get to the right side.
+
+86
+00:04:34,020 --> 00:04:39,630
+So we pick the pivot point which is seven in our example and we have to figure out OK where should 7
+
+87
+00:04:39,630 --> 00:04:39,990
+go.
+
+88
+00:04:40,020 --> 00:04:41,620
+What's the index where it should end up.
+
+89
+00:04:41,640 --> 00:04:46,620
+We move the other elements so we move six to the left of it 8 to the right of it.
+
+90
+00:04:46,710 --> 00:04:48,900
+And those are both single element Arrays no.
+
+91
+00:04:49,010 --> 00:04:56,970
+And actually if you look at where we have 1 2 3 4 5 6 7 8 we have the sorted array there.
+
+92
+00:04:57,010 --> 00:04:58,210
+I got to have my slides again.
+
+93
+00:04:58,290 --> 00:04:59,230
+I'm always doing that.
+
+94
+00:04:59,430 --> 00:05:03,040
+So this shows us how it works roughly.
+
+95
+00:05:03,210 --> 00:05:06,280
+It's it makes sense I think in a nice diagram.
+
+96
+00:05:06,320 --> 00:05:11,510
+But when we actually start working and trying to write the recursion and visualize it when we have code
+
+97
+00:05:11,540 --> 00:05:13,250
+it can be a little bit tricky.
+
+98
+00:05:13,310 --> 00:05:13,610
+OK.
+
+99
+00:05:13,610 --> 00:05:16,600
+So I have visual I'll go pulled up with quicksort now.
+
+100
+00:05:16,910 --> 00:05:18,860
+So here's another visualization.
+
+101
+00:05:18,920 --> 00:05:24,120
+We start with this unsorted array and we pick 11 as our first pivot point.
+
+102
+00:05:24,140 --> 00:05:28,010
+So we want to move all the elements that are less than 11 to the left of it and all the ones that are
+
+103
+00:05:28,010 --> 00:05:30,010
+greater to the right.
+
+104
+00:05:30,080 --> 00:05:31,510
+So we start and just compare it.
+
+105
+00:05:31,520 --> 00:05:35,030
+OK 40 is greater than greater than greater and greater than.
+
+106
+00:05:35,030 --> 00:05:36,090
+OK here's a 10.
+
+107
+00:05:36,290 --> 00:05:37,560
+So that's less than.
+
+108
+00:05:37,580 --> 00:05:38,710
+So what we're going to do.
+
+109
+00:05:38,780 --> 00:05:41,860
+This might seem you might think that we would swap them or something.
+
+110
+00:05:41,870 --> 00:05:47,000
+What we're actually going to do is keep track of how many elements are less than 11 so so far it's one
+
+111
+00:05:47,000 --> 00:05:47,710
+element.
+
+112
+00:05:47,990 --> 00:05:55,860
+And then we're just going to swap 10 and 40 but we're mentally keeping track of in our code not mentally.
+
+113
+00:05:55,880 --> 00:05:59,240
+There was one element that we just that is less than 11.
+
+114
+00:05:59,240 --> 00:06:00,560
+Now we keep going.
+
+115
+00:06:00,660 --> 00:06:02,770
+No that's greater than greater than greater then.
+
+116
+00:06:02,960 --> 00:06:04,100
+OK here's another element.
+
+117
+00:06:04,110 --> 00:06:05,220
+Less than 11.
+
+118
+00:06:05,390 --> 00:06:11,330
+So we do the same thing again but now we know we have a variable and we say there are two things less
+
+119
+00:06:11,330 --> 00:06:12,250
+than 11.
+
+120
+00:06:12,260 --> 00:06:16,800
+So once we hit the end because there's nothing greater than 11 or nothing less than 11 anymore.
+
+121
+00:06:17,120 --> 00:06:20,970
+Now we know OK there were two things that we we added in.
+
+122
+00:06:20,990 --> 00:06:27,390
+There are two items that we now need 11 to leap frog over and that's what happens.
+
+123
+00:06:27,740 --> 00:06:29,710
+So now all 11 is in the correct spot.
+
+124
+00:06:29,960 --> 00:06:35,800
+So does that make sense we count 1 2 and then we move to that position.
+
+125
+00:06:36,260 --> 00:06:39,410
+And now everything on the left side is less than 11.
+
+126
+00:06:39,410 --> 00:06:42,410
+Everything on the right side is greater than 11.
+
+127
+00:06:42,500 --> 00:06:45,360
+Now it happens that these two values are sorted already.
+
+128
+00:06:45,470 --> 00:06:48,750
+But that's not our code doesn't know that it's not guaranteed.
+
+129
+00:06:49,180 --> 00:06:49,650
+OK.
+
+130
+00:06:49,820 --> 00:06:53,710
+So now our code is going to take the left side and repeat the same thing.
+
+131
+00:06:53,720 --> 00:06:59,510
+So this is showing us 11 is cemented in place and now it does the same thing with six in 10.
+
+132
+00:06:59,690 --> 00:07:04,020
+But this is super short because there's really no other values to compare.
+
+133
+00:07:04,070 --> 00:07:06,590
+And so it cements 6 and then it cements 10.
+
+134
+00:07:06,800 --> 00:07:08,530
+But now let's focus on the right side.
+
+135
+00:07:08,540 --> 00:07:13,880
+So next up we have 50 and I'm just going to count how many numbers are greater than 50.
+
+136
+00:07:13,880 --> 00:07:22,800
+Or how many numbers are less than 50 as we go through 1 2 3 4 5 6 7 8 9 10 11 12 numbers.
+
+137
+00:07:22,820 --> 00:07:26,900
+So now we're just going to swap 50 to the end there.
+
+138
+00:07:27,930 --> 00:07:31,870
+Now fifty's in the correct spot so it should turn orange.
+
+139
+00:07:31,980 --> 00:07:32,520
+OK.
+
+140
+00:07:32,760 --> 00:07:35,050
+So now we have to sort the left and the right side.
+
+141
+00:07:35,100 --> 00:07:36,640
+But there is no right side.
+
+142
+00:07:36,720 --> 00:07:38,180
+So we have to sort this love side.
+
+143
+00:07:38,550 --> 00:07:39,880
+So we picked 27 again.
+
+144
+00:07:40,020 --> 00:07:41,380
+Again why did it start again.
+
+145
+00:07:41,400 --> 00:07:43,060
+We picked 27 for the first time.
+
+146
+00:07:43,080 --> 00:07:44,700
+Now we compare it to 43.
+
+147
+00:07:44,760 --> 00:07:45,960
+That's greater than it.
+
+148
+00:07:46,170 --> 00:07:48,360
+Greater greater greater.
+
+149
+00:07:48,390 --> 00:07:49,730
+OK here's a less then.
+
+150
+00:07:49,830 --> 00:07:51,830
+So we swap and we keep track of.
+
+151
+00:07:51,840 --> 00:07:52,080
+OK.
+
+152
+00:07:52,090 --> 00:07:54,180
+There's one element that was that was less than.
+
+153
+00:07:54,330 --> 00:07:55,190
+Keep going.
+
+154
+00:07:55,440 --> 00:07:56,750
+Here's another swap.
+
+155
+00:07:56,790 --> 00:07:59,730
+Now we have two elements that were less than keep going.
+
+156
+00:07:59,730 --> 00:08:01,780
+Now we have three elements that are less than.
+
+157
+00:08:01,960 --> 00:08:03,570
+And finally four elements.
+
+158
+00:08:03,570 --> 00:08:05,130
+Now where do we put 27.
+
+159
+00:08:05,220 --> 00:08:10,740
+Well we know that we had four numbers less than 27 so we swap it there.
+
+160
+00:08:11,220 --> 00:08:11,970
+All right.
+
+161
+00:08:12,090 --> 00:08:13,840
+So I'm not going to walk through every other step.
+
+162
+00:08:13,860 --> 00:08:15,270
+I'm just going to fast forward.
+
+163
+00:08:15,270 --> 00:08:17,510
+But you can see 27 is now correct position.
+
+164
+00:08:17,520 --> 00:08:19,230
+Now we do the left side.
+
+165
+00:08:19,430 --> 00:08:21,520
+Keep going.
+
+166
+00:08:21,540 --> 00:08:26,100
+Now we did the right side 43 is in the correct spot.
+
+167
+00:08:26,130 --> 00:08:28,350
+Now 42 in the correct spot.
+
+168
+00:08:28,910 --> 00:08:29,800
+OK.
+
+169
+00:08:30,270 --> 00:08:34,460
+And we're almost there every go full is sorted.
+
+170
+00:08:34,800 --> 00:08:37,160
+So it's it's kind of this is why.
+
+171
+00:08:37,160 --> 00:08:42,650
+For me personally maybe that made more sense to you but trying to write this in code can be very intimidating.
+
+172
+00:08:42,870 --> 00:08:47,460
+And I'm going to give you the pseudocode in the next video but it's not at all the expectation that
+
+173
+00:08:47,460 --> 00:08:48,990
+you just go and write it.
+
+174
+00:08:48,990 --> 00:08:49,940
+This is a hard one.
+
+175
+00:08:50,100 --> 00:08:52,730
+So the actual code is not that long either.
+
+176
+00:08:52,830 --> 00:08:55,200
+But just conceptually it's a lot.
+
+177
+00:08:55,320 --> 00:08:57,750
+So I'm going to give you the pseudo code if you want to attempt it.
+
+178
+00:08:57,750 --> 00:08:58,350
+Go ahead.
+
+179
+00:08:58,440 --> 00:09:00,650
+But also don't beat yourself up please.
+

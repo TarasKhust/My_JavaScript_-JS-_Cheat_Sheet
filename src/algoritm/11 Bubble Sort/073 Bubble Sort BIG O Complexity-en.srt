@@ -1,0 +1,96 @@
+1
+00:00:00,240 --> 00:00:02,960
+What is the time complexity of bubble sort.
+
+2
+00:00:03,210 --> 00:00:10,170
+Well in general it's squared because we have a nested loop and we're roughly making a comparison for
+
+3
+00:00:10,170 --> 00:00:11,540
+each item in that array.
+
+4
+00:00:11,630 --> 00:00:16,160
+We are making an number of comparisons in order to get 8 to the end.
+
+5
+00:00:16,200 --> 00:00:19,700
+We had to compare eight to every single other item in the array.
+
+6
+00:00:19,710 --> 00:00:26,880
+However if the data is nearly sorted or already sorted then with this new version with no swaps it's
+
+7
+00:00:26,940 --> 00:00:29,580
+more like linear time that's the best case possible.
+
+8
+00:00:29,610 --> 00:00:32,250
+And there's eight items we go through.
+
+9
+00:00:32,250 --> 00:00:37,620
+I mean technically in our example it was to N because we went through the first time and then we went
+
+10
+00:00:37,620 --> 00:00:39,610
+through again to make sure nothing was swapped.
+
+11
+00:00:39,630 --> 00:00:41,260
+And then we broke out of the loop.
+
+12
+00:00:41,310 --> 00:00:47,100
+So but that rounded down shouldn't say round but simplifies down to 0 of end.
+
+13
+00:00:47,310 --> 00:00:52,590
+So that's the best case but that doesn't mean that we should be using bubble sort in.
+
+14
+00:00:52,710 --> 00:00:54,840
+You do know that your data is very nearly sorted.
+
+15
+00:00:54,840 --> 00:00:56,480
+It's a good candidate.
+
+16
+00:00:56,710 --> 00:00:59,430
+Possibly also see another good candidate in a little bit.
+
+17
+00:00:59,450 --> 00:01:03,830
+This is more just to show an optimization this is a classic optimization to make.
+
+18
+00:01:03,990 --> 00:01:05,910
+And yeah I think this video here.
+
+19
+00:01:05,910 --> 00:01:10,000
+So we have this version which doesn't use the fancy swopped syntax.
+
+20
+00:01:10,240 --> 00:01:17,070
+Then we have this version that does using light as well as the east 20:15 syntax and then down here
+
+21
+00:01:17,130 --> 00:01:21,510
+we have a version Murray added that no swaps variable in to short circuit.
+
+22
+00:01:21,510 --> 00:01:24,290
+If we don't make any swaps that is bubble sort.
+
+23
+00:01:24,410 --> 00:01:25,510
+It's a lot I know.
+
+24
+00:01:25,680 --> 00:01:27,930
+Now we have another sorting algorithm coming up next.
+

@@ -1,0 +1,292 @@
+1
+00:00:00,140 --> 00:00:01,410
+Hey we'll welcome back.
+
+2
+00:00:01,440 --> 00:00:07,080
+So next up our final method on our singly linked list is called reverse and this is a really classic
+
+3
+00:00:07,080 --> 00:00:09,090
+computer science interview question.
+
+4
+00:00:09,330 --> 00:00:10,020
+I'm not sure why.
+
+5
+00:00:10,020 --> 00:00:14,430
+To be honest because in my experience it's just not very practical.
+
+6
+00:00:14,430 --> 00:00:18,920
+It's not a very commonly done thing where you have a lengthy list and you need to reverse it.
+
+7
+00:00:19,170 --> 00:00:24,390
+But it is a pretty common challenge and a lot of textbooks a lot of interview prep books.
+
+8
+00:00:24,390 --> 00:00:28,480
+So you take a length list and you reverse it in place so you don't make a copy.
+
+9
+00:00:28,500 --> 00:00:29,740
+That's a little easier.
+
+10
+00:00:30,060 --> 00:00:31,530
+You don't make a duplicate and return that.
+
+11
+00:00:31,530 --> 00:00:37,640
+You do it in place so you traverse as you go you reverse things traverse and reverse.
+
+12
+00:00:37,650 --> 00:00:38,810
+So here's what it looks like.
+
+13
+00:00:38,820 --> 00:00:44,730
+I couldn't find a little animation to use or a way of visualizing it so I made my own sort of ugly attempt.
+
+14
+00:00:44,730 --> 00:00:49,740
+So if this is sort of linked list singly linked list we have our head in our tail and a bunch of next
+
+15
+00:00:49,740 --> 00:00:52,700
+pointers if we want to reverse it.
+
+16
+00:00:52,710 --> 00:00:55,140
+Basically what we're going to do is start at the beginning.
+
+17
+00:00:55,260 --> 00:00:56,730
+We can only move one direction.
+
+18
+00:00:56,760 --> 00:00:57,690
+We can start at the end.
+
+19
+00:00:57,720 --> 00:01:03,610
+So we start here and we're going to make this the tail and then we build the list backwards from there.
+
+20
+00:01:03,630 --> 00:01:06,940
+So we do dot next which gives us this node 27.
+
+21
+00:01:07,320 --> 00:01:11,630
+And we're going to set twenty seven dot next to be 13.
+
+22
+00:01:12,000 --> 00:01:17,000
+But we also need to keep track of what 2007 does next used to be which is 32.
+
+23
+00:01:17,040 --> 00:01:18,600
+So we don't just overwrite it.
+
+24
+00:01:18,600 --> 00:01:22,880
+We need to make a second variable to store the old next which is 32.
+
+25
+00:01:23,010 --> 00:01:24,690
+So let's say we're on 27.
+
+26
+00:01:24,810 --> 00:01:28,860
+We're going to store 32 on the side just remember 32 is in a different variable.
+
+27
+00:01:28,950 --> 00:01:33,980
+Then we take 2007 and we said it's next to be 13.
+
+28
+00:01:33,990 --> 00:01:35,480
+There we go.
+
+29
+00:01:35,550 --> 00:01:37,090
+Now we're on 32.
+
+30
+00:01:37,230 --> 00:01:41,970
+So we take the next of 32 which is 71 and we save 71.
+
+31
+00:01:41,970 --> 00:01:43,020
+Put that on the side.
+
+32
+00:01:43,410 --> 00:01:50,290
+Then we take 32 and set it next to B 27 and now we go back to 71.
+
+33
+00:01:50,310 --> 00:01:53,960
+There is no there's nothing after 71 there's no next.
+
+34
+00:01:53,970 --> 00:01:59,720
+So we just take it and said it's Dotun XT to be 32 and then this becomes the head.
+
+35
+00:02:00,000 --> 00:02:06,590
+So as far as the logic it's a pseudocode is it's a little bit tricky to walk through.
+
+36
+00:02:06,750 --> 00:02:11,700
+I tried to word this in a way that was a little easier to understand but I think your best bet is going
+
+37
+00:02:11,700 --> 00:02:15,300
+to be to just try this loop through things.
+
+38
+00:02:15,480 --> 00:02:20,220
+Don't try and follow my instructions exactly because there are other ways doing this and I don't want
+
+39
+00:02:20,280 --> 00:02:21,860
+you to get too hung up on it.
+
+40
+00:02:22,140 --> 00:02:24,220
+But with that said here is my pseudo code.
+
+41
+00:02:24,420 --> 00:02:29,380
+So start off we're reversing in place or you write the method reverse no arguments.
+
+42
+00:02:29,430 --> 00:02:33,020
+Swap the head the tail then create a variable.
+
+43
+00:02:33,120 --> 00:02:34,290
+You can call it next.
+
+44
+00:02:34,290 --> 00:02:38,390
+Again the variable names don't really matter but create a variable called Next.
+
+45
+00:02:38,700 --> 00:02:45,300
+Another one called previous and then a one of a one a variable called node or current or something and
+
+46
+00:02:45,300 --> 00:02:47,770
+initialized it to start at the head.
+
+47
+00:02:48,780 --> 00:02:51,560
+So we would start all the way back here.
+
+48
+00:02:51,660 --> 00:02:59,910
+This would be our node variable or current and then from there to fast forward we're going to loop through
+
+49
+00:02:59,910 --> 00:03:05,520
+the list and we're going to set the next variable to be the next property on whatever our current node
+
+50
+00:03:05,550 --> 00:03:05,960
+is.
+
+51
+00:03:06,090 --> 00:03:06,980
+So that's what I talked about.
+
+52
+00:03:06,980 --> 00:03:14,430
+We're going to store the current next so that once we change the dot next to the item that came before
+
+53
+00:03:14,430 --> 00:03:17,390
+it we haven't lost that connection forever.
+
+54
+00:03:17,970 --> 00:03:23,850
+So then we're going to set the next property on the node to whatever the previous was and then we set
+
+55
+00:03:23,850 --> 00:03:29,250
+previous to be the value of the node variable set the node variable to be the value of the next variable.
+
+56
+00:03:29,250 --> 00:03:34,670
+Like I said trying not to get too lost and hung up on the actual variable names and I debated.
+
+57
+00:03:34,670 --> 00:03:40,800
+I wasn't sure if this was helpful because it is just so ugly and confusing to read all this text next
+
+58
+00:03:40,840 --> 00:03:45,780
+previous note and very well sort of walk through that one more time if you want to make sure practice
+
+59
+00:03:45,960 --> 00:03:49,480
+or review you start and swap the head in the tail.
+
+60
+00:03:49,710 --> 00:03:58,110
+And from there we take the next to the tail 27 and we're going to store the current data next to 27.
+
+61
+00:03:58,140 --> 00:04:04,080
+We're going to store a variable called Next to keep track of 32 so that when we take 27 next and we
+
+62
+00:04:04,080 --> 00:04:10,170
+set it to the previous thing 13 we still have a reference to 32.
+
+63
+00:04:10,170 --> 00:04:17,010
+So in this scenario 13 would be previous 27 is our current node which I called the node variable and
+
+64
+00:04:17,010 --> 00:04:18,750
+32 is next.
+
+65
+00:04:19,020 --> 00:04:26,460
+So you make this connection and then we now set twenty seven to be previous and 32 to be current and
+
+66
+00:04:26,460 --> 00:04:28,860
+71 to be next.
+
+67
+00:04:28,860 --> 00:04:36,150
+So we set 32 connect to 27 and then we move our previous variable to be 32 and our node current variable
+
+68
+00:04:36,150 --> 00:04:39,530
+becomes 71 and we connect them and there is no next.
+
+69
+00:04:39,860 --> 00:04:40,400
+OK.
+
+70
+00:04:40,440 --> 00:04:42,300
+I hope I didn't lose anyone with this one.
+
+71
+00:04:42,300 --> 00:04:44,010
+I know it can be tricky.
+
+72
+00:04:44,010 --> 00:04:44,960
+Give it a shot.
+
+73
+00:04:45,000 --> 00:04:46,110
+I'll have a solution coming up.
+

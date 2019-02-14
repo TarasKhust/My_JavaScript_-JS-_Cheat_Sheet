@@ -1,0 +1,244 @@
+1
+00:00:00,180 --> 00:00:00,960
+Welcome back.
+
+2
+00:00:00,960 --> 00:00:01,250
+All right.
+
+3
+00:00:01,290 --> 00:00:06,540
+So if he made it through the recursive version or if you just watch the solution which in itself was
+
+4
+00:00:06,540 --> 00:00:10,300
+a bit of a battle to make it through We're now going to do the same thing iterative.
+
+5
+00:00:10,500 --> 00:00:15,710
+And I do recommend doing both of these because I think it helps solidify for a lot of people.
+
+6
+00:00:15,720 --> 00:00:16,900
+One graph traversal.
+
+7
+00:00:16,910 --> 00:00:22,240
+But two recursion and iterative solutions in general and sort of how they relate and how they're connected.
+
+8
+00:00:22,560 --> 00:00:28,590
+So what we do instead of using the call stack to help manage our state to keep track of you know where
+
+9
+00:00:28,590 --> 00:00:30,190
+we're going and where we've come from.
+
+10
+00:00:30,240 --> 00:00:32,880
+We're going to just use a stack itself.
+
+11
+00:00:32,880 --> 00:00:36,010
+So in javascript I'm going to just use an array to do that.
+
+12
+00:00:36,030 --> 00:00:39,330
+You could write your own stack class again and take advantage of that.
+
+13
+00:00:39,350 --> 00:00:43,660
+But for us conceptually and just to make it short we'll just use an array.
+
+14
+00:00:43,890 --> 00:00:50,100
+So DFS iterative Here's the basic pseudo code and then they have a more in-depth version so we'll make
+
+15
+00:00:50,100 --> 00:00:56,850
+a stack called S which will be an array which starts empty and we push the starting node the vertex
+
+16
+00:00:56,850 --> 00:00:59,840
+will start from a probably onto the stack.
+
+17
+00:01:00,120 --> 00:01:04,920
+That's the first thing to do then we have a loop while S is not empty while there's something in the
+
+18
+00:01:04,920 --> 00:01:07,990
+stack are going to pop something off of it.
+
+19
+00:01:08,130 --> 00:01:13,080
+Call that vertex and then we're going to check if it's not discovered meaning if we haven't visited
+
+20
+00:01:13,080 --> 00:01:20,220
+yet visited added to our list label it as discovered and then for each of its neighbors push them onto
+
+21
+00:01:20,220 --> 00:01:21,520
+the stack.
+
+22
+00:01:21,630 --> 00:01:25,660
+So the first time through with a well it hasn't been visited because we just started.
+
+23
+00:01:25,770 --> 00:01:31,740
+So we visit it and then we market and visited and then we look at a neighbor's which if we're using
+
+24
+00:01:31,740 --> 00:01:33,940
+the same graph are B and D.
+
+25
+00:01:33,960 --> 00:01:38,580
+And once again I do recommend you set up the exact same graph just to make it easier to follow along.
+
+26
+00:01:38,580 --> 00:01:40,210
+All right so that's the basics of it.
+
+27
+00:01:40,230 --> 00:01:42,240
+I'll show you the more in-depth version in just a moment.
+
+28
+00:01:42,240 --> 00:01:48,120
+Use this stack that stack to maintain sort of the order of things that you've been to but also where
+
+29
+00:01:48,120 --> 00:01:52,920
+you need to go back to and visit other neighbors because of the way depth first works are going to go
+
+30
+00:01:52,920 --> 00:01:58,290
+all the way down one path and then we need to go back and visit the other siblings not quite siblings
+
+31
+00:01:58,320 --> 00:01:59,600
+but the other branches.
+
+32
+00:01:59,700 --> 00:01:59,930
+All right.
+
+33
+00:01:59,940 --> 00:02:02,120
+So here's the more detailed pseudo code.
+
+34
+00:02:02,250 --> 00:02:03,870
+Write your function in a coal mine.
+
+35
+00:02:03,870 --> 00:02:07,810
+Depth first iterative and it should accept a starting node.
+
+36
+00:02:07,920 --> 00:02:09,070
+Just call it start.
+
+37
+00:02:09,450 --> 00:02:12,370
+Then create a stack and empty array is what I'm going to use.
+
+38
+00:02:12,480 --> 00:02:17,040
+But again it's up to you how you want to implement that just to keep track of vertices.
+
+39
+00:02:17,160 --> 00:02:19,460
+Create a list or an array to store the end result.
+
+40
+00:02:19,530 --> 00:02:26,610
+I'll call mine result should begin as an empty array then create an empty object to store visited vertices.
+
+41
+00:02:26,610 --> 00:02:30,900
+Or you could do it with an array but we need a way to keep track of what we've already visited so that
+
+42
+00:02:30,900 --> 00:02:36,570
+we don't try and do visit them again and get stuck in a loop and then we need to add the starting vertex
+
+43
+00:02:36,570 --> 00:02:38,460
+to the stack in market as visited.
+
+44
+00:02:38,460 --> 00:02:43,170
+So we need to have something in there so that we can add this loop while the stack has something in
+
+45
+00:02:43,170 --> 00:02:43,530
+it.
+
+46
+00:02:43,620 --> 00:02:48,690
+Otherwise if we tried to just wait to add it inside the loop it would never run because the stack starts
+
+47
+00:02:48,690 --> 00:02:49,290
+is empty.
+
+48
+00:02:49,470 --> 00:02:51,280
+So you want to put the start at the beginning.
+
+49
+00:02:51,300 --> 00:02:52,670
+We want to put that in the stack.
+
+50
+00:02:52,950 --> 00:02:58,350
+Ok so as long as the stack is not empty I would just check as long as it has a length.
+
+51
+00:02:58,350 --> 00:03:00,890
+Pop the next vertex from it if it's.
+
+52
+00:03:00,930 --> 00:03:06,690
+If it hasn't been visited yet market has visited added to the results list and push all of its neighbors
+
+53
+00:03:06,720 --> 00:03:07,920
+onto the stack.
+
+54
+00:03:07,950 --> 00:03:12,540
+So I'm just going to use another for each but rather than recursively calling you know another function
+
+55
+00:03:12,600 --> 00:03:17,910
+we're just going to push them onto the stack and use that stack rather than the call stack to keep track
+
+56
+00:03:17,910 --> 00:03:20,790
+of where we are going to use just an array to do it.
+
+57
+00:03:21,390 --> 00:03:24,820
+And then the very end need to return the result array.
+
+58
+00:03:24,900 --> 00:03:31,010
+So quick note you actually end up with a different order than what we did in the recursive solution
+
+59
+00:03:31,020 --> 00:03:32,700
+it still will be depth first.
+
+60
+00:03:32,790 --> 00:03:36,890
+But it's a different order and we'll talk about why that is in just a bit.
+
+61
+00:03:36,890 --> 00:03:37,800
+In the solution video.
+

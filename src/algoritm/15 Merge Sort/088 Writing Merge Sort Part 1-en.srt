@@ -1,0 +1,180 @@
+1
+00:00:00,090 --> 00:00:01,220
+Hey welcome back.
+
+2
+00:00:01,230 --> 00:00:04,000
+So now we get to the sorting part of merge sort.
+
+3
+00:00:04,110 --> 00:00:07,620
+And this is actually the code itself is pretty short.
+
+4
+00:00:07,620 --> 00:00:10,550
+It's only my solution is what 5 ish lines.
+
+5
+00:00:10,680 --> 00:00:17,120
+The problem is that conceptually it's a bit hard to understand and that's because most merge sort implementation
+
+6
+00:00:17,130 --> 00:00:18,430
+to use recursion.
+
+7
+00:00:18,450 --> 00:00:22,740
+So if you skipped the recursion section I highly recommend you go take a look at that because this is
+
+8
+00:00:22,740 --> 00:00:24,560
+going to seem a little insane.
+
+9
+00:00:24,570 --> 00:00:30,240
+If you've never seen recursion before and even if you have it's not immediately intuitive to write code
+
+10
+00:00:30,720 --> 00:00:31,890
+that's recursive.
+
+11
+00:00:32,070 --> 00:00:33,030
+So here's how it works.
+
+12
+00:00:33,030 --> 00:00:36,170
+We have a merge function that that works.
+
+13
+00:00:36,180 --> 00:00:37,500
+We just assume it works at this point.
+
+14
+00:00:37,500 --> 00:00:42,650
+If you didn't write it just go to the last video copy the code if you want to try and implement this
+
+15
+00:00:42,650 --> 00:00:43,040
+yourself.
+
+16
+00:00:43,050 --> 00:00:45,060
+But again don't feel bad if you can't.
+
+17
+00:00:45,060 --> 00:00:50,550
+This is really about the concepts how it works not about you being able to write it from scratch immediately
+
+18
+00:00:51,220 --> 00:00:54,890
+get some merge sort we have our merge function takes two sorted arrays.
+
+19
+00:00:54,900 --> 00:00:59,570
+Now remember the goal is to basically keep raking up the array into halves.
+
+20
+00:00:59,640 --> 00:01:03,420
+So how do we break an array just a single array into a half two halves.
+
+21
+00:01:03,420 --> 00:01:04,400
+Think about that.
+
+22
+00:01:04,410 --> 00:01:10,420
+My recommendation is to use slice to array slice and you go from zero until the middle theory.
+
+23
+00:01:10,650 --> 00:01:14,190
+And then you go from the middle array until zero and that gives you two halves.
+
+24
+00:01:14,190 --> 00:01:16,600
+And then what are you going to do with each one of those halves.
+
+25
+00:01:16,820 --> 00:01:22,290
+Welp you're going to call merge sort again and you're going to break each half into its own halves and
+
+26
+00:01:22,290 --> 00:01:24,060
+keep going recursively.
+
+27
+00:01:24,210 --> 00:01:30,360
+And once our base case when the arrays their length is less than or equal to one meaning that it's 1
+
+28
+00:01:30,360 --> 00:01:31,200
+or 0.
+
+29
+00:01:31,550 --> 00:01:31,880
+OK.
+
+30
+00:01:31,890 --> 00:01:38,520
+So that breaks them all up into these small elements the smaller arrays using slice recursively Intel.
+
+31
+00:01:38,580 --> 00:01:43,500
+Again our base case is we hit the end length is less than or equal to 1.
+
+32
+00:01:43,590 --> 00:01:50,250
+Then once we have those small arrays we merge them back using our merge function that we've already
+
+33
+00:01:50,250 --> 00:01:50,970
+written.
+
+34
+00:01:51,240 --> 00:01:55,010
+Until we're back at the full length of the array now it seems simple.
+
+35
+00:01:55,020 --> 00:01:59,970
+When you write it this way but the code it gets confusing when you're writing it recursively put it
+
+36
+00:01:59,970 --> 00:02:00,520
+that way.
+
+37
+00:02:00,750 --> 00:02:01,840
+But that's pretty much it.
+
+38
+00:02:01,950 --> 00:02:06,230
+So once the array has been merged back together we return the merged array at the very end.
+
+39
+00:02:06,770 --> 00:02:10,350
+OK so if you want to take a stab at this definitely do it.
+
+40
+00:02:10,350 --> 00:02:12,670
+But in the next video I'll walk through it.
+
+41
+00:02:12,690 --> 00:02:15,270
+Remember recursion is kind of crazy it can be.
+
+42
+00:02:15,360 --> 00:02:17,280
+It can be a bit of a leap to get there.
+
+43
+00:02:17,310 --> 00:02:19,410
+So don't feel bad if you can't get this one.
+
+44
+00:02:19,620 --> 00:02:20,000
+OK.
+
+45
+00:02:20,010 --> 00:02:20,910
+See in the next video.
+

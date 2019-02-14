@@ -1,0 +1,112 @@
+1
+00:00:00,240 --> 00:00:01,380
+Hey welcome back.
+
+2
+00:00:01,380 --> 00:00:05,470
+Next we move on to something nice and easy compared to pop shift.
+
+3
+00:00:05,510 --> 00:00:11,700
+So shift removes a node from the beginning of the length list so whatever's at the start remove it.
+
+4
+00:00:11,700 --> 00:00:18,600
+All that really means is taking the head and deleting it and then moving the head over to whatever the
+
+5
+00:00:18,600 --> 00:00:19,740
+second item was.
+
+6
+00:00:19,740 --> 00:00:26,530
+So if we visualize it if we go to remove from the beginning from the head all that it really means slow
+
+7
+00:00:26,540 --> 00:00:27,400
+that down again.
+
+8
+00:00:28,240 --> 00:00:29,620
+One more time.
+
+9
+00:00:29,770 --> 00:00:31,390
+Remove from the head.
+
+10
+00:00:31,390 --> 00:00:32,680
+Actually I posit.
+
+11
+00:00:32,710 --> 00:00:36,820
+So we take whatever the current head is we need to save it to a variable because we want to return it
+
+12
+00:00:37,660 --> 00:00:43,520
+and then we take it next and make that the new head and then we sever that connection.
+
+13
+00:00:45,050 --> 00:00:48,720
+Like that and we return the old head.
+
+14
+00:00:48,740 --> 00:00:49,920
+So it's really easy.
+
+15
+00:00:49,970 --> 00:00:53,260
+There could be a million items on the list to insert at the beginning.
+
+16
+00:00:53,300 --> 00:00:54,260
+It takes constant time.
+
+17
+00:00:54,290 --> 00:00:58,400
+Always compared to an array where we have to reassign every index.
+
+18
+00:00:58,490 --> 00:01:03,020
+If there's a million items it's a lot of indices to change over and over and over to cascade and ripple
+
+19
+00:01:03,020 --> 00:01:04,400
+down on a length list.
+
+20
+00:01:04,400 --> 00:01:05,460
+It's super simple.
+
+21
+00:01:05,480 --> 00:01:06,980
+So here's some pseudo code.
+
+22
+00:01:07,040 --> 00:01:08,950
+If there's no nodes return undefined.
+
+23
+00:01:09,230 --> 00:01:14,640
+Otherwise store the current head property in a variable then update the head property to be the current
+
+24
+00:01:15,140 --> 00:01:22,250
+next node so move it over one and then finally document the length by one and return the value of the
+
+25
+00:01:22,250 --> 00:01:24,950
+node that was removed of the old head.
+
+26
+00:01:24,960 --> 00:01:28,220
+OK so go ahead and give this a shot if you'd like.
+
+27
+00:01:28,220 --> 00:01:30,520
+Nice and easy compared to pop in the next video.
+
+28
+00:01:30,530 --> 00:01:31,210
+I'll have a solution.
+

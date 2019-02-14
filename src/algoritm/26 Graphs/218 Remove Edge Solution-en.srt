@@ -1,0 +1,156 @@
+1
+00:00:00,300 --> 00:00:03,230
+All right let's get to work on removing an edge.
+
+2
+00:00:03,540 --> 00:00:05,550
+So let's define our method over here.
+
+3
+00:00:05,790 --> 00:00:07,610
+Call it shocker.
+
+4
+00:00:07,680 --> 00:00:14,880
+Remove edge and it accepts two vertices and then all that we need to do is let's start with the first
+
+5
+00:00:14,880 --> 00:00:15,250
+one.
+
+6
+00:00:15,360 --> 00:00:23,380
+We're going to need to reassign this adjacency list the one to be everything it already is minus V-2.
+
+7
+00:00:23,430 --> 00:00:31,620
+So I'm just going to use the built in filter and Javascript adjacency list of the one dot filter and
+
+8
+00:00:31,620 --> 00:00:33,490
+then I'll just call this V.
+
+9
+00:00:33,540 --> 00:00:42,720
+Doesn't matter and will filter where v is not equal to V-2 which now I'm looking at v v v to maybe to
+
+10
+00:00:42,720 --> 00:00:50,700
+make it clearer I'll call this vertex one vertex to just moment update this.
+
+11
+00:00:51,070 --> 00:00:57,720
+OK so we're just saying take the current adjacency list of Vertex 1.
+
+12
+00:00:57,870 --> 00:00:58,430
+Filter it.
+
+13
+00:00:58,440 --> 00:01:03,070
+Keep everything where it is not equal to Virtex 2.
+
+14
+00:01:03,660 --> 00:01:04,210
+OK.
+
+15
+00:01:04,380 --> 00:01:05,970
+And then I'm just going to duplicate this
+
+16
+00:01:09,060 --> 00:01:15,440
+and alter it slightly so it's Virtex 2 that we're updating and we're comparing it to vertex 1.
+
+17
+00:01:15,480 --> 00:01:18,740
+There's other ways of doing this of course but let's let's test this out.
+
+18
+00:01:18,780 --> 00:01:21,270
+So I will quickly update this.
+
+19
+00:01:22,020 --> 00:01:26,360
+OK so now I added two edges in but just look at the adjacency list.
+
+20
+00:01:26,370 --> 00:01:28,080
+Here's what we have.
+
+21
+00:01:28,330 --> 00:01:33,510
+Aspen connected to Dallas Dallas connected to Aspen and then the Tokyo and Dulles connection.
+
+22
+00:01:33,710 --> 00:01:34,270
+OK.
+
+23
+00:01:34,590 --> 00:01:41,880
+So let's do a G dot remove edge from let's say we're getting rid of the flight from Dallas to Aspen
+
+24
+00:01:42,150 --> 00:01:44,760
+or from Aspen to Dallas.
+
+25
+00:01:45,000 --> 00:01:51,120
+Let's look at our adjacency list now and we can see there's no connection now between Aspen.
+
+26
+00:01:51,120 --> 00:01:52,570
+There's nothing in that array.
+
+27
+00:01:52,800 --> 00:01:55,630
+And in Dallas there's no trace of Aspen.
+
+28
+00:01:55,740 --> 00:01:58,330
+Let's do it one more time for Dallas in Tokyo.
+
+29
+00:02:02,660 --> 00:02:04,320
+And we will get G.
+
+30
+00:02:04,550 --> 00:02:06,480
+Everything is empty now.
+
+31
+00:02:06,590 --> 00:02:13,130
+Like most of these methods we could break it pretty easily if I tried to do it to do a remove edge from
+
+32
+00:02:13,190 --> 00:02:17,570
+L.A. to S.F. for example.
+
+33
+00:02:17,570 --> 00:02:24,580
+There is no Virtex called L.A. or SFO so we get an error because filter doesn't work on undefined.
+
+34
+00:02:24,710 --> 00:02:25,400
+That's OK.
+
+35
+00:02:25,700 --> 00:02:30,260
+I said you know pretty explicitly that we're not going to care about that for these videos we're just
+
+36
+00:02:30,260 --> 00:02:32,510
+working on the fundamentals of our graph.
+
+37
+00:02:32,870 --> 00:02:35,510
+And that's all there is to removing an edge.
+
+38
+00:02:35,510 --> 00:02:41,180
+Next up our last sort of basic piece is removing a vertex and then we'll get to traversal and searching
+
+39
+00:02:41,180 --> 00:02:41,850
+and that sort of thing.
+

@@ -1,0 +1,556 @@
+1
+00:00:00,330 --> 00:00:01,050
+Welcome back.
+
+2
+00:00:01,050 --> 00:00:05,730
+So we've talked about what a graph is generally some nodes with connections between them.
+
+3
+00:00:05,730 --> 00:00:08,720
+Now let's talk about some particular types of graphs.
+
+4
+00:00:08,970 --> 00:00:10,920
+First of all there's some terminology.
+
+5
+00:00:11,100 --> 00:00:15,250
+These are the basic terms you have to talk about vertex and edge.
+
+6
+00:00:15,360 --> 00:00:19,670
+So a vertex is what we the fancy term for a node.
+
+7
+00:00:19,670 --> 00:00:26,430
+So when a graph when we say vertex it's just in our diagram one of the circles an edge is the connection
+
+8
+00:00:26,460 --> 00:00:27,450
+between the nodes.
+
+9
+00:00:27,570 --> 00:00:32,540
+Then there are two pieces will come back to weighted slash unweighted and directed slash undirected.
+
+10
+00:00:32,550 --> 00:00:35,880
+But first let's look at this graph on this graph.
+
+11
+00:00:35,880 --> 00:00:38,620
+Any of those circles are vertices.
+
+12
+00:00:38,640 --> 00:00:40,110
+This is a vertex see.
+
+13
+00:00:40,230 --> 00:00:41,960
+This is a vertex B.
+
+14
+00:00:42,030 --> 00:00:47,910
+So I might use node and Vertex interchangeably but that the technical term like on Wikipedia you'll
+
+15
+00:00:47,910 --> 00:00:53,300
+see Virtex although it does say Notice well in the introduction vertex is like the technical term.
+
+16
+00:00:53,490 --> 00:00:56,500
+And then these connections are edges.
+
+17
+00:00:56,640 --> 00:00:58,580
+So this is an edge from Ada.
+
+18
+00:00:58,820 --> 00:01:02,140
+This is an edge from A to B from B to D and so on.
+
+19
+00:01:02,140 --> 00:01:05,790
+So from one vertex to another that's what an edge is.
+
+20
+00:01:05,790 --> 00:01:11,100
+So there are many many types of graphs different distinctions and sort of how they're built and rules
+
+21
+00:01:11,100 --> 00:01:11,630
+they follow.
+
+22
+00:01:11,640 --> 00:01:16,760
+Just like with trees and actually already hinted at this a tree.
+
+23
+00:01:16,800 --> 00:01:18,410
+We actually click on them page for a tree.
+
+24
+00:01:18,510 --> 00:01:24,720
+The definition is that it's a graph in which any two vertices are connected by exactly one path meaning
+
+25
+00:01:24,720 --> 00:01:30,870
+that to go from six to two for example there is only one path to get there to go from three to five.
+
+26
+00:01:30,870 --> 00:01:32,000
+There's one path.
+
+27
+00:01:32,190 --> 00:01:37,040
+Contrast that with some of our graphs here to go from B to D.
+
+28
+00:01:37,200 --> 00:01:43,710
+We could go here here to here or we could go here to A to B to F D.
+
+29
+00:01:43,740 --> 00:01:47,940
+And this is not even a great example some of the other ones we've seen there are way more edges with
+
+30
+00:01:47,940 --> 00:01:48,990
+more connections.
+
+31
+00:01:48,990 --> 00:01:55,980
+So for a tree to be a tree it's just a bunch of nodes with a bunch of connections so it's a graph.
+
+32
+00:01:55,980 --> 00:01:59,870
+However there's only one path from a given node to another.
+
+33
+00:01:59,970 --> 00:02:00,390
+OK.
+
+34
+00:02:00,450 --> 00:02:04,370
+Now let's talk about directed versus undirected graphs.
+
+35
+00:02:04,380 --> 00:02:08,330
+So this has to do with the edges the connections between the vertices.
+
+36
+00:02:08,340 --> 00:02:12,890
+So in an undirected graph there is no direction to or polarity.
+
+37
+00:02:12,900 --> 00:02:15,000
+You could say to the edges.
+
+38
+00:02:15,000 --> 00:02:20,090
+So they are two way connections is another way of thinking about it a and b are a connection.
+
+39
+00:02:20,100 --> 00:02:26,250
+So is B to say if we are traversing this we could go this way but we could also go this way there is
+
+40
+00:02:26,250 --> 00:02:32,490
+no direction associated with an edge and that's useful oftentimes depends on what you're modeling.
+
+41
+00:02:32,490 --> 00:02:37,110
+But let's talk about like Facebook how Facebook model's friends if you don't have a Facebook Facebook
+
+42
+00:02:37,110 --> 00:02:39,480
+account you probably know how it works.
+
+43
+00:02:39,510 --> 00:02:44,940
+You have to request someone and then they will accept your request or reject it but hopefully accept
+
+44
+00:02:44,940 --> 00:02:47,240
+it unless you're a stock or something.
+
+45
+00:02:47,460 --> 00:02:49,700
+In that case you are both friends.
+
+46
+00:02:49,770 --> 00:02:56,120
+So you see that friends stuff on your web page or on your home page they see your content.
+
+47
+00:02:56,160 --> 00:02:58,030
+It's not a one way relationship.
+
+48
+00:02:58,110 --> 00:03:03,270
+So this is an example of what you know a couple of friends could look like on Facebook where if Maria
+
+49
+00:03:03,270 --> 00:03:09,470
+and Tim are connected that means Maria sees Tim's content and tim sees Maria's content.
+
+50
+00:03:09,480 --> 00:03:12,300
+Now let's contrast that with a directed graph.
+
+51
+00:03:12,480 --> 00:03:18,750
+So a directed graph is often represented with arrows which indicates the direction the polarity of that
+
+52
+00:03:18,750 --> 00:03:19,610
+edge.
+
+53
+00:03:19,950 --> 00:03:28,270
+So for example from B we can go to see we could traverse to see if we could traverse to a from E..
+
+54
+00:03:28,680 --> 00:03:34,380
+We cannot traverse to B we cannot traverse to D or to f.
+
+55
+00:03:34,380 --> 00:03:36,390
+So e is sort of like a dead end here.
+
+56
+00:03:36,420 --> 00:03:43,140
+So on on directed graph there is a direction assigned to the edge the connection between vertices to
+
+57
+00:03:43,140 --> 00:03:45,070
+vote for Texas disease.
+
+58
+00:03:45,180 --> 00:03:45,590
+Yes.
+
+59
+00:03:45,630 --> 00:03:51,060
+So that's how you would model a social network like Instagram or Twitter where our friendships are the
+
+60
+00:03:51,060 --> 00:03:54,690
+following relationship is not a two way thing by default.
+
+61
+00:03:54,990 --> 00:04:01,430
+For example on this chart let's say it's Instagram we have Maria who follows Tim and Tim also follows
+
+62
+00:04:01,440 --> 00:04:03,640
+Maria so they see each other's content.
+
+63
+00:04:03,720 --> 00:04:08,610
+But Maria follows Justin Bieber so she sees his content.
+
+64
+00:04:08,610 --> 00:04:12,360
+Justin Bieber does not follow Maria back much to her chagrin.
+
+65
+00:04:12,450 --> 00:04:13,800
+That would really make her day.
+
+66
+00:04:13,860 --> 00:04:16,680
+If Justin Bieber would follow her but he doesn't.
+
+67
+00:04:16,680 --> 00:04:17,690
+Same thing with tim.
+
+68
+00:04:17,700 --> 00:04:23,190
+Tim follows Justin Bieber Justin Bieber does not follow Tim but if you look over here Justin Bieber
+
+69
+00:04:23,190 --> 00:04:29,430
+does follow Kanye and Kanye follow Justin Bieber so you can see this sort of information in a situ in
+
+70
+00:04:29,430 --> 00:04:35,190
+a social network like Instagram is important because if you are a celebrity you probably don't want
+
+71
+00:04:35,190 --> 00:04:38,130
+to just see every single person's content who follows you.
+
+72
+00:04:38,160 --> 00:04:43,920
+You want to be able to pick and choose what you see unlike on Facebook where we modeled it with an undirected
+
+73
+00:04:43,920 --> 00:04:46,440
+graph because all connections are two way.
+
+74
+00:04:46,620 --> 00:04:53,550
+Although that does ignore the whole like Facebook celebrity pages where you can you know create a special
+
+75
+00:04:53,550 --> 00:04:54,630
+marketing account.
+
+76
+00:04:54,660 --> 00:05:00,280
+But if we're just talking about the basic typical user account on Facebook versus Instagram this is
+
+77
+00:05:00,280 --> 00:05:03,010
+how we'd model Instagram with a directed graph.
+
+78
+00:05:03,010 --> 00:05:05,690
+Facebook is an undirected graph.
+
+79
+00:05:05,710 --> 00:05:05,970
+OK.
+
+80
+00:05:05,980 --> 00:05:11,200
+So there's one other piece of terminology which is a weighted graph versus unweighted.
+
+81
+00:05:11,200 --> 00:05:18,220
+So right now this graph is actually unweighted because each connection between the vertices the nodes
+
+82
+00:05:18,250 --> 00:05:21,400
+each edge has no value associated with it.
+
+83
+00:05:21,550 --> 00:05:23,020
+But now get this.
+
+84
+00:05:23,170 --> 00:05:23,930
+There we go.
+
+85
+00:05:23,950 --> 00:05:26,220
+Magically it is a weighted graph.
+
+86
+00:05:26,230 --> 00:05:30,840
+So when we assign a value to the edges it becomes a weighted graph.
+
+87
+00:05:30,970 --> 00:05:34,070
+There's information about the connection itself.
+
+88
+00:05:34,150 --> 00:05:36,250
+So unweighted versus weighted.
+
+89
+00:05:36,250 --> 00:05:38,920
+Everything we've seen so far has been an unweighted graph.
+
+90
+00:05:38,920 --> 00:05:42,390
+This is an unweighted directed graph.
+
+91
+00:05:42,400 --> 00:05:49,870
+This is an unweighted undirected graph and this is a weighted but undirected graph.
+
+92
+00:05:49,870 --> 00:05:55,630
+So for example if we're talking about maps here's our same Google Maps example in Guatemala.
+
+93
+00:05:56,000 --> 00:05:57,120
+I'll get rid of the map.
+
+94
+00:05:57,430 --> 00:06:02,170
+Let's say these are all cities or I don't know gas stations or any sort of points of interest.
+
+95
+00:06:02,350 --> 00:06:05,890
+There's connections or edges between them but they are weighted.
+
+96
+00:06:05,920 --> 00:06:07,660
+We need to know these values.
+
+97
+00:06:07,660 --> 00:06:12,730
+So if we're trying to calculate the shortest path we can add these it's not to scale by the way I just
+
+98
+00:06:12,730 --> 00:06:14,890
+picked random numbers but we would add up.
+
+99
+00:06:14,890 --> 00:06:22,900
+You know if we're trying to go from here to here we could add 40 plus 20 plus three or add 13 plus 120.
+
+100
+00:06:22,900 --> 00:06:25,330
+And you know figure out which is shortest.
+
+101
+00:06:25,330 --> 00:06:29,200
+Now this currently the way it's displayed is an undirected graph.
+
+102
+00:06:29,200 --> 00:06:35,170
+It's two way connections but maybe some of these roads are actually one way roads in which case like
+
+103
+00:06:35,170 --> 00:06:42,970
+if we were really modeling Google Maps we would have a directed and weighted graph where you know certain
+
+104
+00:06:42,970 --> 00:06:48,460
+roads like in San Francisco or Manhattan for example but really all over the world are one way road.
+
+105
+00:06:48,460 --> 00:06:51,160
+You can't just go any sort of way that you want.
+
+106
+00:06:51,160 --> 00:06:56,330
+You have to follow the rules and there is an actual value assigned to those edges.
+
+107
+00:06:56,560 --> 00:07:02,950
+So if we go back to something like Instagram this could easily be represented as a weighted graph because
+
+108
+00:07:03,040 --> 00:07:08,560
+you might like if you're a marketer if we're talking about Instagram's like advertising team internally
+
+109
+00:07:09,040 --> 00:07:15,430
+they care about these relationships not just who follows Who but also what their appetite is for that
+
+110
+00:07:15,430 --> 00:07:16,450
+person's content.
+
+111
+00:07:16,540 --> 00:07:17,290
+That makes sense.
+
+112
+00:07:17,290 --> 00:07:22,690
+So there would be some sort of value assigned to this relationship or more than one value so that Maria's
+
+113
+00:07:22,690 --> 00:07:26,950
+connection to Justin Bieber might be superstrong because she loves Justin Bieber.
+
+114
+00:07:27,040 --> 00:07:29,530
+But Jones maybe isn't as strong.
+
+115
+00:07:29,590 --> 00:07:32,410
+And you could easily store that using a graph data structure.
+
+116
+00:07:32,410 --> 00:07:38,200
+Keep track of you know how many times this person did X or Y or assign a value for how much they love
+
+117
+00:07:38,620 --> 00:07:40,340
+a certain person they follow.
+
+118
+00:07:40,570 --> 00:07:46,240
+So just because I'm displaying this part just to explain what a directed graph is I'm not saying that
+
+119
+00:07:46,270 --> 00:07:48,540
+it couldn't be a weighted graph.
+
+120
+00:07:48,550 --> 00:07:50,400
+All right so let's wrap up the terminology.
+
+121
+00:07:50,410 --> 00:07:51,530
+Let's go back here.
+
+122
+00:07:51,670 --> 00:07:53,440
+We have undirected graphs.
+
+123
+00:07:53,460 --> 00:07:58,600
+So what I first showed you in the last video there is two way connections or you could say that there
+
+124
+00:07:58,600 --> 00:08:02,840
+is no direction to the connections the edges between the vertices.
+
+125
+00:08:02,920 --> 00:08:09,400
+And even before that we talked about the term edge is the connection between two notes which technically
+
+126
+00:08:09,760 --> 00:08:11,610
+each node is called a vertex.
+
+127
+00:08:11,740 --> 00:08:18,700
+So then there's a directed graph where there is a direction assigned to an edge and edge could be bi
+
+128
+00:08:18,700 --> 00:08:19,530
+directional.
+
+129
+00:08:19,540 --> 00:08:23,010
+I could could point both ways but it also could point one way.
+
+130
+00:08:23,080 --> 00:08:29,470
+Then we talked about unweighted versus weighted so an unweighted graph has no value associated no magnitude
+
+131
+00:08:29,470 --> 00:08:34,220
+with each edge a weighted graph does have a value associated with an edge.
+
+132
+00:08:34,270 --> 00:08:39,460
+And so when we're traversing or when we're computing the shortest path for example we would use these
+
+133
+00:08:39,460 --> 00:08:40,530
+values.
+
+134
+00:08:40,540 --> 00:08:40,960
+All right.
+
+135
+00:08:40,990 --> 00:08:42,040
+I know those a lot.
+
+136
+00:08:42,040 --> 00:08:46,480
+Next we're going to talk about different ways different strategies for actually storing the information
+
+137
+00:08:46,570 --> 00:08:47,320
+in a graph.
+
+138
+00:08:47,350 --> 00:08:48,450
+How do we model it.
+
+139
+00:08:48,460 --> 00:08:48,940
+That's next.
+

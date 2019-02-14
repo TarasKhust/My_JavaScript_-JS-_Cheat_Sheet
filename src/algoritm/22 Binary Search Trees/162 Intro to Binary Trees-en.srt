@@ -1,0 +1,364 @@
+1
+00:00:00,120 --> 00:00:04,540
+Welcome back so much like the real world where we have tons and tons of varieties.
+
+2
+00:00:04,550 --> 00:00:09,950
+Types of trees get different categories of trees got families.
+
+3
+00:00:09,940 --> 00:00:10,880
+I'm not a botanist.
+
+4
+00:00:10,890 --> 00:00:11,920
+I do like trees though.
+
+5
+00:00:12,030 --> 00:00:15,440
+But there are many many types and we can enjoy them all in the world.
+
+6
+00:00:15,540 --> 00:00:20,900
+Anyway in the world of computer science data structure of the tree there are many varieties as well.
+
+7
+00:00:21,210 --> 00:00:26,520
+So actually on Wikipedia there is an article that contains a list I don't know if it's complete but
+
+8
+00:00:26,730 --> 00:00:29,290
+this from here on out I'm going to scroll through.
+
+9
+00:00:29,310 --> 00:00:32,730
+These are all varieties of trees all different types.
+
+10
+00:00:32,880 --> 00:00:36,170
+So they all follow the same rule defined by.
+
+11
+00:00:36,210 --> 00:00:44,280
+They fit the pattern of a tree but they'll add in some special properties some rules basically something
+
+12
+00:00:44,280 --> 00:00:48,960
+that makes them a bit different and often you know some of them will be much faster at searching or
+
+13
+00:00:48,960 --> 00:00:55,110
+insertion of a particular thing or they excel at storing data in a particular format or data that is
+
+14
+00:00:55,200 --> 00:00:59,250
+you know contains a lot of duplicates or data that's all unique and they all.
+
+15
+00:00:59,250 --> 00:01:00,780
+I mean I haven't heard of the.
+
+16
+00:01:01,050 --> 00:01:02,900
+The majority is not even a good way of putting it.
+
+17
+00:01:02,900 --> 00:01:06,030
+I haven't heard of like 95 percent of these.
+
+18
+00:01:06,080 --> 00:01:08,120
+There's some very nice trees here.
+
+19
+00:01:08,310 --> 00:01:15,060
+And you can see also there are different categories of trees like keep's Oh dear I don't know if you
+
+20
+00:01:15,060 --> 00:01:16,300
+hear that my cats hang on
+
+21
+00:01:20,300 --> 00:01:21,540
+sorry about that.
+
+22
+00:01:21,590 --> 00:01:22,840
+Where was I.
+
+23
+00:01:22,850 --> 00:01:27,230
+There are many types of trees and different categories different groupings like heaps which we'll learn
+
+24
+00:01:27,230 --> 00:01:28,020
+about later.
+
+25
+00:01:28,130 --> 00:01:29,590
+We're going to talk about this video.
+
+26
+00:01:29,720 --> 00:01:31,150
+Mainly our binary tree.
+
+27
+00:01:31,160 --> 00:01:35,570
+So one group sort of like you could think of in geometry.
+
+28
+00:01:35,710 --> 00:01:37,980
+There's this thing called polygon just any shape.
+
+29
+00:01:37,990 --> 00:01:44,270
+Well I guess not any shape any cit. shape or there's any number of sides and within that we have quadrate
+
+30
+00:01:44,290 --> 00:01:45,230
+laterals.
+
+31
+00:01:45,230 --> 00:01:47,790
+That's one family just like this is a family.
+
+32
+00:01:47,790 --> 00:01:50,210
+And then we have triangles and other family.
+
+33
+00:01:50,510 --> 00:01:56,180
+And within that we could have you know within quadrilateral there's rectangles and trapezoids that's
+
+34
+00:01:56,180 --> 00:01:58,310
+about as far as my geometry goes at this point.
+
+35
+00:01:58,310 --> 00:02:03,120
+So the trees that we're going to focus on are trees in general we've already kind of laid that out.
+
+36
+00:02:03,230 --> 00:02:08,610
+But more specifically binary trees and even more specifically binary search trees.
+
+37
+00:02:08,690 --> 00:02:15,800
+So binary search trees are a special type of a binary tree which is a special type of tree and they
+
+38
+00:02:15,800 --> 00:02:19,030
+excel as you can imagine from the title at searching.
+
+39
+00:02:19,130 --> 00:02:21,860
+So we store sorted data in a particular way.
+
+40
+00:02:21,910 --> 00:02:26,060
+We'll get there in just a moment in a binary search tree which makes it easier to retrieve.
+
+41
+00:02:26,060 --> 00:02:29,140
+Let's just recap this is just a generic tree.
+
+42
+00:02:29,270 --> 00:02:34,750
+Each node could have any number of child nodes we've got this one has four children.
+
+43
+00:02:34,820 --> 00:02:35,870
+One two three four.
+
+44
+00:02:35,930 --> 00:02:37,690
+This one has zero children.
+
+45
+00:02:37,700 --> 00:02:38,390
+This one has three.
+
+46
+00:02:38,390 --> 00:02:40,120
+This one has two this one has one.
+
+47
+00:02:40,130 --> 00:02:45,050
+There's no real rules about how many binary tree on the other hand has a special condition.
+
+48
+00:02:45,080 --> 00:02:49,530
+Each node can have at most two children at the binary part.
+
+49
+00:02:49,700 --> 00:02:55,140
+So it can have zero children can have one children one child and it can have two children.
+
+50
+00:02:55,400 --> 00:03:03,170
+So our root node usually would have two and then each node could have two or could have one or it could
+
+51
+00:03:03,170 --> 00:03:05,420
+have zero but it can't have three.
+
+52
+00:03:05,420 --> 00:03:07,820
+For example this is not a binary tree.
+
+53
+00:03:07,820 --> 00:03:13,550
+This is a valid tree in general if we're just talking about generic tree but it is not a binary tree
+
+54
+00:03:13,930 --> 00:03:19,550
+and there are also I've heard of ternary trees where there's three at most each node can have three
+
+55
+00:03:19,550 --> 00:03:20,470
+children.
+
+56
+00:03:20,510 --> 00:03:24,220
+I'm sure there are terms for you know Khwaja unary quad.
+
+57
+00:03:24,230 --> 00:03:30,560
+I don't know five six seven eight but they're just not as commonly talked about because binary trees
+
+58
+00:03:30,560 --> 00:03:33,850
+have some special properties that make them easier to navigate.
+
+59
+00:03:33,860 --> 00:03:38,510
+And we'll talk about that when we talk about binary search trees which is actually right now so binary
+
+60
+00:03:38,510 --> 00:03:43,530
+search trees are a special case of a binary tree which is a type of a tree.
+
+61
+00:03:43,550 --> 00:03:49,690
+So they are trees they most have two children per node 0 one or two children.
+
+62
+00:03:50,060 --> 00:03:55,310
+And on top of that binary search trees are sorted in a particular way they are kept in an order.
+
+63
+00:03:55,520 --> 00:04:00,230
+So B-S tease which is what I'll probably say most of the time because binary search tree gets a little
+
+64
+00:04:00,230 --> 00:04:05,220
+bit annoying to say beasties are used to store data that can be compared.
+
+65
+00:04:05,240 --> 00:04:10,330
+That is sortable so often classically we're talking about numbers and that's what we'll be working with.
+
+66
+00:04:10,340 --> 00:04:15,680
+It could be strings it could be any other piece of data that that you know has some way of there's a
+
+67
+00:04:15,680 --> 00:04:19,800
+way for you to order it and compare things which one is greater which one is less.
+
+68
+00:04:19,910 --> 00:04:20,990
+So this is how they work.
+
+69
+00:04:20,990 --> 00:04:22,640
+This is the special magic property.
+
+70
+00:04:22,670 --> 00:04:29,510
+If we take any node on the tree it's tried the route all numbers or every item that is less than this
+
+71
+00:04:29,510 --> 00:04:36,620
+node is located to the left of it every item or number in our case that is greater than is located to
+
+72
+00:04:36,620 --> 00:04:37,420
+the right.
+
+73
+00:04:37,910 --> 00:04:40,800
+And you could repeat that on each child node.
+
+74
+00:04:40,820 --> 00:04:47,390
+So if we look at six to the left are the numbers smaller than 6 to the right are the numbers greater
+
+75
+00:04:47,390 --> 00:04:51,000
+than 6 like 8 or 15 over here.
+
+76
+00:04:51,020 --> 00:04:57,240
+We only have one node but 20 is greater than 15 so it's located to the right of it.
+
+77
+00:04:57,290 --> 00:05:01,900
+So to review that binary search tree is a type of binary tree.
+
+78
+00:05:02,120 --> 00:05:07,160
+Every parent node has at most two children but on top of that every node to the left of a parent node
+
+79
+00:05:07,190 --> 00:05:12,410
+is always less than the parent and every node to the right of a parent node is always greater than the
+
+80
+00:05:12,410 --> 00:05:13,460
+parent.
+
+81
+00:05:13,460 --> 00:05:15,620
+So here's a slightly larger example.
+
+82
+00:05:15,710 --> 00:05:19,840
+We take any node like the root all nodes to the left.
+
+83
+00:05:19,850 --> 00:05:24,800
+All of these should be less than forty one and everything to the right is greater than 41.
+
+84
+00:05:25,190 --> 00:05:27,510
+And then we could try that again over here at 20.
+
+85
+00:05:27,530 --> 00:05:33,410
+Everything the left needs to be less than 20 and it is everything to the right is greater than 20.
+
+86
+00:05:33,410 --> 00:05:35,050
+Same thing down to 11.
+
+87
+00:05:35,180 --> 00:05:36,050
+Blah blah blah.
+
+88
+00:05:36,050 --> 00:05:38,430
+Over here it's the same exact property.
+
+89
+00:05:38,480 --> 00:05:43,400
+So that's what makes a binary search tree a binary search tree rather than just a binary tree.
+
+90
+00:05:43,610 --> 00:05:49,280
+So the data is kept in a particular order every node every child to the right is greater than a node
+
+91
+00:05:49,630 --> 00:05:53,900
+A parent node and every piece of data to the left is less than the parent node.
+

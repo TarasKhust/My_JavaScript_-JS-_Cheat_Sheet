@@ -1,0 +1,412 @@
+1
+00:00:00,150 --> 00:00:00,440
+All right.
+
+2
+00:00:00,450 --> 00:00:01,260
+Welcome back.
+
+3
+00:00:01,260 --> 00:00:08,370
+Next let's add a method called Find or search or whatever you want you know contains node basically
+
+4
+00:00:08,370 --> 00:00:13,890
+the idea is that you have a binary tree and you can search to see if a value is in that tree.
+
+5
+00:00:13,950 --> 00:00:17,970
+So he could search to see if 50 is a tree or 100 isn't a tree.
+
+6
+00:00:18,240 --> 00:00:24,180
+And the process is very similar to inserting in a binary search tree at least because we have those
+
+7
+00:00:24,300 --> 00:00:25,120
+rules.
+
+8
+00:00:25,230 --> 00:00:28,100
+The you know greater than to the right less than to the left.
+
+9
+00:00:28,200 --> 00:00:32,970
+So we can cut about half the tree away each comparison that we make.
+
+10
+00:00:32,970 --> 00:00:40,310
+So for example when we go to insert a number like let's say we're inserting seven into this list.
+
+11
+00:00:41,010 --> 00:00:42,360
+Let's do that quickly.
+
+12
+00:00:42,360 --> 00:00:44,140
+Insert the number seven.
+
+13
+00:00:44,160 --> 00:00:45,140
+All right we compare it.
+
+14
+00:00:45,180 --> 00:00:48,500
+It's less then less than this very fast.
+
+15
+00:00:48,810 --> 00:00:50,580
+We checked once we got to 11.
+
+16
+00:00:50,610 --> 00:00:51,590
+Was there a left.
+
+17
+00:00:51,630 --> 00:00:52,090
+Nope.
+
+18
+00:00:52,260 --> 00:00:54,060
+Well that's where 7 goes.
+
+19
+00:00:54,060 --> 00:01:01,500
+Now for doing the same thing but searching for 7 I'll go slower this time we do the exact same steps
+
+20
+00:01:01,770 --> 00:01:02,250
+we check.
+
+21
+00:01:02,250 --> 00:01:03,550
+All right is this 7.
+
+22
+00:01:03,840 --> 00:01:04,450
+No.
+
+23
+00:01:04,680 --> 00:01:06,690
+So it's less than OK.
+
+24
+00:01:06,810 --> 00:01:09,080
+So we need to look on the left.
+
+25
+00:01:09,190 --> 00:01:10,000
+Is this 7.
+
+26
+00:01:10,030 --> 00:01:11,120
+Twenty is not seven.
+
+27
+00:01:11,230 --> 00:01:13,130
+So seven is less than again.
+
+28
+00:01:13,450 --> 00:01:15,270
+So we look on the left is this 7.
+
+29
+00:01:15,340 --> 00:01:18,900
+Nope it's 11 but we know that 7 is less than 11.
+
+30
+00:01:18,900 --> 00:01:22,310
+So we looked to the left and what do you know we found seven.
+
+31
+00:01:22,480 --> 00:01:25,200
+So we return true or return the node.
+
+32
+00:01:25,600 --> 00:01:26,320
+We're just going to do.
+
+33
+00:01:26,320 --> 00:01:26,920
+True or false.
+
+34
+00:01:26,920 --> 00:01:29,620
+To see if we found it if it contains that value.
+
+35
+00:01:30,010 --> 00:01:34,570
+And if we were inserting something that isn't in there or sorry if we're searching for something that's
+
+36
+00:01:34,570 --> 00:01:41,270
+not in there like let's say we're searching for 75 go.
+
+37
+00:01:41,480 --> 00:01:42,800
+All right we start here.
+
+38
+00:01:42,830 --> 00:01:44,180
+Is this equal to 75.
+
+39
+00:01:44,180 --> 00:01:44,720
+The Root.
+
+40
+00:01:44,780 --> 00:01:45,300
+Nope.
+
+41
+00:01:45,410 --> 00:01:46,470
+75 is greater.
+
+42
+00:01:46,520 --> 00:01:50,490
+So it's going to be over here if it's in here on the right side.
+
+43
+00:01:50,540 --> 00:01:52,110
+So we get to the next node.
+
+44
+00:01:52,130 --> 00:01:53,980
+All right is 75 equal to 65.
+
+45
+00:01:53,990 --> 00:01:54,440
+Nope.
+
+46
+00:01:54,560 --> 00:01:55,340
+It's greater then.
+
+47
+00:01:55,370 --> 00:01:59,230
+So it's going to be over here on the right OK.
+
+48
+00:01:59,280 --> 00:02:01,150
+So we look now we have 91.
+
+49
+00:02:01,260 --> 00:02:03,170
+Well 75 is less than 91.
+
+50
+00:02:03,180 --> 00:02:10,380
+So we need to look to the left and we get to 72 and now 75 is greater than 72.
+
+51
+00:02:10,380 --> 00:02:14,610
+So we know it needs to be on the right but there is no right.
+
+52
+00:02:14,670 --> 00:02:16,500
+So that means it's not in here.
+
+53
+00:02:16,500 --> 00:02:23,580
+If we find the point where we basically hit the end of the tree on one branch and there is no dot net
+
+54
+00:02:23,640 --> 00:02:27,630
+or not next there's no right when we're looking for it right or there's no left and we're looking for
+
+55
+00:02:27,630 --> 00:02:32,980
+a left that tells us the value is not in there assuming our tree is set up correctly.
+
+56
+00:02:33,030 --> 00:02:38,970
+I mean if for some reason 75 was overhear incorrectly Of course we're not going to find it because we're
+
+57
+00:02:38,970 --> 00:02:40,350
+not checking every single node.
+
+58
+00:02:40,350 --> 00:02:42,320
+That's the point of the binary search tree.
+
+59
+00:02:42,390 --> 00:02:46,570
+We know the order that things are stored and we know how it's structured.
+
+60
+00:02:46,680 --> 00:02:50,030
+So we can take advantage of that into a much faster search.
+
+61
+00:02:50,430 --> 00:02:55,040
+OK so in this case we would return false or return no.
+
+62
+00:02:55,080 --> 00:02:56,470
+And this is what they're showing.
+
+63
+00:02:56,640 --> 00:03:00,000
+So the basic steps start at the root check if there's a route.
+
+64
+00:03:00,000 --> 00:03:02,550
+If not we're done because there's nothing in there.
+
+65
+00:03:02,850 --> 00:03:07,480
+If there is a route check the value of the new node see if it's equal to what we're looking for.
+
+66
+00:03:07,530 --> 00:03:10,060
+If you found it then we're done.
+
+67
+00:03:10,110 --> 00:03:15,030
+If not check to see if the value is greater than or less than if it's greater.
+
+68
+00:03:15,030 --> 00:03:16,590
+Look to see if there's something to the right.
+
+69
+00:03:16,680 --> 00:03:23,070
+If there is move to that node and repeat the same steps if there's not that means that we're done.
+
+70
+00:03:23,070 --> 00:03:24,500
+Same thing on the left.
+
+71
+00:03:24,510 --> 00:03:25,670
+So I walk through it one more time.
+
+72
+00:03:25,680 --> 00:03:28,380
+If you feel good to go try an implemented on your own.
+
+73
+00:03:28,530 --> 00:03:32,320
+It's very similar to what we did in the last video with insert.
+
+74
+00:03:32,400 --> 00:03:36,960
+It's just actually a little simpler let's say that we're searching for 40.
+
+75
+00:03:36,990 --> 00:03:38,790
+We're going to start here 41.
+
+76
+00:03:38,810 --> 00:03:38,970
+Right.
+
+77
+00:03:38,970 --> 00:03:40,440
+40 is less than 41.
+
+78
+00:03:40,470 --> 00:03:42,090
+So we look to the left.
+
+79
+00:03:42,270 --> 00:03:42,960
+We get to 20.
+
+80
+00:03:43,020 --> 00:03:44,800
+Well 40 is greater than 20.
+
+81
+00:03:44,850 --> 00:03:45,420
+We check.
+
+82
+00:03:45,420 --> 00:03:47,250
+Is there something to the right.
+
+83
+00:03:47,250 --> 00:03:48,370
+Yes.
+
+84
+00:03:48,390 --> 00:03:52,140
+So then we start the loop over is 40 equal to 29.
+
+85
+00:03:52,380 --> 00:03:53,390
+No.
+
+86
+00:03:53,400 --> 00:03:56,010
+So we check it's greater than.
+
+87
+00:03:56,040 --> 00:03:57,520
+So is there a dot right.
+
+88
+00:03:57,660 --> 00:03:58,550
+Yes.
+
+89
+00:03:58,560 --> 00:04:02,580
+So we move down here and start the loop over is 40 equal to 32.
+
+90
+00:04:02,880 --> 00:04:03,440
+Nope.
+
+91
+00:04:03,630 --> 00:04:04,490
+So then we check.
+
+92
+00:04:04,530 --> 00:04:08,100
+Is there something to the right because 40 is greater than 32.
+
+93
+00:04:08,100 --> 00:04:09,550
+No there is not.
+
+94
+00:04:09,570 --> 00:04:10,970
+That means we didn't find it.
+
+95
+00:04:11,010 --> 00:04:12,260
+We return false.
+
+96
+00:04:12,270 --> 00:04:14,080
+So those are the basic steps.
+
+97
+00:04:14,100 --> 00:04:14,820
+Go ahead.
+
+98
+00:04:14,820 --> 00:04:19,620
+You know you don't have to follow the pseudo code to the tee it doesn't contain every bit of information.
+
+99
+00:04:19,620 --> 00:04:27,000
+For example we want to have probably a while loop and I would make a variable called found in a variable
+
+100
+00:04:27,000 --> 00:04:30,830
+called Current or start or some sort of variable to keep track of where you are.
+
+101
+00:04:30,870 --> 00:04:35,790
+And then a variable that you'll set to True or false that will stop the loop.
+
+102
+00:04:35,790 --> 00:04:41,450
+So when you find it the loop should stop or if you hit the end then you should return OK.
+
+103
+00:04:41,550 --> 00:04:42,090
+Give it a shot.
+

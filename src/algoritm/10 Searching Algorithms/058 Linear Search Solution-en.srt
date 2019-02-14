@@ -1,0 +1,364 @@
+1
+00:00:00,350 --> 00:00:04,240
+OK so in this video on to implement our basic linear search.
+
+2
+00:00:04,380 --> 00:00:05,850
+So here's the pseudocode again.
+
+3
+00:00:05,850 --> 00:00:11,490
+You can write a function or call it let's just call it index for linear search and it's going to accept
+
+4
+00:00:11,490 --> 00:00:12,480
+an array and a value.
+
+5
+00:00:12,600 --> 00:00:14,580
+So we can start there.
+
+6
+00:00:14,610 --> 00:00:17,890
+So I've made a snippet already called Search linear I'm having them.
+
+7
+00:00:17,890 --> 00:00:22,050
+I'll start with search just like I did with recursion so that they're just grouped together.
+
+8
+00:00:22,080 --> 00:00:24,980
+So I made that over here new snippet and it closed that away now.
+
+9
+00:00:25,370 --> 00:00:31,680
+And let's define our function calls linear search and it takes an array and a value.
+
+10
+00:00:31,820 --> 00:00:33,480
+Let's do it like that.
+
+11
+00:00:33,510 --> 00:00:35,050
+All right so that's the first step.
+
+12
+00:00:35,310 --> 00:00:38,040
+So I should be able to call it like this.
+
+13
+00:00:38,050 --> 00:00:42,450
+Then your search pasand my array of will just do numbers.
+
+14
+00:00:42,470 --> 00:00:50,700
+Thirty four fifty six one two and then the value I'm looking for is 1 and it should return the index
+
+15
+00:00:50,700 --> 00:00:53,360
+which is 0 1 2 which should return to.
+
+16
+00:00:53,580 --> 00:00:59,310
+So the next step is to just loop through the array and check if the current array element is equal to
+
+17
+00:00:59,310 --> 00:01:00,190
+the value.
+
+18
+00:01:00,660 --> 00:01:03,340
+So let's start by looping through the array.
+
+19
+00:01:03,660 --> 00:01:07,930
+That's going to be a for loop or I mean you could do a WHILE loop if you wanted to.
+
+20
+00:01:08,100 --> 00:01:09,620
+You could even just do a foreach.
+
+21
+00:01:09,650 --> 00:01:12,770
+There's many ways that will do Forfar equals zero.
+
+22
+00:01:12,780 --> 00:01:14,160
+We're going to go from the beginning.
+
+23
+00:01:14,160 --> 00:01:18,360
+So while I is less than array length.
+
+24
+00:01:19,290 --> 00:01:27,460
+Add one to my and then you need to check if the current array element is equal to the value.
+
+25
+00:01:27,770 --> 00:01:32,710
+So we access the current array element with R R R R array of.
+
+26
+00:01:32,720 --> 00:01:36,410
+I am going to check if it's equal to the value.
+
+27
+00:01:37,070 --> 00:01:39,150
+So we need to make this an if statement.
+
+28
+00:01:40,270 --> 00:01:43,090
+And if that's the case what are we going to do.
+
+29
+00:01:43,220 --> 00:01:44,600
+We're going to return.
+
+30
+00:01:44,960 --> 00:01:49,720
+Well we want to return as you can see here the index at which the element is found.
+
+31
+00:01:49,760 --> 00:01:55,520
+So that's pretty easy because we already have I which is why I chose not to use a for loop or excuse
+
+32
+00:01:55,520 --> 00:01:58,000
+me for each other you can still do for each with an index.
+
+33
+00:01:58,010 --> 00:02:01,160
+But we have I right out of the box because for a loop.
+
+34
+00:02:01,160 --> 00:02:02,670
+So we just return I.
+
+35
+00:02:03,140 --> 00:02:05,640
+So in this case I will be zero.
+
+36
+00:02:05,660 --> 00:02:08,690
+We start we check is array of equal to the value.
+
+37
+00:02:08,780 --> 00:02:10,100
+No is 34 1.
+
+38
+00:02:10,160 --> 00:02:10,700
+No.
+
+39
+00:02:10,940 --> 00:02:13,100
+Next up is 1 is 56 1.
+
+40
+00:02:13,100 --> 00:02:13,590
+Nope.
+
+41
+00:02:13,700 --> 00:02:15,260
+Next time through eyes 2.
+
+42
+00:02:15,440 --> 00:02:17,880
+So we check array of 2 which is 1.
+
+43
+00:02:17,900 --> 00:02:19,750
+Is that equal to one that we're looking for.
+
+44
+00:02:19,910 --> 00:02:20,390
+Yes.
+
+45
+00:02:20,390 --> 00:02:22,620
+So we return I which is 2.
+
+46
+00:02:22,970 --> 00:02:27,650
+Then we have our final catch all if the value is never found return negative 1.
+
+47
+00:02:28,160 --> 00:02:30,620
+And the easiest way to do that is just after the loop.
+
+48
+00:02:30,710 --> 00:02:31,990
+That means we've hit the end.
+
+49
+00:02:32,180 --> 00:02:35,490
+So if we haven't returned by now that means it's not in there.
+
+50
+00:02:35,570 --> 00:02:42,230
+So we can just return negative one just like that and a small simplification that we can make we can
+
+51
+00:02:42,230 --> 00:02:43,060
+get rid of.
+
+52
+00:02:43,180 --> 00:02:44,360
+You can do this on a single line.
+
+53
+00:02:44,360 --> 00:02:49,940
+The if statement the conditional just move that back up there like that.
+
+54
+00:02:50,180 --> 00:02:52,990
+Just shorten it a little bit but it's just a personal preference.
+
+55
+00:02:53,000 --> 00:02:56,170
+So if Trayvon is triple equal to value return I.
+
+56
+00:02:56,300 --> 00:02:57,950
+So now let's test this out.
+
+57
+00:02:57,970 --> 00:03:02,460
+It's a linear search of this we should if it works get 0 1 2.
+
+58
+00:03:02,550 --> 00:03:05,260
+Going to use command enter to run it.
+
+59
+00:03:05,510 --> 00:03:11,390
+And there we go we get to let's try it again this time to add some other numbers.
+
+60
+00:03:12,640 --> 00:03:16,480
+And let's check for 56 which is actually.
+
+61
+00:03:16,490 --> 00:03:16,950
+Wow.
+
+62
+00:03:17,000 --> 00:03:20,450
+I'm so bad at picking round numbers I pick the same number twice.
+
+63
+00:03:20,450 --> 00:03:27,680
+Let's change this one to be 51 and if I run it we get index of 6 0 1 2 3 4 5 6.
+
+64
+00:03:27,680 --> 00:03:32,270
+Finally let's test it on something that's not in there like 100.
+
+65
+00:03:32,270 --> 00:03:33,860
+We get negative 1.
+
+66
+00:03:33,860 --> 00:03:40,190
+Now if I still have my state's array Rigaud because I made this a snippet I should be able to do linear
+
+67
+00:03:40,190 --> 00:03:46,510
+search pass in states and then check what's the index of Texas for example.
+
+68
+00:03:46,730 --> 00:03:51,230
+And we get 50 and if I check for you one more.
+
+69
+00:03:51,230 --> 00:03:54,110
+How about Texas with an X-ray.
+
+70
+00:03:54,140 --> 00:03:55,480
+It's not in there.
+
+71
+00:03:55,680 --> 00:03:56,400
+Cool.
+
+72
+00:03:56,450 --> 00:03:57,740
+So this is linear search.
+
+73
+00:03:57,740 --> 00:04:03,740
+This is what behind the scenes the builtin index of is doing any of these basic searches that we already
+
+74
+00:04:03,740 --> 00:04:05,480
+talked about in javascript.
+
+75
+00:04:05,690 --> 00:04:12,320
+What else was there that was 1 0 find index index of includes all of those are using a linear search
+
+76
+00:04:13,190 --> 00:04:16,570
+and the last thing we should talk about is the big O of this.
+
+77
+00:04:16,820 --> 00:04:19,700
+So take a moment and try and figure it out.
+
+78
+00:04:19,910 --> 00:04:26,380
+The time complexity as the length of that array grows how does the time that it takes the worst case.
+
+79
+00:04:26,480 --> 00:04:27,910
+How much time does it take.
+
+80
+00:04:28,700 --> 00:04:30,730
+And the answer is that it's over.
+
+81
+00:04:30,750 --> 00:04:36,830
+And so as our RE gets longer we have to do more searches we have to do more operations if we're searching
+
+82
+00:04:36,830 --> 00:04:38,610
+for the last item Wyoming.
+
+83
+00:04:38,900 --> 00:04:45,380
+We might have to do 59 or we would have to do 15:9 searches but if our states were instead 5000 States
+
+84
+00:04:45,800 --> 00:04:49,570
+and we're searching for the last one we would have to check 5000 different items.
+
+85
+00:04:49,580 --> 00:04:53,900
+So as and grows is the length of the array grows so does the amount of time.
+
+86
+00:04:53,900 --> 00:04:59,570
+So this is 0 0 and it's linear which is also it's called venir search give it away a little bit.
+
+87
+00:04:59,720 --> 00:05:06,500
+And next we're going to see another search that works differently where if the data is sorted as I hinted
+
+88
+00:05:06,500 --> 00:05:08,360
+at there's a better way of searching.
+
+89
+00:05:08,630 --> 00:05:14,060
+And it's a little bit more complicated but it's a fun sort of first algorithm to step things up a bit
+
+90
+00:05:14,270 --> 00:05:16,740
+from linear search and it's faster.
+
+91
+00:05:16,790 --> 00:05:18,530
+So we'll see that in the next video.
+

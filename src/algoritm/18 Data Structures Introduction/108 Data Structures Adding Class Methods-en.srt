@@ -1,0 +1,432 @@
+1
+00:00:00,240 --> 00:00:01,050
+Welcome back.
+
+2
+00:00:01,050 --> 00:00:03,690
+In this video we're going to talk about class methods.
+
+3
+00:00:03,840 --> 00:00:08,980
+So we talked about creating a class or defining the pattern writing a constructor method.
+
+4
+00:00:09,090 --> 00:00:11,580
+But the new keyword we talked about instance methods.
+
+5
+00:00:11,580 --> 00:00:16,530
+Now we're talking about a second type of method you can add to eight years 2015 class called a class
+
+6
+00:00:16,530 --> 00:00:21,210
+method where we use the static keyword in front of the method definition.
+
+7
+00:00:21,210 --> 00:00:28,620
+So this allows us to do is to find methods or functionality that is pertinent to classes but not necessarily
+
+8
+00:00:28,620 --> 00:00:31,650
+to individual instances of a class.
+
+9
+00:00:31,650 --> 00:00:37,170
+So this is actually not that common and most of what we do in this course is going to be around instance
+
+10
+00:00:37,170 --> 00:00:39,150
+methods for our data structures.
+
+11
+00:00:39,150 --> 00:00:45,030
+But if we go to the docs on MDI and again I like this explanation the static keyword defines a static
+
+12
+00:00:45,030 --> 00:00:45,930
+method for a class.
+
+13
+00:00:45,930 --> 00:00:52,110
+Static methods are called without instantiating their class and cannot be called through a class instance.
+
+14
+00:00:52,230 --> 00:00:56,120
+They're often used to create utility functions for an application.
+
+15
+00:00:56,190 --> 00:01:00,870
+So the example that I added here which is not a complete method by the way I didn't write the actual
+
+16
+00:01:00,870 --> 00:01:06,330
+functionality but the idea is that we can have a method called enroll students and this is a class method
+
+17
+00:01:06,720 --> 00:01:09,750
+you could pass in multiple students in an array.
+
+18
+00:01:09,780 --> 00:01:16,200
+For example like we have down here and this would go and maybe send emails to each of their each of
+
+19
+00:01:16,200 --> 00:01:19,130
+their associated email addresses or something like that.
+
+20
+00:01:19,140 --> 00:01:21,320
+The idea is that this has to do.
+
+21
+00:01:21,330 --> 00:01:23,890
+It's more like a utility function I like that explanation.
+
+22
+00:01:23,910 --> 00:01:30,210
+It's not related to a single individual student where we are using data from that instance like we were
+
+23
+00:01:30,210 --> 00:01:30,800
+here.
+
+24
+00:01:30,930 --> 00:01:35,160
+We're using the name first name and the last name of each individual student.
+
+25
+00:01:35,160 --> 00:01:42,180
+And so we would call this first student dot for name but this enroll students which again is not fully
+
+26
+00:01:42,180 --> 00:01:42,920
+defined.
+
+27
+00:01:43,140 --> 00:01:46,630
+What it does is not related to a particular instance.
+
+28
+00:01:46,740 --> 00:01:51,750
+It's just part of the class in general and some some overall functionality some utility function that
+
+29
+00:01:51,750 --> 00:01:56,090
+we want and the way we call that is student with a capital S..
+
+30
+00:01:56,100 --> 00:02:03,210
+So back here in our code if I try and add a class method down here we'll just call 1.
+
+31
+00:02:03,510 --> 00:02:07,530
+Enroll students which is fine but we're not going to actually enroll in the.
+
+32
+00:02:08,380 --> 00:02:13,200
+We're just going to return a string and rolling students.
+
+33
+00:02:13,530 --> 00:02:14,180
+Oh boy.
+
+34
+00:02:15,820 --> 00:02:16,620
+OK.
+
+35
+00:02:17,210 --> 00:02:22,880
+So just the most basic possible class method here and what I want to show is that if we instantiate
+
+36
+00:02:22,880 --> 00:02:30,210
+these first student I can't call first student dot what we call it enroll students.
+
+37
+00:02:31,190 --> 00:02:33,930
+I'll use a capital E which I did not mean to do.
+
+38
+00:02:33,930 --> 00:02:36,170
+But either way it's not going to work.
+
+39
+00:02:36,180 --> 00:02:38,090
+I need to do student.
+
+40
+00:02:38,130 --> 00:02:40,530
+Enroll students and need parents.
+
+41
+00:02:40,680 --> 00:02:42,320
+And now we can execute that method.
+
+42
+00:02:42,450 --> 00:02:48,180
+So this is functionality that is not relevant to an individual instance but we still want it as part
+
+43
+00:02:48,180 --> 00:02:53,670
+of the Student class it has to do with students in some way or the helper method a utility method and
+
+44
+00:02:53,670 --> 00:02:56,740
+with students it's kind of hard to show an actual example that makes sense.
+
+45
+00:02:56,910 --> 00:02:59,080
+So we actually have a second example here.
+
+46
+00:02:59,160 --> 00:03:01,880
+This is one that I took from the documentation on MDA.
+
+47
+00:03:02,130 --> 00:03:03,950
+So we have a class called point.
+
+48
+00:03:03,990 --> 00:03:09,480
+So imagine a point on a what's it called a cartesian plane an x y coordinate basically.
+
+49
+00:03:09,590 --> 00:03:15,840
+And if we're working in this this coordinate system each point has an x value and a Y so we can initialize
+
+50
+00:03:15,840 --> 00:03:19,270
+new ones down here 5 come five 10 come a 10.
+
+51
+00:03:19,350 --> 00:03:25,380
+But then there's some some utility method that we want like distance calculating the distance between
+
+52
+00:03:25,380 --> 00:03:31,980
+two points which it's been a while probably for me definitely for some of you probably since you've
+
+53
+00:03:31,980 --> 00:03:34,560
+had to use this or maybe you never learned it.
+
+54
+00:03:34,590 --> 00:03:40,170
+There's a distance formula where this is the math you need to do to figure out the point between two
+
+55
+00:03:40,230 --> 00:03:46,020
+or the distance between two points which it has to do with the forming a right triangle and the hypotenuse
+
+56
+00:03:46,020 --> 00:03:47,780
+of that triangle.
+
+57
+00:03:47,870 --> 00:03:51,590
+Anyway let's not go into it but this is the math for it.
+
+58
+00:03:51,600 --> 00:03:54,180
+So you could make this into a class method.
+
+59
+00:03:54,180 --> 00:03:59,670
+It doesn't make sense to have the distance method B on an individual instance.
+
+60
+00:03:59,670 --> 00:04:01,560
+So for example I'm going to run this.
+
+61
+00:04:01,650 --> 00:04:08,100
+So I have P1 and P2 if I wanted to find the distance between P1 and P2 rather than putting you know
+
+62
+00:04:08,130 --> 00:04:11,000
+how would I do that P1 dot distance.
+
+63
+00:04:11,040 --> 00:04:13,660
+And then I pass in to I mean that could work.
+
+64
+00:04:13,740 --> 00:04:15,150
+You could implement it that way.
+
+65
+00:04:15,150 --> 00:04:19,430
+But this is more a utility function so we make it a class method.
+
+66
+00:04:19,620 --> 00:04:27,660
+So instead I'm going to call Point Capital P point distance and then I pass in P1 and P2.
+
+67
+00:04:27,920 --> 00:04:30,810
+And this is the distance between the two.
+
+68
+00:04:30,860 --> 00:04:33,900
+Does that make sense why you would maybe organize it this way.
+
+69
+00:04:34,070 --> 00:04:39,340
+Of course all of Object-Oriented Programming all of everything we're doing with this class syntax.
+
+70
+00:04:39,470 --> 00:04:44,740
+It's just about making things organized better or easier to understand and more logical.
+
+71
+00:04:44,750 --> 00:04:49,670
+So that's pretty much it two class methods all that you do is put the static keyword in front of them
+
+72
+00:04:50,000 --> 00:04:54,390
+and that makes it a class method which means that you no longer call it on an individual method or on
+
+73
+00:04:54,450 --> 00:05:00,950
+an individual instance you call it on the class itself like point or earlier in our example we had student
+
+74
+00:05:00,950 --> 00:05:04,620
+capital S dot enroll students.
+
+75
+00:05:05,170 --> 00:05:05,730
+OK.
+
+76
+00:05:05,890 --> 00:05:12,020
+Versus instance method to call on an individual instance like second student or one dot.
+
+77
+00:05:12,080 --> 00:05:16,910
+Well we don't have any instance methods in this example but if we did we would call them on P1 or P2
+
+78
+00:05:16,910 --> 00:05:17,580
+and so on.
+
+79
+00:05:17,750 --> 00:05:21,550
+So as I mentioned earlier this is how we'll be using classes ourself.
+
+80
+00:05:21,590 --> 00:05:27,560
+Well mainly be defining a class some data structure class binary search tree class doubly linked list
+
+81
+00:05:27,980 --> 00:05:34,250
+inside of it we have our constructor all the default values are the initial properties we need are singly
+
+82
+00:05:34,250 --> 00:05:39,380
+linked list or are binary search tree to have and then we'll have a bunch of instance methods as I showed
+
+83
+00:05:39,380 --> 00:05:40,340
+in the last video.
+
+84
+00:05:40,490 --> 00:05:45,020
+Some of these these data structures will look at might have 10 different methods that we define and
+
+85
+00:05:45,020 --> 00:05:49,880
+it's going to be pretty rare that we're going to use any static methods but I felt that this would be
+
+86
+00:05:49,880 --> 00:05:54,770
+incomplete if I didn't at least explain their existence if I only mentioned instance methods.
+
+87
+00:05:54,770 --> 00:05:56,980
+It would be disingenuous.
+
+88
+00:05:57,080 --> 00:05:58,080
+Is not the right word.
+
+89
+00:05:58,160 --> 00:06:00,880
+It would be incomplete if me so I needed to show that they exist.
+
+90
+00:06:01,010 --> 00:06:03,170
+But most of what we're going to do is going to follow this pattern.
+
+91
+00:06:03,170 --> 00:06:08,300
+Class data structure whatever it is called Our constructor and then a bunch of instance methods that
+
+92
+00:06:08,300 --> 00:06:09,200
+make it all work.
+
+93
+00:06:09,200 --> 00:06:14,490
+And lastly remember that the word the key word this behaves a bit different than normal.
+
+94
+00:06:14,840 --> 00:06:19,620
+If there is a normal it always behaves differently but the way that it behaves instead of just 20:15
+
+95
+00:06:19,640 --> 00:06:25,580
+classes that instead of any instance method or the constructor the keyword this refers to the object
+
+96
+00:06:25,640 --> 00:06:28,420
+created from that individual class the actual instance.
+
+97
+00:06:28,570 --> 00:06:32,350
+And we've already mentioned that but I just put a slide in here just to to make that extra clear.
+
+98
+00:06:32,420 --> 00:06:34,640
+So to recap everything here.
+
+99
+00:06:34,820 --> 00:06:39,770
+Classes are blueprints that one created make objects known as instances.
+
+100
+00:06:39,770 --> 00:06:43,600
+Classes are created or instantiated with the new keyword.
+
+101
+00:06:43,850 --> 00:06:48,950
+The constructor function is a special function that gets run when the class is instantiated.
+
+102
+00:06:48,950 --> 00:06:55,550
+When you run new student the student constructor is run instance methods can be added to classes similar
+
+103
+00:06:55,550 --> 00:07:00,050
+to methods and objects and class methods can be added with a static keyword.
+
+104
+00:07:00,290 --> 00:07:00,530
+All right.
+
+105
+00:07:00,530 --> 00:07:02,450
+Now that we get all of that out the way.
+
+106
+00:07:02,480 --> 00:07:07,250
+Now we can look forward to actually diving into our first data structure are going to start off with
+
+107
+00:07:07,310 --> 00:07:09,490
+singly linked lists so that's up next.
+
+108
+00:07:09,500 --> 00:07:11,690
+We'll be defining our first class sivin.
+

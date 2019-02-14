@@ -1,0 +1,312 @@
+1
+00:00:00,210 --> 00:00:00,710
+All right.
+
+2
+00:00:00,720 --> 00:00:02,460
+So let's write up the solution to push.
+
+3
+00:00:02,550 --> 00:00:05,970
+If you don't care about it if you already got it and just check your work.
+
+4
+00:00:05,970 --> 00:00:08,030
+Just look at the file included with this video.
+
+5
+00:00:08,280 --> 00:00:08,800
+OK.
+
+6
+00:00:08,910 --> 00:00:11,940
+So I made a new snippet just so we can keep track of.
+
+7
+00:00:12,000 --> 00:00:16,140
+The first one I'm going to do this for every single function or method we add.
+
+8
+00:00:16,170 --> 00:00:17,150
+Anyway here's push.
+
+9
+00:00:17,340 --> 00:00:18,870
+We already have a skeleton.
+
+10
+00:00:18,870 --> 00:00:21,480
+So this first bit is done should accept the value.
+
+11
+00:00:21,510 --> 00:00:25,590
+Now what we need to do is create a new node using the value we pass in.
+
+12
+00:00:25,710 --> 00:00:26,600
+So that's easy enough.
+
+13
+00:00:26,600 --> 00:00:27,940
+We have our node class.
+
+14
+00:00:28,110 --> 00:00:35,180
+We just need to make a variable of us call it new node equals new space node pass in the value.
+
+15
+00:00:35,670 --> 00:00:40,910
+So for example when we call when we make a new list I'll just give it the name list it's empty.
+
+16
+00:00:41,100 --> 00:00:45,900
+Then we do a list of push Hello it's going to take that string hello and make a new node.
+
+17
+00:00:46,200 --> 00:00:49,150
+It's not added two of us had to just exists.
+
+18
+00:00:49,200 --> 00:00:52,690
+Next we need to check if there is a head property on the list.
+
+19
+00:00:52,770 --> 00:00:58,860
+If there is set the head and tail to be the newly created node that's the edge case when it's empty.
+
+20
+00:00:59,370 --> 00:01:06,210
+So to check that we could just do if this head to actually do if not this data.
+
+21
+00:01:06,210 --> 00:01:10,330
+So if there is no head meaning it's an empty list like it is right here.
+
+22
+00:01:10,770 --> 00:01:15,750
+What do we want to do going to make this head equal to new node.
+
+23
+00:01:15,870 --> 00:01:18,200
+And then we'll set this tale to be the same thing.
+
+24
+00:01:18,450 --> 00:01:23,010
+We could just do this that tail equals the stuff that makes sense.
+
+25
+00:01:23,010 --> 00:01:26,970
+So they're both pointing to new node the head and the tail are the same thing.
+
+26
+00:01:26,970 --> 00:01:30,370
+So right now push will work one time only the first time.
+
+27
+00:01:30,480 --> 00:01:33,610
+And if we look at lists that just read the code we can see that.
+
+28
+00:01:33,710 --> 00:01:34,340
+OK.
+
+29
+00:01:34,560 --> 00:01:37,240
+Well first of all the length is incorrect correct needs to be updated.
+
+30
+00:01:37,260 --> 00:01:38,550
+It says zero still.
+
+31
+00:01:38,550 --> 00:01:41,480
+But otherwise the head and the tail are pointing to the right thing.
+
+32
+00:01:41,610 --> 00:01:47,960
+But if I push something else in like goodbye nothing will happen because I do stop push 10 or 1.
+
+33
+00:01:48,390 --> 00:01:54,070
+Nothing happens because it's all guarded by this if statement which this is not true anymore.
+
+34
+00:01:54,090 --> 00:01:57,300
+So nothing happens except we make a new node and it just never gets added.
+
+35
+00:01:57,420 --> 00:02:02,720
+So onto the next part which is otherwise set the next property on the tail to be the new node.
+
+36
+00:02:02,840 --> 00:02:05,770
+Instead the tail property in the list to be the newly created node.
+
+37
+00:02:05,880 --> 00:02:07,960
+So this only runs if it's empty.
+
+38
+00:02:07,960 --> 00:02:15,540
+Otherwise what we want to do is take the tail so take the current tail tail take the next property and
+
+39
+00:02:15,540 --> 00:02:17,360
+set that equal to the new node.
+
+40
+00:02:17,700 --> 00:02:23,250
+So if I have hello as the tail and I push goodbye we're going to take goodbye's the new node take the
+
+41
+00:02:23,250 --> 00:02:31,020
+current tail Hello set the next to be goodbye and then we just have to update this tail to point to
+
+42
+00:02:31,110 --> 00:02:34,040
+that new node like that.
+
+43
+00:02:34,170 --> 00:02:35,640
+That's our new tail.
+
+44
+00:02:36,080 --> 00:02:37,250
+OK.
+
+45
+00:02:37,320 --> 00:02:42,600
+So we took the current two we added on to the end of it and then we move the tail marker over.
+
+46
+00:02:43,230 --> 00:02:48,570
+And then the last two things we need to do is we need to increment the length by one and the last thing
+
+47
+00:02:48,590 --> 00:02:49,350
+return of the.
+
+48
+00:02:49,360 --> 00:02:52,170
+I didn't actually click that far in the last video.
+
+49
+00:02:52,170 --> 00:02:53,040
+I apologize.
+
+50
+00:02:53,040 --> 00:02:54,340
+We do need to return it.
+
+51
+00:02:54,360 --> 00:02:57,350
+So let's go back and do that now.
+
+52
+00:02:57,540 --> 00:03:02,520
+We're just going to increment the length of this delta length plus we'll just do plus plus and then
+
+53
+00:03:02,520 --> 00:03:03,350
+return.
+
+54
+00:03:03,420 --> 00:03:08,770
+How do we return the whole list just returned this and that should be all we need to do.
+
+55
+00:03:09,150 --> 00:03:14,600
+So if I'm going to get rid of this for now and just call it I'm going to rerun my code.
+
+56
+00:03:15,090 --> 00:03:15,570
+OK.
+
+57
+00:03:15,570 --> 00:03:21,760
+If we look at a list right now it's empty all do list up push let's push in high.
+
+58
+00:03:22,330 --> 00:03:25,210
+OK so now the head and the tail are both pointing to high.
+
+59
+00:03:25,290 --> 00:03:25,940
+Cool.
+
+60
+00:03:25,950 --> 00:03:27,740
+Now we do list up push.
+
+61
+00:03:28,170 --> 00:03:33,180
+I you I don't know this makes no sense if we look at the head.
+
+62
+00:03:33,180 --> 00:03:34,960
+It should still be high.
+
+63
+00:03:35,120 --> 00:03:38,150
+And if you look at the tail it's you and our length is two.
+
+64
+00:03:38,220 --> 00:03:39,370
+So that's all working.
+
+65
+00:03:39,380 --> 00:03:47,150
+So just let's just do one more stop push you let's push in the number ninety nine and we look at list.
+
+66
+00:03:47,460 --> 00:03:51,720
+The head is high the tail is 99.
+
+67
+00:03:51,780 --> 00:04:01,140
+So if I did list that head next that gives me you next Again that gives me 99.
+
+68
+00:04:01,270 --> 00:04:03,080
+And then there is no next call.
+
+69
+00:04:03,310 --> 00:04:04,750
+So push is done.
+
+70
+00:04:04,930 --> 00:04:06,750
+This is the basics of pushing onto a list.
+
+71
+00:04:06,760 --> 00:04:08,420
+We have the one edge case if it's empty.
+
+72
+00:04:08,470 --> 00:04:10,250
+Otherwise we just take the current tail.
+
+73
+00:04:10,470 --> 00:04:11,210
+It's nice and easy.
+
+74
+00:04:11,210 --> 00:04:14,040
+It doesn't matter if it's a million items in here it's really fast.
+
+75
+00:04:14,050 --> 00:04:18,100
+We just take the tail and add on to the end and then move the tail one spot over.
+
+76
+00:04:18,440 --> 00:04:18,660
+OK.
+
+77
+00:04:18,670 --> 00:04:20,350
+So let's push in the next video.
+
+78
+00:04:20,380 --> 00:04:24,180
+We're going to get into pop and pop is a little trickier and you'll see why.
+

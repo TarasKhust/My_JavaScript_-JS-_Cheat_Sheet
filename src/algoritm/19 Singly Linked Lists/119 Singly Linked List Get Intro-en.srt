@@ -1,0 +1,196 @@
+1
+00:00:00,360 --> 00:00:01,330
+All right welcome back.
+
+2
+00:00:01,380 --> 00:00:07,030
+So next we're going to add or implement get so get a method that takes a number an index or a position
+
+3
+00:00:07,400 --> 00:00:09,900
+and it returns the item in that position.
+
+4
+00:00:09,900 --> 00:00:13,920
+So if we give it the number 0 it should give us the first item the head.
+
+5
+00:00:14,040 --> 00:00:17,190
+But if we give it the number 4 it should give us the fifth item.
+
+6
+00:00:17,190 --> 00:00:18,570
+So starting at zero.
+
+7
+00:00:18,760 --> 00:00:22,830
+But that's not really the important part the important part is takes in the number and you traverse
+
+8
+00:00:22,830 --> 00:00:28,170
+the list that many times and then you return the item at that index.
+
+9
+00:00:28,170 --> 00:00:31,250
+So visual fish fish will go fish.
+
+10
+00:00:31,290 --> 00:00:34,010
+It has to be a visual go so only way could pronounce it.
+
+11
+00:00:34,260 --> 00:00:37,890
+It doesn't have a built in get method that it illustrates.
+
+12
+00:00:37,950 --> 00:00:42,000
+But if we just looked at this list we can sort of mouse through it.
+
+13
+00:00:42,000 --> 00:00:44,170
+So if we pass in we get.
+
+14
+00:00:44,190 --> 00:00:46,310
+And then we pass in the number three.
+
+15
+00:00:46,440 --> 00:00:47,990
+Basically we start at the beginning.
+
+16
+00:00:48,150 --> 00:00:50,430
+This is number zero the head.
+
+17
+00:00:50,640 --> 00:00:52,310
+And then we just do it next.
+
+18
+00:00:52,590 --> 00:00:56,140
+And we keep doing next until we've done it three times.
+
+19
+00:00:56,140 --> 00:00:59,580
+So zero to 1 1 to 2 2 to 3.
+
+20
+00:00:59,700 --> 00:01:02,660
+And so we'd return this value which is six.
+
+21
+00:01:02,680 --> 00:01:07,680
+So there are no indices that are that correspond to each individual item.
+
+22
+00:01:07,680 --> 00:01:12,600
+It's not like we can just access and get you know the seven hundred item immediately.
+
+23
+00:01:12,630 --> 00:01:14,130
+We have to start at zero.
+
+24
+00:01:14,190 --> 00:01:17,770
+The very beginning the head and count how many times we do.
+
+25
+00:01:17,850 --> 00:01:20,720
+Next we have to loop until we hit that item.
+
+26
+00:01:20,760 --> 00:01:26,430
+So whenever we say index in this video it is not like an array that has a built in index that corresponds
+
+27
+00:01:26,430 --> 00:01:28,870
+to every element we are manually counting.
+
+28
+00:01:29,010 --> 00:01:30,930
+So it's not that efficient compared to an array.
+
+29
+00:01:30,930 --> 00:01:36,150
+If we need to access something based off of it's position all the time then you might want to use an
+
+30
+00:01:36,180 --> 00:01:36,660
+array.
+
+31
+00:01:36,660 --> 00:01:37,270
+It depends.
+
+32
+00:01:37,290 --> 00:01:40,220
+Again we'll come back to considerations like that later on.
+
+33
+00:01:40,230 --> 00:01:45,240
+So here's a pseudo code function should accept an index.
+
+34
+00:01:45,330 --> 00:01:49,590
+So a number that we pass in if the index is so these are edge cases.
+
+35
+00:01:49,590 --> 00:01:54,350
+If it's negative or greater than or equal to the length then we're not going to do that.
+
+36
+00:01:54,390 --> 00:01:57,160
+We can't find something that index negative 2.
+
+37
+00:01:57,180 --> 00:01:57,970
+So we return.
+
+38
+00:01:58,020 --> 00:01:58,450
+No.
+
+39
+00:01:58,500 --> 00:02:03,300
+Or we could do undefined but just return something that signifies it was not found.
+
+40
+00:02:04,550 --> 00:02:08,120
+Then we're going to loop through the list until you reach the index.
+
+41
+00:02:08,210 --> 00:02:10,220
+In return the noted that specific index.
+
+42
+00:02:10,220 --> 00:02:15,680
+So I recommend having a counter variable and you just loop through continue like we've done with a WHILE
+
+43
+00:02:15,680 --> 00:02:18,140
+loop for loop doing next.
+
+44
+00:02:18,230 --> 00:02:21,730
+Next up next and each time through just add one to the counter.
+
+45
+00:02:21,920 --> 00:02:26,870
+And then once you get to that however many you know the index the fifth item the tenth item.
+
+46
+00:02:26,870 --> 00:02:28,590
+All you do is return the value.
+
+47
+00:02:28,640 --> 00:02:30,450
+So give it a shot in the next video.
+
+48
+00:02:30,500 --> 00:02:31,370
+I'll implement it.
+
+49
+00:02:31,370 --> 00:02:32,330
+Surprise surprise.
+

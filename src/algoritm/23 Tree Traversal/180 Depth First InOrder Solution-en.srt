@@ -1,0 +1,172 @@
+1
+00:00:00,210 --> 00:00:01,170
+Welcome back.
+
+2
+00:00:01,170 --> 00:00:04,940
+So we have our final implementation of DFS depth first search.
+
+3
+00:00:05,130 --> 00:00:06,160
+It's going to be really fast.
+
+4
+00:00:06,180 --> 00:00:08,530
+We just need to change a line from our last solution.
+
+5
+00:00:08,580 --> 00:00:14,600
+So to recap on every node we traverse the left then we visit the node then we traverse the right.
+
+6
+00:00:14,660 --> 00:00:18,540
+So if we go over here and I add in a solution.
+
+7
+00:00:18,800 --> 00:00:25,900
+So DFS in order I'm not even going to bother typing the entire thing again.
+
+8
+00:00:25,990 --> 00:00:33,670
+I'm just going to copy it over and change this so that when we traverse we traverse the left then we
+
+9
+00:00:33,670 --> 00:00:39,230
+visit by pushing a data into or pushing the node value into our data array.
+
+10
+00:00:39,370 --> 00:00:41,010
+And then we do the right side.
+
+11
+00:00:41,410 --> 00:00:47,050
+So if we start here we're going to traverse the left and we get to hear what we still need to traverse
+
+12
+00:00:47,050 --> 00:00:47,790
+the left.
+
+13
+00:00:47,950 --> 00:00:49,900
+Then there's nowhere else to go.
+
+14
+00:00:49,900 --> 00:00:55,330
+So we push no de-value 3 then we're back to this one which is waiting.
+
+15
+00:00:55,510 --> 00:00:56,710
+And we did the left.
+
+16
+00:00:56,710 --> 00:01:00,100
+So now we visit six and we do the right.
+
+17
+00:01:00,310 --> 00:01:01,430
+Then we're back to 10.
+
+18
+00:01:01,450 --> 00:01:02,440
+We did the left side.
+
+19
+00:01:02,450 --> 00:01:06,210
+Now we visit 10 and then we go to the right side and so on.
+
+20
+00:01:06,650 --> 00:01:07,390
+OK.
+
+21
+00:01:07,510 --> 00:01:09,490
+So let's see if it works.
+
+22
+00:01:09,530 --> 00:01:10,410
+Treat it.
+
+23
+00:01:10,450 --> 00:01:15,140
+DFS in order we get 3 6 8 10 15 20.
+
+24
+00:01:15,250 --> 00:01:16,560
+And that's what we expect.
+
+25
+00:01:16,600 --> 00:01:18,880
+3 6 8 10 15 20.
+
+26
+00:01:18,880 --> 00:01:25,350
+So those are the three orders that we were going to talk about a small change if you prefer.
+
+27
+00:01:25,390 --> 00:01:28,000
+You can actually rewrite this code like this.
+
+28
+00:01:28,000 --> 00:01:37,900
+You can do rather than a conditional do no doubt left and traverse node and do the same thing down here.
+
+29
+00:01:38,500 --> 00:01:39,840
+No doubt right.
+
+30
+00:01:40,360 --> 00:01:46,320
+And traverse node it's just a small change if you don't want to do the conditional.
+
+31
+00:01:46,360 --> 00:01:48,280
+We're just checking if it if it's truthy.
+
+32
+00:01:48,310 --> 00:01:51,540
+If it's non-zero this will do the same thing.
+
+33
+00:01:51,550 --> 00:01:56,890
+I personally I think I actually prefer this slightly more verbose because I like putting that in there
+
+34
+00:01:56,920 --> 00:02:01,990
+but I know some students are sticklers for making things as succinct as possible.
+
+35
+00:02:01,990 --> 00:02:07,870
+So you could do this and this applies to all three the solution so it's not just this one but I'll leave
+
+36
+00:02:07,870 --> 00:02:09,250
+it in here and I'll leave this one.
+
+37
+00:02:09,270 --> 00:02:12,910
+And if just so that we have some variety in our solutions.
+
+38
+00:02:12,910 --> 00:02:13,480
+All right.
+
+39
+00:02:13,600 --> 00:02:15,230
+So that's depth first search.
+
+40
+00:02:15,280 --> 00:02:20,620
+Three different ways three different flavors in every approach we're working vertically first.
+
+41
+00:02:20,640 --> 00:02:26,170
+If that makes sense rather than horizontally going back and forth breadth first search Well I'd like
+
+42
+00:02:26,170 --> 00:02:31,570
+to do next is add a quick video where I talk about the merits of these approaches and why you would
+
+43
+00:02:31,580 --> 00:02:32,530
+use one or for the other.
+

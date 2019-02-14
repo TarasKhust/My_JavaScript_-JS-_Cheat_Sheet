@@ -1,0 +1,300 @@
+1
+00:00:00,270 --> 00:00:00,740
+All right.
+
+2
+00:00:00,760 --> 00:00:05,740
+So let's get to work on our final method around the very basics at least after this we get to go on
+
+3
+00:00:05,740 --> 00:00:08,890
+to traversal and searching and some of the more challenging stuff.
+
+4
+00:00:08,900 --> 00:00:11,720
+And we have to worry about recursion and stuff like that.
+
+5
+00:00:11,850 --> 00:00:14,250
+But for now removing a vertex.
+
+6
+00:00:14,250 --> 00:00:22,770
+So let's define our method come up here we'll call remove Virtex and it takes in the name of a Virtex
+
+7
+00:00:22,770 --> 00:00:29,970
+like Hong Kong and I've written a couple other method calls to build out a little bit larger graph so
+
+8
+00:00:29,970 --> 00:00:33,740
+that we actually have some data to remove to make sure it all works.
+
+9
+00:00:33,750 --> 00:00:37,460
+So if we remove Virtex What do we need to start with.
+
+10
+00:00:37,560 --> 00:00:45,990
+Well as always we're going to need to do this dot adjacency list of that vertex and that's going to
+
+11
+00:00:45,990 --> 00:00:50,460
+give us you know for example if you go back here.
+
+12
+00:00:50,830 --> 00:00:51,830
+Can you give us this.
+
+13
+00:00:51,840 --> 00:00:57,840
+If we're trying to remove Hong Kong we need to loop over that and for each item in there we are then
+
+14
+00:00:57,840 --> 00:01:01,590
+going to pass it in to remove edge.
+
+15
+00:01:01,590 --> 00:01:04,110
+So let's do a loop right now.
+
+16
+00:01:04,440 --> 00:01:11,720
+Let's just do we could do while this data adjacent to Virtex and I'm going to do length which seems
+
+17
+00:01:11,730 --> 00:01:20,580
+weird to do while this adjacency list length but I'm going to actually pop off items from this list
+
+18
+00:01:20,610 --> 00:01:21,580
+as we go.
+
+19
+00:01:21,600 --> 00:01:24,200
+So eventually we'll get to 0 and then our loop will stop.
+
+20
+00:01:24,210 --> 00:01:25,290
+You could do a for loop.
+
+21
+00:01:25,410 --> 00:01:27,090
+You don't have to do it this way.
+
+22
+00:01:27,300 --> 00:01:28,900
+So we're going to grab.
+
+23
+00:01:29,310 --> 00:01:31,460
+Let's just call it adjacent vertex.
+
+24
+00:01:31,470 --> 00:01:36,360
+You don't even have to make a variable to do this but to make it a bit easier to read I'm going to do
+
+25
+00:01:37,380 --> 00:01:40,910
+this here so we're going to take each item and pop it.
+
+26
+00:01:41,010 --> 00:01:47,480
+So here if I run this right now if we look at adjacency list let's say we're looking at Hong Kong.
+
+27
+00:01:47,490 --> 00:01:50,700
+We're looping over this while this whole thing has a length.
+
+28
+00:01:50,710 --> 00:01:56,850
+If we're trying to remove the Hong Kong vertex first time through pop this item Los Angeles off and
+
+29
+00:01:56,850 --> 00:02:02,640
+then we're going to call this dot remove edge and what's the edge where we're removing.
+
+30
+00:02:02,650 --> 00:02:05,140
+Well it's between Los Angeles and Hong Kong.
+
+31
+00:02:05,220 --> 00:02:06,760
+The Virtex itself.
+
+32
+00:02:06,870 --> 00:02:07,770
+So the order doesn't matter.
+
+33
+00:02:07,780 --> 00:02:15,090
+We can do Virtex and then adjacent Virtex or we could do the other way round because this is an undirected
+
+34
+00:02:15,090 --> 00:02:15,790
+graph.
+
+35
+00:02:15,870 --> 00:02:17,170
+There is no direction.
+
+36
+00:02:17,190 --> 00:02:18,440
+The order doesn't matter.
+
+37
+00:02:18,450 --> 00:02:20,600
+We're removing both parts.
+
+38
+00:02:20,950 --> 00:02:21,580
+OK.
+
+39
+00:02:21,750 --> 00:02:23,540
+So that will do that takes care of that.
+
+40
+00:02:23,550 --> 00:02:33,000
+And then if we actually run this now and we look at g g dot adjacency let's just check on it one more
+
+41
+00:02:33,000 --> 00:02:33,720
+time.
+
+42
+00:02:33,720 --> 00:02:34,950
+All right here's Hong Kong.
+
+43
+00:02:35,040 --> 00:02:46,730
+Let's now remove Virtex Hong Kong and if we look at the adjacency list again you'll see what do we have.
+
+44
+00:02:46,820 --> 00:02:50,240
+Well we got rid of all the references to Hong Kong.
+
+45
+00:02:50,330 --> 00:02:52,760
+If we look up here this has gone.
+
+46
+00:02:53,360 --> 00:02:59,150
+And for example there used to be Hong Kong in Dallas and in Los Angeles and Tokyo.
+
+47
+00:02:59,180 --> 00:03:04,860
+And if we look at those Tokyo there's no Hong Kong Los Angeles no Hong Kong Dallas no Hong Kong.
+
+48
+00:03:04,860 --> 00:03:07,310
+However we still have this empty array.
+
+49
+00:03:07,640 --> 00:03:11,120
+So this is where we need to delete that entire key.
+
+50
+00:03:11,150 --> 00:03:14,120
+So down here said You may not do this very often.
+
+51
+00:03:14,120 --> 00:03:21,540
+Delete this adjacency list of that vertex so delete Hong Kong entirely.
+
+52
+00:03:21,560 --> 00:03:24,950
+So if I rerun this we look at the adjacency list again.
+
+53
+00:03:25,430 --> 00:03:27,620
+It's back to Hong Kong.
+
+54
+00:03:27,620 --> 00:03:32,030
+Now let's remove Hong Kong and look at the adjacent to the.
+
+55
+00:03:32,030 --> 00:03:34,200
+Again there there's no trace of it.
+
+56
+00:03:34,210 --> 00:03:37,580
+Hopefully yes it's gone.
+
+57
+00:03:37,820 --> 00:03:41,270
+Again I don't know why we'd remove a flight or all flights to Hong Kong.
+
+58
+00:03:41,270 --> 00:03:42,540
+Seems like that wouldn't happen.
+
+59
+00:03:42,710 --> 00:03:44,180
+But you can see it's gone.
+
+60
+00:03:44,210 --> 00:03:51,310
+Let's try removing Aspen now and if we look at the adjacency list no trace of Aspen either.
+
+61
+00:03:51,320 --> 00:03:51,730
+OK.
+
+62
+00:03:51,770 --> 00:03:54,270
+So that's one way of writing removed Virtex.
+
+63
+00:03:54,320 --> 00:03:55,790
+There are other ways you could do.
+
+64
+00:03:55,800 --> 00:03:58,100
+You could write that would be a little more efficient.
+
+65
+00:03:58,250 --> 00:04:04,040
+Also you could pretty easily add in some air handling just added conditional to make sure that the Virtex
+
+66
+00:04:04,070 --> 00:04:05,040
+is valid.
+
+67
+00:04:05,060 --> 00:04:10,430
+But again I'm keeping this very bare minimal just to focus on the logic.
+
+68
+00:04:10,490 --> 00:04:16,130
+So next now that we have a basic skeleton we can add and remove vertices edges.
+
+69
+00:04:16,130 --> 00:04:21,500
+Now we're going to actually build out a little more complex graph and then talk about traversing and
+
+70
+00:04:21,800 --> 00:04:28,580
+recursion and depth first and breadth first and yeah get your aspirin or Advil ready or alcohol or whatever
+
+71
+00:04:28,580 --> 00:04:29,590
+you need.
+
+72
+00:04:29,710 --> 00:04:31,890
+It's going to be quite the ride.
+
+73
+00:04:32,050 --> 00:04:32,910
+It's fun stuff.
+
+74
+00:04:33,050 --> 00:04:33,440
+OK.
+
+75
+00:04:33,470 --> 00:04:34,070
+That's next.
+

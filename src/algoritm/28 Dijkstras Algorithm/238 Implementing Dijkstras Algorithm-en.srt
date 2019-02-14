@@ -1,0 +1,1256 @@
+1
+00:00:00,330 --> 00:00:00,860
+All right.
+
+2
+00:00:00,870 --> 00:00:02,670
+So let's let's give it a shot.
+
+3
+00:00:02,730 --> 00:00:04,110
+See how it goes.
+
+4
+00:00:04,140 --> 00:00:09,080
+First couple of things I've added the priority queue in this is our nave priority.
+
+5
+00:00:09,080 --> 00:00:10,600
+Q Will need to use that.
+
+6
+00:00:10,790 --> 00:00:12,110
+I have a new snippet.
+
+7
+00:00:12,200 --> 00:00:14,580
+I've added the weighted graph code in.
+
+8
+00:00:14,640 --> 00:00:17,670
+Again we only have a way to add in vertex and an edge.
+
+9
+00:00:17,670 --> 00:00:22,160
+I didn't bother with removing them for now and then down here this is new.
+
+10
+00:00:22,170 --> 00:00:28,580
+I implemented the graph from earlier just by adding the vertices and then that the various edges.
+
+11
+00:00:28,620 --> 00:00:33,620
+So we're looking from A to E with the shortest path is and the graph should match this graph here.
+
+12
+00:00:33,630 --> 00:00:37,800
+So for example A to C is to D to E is 3.
+
+13
+00:00:37,860 --> 00:00:42,980
+And just to verify what we have a to c s to and D to is 3 and so on.
+
+14
+00:00:43,080 --> 00:00:45,640
+So I tested it out and it was working earlier.
+
+15
+00:00:45,660 --> 00:00:50,030
+As far as the distances it can be hard to write these down accurately.
+
+16
+00:00:50,260 --> 00:00:52,240
+So I recommend you copy them if you want.
+
+17
+00:00:52,260 --> 00:00:54,450
+It's kind of annoying to type this all yourself.
+
+18
+00:00:54,450 --> 00:00:56,490
+All right so that's just the setup.
+
+19
+00:00:56,520 --> 00:01:02,910
+Now we need to start by defining our function and I'm just going to call it Dykstra just to make it
+
+20
+00:01:02,910 --> 00:01:03,880
+clear.
+
+21
+00:01:04,250 --> 00:01:08,960
+I'll do a capital D even if it's not super conventional and we need our two nodes.
+
+22
+00:01:09,000 --> 00:01:10,490
+Start and Finish.
+
+23
+00:01:10,770 --> 00:01:18,540
+So at the very bottom I want to be able to call graph dot Dykstra from a to z and we didn't really discuss
+
+24
+00:01:18,540 --> 00:01:21,220
+what the return value should be and that's OK.
+
+25
+00:01:21,330 --> 00:01:26,580
+The search is the most important part at this point but let's say it should return an array containing
+
+26
+00:01:26,580 --> 00:01:27,470
+the nodes in order.
+
+27
+00:01:27,480 --> 00:01:32,940
+So A to C to D to F or whatever it was to eat.
+
+28
+00:01:33,600 --> 00:01:35,160
+OK so we start like this.
+
+29
+00:01:35,340 --> 00:01:38,790
+And there's a couple of things you need to do we need to make a new priority queue.
+
+30
+00:01:38,880 --> 00:01:46,440
+So I'll use East 20:15 syntax when to call it nodes equals new priority queue which again is coming
+
+31
+00:01:46,440 --> 00:01:48,330
+from appear it starts empty.
+
+32
+00:01:48,570 --> 00:01:56,820
+We needed to make our distances object so call that distances and just initialize an empty object.
+
+33
+00:01:56,970 --> 00:02:05,670
+We need our previous object which is just again another object representing where we store for C.
+
+34
+00:02:05,700 --> 00:02:08,300
+The quickest path to see was through a.
+
+35
+00:02:08,430 --> 00:02:09,110
+Or for each.
+
+36
+00:02:09,110 --> 00:02:13,210
+The fastest way was through F and so on.
+
+37
+00:02:13,230 --> 00:02:16,280
+So if you're unfamiliar with it I'm talking about go back and watch.
+
+38
+00:02:16,350 --> 00:02:20,180
+Well I should say go back and watch this thing right here.
+
+39
+00:02:20,610 --> 00:02:24,350
+So this is distances and this is previous And that's really all we need for now.
+
+40
+00:02:24,370 --> 00:02:26,540
+OK so now we have the book for logic.
+
+41
+00:02:26,550 --> 00:02:30,270
+We need to build up like our very initial distances.
+
+42
+00:02:30,270 --> 00:02:38,160
+So let's just say build up initial state and what that involves is looping over the entire adjacency
+
+43
+00:02:38,160 --> 00:02:39,020
+list.
+
+44
+00:02:39,060 --> 00:02:48,660
+So let's just do a loop right now so I'll do 4 in loops of 4 let vertex in this dot adjacency list.
+
+45
+00:02:48,780 --> 00:02:50,060
+We have a couple of things to do.
+
+46
+00:02:50,250 --> 00:02:56,700
+First we need to set each key and the distances object to be infinity except for the starting vertex
+
+47
+00:02:56,730 --> 00:02:57,970
+which should be zero.
+
+48
+00:02:58,440 --> 00:03:05,250
+So to do that let's just check if vertex equals start.
+
+49
+00:03:05,270 --> 00:03:14,430
+So for example for looking at a we're going to set distances of Vertex equal to zero.
+
+50
+00:03:14,810 --> 00:03:17,840
+Otherwise I'll do n else just to make it clearer.
+
+51
+00:03:17,850 --> 00:03:24,580
+Are you going to set distances of vertex to equal infinity.
+
+52
+00:03:24,920 --> 00:03:30,830
+So that's just initializing everything so for going from A to Z this will initialize our distances object
+
+53
+00:03:30,830 --> 00:03:36,970
+to contain everything you know be through as infinity and A should be set to zero.
+
+54
+00:03:37,100 --> 00:03:42,110
+And if we wanted to we could just quickly count adult log distances to verify that that's working how
+
+55
+00:03:42,110 --> 00:03:43,970
+it should run this.
+
+56
+00:03:44,070 --> 00:03:47,170
+It is a zero and everything else is infinity.
+
+57
+00:03:47,240 --> 00:03:49,890
+And of course that's because we're going from A to B.
+
+58
+00:03:49,910 --> 00:03:53,410
+If we are going from B to E then B would be zero.
+
+59
+00:03:53,900 --> 00:03:56,960
+OK so we don't need constant like that now.
+
+60
+00:03:56,990 --> 00:03:58,790
+That's only part of what we need to do.
+
+61
+00:03:58,910 --> 00:04:05,050
+Along with that we need to add each node or add a value for each node to our priority queue.
+
+62
+00:04:05,060 --> 00:04:09,300
+So we know what to start with and what to take each time where to visit next.
+
+63
+00:04:09,320 --> 00:04:14,360
+So add each vertex with a priority of infinity to the priority queue except the starting vertex which
+
+64
+00:04:14,360 --> 00:04:17,380
+should have a priority of 0 because that's where we begin.
+
+65
+00:04:17,690 --> 00:04:24,910
+So we made our priority queue it's called nodes and I'll just do nodes dot and queue and we pass into
+
+66
+00:04:24,920 --> 00:04:31,200
+things the vertex and then a priority which will be zero and then down here will do the same thing.
+
+67
+00:04:31,200 --> 00:04:36,190
+Opps I hate that and Chrome doesn't give me an easy way to anyway.
+
+68
+00:04:36,380 --> 00:04:39,120
+All right and done here we'll add infinity.
+
+69
+00:04:39,170 --> 00:04:44,660
+So for every other node in our queue we're definitely starting with this one because it's zero compared
+
+70
+00:04:44,660 --> 00:04:45,280
+to infinity.
+
+71
+00:04:45,290 --> 00:04:51,070
+But then we'll will be updating will be skewing things later with a new priority that isn't infinity.
+
+72
+00:04:51,620 --> 00:04:54,410
+All right and then the only other thing we have to do for each.
+
+73
+00:04:54,470 --> 00:05:00,390
+Every single node we need to set previous of that node of that vertex to be null.
+
+74
+00:05:00,560 --> 00:05:04,520
+So instead of doing that in the IF in the else and duplicating it I'll just do it down here.
+
+75
+00:05:04,550 --> 00:05:09,920
+So previous of Vertex equals no.
+
+76
+00:05:10,010 --> 00:05:12,170
+So that gives us our initial state.
+
+77
+00:05:12,170 --> 00:05:14,900
+We end up with this structure here.
+
+78
+00:05:15,140 --> 00:05:18,230
+We end up with our priority queue reflecting this as well.
+
+79
+00:05:18,290 --> 00:05:22,700
+Then we end up with previous where we have a no b no C No.
+
+80
+00:05:22,940 --> 00:05:24,740
+And will update those as we go.
+
+81
+00:05:25,110 --> 00:05:32,180
+OK so next after we've initialized everything we now need to basically run some code.
+
+82
+00:05:32,240 --> 00:05:33,620
+A lot of comment here.
+
+83
+00:05:33,980 --> 00:05:43,310
+As long as there is something to visit and the way we can write that it's just while nodes dot values
+
+84
+00:05:43,320 --> 00:05:49,610
+dot length that's one way node is our priority queue and inside the priority queue we're storing values
+
+85
+00:05:50,030 --> 00:05:53,990
+so we can do dot length that that's fine.
+
+86
+00:05:54,320 --> 00:06:01,940
+While nodes that values start length and the first thing that we need to do is dequeue our node so start
+
+87
+00:06:01,940 --> 00:06:05,010
+looping as long as there's anything in the queue dequeue a vertex.
+
+88
+00:06:05,120 --> 00:06:08,260
+So dequeue should give us the current smallest value in there.
+
+89
+00:06:08,420 --> 00:06:12,860
+So I'm going to make a variable called smallest but rather than initializing it down here over and over
+
+90
+00:06:13,520 --> 00:06:18,740
+and re initializing it I'm going to set it up here I'm going to call it smallest and not set it to a
+
+91
+00:06:18,740 --> 00:06:20,530
+value but define or declare it.
+
+92
+00:06:20,540 --> 00:06:27,530
+I mean rather than re declaring it I'm going to just set smallest equal to nodes dot dequeue.
+
+93
+00:06:27,620 --> 00:06:32,900
+So remember from the priority queue video two videos ago it should give us whatever the current smallest
+
+94
+00:06:32,900 --> 00:06:33,790
+value is in there.
+
+95
+00:06:33,830 --> 00:06:37,970
+Give us the vertex with the lowest priority and actually we're almost there.
+
+96
+00:06:37,970 --> 00:06:43,680
+But if we look at what smallest is right here it's not quite what we want.
+
+97
+00:06:43,840 --> 00:06:50,660
+Factsheet my code smallest is going to be the entire node or this entire object that has the value and
+
+98
+00:06:50,660 --> 00:06:51,790
+the priority.
+
+99
+00:06:52,010 --> 00:06:58,160
+What we want really is just the vowel which is going to give us a or b just so we know which nodes we're
+
+100
+00:06:58,160 --> 00:06:58,650
+looking at.
+
+101
+00:06:58,700 --> 00:07:00,940
+We don't care about the priority right now anyway.
+
+102
+00:07:00,980 --> 00:07:06,110
+So now that we have that out of the way we're looking at we're going to have you know a smallest or
+
+103
+00:07:06,110 --> 00:07:07,240
+B smallest.
+
+104
+00:07:07,360 --> 00:07:13,250
+We need to do is check is that Vertex the same as our ending vertex.
+
+105
+00:07:13,250 --> 00:07:17,600
+If if that's the case we're done so I'm not going to actually fill out all the code but I'll just do
+
+106
+00:07:17,600 --> 00:07:24,110
+a simple check if smallest is equal to what we call R's finish.
+
+107
+00:07:24,830 --> 00:07:32,780
+If that's the case we'll come back to this but I'll just say we are done and we need to build path to
+
+108
+00:07:32,780 --> 00:07:33,360
+return.
+
+109
+00:07:33,470 --> 00:07:38,780
+But if that's not the case what we need to do is loop through each neighbor in the adjacency list for
+
+110
+00:07:38,780 --> 00:07:40,180
+that vertex.
+
+111
+00:07:40,220 --> 00:07:46,670
+So if we're looking at a we need to look at each of A's neighbors which includes B and C.
+
+112
+00:07:47,210 --> 00:07:52,310
+So I'm going to loop over those neighbors and the easiest way to do that smallest is just a variable
+
+113
+00:07:52,310 --> 00:07:53,740
+that looks like a.
+
+114
+00:07:54,110 --> 00:08:01,070
+And we have this thought adjacency list so this does a bit adjacency list of a would give us a whole
+
+115
+00:08:01,070 --> 00:08:05,010
+bunch of it would give us an array containing each edge.
+
+116
+00:08:05,170 --> 00:08:08,780
+So I'm going to put that instead of a of course I'm not going a hard coded.
+
+117
+00:08:08,800 --> 00:08:14,440
+I'm going to put smallest in there and I'm going to use a loop over this and I'll do a four in.
+
+118
+00:08:14,440 --> 00:08:17,680
+So I'll just call for let's call it neighbored.
+
+119
+00:08:17,980 --> 00:08:24,710
+In this adjacency list of smallest Then we could start by I just counted that logging neighbor.
+
+120
+00:08:24,790 --> 00:08:27,380
+Nice and simple like that.
+
+121
+00:08:27,730 --> 00:08:33,110
+And if I rerun my code you see what we're getting here is just a number.
+
+122
+00:08:33,400 --> 00:08:37,920
+And that's the for loop works because what we're doing here is looping over an array.
+
+123
+00:08:38,020 --> 00:08:44,730
+If we actually looked at this adjacency list we did that to this data adjacency list.
+
+124
+00:08:44,800 --> 00:08:48,240
+Hopefully you remember what it looks like one more time we run it.
+
+125
+00:08:48,310 --> 00:08:49,440
+This is what we're looking at.
+
+126
+00:08:49,450 --> 00:08:56,320
+So when we loop over A's neighbors we're just looping over 0 and 1 what we want to do from there is
+
+127
+00:08:56,320 --> 00:09:00,280
+take that number to figure out the actual edge.
+
+128
+00:09:00,310 --> 00:09:06,400
+So I'm going to make another variable called Let's just call it next node we call it neighbor node or
+
+129
+00:09:06,400 --> 00:09:15,330
+something equals this data adjacency list of smallest of neighbor and neighbor is just a number.
+
+130
+00:09:15,340 --> 00:09:22,540
+So now if we consider log next node this will actually give us what we're looking for.
+
+131
+00:09:22,540 --> 00:09:24,350
+This is each neighboring node.
+
+132
+00:09:24,670 --> 00:09:30,580
+So now that we have each neighboring node each time through we need to go and calculate.
+
+133
+00:09:31,060 --> 00:09:41,380
+So a lot to common here that just is basically like find a neighboring node calculate new distance to
+
+134
+00:09:41,930 --> 00:09:43,140
+neighboring node.
+
+135
+00:09:43,480 --> 00:09:47,680
+So let's say that we're looking at d currently as neighboring node.
+
+136
+00:09:47,680 --> 00:09:53,410
+We need to calculate the distance how do we get to D where we had consult previous The shortest path
+
+137
+00:09:53,410 --> 00:09:58,660
+to D is through C and so we look at what C currently has stored.
+
+138
+00:09:58,990 --> 00:10:00,870
+And then we add two.
+
+139
+00:10:00,910 --> 00:10:05,230
+So I know it's kind of difficult to explain without just showing you.
+
+140
+00:10:05,230 --> 00:10:06,700
+So what we would do.
+
+141
+00:10:06,850 --> 00:10:11,150
+It's not guaranteed that this is going to be smaller so I'm going to make a variable called I don't
+
+142
+00:10:11,150 --> 00:10:20,800
+know a candidate candidate and we're going to take our distances of smallest So smallest is whatever
+
+143
+00:10:20,800 --> 00:10:26,380
+the actual node or visiting is and then we're going to add next node outwait
+
+144
+00:10:29,820 --> 00:10:31,010
+let's say we're just starting out.
+
+145
+00:10:31,090 --> 00:10:33,220
+We picked a which is our vertex.
+
+146
+00:10:33,230 --> 00:10:34,490
+It's the only thing to start with.
+
+147
+00:10:34,490 --> 00:10:37,630
+It's a minimum item and we look at its neighbor B.
+
+148
+00:10:37,960 --> 00:10:38,750
+All right.
+
+149
+00:10:38,860 --> 00:10:45,750
+So what we're going to do is take the weight of B from A to B that edge gives us four.
+
+150
+00:10:46,120 --> 00:10:50,580
+So we take four and we add it to whatever we have stored for a which is zero.
+
+151
+00:10:50,830 --> 00:10:56,740
+So that went easy and we put that under B but now let's say we fast forward a bit and we're looking
+
+152
+00:10:56,770 --> 00:11:00,280
+at let's say keep going.
+
+153
+00:11:00,340 --> 00:11:03,290
+When we get to church we get to be here.
+
+154
+00:11:03,520 --> 00:11:03,750
+All right.
+
+155
+00:11:03,760 --> 00:11:04,970
+So we start with B.
+
+156
+00:11:05,020 --> 00:11:06,120
+B is our neighbor.
+
+157
+00:11:06,280 --> 00:11:07,870
+And we look at BT.
+
+158
+00:11:08,050 --> 00:11:12,850
+Well what are we currently have stored for B is for that represents the shortest distance from A to
+
+159
+00:11:12,850 --> 00:11:13,910
+B that we know about.
+
+160
+00:11:14,140 --> 00:11:17,210
+And we add that to the distance from B to E which is three.
+
+161
+00:11:17,290 --> 00:11:18,830
+And that gives us 7.
+
+162
+00:11:18,910 --> 00:11:20,010
+So that's what we're going to do.
+
+163
+00:11:20,110 --> 00:11:26,370
+Candidate equals the current distance for our node plus the distance to the neighbor.
+
+164
+00:11:26,560 --> 00:11:33,730
+So this distance is smallest would be like the four and then the neighbor value is this edge we're adding
+
+165
+00:11:33,730 --> 00:11:34,600
+in.
+
+166
+00:11:34,600 --> 00:11:39,730
+So this is going to be a hopefully smaller but definitely not always that this is now what we need to
+
+167
+00:11:39,730 --> 00:11:40,610
+compare.
+
+168
+00:11:40,720 --> 00:11:44,150
+Is this smaller than what we currently have stored for the neighbor.
+
+169
+00:11:44,440 --> 00:11:45,510
+So then that's next.
+
+170
+00:11:45,580 --> 00:11:52,360
+We're going to look at if the candidate are new some that we added together is less than what we have
+
+171
+00:11:52,360 --> 00:12:02,070
+for distances of not smallest but of next node dot note which is a bit of a mouthful there.
+
+172
+00:12:02,310 --> 00:12:05,880
+But what this is reflecting is the fact that next note looks like this.
+
+173
+00:12:05,940 --> 00:12:12,510
+It's an object and we need to access next node node which is something like f.
+
+174
+00:12:12,630 --> 00:12:15,420
+So I walk through this.
+
+175
+00:12:15,430 --> 00:12:15,990
+It's a lot.
+
+176
+00:12:16,220 --> 00:12:21,540
+When you think about it this way but if we go back to here what we're doing is basically checking if
+
+177
+00:12:21,540 --> 00:12:24,390
+I go forward to D as an example.
+
+178
+00:12:24,390 --> 00:12:26,530
+All right we're looking from D.
+
+179
+00:12:26,580 --> 00:12:27,240
+T.
+
+180
+00:12:27,270 --> 00:12:27,930
+Right.
+
+181
+00:12:28,290 --> 00:12:33,600
+So we start by taking a look at what are we currently have stored as the shortest way to get to D 4
+
+182
+00:12:34,440 --> 00:12:37,220
+and then we're looking from D D E that's 3.
+
+183
+00:12:37,230 --> 00:12:39,420
+So that gives us 7 total.
+
+184
+00:12:39,570 --> 00:12:45,180
+But what we want to compare that to is not 4 because of course it's going to be more than whatever is
+
+185
+00:12:45,180 --> 00:12:48,390
+at D because we're adding D plus something else.
+
+186
+00:12:48,390 --> 00:12:51,640
+What we want to compare it to is what's currently at the neighbor.
+
+187
+00:12:51,750 --> 00:12:54,210
+What's currently at e which is 7.
+
+188
+00:12:54,210 --> 00:12:56,660
+In this case and it's the same so we ignore it.
+
+189
+00:12:56,900 --> 00:13:02,220
+But that's what we're trying to do we take wherever we are d we add the current shortest value from
+
+190
+00:13:02,220 --> 00:13:08,630
+a to d plus this new bit and we compare that to the current shortest for E.
+
+191
+00:13:08,880 --> 00:13:13,780
+So back here that's what this is we're recalculating a new number this new sum.
+
+192
+00:13:13,950 --> 00:13:14,950
+This is to d.
+
+193
+00:13:15,020 --> 00:13:16,440
+This is plus E.
+
+194
+00:13:16,860 --> 00:13:21,290
+Then we compare that to what we currently stored for the.
+
+195
+00:13:21,340 --> 00:13:21,850
+All right.
+
+196
+00:13:21,850 --> 00:13:27,750
+So if that's the case we're now going to update what we stored for.
+
+197
+00:13:27,850 --> 00:13:36,820
+So next node distance is next node node and rather than doing next no dot node why don't we extract
+
+198
+00:13:36,820 --> 00:13:38,190
+this into a separate variable.
+
+199
+00:13:38,290 --> 00:13:42,660
+Let's just call it next neighbor.
+
+200
+00:13:43,990 --> 00:13:45,080
+Just like that.
+
+201
+00:13:45,160 --> 00:13:50,350
+And now here I can say next neighbor and same thing down here.
+
+202
+00:13:50,350 --> 00:13:57,400
+It's a small difference but I don't like having to do this but this run distances next neighbor equals
+
+203
+00:13:57,460 --> 00:13:59,170
+our candidate.
+
+204
+00:13:59,170 --> 00:14:07,080
+So this is just the equivalent of updating one of these lines distances of E for example equals seven.
+
+205
+00:14:07,090 --> 00:14:07,940
+It already is seven.
+
+206
+00:14:07,930 --> 00:14:11,750
+But imagine if something else we update this value.
+
+207
+00:14:11,840 --> 00:14:16,980
+All right if you're still with me hopefully this is the only way this really works and makes sense is
+
+208
+00:14:16,990 --> 00:14:21,810
+if you are able to walk through the diagrams in a couple of couple of years ago.
+
+209
+00:14:21,850 --> 00:14:27,300
+All right then what we do is we update previous previous is our data structure.
+
+210
+00:14:27,310 --> 00:14:35,660
+It's this thing here and we're going to say all right the way we got to previous of next neighbor was
+
+211
+00:14:35,660 --> 00:14:42,360
+through the smallest smallest is going to be D and decs neighbor might be.
+
+212
+00:14:42,410 --> 00:14:44,750
+This is just updating how we got there.
+
+213
+00:14:44,840 --> 00:14:52,160
+So to add a couple of comments this is just updating new smallest distance to Naver.
+
+214
+00:14:52,490 --> 00:15:05,210
+This is updating previous basically how we got to next neighbor to neighbor and then the last thing
+
+215
+00:15:05,210 --> 00:15:14,160
+we need to do is in queue in priority queue with new priority.
+
+216
+00:15:14,990 --> 00:15:15,370
+All right.
+
+217
+00:15:15,390 --> 00:15:22,720
+And that's easy it's just nodes that's the name of our priority queue and queue next neighbor comma
+
+218
+00:15:24,150 --> 00:15:26,450
+the value which candidate is what we call it.
+
+219
+00:15:26,450 --> 00:15:28,910
+This is the new sum.
+
+220
+00:15:29,210 --> 00:15:29,780
+All right.
+
+221
+00:15:29,900 --> 00:15:34,200
+So then that goes through and that's all we need to do.
+
+222
+00:15:34,550 --> 00:15:37,030
+As far as the bulk of the logic.
+
+223
+00:15:37,150 --> 00:15:39,590
+All right so just so we can see if it's working.
+
+224
+00:15:39,710 --> 00:15:45,200
+We're not returning anything but let's cancel the log distances at the end and let's also consulate
+
+225
+00:15:45,200 --> 00:15:54,250
+Lague previous that and let's see what happens next neighbor is not defined.
+
+226
+00:15:54,250 --> 00:15:56,430
+Did I miss two B's.
+
+227
+00:15:56,500 --> 00:15:58,220
+All right one more time.
+
+228
+00:16:00,360 --> 00:16:01,980
+That I knew something was wrong.
+
+229
+00:16:02,220 --> 00:16:03,490
+Oh my gosh.
+
+230
+00:16:03,510 --> 00:16:07,590
+All right I updated every one of these to be next neighbor with one B.
+
+231
+00:16:07,920 --> 00:16:08,210
+OK.
+
+232
+00:16:08,250 --> 00:16:14,630
+So you can see that what we end up with at the end is this set of distances that we've kept track of.
+
+233
+00:16:14,820 --> 00:16:19,800
+For example the shortest path to get to e takes 6 units.
+
+234
+00:16:20,100 --> 00:16:23,140
+And if we construct it working backwards from E..
+
+235
+00:16:23,310 --> 00:16:29,830
+We go to F from f we go to D and D we go to see from C we go to AA.
+
+236
+00:16:30,120 --> 00:16:36,090
+So we just want to spit out at the very end what I want this to return is basically an array that looks
+
+237
+00:16:36,090 --> 00:16:43,820
+like a comma and then from a we went to see from C to D from DB We went to F..
+
+238
+00:16:43,950 --> 00:16:45,920
+And then finally from f we went to e.
+
+239
+00:16:46,230 --> 00:16:49,170
+So we build it backwards because that's all we have.
+
+240
+00:16:49,170 --> 00:16:49,950
+We have E..
+
+241
+00:16:50,060 --> 00:16:54,950
+So we get to F F we go to D D C C do we go to a.
+
+242
+00:16:55,140 --> 00:16:58,420
+So I'm just going to add them all to an array and just reverse it at the end.
+
+243
+00:16:58,420 --> 00:17:00,190
+It's just a simple way of doing it.
+
+244
+00:17:00,390 --> 00:17:06,810
+But that's the return value I want so to make that array that path at the very end I'm going to come
+
+245
+00:17:06,810 --> 00:17:12,610
+up here and just make a variable called Path and set it to be an empty array.
+
+246
+00:17:12,630 --> 00:17:15,140
+So I'll just say to return an end.
+
+247
+00:17:15,730 --> 00:17:23,040
+OK then down here when we actually find what we're looking for when we're done to build up that path
+
+248
+00:17:23,040 --> 00:17:27,630
+to return at the end I'm going to start we need to use previous.
+
+249
+00:17:27,640 --> 00:17:31,380
+Right that's what this structure is and we basically need to loop.
+
+250
+00:17:31,410 --> 00:17:36,940
+So we need to keep looping from E to look at F and then from after like a D and D.
+
+251
+00:17:36,960 --> 00:17:38,070
+And where do we stop.
+
+252
+00:17:38,070 --> 00:17:43,050
+Well eventually we get to C C to A and then we look at a and it's no.
+
+253
+00:17:43,470 --> 00:17:49,770
+So we can do a while loop and this is sort of like traversing any sort of list even though it's technically
+
+254
+00:17:49,770 --> 00:17:51,870
+an object but it's just a linear path.
+
+255
+00:17:52,140 --> 00:17:58,540
+So I'm going to do while previous of smallest and I'm going to update what smallest is as we go.
+
+256
+00:17:58,560 --> 00:18:05,340
+So I'm going to pass up push smallest and then I'm going to say smallest is now equal to previous of
+
+257
+00:18:05,760 --> 00:18:07,490
+smallest.
+
+258
+00:18:07,680 --> 00:18:12,000
+So at the beginning smallest will be is at the end of our code running.
+
+259
+00:18:12,000 --> 00:18:13,310
+But at the beginning of this bit.
+
+260
+00:18:13,560 --> 00:18:15,970
+So previous smallest e gives us F..
+
+261
+00:18:16,110 --> 00:18:17,890
+So we push it in.
+
+262
+00:18:18,060 --> 00:18:21,800
+And now we say smallest is equal to f and then it starts over.
+
+263
+00:18:21,960 --> 00:18:24,570
+So is there a previous smallest f.
+
+264
+00:18:24,630 --> 00:18:25,640
+Yes there is.
+
+265
+00:18:25,650 --> 00:18:31,720
+So we push f right here and then we set smallest to now b d and we keep going until we get to a.
+
+266
+00:18:31,860 --> 00:18:33,980
+At which point there is no previous.
+
+267
+00:18:33,990 --> 00:18:34,520
+Of.
+
+268
+00:18:34,860 --> 00:18:37,440
+Because it's no and we're done.
+
+269
+00:18:37,560 --> 00:18:42,570
+Now what we need to do is add a break here so that we don't keep looping.
+
+270
+00:18:42,570 --> 00:18:49,560
+I want to stop this loop because even though we found what we're looking for this loop keeps going while
+
+271
+00:18:49,560 --> 00:18:51,210
+there are nodes in the priority queue.
+
+272
+00:18:51,210 --> 00:18:53,150
+And of course there are more nodes in there.
+
+273
+00:18:53,250 --> 00:18:58,530
+Well it's not of course it's it's possible that the last thing we look at but it's likely that there's
+
+274
+00:18:58,530 --> 00:18:59,150
+stuff in there.
+
+275
+00:18:59,150 --> 00:19:01,690
+So we're going to break out.
+
+276
+00:19:01,800 --> 00:19:03,140
+So that will stop everything.
+
+277
+00:19:03,390 --> 00:19:08,450
+And then at the very very end if we come down here boy I hate doing this.
+
+278
+00:19:08,700 --> 00:19:12,180
+Where do we need to go see our loop stops right here.
+
+279
+00:19:12,180 --> 00:19:12,380
+All right.
+
+280
+00:19:12,390 --> 00:19:19,680
+So after our loop we're going to do just let's do a constant log of path and see what we have.
+
+281
+00:19:19,680 --> 00:19:20,440
+And I run it.
+
+282
+00:19:20,490 --> 00:19:22,330
+All right so we're almost there.
+
+283
+00:19:22,350 --> 00:19:25,500
+The only thing is that we need to also reverse it.
+
+284
+00:19:26,310 --> 00:19:27,930
+So to reverse it.
+
+285
+00:19:28,020 --> 00:19:30,740
+And we want to add in a because a is not in here.
+
+286
+00:19:30,990 --> 00:19:35,450
+So to get a in there which is our beginning we want a c d f e.
+
+287
+00:19:35,670 --> 00:19:37,090
+It's pretty simple to fix.
+
+288
+00:19:37,110 --> 00:19:40,230
+We can just do return path dot.
+
+289
+00:19:40,370 --> 00:19:46,880
+I mean it concat a in there which is smallest dot reverse.
+
+290
+00:19:47,550 --> 00:19:56,360
+And if I run my code now there we go a C D F to E and if we tried changing it instead of a to e which
+
+291
+00:19:56,360 --> 00:19:59,370
+is the shortest path you get from A to C.
+
+292
+00:19:59,630 --> 00:20:05,970
+Well I went to easy go for me to see how about to F A C D F about 2.
+
+293
+00:20:06,000 --> 00:20:07,990
+I think they're all pretty simple at this point.
+
+294
+00:20:07,990 --> 00:20:11,080
+They are all along the same lines a C and D.
+
+295
+00:20:11,490 --> 00:20:13,030
+And we are done now.
+
+296
+00:20:13,070 --> 00:20:21,030
+This is a lot of stuff and the code is quite intimidating if you are unable to go through and process
+
+297
+00:20:21,030 --> 00:20:25,650
+the slides and kind of walk through step by step if you're just trying to learn it by looking at this.
+
+298
+00:20:25,770 --> 00:20:27,250
+It's really difficult.
+
+299
+00:20:27,660 --> 00:20:33,000
+But I think that it makes some sense as you go through and step through and understand each time through
+
+300
+00:20:33,000 --> 00:20:35,790
+what we're actually doing if you write it down with pen and paper.
+
+301
+00:20:35,790 --> 00:20:41,970
+If you look at what each of these values actually is when we pick the smallest node smallest priority
+
+302
+00:20:42,030 --> 00:20:46,260
+we add the new total together and we compare it to what we had stored for the neighbor.
+
+303
+00:20:46,320 --> 00:20:49,080
+And we update potentially if it's smaller.
+
+304
+00:20:49,080 --> 00:20:49,870
+There's a lot going on.
+
+305
+00:20:49,890 --> 00:20:54,320
+But if you're able to do that with pen and paper then this should be easy enough.
+
+306
+00:20:54,330 --> 00:20:55,340
+Well not easy enough.
+
+307
+00:20:55,340 --> 00:20:57,170
+It should be doable.
+
+308
+00:20:57,180 --> 00:21:02,730
+Either way this is Dijkstra's and this is our unoptimized version where we're using a priority queue
+
+309
+00:21:03,000 --> 00:21:03,890
+which is not well.
+
+310
+00:21:03,930 --> 00:21:07,590
+This priority queues not ideal because it's not implemented with a binary heap.
+
+311
+00:21:07,590 --> 00:21:11,460
+It's a bit slow because we're sorting the entire array every single time.
+
+312
+00:21:11,670 --> 00:21:13,920
+If we use a binary heap it's faster.
+
+313
+00:21:13,920 --> 00:21:15,290
+Remember from that section.
+
+314
+00:21:15,300 --> 00:21:18,780
+So next up we will fix this up just to make it a little bit quicker.
+

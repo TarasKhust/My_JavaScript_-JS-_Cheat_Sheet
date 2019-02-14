@@ -1,0 +1,448 @@
+1
+00:00:00,280 --> 00:00:02,500
+OK so let's implement pop.
+
+2
+00:00:02,500 --> 00:00:09,810
+So I'm going to head over and just write the skeleton I've got pop no arguments and the first thing
+
+3
+00:00:09,810 --> 00:00:14,720
+we want to do is check if there's anything in the list or rather we want to check if it's empty.
+
+4
+00:00:15,000 --> 00:00:20,880
+So instead if it's the last time I did if this top length is zero this time I'll do if there's no head
+
+5
+00:00:20,980 --> 00:00:24,650
+of a head this list return undefined.
+
+6
+00:00:24,710 --> 00:00:28,100
+So that's just like the singly first pop.
+
+7
+00:00:28,230 --> 00:00:32,120
+Next one I'm going to do is store the current tail in a variable.
+
+8
+00:00:32,370 --> 00:00:35,290
+So I'll call this pops node.
+
+9
+00:00:35,310 --> 00:00:37,470
+This is the thing that we're popping off.
+
+10
+00:00:37,500 --> 00:00:39,620
+It's going to be this duct tape.
+
+11
+00:00:40,350 --> 00:00:45,680
+Then we have our special case that we talked about if the length is one make the head and tail.
+
+12
+00:00:45,720 --> 00:00:46,300
+No.
+
+13
+00:00:46,530 --> 00:00:53,410
+So if this length equals one what are we going to do.
+
+14
+00:00:53,410 --> 00:01:00,800
+We want to set this head equals no this tail to be no perfect.
+
+15
+00:01:01,240 --> 00:01:04,700
+Otherwise we need to update the tail.
+
+16
+00:01:04,930 --> 00:01:12,700
+And what that entails what that means if this is our current list let's say we do have one to find three
+
+17
+00:01:12,910 --> 00:01:14,910
+and seven and we're popping seven off.
+
+18
+00:01:15,010 --> 00:01:16,740
+Well there's two connections there.
+
+19
+00:01:16,750 --> 00:01:21,040
+We have this connection and you have to pardon this hideous diagram.
+
+20
+00:01:21,550 --> 00:01:23,080
+Oh my gosh this is terrible.
+
+21
+00:01:23,080 --> 00:01:23,880
+There we go.
+
+22
+00:01:24,010 --> 00:01:25,360
+We have this connection.
+
+23
+00:01:25,720 --> 00:01:26,010
+OK.
+
+24
+00:01:26,020 --> 00:01:32,840
+So if this is currently the tail that's what the letter means we have this in a variable.
+
+25
+00:01:32,920 --> 00:01:35,670
+We're going to say this is the new tail.
+
+26
+00:01:36,040 --> 00:01:43,000
+So that's easy to move that reference there all that all although we have to write is this tail equals
+
+27
+00:01:43,480 --> 00:01:46,170
+Pop's node dot previous.
+
+28
+00:01:46,360 --> 00:01:46,900
+Right.
+
+29
+00:01:46,930 --> 00:01:50,140
+That's just going to say take this thing up previous.
+
+30
+00:01:50,140 --> 00:01:51,380
+That's the new Tell.
+
+31
+00:01:51,940 --> 00:01:52,870
+All right.
+
+32
+00:01:52,870 --> 00:01:56,630
+Next we're going to set the new tails next to be no.
+
+33
+00:01:56,890 --> 00:02:00,050
+So that's going to be severing this bond here.
+
+34
+00:02:00,520 --> 00:02:05,200
+So that's just this tale next equals no.
+
+35
+00:02:05,830 --> 00:02:09,460
+Now there's one thing that we have to do remember is we remove this linkage.
+
+36
+00:02:09,460 --> 00:02:10,900
+We update the tail.
+
+37
+00:02:11,080 --> 00:02:13,360
+We need to remove this linkage too.
+
+38
+00:02:13,660 --> 00:02:14,660
+And that just means.
+
+39
+00:02:14,680 --> 00:02:17,250
+So actually I'm not going to do that right away just to show you.
+
+40
+00:02:17,260 --> 00:02:18,420
+So I'll come back to that.
+
+41
+00:02:18,430 --> 00:02:19,920
+This is a better way of teaching it.
+
+42
+00:02:20,020 --> 00:02:21,000
+I hope so.
+
+43
+00:02:21,000 --> 00:02:22,190
+We need to Lastly Inc.
+
+44
+00:02:22,260 --> 00:02:27,820
+Or Dickerman the length and return the value so this tellt length minus minus or minus equals one and
+
+45
+00:02:27,820 --> 00:02:31,520
+return the value so popped node.
+
+46
+00:02:31,630 --> 00:02:32,290
+OK.
+
+47
+00:02:32,320 --> 00:02:34,910
+So let's run the code.
+
+48
+00:02:35,100 --> 00:02:36,360
+Here is our list.
+
+49
+00:02:36,400 --> 00:02:44,020
+What we don't have one yet let's do new W-why first let's push one stop push to.
+
+50
+00:02:44,520 --> 00:02:44,950
+OK.
+
+51
+00:02:45,100 --> 00:02:52,900
+So if I do list up pop right now it gives me back the node and you'll see that it's next is no but it's
+
+52
+00:02:52,900 --> 00:02:58,240
+previous is still there it's still pointing to the old tail or to the new tail.
+
+53
+00:02:58,240 --> 00:03:02,900
+Excuse me this used to be the tail and it has that linkage still.
+
+54
+00:03:03,010 --> 00:03:06,570
+So the list itself doesn't it's not connected.
+
+55
+00:03:06,570 --> 00:03:12,430
+If you look at the list the tail has no next and no previous Because it's only one item.
+
+56
+00:03:12,550 --> 00:03:17,930
+So there is no connection to this old node going one way going next.
+
+57
+00:03:17,950 --> 00:03:24,270
+But if we have the old node if I saved it to a variable let me actually do a couple more pushes.
+
+58
+00:03:24,270 --> 00:03:26,580
+Let's just add on.
+
+59
+00:03:27,070 --> 00:03:31,010
+I don't know 50 and 100.
+
+60
+00:03:31,330 --> 00:03:36,250
+If I look at the list it's three items long and the last item right now is 100.
+
+61
+00:03:36,250 --> 00:03:47,460
+If I do var old tail equals list of pop and I look at the old tail I can do that previous.
+
+62
+00:03:49,000 --> 00:03:51,320
+And then previous again.
+
+63
+00:03:51,720 --> 00:03:54,020
+And I can walk through the entire list.
+
+64
+00:03:54,100 --> 00:03:55,810
+So I didn't just return.
+
+65
+00:03:55,840 --> 00:03:59,600
+Well I did just return the node node has lingering connections.
+
+66
+00:03:59,740 --> 00:04:03,990
+So we want to sever those ties remove that entirely and to do that.
+
+67
+00:04:04,030 --> 00:04:05,120
+It's not that bad.
+
+68
+00:04:05,170 --> 00:04:10,340
+We're just going to take pops node dot previous equals no.
+
+69
+00:04:10,720 --> 00:04:18,520
+So to summarize the steps we create a new node we set the new tail to be the one right before the new
+
+70
+00:04:18,520 --> 00:04:21,060
+node that's much easier than the singly link for us.
+
+71
+00:04:21,070 --> 00:04:23,500
+We don't have to loop through that or navigate the entire list.
+
+72
+00:04:23,500 --> 00:04:24,420
+We don't traverse it.
+
+73
+00:04:24,550 --> 00:04:27,250
+We just start at the end and do our previous.
+
+74
+00:04:27,250 --> 00:04:30,440
+Then we just set this up tailboard next.
+
+75
+00:04:30,460 --> 00:04:32,630
+This is the new tail next.
+
+76
+00:04:32,650 --> 00:04:34,100
+Now nothing is empty.
+
+77
+00:04:34,450 --> 00:04:40,600
+So we chop that one line and then we take the old tail previous and set it to be no as well.
+
+78
+00:04:40,600 --> 00:04:45,970
+So we chop the second connection then we subtract one from length and return the pop node.
+
+79
+00:04:45,970 --> 00:04:48,170
+So let's just verify it works.
+
+80
+00:04:49,150 --> 00:04:50,550
+So let's verify it works.
+
+81
+00:04:50,560 --> 00:04:54,610
+List equals new lengths list double the length list that is.
+
+82
+00:04:54,680 --> 00:04:59,560
+Let's push let's just make sure if I do a pop right now by the way it shouldn't work.
+
+83
+00:04:59,660 --> 00:05:00,160
+Whoops.
+
+84
+00:05:00,170 --> 00:05:05,080
+Let's see if we have one small issue which is this shouldn't be giving me an error and it's because
+
+85
+00:05:05,640 --> 00:05:06,690
+it can't read previous.
+
+86
+00:05:06,700 --> 00:05:07,180
+No.
+
+87
+00:05:07,180 --> 00:05:10,590
+So it's getting to this line and it shouldn't be because it's empty.
+
+88
+00:05:10,600 --> 00:05:16,290
+This is why we want to check this dumbhead not head because there is nothing called ahead.
+
+89
+00:05:16,330 --> 00:05:21,510
+So if we do if not head that's always going to be true or false.
+
+90
+00:05:21,520 --> 00:05:24,340
+Now this is a situation let's rerun it.
+
+91
+00:05:24,340 --> 00:05:29,350
+Just double check if I do list equals new double length list.
+
+92
+00:05:29,580 --> 00:05:30,910
+Let's stop pop.
+
+93
+00:05:31,120 --> 00:05:31,410
+OK.
+
+94
+00:05:31,450 --> 00:05:32,830
+It doesn't let us pop anymore.
+
+95
+00:05:32,920 --> 00:05:41,710
+Now if we push one and then two and then three if I do a list of pop they give me three.
+
+96
+00:05:41,800 --> 00:05:42,800
+And the next is no.
+
+97
+00:05:42,850 --> 00:05:43,980
+And the previous says no.
+
+98
+00:05:43,990 --> 00:05:45,390
+It's totally isolated.
+
+99
+00:05:45,520 --> 00:05:52,100
+And if we look at the list and we look at the tail the tail has a previous but it has no next and we're
+
+100
+00:05:52,310 --> 00:05:55,460
+all good let's just make sure Fred you pop again.
+
+101
+00:05:55,610 --> 00:05:56,810
+We look at the list.
+
+102
+00:05:56,900 --> 00:06:00,330
+It's one item long list of pop.
+
+103
+00:06:00,680 --> 00:06:01,580
+One more time.
+
+104
+00:06:01,580 --> 00:06:02,750
+Give us a last item.
+
+105
+00:06:02,800 --> 00:06:04,640
+If we look at the list it's now empty.
+
+106
+00:06:04,640 --> 00:06:06,240
+Everything is working OK.
+
+107
+00:06:06,350 --> 00:06:08,240
+So that is pop again.
+
+108
+00:06:08,330 --> 00:06:11,560
+It's easier if you compare it to the code from the singly linked list.
+
+109
+00:06:11,570 --> 00:06:15,470
+We don't have to navigate the entire thing we don't have to have a loop we just start at the end and
+
+110
+00:06:15,470 --> 00:06:16,550
+work backwards.
+
+111
+00:06:16,550 --> 00:06:21,080
+The only annoying thing as with everything we do in the length list we have two linkages to account
+
+112
+00:06:21,080 --> 00:06:23,640
+for it but otherwise it's much faster and much easier.
+

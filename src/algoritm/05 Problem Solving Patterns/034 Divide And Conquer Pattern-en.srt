@@ -1,0 +1,512 @@
+1
+00:00:00,180 --> 00:00:01,190
+Hey welcome back.
+
+2
+00:00:01,230 --> 00:00:04,100
+The next pattern we'll talk about is called divide and conquer.
+
+3
+00:00:04,350 --> 00:00:06,550
+And this is actually a real thing.
+
+4
+00:00:06,600 --> 00:00:08,060
+It's a documented name.
+
+5
+00:00:08,100 --> 00:00:10,530
+It didn't just make it up like some of the other ones.
+
+6
+00:00:10,620 --> 00:00:15,060
+So you can google it you can read about it in textbooks and the way I'm going to approach this video
+
+7
+00:00:15,440 --> 00:00:19,380
+is a little different than how I did for the previous patterns in this section.
+
+8
+00:00:19,380 --> 00:00:26,040
+I'm not really going to type of code because we do a lot of divide and conquer algorithms in this course.
+
+9
+00:00:26,100 --> 00:00:28,340
+Most of them are a little bit more complex.
+
+10
+00:00:28,380 --> 00:00:34,290
+So when we get to sorting algorithms we talk about many sorts I think seven different sorting algorithms
+
+11
+00:00:34,470 --> 00:00:35,900
+maybe six I don't remember.
+
+12
+00:00:36,090 --> 00:00:42,630
+And two of them at least quicksort and merge sort that we discuss are examples of divide and conquer
+
+13
+00:00:42,660 --> 00:00:46,770
+algorithms or we'll get to earlier on before sorting.
+
+14
+00:00:46,770 --> 00:00:52,030
+We get to searching algorithms we talk about binary search where that is a divide and conquer algorithm
+
+15
+00:00:52,030 --> 00:00:53,630
+when we get to binary search trees.
+
+16
+00:00:53,630 --> 00:00:55,350
+We talk about dividing conquering.
+
+17
+00:00:55,350 --> 00:00:56,700
+So it will come up more.
+
+18
+00:00:56,820 --> 00:00:58,120
+It's a little more advanced.
+
+19
+00:00:58,140 --> 00:01:01,230
+I don't want to try and take the entire binary search.
+
+20
+00:01:01,230 --> 00:01:02,630
+There's like three videos I have on it.
+
+21
+00:01:02,670 --> 00:01:06,990
+I don't want to try to condense that into one five minute video here so I just want to introduce the
+
+22
+00:01:06,990 --> 00:01:08,920
+idea of dividing and conquering.
+
+23
+00:01:09,090 --> 00:01:14,070
+So what we do is we take a larger set of data usually an array of string.
+
+24
+00:01:14,070 --> 00:01:17,430
+It could be a linked list or a tree even when we talk about those.
+
+25
+00:01:17,430 --> 00:01:22,320
+But let's just say in array for now and rather than starting from the left and moving all the way to
+
+26
+00:01:22,320 --> 00:01:22,680
+the right.
+
+27
+00:01:22,680 --> 00:01:24,830
+Let's say we're searching for value.
+
+28
+00:01:24,870 --> 00:01:31,860
+We start by dividing it into smaller pieces and then doing something to each smaller piece to determine
+
+29
+00:01:31,950 --> 00:01:33,440
+where to go next.
+
+30
+00:01:33,450 --> 00:01:36,890
+So we divide up a larger chunk of data into smaller chunks.
+
+31
+00:01:37,080 --> 00:01:42,260
+And this depending on the problem can be a significant helper but not always the classic example of
+
+32
+00:01:42,260 --> 00:01:43,780
+the one will be starting with.
+
+33
+00:01:43,890 --> 00:01:50,070
+Once we get to searching algorithms which is pretty soon it's called binary search or just search is
+
+34
+00:01:50,070 --> 00:01:51,080
+what I'm calling the function.
+
+35
+00:01:51,090 --> 00:01:52,900
+But technically it's called binary search.
+
+36
+00:01:53,280 --> 00:01:57,490
+So it accepts an array of sorted numbers it has to be sorted.
+
+37
+00:01:57,510 --> 00:01:59,050
+So one two three four five six.
+
+38
+00:01:59,070 --> 00:02:05,040
+So what we have here write a function called search that accepts a value and it returns the index where
+
+39
+00:02:05,040 --> 00:02:06,560
+that value is found.
+
+40
+00:02:06,630 --> 00:02:11,910
+So if we pass in 4 it should return 3 because 0 1 2 3.
+
+41
+00:02:12,060 --> 00:02:13,590
+That's where 4 was found.
+
+42
+00:02:13,590 --> 00:02:16,730
+If we pass in six it should return index of five.
+
+43
+00:02:16,950 --> 00:02:22,130
+If we pass in 11 it returns negative 1 because 11 is not found in here.
+
+44
+00:02:22,140 --> 00:02:27,150
+So the naive the easier approach is to start from the left and just look let's say we're looking for
+
+45
+00:02:27,150 --> 00:02:27,810
+11.
+
+46
+00:02:27,810 --> 00:02:30,140
+We start on the left and we check is this 11.
+
+47
+00:02:30,180 --> 00:02:30,610
+Nope.
+
+48
+00:02:30,690 --> 00:02:32,510
+OK Loopt the next thing is this 11.
+
+49
+00:02:32,520 --> 00:02:33,470
+No is this 11.
+
+50
+00:02:33,600 --> 00:02:35,460
+And we'll just go all the way through the array.
+
+51
+00:02:35,520 --> 00:02:36,480
+That would be 0 0 of.
+
+52
+00:02:36,490 --> 00:02:42,840
+And we go through the entire array one time and we either find it or we don't remember that it's sorted.
+
+53
+00:02:43,020 --> 00:02:45,140
+So that solution looks look something like this.
+
+54
+00:02:45,150 --> 00:02:46,270
+We have a single loop.
+
+55
+00:02:46,270 --> 00:02:47,380
+It's time complexities.
+
+56
+00:02:47,520 --> 00:02:49,640
+And this is called linear search.
+
+57
+00:02:49,740 --> 00:02:56,820
+We actually have a quick video on this later on binary search actually involves something a bit different.
+
+58
+00:02:56,820 --> 00:02:59,020
+It's a divide and conquer algorithm.
+
+59
+00:02:59,130 --> 00:03:04,980
+So if we hop over here and we take a look at a sorted array and we mix up some of the numbers it's not
+
+60
+00:03:04,980 --> 00:03:08,320
+just let's see.
+
+61
+00:03:08,360 --> 00:03:14,020
+All right let's say this is my array and I want to know if the number 15 is in there.
+
+62
+00:03:14,150 --> 00:03:17,570
+What we could do is start here with Lanier search.
+
+63
+00:03:17,630 --> 00:03:19,020
+Are you 15 or are you 15.
+
+64
+00:03:19,040 --> 00:03:19,430
+No.
+
+65
+00:03:19,580 --> 00:03:20,020
+No.
+
+66
+00:03:20,090 --> 00:03:27,530
+And loop all the way until we find 15 here or we can use binary search where we divide the array up.
+
+67
+00:03:27,560 --> 00:03:30,800
+So we just pick a middle point because it's sorted.
+
+68
+00:03:30,800 --> 00:03:36,680
+So let's say this is our middle roughly and we check is the value we're looking for greater than 8 or
+
+69
+00:03:36,680 --> 00:03:37,690
+less than 8.
+
+70
+00:03:37,970 --> 00:03:39,260
+And because it's sorted.
+
+71
+00:03:39,260 --> 00:03:42,370
+This will work and the value we want is greater than 8.
+
+72
+00:03:42,380 --> 00:03:43,700
+We're looking for 15.
+
+73
+00:03:43,850 --> 00:03:46,170
+So we can ignore all of this.
+
+74
+00:03:46,370 --> 00:03:51,980
+Just don't even look at it because we know it's somewhere up here or it's not in the array but it's
+
+75
+00:03:51,980 --> 00:03:54,160
+definitely not below 8.
+
+76
+00:03:54,170 --> 00:03:55,720
+So then we look at this summary.
+
+77
+00:03:55,790 --> 00:03:57,260
+We've divided it up.
+
+78
+00:03:57,260 --> 00:03:58,370
+Now we got to conquer it.
+
+79
+00:03:58,460 --> 00:04:04,210
+So we pick a middle element and this time if we pick 15 as our middle we'll that's nice and easy.
+
+80
+00:04:04,280 --> 00:04:06,220
+Imagine we have a much larger array.
+
+81
+00:04:06,230 --> 00:04:09,000
+This is still very small in the grand scheme of things.
+
+82
+00:04:09,020 --> 00:04:11,190
+Let's say we had a million digits in there sorted.
+
+83
+00:04:11,330 --> 00:04:17,180
+If we were looking for a value that was towards the end for example and we started all the way from
+
+84
+00:04:17,180 --> 00:04:22,310
+here and looped all the way through there would be a lot of iterations although if we knew that the
+
+85
+00:04:22,310 --> 00:04:27,110
+value we were looking for was large and might be better to start from the right and moved to the left.
+
+86
+00:04:27,170 --> 00:04:33,170
+But either way it still is much slower than binary search where we take a middle value like this.
+
+87
+00:04:33,170 --> 00:04:36,420
+Let's say we're looking for our nine hundred and fifty.
+
+88
+00:04:36,470 --> 00:04:41,690
+We'd start here and just roughly say that middle actually don't think it's that the middle is closer
+
+89
+00:04:41,690 --> 00:04:46,070
+to here anyway so let's just say this is the middle is 950 greater than this.
+
+90
+00:04:46,190 --> 00:04:46,660
+Yes.
+
+91
+00:04:46,670 --> 00:04:48,540
+So ignore everything here.
+
+92
+00:04:48,890 --> 00:04:52,240
+Now here's our new division that we're looking at.
+
+93
+00:04:52,340 --> 00:04:58,400
+Let's pick something in the middle let's say it's like right here and we care about is 950 greater or
+
+94
+00:04:58,400 --> 00:05:02,060
+less than or equal to 9:13 it's greater.
+
+95
+00:05:02,070 --> 00:05:04,310
+So now we only look at this portion.
+
+96
+00:05:04,400 --> 00:05:07,150
+And now we pick the middle again let's say 9 16.
+
+97
+00:05:07,370 --> 00:05:09,460
+Well it's greater than 16.
+
+98
+00:05:09,590 --> 00:05:10,770
+So we look at this.
+
+99
+00:05:10,820 --> 00:05:11,600
+Now we pick the middle.
+
+100
+00:05:11,610 --> 00:05:15,750
+Well there's only two elements it will pick 917 it's greater.
+
+101
+00:05:15,770 --> 00:05:17,020
+So then we look at this.
+
+102
+00:05:17,120 --> 00:05:18,200
+That's not it.
+
+103
+00:05:18,200 --> 00:05:24,980
+So we know 950 is not in here and that only took four steps versus potentially starting at the beginning
+
+104
+00:05:25,380 --> 00:05:25,870
+looping.
+
+105
+00:05:25,880 --> 00:05:31,510
+It might take what it takes and steps where n is the length of the array or that's the maximum steps
+
+106
+00:05:31,520 --> 00:05:33,170
+to figure out something is not in here.
+
+107
+00:05:33,170 --> 00:05:37,210
+We have to look at every single value if we just start at the beginning anyway.
+
+108
+00:05:37,580 --> 00:05:40,930
+So dividing and conquering can really save a lot of time.
+
+109
+00:05:41,060 --> 00:05:45,750
+It can complicate your code a little bit if you do want to take a look at the solution for binary search.
+
+110
+00:05:45,800 --> 00:05:50,480
+Like I said we have multiple videos where we build this and we talk about how it works and we talk about
+
+111
+00:05:50,480 --> 00:05:55,850
+how we get to log n which if you didn't watch the log video in the big O.S. you don't remember what
+
+112
+00:05:55,850 --> 00:06:00,430
+log is technically log based to of and we just simplify it.
+
+113
+00:06:00,740 --> 00:06:05,340
+Don't worry about it we will come back to that we have a whole video on binary search or multiple videos
+
+114
+00:06:05,540 --> 00:06:10,760
+but I just wanted to introduce the idea of dividing and conquering taking a larger subset a larger set
+
+115
+00:06:10,760 --> 00:06:17,660
+of data and dividing it into smaller subsets and ignoring other ones or in the case of a merge sort
+
+116
+00:06:17,660 --> 00:06:24,080
+quick sort we actually will go and merge things back together sort of sew them back in one at a time
+
+117
+00:06:24,350 --> 00:06:25,870
+from smaller pieces.
+
+118
+00:06:25,970 --> 00:06:28,480
+So those algorithms definitely take some more work.
+
+119
+00:06:28,520 --> 00:06:31,060
+They're broken up into like three or four videos each.
+
+120
+00:06:31,070 --> 00:06:32,240
+They come later in the course.
+
+121
+00:06:32,390 --> 00:06:36,590
+But I just wanted to introduce the fact that dividing and conquering is it is a thing.
+
+122
+00:06:36,590 --> 00:06:38,360
+It's a really commonly used pattern.
+
+123
+00:06:38,360 --> 00:06:44,660
+It just happens that most of the time we use it for more complicated algorithms not for you know small
+
+124
+00:06:44,660 --> 00:06:48,090
+things like finding unique sequences in a string.
+
+125
+00:06:48,140 --> 00:06:52,340
+So usually for larger more complex things like sorting a really large list of data.
+
+126
+00:06:52,640 --> 00:06:57,110
+So look forward to that if that intrigued you in any way we will learn some real divide and conquer
+
+127
+00:06:57,140 --> 00:07:01,850
+algorithm starting with binary search and then later on merge sort and quicksort.
+
+128
+00:07:01,890 --> 00:07:02,290
+OK.
+

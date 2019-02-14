@@ -1,0 +1,356 @@
+1
+00:00:00,180 --> 00:00:00,810
+All right.
+
+2
+00:00:00,810 --> 00:00:03,120
+So we've implemented the basics of a hash table.
+
+3
+00:00:03,150 --> 00:00:06,520
+We have a way of inserting we have a way for treating a value.
+
+4
+00:00:06,570 --> 00:00:11,430
+We also did the keys and values methods which aren't as important to be honest.
+
+5
+00:00:11,430 --> 00:00:16,890
+Now let's talk about the big-O the time complexity in particular of these basic operations.
+
+6
+00:00:17,040 --> 00:00:24,690
+So insertion deletion and accessing data on average and also best case are both one constant time which
+
+7
+00:00:24,690 --> 00:00:26,820
+is fantastic That's great.
+
+8
+00:00:26,970 --> 00:00:33,090
+And this really comes down to how how good your hash function is one how fast the hash function itself
+
+9
+00:00:33,090 --> 00:00:37,530
+is into how evenly it distributes things.
+
+10
+00:00:37,530 --> 00:00:39,590
+Minimize the number of collisions.
+
+11
+00:00:39,650 --> 00:00:42,260
+Remember that big O is a simplification of things.
+
+12
+00:00:42,270 --> 00:00:45,570
+We remove constants we simplify whenever possible.
+
+13
+00:00:45,600 --> 00:00:50,820
+So saying that you know our time complexity is low one for insertion doesn't mean that there's only
+
+14
+00:00:50,820 --> 00:00:52,840
+one operation that it takes to insert.
+
+15
+00:00:52,890 --> 00:00:54,870
+It just means the general trend.
+
+16
+00:00:54,870 --> 00:01:00,600
+So it is possible to write a good hash function that is constant time and pretty much every programming
+
+17
+00:01:00,600 --> 00:01:04,880
+language that has an implementation of a hash table has a constant time hash function.
+
+18
+00:01:04,890 --> 00:01:11,070
+Now that's different than a cryptographic hash function which does need to actually run for every single
+
+19
+00:01:11,070 --> 00:01:13,440
+bit of data as it as input grows.
+
+20
+00:01:13,440 --> 00:01:17,580
+Let's say a file grows from one megabyte to 200 megabytes.
+
+21
+00:01:17,580 --> 00:01:22,650
+The hash function needs to actually traverse or parse every piece of that data.
+
+22
+00:01:22,650 --> 00:01:28,050
+If it's a cryptographically secure hash function but when we're talking about hash tables it's OK if
+
+23
+00:01:28,050 --> 00:01:32,750
+we only look at part of the data only part of the string in our case which is what we did.
+
+24
+00:01:32,760 --> 00:01:39,030
+So it's possible to write in general a constant time hash function so insertion deletion and an access
+
+25
+00:01:39,210 --> 00:01:42,020
+in general average case best case are constant.
+
+26
+00:01:42,060 --> 00:01:47,730
+So if we had a good hash function and this is our dataset visualized where this is showing you know
+
+27
+00:01:47,760 --> 00:01:51,080
+one piece of data stored here this is talking about separate chaining.
+
+28
+00:01:51,080 --> 00:01:59,490
+So we have you know certain indices have two pieces even if it takes us one operation to hash our data
+
+29
+00:01:59,490 --> 00:02:04,930
+lets say we're retrieving accessing something like we're accessing this value here.
+
+30
+00:02:05,070 --> 00:02:07,380
+So I have to first hash the key.
+
+31
+00:02:07,380 --> 00:02:08,840
+Then it tells me index 9.
+
+32
+00:02:08,900 --> 00:02:10,040
+I go to index 9.
+
+33
+00:02:10,080 --> 00:02:11,520
+Well there's two pieces here.
+
+34
+00:02:11,610 --> 00:02:14,490
+So I have to go look at the first one and then the second one.
+
+35
+00:02:14,700 --> 00:02:20,460
+And overall we would still say that is constant time because it's three operations every time.
+
+36
+00:02:20,460 --> 00:02:22,230
+Or five operations every time.
+
+37
+00:02:22,260 --> 00:02:30,360
+But if we grew this to be 10000 items or 20000 positions elements in our hash table we would expect
+
+38
+00:02:30,360 --> 00:02:33,780
+it to with a good hash function be evenly distributed.
+
+39
+00:02:33,780 --> 00:02:38,840
+It is possible that we could have a really bad hash function that distributes everything really unnervingly
+
+40
+00:02:38,850 --> 00:02:42,110
+everything into one index which would be pretty useless.
+
+41
+00:02:42,180 --> 00:02:48,390
+But if this was the case if I wanted to retrieve or if I wanted to insert I wanted to delete something
+
+42
+00:02:48,390 --> 00:02:55,530
+from the end it's going to be 0 of end time because even if my hash function itself is constant time
+
+43
+00:02:55,800 --> 00:03:01,620
+if it's distributing everything into one spot then it's basically just a list and to insert at the end
+
+44
+00:03:01,620 --> 00:03:04,830
+of a list is o event and it's linear time.
+
+45
+00:03:04,830 --> 00:03:10,650
+So it really comes down to how good your hash function is how fast it is itself but also how evenly
+
+46
+00:03:10,740 --> 00:03:11,660
+distributes things.
+
+47
+00:03:11,700 --> 00:03:17,460
+And this is why I don't recommend writing your own hash functions use ones that are known that are implemented
+
+48
+00:03:17,460 --> 00:03:18,650
+by other languages.
+
+49
+00:03:18,660 --> 00:03:24,180
+There's lots of libraries on line so if you do have to do that I recommend you using something that
+
+50
+00:03:24,180 --> 00:03:25,280
+someone else has already done.
+
+51
+00:03:25,410 --> 00:03:29,650
+So in general when we talk about hash tables they're very very fast.
+
+52
+00:03:29,700 --> 00:03:35,250
+One constant time for insertion deletion and accessing and when I say access that means using a given
+
+53
+00:03:35,250 --> 00:03:37,510
+key finding the corresponding value.
+
+54
+00:03:37,740 --> 00:03:42,090
+When we talk about searching well for searching for a key it can still be very fast.
+
+55
+00:03:42,090 --> 00:03:47,130
+It can be constant time but if we are searching for a value then we need to go through every single
+
+56
+00:03:47,130 --> 00:03:50,130
+thing every item and check so that would be OK.
+
+57
+00:03:50,150 --> 00:03:52,130
+And all right so that's a big no.
+
+58
+00:03:52,140 --> 00:03:54,330
+In general time complexity for hash tables.
+
+59
+00:03:54,330 --> 00:03:55,900
+Now let's do a quick recap.
+
+60
+00:03:56,160 --> 00:03:58,840
+So hash tables are collections of key value pairs.
+
+61
+00:03:58,980 --> 00:03:59,680
+Cool.
+
+62
+00:03:59,850 --> 00:04:04,220
+They exist in many languages are already implemented dictionaries in Python.
+
+63
+00:04:04,440 --> 00:04:09,570
+They're similar to objects are actually closer to maps in javascript.
+
+64
+00:04:09,720 --> 00:04:14,580
+Pretty much every language has an implementation so hash tables can find values very quickly using a
+
+65
+00:04:14,580 --> 00:04:15,060
+key.
+
+66
+00:04:15,210 --> 00:04:17,620
+They can add key value pairs very quickly as well.
+
+67
+00:04:17,670 --> 00:04:23,220
+And the way that we implemented our hash table was using an array where we hash the keys to get an array
+
+68
+00:04:23,220 --> 00:04:25,890
+index and then we store the data at that position.
+
+69
+00:04:26,010 --> 00:04:27,920
+So our hash function is really important.
+
+70
+00:04:28,140 --> 00:04:29,640
+So a good hash function.
+
+71
+00:04:29,640 --> 00:04:35,610
+Also a lot of people will just say good hash should be fast ideally constant time and this is talking
+
+72
+00:04:35,610 --> 00:04:41,100
+about hash table hash map hash functions not cryptographically secure hash functions.
+
+73
+00:04:41,160 --> 00:04:44,550
+Those have some different rules but they should be fast.
+
+74
+00:04:44,580 --> 00:04:47,050
+They should distribute keys relatively uniformly.
+
+75
+00:04:47,100 --> 00:04:50,350
+We don't want any sort of conflicts if possible.
+
+76
+00:04:50,400 --> 00:04:54,390
+We want things to be stored as spread out as possible and we want it to be deterministic.
+
+77
+00:04:54,390 --> 00:05:01,250
+We need to get the exact same output every time with the same input and then strategies for when we
+
+78
+00:05:01,250 --> 00:05:06,620
+have two kids with the same index when we hash something we get the same index in our array there's
+
+79
+00:05:06,740 --> 00:05:11,960
+at least two that we talked about separate chaining and linear probing separate chaining involves storing
+
+80
+00:05:11,960 --> 00:05:18,500
+them together in a nested structure in the same array index linear probing involves looking forward
+
+81
+00:05:18,500 --> 00:05:19,980
+for the next empty slot.
+
+82
+00:05:20,210 --> 00:05:21,950
+And we focused on separate chaining.
+
+83
+00:05:21,950 --> 00:05:23,400
+All right so that was hash tables.
+
+84
+00:05:23,480 --> 00:05:25,610
+Again our hash function was very simple.
+
+85
+00:05:25,610 --> 00:05:28,740
+It was not written with the intent to be very useful.
+
+86
+00:05:28,880 --> 00:05:34,790
+Really more as educational demo but overall hash tables hash maps are super super useful.
+
+87
+00:05:34,790 --> 00:05:38,450
+We use them all the time pretty much any time you need to store key value data.
+
+88
+00:05:38,630 --> 00:05:40,900
+It makes sense to use a hash table.
+
+89
+00:05:40,900 --> 00:05:41,250
+All right.
+

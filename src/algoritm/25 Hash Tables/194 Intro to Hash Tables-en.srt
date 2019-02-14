@@ -1,0 +1,404 @@
+1
+00:00:00,150 --> 00:00:01,190
+Hey welcome back.
+
+2
+00:00:01,200 --> 00:00:06,210
+So we have a brand new section with a new data structure called the hash table also known pretty commonly
+
+3
+00:00:06,210 --> 00:00:07,940
+as a hash map.
+
+4
+00:00:07,950 --> 00:00:11,580
+So these are used so frequently you've probably used them all the time.
+
+5
+00:00:11,580 --> 00:00:16,500
+I certainly have because they're built in to pretty much every programming language out there whether
+
+6
+00:00:16,500 --> 00:00:21,720
+we're talking about javascript or Python or Ruby or Java.
+
+7
+00:00:21,850 --> 00:00:28,950
+Scala pretty much every language has a variation of a hash table or hash map built in as a default type.
+
+8
+00:00:28,950 --> 00:00:31,300
+So you don't have to do anything just like with an array.
+
+9
+00:00:31,410 --> 00:00:36,440
+Most languages have a built in array or list type and you can just use it out of the box.
+
+10
+00:00:36,510 --> 00:00:38,590
+So we will be implementing our own version.
+
+11
+00:00:38,700 --> 00:00:39,830
+We will make our own.
+
+12
+00:00:39,900 --> 00:00:45,210
+But just like with an array you're probably in ninety nine point ninety nine percent of those cases
+
+13
+00:00:45,560 --> 00:00:50,970
+going to want to use the built in array class or list class or whatever similar structure there is.
+
+14
+00:00:51,040 --> 00:00:52,730
+There's no reason to reinvent the wheel.
+
+15
+00:00:52,740 --> 00:00:54,080
+Same with the hash table.
+
+16
+00:00:54,270 --> 00:00:59,610
+But there's a lot of really cool stuff for us to talk about as to how they work what hashing is I should
+
+17
+00:00:59,610 --> 00:01:01,830
+actually just talk about that on this slide.
+
+18
+00:01:01,980 --> 00:01:04,800
+So in this section we're going to explain what a hash table is.
+
+19
+00:01:04,840 --> 00:01:06,610
+That will be in this video then.
+
+20
+00:01:06,730 --> 00:01:07,930
+Oh two for one there.
+
+21
+00:01:08,070 --> 00:01:12,780
+Well defined with a hashing algorithm is define what a hashing algorithm.
+
+22
+00:01:12,830 --> 00:01:14,190
+Boy these slides.
+
+23
+00:01:14,790 --> 00:01:15,620
+That's not a deal.
+
+24
+00:01:15,690 --> 00:01:17,360
+So define what a hashing algorithm is.
+
+25
+00:01:17,370 --> 00:01:19,680
+Discuss what makes a good hashing algorithm.
+
+26
+00:01:19,680 --> 00:01:22,380
+There are certain characteristics we're looking for.
+
+27
+00:01:22,380 --> 00:01:26,180
+Then we'll talk about what happens when collisions occur and a hash table.
+
+28
+00:01:26,280 --> 00:01:30,870
+What that means for there to be a collision and then two strategies for handling them something called
+
+29
+00:01:30,870 --> 00:01:32,060
+Separate chaining.
+
+30
+00:01:32,100 --> 00:01:34,460
+And another thing called linear probing.
+
+31
+00:01:34,650 --> 00:01:37,470
+Those sound like two different methods of torture.
+
+32
+00:01:37,620 --> 00:01:38,490
+So we'll get there.
+
+33
+00:01:38,580 --> 00:01:42,230
+But let's start by just discussing what a hash table is.
+
+34
+00:01:42,570 --> 00:01:45,000
+So as I already mentioned these are all over the place.
+
+35
+00:01:45,000 --> 00:01:48,060
+You've probably used them in whatever programming language you prefer.
+
+36
+00:01:48,150 --> 00:01:56,250
+Hash tables are used to store key value pairs and yes so are arrays arrays associate a key like 0 or
+
+37
+00:01:56,250 --> 00:02:00,070
+1 or 2 or 3 to a value which could be anything else.
+
+38
+00:02:00,180 --> 00:02:03,190
+But those are strictly numeric hash tables are not.
+
+39
+00:02:03,270 --> 00:02:06,470
+And on top of that the keys in a hash table are not ordered.
+
+40
+00:02:06,600 --> 00:02:12,630
+So in an array of course the index indices start from zero and they go up to some number that keep going.
+
+41
+00:02:12,630 --> 00:02:16,260
+There is a specific implicit order hash tables.
+
+42
+00:02:16,260 --> 00:02:17,500
+That's not the case.
+
+43
+00:02:17,760 --> 00:02:23,610
+And another cool thing about hash tables is that they are fast for finding values for adding new values
+
+44
+00:02:23,670 --> 00:02:24,930
+for removing values.
+
+45
+00:02:24,960 --> 00:02:26,130
+It's all fast.
+
+46
+00:02:26,130 --> 00:02:28,250
+So we'll talk about why that is and how it works.
+
+47
+00:02:28,260 --> 00:02:31,110
+But first let's go into more detail on just why you should care.
+
+48
+00:02:31,410 --> 00:02:36,570
+So as I mentioned pretty much every language out there has some sort of hash table structure because
+
+49
+00:02:36,570 --> 00:02:37,290
+of their speed.
+
+50
+00:02:37,290 --> 00:02:43,830
+They're used really commonly and they're also just data itself lends often lent itself to being stored
+
+51
+00:02:43,830 --> 00:02:44,330
+this way.
+
+52
+00:02:44,430 --> 00:02:49,650
+Yeah if you have sequential data great you could use an array if everything you know has an order and
+
+53
+00:02:49,650 --> 00:02:52,680
+there's a number that makes sense to associate it with a position.
+
+54
+00:02:52,680 --> 00:02:53,400
+Use an array.
+
+55
+00:02:53,520 --> 00:02:56,020
+But a lot of the time our data may not fit that pattern.
+
+56
+00:02:56,070 --> 00:02:59,610
+So we could use a hash map or a hash table.
+
+57
+00:02:59,640 --> 00:03:03,050
+So here's just a quick overview from certain languages.
+
+58
+00:03:03,300 --> 00:03:09,090
+These are what their implementations of hash maps are hash tables are known as so Python has a dictionary
+
+59
+00:03:09,090 --> 00:03:13,090
+or dict Javascript has objects and maps.
+
+60
+00:03:13,140 --> 00:03:18,680
+And I did put an asterisk here because in objects you actually are only allowed to use strings as keys
+
+61
+00:03:18,720 --> 00:03:21,410
+but it's the same idea behind the scenes.
+
+62
+00:03:21,420 --> 00:03:24,370
+It's implemented basically as a hash table.
+
+63
+00:03:24,420 --> 00:03:29,500
+Java go in Skala have something called a map or map ask Ruby.
+
+64
+00:03:29,500 --> 00:03:30,420
+They don't even bother.
+
+65
+00:03:30,420 --> 00:03:31,770
+It's just called a hash.
+
+66
+00:03:31,770 --> 00:03:37,950
+So these are all our key value data stores and they implement hash tables so hash tables are sort of
+
+67
+00:03:37,950 --> 00:03:42,000
+a generic idea and you can implement them in many ways.
+
+68
+00:03:42,000 --> 00:03:46,490
+Dictionaries and Python maps and objects and Javascript maps and Java go probably.
+
+69
+00:03:46,530 --> 00:03:46,990
+OK.
+
+70
+00:03:47,280 --> 00:03:54,750
+So let's pretend that those disappear we're not able to use the basic builtin javascript objects or
+
+71
+00:03:54,930 --> 00:03:59,140
+Python dictionaries if we still want a key value data store.
+
+72
+00:03:59,190 --> 00:04:01,230
+We need to implement our own.
+
+73
+00:04:01,260 --> 00:04:02,190
+So that's what we're going to do.
+
+74
+00:04:02,190 --> 00:04:04,940
+I imagine they just mysteriously disappear.
+
+75
+00:04:04,950 --> 00:04:05,610
+How would we do.
+
+76
+00:04:05,640 --> 00:04:11,130
+How do we write our own version of a key value pair hash table a data store.
+
+77
+00:04:11,130 --> 00:04:16,820
+So imagine we want to store some colors where we're making a Web site we have color codes hexadecimal
+
+78
+00:04:16,860 --> 00:04:20,750
+which are really difficult to keep track of or to differentiate between.
+
+79
+00:04:20,940 --> 00:04:23,700
+So we could just store mentalists like this.
+
+80
+00:04:24,030 --> 00:04:29,580
+But this you know there's no there's an order here that's implicit but there's no reason that we'd want
+
+81
+00:04:29,580 --> 00:04:31,020
+to store them in a particular order.
+
+82
+00:04:31,020 --> 00:04:32,400
+It doesn't matter.
+
+83
+00:04:32,400 --> 00:04:35,070
+I don't know which color this is what color that is.
+
+84
+00:04:35,070 --> 00:04:40,020
+You get the point hopefully this is not a great way of storing colors unless we just need a random color
+
+85
+00:04:40,020 --> 00:04:43,500
+at any point that would work if we're just picking something random out of here.
+
+86
+00:04:43,500 --> 00:04:49,230
+Great but if we need particular colors at a particular moment it's not great it's not readable.
+
+87
+00:04:49,230 --> 00:04:50,880
+What do these colors correspond to.
+
+88
+00:04:51,150 --> 00:04:56,560
+So rather than using indices or numbers to access the colors it would be much better to use you know
+
+89
+00:04:56,730 --> 00:05:05,230
+human readable keys like pink which is pink or a version of one type of pink orange red might be it
+
+90
+00:05:05,240 --> 00:05:11,240
+is this color cyan color this would be much better if I could just say you know give me colors of pink
+
+91
+00:05:11,240 --> 00:05:17,600
+or colors of Scion which Here we go colors of Cyan is much better than colors too.
+
+92
+00:05:17,600 --> 00:05:22,580
+So we're going to try and implement this structure on our own even though of course in javascript and
+
+93
+00:05:22,580 --> 00:05:25,560
+Python you would be able to do this out of the box.
+
+94
+00:05:25,760 --> 00:05:29,750
+But if we didn't have access to dictionaries or objects or maps how would we do this.
+
+95
+00:05:29,750 --> 00:05:31,670
+So that's what the section is focused on.
+
+96
+00:05:31,760 --> 00:05:36,620
+I think it's kind of fun because we get to go into some some fun detail onto what hashing is what hashing
+
+97
+00:05:36,620 --> 00:05:42,290
+functions are going to talk a little bit about some math get into prime number land discuss how prime
+
+98
+00:05:42,290 --> 00:05:43,810
+numbers play a role in this.
+
+99
+00:05:43,820 --> 00:05:45,890
+It's all sort of fun stuff.
+
+100
+00:05:46,010 --> 00:05:46,730
+So that's our goal.
+
+101
+00:05:46,730 --> 00:05:50,090
+Reinvent this basic mapping key value pairs.
+

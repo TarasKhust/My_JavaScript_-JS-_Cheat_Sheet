@@ -1,0 +1,112 @@
+1
+00:00:00,210 --> 00:00:05,640
+All right we'll come back and this video we're working on adding another shift to our singly linked
+
+2
+00:00:05,640 --> 00:00:06,080
+list.
+
+3
+00:00:06,180 --> 00:00:09,150
+So upshift is a way to add a node to the list.
+
+4
+00:00:09,150 --> 00:00:12,640
+However unlike push it adds to the beginning of the list.
+
+5
+00:00:12,730 --> 00:00:17,630
+And fortunately it's pretty easy because of the way the singly link first works works.
+
+6
+00:00:17,640 --> 00:00:18,860
+We already have the head.
+
+7
+00:00:18,960 --> 00:00:23,360
+All we have to do is say Here is a new head and pointed to the old head.
+
+8
+00:00:23,400 --> 00:00:30,050
+So if we walked through it over here let's do an insert at the beginning to insert the number.
+
+9
+00:00:30,310 --> 00:00:31,860
+No there we go 13.
+
+10
+00:00:32,210 --> 00:00:33,520
+OK I'm going to posit.
+
+11
+00:00:33,540 --> 00:00:40,770
+So all we do is we have the old head and we now point the new head at the head and then move the head
+
+12
+00:00:40,980 --> 00:00:43,000
+to be the new head.
+
+13
+00:00:43,320 --> 00:00:47,640
+It's kind of confusing when I keep saying all that new head but we just take this old pointer and the
+
+14
+00:00:47,640 --> 00:00:52,540
+value there we take the new node pointed at that and then set this to be the head.
+
+15
+00:00:53,010 --> 00:00:54,690
+And that's it.
+
+16
+00:00:54,690 --> 00:01:00,000
+So if we were to walk through the pseudo code to find the function accepts the value that you're going
+
+17
+00:01:00,000 --> 00:01:03,180
+to add to the beginning you're shifting or you're shifting.
+
+18
+00:01:03,200 --> 00:01:06,900
+So we create a new node just like we did with Bush.
+
+19
+00:01:07,050 --> 00:01:08,800
+We need to check if there is no head.
+
+20
+00:01:08,820 --> 00:01:11,700
+Then we set the head and tail to be the new node.
+
+21
+00:01:11,790 --> 00:01:19,140
+Otherwise set the newly created nodes next property to be the current head and then move the head to
+
+22
+00:01:19,140 --> 00:01:25,710
+be that newly created node and then increment the length the list by 1 and finally return the linked
+
+23
+00:01:25,860 --> 00:01:26,600
+list.
+
+24
+00:01:26,910 --> 00:01:27,460
+OK.
+
+25
+00:01:27,900 --> 00:01:29,960
+So try and do this on your own if you'd like.
+
+26
+00:01:30,000 --> 00:01:33,790
+In the next video as I have been doing this whole section I'll have a solution.
+
+27
+00:01:33,790 --> 00:01:33,980
+All right.
+
+28
+00:01:33,990 --> 00:01:34,820
+That's coming up next.
+

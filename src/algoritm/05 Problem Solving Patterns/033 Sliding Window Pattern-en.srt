@@ -1,0 +1,888 @@
+1
+00:00:00,240 --> 00:00:00,570
+All right.
+
+2
+00:00:00,570 --> 00:00:01,430
+Welcome back.
+
+3
+00:00:01,440 --> 00:00:04,460
+The next pattern we'll talk about it's called the sliding window.
+
+4
+00:00:04,530 --> 00:00:10,200
+So this really is useful when we have a set of data like an array or a string again and we're looking
+
+5
+00:00:10,200 --> 00:00:14,730
+for a subset of that data that is continuous in some way.
+
+6
+00:00:14,730 --> 00:00:17,480
+So for example here's a string.
+
+7
+00:00:17,640 --> 00:00:22,980
+And if I ask you to write a function to find the longest sequence of unique characters.
+
+8
+00:00:23,280 --> 00:00:24,810
+So you know you would start.
+
+9
+00:00:24,960 --> 00:00:25,430
+Let's see.
+
+10
+00:00:25,470 --> 00:00:32,140
+Well we've got HGL those are three unique characters in a row but then we hit another L right here.
+
+11
+00:00:32,160 --> 00:00:35,750
+So this is the longest one we have so far.
+
+12
+00:00:35,820 --> 00:00:37,510
+Nope that's only that's not going to work.
+
+13
+00:00:37,560 --> 00:00:44,970
+So then we can look at L O T H E R and that's looks like it's going to be our longest string of unique
+
+14
+00:00:44,970 --> 00:00:45,860
+characters.
+
+15
+00:00:46,020 --> 00:00:49,700
+Unless I'm losing my mind here because then we hit this eve.
+
+16
+00:00:49,740 --> 00:00:54,800
+So anyway this is one example of a problem we could solve with a sliding window approach.
+
+17
+00:00:54,930 --> 00:01:00,300
+The other one I'm going to show you has to do with finding a max subarray sum.
+
+18
+00:01:00,600 --> 00:01:03,690
+So we pass in an array like this.
+
+19
+00:01:03,690 --> 00:01:09,660
+And then a number and we're trying to find the max sum of two digits that are next to one another or
+
+20
+00:01:09,660 --> 00:01:12,890
+in this case four digits that are next to one another.
+
+21
+00:01:12,930 --> 00:01:19,440
+So this would turn 10 because the two digits next to one another that have the largest sum are eight
+
+22
+00:01:19,440 --> 00:01:23,280
+into which is 10 and it will come right back to this.
+
+23
+00:01:23,280 --> 00:01:30,330
+So what we do is we make a window which can be a single variable or can be a sub array or even another
+
+24
+00:01:30,330 --> 00:01:31,460
+string if you want it to.
+
+25
+00:01:31,620 --> 00:01:33,820
+And we move that window depending on the condition.
+
+26
+00:01:33,870 --> 00:01:36,530
+We slide it up usually from left to right.
+
+27
+00:01:36,540 --> 00:01:40,690
+If we start at the beginning you could go from right to left you could start in the middle I guess.
+
+28
+00:01:40,770 --> 00:01:43,120
+But usually we move the window from the left.
+
+29
+00:01:43,290 --> 00:01:46,870
+The beginning of the element or the beginning of the array or string towards the end.
+
+30
+00:01:47,220 --> 00:01:49,160
+And sometimes you might make a new window.
+
+31
+00:01:49,230 --> 00:01:50,960
+So I'll show you what that really means.
+
+32
+00:01:50,960 --> 00:01:57,830
+But it's useful in these problems where we're keeping track of a subset of data in a larger set of data.
+
+33
+00:01:57,840 --> 00:01:59,080
+So back to this problem.
+
+34
+00:01:59,160 --> 00:02:04,400
+Right a function called Max subarray sum which accepts an array of integers and a number called.
+
+35
+00:02:04,410 --> 00:02:07,120
+And so it doesn't have to be sorted the array.
+
+36
+00:02:07,170 --> 00:02:10,090
+This is just any integers in an array.
+
+37
+00:02:10,230 --> 00:02:15,120
+And then we pass and the second number is already mentioned and your function should calculate the maximum
+
+38
+00:02:15,120 --> 00:02:18,950
+sum of an consecutive elements in that array.
+
+39
+00:02:19,110 --> 00:02:24,390
+So whatever we pass in here like Erda showed you two should return 10 because 8 and 2 is the largest
+
+40
+00:02:24,390 --> 00:02:27,110
+sum of two consecutive numbers.
+
+41
+00:02:27,120 --> 00:02:28,330
+Here we have four.
+
+42
+00:02:28,560 --> 00:02:34,520
+Well what's the largest sum of four numbers we know at 17 and I believe that is.
+
+43
+00:02:34,560 --> 00:02:36,280
+I think it's these four right.
+
+44
+00:02:36,320 --> 00:02:37,840
+That's seven eight nine yeah.
+
+45
+00:02:37,890 --> 00:02:44,100
+17 and it's close because there's you know this subarray here gives us 16 I believe.
+
+46
+00:02:44,170 --> 00:02:51,930
+So right and we've got this one here which also gives us 16 but this one is the largest sum of four
+
+47
+00:02:51,930 --> 00:02:55,320
+continuous consecutive numbers which is 70.
+
+48
+00:02:55,530 --> 00:02:59,740
+Also you know an edge case if it's empty should return NULL anyway.
+
+49
+00:02:59,880 --> 00:03:00,930
+That's the problem.
+
+50
+00:03:01,110 --> 00:03:03,420
+And to solve it there's a couple of approaches.
+
+51
+00:03:03,420 --> 00:03:09,180
+Of course the naive version the simple version is basically to start right here.
+
+52
+00:03:09,390 --> 00:03:14,970
+Let's actually go with this example for start right here in a loop and then have a second loop that
+
+53
+00:03:14,970 --> 00:03:20,330
+looks ahead and sumps together four items and you create a variable to keep track of that sum.
+
+54
+00:03:20,340 --> 00:03:21,210
+So what is that.
+
+55
+00:03:21,390 --> 00:03:23,680
+That would give us 7 8 9 10.
+
+56
+00:03:23,790 --> 00:03:30,990
+So we'd start with that and then we move forward 1 and we have a new sum starting from here and we add
+
+57
+00:03:30,990 --> 00:03:36,030
+these four together using another loop and then we compare that to the sum we had before we take the
+
+58
+00:03:36,030 --> 00:03:39,120
+maximum and we keep track of whatever the maximum is.
+
+59
+00:03:39,390 --> 00:03:42,830
+And then we would move forward from here and try with the second loop.
+
+60
+00:03:42,860 --> 00:03:44,200
+One two three four.
+
+61
+00:03:44,340 --> 00:03:48,600
+Some that together and we keep doing that and I have that solution right here.
+
+62
+00:03:49,080 --> 00:03:52,840
+So I'll copy it over and let's just quickly walk through it.
+
+63
+00:03:53,100 --> 00:03:57,750
+When we call it the very first thing we do is just make sure once again an edge case.
+
+64
+00:03:57,900 --> 00:04:02,370
+If the number is greater than the length of the array if we're trying to find the largest sum of three
+
+65
+00:04:02,370 --> 00:04:07,020
+consecutive integers and there's only two in there or zero we just return no.
+
+66
+00:04:07,290 --> 00:04:09,030
+Otherwise we make Max.
+
+67
+00:04:09,300 --> 00:04:14,640
+And I started it at negative infinity because I wanted to account for if we had an array that was all
+
+68
+00:04:14,640 --> 00:04:15,390
+negative numbers.
+
+69
+00:04:15,390 --> 00:04:17,370
+Our biggest sum would still be negative.
+
+70
+00:04:17,370 --> 00:04:20,540
+So starting it at zero doesn't really help us.
+
+71
+00:04:20,550 --> 00:04:22,640
+We're only working with positive sums.
+
+72
+00:04:22,680 --> 00:04:24,030
+So I did negative infinity.
+
+73
+00:04:24,030 --> 00:04:25,400
+That's not a huge deal.
+
+74
+00:04:25,410 --> 00:04:29,350
+So then what we do I should mention we take an array and a number.
+
+75
+00:04:29,370 --> 00:04:32,340
+This is the the number of digits we're trying to sum together.
+
+76
+00:04:32,760 --> 00:04:36,080
+And I create a loop so this loop starts at 0.
+
+77
+00:04:36,120 --> 00:04:41,100
+It goes until the end of the array will almost to the end of the array and I'll show you where it actually
+
+78
+00:04:41,100 --> 00:04:42,330
+goes.
+
+79
+00:04:42,330 --> 00:04:50,180
+What we're doing here is if we're looking at three digits in a row we're going to start here and add
+
+80
+00:04:50,190 --> 00:04:53,400
+these three and then add these three and keep going.
+
+81
+00:04:53,670 --> 00:04:58,370
+And we don't want to go all the way to the end and try and add three more or two more digits together.
+
+82
+00:04:58,650 --> 00:05:00,010
+We don't want to go here.
+
+83
+00:05:00,020 --> 00:05:04,220
+We want to stop here so that we hit the end of the array with our son.
+
+84
+00:05:04,220 --> 00:05:09,050
+This is the last place we could start are some that make sense if we're looking for three digits if
+
+85
+00:05:09,050 --> 00:05:10,410
+we're looking for five digits.
+
+86
+00:05:10,460 --> 00:05:12,250
+This is the last place we could start.
+
+87
+00:05:12,560 --> 00:05:14,180
+So that's what this is doing here.
+
+88
+00:05:14,240 --> 00:05:15,490
+And then we add one to I.
+
+89
+00:05:15,710 --> 00:05:21,230
+OK so for adding three digits together that first loop is just going to start a loop here and then we'll
+
+90
+00:05:21,230 --> 00:05:21,710
+go to here.
+
+91
+00:05:21,710 --> 00:05:28,430
+Here here here here and stop right here for our last sum then what we do is make a variable called Temp
+
+92
+00:05:28,820 --> 00:05:30,930
+temp it's just going to start at zero.
+
+93
+00:05:31,040 --> 00:05:34,420
+We have Max and so will store some Each time through.
+
+94
+00:05:34,460 --> 00:05:36,590
+So well together these three.
+
+95
+00:05:36,920 --> 00:05:42,230
+And then add together these three and compare it to max and then had to get these three.
+
+96
+00:05:42,220 --> 00:05:46,820
+And if it's larger than our current max We'll update Max to be temp.
+
+97
+00:05:46,820 --> 00:05:47,990
+So that's what I'm doing here.
+
+98
+00:05:47,990 --> 00:05:51,600
+So our second loop goes through J equals zero.
+
+99
+00:05:51,620 --> 00:05:54,480
+J is less than J plus plus.
+
+100
+00:05:54,770 --> 00:05:56,710
+So numb is the number of digits.
+
+101
+00:05:56,780 --> 00:05:58,330
+So we have I starting here.
+
+102
+00:05:58,460 --> 00:06:04,610
+And then the second nested loop right here that is going to look ahead and add 1:54 and then add 9 into
+
+103
+00:06:04,610 --> 00:06:06,010
+our temp variable as well.
+
+104
+00:06:06,020 --> 00:06:08,660
+That's what this is doing array of I Plus J.
+
+105
+00:06:08,930 --> 00:06:10,210
+So where am I.
+
+106
+00:06:10,340 --> 00:06:17,060
+And then we add Plus J were J has gone up by one index which is just a way of summing these three together.
+
+107
+00:06:17,090 --> 00:06:20,810
+Then we check if temp is greater than Max Max equals temp.
+
+108
+00:06:20,810 --> 00:06:28,040
+So we update Max if our temp sum is larger and the very first time through Max is negative infinity.
+
+109
+00:06:28,040 --> 00:06:32,540
+So no matter what we do we'll be updating Max to these three digits.
+
+110
+00:06:32,540 --> 00:06:42,440
+And why don't I just print out our state of do concert log temp and then also Max like this.
+
+111
+00:06:42,610 --> 00:06:50,690
+And when I call my code on this subway on this array I mean you can see that we start off first couple
+
+112
+00:06:50,690 --> 00:06:51,770
+of times.
+
+113
+00:06:51,940 --> 00:06:58,760
+We have 17 the first three digits some to 17 and then actually again we get 17.
+
+114
+00:06:59,080 --> 00:07:02,340
+Then next time through we're looking at nine two one.
+
+115
+00:07:02,440 --> 00:07:05,310
+So that gives us 12 so we don't update.
+
+116
+00:07:05,320 --> 00:07:08,330
+Max Max is still 17 but temp is 12.
+
+117
+00:07:08,440 --> 00:07:13,300
+Then what do these three 11 these three gives us 14.
+
+118
+00:07:13,330 --> 00:07:20,470
+Then we get to here and now we hit 19 and this temp is now larger than the old Max so we update Max
+
+119
+00:07:20,470 --> 00:07:27,190
+to be 19 and then that is our max for the rest of the array and we return 19 at the end.
+
+120
+00:07:27,190 --> 00:07:29,890
+So let's talk about what's not good with this solution.
+
+121
+00:07:29,980 --> 00:07:34,870
+So it doesn't seem like this nested loops is that big of a deal when we're talking about three items
+
+122
+00:07:35,250 --> 00:07:38,180
+when we're only trying to sum three things together and that's true.
+
+123
+00:07:38,350 --> 00:07:44,590
+But if we had a really long array which I'll type up real fast let's say we have this massive array
+
+124
+00:07:45,160 --> 00:07:48,950
+and we're trying to find the largest sum of 20 consecutive digits.
+
+125
+00:07:49,120 --> 00:07:51,300
+What would happen is that we have this first loop.
+
+126
+00:07:51,320 --> 00:07:56,230
+I that's going for every single item or almost every single item technically doesn't go all the way
+
+127
+00:07:56,230 --> 00:07:59,430
+to the end it stops what 20 digits before the end.
+
+128
+00:07:59,650 --> 00:08:05,200
+But we go all the way through and each time we're summing from the beginning 20 this I'm just going
+
+129
+00:08:05,200 --> 00:08:10,780
+to guesstimate 20 or so digits we're going to sum it together and then we're just going to move forward
+
+130
+00:08:10,780 --> 00:08:15,490
+one and loop 20 times again and add them together and we keep going.
+
+131
+00:08:15,490 --> 00:08:19,840
+And this can be really inefficient especially 20 is still a very small number in the grand scheme of
+
+132
+00:08:19,840 --> 00:08:20,340
+things.
+
+133
+00:08:20,380 --> 00:08:25,950
+If we had a huge array remember with Big-O notation we'd take things extend them way out towards infinity.
+
+134
+00:08:26,080 --> 00:08:32,320
+So let's say we have a million items in here and we try to find the largest sum of 10000 or 0 or even
+
+135
+00:08:32,530 --> 00:08:34,320
+100000 digits in a row.
+
+136
+00:08:34,360 --> 00:08:41,290
+It's really inefficient to continuously do this and update and now add together another 100000 digits
+
+137
+00:08:41,530 --> 00:08:44,460
+and then move forward one add together another hundred thousand digits.
+
+138
+00:08:44,470 --> 00:08:45,650
+It's just not efficient.
+
+139
+00:08:45,820 --> 00:08:48,880
+And a rule of thumb is you can just say it's and squared.
+
+140
+00:08:48,880 --> 00:08:50,490
+And each time there is nested loops.
+
+141
+00:08:50,650 --> 00:08:55,380
+So there are better ways of doing this which is where our sliding window approach comes in dumped at
+
+142
+00:08:55,380 --> 00:08:55,970
+it.
+
+143
+00:08:56,080 --> 00:08:57,590
+Here's a sliding window.
+
+144
+00:08:57,620 --> 00:08:57,930
+All right.
+
+145
+00:08:57,970 --> 00:08:59,410
+So here's how this one works.
+
+146
+00:08:59,410 --> 00:09:00,610
+I'll just copy it over.
+
+147
+00:09:00,610 --> 00:09:04,540
+First thing you can see though it is O of and it's linear complexity.
+
+148
+00:09:04,540 --> 00:09:06,380
+We only loop one time.
+
+149
+00:09:06,400 --> 00:09:11,750
+Technically there's two loops written down but we only go over the entire array one time.
+
+150
+00:09:11,770 --> 00:09:13,690
+So let me show it to you.
+
+151
+00:09:13,690 --> 00:09:14,470
+Here it is.
+
+152
+00:09:14,530 --> 00:09:18,700
+What we do is at the very beginning we sum together the first.
+
+153
+00:09:18,700 --> 00:09:23,950
+If we're looking for three digits in a row we sum together these three and then rather than starting
+
+154
+00:09:23,950 --> 00:09:29,220
+a loop here and summing together these three and then starting again and adding three together again
+
+155
+00:09:29,560 --> 00:09:36,040
+and keep going in that fashion like we did in the last solution here what we do is we keep a variable
+
+156
+00:09:36,040 --> 00:09:42,650
+that just has this total right here and all that we need to do to figure out the next.
+
+157
+00:09:42,700 --> 00:09:50,020
+Some of these three digits we don't have to read add 6 and 9 and 2 we can just subtract this number
+
+158
+00:09:50,200 --> 00:09:56,020
+and add this number or to give you a better example if we go back to this massive array.
+
+159
+00:09:56,110 --> 00:09:58,230
+Let's say I'm summing these digits together.
+
+160
+00:09:58,750 --> 00:10:04,700
+If I want to figure out this sum that comes after it starting from this to instead of this one.
+
+161
+00:10:04,800 --> 00:10:06,230
+Let's do something slightly more manageable.
+
+162
+00:10:06,250 --> 00:10:13,450
+Let's say I'm going from this one up until this for I don't have to read every number together to calculate
+
+163
+00:10:13,630 --> 00:10:14,620
+this.
+
+164
+00:10:15,270 --> 00:10:19,100
+All that I have to do is subtract the 1 and add the 5.
+
+165
+00:10:19,360 --> 00:10:20,980
+So that's the sliding window.
+
+166
+00:10:20,980 --> 00:10:24,960
+We're going to create a sum that goes from here up until.
+
+167
+00:10:24,970 --> 00:10:28,540
+Let's just say here and then to slide it over.
+
+168
+00:10:28,570 --> 00:10:31,780
+We don't recalculate everything we just subtract this number.
+
+169
+00:10:31,780 --> 00:10:34,820
+So we moved the window up like that.
+
+170
+00:10:35,520 --> 00:10:36,940
+And then we add this number.
+
+171
+00:10:37,410 --> 00:10:39,470
+So that's what I'm doing here.
+
+172
+00:10:39,600 --> 00:10:43,320
+I get rid of this massive array again and we hopped back.
+
+173
+00:10:43,320 --> 00:10:45,400
+We have this maxim and 10 some.
+
+174
+00:10:45,690 --> 00:10:47,420
+And I have my edge case.
+
+175
+00:10:47,520 --> 00:10:53,970
+If it's an invalid array and we're looking for a number that's too large we return all then we create
+
+176
+00:10:53,970 --> 00:10:55,470
+our first sum.
+
+177
+00:10:55,500 --> 00:10:57,630
+So let's say I pass in three.
+
+178
+00:10:57,690 --> 00:10:58,900
+Ok that works.
+
+179
+00:10:59,040 --> 00:11:03,900
+We're going to just start at the beginning and sum together the first three digits and store that in
+
+180
+00:11:03,900 --> 00:11:07,070
+a variable which is called Maxim and that's it.
+
+181
+00:11:07,140 --> 00:11:08,120
+We don't keep looping.
+
+182
+00:11:08,310 --> 00:11:11,080
+So we just loop three times and added together.
+
+183
+00:11:11,230 --> 00:11:16,620
+Then I said attempt sum equal to Max some so we just have these two variables and Max sum is what I
+
+184
+00:11:16,620 --> 00:11:18,270
+will return at the end.
+
+185
+00:11:18,270 --> 00:11:25,130
+Now what I do is I start another loop and instead of starting from zero at the beginning I start if
+
+186
+00:11:25,140 --> 00:11:27,410
+this is what we added together already.
+
+187
+00:11:27,630 --> 00:11:30,220
+I'm now going to start my loop from here.
+
+188
+00:11:30,600 --> 00:11:33,800
+If we're adding three digit to the time we already did this.
+
+189
+00:11:33,890 --> 00:11:35,050
+So now I'm going to start here.
+
+190
+00:11:35,220 --> 00:11:39,670
+I already have a variable with this sum which is what do we get 17.
+
+191
+00:11:39,780 --> 00:11:42,270
+I'm going to take that variable which is called Temp sum.
+
+192
+00:11:42,420 --> 00:11:46,240
+I'm going to add two and I'm going to subtract two.
+
+193
+00:11:46,260 --> 00:11:49,240
+Which is stupid because we get the same thing.
+
+194
+00:11:49,740 --> 00:11:52,890
+But then next time through say we're looking at these three.
+
+195
+00:11:52,890 --> 00:11:55,970
+This is our current sum which is 17 again.
+
+196
+00:11:56,340 --> 00:12:01,510
+What we do now is I add one and I subtract six.
+
+197
+00:12:01,760 --> 00:12:10,520
+And so then we're looking at 13 know 12 I'm looking at 12 and we take the maximum between maximum and
+
+198
+00:12:10,520 --> 00:12:11,110
+temps.
+
+199
+00:12:11,290 --> 00:12:16,490
+So math that Max is an easy way to do that you could also just do an if statement like we did over here.
+
+200
+00:12:16,820 --> 00:12:23,390
+If temp is greater than max and this just updates maxim If temp sum is larger than what is in max.
+
+201
+00:12:23,810 --> 00:12:27,590
+So this solution allows us to loop over the array one time.
+
+202
+00:12:27,590 --> 00:12:32,480
+So if we're talking about a million digits in the array we're still only going over the entire thing
+
+203
+00:12:32,480 --> 00:12:38,630
+once and we don't have to continuously read loop with a nested loop all that we do each time through
+
+204
+00:12:38,630 --> 00:12:41,120
+the loop is a single subtraction.
+
+205
+00:12:41,120 --> 00:12:46,850
+Technically there's a subtraction in here but we're subtracting one of the array values and adding one
+
+206
+00:12:46,850 --> 00:12:48,240
+array value.
+
+207
+00:12:48,790 --> 00:12:50,200
+And that's a sliding window.
+
+208
+00:12:50,480 --> 00:12:53,770
+And it's much much way way better much more efficient.
+
+209
+00:12:53,960 --> 00:12:55,110
+In the grand scheme of things it's.
+
+210
+00:12:55,160 --> 00:12:55,560
+Oh.
+
+211
+00:12:55,580 --> 00:12:58,240
+And instead of quadratic and square.
+
+212
+00:12:58,620 --> 00:12:58,910
+Oh.
+
+213
+00:12:58,940 --> 00:13:03,290
+And I should prove that it doesn't work for you execute it we get 19.
+
+214
+00:13:03,300 --> 00:13:05,170
+Let me just de-clutter things.
+
+215
+00:13:05,180 --> 00:13:05,380
+All right.
+
+216
+00:13:05,390 --> 00:13:06,190
+We get 19.
+
+217
+00:13:06,380 --> 00:13:09,750
+And that indeed is the largest Some of these three here.
+
+218
+00:13:09,800 --> 00:13:10,530
+Is that right.
+
+219
+00:13:10,790 --> 00:13:11,210
+Yes.
+
+220
+00:13:11,240 --> 00:13:12,690
+It gives us 19.
+
+221
+00:13:12,860 --> 00:13:13,460
+Awesome.
+
+222
+00:13:13,700 --> 00:13:14,210
+Moving on.
+

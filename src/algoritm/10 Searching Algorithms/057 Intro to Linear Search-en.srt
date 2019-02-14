@@ -1,0 +1,368 @@
+1
+00:00:00,210 --> 00:00:00,930
+All right.
+
+2
+00:00:00,930 --> 00:00:05,700
+So we introduced the fact that we're talking about searching for now we're going to focus on searching
+
+3
+00:00:05,790 --> 00:00:06,450
+an array.
+
+4
+00:00:06,630 --> 00:00:12,720
+So imagine we have this array with states in it which I didn't type this myself just to be clear I copied
+
+5
+00:00:12,720 --> 00:00:12,990
+this.
+
+6
+00:00:12,990 --> 00:00:16,260
+And so it also includes I think 59 items.
+
+7
+00:00:16,260 --> 00:00:22,760
+It includes territories like American Samoa Puerto Rico's in here Guam things like that.
+
+8
+00:00:22,830 --> 00:00:24,000
+But that's beside the point.
+
+9
+00:00:24,000 --> 00:00:29,730
+So imagine that a user typed something in and they're trying to I don't know create an address and then
+
+10
+00:00:29,730 --> 00:00:35,020
+need to enter a state or territory and for our application we want to make sure it's in this array.
+
+11
+00:00:35,070 --> 00:00:36,910
+What's the best way of doing that.
+
+12
+00:00:36,990 --> 00:00:43,220
+And the simplest way is just to look at every single element in order and check if it's what we want.
+
+13
+00:00:43,530 --> 00:00:48,580
+Right so if the user enters let's say Indiana we would just start at the beginning and check.
+
+14
+00:00:48,660 --> 00:00:49,110
+OK.
+
+15
+00:00:49,140 --> 00:00:50,060
+Is this Indiana.
+
+16
+00:00:50,100 --> 00:00:50,470
+Nope.
+
+17
+00:00:50,580 --> 00:00:51,990
+Is this Indiana Indiana.
+
+18
+00:00:52,000 --> 00:00:53,330
+Is this Indiana.
+
+19
+00:00:53,340 --> 00:00:55,590
+And we keep going until we get to Indiana.
+
+20
+00:00:55,800 --> 00:01:01,980
+And in that case we return something you know true or we say the index that we found a debt or if it's
+
+21
+00:01:01,980 --> 00:01:06,510
+not in there we keep going until the end and then we have some some logic at the end that says if it's
+
+22
+00:01:06,510 --> 00:01:09,830
+not found return false or return negative 1 or something like that.
+
+23
+00:01:09,900 --> 00:01:13,140
+Now that approach is actually not a bad approach.
+
+24
+00:01:13,140 --> 00:01:19,160
+Now in this situation where we have sorted data alphabetically sorted there are better ways.
+
+25
+00:01:19,320 --> 00:01:23,180
+But let's go back to the think ahead had a list called usernames.
+
+26
+00:01:23,190 --> 00:01:24,870
+This is unsorted.
+
+27
+00:01:25,080 --> 00:01:27,660
+So there is no order to this at all.
+
+28
+00:01:27,660 --> 00:01:29,690
+Now somebody enters I hate cats.
+
+29
+00:01:29,690 --> 00:01:30,760
+It's a user name.
+
+30
+00:01:30,780 --> 00:01:32,700
+How do we check if it's taken or not.
+
+31
+00:01:32,700 --> 00:01:38,310
+In that case the best way of doing it is to check every single element one at a time.
+
+32
+00:01:38,430 --> 00:01:38,970
+Are you.
+
+33
+00:01:38,970 --> 00:01:39,690
+I hate cats.
+
+34
+00:01:39,690 --> 00:01:40,370
+No.
+
+35
+00:01:40,380 --> 00:01:41,740
+Next are you I hate cats.
+
+36
+00:01:41,760 --> 00:01:42,280
+Nope.
+
+37
+00:01:42,300 --> 00:01:45,480
+Keep going until we find it or we get to the end.
+
+38
+00:01:45,570 --> 00:01:47,850
+That is called linear search.
+
+39
+00:01:48,060 --> 00:01:54,670
+And in fact javascript is doing that things like Index of which you talked about includes.
+
+40
+00:01:54,720 --> 00:02:00,190
+Find find index all of these methods are doing the same thing behind the scenes.
+
+41
+00:02:00,390 --> 00:02:05,290
+They're checking every element one at a time to check if whatever we pass in.
+
+42
+00:02:05,300 --> 00:02:12,360
+So let's do two index of what to do usernames index of Tommy index of zero.
+
+43
+00:02:12,630 --> 00:02:15,960
+Let's do index of Q is towards the end 15.
+
+44
+00:02:16,050 --> 00:02:18,240
+We do index or something that's not in there.
+
+45
+00:02:18,600 --> 00:02:19,450
+Negative 1.
+
+46
+00:02:19,500 --> 00:02:22,210
+We could also do the same thing with includes.
+
+47
+00:02:22,350 --> 00:02:24,670
+I'm not going to go through all these methods but let's try.
+
+48
+00:02:24,680 --> 00:02:28,530
+Does it include Tom.
+
+49
+00:02:28,650 --> 00:02:29,590
+That's true.
+
+50
+00:02:29,630 --> 00:02:30,790
+Those include Tom's.
+
+51
+00:02:30,810 --> 00:02:31,700
+That's false.
+
+52
+00:02:31,710 --> 00:02:36,450
+So what's happening here is that it is going through and checking each item to see are you Tom's Are
+
+53
+00:02:36,450 --> 00:02:38,970
+you Tom's over and over until it hits the end.
+
+54
+00:02:38,970 --> 00:02:43,140
+And if you looked at the source code you would actually see the algorithm that we're going to talk about
+
+55
+00:02:43,390 --> 00:02:44,850
+and it's very straightforward.
+
+56
+00:02:44,850 --> 00:02:46,740
+It's called a linear search.
+
+57
+00:02:46,740 --> 00:02:48,130
+So we've already been describing it.
+
+58
+00:02:48,150 --> 00:02:53,040
+We visit one item one item at a time starting at the beginning moving forward.
+
+59
+00:02:53,040 --> 00:02:56,910
+Or we could start at the end and move backward but it doesn't matter.
+
+60
+00:02:57,000 --> 00:03:02,870
+All that matters is that we're moving at a set interval one item at a time checking every single thing.
+
+61
+00:03:03,510 --> 00:03:09,150
+So if we were to have this list of numbers array and we want to check for 12 in a search if it's in
+
+62
+00:03:09,150 --> 00:03:12,410
+there we just start the beginning is 12.
+
+63
+00:03:12,450 --> 00:03:12,930
+Nope.
+
+64
+00:03:13,020 --> 00:03:14,570
+Is 8 12 No.
+
+65
+00:03:14,580 --> 00:03:18,120
+1 is not 12 100 is not 12 12 is 12.
+
+66
+00:03:18,240 --> 00:03:23,010
+And then we return true or we return the index 0 1 2 3 4.
+
+67
+00:03:23,040 --> 00:03:24,560
+It depends on what we're doing.
+
+68
+00:03:24,570 --> 00:03:29,380
+So for index for example it would return for 4 It includes returns true.
+
+69
+00:03:29,520 --> 00:03:30,920
+So that's linear search.
+
+70
+00:03:31,140 --> 00:03:36,060
+And what I'm going to do now is something that is a bit different than how we've structured the course
+
+71
+00:03:36,060 --> 00:03:36,750
+so far.
+
+72
+00:03:36,840 --> 00:03:42,450
+I'm going to give you pseudo code to try and implemented and I encourage you to write this code on your
+
+73
+00:03:42,450 --> 00:03:42,630
+own.
+
+74
+00:03:42,630 --> 00:03:44,180
+This is a nice and simple one.
+
+75
+00:03:44,460 --> 00:03:49,500
+Here's a pseudo code and then afterwards we'll go through it and I'll write up the solution.
+
+76
+00:03:49,500 --> 00:03:53,660
+So write a function call it whatever you want but it accepts an array and a value.
+
+77
+00:03:53,880 --> 00:03:59,610
+So call it linear search and it takes an array full of let's just say its numbers but it doesn't matter
+
+78
+00:03:59,610 --> 00:04:06,660
+really it saves numbers and then a value another number you just loop through the entire array and check
+
+79
+00:04:06,660 --> 00:04:10,800
+if the current array element is equal to the value that we pass in.
+
+80
+00:04:11,160 --> 00:04:17,450
+And if it is return the index at which it's found and if it's never found return negative 1.
+
+81
+00:04:17,940 --> 00:04:18,480
+OK.
+
+82
+00:04:18,630 --> 00:04:21,720
+So loop through the entire array check for a value.
+
+83
+00:04:21,720 --> 00:04:23,640
+Whatever it is let's say we're looking for three.
+
+84
+00:04:23,850 --> 00:04:29,120
+If you find three return that index if you don't return negative 1.
+
+85
+00:04:29,190 --> 00:04:31,270
+So this is possible in just a couple lines.
+
+86
+00:04:31,320 --> 00:04:32,190
+Don't overthink it.
+
+87
+00:04:32,340 --> 00:04:34,340
+Give it a shot in the next video.
+
+88
+00:04:34,440 --> 00:04:36,570
+I'll show you a potential solution.
+
+89
+00:04:36,570 --> 00:04:39,940
+And keep in mind that even though this is simple that doesn't make it bad.
+
+90
+00:04:40,080 --> 00:04:45,080
+Like we discussed it's used by built in functions things like Index of for example.
+
+91
+00:04:45,390 --> 00:04:46,020
+OK.
+
+92
+00:04:46,200 --> 00:04:46,980
+So in the next video.
+

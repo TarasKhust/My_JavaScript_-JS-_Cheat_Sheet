@@ -1,0 +1,208 @@
+1
+00:00:00,150 --> 00:00:04,920
+The last thing I'd like to do before we actually dive into coding went up in the next video is explain
+
+2
+00:00:05,310 --> 00:00:06,530
+why these are used.
+
+3
+00:00:06,780 --> 00:00:12,660
+And really the way that we order them where everything to the right is greater than the parent and everything
+
+4
+00:00:12,660 --> 00:00:18,180
+to the left is less than the parent makes it much it makes it very easy and makes it fast to look things
+
+5
+00:00:18,270 --> 00:00:18,940
+up.
+
+6
+00:00:18,960 --> 00:00:22,560
+Also it makes it easy to insert things to find a place for a node.
+
+7
+00:00:22,800 --> 00:00:28,800
+So that search part of the binary search tree becomes very quick compared to looking for node in an
+
+8
+00:00:28,890 --> 00:00:30,100
+unsorted tree.
+
+9
+00:00:30,300 --> 00:00:31,560
+So let me show you how it works.
+
+10
+00:00:31,560 --> 00:00:34,770
+Imagine we have this tree and we're looking for the number 72.
+
+11
+00:00:35,010 --> 00:00:36,350
+Although we have to start is the.
+
+12
+00:00:36,450 --> 00:00:40,740
+So we don't actually see that our code doesn't know what's lying ahead.
+
+13
+00:00:40,740 --> 00:00:44,210
+It just sees the root all that we have to do is check.
+
+14
+00:00:44,250 --> 00:00:44,500
+All right.
+
+15
+00:00:44,530 --> 00:00:47,250
+1:53 greater than 41 Yes.
+
+16
+00:00:47,280 --> 00:00:49,940
+So we only care about this half of the tree.
+
+17
+00:00:49,980 --> 00:00:55,720
+Basically every comparison we do should roughly chop in half the number of values we look at.
+
+18
+00:00:55,980 --> 00:01:01,860
+If you remember how binary search worked in a list it's the same idea where we have this data sorted
+
+19
+00:01:02,010 --> 00:01:05,630
+where everything to the right is greater everything to the left is smaller or less than.
+
+20
+00:01:05,840 --> 00:01:07,040
+And we make a comparison.
+
+21
+00:01:07,230 --> 00:01:08,850
+Ideally we chop the tree in half.
+
+22
+00:01:08,850 --> 00:01:11,010
+Now it depends on how the tree is distributed.
+
+23
+00:01:11,040 --> 00:01:12,790
+We could have way more values over here.
+
+24
+00:01:12,870 --> 00:01:18,630
+And very few small values but in general on average we cut the number of comparisons with number of
+
+25
+00:01:18,660 --> 00:01:19,680
+nodes in half.
+
+26
+00:01:19,710 --> 00:01:20,350
+So we check.
+
+27
+00:01:20,350 --> 00:01:21,830
+Seventy two is greater than 41.
+
+28
+00:01:21,840 --> 00:01:23,850
+So we only care about this side.
+
+29
+00:01:23,940 --> 00:01:29,330
+So then we go to 65 is 72 less than or greater than it's greater than 65.
+
+30
+00:01:29,430 --> 00:01:34,430
+So we go over here now we get to 91 is 72 less than or greater than 91.
+
+31
+00:01:34,440 --> 00:01:36,940
+It's less then and we found it.
+
+32
+00:01:37,020 --> 00:01:44,370
+Now if you compare that to if this was an unsorted tree and 72 was indeed in the tree it could be anywhere
+
+33
+00:01:44,370 --> 00:01:49,090
+in this tree and we might have to look at every single node and traverse the entire tree.
+
+34
+00:01:49,110 --> 00:01:50,680
+And we'll talk about how you would do that.
+
+35
+00:01:50,820 --> 00:01:56,100
+But you know you could pick any order do you go all the way here first and then here and then here and
+
+36
+00:01:56,100 --> 00:01:57,000
+then down here.
+
+37
+00:01:57,090 --> 00:01:58,890
+Do you go to the right for you.
+
+38
+00:01:58,890 --> 00:02:01,190
+There's a million ways if there's not a million.
+
+39
+00:02:01,230 --> 00:02:05,850
+There's many ways of traversing a tree but with a binary search tree when we're looking for a value
+
+40
+00:02:05,880 --> 00:02:10,900
+there's a very specific procedure we follow we compare and we go to the right or the left.
+
+41
+00:02:10,980 --> 00:02:12,960
+We compare again and we cut it in half.
+
+42
+00:02:12,960 --> 00:02:16,060
+Keep going until you find the value or you don't find it.
+
+43
+00:02:16,110 --> 00:02:20,750
+But you know because the way a binary search she works the value is not in there if you don't find it.
+
+44
+00:02:20,960 --> 00:02:21,320
+OK.
+
+45
+00:02:21,390 --> 00:02:24,200
+So to recap here there's many types of trees.
+
+46
+00:02:24,330 --> 00:02:29,550
+There are binary trees where each parents or each node can have at most two children.
+
+47
+00:02:29,550 --> 00:02:35,460
+There are many types of binary trees one of which is the binary search tree a binary search tree works
+
+48
+00:02:35,460 --> 00:02:40,890
+or sorted data or sortable data where there's an order you can compare things and it's the same rules
+
+49
+00:02:40,890 --> 00:02:44,050
+a binary tree every parent node has at most two children.
+
+50
+00:02:44,220 --> 00:02:49,440
+But on top of that every node to the left of a parent is always less than the parent every node to the
+
+51
+00:02:49,440 --> 00:02:51,480
+right is always greater than the parent.
+
+52
+00:02:51,630 --> 00:02:55,120
+And that makes it so that we can search we can find things much faster.
+

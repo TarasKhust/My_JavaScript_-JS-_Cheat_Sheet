@@ -1,0 +1,184 @@
+1
+00:00:00,150 --> 00:00:02,010
+Hey everyone welcome to a new section.
+
+2
+00:00:02,010 --> 00:00:03,810
+This one is a little special.
+
+3
+00:00:03,870 --> 00:00:09,000
+A little different because it's not about a new data structure we're not learning a structure and implementing
+
+4
+00:00:09,000 --> 00:00:09,550
+it.
+
+5
+00:00:09,840 --> 00:00:14,660
+Unlike you I guess the past 10 plus sections where it was all right this is a tree that's right one
+
+6
+00:00:14,670 --> 00:00:20,760
+this is a graph of the right one instead we're learning and implementing a single very famous algorithm
+
+7
+00:00:20,850 --> 00:00:23,950
+called Dijkstra's algorithm.
+
+8
+00:00:24,060 --> 00:00:25,770
+It's shortened from Dykstra.
+
+9
+00:00:25,950 --> 00:00:27,630
+Shortest path algorithm.
+
+10
+00:00:27,660 --> 00:00:31,190
+Most people if you just say Dykstra they know what you're talking about.
+
+11
+00:00:31,410 --> 00:00:36,930
+Well not most people in the real world but most computer science people it's very very famous.
+
+12
+00:00:36,930 --> 00:00:39,880
+It's one of if not the most famous algorithms out there.
+
+13
+00:00:39,900 --> 00:00:45,000
+We'll talk about why why it's named Dykstra is who he was what he did and most importantly what the
+
+14
+00:00:45,000 --> 00:00:45,780
+algorithm does.
+
+15
+00:00:45,780 --> 00:00:46,540
+In just a bit.
+
+16
+00:00:46,650 --> 00:00:52,440
+But the first thing I want to say is that even though this is not about implementing a new data structure
+
+17
+00:00:52,890 --> 00:00:55,750
+there are two sort of prerequisite data structures.
+
+18
+00:00:55,770 --> 00:00:59,750
+One is the graph because Dykstra is algorithm X upon a graph.
+
+19
+00:00:59,760 --> 00:01:01,640
+It searches across a graph.
+
+20
+00:01:01,650 --> 00:01:05,440
+So if you didn't watch the graphic graphic content you definitely want to do that.
+
+21
+00:01:05,610 --> 00:01:11,100
+And then the second thing is that it actually uses a priority queue as part of its implementation.
+
+22
+00:01:11,280 --> 00:01:15,600
+So in this section we're not going to write a priority queue from scratch because in the binary heap
+
+23
+00:01:15,640 --> 00:01:19,800
+section we did that we used a binary heap to implement a priority queue.
+
+24
+00:01:19,800 --> 00:01:21,060
+Now if you skip that.
+
+25
+00:01:21,270 --> 00:01:25,800
+I understand there's a lot of content in this coarsen and you don't necessarily have to go you know
+
+26
+00:01:25,800 --> 00:01:30,750
+video by video but I am telling you now you definitely want to go and just watch the priority queue
+
+27
+00:01:30,750 --> 00:01:32,550
+section or the binary heap section.
+
+28
+00:01:32,550 --> 00:01:36,900
+And in particular the Prior to cube videos at the end because that code will come up here.
+
+29
+00:01:36,960 --> 00:01:38,660
+So I'm just going to copy and paste it over.
+
+30
+00:01:38,910 --> 00:01:45,120
+So just as a warning those two things Graf's binary keep's I would be I would try to familiarize yourself
+
+31
+00:01:45,120 --> 00:01:46,200
+with them first.
+
+32
+00:01:46,200 --> 00:01:46,680
+All right.
+
+33
+00:01:46,680 --> 00:01:48,920
+Next let's talk about our objectives.
+
+34
+00:01:48,930 --> 00:01:52,150
+So first we're going to understand the importance of Dykstra.
+
+35
+00:01:52,170 --> 00:01:53,620
+That's happening in this video.
+
+36
+00:01:53,730 --> 00:01:59,940
+The history that sort of thing then as a sidebar we have to implement a weighted graph because Dexters
+
+37
+00:01:59,970 --> 00:02:04,560
+algorithm works on a weighted graph and so far we've only done unweighted graphs.
+
+38
+00:02:04,560 --> 00:02:09,390
+After then we'll begin sort of digesting and understanding the algorithm.
+
+39
+00:02:09,390 --> 00:02:16,560
+Now it's not terribly complicated but it gets long enough that me giving you a single slide of pseudo
+
+40
+00:02:16,560 --> 00:02:18,840
+code probably wouldn't be enough.
+
+41
+00:02:18,840 --> 00:02:24,930
+So I'm going to have some animations some videos or some slides and made to walk through it some diagrams
+
+42
+00:02:24,940 --> 00:02:29,760
+so we're going to just go step by step how it works and a sample graph then we'll implement it using
+
+43
+00:02:29,760 --> 00:02:36,110
+a naive party priority queue and then we'll upgrade it a bit using our binary heap priority queue.
+
+44
+00:02:36,210 --> 00:02:36,750
+All right.
+
+45
+00:02:36,750 --> 00:02:39,270
+So a lot of stuff for a single algorithm.
+
+46
+00:02:39,270 --> 00:02:41,570
+Let's start by talking about what it even is.
+

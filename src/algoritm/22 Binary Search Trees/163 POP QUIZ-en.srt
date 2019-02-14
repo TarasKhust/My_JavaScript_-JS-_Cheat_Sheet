@@ -1,0 +1,100 @@
+1
+00:00:00,370 --> 00:00:05,640
+A quick pop quiz here is this a valid binary search tree with these pieces of data.
+
+2
+00:00:05,640 --> 00:00:07,630
+These numbers take a look.
+
+3
+00:00:07,810 --> 00:00:12,670
+Posit if you need a little extra time the answer is No.
+
+4
+00:00:12,840 --> 00:00:14,210
+So what's the problem here.
+
+5
+00:00:14,550 --> 00:00:23,660
+Well if we look on this node 8 to the left three is indeed smaller than 8 but 6 is larger than 8.
+
+6
+00:00:23,670 --> 00:00:24,860
+So that is not good.
+
+7
+00:00:24,870 --> 00:00:26,610
+That's invalid.
+
+8
+00:00:26,610 --> 00:00:27,780
+How about this one.
+
+9
+00:00:27,780 --> 00:00:29,060
+Is this valid.
+
+10
+00:00:29,670 --> 00:00:35,250
+Well hopefully you can tell right off the bat the answer is nope it doesn't matter what the actual numbers
+
+11
+00:00:35,250 --> 00:00:38,320
+are because this root node has three children.
+
+12
+00:00:38,520 --> 00:00:39,880
+So it's not a binary tree any more.
+
+13
+00:00:39,900 --> 00:00:43,510
+So out of the question an forgivable.
+
+14
+00:00:43,980 --> 00:00:46,330
+Next here's a slightly larger one.
+
+15
+00:00:46,350 --> 00:00:48,800
+Is this a valid binary search tree.
+
+16
+00:00:48,810 --> 00:00:50,750
+Take a moment to think about it.
+
+17
+00:00:50,810 --> 00:00:52,240
+The answer is nope.
+
+18
+00:00:52,320 --> 00:00:55,880
+Once again And the problem area is right here.
+
+19
+00:00:56,090 --> 00:00:57,380
+So we have three.
+
+20
+00:00:57,520 --> 00:01:00,720
+And to the right we have six so six is larger than three.
+
+21
+00:01:00,720 --> 00:01:01,580
+That's OK.
+
+22
+00:01:01,800 --> 00:01:04,070
+But to the left we have four.
+
+23
+00:01:04,170 --> 00:01:09,480
+Four is greater than three and everything to the left has to be smaller than three.
+
+24
+00:01:09,570 --> 00:01:10,680
+So invalid.
+
+25
+00:01:11,060 --> 00:01:13,570
+So three invalid trees for different reasons.
+

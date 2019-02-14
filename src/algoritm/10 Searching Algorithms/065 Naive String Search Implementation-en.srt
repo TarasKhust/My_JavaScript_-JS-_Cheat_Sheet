@@ -1,0 +1,812 @@
+1
+00:00:00,210 --> 00:00:00,480
+All right.
+
+2
+00:00:00,480 --> 00:00:01,180
+Welcome back.
+
+3
+00:00:01,290 --> 00:00:05,870
+So in this video we'll go ahead and implement the naive string search algorithm.
+
+4
+00:00:06,120 --> 00:00:12,800
+So I already have a snippet created do this wherever you prefer sublime some text editor a snippet yourself.
+
+5
+00:00:12,810 --> 00:00:13,990
+It doesn't matter.
+
+6
+00:00:14,010 --> 00:00:18,950
+So I have one called Search naive string and I'll close that for now.
+
+7
+00:00:18,960 --> 00:00:23,490
+First let's just define the function so it needs to accept two strings.
+
+8
+00:00:23,490 --> 00:00:32,550
+I'm going to call it naive search and it accepts the long string and a short string or long and pattern.
+
+9
+00:00:32,550 --> 00:00:34,950
+I've also seen that pattern like that.
+
+10
+00:00:35,100 --> 00:00:36,390
+I like short though.
+
+11
+00:00:37,050 --> 00:00:43,710
+And then the first thing that will do is just do a sample call down here so naive search and let's say
+
+12
+00:00:43,710 --> 00:00:49,180
+for example that would we would be calling it with maybe Loree mold.
+
+13
+00:00:49,320 --> 00:00:50,090
+Hello elde.
+
+14
+00:00:50,130 --> 00:00:54,890
+As a verb and we're searching for EHLO well in that string.
+
+15
+00:00:55,280 --> 00:00:55,780
+OK.
+
+16
+00:00:55,950 --> 00:01:00,360
+So first of all we're going to need to get some loops going as this pseudo code mentions loop over the
+
+17
+00:01:00,360 --> 00:01:04,190
+longer string and then nested inside loop over the shorter string.
+
+18
+00:01:04,560 --> 00:01:07,200
+So let's just start with the most basic loop over the long string.
+
+19
+00:01:07,200 --> 00:01:16,780
+So for var i equals zero while I less than long length I plus plus.
+
+20
+00:01:16,890 --> 00:01:19,220
+So that should give us every eye.
+
+21
+00:01:19,270 --> 00:01:23,720
+We just look at it and execute this make Consul a bit bigger.
+
+22
+00:01:23,720 --> 00:01:24,860
+C'mon.
+
+23
+00:01:25,020 --> 00:01:25,270
+All right.
+
+24
+00:01:25,290 --> 00:01:29,660
+So we get zero to 10 there's 10 or 11 characters in there.
+
+25
+00:01:29,810 --> 00:01:35,930
+Then let's do the same thing this time for J or whatever whatever letter you prefer.
+
+26
+00:01:35,940 --> 00:01:38,470
+But J is the standard one h i j k.
+
+27
+00:01:38,490 --> 00:01:39,010
+Yes.
+
+28
+00:01:39,110 --> 00:01:43,000
+Yeah ok for var J equals zero.
+
+29
+00:01:43,140 --> 00:01:52,200
+J This time is less than short length J plus plus it gets a little confusing when you start working
+
+30
+00:01:52,200 --> 00:01:55,020
+with i and j keeping track of which one is which.
+
+31
+00:01:55,020 --> 00:01:59,400
+So if we just printed out I comma J each time through.
+
+32
+00:01:59,400 --> 00:02:00,760
+Those are going to be numbers.
+
+33
+00:02:00,810 --> 00:02:07,040
+So why don't we do instead let's do long of-I So we see which character we'd be referencing.
+
+34
+00:02:07,050 --> 00:02:09,990
+And short of J.
+
+35
+00:02:10,620 --> 00:02:12,330
+Now we're going to get a lot of prints.
+
+36
+00:02:12,360 --> 00:02:16,390
+This is a nested loops so we're looping 10 times here.
+
+37
+00:02:16,650 --> 00:02:22,230
+But each of those 10 times we're looping three times for the L-A well.
+
+38
+00:02:22,230 --> 00:02:28,970
+So if I clear this out I'll make this larger and try it again.
+
+39
+00:02:28,980 --> 00:02:29,340
+All right.
+
+40
+00:02:29,340 --> 00:02:36,170
+So you can see what we get here is basically we start with L on both of them out and out.
+
+41
+00:02:36,570 --> 00:02:38,110
+And then the Eneloop goes to 0.
+
+42
+00:02:38,130 --> 00:02:46,440
+So we have L and O and then l l again and then we move to 0 and we start over o n l o n o o n l.
+
+43
+00:02:46,620 --> 00:02:48,730
+OK so what do we actually want to do.
+
+44
+00:02:48,780 --> 00:02:50,640
+Rather than just printing them out.
+
+45
+00:02:50,640 --> 00:02:52,430
+Well the first thing we can do.
+
+46
+00:02:52,590 --> 00:02:55,470
+Let's forget the fact that i and j are numbers.
+
+47
+00:02:55,470 --> 00:02:57,780
+And let's just say that there are the letters exactly.
+
+48
+00:02:57,780 --> 00:02:59,310
+It's a little easier to talk about.
+
+49
+00:02:59,400 --> 00:03:05,330
+So let's say that I started L and J also starts as l.
+
+50
+00:03:05,820 --> 00:03:12,120
+So remember that I is her outer loop so I is going to stay L as we progress through EHLO Well if that
+
+51
+00:03:12,120 --> 00:03:17,080
+makes sense as J increases as to increase three times and then reset.
+
+52
+00:03:17,250 --> 00:03:22,500
+In order for eye to increase once we start the loop is l j is l.
+
+53
+00:03:22,650 --> 00:03:24,270
+We compare them looks good.
+
+54
+00:03:24,300 --> 00:03:30,460
+Whenever there isn't a match we break out of this inner loop and we move on to the next iteration.
+
+55
+00:03:30,570 --> 00:03:34,170
+But let's let's just focus on in this case there is a match.
+
+56
+00:03:34,170 --> 00:03:36,190
+ELEANOR HALL So what do we do next.
+
+57
+00:03:36,360 --> 00:03:41,710
+Well the next comparison is still going to be L but it's going to be compared to 0.
+
+58
+00:03:41,940 --> 00:03:50,660
+Because we're moving basically J moves on and it becomes O because we're looping through this first.
+
+59
+00:03:50,730 --> 00:03:51,630
+But that's not going to work.
+
+60
+00:03:51,630 --> 00:03:54,960
+To directly compare 0 and L because we know that's not a match.
+
+61
+00:03:54,960 --> 00:03:59,080
+So what we want to compare it to is one more than l.
+
+62
+00:03:59,220 --> 00:04:06,000
+So as we move through J We want to also look ahead in I even though I it's going to be stuck at zero
+
+63
+00:04:06,030 --> 00:04:11,750
+if that makes sense as we look through this as our short pattern allwell continues to loop.
+
+64
+00:04:11,970 --> 00:04:14,030
+We're still comparing to out each time.
+
+65
+00:04:14,370 --> 00:04:18,210
+So instead we want to look ahead and the best way to do that or one way at least that I'm going to do
+
+66
+00:04:18,210 --> 00:04:21,680
+it is by adding I to J.
+
+67
+00:04:21,690 --> 00:04:23,020
+It is kind of confusing.
+
+68
+00:04:23,220 --> 00:04:26,900
+But now if we go back to numbers and we say they both started at zero.
+
+69
+00:04:27,290 --> 00:04:27,580
+OK.
+
+70
+00:04:27,600 --> 00:04:29,040
+So there's a match.
+
+71
+00:04:29,040 --> 00:04:32,360
+Now J goes up to 1.
+
+72
+00:04:32,400 --> 00:04:38,490
+So we're going to compare Elo of one which is 0 to this string.
+
+73
+00:04:38,690 --> 00:04:41,810
+The gold but instead of zero we're going to add them together.
+
+74
+00:04:41,970 --> 00:04:46,100
+So where we were before plus where we are now in J.
+
+75
+00:04:46,170 --> 00:04:51,850
+Which means that we're going to look ahead to 0 because that would be index of 1.
+
+76
+00:04:51,970 --> 00:04:55,750
+So that's a match next time through our short string right index of two.
+
+77
+00:04:55,950 --> 00:05:03,970
+So we're going to compare this L and we are going to add 0 plus 2 to give us index of two of this string.
+
+78
+00:05:03,990 --> 00:05:05,870
+Looking ahead and it's not a match.
+
+79
+00:05:05,910 --> 00:05:07,020
+So then we break out.
+
+80
+00:05:07,140 --> 00:05:09,210
+That means that we started again at all.
+
+81
+00:05:09,690 --> 00:05:16,160
+But then once we get up to here which is what index of 0 1 2 3 4 5 index of 6.
+
+82
+00:05:16,170 --> 00:05:22,920
+So in the scenario where we are here index of six in the large string index of 0 in the short string
+
+83
+00:05:23,480 --> 00:05:24,690
+there is a match.
+
+84
+00:05:24,690 --> 00:05:25,470
+Right.
+
+85
+00:05:25,530 --> 00:05:26,420
+Those are matches.
+
+86
+00:05:26,580 --> 00:05:27,840
+So then we move on.
+
+87
+00:05:27,840 --> 00:05:30,150
+And the short string J goes up by 1.
+
+88
+00:05:30,220 --> 00:05:34,980
+It now becomes 1 but we don't want to compare lower levels of index 6.
+
+89
+00:05:34,980 --> 00:05:35,800
+We want.
+
+90
+00:05:35,960 --> 00:05:38,740
+The old index 7 and we add them together.
+
+91
+00:05:38,820 --> 00:05:43,830
+So hopefully you can see the approach we're looking ahead and to do that.
+
+92
+00:05:43,850 --> 00:05:45,200
+It's not too bad.
+
+93
+00:05:45,570 --> 00:05:51,880
+All we do is add I and J together and access using that new index access the long string.
+
+94
+00:05:52,200 --> 00:05:55,390
+So here's my approach sort of con. about logging.
+
+95
+00:05:55,500 --> 00:06:07,310
+We'll just basically check if the short string of J is not equal to the long string of I Plus J.
+
+96
+00:06:07,320 --> 00:06:09,450
+Now if that happens and we'll break out.
+
+97
+00:06:09,450 --> 00:06:11,490
+So let's let's make this a loop.
+
+98
+00:06:11,700 --> 00:06:15,140
+I mean a conditional like this.
+
+99
+00:06:15,140 --> 00:06:20,420
+This means break out of this short loop and start on J again at zero.
+
+100
+00:06:20,850 --> 00:06:24,490
+So anytime there isn't a match We're going to break.
+
+101
+00:06:24,630 --> 00:06:30,880
+So if I add this constant log in there now I'm printing short J and long i Plus J.
+
+102
+00:06:30,890 --> 00:06:35,820
+I'm going to clear out like this and let's see what we get.
+
+103
+00:06:36,360 --> 00:06:37,240
+OK.
+
+104
+00:06:37,680 --> 00:06:43,010
+So our comparisons we start with L and L that makes sense.
+
+105
+00:06:43,110 --> 00:06:43,920
+There's a match.
+
+106
+00:06:43,920 --> 00:06:51,060
+So we don't break out and we move on to 0 and we compare 0 to the next character which is 0 and then
+
+107
+00:06:51,120 --> 00:06:51,660
+there's a match.
+
+108
+00:06:51,660 --> 00:06:57,820
+So we move on again to L and we compare it to our in which case there wasn't a match.
+
+109
+00:06:57,840 --> 00:07:05,780
+So if I added in a console that log here to say break and rerun this you could see what happens.
+
+110
+00:07:06,420 --> 00:07:08,900
+So it looks like there's a match L and L O N O.
+
+111
+00:07:08,910 --> 00:07:10,050
+And then there isn't a match.
+
+112
+00:07:10,110 --> 00:07:15,260
+So we break and when we break what is happening there is that J is being reset.
+
+113
+00:07:15,270 --> 00:07:22,290
+This inner loop is going back to zero meaning we started elegant but the outer loop I moves on.
+
+114
+00:07:22,290 --> 00:07:25,050
+So now we're starting here at 0.
+
+115
+00:07:25,110 --> 00:07:27,780
+So after that break we do L and O.
+
+116
+00:07:27,780 --> 00:07:29,550
+And that's not a match that to break.
+
+117
+00:07:29,550 --> 00:07:31,310
+So then we move forward again.
+
+118
+00:07:31,470 --> 00:07:34,770
+This time we're talking about R and L and that's not a match.
+
+119
+00:07:34,770 --> 00:07:40,620
+So we break we keep going until finally we get here and there's a match.
+
+120
+00:07:40,620 --> 00:07:44,040
+So then we move on and there's another match and another match.
+
+121
+00:07:44,070 --> 00:07:46,220
+But what do we not have right now.
+
+122
+00:07:46,470 --> 00:07:50,990
+We're not actually incrementing any sort of counter when we find a four match.
+
+123
+00:07:51,300 --> 00:07:52,890
+So we found a full match right here.
+
+124
+00:07:52,900 --> 00:07:57,480
+Elo Well they all those are two pair or three pairs that matched correctly.
+
+125
+00:07:57,480 --> 00:08:00,600
+So what we need to do is make a variable appear.
+
+126
+00:08:00,900 --> 00:08:01,560
+Let's just call it.
+
+127
+00:08:01,560 --> 00:08:04,450
+Count equals zero.
+
+128
+00:08:04,920 --> 00:08:06,840
+And when should we increment counts.
+
+129
+00:08:07,110 --> 00:08:12,400
+Well the way that we know that we have successfully made it through this string.
+
+130
+00:08:12,630 --> 00:08:17,070
+Because if we get to the last character and there's a match if we've made it to that point that means
+
+131
+00:08:17,070 --> 00:08:22,680
+that J is going to be whatever the last character in the short string is.
+
+132
+00:08:22,980 --> 00:08:27,800
+If that makes sense so if we had told ELO Ltd we know that we finished.
+
+133
+00:08:27,960 --> 00:08:34,930
+If J is 0 1 2 3 4 if J is for or in this case if J is 2.
+
+134
+00:08:35,220 --> 00:08:36,630
+If we've made it to that point.
+
+135
+00:08:36,960 --> 00:08:44,190
+So we can just add a conditional check just to an if and then we just check if J is equal to the short
+
+136
+00:08:44,190 --> 00:08:49,530
+string length but minus one because of length it's going to be greater than the index.
+
+137
+00:08:49,680 --> 00:08:55,020
+If that's the case let's add one to do plus two plus plus like that.
+
+138
+00:08:55,680 --> 00:09:01,090
+And then at the end let's return count let's see how many braces do I have.
+
+139
+00:09:01,190 --> 00:09:02,720
+So that's conditional loop loop.
+
+140
+00:09:02,770 --> 00:09:03,710
+OK here we go.
+
+141
+00:09:05,850 --> 00:09:08,120
+OK so let's see what happens now.
+
+142
+00:09:08,520 --> 00:09:12,220
+So why don't I add a of log in here.
+
+143
+00:09:13,380 --> 00:09:19,110
+Found one clear my Consul rerun the whole thing started again.
+
+144
+00:09:20,340 --> 00:09:20,990
+OK.
+
+145
+00:09:21,490 --> 00:09:26,090
+So if you see we have the same exact thing almost a match but there's not a break.
+
+146
+00:09:26,170 --> 00:09:27,040
+Keep going.
+
+147
+00:09:27,250 --> 00:09:30,150
+But then hooray we found a match.
+
+148
+00:09:30,430 --> 00:09:31,790
+And so this code is printing.
+
+149
+00:09:32,050 --> 00:09:33,840
+So count is going up by 1.
+
+150
+00:09:34,030 --> 00:09:39,100
+So if you get this if it works for you or if he had a slightly different solution but you're still it's
+
+151
+00:09:39,100 --> 00:09:39,790
+working.
+
+152
+00:09:40,000 --> 00:09:40,750
+That's all that matters.
+
+153
+00:09:40,750 --> 00:09:44,130
+If you have two loops and you're getting it to work your logic can be slightly different.
+
+154
+00:09:44,170 --> 00:09:46,250
+You could work from the end for example.
+
+155
+00:09:46,480 --> 00:09:49,050
+You don't have to work from the beginning forward or you could work backwards.
+
+156
+00:09:49,240 --> 00:09:50,740
+That doesn't really matter.
+
+157
+00:09:50,920 --> 00:09:52,560
+But if you have it working great.
+
+158
+00:09:52,720 --> 00:09:57,880
+If you want you can stick around and we can walk through this one more time just to see exactly how
+
+159
+00:09:57,880 --> 00:09:58,720
+it works.
+
+160
+00:09:58,750 --> 00:10:04,660
+I'm going to shorten this up because like some of the other solutions we can put these on single lines
+
+161
+00:10:04,900 --> 00:10:08,560
+make it a little nicer like that.
+
+162
+00:10:08,620 --> 00:10:17,800
+Same thing with our second if we set up here just like that and it still works should still work at
+
+163
+00:10:17,800 --> 00:10:23,330
+least are getting results printed come back consul.
+
+164
+00:10:23,430 --> 00:10:24,930
+Yes we're getting one.
+
+165
+00:10:24,930 --> 00:10:25,990
+Cool.
+
+166
+00:10:26,010 --> 00:10:26,390
+All right.
+
+167
+00:10:26,400 --> 00:10:31,140
+So if you want to stick around for the extra walkthrough Let's try it one more time or something different.
+
+168
+00:10:31,140 --> 00:10:36,390
+Let's try it with L O which in this case we should get two matches.
+
+169
+00:10:36,390 --> 00:10:37,560
+Is that working.
+
+170
+00:10:38,070 --> 00:10:39,520
+Yes we get two.
+
+171
+00:10:39,990 --> 00:10:40,670
+All right.
+
+172
+00:10:40,860 --> 00:10:41,880
+So what's happening here.
+
+173
+00:10:42,030 --> 00:10:44,950
+Well we loop through every character for example.
+
+174
+00:10:44,970 --> 00:10:45,900
+So it's where we start.
+
+175
+00:10:46,080 --> 00:10:48,670
+And on the second string we look through every character.
+
+176
+00:10:48,780 --> 00:10:57,030
+So we started well and immediately we check if this character doesn't match I Plus J of this character
+
+177
+00:10:57,040 --> 00:10:58,480
+so I and J are both zero.
+
+178
+00:10:58,710 --> 00:11:02,560
+So this means for checking the first characters together 0 0 0.
+
+179
+00:11:02,880 --> 00:11:06,380
+So if they don't match immediately break out and that means that we move on.
+
+180
+00:11:06,570 --> 00:11:08,260
+And that eye is now right here.
+
+181
+00:11:09,450 --> 00:11:14,030
+So if they do match though which they happen to match what do we do.
+
+182
+00:11:14,250 --> 00:11:18,490
+Well since we're still in this loop we move on.
+
+183
+00:11:18,600 --> 00:11:22,460
+Jay is now pointing to this but I still hear.
+
+184
+00:11:22,680 --> 00:11:24,970
+So now we add those two together.
+
+185
+00:11:25,050 --> 00:11:27,110
+Jay is now one is still zero.
+
+186
+00:11:27,120 --> 00:11:34,380
+So that gives us a total of one and we compare this to that and there's a match at which point we increment
+
+187
+00:11:34,830 --> 00:11:39,500
+count because J is equal to the length of the short string.
+
+188
+00:11:39,600 --> 00:11:45,020
+That's how we know we're on the last iteration J and this case would be equal to 1 0 1.
+
+189
+00:11:45,150 --> 00:11:50,090
+When we get to 1 and we haven't broken out yet if we get to this point that means we found a match.
+
+190
+00:11:50,310 --> 00:11:50,510
+All right.
+
+191
+00:11:50,520 --> 00:11:53,940
+So then it repeats again until it finds this match.
+
+192
+00:11:53,970 --> 00:11:55,250
+So hopefully that's clear.
+
+193
+00:11:55,440 --> 00:12:02,230
+And if we try it with something that isn't in there like pop we should just get zero.
+
+194
+00:12:02,550 --> 00:12:03,300
+And we do.
+
+195
+00:12:03,630 --> 00:12:06,750
+So we don't have to account for anything because we have this count variable.
+
+196
+00:12:06,810 --> 00:12:11,430
+It's unlike binary search for example where we had to handle errors not errors but we had to handle
+
+197
+00:12:11,430 --> 00:12:12,870
+those edge cases.
+
+198
+00:12:12,870 --> 00:12:15,230
+If we don't find anything the count euro.
+
+199
+00:12:15,600 --> 00:12:16,190
+All right.
+
+200
+00:12:16,320 --> 00:12:19,980
+So that is an implementation of naive string searching.
+
+201
+00:12:19,990 --> 00:12:25,530
+Next we're going to see a better implementation of a different sort of string search algorithm.
+
+202
+00:12:25,620 --> 00:12:29,330
+Definitely a little more complicated and longer but it be fun to talk about.
+
+203
+00:12:29,340 --> 00:12:29,700
+I think.
+

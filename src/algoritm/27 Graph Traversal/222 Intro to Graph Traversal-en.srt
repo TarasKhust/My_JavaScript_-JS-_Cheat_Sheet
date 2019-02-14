@@ -1,0 +1,512 @@
+1
+00:00:00,240 --> 00:00:01,420
+Hey welcome back.
+
+2
+00:00:01,680 --> 00:00:05,390
+So at this point we have the ability to store data in a graph structure.
+
+3
+00:00:05,400 --> 00:00:11,550
+We wrote the graph class we added in methods to add and remove vertices and edges so we can store everything
+
+4
+00:00:11,550 --> 00:00:13,080
+we can represent a graph.
+
+5
+00:00:13,080 --> 00:00:19,200
+Now we get to go to the really really juicy meaty important stuff which all has to do with traversing
+
+6
+00:00:19,200 --> 00:00:23,060
+our graphs searching or visiting neighbors from a given node.
+
+7
+00:00:23,400 --> 00:00:25,870
+So we'll get into the real world uses for this.
+
+8
+00:00:25,920 --> 00:00:28,710
+There are many many of them just like two sides from now.
+
+9
+00:00:28,720 --> 00:00:29,520
+I'll talk about it.
+
+10
+00:00:29,550 --> 00:00:34,420
+This is also a topic that comes up a lot in computer science textbooks and final exams.
+
+11
+00:00:34,580 --> 00:00:39,390
+It comes up in interviews which I actually think it's a great interview question because of how many
+
+12
+00:00:39,390 --> 00:00:40,960
+real world applications there are.
+
+13
+00:00:40,980 --> 00:00:44,600
+So it's not some arbitrary you know just test of your art.
+
+14
+00:00:44,700 --> 00:00:47,530
+How much do you remember from from college computer science.
+
+15
+00:00:47,580 --> 00:00:50,820
+It's something that actually is relevant in today's world.
+
+16
+00:00:50,820 --> 00:00:57,360
+So we'll talk about why but when we say traversal for now at least I just mean visiting every single
+
+17
+00:00:57,360 --> 00:00:59,510
+node every vertex in a graph.
+
+18
+00:00:59,520 --> 00:01:01,570
+So there's many ways of doing this.
+
+19
+00:01:01,590 --> 00:01:06,980
+Usually like when we talk about the real world applications you may not be visiting every single node.
+
+20
+00:01:07,020 --> 00:01:12,540
+A lot of what people do has to do with finding nearest neighbors or most similar neighbors are finding
+
+21
+00:01:12,540 --> 00:01:14,920
+the shortest path from one vertex to another.
+
+22
+00:01:14,940 --> 00:01:17,150
+In the case of GPS directions.
+
+23
+00:01:17,370 --> 00:01:23,130
+So it's usually more special cases rather than visit every single node in this entire graph just to
+
+24
+00:01:23,130 --> 00:01:24,270
+say that you've done it.
+
+25
+00:01:24,330 --> 00:01:25,530
+But we've got to start somewhere.
+
+26
+00:01:25,620 --> 00:01:31,170
+And a lot of the more advanced algorithms are derived from our basic traversal approaches the procedures
+
+27
+00:01:31,170 --> 00:01:32,720
+we're going to talk about now.
+
+28
+00:01:32,760 --> 00:01:39,000
+So when we say traversal we mean visiting updating checking searching printing out whatever every vertex
+
+29
+00:01:39,030 --> 00:01:39,830
+in a graph.
+
+30
+00:01:39,990 --> 00:01:47,070
+So we start from one vertex which if we go back to trees remember trees are a special subset of a graph
+
+31
+00:01:47,520 --> 00:01:53,130
+where for any given node there is only one path one and only path to get to this node.
+
+32
+00:01:53,340 --> 00:01:59,790
+So from 17 the route to get to 25 This is our only option to get to 89.
+
+33
+00:01:59,910 --> 00:02:00,990
+There's one option.
+
+34
+00:02:00,990 --> 00:02:03,910
+Now if we compare that with some other graphs.
+
+35
+00:02:04,080 --> 00:02:09,720
+So the more generic graph basically this is not a tree every tree is a graph but there are many many
+
+36
+00:02:09,720 --> 00:02:10,880
+graphs that aren't.
+
+37
+00:02:10,890 --> 00:02:16,260
+So for example this one this is a directed graph which we haven't worked with very much but it just
+
+38
+00:02:16,260 --> 00:02:20,430
+means that those connections those edges are they have a direction associated with them.
+
+39
+00:02:20,430 --> 00:02:21,720
+They're one way.
+
+40
+00:02:21,780 --> 00:02:29,010
+So let's say I want to go from zero to six and actually even before that we have a problem of not knowing
+
+41
+00:02:29,010 --> 00:02:29,980
+where we start from.
+
+42
+00:02:30,030 --> 00:02:31,480
+There is no root.
+
+43
+00:02:31,500 --> 00:02:37,320
+So yeah maybe as humans we want to start at zero because it's the smallest number but there's no indication
+
+44
+00:02:37,320 --> 00:02:38,860
+that this is the start point.
+
+45
+00:02:39,000 --> 00:02:41,150
+We could start from here or from here.
+
+46
+00:02:41,370 --> 00:02:47,260
+So unlike a tree when we write the code to traverse a graph we need to specify our starting point.
+
+47
+00:02:47,580 --> 00:02:50,470
+So let's say I want to go from 0 to 6.
+
+48
+00:02:50,490 --> 00:02:56,280
+For example there is at least Well there's this option 0 to 1 to 6.
+
+49
+00:02:56,280 --> 00:03:02,490
+We can go 0 to 2 to 3 to 6 0 to 2 to 3 to 5 to 8 to 6.
+
+50
+00:03:02,490 --> 00:03:03,650
+And I think that's it.
+
+51
+00:03:03,690 --> 00:03:07,140
+If this was a undirected graph we would have some other options too.
+
+52
+00:03:07,140 --> 00:03:09,540
+We could go from 5 we could go from 7.
+
+53
+00:03:09,630 --> 00:03:15,810
+So my point here is that for any node in the graph there's no guarantee there's one unique path to get
+
+54
+00:03:15,810 --> 00:03:16,670
+there.
+
+55
+00:03:16,680 --> 00:03:22,400
+Now that doesn't mean that traversing is harder or more difficult but it does mean that sometimes while
+
+56
+00:03:22,410 --> 00:03:26,900
+there are certainly multiple orders but also you may end up having to do some backtracking.
+
+57
+00:03:26,940 --> 00:03:32,310
+You may revisit a node you've already been to almost always do and it's not much code.
+
+58
+00:03:32,310 --> 00:03:34,690
+But we have to write code to pay attention to that.
+
+59
+00:03:34,950 --> 00:03:38,070
+But first let's go back and talk about why you should care.
+
+60
+00:03:38,130 --> 00:03:43,980
+Before we get into the specific algorithms so any time we have a graph whether it's a network graph
+
+61
+00:03:44,400 --> 00:03:50,910
+for a torrent Web site or we're talking about web crawlers where we have like Google in the early days
+
+62
+00:03:51,030 --> 00:03:55,770
+we're just follow every link from one that still does this but would go from one web page.
+
+63
+00:03:55,770 --> 00:03:58,970
+Follow all links on that web page and follow them out and out and out.
+
+64
+00:03:59,190 --> 00:04:03,560
+And in reality it's not a tree structure because you have many web pages that linked to one another.
+
+65
+00:04:03,780 --> 00:04:06,450
+So to follow every link that's a graph structure.
+
+66
+00:04:06,540 --> 00:04:11,930
+So the actual process of traversing of crawling it's just a graph traversal.
+
+67
+00:04:12,000 --> 00:04:17,370
+Also when we talk about things like finding the closest matches or recommendations the shortest path
+
+68
+00:04:17,370 --> 00:04:20,010
+between things and when to show you a couple of examples.
+
+69
+00:04:20,010 --> 00:04:23,840
+These all have to do with traversing from one vertex to another.
+
+70
+00:04:24,450 --> 00:04:31,080
+So here's this Wikipedia visualization of a small subset of Wikipedia pages in order to create this
+
+71
+00:04:31,560 --> 00:04:36,720
+somebody or some code started from one web page I don't know which one they started from and let's say
+
+72
+00:04:36,720 --> 00:04:44,160
+here and they wrote code to visit traverse every link in this graph and draw a little dot or something
+
+73
+00:04:44,160 --> 00:04:49,100
+like that and then follow one of them followed a link to something over here.
+
+74
+00:04:49,320 --> 00:04:53,370
+And that one linked to many other things and from there you know we went on and on and on and traversed
+
+75
+00:04:53,520 --> 00:04:55,160
+all of these Wikipedia pages.
+
+76
+00:04:55,260 --> 00:05:01,820
+So just to generate this involved some graph traversal that is sort of a basic example just to draw
+
+77
+00:05:01,830 --> 00:05:02,670
+something.
+
+78
+00:05:03,130 --> 00:05:08,720
+If you go back to this example when we're talking about using a graph structure to help make recommendations
+
+79
+00:05:08,960 --> 00:05:14,120
+this is an illustration of a poor one of two video games where I'm trying to show that there's some
+
+80
+00:05:14,180 --> 00:05:16,630
+overlap between Borderlands and Halo.
+
+81
+00:05:16,640 --> 00:05:21,920
+Now if we had this for 10000 video games and we had thousands and thousands of data points for each
+
+82
+00:05:21,920 --> 00:05:29,840
+game and things like revues scores genres how many things how many copies are sold different elements
+
+83
+00:05:29,840 --> 00:05:31,020
+of the game play.
+
+84
+00:05:31,340 --> 00:05:36,230
+So if somebody said that they liked Borderlands and you wanted to figure out a game to recommend to
+
+85
+00:05:36,230 --> 00:05:42,680
+them or a product to recommend or on Netflix a movie to recommend to someone it involves starting here
+
+86
+00:05:42,920 --> 00:05:47,570
+and trying to find something that's most similar that that you have the most overlap with.
+
+87
+00:05:47,570 --> 00:05:51,080
+So this is a small graph so we can tell only one option Halo.
+
+88
+00:05:51,170 --> 00:05:56,810
+But if there were millions of other data points we might need to traverse across them and try and tabulate
+
+89
+00:05:57,020 --> 00:06:04,250
+what's closest What has the most has the most nodes most vertices in common with Borderlands that involves
+
+90
+00:06:04,250 --> 00:06:07,580
+traversing from one node to a bunch of other nodes.
+
+91
+00:06:07,670 --> 00:06:08,860
+Or here's one more example.
+
+92
+00:06:08,960 --> 00:06:15,320
+If we're talking about friends on something like Facebook this very simple example just from this we
+
+93
+00:06:15,320 --> 00:06:16,920
+could make a recommendation.
+
+94
+00:06:16,940 --> 00:06:18,030
+Let's see.
+
+95
+00:06:18,320 --> 00:06:25,960
+Maria is friends with an army is friends with Nan and Tim is friends with Maria and army.
+
+96
+00:06:25,970 --> 00:06:33,140
+So if we wanted to find a recommendation to Tim who he might know that he probably seen that on Facebook
+
+97
+00:06:33,530 --> 00:06:34,270
+you might.
+
+98
+00:06:34,340 --> 00:06:36,000
+I don't know exactly what it says anymore.
+
+99
+00:06:36,170 --> 00:06:43,010
+We recommend this person or do you know X person or suggestions for friends you might recommend then
+
+100
+00:06:43,280 --> 00:06:48,320
+based off of the fact that from Tim we can get to nn pretty easily.
+
+101
+00:06:48,320 --> 00:06:50,390
+Nan is one jump away.
+
+102
+00:06:50,480 --> 00:06:56,940
+We go to army well to Jump's I guess one and then two we go to Maria one and then two.
+
+103
+00:06:57,110 --> 00:07:03,920
+And so we could write some algorithms traverse outwards find friends of friends and whichever friend
+
+104
+00:07:03,920 --> 00:07:07,190
+a friend has the most friend a friend that's a better way of putting it.
+
+105
+00:07:07,250 --> 00:07:12,130
+Whoever looks closest whoever has the most friends of friends with me recommend them.
+
+106
+00:07:12,430 --> 00:07:12,830
+OK.
+
+107
+00:07:12,920 --> 00:07:15,810
+So my point is there's lots and lots of applications.
+
+108
+00:07:15,950 --> 00:07:18,660
+Even things like artificial intelligence.
+
+109
+00:07:18,950 --> 00:07:24,620
+If we talk about all the different possibilities for a board game lay out in a game like tic tac toe
+
+110
+00:07:24,620 --> 00:07:30,200
+is a simple example but let's say something crazy like Scrabble where there's so many options you could
+
+111
+00:07:30,200 --> 00:07:35,330
+use a graph to store different game moves and then traverse that graph to find the shortest path to
+
+112
+00:07:35,330 --> 00:07:38,270
+a winning move the shortest way to win the game.
+
+113
+00:07:38,270 --> 00:07:45,590
+For example GPS navigation we have millions or billions of vertices represented representing a map and
+
+114
+00:07:45,590 --> 00:07:47,600
+intersections and businesses.
+
+115
+00:07:47,600 --> 00:07:50,760
+How do we find the best way to get from one place to another.
+
+116
+00:07:51,050 --> 00:07:56,840
+So that doesn't involve just direct traversal that involves finding the shortest path not just blindly
+
+117
+00:07:56,840 --> 00:08:02,250
+traversing the entire graph but we have to start somewhere before we can talk about shortest path algorithms
+
+118
+00:08:02,300 --> 00:08:04,620
+before we can talk about making recommendations.
+
+119
+00:08:04,760 --> 00:08:08,660
+We just need to be able to visit every single node and there are many ways of doing that.
+
+120
+00:08:08,690 --> 00:08:09,820
+Just like with trees.
+
+121
+00:08:09,950 --> 00:08:15,920
+So in this section we're going to talk about depth first search or depth first traversal both recursively
+
+122
+00:08:15,950 --> 00:08:17,090
+and iterative flee.
+
+123
+00:08:17,330 --> 00:08:19,870
+And we're going to talk about breadth first traversal.
+
+124
+00:08:19,940 --> 00:08:24,740
+Now it's not that different from what we did with trees but remember the distinction that I showed.
+
+125
+00:08:24,800 --> 00:08:30,500
+There are times where you're going to have to visit a node again or realize you've already visited that
+
+126
+00:08:30,500 --> 00:08:33,060
+vertex and adjust accordingly.
+
+127
+00:08:33,230 --> 00:08:34,490
+But I'm getting ahead of myself.
+
+128
+00:08:34,640 --> 00:08:38,240
+Let's now talk about depth first search and how it works in the next video.
+

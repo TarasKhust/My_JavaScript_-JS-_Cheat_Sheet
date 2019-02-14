@@ -1,0 +1,536 @@
+1
+00:00:00,180 --> 00:00:00,630
+All right.
+
+2
+00:00:00,630 --> 00:00:01,590
+Welcome back.
+
+3
+00:00:01,590 --> 00:00:05,840
+In this video I just want to do a quick walkthrough of the curriculum talks about what to expect.
+
+4
+00:00:05,880 --> 00:00:11,310
+This course is a little different than others including my other courses in that it's not exactly linear.
+
+5
+00:00:11,310 --> 00:00:15,720
+You don't have to go through every section in order at the beginning of every single section.
+
+6
+00:00:15,710 --> 00:00:22,130
+There is a text lecture an article called prerequisites and that explains at a minimum the sections
+
+7
+00:00:22,140 --> 00:00:25,450
+you need to have finished before you start the new section.
+
+8
+00:00:25,680 --> 00:00:30,210
+And so let's just begin the very first section or technically the second one but the first technical
+
+9
+00:00:30,210 --> 00:00:32,640
+section is called Big O notation.
+
+10
+00:00:32,730 --> 00:00:33,680
+Really important stuff.
+
+11
+00:00:33,690 --> 00:00:38,490
+We come back to every single section from basically there until the end of the course.
+
+12
+00:00:38,490 --> 00:00:42,760
+It's a way of describing or talking about the performance the efficiency of code.
+
+13
+00:00:43,110 --> 00:00:46,570
+So we use that all the time so definitely don't skip that.
+
+14
+00:00:46,740 --> 00:00:51,900
+Then we move on to a really quick section called analyzing performance of arrays and objects.
+
+15
+00:00:51,930 --> 00:00:52,750
+Nice and short.
+
+16
+00:00:52,890 --> 00:00:58,120
+We take what we just learned about Big O notation and apply it to some built in data structures.
+
+17
+00:00:58,140 --> 00:00:59,470
+We work with all the time.
+
+18
+00:00:59,520 --> 00:01:01,110
+So that's really quick.
+
+19
+00:01:01,130 --> 00:01:06,860
+Next we shift over to talking about interviews and algorithms challenges.
+
+20
+00:01:06,900 --> 00:01:10,980
+Basically what do you do when you're confronted with a tough problem and you don't know how to solve
+
+21
+00:01:10,980 --> 00:01:11,390
+it.
+
+22
+00:01:11,430 --> 00:01:15,870
+Whether that's in an interview and you're on a whiteboard and you're panicking or it's at home you're
+
+23
+00:01:15,870 --> 00:01:18,450
+working from side project or at work.
+
+24
+00:01:18,570 --> 00:01:20,820
+How do you approach a difficult problem.
+
+25
+00:01:20,970 --> 00:01:24,360
+And then the second sort of what will goes in tandem with that.
+
+26
+00:01:24,360 --> 00:01:27,870
+These are two sections problem solving approach problem solving patterns.
+
+27
+00:01:27,900 --> 00:01:32,730
+When we're talk about patterns we actually get into specific sort of archetypes here code they have
+
+28
+00:01:32,730 --> 00:01:37,620
+different names things like divide and conquer sliding window frequency counter patterns.
+
+29
+00:01:37,650 --> 00:01:39,260
+These are all different patterns we describe.
+
+30
+00:01:39,260 --> 00:01:40,670
+There's a lot of challenges.
+
+31
+00:01:40,740 --> 00:01:45,870
+This first section that comes before is more about sort of setting up a framework for you to think and
+
+32
+00:01:45,870 --> 00:01:48,910
+approach a problem this is about concrete patterns.
+
+33
+00:01:49,020 --> 00:01:50,660
+Then we move on to recursion.
+
+34
+00:01:50,670 --> 00:01:52,520
+So recursion a really important topic.
+
+35
+00:01:52,650 --> 00:01:55,210
+Definitely don't skip this if you're not familiar with recursion.
+
+36
+00:01:55,220 --> 00:01:58,020
+It comes up later on in many of our algorithms.
+
+37
+00:01:58,020 --> 00:02:04,050
+There's also to challenge sections sort of intermediate recursion problems and then tougher recursion
+
+38
+00:02:04,050 --> 00:02:08,410
+problems that follow this section then we move on to searching algorithms.
+
+39
+00:02:08,430 --> 00:02:12,720
+Fun one to talked about things like binary search here we've heard about that.
+
+40
+00:02:12,720 --> 00:02:14,880
+Then we moved to sorting out algorithms.
+
+41
+00:02:14,880 --> 00:02:18,230
+So I think we have six sorting algorithms at least.
+
+42
+00:02:18,450 --> 00:02:23,310
+And these are kind of fun if you've never worked with sorting out for them so you've never heard about
+
+43
+00:02:23,310 --> 00:02:23,910
+them.
+
+44
+00:02:23,970 --> 00:02:25,230
+They have some odd names.
+
+45
+00:02:25,260 --> 00:02:29,570
+We start with bubble sort which is often considered the easiest or one of the easiest.
+
+46
+00:02:29,580 --> 00:02:31,220
+Move to selection sort.
+
+47
+00:02:31,320 --> 00:02:38,070
+And then insertion sort and those three form a little group sort of the intermediate or elementary sorting
+
+48
+00:02:38,070 --> 00:02:43,440
+algorithms then we move on to everyone's favorite and merge sort.
+
+49
+00:02:43,440 --> 00:02:44,140
+I like merge sort.
+
+50
+00:02:44,160 --> 00:02:45,240
+A lot of people don't.
+
+51
+00:02:45,270 --> 00:02:46,470
+Then we get to quicksort.
+
+52
+00:02:46,560 --> 00:02:48,240
+So these all involve recursion.
+
+53
+00:02:48,240 --> 00:02:49,980
+They involve Big O notation.
+
+54
+00:02:49,980 --> 00:02:54,840
+So it's very important that you pay attention to the prerequisite little text lectures at the beginning
+
+55
+00:02:54,840 --> 00:02:57,710
+of every session to explain what you need.
+
+56
+00:02:57,960 --> 00:03:04,800
+And then we finish up with radix sort a pretty rare sort and very fast in a special situation and not
+
+57
+00:03:04,800 --> 00:03:06,340
+very often taught.
+
+58
+00:03:06,420 --> 00:03:08,930
+Not in my experience I've never really seen it taught.
+
+59
+00:03:08,970 --> 00:03:09,710
+It's a fun one though.
+
+60
+00:03:09,720 --> 00:03:11,010
+I actually really liked it.
+
+61
+00:03:11,460 --> 00:03:16,350
+So from there we get to sort of the second section of the course up until this point it's been about
+
+62
+00:03:17,160 --> 00:03:22,470
+sort of steppingstones recursion Big-O notation problem solving approaches lots of algorithms searching
+
+63
+00:03:22,470 --> 00:03:23,700
+sorting algorithms.
+
+64
+00:03:23,700 --> 00:03:25,970
+Then we transition to data structures.
+
+65
+00:03:25,980 --> 00:03:31,880
+So from this slide until the end of the Course there's a ton of different data structures we talk about.
+
+66
+00:03:32,040 --> 00:03:37,640
+And this intro section compares them all it tries to answer the question what's the best data structure.
+
+67
+00:03:37,650 --> 00:03:39,800
+And the answer is that there isn't one.
+
+68
+00:03:39,960 --> 00:03:42,810
+But we talk about where they excel on certain structures.
+
+69
+00:03:42,810 --> 00:03:48,840
+So we also talk about East 2015 class syntax if you're not familiar with how you can approximate an
+
+70
+00:03:48,840 --> 00:03:51,230
+object current class using javascript.
+
+71
+00:03:51,240 --> 00:03:53,160
+We talk about that in this section.
+
+72
+00:03:53,350 --> 00:03:58,730
+Then we're going to run through these quickly singly linked lists then recovered doubly linked lists.
+
+73
+00:03:58,770 --> 00:04:01,080
+So if you've never heard of these data structures.
+
+74
+00:04:01,260 --> 00:04:02,200
+Very understandable.
+
+75
+00:04:02,280 --> 00:04:04,270
+But we spend a lot of time talking about them.
+
+76
+00:04:04,350 --> 00:04:08,930
+Then we move on to two more stacks and Qs very commonly use structures.
+
+77
+00:04:09,030 --> 00:04:14,820
+Then we go to binary search trees really trees in general and then we specifically hone in on binary
+
+78
+00:04:14,820 --> 00:04:15,970
+search trees.
+
+79
+00:04:16,110 --> 00:04:18,530
+Then we have a section devoted to tree traversal.
+
+80
+00:04:18,570 --> 00:04:24,020
+So if you have if you've ever heard the term breath first search depth first search post order preorder
+
+81
+00:04:24,030 --> 00:04:26,000
+in order depth first traversal.
+
+82
+00:04:26,010 --> 00:04:28,090
+That's the kind of stuff we cover here.
+
+83
+00:04:28,230 --> 00:04:28,780
+Important.
+
+84
+00:04:28,800 --> 00:04:30,830
+Somewhat intimidating.
+
+85
+00:04:31,020 --> 00:04:34,760
+And again recall's on things like Big-O notation and recursion.
+
+86
+00:04:34,770 --> 00:04:38,080
+It builds on length lists so a lot of this is interconnected.
+
+87
+00:04:38,100 --> 00:04:43,630
+But you could also jump here and just look at the prerequisites and figure out what you need to learn.
+
+88
+00:04:43,980 --> 00:04:50,370
+So then we go to binary heaps which is very related to trees but a very special case we talk about building
+
+89
+00:04:50,490 --> 00:04:51,950
+something called a priority queue.
+
+90
+00:04:51,960 --> 00:04:54,150
+This is a fun section in my opinion.
+
+91
+00:04:54,150 --> 00:04:55,680
+Then we go to hash tables.
+
+92
+00:04:55,680 --> 00:05:01,930
+I also like the section hash tables we talked about very your data structure that what we're doing here
+
+93
+00:05:01,930 --> 00:05:07,250
+is sort of understanding how javascript objects work how they're implemented behind the scenes.
+
+94
+00:05:07,330 --> 00:05:10,600
+How would you implement a key value pair data structure.
+
+95
+00:05:10,900 --> 00:05:12,640
+And we talked about hashing algorithms.
+
+96
+00:05:12,700 --> 00:05:14,230
+I think it's a fun one.
+
+97
+00:05:14,290 --> 00:05:18,880
+Then we go to Graf's something that a lot of people are intimidated by.
+
+98
+00:05:18,880 --> 00:05:27,190
+We talk about how you would model GPS Global Positioning Ogaden my cat it can interrupt me like that.
+
+99
+00:05:27,190 --> 00:05:27,550
+What is it.
+
+100
+00:05:27,550 --> 00:05:35,400
+GVS mapping to figure out how to find basically how would you represent a map and traffic data and all
+
+101
+00:05:35,420 --> 00:05:40,950
+these different variables so that you could create a GPS application or something like that.
+
+102
+00:05:40,990 --> 00:05:46,040
+We also talk about storing social network data and one way relationship to a relationships.
+
+103
+00:05:46,360 --> 00:05:50,290
+We explore a lot of stuff around Graf's networks routing.
+
+104
+00:05:50,380 --> 00:05:56,020
+We talk about graph traversal which Well I won't get into too much same thing breadth first depth versus
+
+105
+00:05:56,020 --> 00:05:57,000
+If we've heard of that.
+
+106
+00:05:57,190 --> 00:06:01,990
+And then one of my favorite parts of the course and one of the more complicated things you talked about
+
+107
+00:06:02,020 --> 00:06:07,960
+is called Dijkstra's algorithm and this has to do with finding the shortest path between two nodes on
+
+108
+00:06:07,960 --> 00:06:10,460
+a graph to vertices if that means nothing to you.
+
+109
+00:06:10,480 --> 00:06:13,520
+Well this course is still definitely for you.
+
+110
+00:06:13,540 --> 00:06:15,760
+You're not expected to understand what that is.
+
+111
+00:06:15,760 --> 00:06:21,400
+But if we go back to the idea of GPs say you want to get from point A to point B from New York to Los
+
+112
+00:06:21,400 --> 00:06:24,160
+Angeles which is the fastest way to do that on the roads.
+
+113
+00:06:24,160 --> 00:06:30,670
+If we have a complete map of all the roads and let's ignore traffic data just distances What's the best
+
+114
+00:06:30,670 --> 00:06:31,750
+way to calculate that.
+
+115
+00:06:31,750 --> 00:06:33,430
+I mean there's so many possibilities.
+
+116
+00:06:33,520 --> 00:06:38,220
+So we learn an algorithm to do that and we do basically an approximation of the same thing.
+
+117
+00:06:38,350 --> 00:06:41,830
+It's this very famous mathematician and computer scientist.
+
+118
+00:06:41,830 --> 00:06:47,290
+DYKSTRA came up with it and that's what we talked about here and this is sort of a pinnacle of the course
+
+119
+00:06:47,290 --> 00:06:55,150
+because we talk it relies on Big-O notation recursion it relies on heape Spiner heaps priority queues
+
+120
+00:06:55,210 --> 00:07:00,020
+stacks a lot of things that we talked about earlier in the course come back in this last section.
+
+121
+00:07:00,160 --> 00:07:01,960
+Oh Graf's I forgot to mention graphs.
+
+122
+00:07:01,960 --> 00:07:06,110
+So that's where we finish up really just to revisit this.
+
+123
+00:07:06,190 --> 00:07:11,590
+There's a division right here intro to data structures where everything else is focused on individual
+
+124
+00:07:11,590 --> 00:07:13,190
+data structures from there on out.
+
+125
+00:07:13,300 --> 00:07:17,930
+And before that there's some really important stuff sorting algorithms searching algorithms.
+
+126
+00:07:18,010 --> 00:07:21,160
+But no matter what I recommend you start with Big-O notation.
+
+127
+00:07:21,220 --> 00:07:25,960
+Don't skip the recursion sections and then from there till they get to you just pay attention to the
+
+128
+00:07:25,960 --> 00:07:27,490
+prerequisite lectures.
+
+129
+00:07:27,490 --> 00:07:29,080
+You absolutely can go in order.
+
+130
+00:07:29,080 --> 00:07:30,860
+I mean it's designed in an order.
+
+131
+00:07:30,910 --> 00:07:35,920
+It's not just arbitrary but if you don't want to sit through all of doubly linked lists you could skip
+
+132
+00:07:35,920 --> 00:07:40,410
+it as long as he did singly linked lists anyway I'll see in the course.
+
+133
+00:07:40,420 --> 00:07:41,120
+Goodbye.
+
+134
+00:07:41,230 --> 00:07:42,700
+I don't know how to end this by.
+

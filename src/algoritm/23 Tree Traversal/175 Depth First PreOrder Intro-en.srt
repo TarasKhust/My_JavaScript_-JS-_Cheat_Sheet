@@ -1,0 +1,352 @@
+1
+00:00:00,120 --> 00:00:01,230
+Hey welcome back.
+
+2
+00:00:01,230 --> 00:00:03,220
+We're pushing on with tree traversal.
+
+3
+00:00:03,330 --> 00:00:05,650
+Now we start depth first search.
+
+4
+00:00:05,670 --> 00:00:09,420
+So there are three different orders within depth first search that we're going to talk about.
+
+5
+00:00:09,520 --> 00:00:16,860
+But all of them are DFS algorithms meaning that they pursue all nodes they visit or traverse nodes vertically
+
+6
+00:00:16,860 --> 00:00:21,130
+down to the end of the tree before visiting sibling nodes.
+
+7
+00:00:21,360 --> 00:00:26,880
+So that's maybe not the most technical explanation but it means that we're going to traverse down until
+
+8
+00:00:26,880 --> 00:00:32,640
+we hit the end of the tree at some point and then from there there's a couple of options as far as the
+
+9
+00:00:32,640 --> 00:00:33,540
+order that we do things.
+
+10
+00:00:33,560 --> 00:00:41,250
+But we're working down first depth first rather than horizontally breath first so we can break down
+
+11
+00:00:41,250 --> 00:00:43,770
+tree traversal into three main steps.
+
+12
+00:00:43,770 --> 00:00:50,880
+So for any node we need to at some point visit the actual node itself like building a list or printing
+
+13
+00:00:50,880 --> 00:00:51,530
+it out.
+
+14
+00:00:51,570 --> 00:00:55,480
+We need to add it to the list or we need to print it out whatever we're doing.
+
+15
+00:00:55,500 --> 00:00:57,460
+So we have to actually do the visit.
+
+16
+00:00:57,570 --> 00:01:03,240
+Then we also need to explore the entire left side and the entire right side at least when we're talking
+
+17
+00:01:03,240 --> 00:01:04,640
+about a binary tree.
+
+18
+00:01:04,830 --> 00:01:09,080
+If we have you know a turn every tree then we need to do the first the second and third children.
+
+19
+00:01:09,090 --> 00:01:11,270
+But let's just stick with binary trees for now.
+
+20
+00:01:11,430 --> 00:01:15,840
+So we have to at some point explore the node and then traverse the left and traverse the right.
+
+21
+00:01:15,840 --> 00:01:21,420
+And those three things just by changing the order that we do them in in our code literally copying a
+
+22
+00:01:21,420 --> 00:01:27,450
+line pasting it above the line removing it below another line will change the output that we get.
+
+23
+00:01:27,450 --> 00:01:33,210
+So with our DFS algorithms our end goal just like with the breadth first search is to just build an
+
+24
+00:01:33,210 --> 00:01:36,230
+array or a list or if you prefer just print them out.
+
+25
+00:01:36,420 --> 00:01:42,180
+But basically we want to visit them in this order in pre order which is what we're starting with.
+
+26
+00:01:42,420 --> 00:01:47,640
+Basically means you're going to visit the node first then we look at the entire left side.
+
+27
+00:01:47,640 --> 00:01:52,270
+We traverse the left then we traverse the right and that's true for any node.
+
+28
+00:01:52,290 --> 00:01:53,770
+So we start off at 10.
+
+29
+00:01:53,970 --> 00:01:54,840
+We visited.
+
+30
+00:01:54,840 --> 00:01:57,770
+Meaning we added to our list or we printed out.
+
+31
+00:01:57,900 --> 00:01:59,860
+Then we explore the left side.
+
+32
+00:02:00,060 --> 00:02:02,240
+So that means starting off at 6.
+
+33
+00:02:02,670 --> 00:02:07,640
+And so we visit six meeting meaning we add it to our list or printed out.
+
+34
+00:02:07,770 --> 00:02:11,470
+Then we traversed the entire left side then the entire right side.
+
+35
+00:02:11,520 --> 00:02:13,400
+So that means three and then eight.
+
+36
+00:02:13,440 --> 00:02:15,270
+There's nothing to traverse after them.
+
+37
+00:02:15,270 --> 00:02:16,780
+So they get visited.
+
+38
+00:02:16,980 --> 00:02:20,370
+Now we go back to 10 because remember we visited 10.
+
+39
+00:02:20,460 --> 00:02:22,040
+Then we looked at the left side.
+
+40
+00:02:22,050 --> 00:02:27,780
+Now we have to look at the right side of 10 10 we're still waiting to have its right side visited.
+
+41
+00:02:27,780 --> 00:02:30,000
+And so we've got 15 and then 20.
+
+42
+00:02:30,000 --> 00:02:31,340
+So we have those three operations.
+
+43
+00:02:31,350 --> 00:02:36,540
+We visit the node we look at the left and we look at the right just by changing the order that we do
+
+44
+00:02:36,540 --> 00:02:43,400
+those in we'll have a large very drastic impact on the output order the actual traversal order.
+
+45
+00:02:43,500 --> 00:02:46,490
+And so we're we're going to talk about preorder in this video.
+
+46
+00:02:46,560 --> 00:02:52,770
+Then there's also post order and in order they are all depth first search algorithms but there are different
+
+47
+00:02:52,770 --> 00:02:55,550
+orders and we just have to shift one or two lines of code.
+
+48
+00:02:55,740 --> 00:02:59,880
+So here are the basic steps that I recommend you can do this iterative.
+
+49
+00:02:59,940 --> 00:03:02,950
+It's definitely shorter and easier to do it recursively.
+
+50
+00:03:02,970 --> 00:03:08,220
+So again if you haven't done the Rickerson recursion section where you don't know recursion I def. recommend
+
+51
+00:03:08,250 --> 00:03:10,260
+you review that section.
+
+52
+00:03:10,350 --> 00:03:10,660
+OK.
+
+53
+00:03:10,770 --> 00:03:15,680
+So we're going to create a variable just like we did before to store the values that we visited.
+
+54
+00:03:15,780 --> 00:03:20,760
+So at the end we'll just return that call it data or visited or whatever then we're going to create
+
+55
+00:03:20,760 --> 00:03:24,130
+a variable called Current and just store the root of the tree in there.
+
+56
+00:03:24,490 --> 00:03:26,440
+So that's where we start off.
+
+57
+00:03:26,790 --> 00:03:31,830
+Now the slightly tricky part we're going to write a second helper function so we're going to have our
+
+58
+00:03:31,830 --> 00:03:38,370
+preorder function takes no arguments in our second function which takes a node and it accepts and notice
+
+59
+00:03:38,370 --> 00:03:45,210
+an argument and all that it does is we push the value of the node to the variable that stores our values
+
+60
+00:03:45,210 --> 00:03:50,370
+that we return to the end so we visit the node by adding it to the array or to the list.
+
+61
+00:03:50,370 --> 00:03:57,090
+Then we check if it has a left if it has no doubt left property we're going to recursively call the
+
+62
+00:03:57,090 --> 00:03:58,490
+helper function again.
+
+63
+00:03:59,450 --> 00:04:05,030
+And then do the same thing on the right if it has a write property call the function on the right.
+
+64
+00:04:05,030 --> 00:04:10,390
+So basically we have this helper function where for a given node we start with the route.
+
+65
+00:04:10,640 --> 00:04:15,780
+We push that node to the list that we're looking at to our end result our data.
+
+66
+00:04:15,950 --> 00:04:21,200
+So we visit the room and then move recursively to the same thing for the left and the same thing for
+
+67
+00:04:21,200 --> 00:04:22,340
+the right.
+
+68
+00:04:22,400 --> 00:04:25,790
+So we'll walk through how this works in the solution will look at a call stack.
+
+69
+00:04:25,790 --> 00:04:31,820
+It can be a little bit crazy to try and visualize but if you can just write a helper function that accepts
+
+70
+00:04:31,820 --> 00:04:37,090
+a node it takes the value of that node pushes it to our or our array that we return at the end.
+
+71
+00:04:37,250 --> 00:04:40,880
+Then we check if there's a left we call the same helper function.
+
+72
+00:04:40,880 --> 00:04:47,240
+I would just call it traverse we called traverse on the left side of the node and then we also the next
+
+73
+00:04:47,240 --> 00:04:47,990
+line below.
+
+74
+00:04:48,170 --> 00:04:54,620
+If there is a write property called traverse on the right side then we're going to invoke that helper
+
+75
+00:04:54,640 --> 00:04:58,680
+function with the current variable which is started at the root.
+
+76
+00:04:58,780 --> 00:05:00,040
+Where is that right here.
+
+77
+00:05:00,340 --> 00:05:04,880
+And then at the very end return the array of values or the list of values that we've visited.
+
+78
+00:05:05,200 --> 00:05:07,060
+So I know it seems intimidating.
+
+79
+00:05:07,180 --> 00:05:12,210
+If you're not comfortable with recursion I totally get that this is relatively.
+
+80
+00:05:12,220 --> 00:05:13,970
+This is pretty much word for word.
+
+81
+00:05:13,990 --> 00:05:14,740
+Well not word for word.
+
+82
+00:05:14,740 --> 00:05:16,290
+Line for line what you need to do.
+
+83
+00:05:16,300 --> 00:05:22,120
+You can do this solution in just a couple of lines maybe eight lines seven lines.
+
+84
+00:05:22,570 --> 00:05:28,270
+And once you get this one it's very very similar to the other two that the two other depth first search
+
+85
+00:05:28,330 --> 00:05:29,180
+orders.
+
+86
+00:05:29,200 --> 00:05:30,730
+So try it out.
+
+87
+00:05:30,790 --> 00:05:34,330
+Don't get discouraged if you can't do it because in the next video I'm going to have a pretty thorough
+
+88
+00:05:34,330 --> 00:05:37,520
+solution where we actually walk through step by step how it works.
+

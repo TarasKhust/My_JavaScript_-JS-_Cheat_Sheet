@@ -1,0 +1,172 @@
+1
+00:00:00,180 --> 00:00:01,350
+So insertion sort.
+
+2
+00:00:01,350 --> 00:00:07,230
+As far as its time complexity it's pretty similar overall to the other two we've seen its worst case
+
+3
+00:00:07,300 --> 00:00:11,630
+of and squared is quadratic because were it for the length that the array grows.
+
+4
+00:00:11,640 --> 00:00:15,530
+We also have to basically make n squared number of comparisons.
+
+5
+00:00:16,020 --> 00:00:18,880
+But if our data is almost all sorted.
+
+6
+00:00:19,080 --> 00:00:27,540
+So if instead we were looking at something like I don't know what would work here let's say 1 2 3 4
+
+7
+00:00:27,990 --> 00:00:29,640
+negative 1 for example.
+
+8
+00:00:29,850 --> 00:00:33,690
+Well if we start we look at two we immediately find that it's greater.
+
+9
+00:00:33,690 --> 00:00:35,640
+We don't have to do anything we stop the loop.
+
+10
+00:00:35,730 --> 00:00:36,660
+Then we move to three.
+
+11
+00:00:36,690 --> 00:00:38,080
+We find that it's greater than 2.
+
+12
+00:00:38,220 --> 00:00:39,500
+We don't need to keep going.
+
+13
+00:00:39,780 --> 00:00:43,160
+We look at four Where could we look at negative one.
+
+14
+00:00:43,170 --> 00:00:43,530
+All right.
+
+15
+00:00:43,530 --> 00:00:46,050
+Now we have to go through and put it at the beginning.
+
+16
+00:00:46,320 --> 00:00:52,760
+But compare that to a totally random unsorted data where we have to continually play something and iterate.
+
+17
+00:00:52,950 --> 00:00:58,890
+Then we're looking at a much worse time or actually what's the worst possible scenario something like
+
+18
+00:00:58,890 --> 00:01:00,710
+this where you start.
+
+19
+00:01:00,780 --> 00:01:01,690
+We get to three.
+
+20
+00:01:01,710 --> 00:01:03,970
+We have to swap it to here and we get to two.
+
+21
+00:01:04,030 --> 00:01:08,260
+We have to swap it to the beginning and we get to 1 and we have to swap to the beginning again.
+
+22
+00:01:08,310 --> 00:01:10,440
+That's the worst case for insertion sort.
+
+23
+00:01:10,560 --> 00:01:13,300
+But if your data is nearly sorted you're get.
+
+24
+00:01:13,350 --> 00:01:16,610
+Now another interesting thing that insertion sort is good at.
+
+25
+00:01:16,980 --> 00:01:22,560
+If you're data there's something called an online algorithm which is an algorithm that can work as data
+
+26
+00:01:22,560 --> 00:01:24,720
+is coming in as it receives new data.
+
+27
+00:01:24,720 --> 00:01:27,390
+It doesn't have to have the entire array at once.
+
+28
+00:01:27,390 --> 00:01:34,540
+So for example let's say that we have some code where people are submitting numbers to us online live.
+
+29
+00:01:34,590 --> 00:01:36,570
+We're getting them and we want to sort them in.
+
+30
+00:01:36,570 --> 00:01:37,390
+Don't ask why.
+
+31
+00:01:37,440 --> 00:01:38,560
+Let's say we wanted to.
+
+32
+00:01:38,720 --> 00:01:44,040
+With insertion sort because the way that it works that we're keeping one side of the array sorted and
+
+33
+00:01:44,040 --> 00:01:48,700
+we're inserting items one at a time it doesn't matter what the number is that comes in.
+
+34
+00:01:48,870 --> 00:01:50,680
+We can place it where it needs to go.
+
+35
+00:01:50,700 --> 00:01:56,400
+So this that's one strength if you do need if you're looking for a sorting algorithm that works in that
+
+36
+00:01:56,400 --> 00:02:01,470
+way which probably isn't going to come up but it is worth knowing that because of how insertion sort
+
+37
+00:02:01,470 --> 00:02:07,050
+works for because we keep one side of it sorted and we insert things in the appropriate place because
+
+38
+00:02:07,040 --> 00:02:11,370
+of that it works well in a situation where data is coming in live or streaming.
+
+39
+00:02:11,370 --> 00:02:14,000
+And you need to insert it at a moment's notice.
+
+40
+00:02:14,220 --> 00:02:14,610
+OK.
+
+41
+00:02:14,640 --> 00:02:18,200
+So those are the three elementary sorting out rhythms in the next video.
+
+42
+00:02:18,210 --> 00:02:21,890
+We'll just wrap up talking about their time complexity and space complexity.
+
+43
+00:02:21,890 --> 00:02:24,410
+And then also do a quick recap of what we learned.
+

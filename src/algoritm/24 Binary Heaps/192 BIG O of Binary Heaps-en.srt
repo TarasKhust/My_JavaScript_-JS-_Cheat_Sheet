@@ -1,0 +1,564 @@
+1
+00:00:00,210 --> 00:00:00,930
+Welcome back.
+
+2
+00:00:00,930 --> 00:00:06,630
+Let's wrap up with by Mary heaps by talking about how they perform their Big-O notation mainly for time
+
+3
+00:00:06,630 --> 00:00:11,480
+complexity so binary heaps both min and max heaps are great.
+
+4
+00:00:11,520 --> 00:00:15,480
+When we're talking about insertion and deletion that's really what they excel.
+
+5
+00:00:15,480 --> 00:00:19,980
+They're very fast big-O of log in for time complexity.
+
+6
+00:00:19,980 --> 00:00:25,890
+So remember from a binary search tree that is very quick when we compare it to all the other sort of
+
+7
+00:00:25,890 --> 00:00:27,660
+standard Bigos that we've seen.
+
+8
+00:00:27,800 --> 00:00:33,540
+So all the way down here and this sort of light green not the dark green but the light green So as and
+
+9
+00:00:33,540 --> 00:00:39,240
+grows the amount of time that it takes to insert or to remove something from a binary heap grows slower
+
+10
+00:00:39,330 --> 00:00:42,510
+it goes grows at the rate of log and approximately.
+
+11
+00:00:42,510 --> 00:00:44,070
+So let's talk about why that is.
+
+12
+00:00:44,070 --> 00:00:50,190
+So first remember when we say vog and it's actually log based to have an is what it's really referring
+
+13
+00:00:50,190 --> 00:00:55,380
+to although that doesn't actually matter because we're just kind of referring to this general trend.
+
+14
+00:00:55,380 --> 00:01:00,970
+But if we think about it that way and we talk about a binary heap we're talking about log based to events.
+
+15
+00:01:01,250 --> 00:01:07,680
+Well each time we go down a step in a binary heap or just any binary tree structure we have two times
+
+16
+00:01:07,680 --> 00:01:13,020
+the number of nodes we have one node than 2 and 4 then 16 and so on.
+
+17
+00:01:13,020 --> 00:01:21,150
+So let's focus on insertion if we want to insert the number 200 into this heap worst case which we know
+
+18
+00:01:21,150 --> 00:01:23,620
+is true actually because it's it's the largest number.
+
+19
+00:01:23,790 --> 00:01:31,650
+It's going to end up over here but along the way we only have to compare it one time per row right one
+
+20
+00:01:31,650 --> 00:01:33,970
+time per level of this heap.
+
+21
+00:01:34,020 --> 00:01:38,930
+So we compare it to the first parent which is nine because remember everything is inserted on the left.
+
+22
+00:01:39,060 --> 00:01:43,060
+So 200 is going to be a child of this 9 element.
+
+23
+00:01:43,110 --> 00:01:43,690
+So we compare it.
+
+24
+00:01:43,700 --> 00:01:48,480
+That's one comparison we compared to a parent to comparisons.
+
+25
+00:01:48,540 --> 00:01:50,190
+Again three comparisons.
+
+26
+00:01:50,400 --> 00:01:56,260
+And then the fourth comparison and then at this point we realize OK well 200 is the largest element.
+
+27
+00:01:56,260 --> 00:01:59,110
+If this is a max binary heap it needs to be the root.
+
+28
+00:01:59,340 --> 00:02:00,390
+So that's for comparison.
+
+29
+00:02:00,390 --> 00:02:03,350
+So for 16 elements we're talking about four comparisons.
+
+30
+00:02:03,420 --> 00:02:11,310
+So you can think of it as two to what power gives us 16 to the fourth power two times two times two
+
+31
+00:02:11,310 --> 00:02:13,590
+times two gives us 16.
+
+32
+00:02:13,890 --> 00:02:17,940
+Or if we were to hop over here this is a maxed out.
+
+33
+00:02:17,940 --> 00:02:21,570
+Unfortunately I actually can't insert anything else into this.
+
+34
+00:02:21,600 --> 00:02:29,310
+The limit is 31 nodes but if we were to insert something right here this is where it would go next to
+
+35
+00:02:29,420 --> 00:02:36,000
+the 30 second node we would if it was let's say we insert 100 which is larger than the root to find
+
+36
+00:02:36,000 --> 00:02:37,120
+its way up here.
+
+37
+00:02:37,140 --> 00:02:42,950
+It's one comparison to comparison's three four and then five comparisons.
+
+38
+00:02:43,020 --> 00:02:47,460
+So for 32 nodes we're talking about five comparison's five operations.
+
+39
+00:02:47,460 --> 00:02:49,200
+So its end grows to 32.
+
+40
+00:02:49,230 --> 00:02:54,490
+We think about two to what power gives us 32 to 2 the fifth power.
+
+41
+00:02:54,600 --> 00:02:58,000
+Two times two times two times two times two.
+
+42
+00:02:58,080 --> 00:03:03,930
+So another way of putting that is every time we double the number of nodes every new full complete layer
+
+43
+00:03:04,340 --> 00:03:08,330
+we are only increasing the time that it takes by one.
+
+44
+00:03:08,340 --> 00:03:13,140
+So when we get to 64 nodes we're talking about six operations and hopefully you can see why would be
+
+45
+00:03:13,140 --> 00:03:19,500
+the same for removal because we insert the that we remove from the beginning we swap something to be
+
+46
+00:03:19,500 --> 00:03:25,230
+the new route and then we have to compare and if it has to sift all the way back down the max number
+
+47
+00:03:25,230 --> 00:03:27,680
+of comparisons is going to be the same as we saw here.
+
+48
+00:03:27,780 --> 00:03:32,040
+Its log and its the same idea between insertion and removal.
+
+49
+00:03:32,040 --> 00:03:37,590
+Now you might remember from when we talked about binary search trees where they also had a log an insertion
+
+50
+00:03:37,590 --> 00:03:41,490
+time in general or an average slash best case.
+
+51
+00:03:41,490 --> 00:03:43,390
+There was also a worst case scenario.
+
+52
+00:03:43,620 --> 00:03:49,590
+Remember this that very depressing tree that really doesn't look much like a tree sort of looks like
+
+53
+00:03:49,890 --> 00:03:50,740
+something else.
+
+54
+00:03:50,790 --> 00:03:57,300
+The big O time complexity to insert into this tree or to search is o of and because of the way that
+
+55
+00:03:57,300 --> 00:04:00,830
+it's set up right if it's constantly just right.
+
+56
+00:04:00,840 --> 00:04:01,170
+Right.
+
+57
+00:04:01,260 --> 00:04:01,670
+Right.
+
+58
+00:04:01,710 --> 00:04:02,430
+Right.
+
+59
+00:04:02,700 --> 00:04:05,400
+It's going to take you know how many nodes are in here.
+
+60
+00:04:05,460 --> 00:04:11,250
+That's potentially how long it would take to insert if you were trying to insert 100 or something.
+
+61
+00:04:11,250 --> 00:04:14,460
+This is not a problem when we're talking about heaps.
+
+62
+00:04:14,460 --> 00:04:15,350
+Now why is that.
+
+63
+00:04:15,510 --> 00:04:18,690
+Well heaps can never look like this is against the rules of a heap.
+
+64
+00:04:18,690 --> 00:04:23,570
+Remember that when we insert into a heap we always fill out the left side first.
+
+65
+00:04:23,610 --> 00:04:28,950
+So unlike a binary search tree where we might have you know an incomplete row I shouldn't call it a
+
+66
+00:04:28,950 --> 00:04:30,580
+row an incomplete level.
+
+67
+00:04:30,590 --> 00:04:34,960
+Instead everything is always filled out before we move on to the next level.
+
+68
+00:04:35,160 --> 00:04:41,070
+So this entire row this entire section is done and then we start inserting here and here and then we
+
+69
+00:04:41,070 --> 00:04:42,130
+keep going across.
+
+70
+00:04:42,150 --> 00:04:48,540
+So there is no possibility for us to have such a crazy unbalanced unhinged depressing tree.
+
+71
+00:04:48,540 --> 00:04:51,130
+And because of that worst case is still.
+
+72
+00:04:51,310 --> 00:04:59,190
+Oh of all the way back here again for insertion and removal now binary heaps are not really made to
+
+73
+00:04:59,190 --> 00:05:04,550
+be search well like if you really care about optimizing your search then you probably want to use a
+
+74
+00:05:04,550 --> 00:05:06,540
+binary search tree or something like that.
+
+75
+00:05:06,560 --> 00:05:08,780
+So time complexity for search is over.
+
+76
+00:05:08,820 --> 00:05:14,750
+And remember that when we look at a binary heap like this there is no guaranteed order or even an implied
+
+77
+00:05:14,750 --> 00:05:16,440
+order between siblings.
+
+78
+00:05:16,580 --> 00:05:21,860
+So if we're searching for the node that contains the value 1 we start with the beginning.
+
+79
+00:05:22,130 --> 00:05:24,210
+Well we can't make a decision.
+
+80
+00:05:24,320 --> 00:05:26,740
+We can't know with a binary search tree we could say all right.
+
+81
+00:05:26,750 --> 00:05:29,320
+Well less than 86 so it's somewhere over here.
+
+82
+00:05:29,360 --> 00:05:30,520
+That's not the case here.
+
+83
+00:05:30,530 --> 00:05:36,710
+It could be anywhere because one is less than 86 it's the only condition that we know for sure is true
+
+84
+00:05:36,710 --> 00:05:37,870
+about all of these notes.
+
+85
+00:05:37,870 --> 00:05:39,460
+Is there less than 86.
+
+86
+00:05:39,620 --> 00:05:43,890
+So then we have to look over here and well once again we can't really make a decision.
+
+87
+00:05:43,980 --> 00:05:47,590
+It's somewhere down here maybe but it still could be over here.
+
+88
+00:05:47,720 --> 00:05:55,280
+And so we keep going and you know we have to search here and here and here and here and finally find
+
+89
+00:05:55,280 --> 00:05:55,970
+one.
+
+90
+00:05:55,970 --> 00:05:57,710
+But it also could be over here.
+
+91
+00:05:57,710 --> 00:06:01,310
+There's no rule that it has to be here it's just in this given scenario.
+
+92
+00:06:01,310 --> 00:06:03,740
+It is and that is a bit of a worst case.
+
+93
+00:06:03,740 --> 00:06:08,810
+Now if we were looking for something closer to the top of our heap like we're looking for the number
+
+94
+00:06:09,020 --> 00:06:16,150
+let's say 80 when we started here and we know that 80 is definitely less than 86 so we have both of
+
+95
+00:06:16,150 --> 00:06:16,700
+these.
+
+96
+00:06:16,880 --> 00:06:20,400
+Well over here we know that 80 is less than 85.
+
+97
+00:06:20,690 --> 00:06:22,860
+So it's going to be over here potentially.
+
+98
+00:06:22,970 --> 00:06:24,790
+Over here we have 77 well.
+
+99
+00:06:24,890 --> 00:06:29,260
+Seventy seven is not greater than 80 so we can cross off this side of the tree.
+
+100
+00:06:29,270 --> 00:06:32,510
+There is no number greater than 77 over here.
+
+101
+00:06:32,690 --> 00:06:37,610
+So if we can make a decision and eliminate some of it but there's no guarantee every step of the way
+
+102
+00:06:37,610 --> 00:06:38,580
+that that's the case.
+
+103
+00:06:38,630 --> 00:06:41,240
+And it depends on the value that we're looking for.
+
+104
+00:06:41,240 --> 00:06:43,360
+So technically if you do look it up.
+
+105
+00:06:43,460 --> 00:06:50,480
+I believe that big-O for searching is of and divided by two on average but remember that when we have
+
+106
+00:06:50,480 --> 00:06:55,830
+a constant like that and divided by two and times two and times 100 it doesn't matter.
+
+107
+00:06:55,850 --> 00:06:57,280
+We simplify it to big o of.
+
+108
+00:06:57,290 --> 00:07:03,870
+And so as n grows in general the amount of time it takes to search also grows just at the same rate.
+
+109
+00:07:03,890 --> 00:07:05,530
+And so it's linear.
+
+110
+00:07:05,570 --> 00:07:11,030
+And so these are not optimized for searching but when we're talking about insertion and removal that's
+
+111
+00:07:11,030 --> 00:07:12,710
+the name of the game with heaps.
+
+112
+00:07:12,740 --> 00:07:17,390
+All right we have time for a quick recap so we've seen a lot of time talking about binary heaps which
+
+113
+00:07:17,390 --> 00:07:19,060
+are a type of tree.
+
+114
+00:07:19,190 --> 00:07:21,740
+Well technically a binary heap is a type of a heap.
+
+115
+00:07:21,800 --> 00:07:25,990
+We could have other types of heaps just like a binary tree is a type of a tree.
+
+116
+00:07:26,240 --> 00:07:31,220
+So we have binary heap which is a type of a heap which is a type of a tree.
+
+117
+00:07:31,460 --> 00:07:32,040
+OK.
+
+118
+00:07:32,450 --> 00:07:37,240
+So they're useful on their own but also to implement other data structures like priority queues.
+
+119
+00:07:37,310 --> 00:07:39,150
+Think we just saw a couple of videos ago.
+
+120
+00:07:39,620 --> 00:07:44,770
+They are either one or talking about binary heaps they're either Macs binary heaps or many binary heaps.
+
+121
+00:07:45,050 --> 00:07:48,010
+And the way that it works the one rule that governs it.
+
+122
+00:07:48,020 --> 00:07:52,980
+Aside from the structure meaning that each node can have a maximum of two children.
+
+123
+00:07:53,030 --> 00:07:59,090
+The other rule in emacs ordinary heap is that every parent is larger than its two children and a binary
+
+124
+00:07:59,090 --> 00:08:04,330
+heap every parent is smaller than its two children or however many children it has.
+
+125
+00:08:04,400 --> 00:08:10,120
+We fill them out from left to right so we don't end up with these unbalanced wonky one sided trees.
+
+126
+00:08:10,220 --> 00:08:13,070
+A heap is always filled out from left to right.
+
+127
+00:08:13,100 --> 00:08:14,890
+It looks like a heap.
+
+128
+00:08:15,050 --> 00:08:17,350
+It's a pyramid of stuff.
+
+129
+00:08:17,360 --> 00:08:19,300
+It's a heap a pile.
+
+130
+00:08:19,400 --> 00:08:23,710
+And with this a little bit of math we can pretty easily represent heaps using a raise.
+
+131
+00:08:23,810 --> 00:08:25,320
+So we don't have to make pointers.
+
+132
+00:08:25,370 --> 00:08:30,980
+We don't have to make nodes that point to next dot next or left and right or child or whatever we can
+
+133
+00:08:30,980 --> 00:08:36,560
+just store them in an array because the rules that we follow makes it very easy to flatten out or represent
+
+134
+00:08:36,800 --> 00:08:39,020
+just using numerical indices.
+
+135
+00:08:39,020 --> 00:08:40,930
+And so that's a nice easy way of doing it.
+
+136
+00:08:41,060 --> 00:08:42,890
+You don't have to represent heaps that way.
+
+137
+00:08:42,890 --> 00:08:44,020
+You could do heaps.
+
+138
+00:08:44,030 --> 00:08:49,940
+You could make your own class and you know make a bunch of notes like we did for binary search trees.
+
+139
+00:08:49,940 --> 00:08:51,790
+It's just easier to do it this way.
+
+140
+00:08:52,150 --> 00:08:53,520
+All right so that's binary.
+
+141
+00:08:53,580 --> 00:08:53,900
+Heaps.
+

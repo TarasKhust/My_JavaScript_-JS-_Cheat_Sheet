@@ -1,0 +1,720 @@
+1
+00:00:00,120 --> 00:00:03,420
+All right let's do this let's get implementing bubble sort.
+
+2
+00:00:03,750 --> 00:00:06,140
+So I had pretty specific instructions here.
+
+3
+00:00:06,150 --> 00:00:07,370
+Start looping.
+
+4
+00:00:07,590 --> 00:00:11,060
+Oh I just realized this is a bit of a typo.
+
+5
+00:00:11,070 --> 00:00:11,810
+Sorry about that.
+
+6
+00:00:11,880 --> 00:00:16,930
+Start looping from the end of the array towards the beginning with a variable called I.
+
+7
+00:00:17,310 --> 00:00:20,260
+What I'm actually going to do is show you the Domer.
+
+8
+00:00:20,520 --> 00:00:27,180
+I shouldn't say dumb the the less optimized version that doesn't follow these instructions which just
+
+9
+00:00:27,180 --> 00:00:32,060
+uses two nested loops that go from the beginning to the end of the array the entire way.
+
+10
+00:00:32,370 --> 00:00:33,600
+So that would look something like this.
+
+11
+00:00:33,600 --> 00:00:36,000
+I'll define my function I'll call it bubble sort.
+
+12
+00:00:36,000 --> 00:00:36,780
+I made a new snippet.
+
+13
+00:00:36,780 --> 00:00:42,650
+By the way it accepts an array and we know at the end it's going to return the array.
+
+14
+00:00:43,230 --> 00:00:51,490
+And let's say I'm going to call it with a super simple array like is 37 45.
+
+15
+00:00:51,750 --> 00:00:55,060
+I have such a tendency to pick odd numbers like this.
+
+16
+00:00:55,200 --> 00:00:56,310
+It's not on purpose.
+
+17
+00:00:56,440 --> 00:00:57,810
+OK we'll put eight in there.
+
+18
+00:00:58,120 --> 00:00:58,370
+OK.
+
+19
+00:00:58,380 --> 00:00:59,790
+So this is what we start with.
+
+20
+00:01:00,210 --> 00:01:03,170
+And we're going to loop over every item in the array.
+
+21
+00:01:03,240 --> 00:01:08,250
+So for our i equals zero and I'm going to do like I said just starting from the beginning.
+
+22
+00:01:08,310 --> 00:01:13,320
+So zero up until are less than great length plus plus.
+
+23
+00:01:13,380 --> 00:01:16,020
+So that's going to give us a single pass right.
+
+24
+00:01:16,120 --> 00:01:19,680
+If this is only going to loop What is it four times.
+
+25
+00:01:19,920 --> 00:01:23,190
+So we'll start with zero and end it at 3.
+
+26
+00:01:23,220 --> 00:01:28,950
+So that gets us enough to sort one item so we could compare and do our swaps and at the end of this
+
+27
+00:01:28,950 --> 00:01:35,270
+loop if we did swap things we would have 45 at the end of the array but we self to sort everything else.
+
+28
+00:01:35,430 --> 00:01:39,130
+So we need to repeat that process for every item technically.
+
+29
+00:01:39,150 --> 00:01:45,410
+Remember we don't have to do it for every single item every time in that array because as we progressed
+
+30
+00:01:45,420 --> 00:01:47,110
+the end becomes sorted.
+
+31
+00:01:47,370 --> 00:01:55,630
+So if we started with this the next time through we would end up with 45 at the end.
+
+32
+00:01:57,240 --> 00:02:01,320
+So then next time we only need to sort these three.
+
+33
+00:02:01,320 --> 00:02:09,640
+And if we did that we end up with 37 bubbling here and now we only need to sort these two.
+
+34
+00:02:09,810 --> 00:02:13,700
+But for our naive solution let's just have the code go all the way to the end.
+
+35
+00:02:13,710 --> 00:02:15,350
+Every single time.
+
+36
+00:02:15,360 --> 00:02:17,330
+So for that we just need another loop.
+
+37
+00:02:17,400 --> 00:02:29,550
+So for call it J equals zero while J is less than a length J plus plus.
+
+38
+00:02:29,550 --> 00:02:31,290
+And now we have J.
+
+39
+00:02:31,290 --> 00:02:37,470
+So J is going to be zero starting at the beginning and we want to compare whatever item we're looking
+
+40
+00:02:37,470 --> 00:02:40,060
+at with J to the one in front of it.
+
+41
+00:02:40,140 --> 00:02:43,610
+So J and J plus one that just looks like this array of J.
+
+42
+00:02:43,650 --> 00:02:44,750
+Comma array.
+
+43
+00:02:44,910 --> 00:02:45,730
+Well no comma.
+
+44
+00:02:45,900 --> 00:02:47,020
+Ignore that.
+
+45
+00:02:47,220 --> 00:02:48,710
+We want to check if it's greater.
+
+46
+00:02:48,810 --> 00:02:51,780
+So if array of J is greater than the one in front of it.
+
+47
+00:02:51,810 --> 00:02:53,100
+Swap.
+
+48
+00:02:53,130 --> 00:02:55,590
+So let's let's right that logic now.
+
+49
+00:02:55,770 --> 00:02:59,360
+Now as far as swopping I'm going to start with the basic.
+
+50
+00:02:59,380 --> 00:03:05,150
+Swap the tried and true swap where we make a value.
+
+51
+00:03:05,160 --> 00:03:10,330
+So a variable I'll call it temp and set it to one of them it doesn't matter.
+
+52
+00:03:10,350 --> 00:03:11,820
+I'll set it to array of J.
+
+53
+00:03:12,000 --> 00:03:17,180
+And then we change the value of array of J to be array of J plus 1.
+
+54
+00:03:17,650 --> 00:03:20,790
+Thankfully we save the old version in our temporary variable.
+
+55
+00:03:20,790 --> 00:03:24,360
+Now we set the array of plus 1 equal to temp.
+
+56
+00:03:24,940 --> 00:03:25,720
+OK.
+
+57
+00:03:26,220 --> 00:03:27,430
+And that's actually it.
+
+58
+00:03:27,450 --> 00:03:32,690
+This is a working version of bubble sort but it's just not optimized because of what we talked about
+
+59
+00:03:32,700 --> 00:03:36,020
+it keeps running over and over and there's actually another small problem.
+
+60
+00:03:36,030 --> 00:03:41,660
+Let's start by pointing out a peer counselor log what the array looks like as we go.
+
+61
+00:03:41,670 --> 00:03:43,870
+All right let's see if it works.
+
+62
+00:03:44,160 --> 00:03:45,570
+Here's our first pass.
+
+63
+00:03:45,630 --> 00:03:48,120
+We had thirty seven forty five twenty nine and eight.
+
+64
+00:03:48,120 --> 00:03:49,130
+We compared the two.
+
+65
+00:03:49,330 --> 00:03:50,550
+Thirty seven and forty five.
+
+66
+00:03:50,550 --> 00:03:51,840
+We don't swap.
+
+67
+00:03:51,930 --> 00:03:52,870
+Now we move on.
+
+68
+00:03:52,990 --> 00:03:54,830
+J is incremented by 1.
+
+69
+00:03:54,840 --> 00:03:58,150
+So we compare 45 and 29 and we do swap.
+
+70
+00:03:58,260 --> 00:04:00,820
+He can see that change reflected the next time through.
+
+71
+00:04:01,110 --> 00:04:03,150
+Then we compare 45 and 8.
+
+72
+00:04:03,150 --> 00:04:04,830
+And once again we swap.
+
+73
+00:04:04,830 --> 00:04:07,610
+And so that's what happens here eight and forty five.
+
+74
+00:04:07,740 --> 00:04:08,430
+That looks good.
+
+75
+00:04:08,430 --> 00:04:09,680
+We have 45 at the end.
+
+76
+00:04:09,900 --> 00:04:11,420
+But here's the problem.
+
+77
+00:04:11,470 --> 00:04:13,230
+And actually I've changed my mind a little bit.
+
+78
+00:04:13,230 --> 00:04:18,340
+I think we'll even be clearer as if rather than just printing the array consulate log array.
+
+79
+00:04:18,480 --> 00:04:20,090
+If we also print what we're comparing.
+
+80
+00:04:20,090 --> 00:04:26,160
+So I'm going to do a array of J an array of J plus one so we can see the comparison as it happens.
+
+81
+00:04:26,770 --> 00:04:29,070
+I me clear my counsel here.
+
+82
+00:04:29,450 --> 00:04:30,340
+It Again.
+
+83
+00:04:30,810 --> 00:04:31,290
+OK.
+
+84
+00:04:31,290 --> 00:04:40,250
+So now you can see we're comparing 37 45 45 29 45 and 8 but then 45 and undefined.
+
+85
+00:04:40,410 --> 00:04:42,590
+So what happens is that we went too far.
+
+86
+00:04:42,660 --> 00:04:45,460
+J hit the end of this loop at 45.
+
+87
+00:04:45,510 --> 00:04:50,800
+Well J is equal to three index of three and we're comparing it to index of four which there isn't.
+
+88
+00:04:50,820 --> 00:04:53,010
+So we're comparing 45 and undefined.
+
+89
+00:04:53,010 --> 00:04:56,220
+Now our sort still works but we're going too long.
+
+90
+00:04:56,220 --> 00:04:57,360
+We don't need to do this.
+
+91
+00:04:57,420 --> 00:05:01,400
+Not to mention the fact that now we know this is sorted.
+
+92
+00:05:01,470 --> 00:05:02,660
+So we start over.
+
+93
+00:05:02,730 --> 00:05:06,960
+We compare these to 37 and 29 that is swapped right.
+
+94
+00:05:06,990 --> 00:05:08,140
+So we do swap them.
+
+95
+00:05:08,250 --> 00:05:09,910
+Then we have thirty seven and eight.
+
+96
+00:05:09,930 --> 00:05:16,450
+We swap again and we should be done with this iteration we should start over and start sorting this.
+
+97
+00:05:16,500 --> 00:05:18,810
+But instead we compare 37 and 45.
+
+98
+00:05:18,810 --> 00:05:22,220
+But we know that that's already sorted 45 isn't moving.
+
+99
+00:05:22,350 --> 00:05:26,080
+Nothing is going to be higher than 45 because of the way bubble sort works.
+
+100
+00:05:26,100 --> 00:05:28,440
+It is cemented in place the first time through.
+
+101
+00:05:28,620 --> 00:05:30,380
+So we haven't need this comparison.
+
+102
+00:05:30,630 --> 00:05:34,980
+And once again next time through you'll see we do the same thing.
+
+103
+00:05:35,020 --> 00:05:37,390
+Thirty seven and forty five there's no reason.
+
+104
+00:05:37,440 --> 00:05:42,630
+So what we want to do is basically at the beginning we want to make three comparisons.
+
+105
+00:05:42,630 --> 00:05:44,490
+So there's four items in this array.
+
+106
+00:05:44,640 --> 00:05:46,230
+We want to have three comparisons.
+
+107
+00:05:46,260 --> 00:05:48,990
+One two one two three.
+
+108
+00:05:49,410 --> 00:05:53,980
+And then we should start over and next time only make two comparisons.
+
+109
+00:05:53,980 --> 00:05:58,270
+These this comparison right here 37 and 29 and then thirty seven and eight.
+
+110
+00:05:58,420 --> 00:06:01,290
+And then next time through it we should make one comparison.
+
+111
+00:06:01,290 --> 00:06:05,520
+Does that make sense we want to we want to shrink the number of comparisons we're making because we're
+
+112
+00:06:05,520 --> 00:06:07,160
+sorting the array as we go.
+
+113
+00:06:07,530 --> 00:06:11,350
+So the solution to that if we come and make a couple of edits.
+
+114
+00:06:11,550 --> 00:06:15,060
+The first is that I'm actually going to change the way this loop is set up.
+
+115
+00:06:15,060 --> 00:06:17,380
+I'm now going to follow the pseudo code I set up.
+
+116
+00:06:17,490 --> 00:06:19,050
+We're going to start with variable i.
+
+117
+00:06:19,100 --> 00:06:22,350
+It goes from the end of the array towards the beginning.
+
+118
+00:06:22,950 --> 00:06:26,400
+So that looks like this set to be a red dot length.
+
+119
+00:06:26,850 --> 00:06:33,240
+And we go wow i is greater than zero minus minus.
+
+120
+00:06:33,240 --> 00:06:38,520
+The reason we do this is so that we can use I in the definition of the loop for J.
+
+121
+00:06:38,520 --> 00:06:45,490
+So J now runs wild less than I dot or I mind this one.
+
+122
+00:06:45,510 --> 00:06:46,470
+What am I saying Don.
+
+123
+00:06:46,670 --> 00:06:47,570
+I'm minus one.
+
+124
+00:06:47,790 --> 00:06:48,130
+OK.
+
+125
+00:06:48,150 --> 00:06:51,210
+So at the very beginning our ray length is four.
+
+126
+00:06:51,210 --> 00:06:52,000
+It's always four.
+
+127
+00:06:52,010 --> 00:06:54,090
+But I started at four.
+
+128
+00:06:54,090 --> 00:07:00,240
+So then this loop the inner loop we're going to compare J is less than four minus one.
+
+129
+00:07:00,270 --> 00:07:01,560
+So three comparisons.
+
+130
+00:07:01,560 --> 00:07:06,000
+This gives us three comparisons the first time through because I is four.
+
+131
+00:07:06,030 --> 00:07:08,580
+That means J goes for minus 1 3.
+
+132
+00:07:08,580 --> 00:07:12,590
+Next time through I has gone down I'm on this minus.
+
+133
+00:07:12,600 --> 00:07:14,770
+So we end up with I equal three.
+
+134
+00:07:14,790 --> 00:07:18,050
+So then we have J less than three minus one.
+
+135
+00:07:18,150 --> 00:07:22,380
+So that means to this loop will run while J is less than 2.
+
+136
+00:07:22,530 --> 00:07:25,950
+So as I goes down so does J.
+
+137
+00:07:26,370 --> 00:07:29,530
+So we end up running the loop fewer times each time through.
+
+138
+00:07:29,700 --> 00:07:36,710
+So if I save this get rid of that extra X rerun it may clear the cons. no.
+
+139
+00:07:37,390 --> 00:07:39,760
+Now let's look at the comparisons that are made.
+
+140
+00:07:39,760 --> 00:07:48,610
+So we do 37 and 45 that make sense then 45 and 29 and then our final comparison on this first time through
+
+141
+00:07:49,010 --> 00:07:54,810
+forty five and eight and we end up with the first time through 45 is at the end.
+
+142
+00:07:54,820 --> 00:07:55,650
+Then we start over.
+
+143
+00:07:55,660 --> 00:08:01,240
+We're no longer sorting undefined and 45 because of this minus one.
+
+144
+00:08:01,240 --> 00:08:10,660
+So then next time through we do two comparisons 37 and 29 so we swap and then 37 and 8 and we do swap
+
+145
+00:08:10,660 --> 00:08:11,330
+again.
+
+146
+00:08:11,740 --> 00:08:13,660
+And at that point these two are cemented.
+
+147
+00:08:13,930 --> 00:08:20,200
+So next time through we only have to do one more comparison and you can see that eight twenty nine we
+
+148
+00:08:20,200 --> 00:08:21,860
+swapped them and we're done.
+
+149
+00:08:22,210 --> 00:08:23,250
+So what I could do.
+
+150
+00:08:23,410 --> 00:08:27,970
+Let's increment let's change this to be 8 12.
+
+151
+00:08:28,270 --> 00:08:30,140
+88 one hundred.
+
+152
+00:08:30,190 --> 00:08:30,730
+Now let's see.
+
+153
+00:08:30,730 --> 00:08:33,340
+Negative 3 area negative value.
+
+154
+00:08:33,730 --> 00:08:38,440
+And if we run it now let's clear the console first.
+
+155
+00:08:38,440 --> 00:08:39,620
+There we go.
+
+156
+00:08:40,180 --> 00:08:41,530
+Let's let me actually.
+
+157
+00:08:41,680 --> 00:08:44,330
+Sorry this is annoying but let me make this easier to see.
+
+158
+00:08:44,440 --> 00:08:51,940
+So after that loop finishes let's do conses log 1 pass complete like this.
+
+159
+00:08:52,150 --> 00:08:54,700
+OK rerun this.
+
+160
+00:08:55,950 --> 00:08:56,510
+OK.
+
+161
+00:08:56,950 --> 00:09:02,260
+So now you can see really what happened the first time through we did one two three four five six comparison's
+
+162
+00:09:02,830 --> 00:09:04,480
+then that was one full pass.
+
+163
+00:09:04,540 --> 00:09:09,670
+Next time through it we did one two three four five comparison's and then four comparisons and then
+
+164
+00:09:09,670 --> 00:09:12,420
+three then two and then one.
+
+165
+00:09:12,430 --> 00:09:15,410
+So this is one version of the solution.
+
+166
+00:09:15,490 --> 00:09:16,890
+Get rid of the concert that logs.
+
+167
+00:09:17,110 --> 00:09:25,990
+I also have East 2015 version where I decided to first I use the old version or sorry the new way of
+
+168
+00:09:25,990 --> 00:09:28,930
+swapping things and I decided to make it into a function.
+
+169
+00:09:28,960 --> 00:09:30,480
+You definitely don't have to do that.
+
+170
+00:09:30,490 --> 00:09:32,430
+I mean this is only three lines honestly.
+
+171
+00:09:32,760 --> 00:09:37,910
+But if you want to hear is the nicer some people consider this solution nicer.
+
+172
+00:09:37,960 --> 00:09:41,270
+Use less as well and otherwise.
+
+173
+00:09:41,320 --> 00:09:41,800
+What else.
+
+174
+00:09:41,800 --> 00:09:42,640
+Big arrow function.
+
+175
+00:09:42,640 --> 00:09:45,210
+Everything is pretty straightforward though.
+
+176
+00:09:45,580 --> 00:09:48,010
+You just let's run it and make sure it still works of course
+
+177
+00:09:51,580 --> 00:09:52,450
+there we go.
+
+178
+00:09:52,500 --> 00:09:55,060
+They give three up to 88.
+
+179
+00:09:55,450 --> 00:09:55,660
+OK.
+
+180
+00:09:55,660 --> 00:09:58,030
+So these are two working solutions to bubble sort.
+

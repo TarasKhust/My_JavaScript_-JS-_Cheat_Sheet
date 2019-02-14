@@ -1,0 +1,516 @@
+1
+00:00:00,270 --> 00:00:00,660
+All right.
+
+2
+00:00:00,660 --> 00:00:05,430
+So now that we've implemented a couple of ways of traversing a tree spend a lot of time on it.
+
+3
+00:00:05,550 --> 00:00:07,140
+Let's talk about which one is better.
+
+4
+00:00:07,140 --> 00:00:08,380
+Which one should you use.
+
+5
+00:00:08,610 --> 00:00:11,220
+And SPOILER ALERT The answer is that it depends.
+
+6
+00:00:11,220 --> 00:00:16,530
+And there's pros and cons to all of them and it's really just dependent on your situation which is always
+
+7
+00:00:16,530 --> 00:00:17,920
+an annoying answer I know.
+
+8
+00:00:18,240 --> 00:00:23,360
+So let's start by just talking about breadth first search in general compared to depth first search
+
+9
+00:00:23,370 --> 00:00:23,820
+in general.
+
+10
+00:00:23,820 --> 00:00:28,150
+So ignoring the order Post order preorder in order put that aside.
+
+11
+00:00:28,380 --> 00:00:29,970
+Breath versus depth.
+
+12
+00:00:30,000 --> 00:00:32,300
+Which one would you use in a given scenario.
+
+13
+00:00:32,490 --> 00:00:35,390
+Well I think it depends on the tree.
+
+14
+00:00:35,700 --> 00:00:40,830
+If you have a tree that is fully fleshed out like this tree it's as wide as it can be the entire way
+
+15
+00:00:40,830 --> 00:00:41,460
+down.
+
+16
+00:00:41,580 --> 00:00:47,120
+If we're working with a breath first search remember that we have this cue that we're storing all of
+
+17
+00:00:47,120 --> 00:00:49,900
+the nodes we have yet to visit all of the children.
+
+18
+00:00:49,980 --> 00:00:56,490
+So let's say we're here we're going to visit this node and then add left and right to a queue and then
+
+19
+00:00:56,520 --> 00:00:59,620
+go to this node at left and right here left right.
+
+20
+00:00:59,700 --> 00:01:04,560
+So our queue grows and it stores a bunch of pieces of data a bunch of nodes.
+
+21
+00:01:04,710 --> 00:01:10,650
+So by the time we're down here or imagine we have something with a height of like 100 levels down we're
+
+22
+00:01:10,650 --> 00:01:14,550
+going to have to store a ton of data in our queue just in memory.
+
+23
+00:01:14,550 --> 00:01:16,410
+By the end that queue will be empty.
+
+24
+00:01:16,590 --> 00:01:22,170
+But I'm talking about space complexity the time complexity of depth versus breadth first Doesn't matter
+
+25
+00:01:22,170 --> 00:01:23,180
+though the same.
+
+26
+00:01:23,250 --> 00:01:26,410
+We're visiting every node one time so that's irrelevant.
+
+27
+00:01:26,580 --> 00:01:30,680
+But the space that's used up in this scenario could be a lot more.
+
+28
+00:01:30,690 --> 00:01:37,290
+If you're if you're talking a breath first on a wide tree versus on depth first we're not storing all
+
+29
+00:01:37,290 --> 00:01:39,410
+of those nodes across the tree.
+
+30
+00:01:39,420 --> 00:01:44,200
+We only have to keep track of the nodes in a in a given branch all the way down to the end.
+
+31
+00:01:44,280 --> 00:01:48,580
+And the way that we implemented it earlier in the section was using recursion.
+
+32
+00:01:48,600 --> 00:01:53,580
+So each one of these is a frame and the call stack where we're waiting for something else to happen.
+
+33
+00:01:53,580 --> 00:02:00,780
+So in this sort of tree where it's a lot wider than it is deep then depth first search would use less
+
+34
+00:02:00,840 --> 00:02:01,370
+space.
+
+35
+00:02:01,360 --> 00:02:06,930
+It's again not about time we're visiting every node once it's the same amount of work it's just how
+
+36
+00:02:06,930 --> 00:02:10,650
+much space we take up in the process of doing that work.
+
+37
+00:02:10,890 --> 00:02:17,490
+If we contrast that with this somewhat more depressing binary search tree if we traverse this entire
+
+38
+00:02:17,490 --> 00:02:23,520
+thing breadth first the space that we take up in memory is basically nothing.
+
+39
+00:02:23,550 --> 00:02:26,820
+Our Q is never going to have more than one item in it.
+
+40
+00:02:26,820 --> 00:02:27,830
+We start here.
+
+41
+00:02:28,140 --> 00:02:29,010
+We visit this.
+
+42
+00:02:29,040 --> 00:02:32,700
+We add it's right node to our queue and then we move to this.
+
+43
+00:02:32,700 --> 00:02:37,590
+And we popped off the queue or we actually shift it and then we take this and we added a child to the
+
+44
+00:02:37,590 --> 00:02:37,970
+queue.
+
+45
+00:02:37,980 --> 00:02:41,740
+So we have one thing in memory at any given time really in our queue.
+
+46
+00:02:41,940 --> 00:02:47,520
+But if we're traversing it depth first if this tree is really really long then that means a ton of level
+
+47
+00:02:47,520 --> 00:02:52,220
+so we have to go down and keep every other level above it in memory.
+
+48
+00:02:52,290 --> 00:02:54,150
+So that's something to consider.
+
+49
+00:02:54,150 --> 00:02:58,770
+Most of the time your trees will look something like well I shouldn't say most of the time but but most
+
+50
+00:02:58,770 --> 00:03:05,280
+of my experience is with trees that looks something like this rather than a super super long one sided
+
+51
+00:03:05,280 --> 00:03:08,000
+tree which doesn't make much sense to keep as a tree.
+
+52
+00:03:08,010 --> 00:03:08,500
+OK.
+
+53
+00:03:08,670 --> 00:03:11,370
+So to summarize that time complexity is the same.
+
+54
+00:03:11,370 --> 00:03:13,090
+We're visiting every node once.
+
+55
+00:03:13,140 --> 00:03:14,100
+It doesn't matter.
+
+56
+00:03:14,220 --> 00:03:19,290
+You know if we have 100 nodes we're going to visit every single one breath first in depth first same
+
+57
+00:03:19,290 --> 00:03:24,240
+amount of time space though it really depends on the structure of the tree if it's a really wide tree
+
+58
+00:03:24,450 --> 00:03:28,210
+breadth breadth first could store or take up a lot more space for that.
+
+59
+00:03:28,210 --> 00:03:34,290
+Q If it's a really deep long story then depth first could end up taking up more space.
+
+60
+00:03:34,500 --> 00:03:34,820
+Okay.
+
+61
+00:03:34,830 --> 00:03:41,010
+The last thing I'd like to do is quickly talk about when or potential use cases for the different variants
+
+62
+00:03:41,160 --> 00:03:42,710
+of depth first search.
+
+63
+00:03:42,870 --> 00:03:48,190
+So preorder post order in in and in order there all depth first variants.
+
+64
+00:03:48,300 --> 00:03:53,490
+Why would you potentially use one over the other and there's not really a great answer.
+
+65
+00:03:53,550 --> 00:03:55,490
+I'm going to give you a couple of examples.
+
+66
+00:03:55,500 --> 00:04:00,090
+This is actually a question I put to some of my teacher friends to see what their input was what they
+
+67
+00:04:00,090 --> 00:04:01,210
+tell their classes.
+
+68
+00:04:01,440 --> 00:04:07,950
+And pretty much the only feedback I got back was I just teach them and tell them they need to know it
+
+69
+00:04:07,950 --> 00:04:12,750
+because it's good for them and I don't really have any great examples about when you would use one versus
+
+70
+00:04:12,750 --> 00:04:13,310
+the other.
+
+71
+00:04:13,500 --> 00:04:15,720
+Well I'm just doing a little bit more than that.
+
+72
+00:04:15,720 --> 00:04:21,180
+I have a couple of examples but this isn't going to be super comprehensive but here's one example.
+
+73
+00:04:21,180 --> 00:04:28,200
+When you use in order on a binary search tree like we have here if we look at the data we get back it
+
+74
+00:04:28,200 --> 00:04:29,200
+is in order.
+
+75
+00:04:29,220 --> 00:04:32,490
+We get all the nodes in the tree in their underlying order.
+
+76
+00:04:32,490 --> 00:04:34,560
+So it goes from lowest to highest.
+
+77
+00:04:34,560 --> 00:04:39,450
+So if you want to take an entire large binary search tree where everything to the right is greater than
+
+78
+00:04:39,450 --> 00:04:43,030
+a node its parent node everything to the left is less than the parent node.
+
+79
+00:04:43,170 --> 00:04:49,980
+If you use a depth first traversal in order you will end up with the set of all the nodes in their order
+
+80
+00:04:50,190 --> 00:04:51,440
+depending on what you're doing.
+
+81
+00:04:51,480 --> 00:04:57,360
+That could be useful if you wanted to you know grab them in a list or put them in a database or do something
+
+82
+00:04:57,360 --> 00:04:58,980
+with them in that order.
+
+83
+00:04:59,030 --> 00:05:03,380
+It's kind of a stretch but that is worth knowing that that's a side effect of how this works on a binary
+
+84
+00:05:03,380 --> 00:05:04,250
+search tree.
+
+85
+00:05:04,250 --> 00:05:05,790
+Now I want to talk about preorder.
+
+86
+00:05:05,810 --> 00:05:07,760
+Just to recap how that one works.
+
+87
+00:05:07,820 --> 00:05:10,670
+We visit a node first and then do the left and then the right.
+
+88
+00:05:10,910 --> 00:05:16,930
+And what we end up with in this case is a list that looks like 10 6 3 8 15 20.
+
+89
+00:05:17,150 --> 00:05:22,840
+And this can be useful if you're trying to clone or duplicate a tree or you want to store it you want
+
+90
+00:05:22,850 --> 00:05:29,000
+to like flatten it out so you can store it in a file or a database or something and then recreate it
+
+91
+00:05:29,000 --> 00:05:31,130
+from that serialized structure.
+
+92
+00:05:31,130 --> 00:05:36,620
+Basically you freeze dry it you suspended in time and then when you're ready to rehydrated you could
+
+93
+00:05:36,620 --> 00:05:42,350
+go and make this the route and then navigate and iterate through this list and you make this a child
+
+94
+00:05:42,560 --> 00:05:47,900
+and you make that a child and it's given to you in an order where you could reconstruct the tree versus
+
+95
+00:05:47,900 --> 00:05:49,370
+if we look at something like this.
+
+96
+00:05:49,370 --> 00:05:54,020
+In order you start off with three at the beginning of the list you don't know what the root of the tree
+
+97
+00:05:54,020 --> 00:05:54,450
+is.
+
+98
+00:05:54,560 --> 00:05:57,350
+Versus here you immediately know this is the root.
+
+99
+00:05:57,410 --> 00:05:59,170
+This is the left and so on.
+
+100
+00:05:59,420 --> 00:06:04,700
+So those are just two situations where one of those variants might make more sense but remember at the
+
+101
+00:06:04,700 --> 00:06:07,570
+end of the day they're very very easy to switch between.
+
+102
+00:06:07,570 --> 00:06:11,690
+It's not like you're making some massive decision that you can't undo.
+
+103
+00:06:11,690 --> 00:06:11,870
+Right.
+
+104
+00:06:11,870 --> 00:06:16,250
+You just change one line you move it to the beginning or the end of that function call and then you
+
+105
+00:06:16,250 --> 00:06:17,340
+have the other order.
+
+106
+00:06:17,480 --> 00:06:21,130
+So really the bigger concern is breath versus depth first.
+
+107
+00:06:21,140 --> 00:06:21,740
+All right.
+
+108
+00:06:21,740 --> 00:06:23,600
+So let's quickly recap trees here.
+
+109
+00:06:23,600 --> 00:06:25,440
+There are nonlinear data structure.
+
+110
+00:06:25,460 --> 00:06:26,890
+They contain a bunch of nodes.
+
+111
+00:06:26,900 --> 00:06:30,960
+There's a single root and then a bunch of are usually a bunch of child nodes.
+
+112
+00:06:31,520 --> 00:06:37,970
+Binary trees are a special case where we can have values of any type but each node can have at most
+
+113
+00:06:37,970 --> 00:06:41,720
+two children for a parent binary search trees.
+
+114
+00:06:41,720 --> 00:06:45,170
+On the other hand are a more specific version of a binary tree.
+
+115
+00:06:45,170 --> 00:06:50,450
+So we have trees and then binary trees and then binary search trees and binary search trees have to
+
+116
+00:06:50,450 --> 00:06:54,710
+fulfill a special condition or a form of an ordered or a sorted tree.
+
+117
+00:06:54,710 --> 00:06:59,420
+So every node to the left for Paran is a less than its value and every node to the right of a parent
+
+118
+00:06:59,450 --> 00:07:00,440
+is greater.
+
+119
+00:07:00,440 --> 00:07:05,480
+So you can only have a binary search tree with data with data that is comparable pieces of data where
+
+120
+00:07:05,480 --> 00:07:09,350
+you can say this is definitely less than this is definitely greater than.
+
+121
+00:07:09,650 --> 00:07:10,310
+Okay.
+
+122
+00:07:10,760 --> 00:07:16,430
+And then also what we just spend a lot of time talking about we can search or traverse trees using breadth
+
+123
+00:07:16,430 --> 00:07:19,710
+first search and depth first search and within depth first.
+
+124
+00:07:19,820 --> 00:07:25,020
+There are three variants we discussed three orders in order Post order and pre order.
+
+125
+00:07:25,260 --> 00:07:27,550
+OK there's a lot about trees.
+
+126
+00:07:27,590 --> 00:07:29,830
+I think I've said this had every section at the very end.
+
+127
+00:07:29,870 --> 00:07:31,490
+I recommend you take a break.
+
+128
+00:07:31,490 --> 00:07:36,370
+Do not try and powered through all of this because I'm afraid you're going to lose your mind.
+
+129
+00:07:36,710 --> 00:07:37,340
+OK.
+

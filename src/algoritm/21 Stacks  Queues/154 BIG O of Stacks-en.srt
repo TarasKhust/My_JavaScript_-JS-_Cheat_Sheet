@@ -1,0 +1,132 @@
+1
+00:00:00,240 --> 00:00:00,550
+All right.
+
+2
+00:00:00,570 --> 00:00:06,150
+So the last thing we'll do is quickly talk about the big O stacks and all that really matters are these
+
+3
+00:00:06,150 --> 00:00:08,100
+first two insertion and removal.
+
+4
+00:00:08,190 --> 00:00:15,000
+So the way that we wrote our staff class was to make sure that pushing and popping were both constant
+
+5
+00:00:15,000 --> 00:00:15,540
+time.
+
+6
+00:00:15,540 --> 00:00:21,750
+That's kind of the one thing you have to care about in this deck searching accessing individual items
+
+7
+00:00:21,780 --> 00:00:26,370
+using an index or position that is not important at all.
+
+8
+00:00:26,460 --> 00:00:31,380
+And if it is you probably want to use an array or some other data structure that's going to give you
+
+9
+00:00:31,380 --> 00:00:32,710
+faster access.
+
+10
+00:00:33,210 --> 00:00:39,600
+So a stack is really prioritizing insertion and removal and the way that we implemented ours if you
+
+11
+00:00:39,600 --> 00:00:44,190
+wanted to search for something you'd have to start at the beginning and just traverse the entire stack
+
+12
+00:00:44,400 --> 00:00:51,210
+next next next which would give us of an insertion and removal though because we're adding to the beginning
+
+13
+00:00:51,660 --> 00:00:53,020
+and removing from the beginning.
+
+14
+00:00:53,130 --> 00:00:55,550
+We don't have to iterate over the list or the stack.
+
+15
+00:00:55,560 --> 00:01:00,030
+We don't have to look for anything we just jump right to the start.
+
+16
+00:01:00,240 --> 00:01:09,750
+And that means constant time and lastly to recap stacks are a last in first out lifeso Lythgoe data
+
+17
+00:01:09,750 --> 00:01:15,930
+structure where the last value is always the first one out there use to handle function invocations
+
+18
+00:01:15,930 --> 00:01:17,060
+like the call stack.
+
+19
+00:01:17,070 --> 00:01:20,940
+We've seen that they're also used for operations like undo and redo.
+
+20
+00:01:20,940 --> 00:01:25,880
+For routing your page history where you've been in your browser and a whole bunch more and they're not
+
+21
+00:01:25,880 --> 00:01:29,510
+a built in data structure in Javascript in some languages they are.
+
+22
+00:01:29,520 --> 00:01:33,450
+But javascript is not one of those but they're pretty quick or easy to implement.
+
+23
+00:01:33,690 --> 00:01:40,140
+And like I said in this video or in the last video you'll see me use an array to implement a stack because
+
+24
+00:01:40,170 --> 00:01:41,190
+it's shorter.
+
+25
+00:01:41,190 --> 00:01:43,390
+We don't have to use all this code here.
+
+26
+00:01:43,440 --> 00:01:48,900
+Not that bad but when we're doing these more complicated algorithms later on where we need to use a
+
+27
+00:01:48,900 --> 00:01:55,770
+stack I probably have already recorded them so I definitely will be using an array but this is the preferred
+
+28
+00:01:55,770 --> 00:02:00,650
+way of creating a stack if you are using it for tons and tons of data.
+
+29
+00:02:00,690 --> 00:02:06,270
+You know there's no reason to use an array to store 10000 items if you're only accessing using push
+
+30
+00:02:06,270 --> 00:02:08,010
+and pop or shift on shift.
+
+31
+00:02:08,010 --> 00:02:12,230
+There's no reason to do that just to use a custom class like this.
+
+32
+00:02:12,240 --> 00:02:13,200
+So that's next.
+
+33
+00:02:13,200 --> 00:02:14,760
+Next up queue's.
+

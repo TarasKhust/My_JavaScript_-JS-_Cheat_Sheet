@@ -1,0 +1,348 @@
+1
+00:00:00,180 --> 00:00:01,440
+All right welcome back.
+
+2
+00:00:01,440 --> 00:00:06,870
+So let's begin by talking about objects talking about them through the lens of Big O and performance.
+
+3
+00:00:06,870 --> 00:00:08,360
+Hopefully you're familiar with them.
+
+4
+00:00:08,370 --> 00:00:13,160
+If not I don't have time right now to teach them but I may or may not have some courses on them.
+
+5
+00:00:13,410 --> 00:00:18,220
+So they are unordered data structures and everything is stored in key value pairs.
+
+6
+00:00:18,240 --> 00:00:22,410
+For example like this object literal I'm storing in a variable called instructor.
+
+7
+00:00:22,410 --> 00:00:28,790
+We've got three key value pairs are so objects work well when you don't need order of course.
+
+8
+00:00:28,980 --> 00:00:36,630
+And also when you want fast access and insertion and removal so no order but everything else.
+
+9
+00:00:36,660 --> 00:00:38,790
+Almost everything else is very quick.
+
+10
+00:00:39,000 --> 00:00:45,750
+And when we say quick I'm talking about constant time for insertion removal and accessing data.
+
+11
+00:00:45,990 --> 00:00:47,370
+So objects are very fast.
+
+12
+00:00:47,370 --> 00:00:49,250
+I mean that's the fastest we can go.
+
+13
+00:00:49,260 --> 00:00:52,140
+Constant time will come back to searching in a moment.
+
+14
+00:00:52,280 --> 00:00:53,200
+We up over here.
+
+15
+00:00:53,250 --> 00:00:55,630
+Here's the same exact object we.
+
+16
+00:00:55,710 --> 00:01:02,550
+Later in the course have a section called hash maps where we actually learn a data structure that explains
+
+17
+00:01:02,760 --> 00:01:07,020
+how objects work behind the scenes how things are actually stored.
+
+18
+00:01:07,020 --> 00:01:13,140
+So what happens when when we say instructor should have first name set to Kelly what does javascript
+
+19
+00:01:13,140 --> 00:01:14,740
+actually do.
+
+20
+00:01:14,760 --> 00:01:19,160
+A computer can't necessarily just access a place in memory called first name.
+
+21
+00:01:19,380 --> 00:01:22,150
+So there are some additional steps involved along the way.
+
+22
+00:01:22,170 --> 00:01:26,340
+There's something called hashing we talk about it later in the course but all that you need to know
+
+23
+00:01:26,610 --> 00:01:32,850
+is that javascript is able to add something into an object store a new piece of information in constant
+
+24
+00:01:32,850 --> 00:01:33,990
+time.
+
+25
+00:01:33,990 --> 00:01:39,210
+It's also able to retrieve something in constant time and you can also update something in constant
+
+26
+00:01:39,210 --> 00:01:41,010
+time which is really the same as retrieving it.
+
+27
+00:01:41,010 --> 00:01:42,210
+You're just changing it.
+
+28
+00:01:42,220 --> 00:01:43,520
+Same with removal.
+
+29
+00:01:43,590 --> 00:01:45,240
+So it's quick it's fast.
+
+30
+00:01:45,240 --> 00:01:51,420
+For all the basic operations there is no order so there's no beginning of the object there's no end
+
+31
+00:01:51,630 --> 00:01:55,080
+so it doesn't matter where you insert because there is no where.
+
+32
+00:01:55,410 --> 00:01:59,340
+That's a bad way of putting it but you can't insert at the beginning or in the middle or the end of
+
+33
+00:01:59,340 --> 00:02:00,860
+the object there's no repercussions.
+
+34
+00:02:00,870 --> 00:02:03,540
+You just add in using a key.
+
+35
+00:02:03,540 --> 00:02:08,680
+All right so insertion removal and access are all constant time very quick if you want to learn more.
+
+36
+00:02:08,700 --> 00:02:14,220
+Remember there's a section on hash tables and hash maps where we go into that and you'll understand
+
+37
+00:02:14,310 --> 00:02:19,860
+hopefully understand how it is cost and time searching however is o of and it's linear time.
+
+38
+00:02:20,010 --> 00:02:23,910
+And when we say searching it doesn't mean looking for a key.
+
+39
+00:02:23,910 --> 00:02:30,760
+For example first name because as we've already seen accessing information with a key is constant time.
+
+40
+00:02:30,890 --> 00:02:36,600
+What I'm talking about is checking to see if a given piece of information is in a value somewhere.
+
+41
+00:02:36,750 --> 00:02:40,700
+If it's on this side of the colon we have no easy way of doing that.
+
+42
+00:02:40,710 --> 00:02:44,890
+We would potentially have to check every single item every property.
+
+43
+00:02:45,030 --> 00:02:48,000
+So that's what this little black box is signifying green box.
+
+44
+00:02:48,000 --> 00:02:54,990
+I guess if we wanted to know is true stored in our object somewhere we'd have to check first name what's
+
+45
+00:02:54,990 --> 00:02:56,740
+your value and then we look at it.
+
+46
+00:02:56,850 --> 00:02:57,600
+It's Kelly All right.
+
+47
+00:02:57,600 --> 00:03:00,570
+That sounded instructor What's your value.
+
+48
+00:03:00,570 --> 00:03:01,020
+True.
+
+49
+00:03:01,020 --> 00:03:01,280
+All right.
+
+50
+00:03:01,290 --> 00:03:07,560
+So there is true in here but potentially you know as the number of properties in there grows and grows
+
+51
+00:03:07,560 --> 00:03:09,750
+so does the amount of time it takes to do that.
+
+52
+00:03:09,750 --> 00:03:15,570
+So now let's go on to some of the methods that objects come with things like keys values and entries.
+
+53
+00:03:15,570 --> 00:03:16,720
+Those three are all.
+
+54
+00:03:16,770 --> 00:03:25,110
+And so if we have bovver back to Chrome and we take a look at key states object keys and then we pass
+
+55
+00:03:25,110 --> 00:03:26,570
+in the object.
+
+56
+00:03:26,610 --> 00:03:29,520
+So if we do it for instr. we get this array with the keys.
+
+57
+00:03:29,580 --> 00:03:35,370
+This is all of time because as the number of items in there gross we're going to have to visit every
+
+58
+00:03:35,370 --> 00:03:37,540
+single thing once and add it to this array.
+
+59
+00:03:37,590 --> 00:03:41,150
+We're not going to put the source is going to do the code.
+
+60
+00:03:41,190 --> 00:03:45,780
+Same thing with values hopefully that makes sense if we have a hundred elements or a hundred properties
+
+61
+00:03:45,840 --> 00:03:50,080
+in our object there's 100 things 100 operations we need to do.
+
+62
+00:03:50,100 --> 00:03:51,020
+There's usually more.
+
+63
+00:03:51,030 --> 00:03:57,690
+But it runs roughly in line with and it might be two and it might be 15 but that still simplifies to
+
+64
+00:03:57,690 --> 00:04:01,120
+0 7 and then that also is the same for entries.
+
+65
+00:04:01,170 --> 00:04:02,450
+Right.
+
+66
+00:04:02,550 --> 00:04:09,310
+And technically entries is a little more work potentially having to compile the key and the value.
+
+67
+00:04:09,360 --> 00:04:12,870
+But it all just simplifies to over and at the end of the day remember.
+
+68
+00:04:13,070 --> 00:04:13,600
+Okay.
+
+69
+00:04:13,800 --> 00:04:19,800
+So lastly we've got has owned property and has own property is a little different repasts and a property
+
+70
+00:04:19,800 --> 00:04:26,670
+like first name and it just tells us it has first name it doesn't have a first name and this is constant
+
+71
+00:04:26,670 --> 00:04:29,440
+time and hopefully that makes sense why it's constant time.
+
+72
+00:04:29,520 --> 00:04:35,700
+If we're able to access information in constant time if we have the key first name we want the value.
+
+73
+00:04:35,910 --> 00:04:41,130
+We should also be able to check if a key exists in pretty much the exact same time.
+
+74
+00:04:41,130 --> 00:04:45,080
+So in summation objects are really quick for pretty much everything.
+
+75
+00:04:45,090 --> 00:04:49,130
+However there's no order and we'll see coming up with arrays.
+
+76
+00:04:49,200 --> 00:04:53,910
+Arrays can be pretty fast for a lot of things but the order also can slow them down depending on what
+
+77
+00:04:53,910 --> 00:04:54,470
+we're doing.
+
+78
+00:04:54,630 --> 00:04:56,400
+So objects are basic.
+
+79
+00:04:56,400 --> 00:04:58,230
+They work very well in a lot of situations.
+
+80
+00:04:58,230 --> 00:05:06,970
+Key value pairs all the operations inserting accessing updating removing all constant and time searching
+
+81
+00:05:07,080 --> 00:05:10,840
+is pretty rare but it is over and it grows and grows.
+
+82
+00:05:10,840 --> 00:05:16,210
+It's linear and then the methods like keys and values and entries where we're creating an array based
+
+83
+00:05:16,210 --> 00:05:21,610
+off of the data inside the object file as the object grows so does the number of operations the amount
+
+84
+00:05:21,610 --> 00:05:23,750
+of time it takes to compile those.
+
+85
+00:05:23,920 --> 00:05:25,370
+So those are of it.
+
+86
+00:05:25,690 --> 00:05:30,700
+OK so the next array is a little more interesting because there's some variation there's some nuance
+
+87
+00:05:30,700 --> 00:05:31,770
+to it that's coming up.
+

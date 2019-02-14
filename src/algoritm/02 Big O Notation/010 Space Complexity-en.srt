@@ -1,0 +1,424 @@
+1
+00:00:00,240 --> 00:00:01,560
+All right welcome back.
+
+2
+00:00:01,560 --> 00:00:06,510
+So now we shift gears a little bit and we're going to talk about something called space complexity.
+
+3
+00:00:06,510 --> 00:00:11,670
+Everything we've talked about so far we've been worrying about time about how fast algorithms run with
+
+4
+00:00:11,670 --> 00:00:12,520
+the runtime.
+
+5
+00:00:12,960 --> 00:00:14,770
+That's called time complexity.
+
+6
+00:00:14,850 --> 00:00:19,920
+We've been analyzing the runtime of an algorithm as the size that the input increases.
+
+7
+00:00:19,920 --> 00:00:26,490
+Now let's talk about what happens to the space that an algorithm takes up as the size of the input increases.
+
+8
+00:00:26,550 --> 00:00:32,660
+We can still use Big-O notation for the same thing use the same formal syntax for describing what happened.
+
+9
+00:00:32,790 --> 00:00:34,790
+But now we're going to focus on space.
+
+10
+00:00:34,860 --> 00:00:40,410
+The amount of memory that's taken up so there's some basic things we have to get out of the way.
+
+11
+00:00:40,410 --> 00:00:48,690
+One is that obviously as an grows if we're approaching infinity the size of the input itself which is
+
+12
+00:00:48,690 --> 00:00:50,040
+and is going to grow.
+
+13
+00:00:50,040 --> 00:00:51,780
+So we're going to ignore that part.
+
+14
+00:00:51,780 --> 00:00:55,490
+You might hear the term auxilary space complexity if you do some research.
+
+15
+00:00:55,500 --> 00:01:01,980
+If you read Wikipedia or something that refers to the space required by the algorithm only not including
+
+16
+00:01:01,980 --> 00:01:03,710
+the space taken up by the inputs.
+
+17
+00:01:03,810 --> 00:01:05,090
+That's what we're going to talk about.
+
+18
+00:01:05,220 --> 00:01:09,770
+We care about the algorithm itself because our end is growing.
+
+19
+00:01:09,780 --> 00:01:12,150
+That's the big end and big.
+
+20
+00:01:12,160 --> 00:01:13,100
+Oh that's good.
+
+21
+00:01:13,110 --> 00:01:18,210
+That's kind of the point we're going to say that as and grows we assume that the input end is going
+
+22
+00:01:18,210 --> 00:01:18,460
+to grow.
+
+23
+00:01:18,450 --> 00:01:25,200
+So let's not care about that space let's care about what repercussions that has inside the algorithm.
+
+24
+00:01:25,200 --> 00:01:30,210
+So unless otherwise noted when we talk about space complexity technically we're talking about auxilary
+
+25
+00:01:30,210 --> 00:01:31,470
+space complexity.
+
+26
+00:01:31,470 --> 00:01:36,870
+Hopefully it's not too scary but basically it just means we're focusing on what happens inside the algorithm.
+
+27
+00:01:36,930 --> 00:01:39,050
+So some basic rules of thumb.
+
+28
+00:01:39,050 --> 00:01:45,270
+The first is that most primitive things like booleans numbers undefined null and Javascript are constant
+
+29
+00:01:45,270 --> 00:01:48,540
+space so it doesn't matter what the size of the input is.
+
+30
+00:01:48,570 --> 00:01:54,420
+If the number is 1 or the number is 1000 we can consider it constant space doesn't matter for a boolean
+
+31
+00:01:54,420 --> 00:01:58,240
+is true or false takes up the same amount of space.
+
+32
+00:01:58,260 --> 00:02:04,180
+Strings are a bit different because they require 0 of space so if and is the length the string.
+
+33
+00:02:04,350 --> 00:02:10,830
+If we have you know the input grows to a thousand characters Well that's actually that's a bad example
+
+34
+00:02:10,920 --> 00:02:17,710
+if it goes to 50 characters the string takes up 50 times more space than a single character string.
+
+35
+00:02:18,930 --> 00:02:22,480
+Same thing with reference types arrays and objects.
+
+36
+00:02:22,520 --> 00:02:28,200
+Generally we're talking about O event where and it's the length of the array or the number of keys for
+
+37
+00:02:28,200 --> 00:02:29,020
+an object.
+
+38
+00:02:29,190 --> 00:02:34,830
+It's not really a length technically but so if and is if the length of an array is forwarder compared
+
+39
+00:02:34,830 --> 00:02:40,160
+to another one that is two it takes up twice as much space as the shorter array.
+
+40
+00:02:40,800 --> 00:02:42,780
+So let's take a look at an example.
+
+41
+00:02:42,990 --> 00:02:48,280
+So here we're focusing on not time complexity we're focusing on space complexity.
+
+42
+00:02:48,390 --> 00:02:55,680
+So this function called some it takes an array and it just sums all the items in the array.
+
+43
+00:02:56,100 --> 00:02:59,150
+So we have a variable total start to 0.
+
+44
+00:02:59,290 --> 00:03:02,990
+Then we have a loop that goes from 0 to the end of the array.
+
+45
+00:03:03,390 --> 00:03:07,590
+And we're just adding in the value of each item in the array to the total variable.
+
+46
+00:03:07,590 --> 00:03:09,110
+And then we return it at the end.
+
+47
+00:03:09,270 --> 00:03:11,030
+So again space not time.
+
+48
+00:03:11,030 --> 00:03:12,200
+So we're concerned about.
+
+49
+00:03:12,210 --> 00:03:14,130
+So what are the things that take up space.
+
+50
+00:03:14,490 --> 00:03:22,140
+Well no matter what the array length is we have one variable called Total one number and then we're
+
+51
+00:03:22,200 --> 00:03:23,040
+looping through.
+
+52
+00:03:23,100 --> 00:03:25,000
+But we're not concerned about that time again.
+
+53
+00:03:25,170 --> 00:03:29,440
+And then we have a second declaration inside the for loop equals zero.
+
+54
+00:03:29,640 --> 00:03:34,380
+So that's another number and that's it for space.
+
+55
+00:03:34,380 --> 00:03:38,540
+We're coming back to the total variable we're adding into it but that doesn't matter.
+
+56
+00:03:38,550 --> 00:03:39,610
+That takes time.
+
+57
+00:03:39,690 --> 00:03:41,130
+But the space is already there.
+
+58
+00:03:41,250 --> 00:03:47,490
+So no matter what the size of the array is of end or in this case a r r as it grows might be a thousand
+
+59
+00:03:47,490 --> 00:03:48,930
+items it might be a million items.
+
+60
+00:03:48,960 --> 00:03:51,690
+Well it might be 10 or 50 or thousand.
+
+61
+00:03:51,690 --> 00:03:53,000
+Let's start simple.
+
+62
+00:03:53,100 --> 00:03:58,740
+It doesn't have an impact on the space that's taken up because we only have these two variables and
+
+63
+00:03:58,740 --> 00:04:00,150
+they exist no matter what.
+
+64
+00:04:00,270 --> 00:04:05,180
+We're not adding new variables based off of the length we're adding to the total variable.
+
+65
+00:04:05,190 --> 00:04:06,990
+But we're not making a new variable.
+
+66
+00:04:07,290 --> 00:04:12,160
+So that really just means we have constant space of one space.
+
+67
+00:04:12,210 --> 00:04:15,860
+It's always the same no matter the size of the input.
+
+68
+00:04:16,440 --> 00:04:17,280
+Here's another one.
+
+69
+00:04:17,550 --> 00:04:19,530
+So this is called double.
+
+70
+00:04:19,530 --> 00:04:23,390
+It takes an array and well why don't I just copy this one and show you.
+
+71
+00:04:23,430 --> 00:04:28,540
+So I've copied it in and it's called Double pass in an array of 1 to 3.
+
+72
+00:04:28,560 --> 00:04:29,970
+What does it return to me.
+
+73
+00:04:29,970 --> 00:04:32,330
+An array with two items is what I say.
+
+74
+00:04:32,430 --> 00:04:34,270
+An array with three items is saying like.
+
+75
+00:04:34,350 --> 00:04:36,780
+But each one has been doubled.
+
+76
+00:04:36,870 --> 00:04:40,380
+And what's important to note it is making a new array.
+
+77
+00:04:40,770 --> 00:04:42,900
+So it starts with making that new array.
+
+78
+00:04:42,900 --> 00:04:49,410
+Then it loops over the length of the first array and then it multiplies each item and pushes that on
+
+79
+00:04:49,500 --> 00:04:52,530
+to new array and then returns new array.
+
+80
+00:04:52,950 --> 00:04:59,070
+So what does that mean for the space complexity of this as the array length grows as the input approaches
+
+81
+00:04:59,070 --> 00:05:00,030
+infinity.
+
+82
+00:05:00,280 --> 00:05:05,160
+But to ignore the fact that javascript can't handle that what happens to the space that this algorithm
+
+83
+00:05:05,160 --> 00:05:06,450
+takes up in here.
+
+84
+00:05:06,480 --> 00:05:07,670
+So yeah we have this.
+
+85
+00:05:07,690 --> 00:05:10,380
+We're going to make a new array no matter what every time.
+
+86
+00:05:10,830 --> 00:05:17,500
+But that's not that significant when we consider this right here we have this new array and it's getting
+
+87
+00:05:17,500 --> 00:05:22,590
+longer and longer and longer directly in proportion to the length of the input.
+
+88
+00:05:22,840 --> 00:05:27,440
+So if the array is 10 items here we're storing 10 items in a new array.
+
+89
+00:05:27,520 --> 00:05:32,980
+If this is 50 items or storing 50 items here in a new array and returning that so the space that's taken
+
+90
+00:05:32,980 --> 00:05:38,800
+up is directly proportionate to N to the input array.
+
+91
+00:05:38,800 --> 00:05:41,360
+So end numbers we get 0 of and space.
+
+92
+00:05:41,410 --> 00:05:46,570
+So we don't need to care about things like this we can simplify it down just to the fuzziest level which
+
+93
+00:05:46,570 --> 00:05:52,000
+is of end rather than of and plus one or something like that or actually plus 2 because we also have
+
+94
+00:05:52,000 --> 00:05:52,620
+this.
+
+95
+00:05:52,660 --> 00:05:53,590
+Those don't matter.
+
+96
+00:05:53,860 --> 00:05:55,110
+So I know it's a lot.
+
+97
+00:05:55,180 --> 00:05:58,410
+And it's it's hard to understand right away.
+
+98
+00:05:58,480 --> 00:05:59,440
+And it might not click.
+
+99
+00:05:59,440 --> 00:06:04,390
+That's ok though we have some exercises but I want to make it clear that you do not need to master this
+
+100
+00:06:04,390 --> 00:06:05,430
+before we move on.
+
+101
+00:06:05,620 --> 00:06:10,520
+I should just delete the whole point is that I should have in ten section so now will have a couple
+
+102
+00:06:10,520 --> 00:06:13,610
+of solutions and I want to be able to say hey the space complex.
+
+103
+00:06:13,620 --> 00:06:14,810
+Yeah this one is great.
+
+104
+00:06:15,160 --> 00:06:22,960
+And the time to flex this one is terrible and squared time complexity but constant space complexity
+
+105
+00:06:22,960 --> 00:06:23,620
+or something.
+
+106
+00:06:23,830 --> 00:06:26,820
+And you should hopefully be able to understand what I mean by that.
+

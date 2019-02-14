@@ -1,0 +1,148 @@
+1
+00:00:00,120 --> 00:00:00,520
+All right.
+
+2
+00:00:00,540 --> 00:00:03,940
+So let's implement an edge on our graph class.
+
+3
+00:00:04,080 --> 00:00:08,290
+So let's just define an edge and it takes two vertices.
+
+4
+00:00:08,520 --> 00:00:18,710
+I'll just go with V-1 and V-2 and then in here we just need to access this adjacency list of V-1.
+
+5
+00:00:18,900 --> 00:00:20,820
+It's now equal not equal to excuse me.
+
+6
+00:00:20,820 --> 00:00:25,290
+We're going to push into that V-2 and then do the same thing.
+
+7
+00:00:25,290 --> 00:00:36,420
+This adjacency list of the two we will push in not we want and that's all according to the specs that
+
+8
+00:00:36,420 --> 00:00:38,270
+I've laid out that's all you have to do.
+
+9
+00:00:38,550 --> 00:00:43,890
+Now if you did want to add error handling and to make sure that this is a valid key and this is a valid
+
+10
+00:00:43,890 --> 00:00:50,020
+key you could do that just a couple of conditional statements but I mean I'll leave mine super simple.
+
+11
+00:00:50,040 --> 00:00:51,810
+Let's just make sure it works.
+
+12
+00:00:51,840 --> 00:00:53,900
+So I'm going to define down here.
+
+13
+00:00:53,910 --> 00:00:57,120
+Let's do the new graph.
+
+14
+00:00:57,120 --> 00:00:59,680
+I'll fast forward through this.
+
+15
+00:00:59,790 --> 00:01:00,220
+OK.
+
+16
+00:01:00,270 --> 00:01:02,200
+So I have three vertices in there.
+
+17
+00:01:02,340 --> 00:01:04,530
+They should all be empty at this point.
+
+18
+00:01:04,530 --> 00:01:05,100
+Great.
+
+19
+00:01:05,100 --> 00:01:06,980
+Now let's try doing g.
+
+20
+00:01:07,140 --> 00:01:12,600
+Add edge from let's go from Dallas and Tokyo.
+
+21
+00:01:12,710 --> 00:01:16,270
+Which direction doesn't matter because it's going to go both ways.
+
+22
+00:01:16,500 --> 00:01:23,700
+And if we look at our adjacency list we now have Tokyo is in the Dallas array and Dallas is in the Tokyo
+
+23
+00:01:23,700 --> 00:01:24,320
+array.
+
+24
+00:01:24,630 --> 00:01:29,610
+So if we wanted to make this a directed graph we just wouldn't do both of these.
+
+25
+00:01:29,640 --> 00:01:31,350
+Right we would take the first one.
+
+26
+00:01:31,410 --> 00:01:32,780
+So the order would matter.
+
+27
+00:01:32,850 --> 00:01:40,080
+We would go from V1 to V-2 and only do this we wouldn't go from V-2 to V-1 but we're assuming that our
+
+28
+00:01:40,080 --> 00:01:43,580
+flight to go both directions which I think most airlines do.
+
+29
+00:01:43,620 --> 00:01:48,030
+I mean I don't know it's possible that they only have flights in one direction from one city to another
+
+30
+00:01:48,090 --> 00:01:50,020
+and they fly back a different route.
+
+31
+00:01:50,040 --> 00:01:51,000
+We're ignoring that.
+
+32
+00:01:51,210 --> 00:01:53,760
+OK so let's just make sure it works again.
+
+33
+00:01:53,850 --> 00:01:56,250
+Just double check.
+
+34
+00:01:56,250 --> 00:02:02,000
+Let's also add one from Dallas to Aspen.
+
+35
+00:02:02,150 --> 00:02:08,410
+And if you look at our Jason to us now we have Aspen has Dallas and Dallas also has Aspen.
+
+36
+00:02:08,750 --> 00:02:09,240
+OK.
+
+37
+00:02:09,350 --> 00:02:11,260
+So that's all there is to adding an edge.
+
