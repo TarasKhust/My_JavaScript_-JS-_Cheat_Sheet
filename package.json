@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf ./dist/",
     "build": "webpack --mode production  --config webpack.prod.js",
-    "dev": "webpack-dev-server --mode development inline 'false' --open 'Google Chrome'"
+    "dev": "webpack-dev-server --mode development --open 'Google Chrome'"
   },
   "browserslist": [
     "last 2 versions",
