@@ -8,8 +8,8 @@ function sayName(surname, ola) {
 	console.log(` ${this.name} ${surname} ${ola}`); //Apply
 }
 
-console.log(sayName.call(user, 'Olaha'));
-console.log(sayName.apply(user, ['Snow', 'Alll']));
+sayName.call(user, 'Olaha');
+sayName.apply(user, ['Snow', 'Alll']);
 
 function count(number) {
 	return this * number;

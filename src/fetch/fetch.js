@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 const parametrsFetsch = (method = 'POST') => {
 	return {
 		method: method,

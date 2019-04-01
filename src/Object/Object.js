@@ -5,6 +5,10 @@ var person = {
 };
 
 
+
+for (let key of Object.keys(person)) {
+	key
+}
 // Returns all properties as an array
 Object.getOwnPropertyNames(person) /*?*/
 
