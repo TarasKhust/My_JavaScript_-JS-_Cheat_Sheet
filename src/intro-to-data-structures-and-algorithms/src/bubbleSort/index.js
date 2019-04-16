@@ -1,36 +1,35 @@
-const { printArray } = require('../utils/index')
+const { printArray } = require('../utils/index');
 
 function bubbleSort(array) {
-  let swapped = false
-  let i
-  let count = 0
+	let swapped = false;
+	let count = 0;
 
-  do {
-    swapped = false
+	do {
+		swapped = false;
 
-    array.forEach((item, index) => {
-      printArray(array)
-      count++
+		array.forEach((item, index) => {
+			printArray(array);
+			count++;
 
-      if (item > array[index + 1]) {
-        const temporary = item
+			if (item > array[index + 1]) {
+				const temporary = item;
 
-        array[index] = array[index + 1]
-        array[index + 1] = temporary
+				array[index] = array[index + 1];
+				array[index + 1] = temporary;
 
-        swapped = true
-      }
-    })
-  } while (swapped)
+				swapped = true;
+			}
+		});
+	} while (swapped);
 
-  printArray(array)
-  console.log(`Iterations: ${count}`)
+	printArray(array);
+	console.log(`Iterations: ${count}`);
 
-  return array
+	return array;
 }
 
-let numbers = [10, 5, 6, 3, 2, 8, 9, 4, 7, 1]
+let numbers = [10, 5, 6, 3, 2, 8, 9, 4, 7, 1];
 
-bubbleSort(numbers)
+bubbleSort(numbers);
 
-exports.bubbleSort = bubbleSort
+exports.bubbleSort = bubbleSort;
